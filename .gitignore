@@ -1,0 +1,8 @@
+*.wav
+*.mp3
+*.mp4
+*.mov
+slide_images/
+__pycache__/
+*.pyc
+.DS_Store

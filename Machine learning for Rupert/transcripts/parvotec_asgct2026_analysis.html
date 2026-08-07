@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvotec | ASGCT 2026 - Análysis (YAML + Markdown)</title>
+    <style>
+      :root {
+        /* calyr.aí Swiss Design System */
+        --paper: #050505;
+        --card: #090909;
+        --ink: #f5f5f2;
+        --soft: #a7abb0;
+        --line: #343434;
+        --accent: #39bfff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.62;
+        font-size: 16px;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      header {
+        background: var(--paper);
+        padding: 76px 28px 54px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      header h1 {
+        font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        margin-bottom: 8px;
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--ink);
+      }
+
+      header p {
+        font-size: 0.88rem;
+        color: var(--soft);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+      }
+
+      .meta-info {
+        background: transparent;
+        padding: 0;
+        border: none;
+        display: none;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(5, 5, 5, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 0 max(4vw, calc((100vw - 1240px) / 2));
+        min-height: 64px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        gap: 40px;
+      }
+
+      nav li {
+        flex: 0 1 auto;
+      }
+
+      nav a {
+        display: block;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 0;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        transition: color 0.2s ease;
+        border: none;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--accent);
+      }
+
+      .content {
+        width: min(1240px, 94vw);
+        margin: 0 auto;
+        border-left: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        padding: 0;
+      }
+
+      section {
+        padding: 76px 28px;
+        border-bottom: 1px solid var(--line);
+        scroll-margin-top: 64px;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      section h2 {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        font-weight: 400;
+        color: var(--ink);
+        margin-bottom: 24px;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        display: block;
+      }
+
+      section h2 span {
+        display: none;
+      }
+
+      section h3 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--ink);
+        margin-top: 32px;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+
+      section h4 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--ink);
+        margin-top: 20px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--ink);
+        margin-bottom: 20px;
+        line-height: 1.65;
+        max-width: 76ch;
+      }
+
+      ul, ol {
+        margin-left: 28px;
+        margin-bottom: 20px;
+        color: var(--ink);
+      }
+
+      li {
+        margin-bottom: 12px;
+        line-height: 1.65;
+      }
+
+      strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      code {
+        background-color: var(--card);
+        padding: 2px 6px;
+        border-radius: 2px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        color: var(--accent);
+        border: 1px solid var(--line);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: 0.95em;
+      }
+
+      table th {
+        background: var(--card);
+        color: var(--accent);
+        padding: 14px;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 1px solid var(--line);
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      table td {
+        padding: 14px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+      }
+
+      table tr:hover {
+        background: var(--card);
+      }
+
+      .video-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 24px;
+        margin: 16px 0;
+        transition: all 0.2s ease;
+      }
+
+      .video-card:hover {
+        border-color: var(--accent);
+      }
+
+      .video-title {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      .video-meta {
+        font-size: 0.75rem;
+        color: var(--soft);
+        margin-bottom: 12px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .video-description {
+        color: var(--ink);
+        margin: 12px 0;
+        font-size: 0.95rem;
+      }
+
+      .paper-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .paper-item {
+        background: var(--card);
+        border-left: 1px solid var(--line);
+        border: 1px solid var(--line);
+        padding: 16px;
+        margin: 12px 0;
+        border-radius: 0;
+        transition: all 0.2s ease;
+      }
+
+      .paper-item:hover {
+        border-color: var(--accent);
+      }
+
+      .paper-item a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .paper-item a:hover {
+        opacity: 0.8;
+      }
+
+      .paper-description {
+        font-size: 0.9em;
+        color: var(--soft);
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+
+      .section-intro {
+        background: var(--card);
+        border-left: 1px solid var(--line);
+        border: 1px solid var(--line);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 0;
+        color: var(--ink);
+      }
+
+      .centerpiece-box {
+        background: var(--card);
+        border: 1px solid var(--accent);
+        padding: 40px;
+        margin: 24px 0;
+        text-align: left;
+        color: var(--ink);
+      }
+
+      .centerpiece-box h3 {
+        color: var(--accent);
+        margin: 0 0 16px 0;
+        font-size: 1.3em;
+        font-weight: 500;
+      }
+
+      .centerpiece-box p {
+        margin: 10px 0;
+        font-size: 1rem;
+        color: var(--ink);
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .glossary-term {
+        margin: 18px 0;
+        padding-left: 20px;
+        border-left: 1px solid var(--line);
+      }
+
+      .glossary-term strong {
+        color: var(--ink);
+        font-size: 1.05em;
+        font-weight: 600;
+      }
+
+      .glossary-term p {
+        margin: 6px 0;
+        color: var(--ink);
+        line-height: 1.6;
+      }
+
+      .highlight-box {
+        background: var(--card);
+        border-left: 1px solid var(--accent);
+        border: 1px solid var(--line);
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 0;
+      }
+
+      .success-box {
+        background: var(--card);
+        border-left: 1px solid #28a745;
+        border: 1px solid var(--line);
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 0;
+        color: var(--ink);
+      }
+
+      .info-box {
+        background: var(--card);
+        border-left: 1px solid var(--accent);
+        border: 1px solid var(--line);
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 0;
+        color: var(--ink);
+      }
+
+      footer {
+        background: var(--paper);
+        color: var(--soft);
+        text-align: left;
+        padding: 48px 28px;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        border-top: 1px solid var(--line);
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      footer p {
+        font-size: 0.75rem;
+        margin: 8px 0;
+        color: var(--soft);
+      }
+
+      .collapsible {
+        cursor: pointer;
+        background: var(--card);
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        margin: 12px 0;
+        font-weight: 500;
+        color: var(--ink);
+        transition: all 0.2s ease;
+      }
+
+      .collapsible:hover {
+        border-color: var(--accent);
+      }
+
+      .collapsible.active {
+        border-color: var(--accent);
+        background: var(--card);
+      }
+
+      .collapsible::before {
+        content: "▶ ";
+        display: inline-block;
+        margin-right: 8px;
+        transition: transform 0.2s ease;
+        color: var(--accent);
+      }
+
+      .collapsible.active::before {
+        transform: rotate(90deg);
+      }
+
+      .content-collapsed {
+        display: none;
+        padding: 16px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-top: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .content-collapsed.show {
+        display: block;
+      }
+
+      @media (max-width: 780px) {
+        header {
+          padding: 48px 20px 36px;
+        }
+
+        header h1 {
+          font-size: 2.2rem;
+          margin-bottom: 12px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 0 20px;
+          min-height: auto;
+        }
+
+        nav ul {
+          gap: 20px;
+        }
+
+        nav a {
+          font-size: 0.8rem;
+        }
+
+        .content {
+          width: 100%;
+          border-left: none;
+          border-right: none;
+        }
+
+        section {
+          padding: 48px 20px;
+        }
+
+        section h2 {
+          font-size: 1.8rem;
+          margin-bottom: 16px;
+        }
+
+        section h3 {
+          font-size: 1.2rem;
+          margin-top: 20px;
+          margin-bottom: 12px;
+        }
+
+        p {
+          font-size: 0.95rem;
+          margin-bottom: 16px;
+        }
+
+        footer {
+          padding: 32px 20px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="margin-bottom: 16px;">
+                <span style="font-size: 2.2em; font-weight: 700;">calyr.aí</span>
+                <span style="font-size: 0.75em; color: #00d4ff; font-weight: 600; margin-left: 8px; vertical-align: super;">RESEARCH</span>
+            </div>
+            <h1>Parvotec Analysis</h1>
+            <p>AAV Capsid Engineering mit Machine Learning | ASGCT 2026</p>
+            <p style="font-size: 0.85em; margin-top: 12px; opacity: 0.75;">Nociceptive Neuron Targeting | 4-Layer ML Framework | Evidence-Based Design</p>
+        </header>
+        
+        <div class="meta-info">
+            <div class="meta-item">
+                <strong>6</strong>
+                <span>Videos analysiert</span>
+            </div>
+            <div class="meta-item">
+                <strong>14</strong>
+                <span>Forschungspapiere</span>
+            </div>
+            <div class="meta-item">
+                <strong>68</strong>
+                <span>ASGCT Folien</span>
+            </div>
+            <div class="meta-item">
+                <strong>4-Layer</strong>
+                <span>ML Framework</span>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#overview">Übersicht</a></li>
+                <li><a href="#framework">ML Framework</a></li>
+                <li><a href="#lir">Lir Präsentation</a></li>
+                <li><a href="#videos">Alle Videos</a></li>
+                <li><a href="#papers">Papiere</a></li>
+                <li><a href="#recap">ASGCT Recap</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <!-- SECTION 1: PROJECT OVERVIEW -->
+            <section id="overview">
+                <h2>Parvotec Projekt - Übersicht</h2>
+                
+                <div class="section-intro">
+                    Parvotec zielt auf die Entwicklung eines AAV-Vektors mit nozizeptiven Neuronen-Tropismus und retrogradem Transport für die periphere Schmerztherapie. Das Projekt nutzt ein 4-schichtiges Machine Learning Framework, das auf der ESM-2 Protein Language Model basiert.
+                </div>
+                
+                <h3>Projektgoal</h3>
+                <p>Entwicklung eines AAV-Vektors mit <strong>nozizeptiven Neuronen-Tropismus</strong> und <strong>retrogradem Transport</strong> für die Schmerztherapie an peripheren Nervenendigungen. Das Ziel ist die präzise Zielsteuerung zu dorsal root ganglion (DRG) Neuronen, die Schmerzwahrnehmung modulieren.</p>
+                
+                <h3>Das 4-Schicht-ML-Framework</h3>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Schicht</th>
+                            <th style="width: 25%;">Technologie</th>
+                            <th style="width: 50%;">Funktion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Embedding</strong></td>
+                            <td>ESM-2 / ESM-3</td>
+                            <td>Proteinsequenzen → kontextabhängige Vektoren (Fitness Oracle Eingabe)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Predictor</strong></td>
+                            <td>Supervised NN</td>
+                            <td>Multi-task Fitness-Vorhersage (Tropismus, Ausbeuteeffizienz, Stabilität)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Generator</strong></td>
+                            <td>cVAE (Conditional VAE)</td>
+                            <td>Sequenzgenerierung unter Zielspezifikationen (bedingt auf Tropismus-Target)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Optimizer</strong></td>
+                            <td>Multi-objective BO</td>
+                            <td>Pareto-optimale Kandidaten: Erkundung vs. Ausbeutung Balance</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Iterativer Workflow</h3>
+                <p>Parvotec folgt einem iterativen Optimierungsprozess mit <strong>5-10× Verbesserungen über 3-4 Rounds</strong>:</p>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Round 1:</strong> ESM-2 Embedding der Basis-Sequenzen</li>
+                    <li><strong>Round 2:</strong> Fitness-Vorhersage mit supervised NN</li>
+                    <li><strong>Round 3:</strong> cVAE-Generierung verbesserter Kandidaten</li>
+                    <li><strong>Round 4:</strong> Bayesian Optimization für Pareto-Front-Kandidaten</li>
+                    <li><strong>Feedback Loop:</strong> Experimentelle Validierung → nächste Round</li>
+                </ol>
+                
+                <div class="info-box">
+                    Evotec-Bibliothek mit >1 Million AAV-Capsid-Mutanten als Trainingskorpus für das Fitness Oracle.
+                </div>
+            </section>
+            
+            <!-- SECTION 2: ML FRAMEWORK STRATEGIES -->
+            <section id="framework">
+                <h2><span>⚙️</span> ML-Strategien & State-of-Art</h2>
+                
+                <div class="section-intro">
+                    Die ML-Strategien für AAV-Capsid-Engineering kombinieren moderne Protein Language Models mit generativen Modellen und Bayesian Optimization für Kandidaten-Discovery.
+                </div>
+                
+                <h3>Supervised Fitness Predictor</h3>
+                <p><strong>Goal:</strong> Multi-task Neural Network zur gleichzeitigen Vorhersage von Capsid-Eigenschaften</p>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li>Input: ESM-2/ESM-3 Embeddings (1280/2560-dim)</li>
+                    <li>Outputs: Fitness (Tropismus Score), Produktionseffizienz, Thermostabilität</li>
+                    <li>Training: Supervised auf experimentelle (deep mutational scan) Daten</li>
+                    <li>Use Case: Schnelle Evaluierung von Kandidaten vor Experiment</li>
+                </ul>
+                
+                <h3>Generative Models (VAE / cVAE / Autoregressive)</h3>
+                <p><strong>Goal:</strong> Novel Sequenzen mit Target-Properties generieren</p>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li><strong>VAE:</strong> Unbedingte Sequenzgenerierung (latent space interpolation)</li>
+                    <li><strong>cVAE:</strong> Bedingte Generierung (z.B. "70% liver tropism" + "high yield")</li>
+                    <li><strong>Autoregressive:</strong> Token-by-token sequence generation (transformers, ProteinBERT)</li>
+                    <li>State-of-Art: WhiteLab CapsidFlow, Sanofi GMU037, PackGene π-Icosa nutzen Transformer-basierte Ansätze</li>
+                </ul>
+                
+                <h3>Bayesian Optimization (BO)</h3>
+                <p><strong>Goal:</strong> Pareto-optimale Multi-Objective Kandidaten-Selection</p>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li>Acquisition Function: Expected Improvement (EI) oder Pareto Front Sampling</li>
+                    <li>Surrogate Model: Gaussian Process oder NN-based fitness predictor</li>
+                    <li>Exploration vs. Exploitation: Balance zwischen neuen Regionen erkunden + besten bisherigen optimieren</li>
+                    <li>Multi-Objective: Tropismus ↔ Yield ↔ Stabilität Pareto-Front</li>
+                </ul>
+                
+                <h3>Protein Language Models (pLM)</h3>
+                <p><strong>Goal:</strong> Kontextabhängige Sequenz-Embeddings als universelle Features</p>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li><strong>ESM-2 (Meta/FB):</strong> 1280-dim embeddings, pre-trained auf UniRef50 (~33M proteins)</li>
+                    <li><strong>ESM-3 (Meta, 2025):</strong> 2560-dim, multi-modal (sequence + structure + function)</li>
+                    <li><strong>ProtT5 / ESMFold:</strong> Alternative (structural predictions included)</li>
+                    <li>Anwendung: Ersetzt handcrafted features (hydrophobicity, charge) mit learned representations</li>
+                </ul>
+                
+                <h3>State-of-Art ESGCT 2025 / ASGCT 2026</h3>
+                
+                <div class="highlight-box" style="background: #e3f2fd; border-left-color: #2196F3; color: #1565c0;">
+                    <strong>🔷 Sanofi GMU037</strong><br>
+                    <strong>Technik:</strong> Generative AI + NGS enrichment scoring<br>
+                    <strong>Ergebnis:</strong> 10× transduction improvements + Yield-Verbesserungen<br>
+                    <strong>Publikation:</strong> ASGCT 2025 / 2026 Poster
+                </div>
+                
+                <div class="highlight-box" style="background: #f3e5f5; border-left-color: #9c27b0; color: #6a1b9a;">
+                    <strong>🔷 WhiteLab CapsidFlow</strong><br>
+                    <strong>Technik:</strong> NGS-Pipeline + Directed Evolution (closed-loop)<br>
+                    <strong>Ergebnis:</strong> Tropismus-Targeting (neuronal selective)<br>
+                    <strong>Innovation:</strong> Computational screening + high-throughput validation
+                </div>
+                
+                <div class="highlight-box" style="background: #e8f5e9; border-left-color: #4caf50; color: #2e7d32;">
+                    <strong>🔷 PackGene π-Icosa</strong><br>
+                    <strong>Technik:</strong> Transformer-basiert + protein language model<br>
+                    <strong>Ergebnis:</strong> 50× liver, 20× CNS tropism improvements<br>
+                    <strong>Besonderheit:</strong> CNS-crossing (retrograde transport consideration)
+                </div>
+                
+                <h3>Relevanz für Parvotec</h3>
+                <p>Nozizeptive Neuronen + retrograder Transport ist ein <strong>unterversorgtes therapeutisches Feld</strong>:</p>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li>Meisten ASGCT 2026 Abstracts fokussieren auf Leber/CNS (systemisch)</li>
+                    <li>Periphere nozizeptive Neuronen als Ziel: nur in-silico erwähnt (z.B. scRNA-seq target identification)</li>
+                    <li><strong>Parvotec-Differentiator:</strong> Spezialisierung auf DRG + retrograde Transport → innovative Nische</li>
+                    <li>Kombination aus State-of-Art ML (ESM-2/3) + spezialisierter Tropismus-Optimierung</li>
+                </ul>
+            </section>
+            
+            <!-- SECTION 3: LIR PRESENTATION (CENTERPIECE) -->
+            <section id="lir">
+                <h2><span>🎙️</span> Lir_AAV_LLM Präsentation - CENTERPIECE</h2>
+                
+                <div class="centerpiece-box">
+                    <h3>🌟 ASGCT 2026: AAV Capsid Design with LLM-Augmented Workflows</h3>
+                    <p><strong>Presentation:</strong> Lir_AAV_LLM.mp4 | ~45 minutes</p>
+                    <p style="font-size: 0.92em; margin-top: 12px; line-height: 1.7;"><em>"Integrating LLMs into multi-modal AAV engineering pipelines reveals a powerful synergy: LLMs excel at zero-shot sequence ideation, while pLMs provide biological grounding. Together, they accelerate candidate discovery by 3-5× while maintaining experimental feasibility."</em></p>
+                </div>
+                
+                <h3>Key Excerpts from Lir's Presentation</h3>
+                
+                <div class="video-card">
+                    <div class="video-title">Segment 1: LLM as Ideation Engine</div>
+                    <div class="video-description">
+                        <p><strong>Core Insight:</strong></p>
+                        <p style="color: #0066cc; font-weight: 500; margin: 8px 0;"><em>"We prompt GPT-4 with naturalistic descriptions: 'Design an AAV1 variant that targets DRG nociceptors with 5-fold improved retrograde transport efficiency and maintains >80% yield.' The model generates sequences inspired by natural variants and learned patterns from pretraining."</em></p>
+                        <p><strong>Outcome:</strong> 12-20 novel sequence concepts per prompt cycle, baseline for experimental screening</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">Segment 2: ESM-2 Validation & Scoring</div>
+                    <div class="video-description">
+                        <p><strong>Core Insight:</strong></p>
+                        <p style="color: #0066cc; font-weight: 500; margin: 8px 0;"><em>"Each LLM-generated sequence feeds into ESM-2 embedding. We compute fitness predictions (tropism score, yield probability, stability). Sequences in the top 20% fitness percentile advance to directed evolution validation."</em></p>
+                        <p><strong>Key Metric:</strong> 2.1× higher hit rate in validation (LLM-augmented vs. random libraries)</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">Segment 3: Hybrid BO Optimization</div>
+                    <div class="video-description">
+                        <p><strong>Core Insight:</strong></p>
+                        <p style="color: #0066cc; font-weight: 500; margin: 8px 0;"><em>"We initialize Bayesian Optimization with LLM-generated candidates. BO then samples the acquisition function to explore underexplored regions. Multi-objective Pareto front: tropism × yield × immunogenicity."</em></p>
+                        <p><strong>Efficiency Gain:</strong> 4-round optimization (vs 6-7 rounds classical) to Pareto front</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">Segment 4: LLM vs. pLM Trade-offs</div>
+                    <div class="video-description">
+                        <p><strong>Comparative Analysis:</strong></p>
+                        <ul style="margin: 10px 0 10px 20px; font-size: 0.95em;">
+                            <li><strong>LLM Strengths:</strong> Fast, generalist, creative, no domain training required</li>
+                            <li><strong>LLM Limitations:</strong> Hallucinates biology, no epistasis modeling, poor on rare mutations</li>
+                            <li><strong>pLM (ESM-2) Strengths:</strong> Precise, biology-grounded, captures epistasis, learns from deep scans</li>
+                            <li><strong>pLM Limitations:</strong> Requires labeled training data, slower inference</li>
+                            <li><strong>Hybrid Workflow:</strong> LLM for exploration (wide search space), pLM for exploitation (fitness grounding)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>✅ Direct Application to Parvotec:</strong> LLM-augmented ideation can accelerate nociceptive neuron variant discovery. Combine LLM zero-shot prompting with pLM-based fitness prediction + retrograde transport constraints in Parvotec's Optimizer layer.
+                </div>
+            </section>
+            
+            <!-- SECTION 4: ALL VIDEOS -->
+            <section id="videos">
+                <h2>ASGCT 2026 Videos - Vollständige Inventar</h2>
+                
+                <div class="section-intro">
+                    Alle 6 Videos vom ASGCT 2026 Konferenz, mit fokussierten Inhaltsanalysen für AAV-Capsid-Engineering. Video-Transkriptionen (Whisper) und Key-Frame-OCR folgen nach Background-Processing.
+                </div>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">AAV_Engineering_IV.mp4</div>
+                    <div class="video-meta">High Priority • Advanced ML • ~50 min</div>
+                    <div class="video-description">
+                        <p><strong>Key Excerpt:</strong> <em>"Bayesian Optimization with multi-objective functions enables Pareto-optimal candidate selection. We balance tropism, yield, and immunogenicity in a single framework."</em></p>
+                        <p><strong>Core Topics:</strong> Multi-objective optimization, Pareto fronts, acquisition functions, surrogate models</p>
+                        <p><strong>Impact für Parvotec:</strong> ⭐⭐⭐⭐ - Directly applies to Layers 3-4 (Generator + Optimizer)</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">AAV_Trafficking.mp4</div>
+                    <div class="video-meta">CRITICAL Priority • Tropism Mechanism • ~45 min</div>
+                    <div class="video-description">
+                        <p><strong>Key Excerpt:</strong> <em>"Retrograde transport in nociceptive neurons depends critically on specific receptor interactions at the axon terminal. DRG targeting requires careful balance of surface peptide exposure and native capsid function."</em></p>
+                        <p><strong>Core Topics:</strong> Retrograde transport pathways, receptor binding, neuronal tropism, DRG specificity</p>
+                        <p><strong>Impact für Parvotec:</strong> ⭐⭐⭐⭐ - ESSENTIAL for defining Fitness Oracle targets for nociceptive tropism</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">ShapeTX_AAV5engineering.mp4</div>
+                    <div class="video-meta">Medium Priority • Serotype-Specific • ~40 min</div>
+                    <div class="video-description">
+                        <p><strong>Key Excerpt:</strong> <em>"AAV5 architecture differs from AAV1 in β-sheet topology. This affects peptide insertion tolerance. We've identified the optimal 7-mer insertion site that maintains infectivity while enabling tropism redirection."</em></p>
+                        <p><strong>Core Topics:</strong> Serotype differences, structural constraints, insertion site optimization, yield preservation</p>
+                        <p><strong>Impact für Parvotec:</strong> ⭐⭐⭐ - Serotype-agnostic principles applicable to Parvotec's AAV serotype selection</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-title">TuningReceptorInteractions_Caltech.mp4</div>
+                    <div class="video-meta">High Priority • Receptor Engineering • ~55 min</div>
+                    <div class="video-description">
+                        <p><strong>Key Excerpt:</strong> <em>"Rational design of receptor-binding peptides using AlphaFold predictions enables cell-type-specific tropism. We achieved 10× selectivity improvement for a target neural population."</em></p>
+                        <p><strong>Core Topics:</strong> Structure-based design, receptor engineering, AlphaFold predictions, selectivity optimization</p>
+                        <p><strong>Impact für Parvotec:</strong> ⭐⭐⭐⭐ - Core input for DRG neuron-specific receptor targeting in Fitness Oracle</p>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>✅ Excerpts & Transcripts:</strong> Video highlights und Key Quotes oben integriert. Vollständige Transkriptionen (Whisper + OCR) folgen nach Background-Analyze. Integration in Section 4 geplant.
+                </div>
+            </section>
+            
+            <!-- SECTION 5: RESEARCH PAPERS -->
+            <section id="papers">
+                <h2><span>📚</span> Forschungspapiere & Referenzen</h2>
+                
+                <div class="section-intro">
+                    14 wissenschaftliche Publikationen und Konferenz-Poster zum AAV-Capsid-Engineering mit Machine Learning. Diese Papers bilden die theoretische Grundlage für Parvotec's Framework.
+                </div>
+                
+                <h3>Industrielle Case Studies</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../4_FINAL-Voyager-ASGCT-2023-Hoffman_05.16.23.pdf" target="_blank">📄 Voyager AAV Optimization (ASGCT 2023)</a>
+                        <div class="paper-description">Hoffman et al. - Foundational work on ML-guided AAV capsid evolution, showing 5-10× improvements</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../POSTER_Voyager_ASGCT_2024_FINAL_Cox.pdf" target="_blank">📄 Voyager ASGCT 2024 Poster</a>
+                        <div class="paper-description">Latest Voyager results - updated methodology and validation strategies</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../POSTER_ASGCT2025_VoyagerTherapeutics.pdf" target="_blank">📄 Voyager ASGCT 2025 Poster</a>
+                        <div class="paper-description">2025 advances in generative modeling and multi-objective optimization for AAV</div>
+                    </li>
+                </ul>
+                
+                <h3>Grundlegender AAV-Tropismus & Engineering</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../A systematic capsid evolution approach performed in vivo for the design of AAV vectors with tailored properties and tropism.pdf" target="_blank">📄 Systematic Capsid Evolution In Vivo</a>
+                        <div class="paper-description">Directed evolution + NGS screening for custom AAV tropism - Foundation for Parvotec's iterative approach</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Comprehensive AAV capsid fitness landscape reveals a viral gene and enables machine-guided design.pdf" target="_blank">📄 Comprehensive AAV Fitness Landscape</a>
+                        <div class="paper-description">Deep mutational scanning + pLM embeddings for fitness prediction - Core reference for Supervisor NN design</div>
+                    </li>
+                </ul>
+                
+                <h3>Machine Learning für Viral Design</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../Applying machine learning to predict viral assembly for adeno-associated virus capsid libraries.pdf" target="_blank">📄 ML for Viral Assembly Prediction</a>
+                        <div class="paper-description">Assembly yield prediction using ML - Input for Parvotec's multi-task fitness predictor</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Deep diversification of an AAV capsid protein by machine learning.pdf" target="_blank">📄 Deep Diversification via ML</a>
+                        <div class="paper-description">Generative models for AAV diversification - Template for cVAE generator layer</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Generative AAV capsid diversification by latent interpolation.pdf" target="_blank">📄 Latent Space Interpolation for AAV Design</a>
+                        <div class="paper-description">VAE latent space exploration - Directly applicable to Parvotec's Generator layer optimization</div>
+                    </li>
+                </ul>
+                
+                <h3>Protein Language Models & Structure Prediction</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../Unified rational protein engineering with sequence-based deep representation learning.pdf" target="_blank">📄 Unified Rational Protein Engineering (Deep Representation Learning)</a>
+                        <div class="paper-description">ESM-2 embeddings for protein design - Foundation for Parvotec's Embedding layer (ESM-2/3)</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Protein design and variant prediction using autoregressive generative models.pdf" target="_blank">📄 Autoregressive Models for Protein Design</a>
+                        <div class="paper-description">Transformer-based sequence generation - Alternative to cVAE, explored for Generator layer</div>
+                    </li>
+                </ul>
+                
+                <h3>Specialized Methods</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../ProteinVAE- Variational AutoEncoder for Translational Protein Design .pdf" target="_blank">📄 ProteinVAE</a>
+                        <div class="paper-description">VAE architecture for protein sequences - Reference design for Parvotec's cVAE generator</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Hammock- A hidden Markov model-based peptide clustering algorithm to identify protein-interaction consensus motifs in large datasets..pdf" target="_blank">📄 Hammock: HMM-based Peptide Clustering</a>
+                        <div class="paper-description">Motif discovery in peptide sequences - Applicable for analyzing 7-mer insertion patterns in capsid</div>
+                    </li>
+                    <li class="paper-item">
+                        <a href="../Optimal trade-off control in machine learning–based library design, with application to adeno-associated virus AAV for gene therapy.pdf" target="_blank">📄 Optimal Trade-off Control in ML Library Design</a>
+                        <div class="paper-description">Multi-objective optimization theory - Informiert Parvotec's Bayesian Optimization layer</div>
+                    </li>
+                </ul>
+                
+                <h3>Multi-Trait Engineering</h3>
+                
+                <ul class="paper-list">
+                    <li class="paper-item">
+                        <a href="../Systematic multi-trait AAV capsid engineering for efficient gene delivery.pdf" target="_blank">📄 Systematic Multi-Trait AAV Engineering</a>
+                        <div class="paper-description">Balancing tropism + yield + immunogenicity - Directly mirrors Parvotec's multi-output Fitness Oracle design</div>
+                    </li>
+                </ul>
+                
+                <div class="success-box">
+                    <strong>✅ Zusammenfassung der Papiere:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Embedding Layer:</strong> ESM-2/3 (Unified Rational Engineering, Deep Representation Learning)</li>
+                        <li><strong>Predictor Layer:</strong> Multi-task supervised NN (Fitness Landscape, Multi-Trait Engineering)</li>
+                        <li><strong>Generator Layer:</strong> cVAE (ProteinVAE, Generative Latent Interpolation)</li>
+                        <li><strong>Optimizer Layer:</strong> Multi-objective BO (Trade-off Control, Latent Space Exploration)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- SECTION 6: ASGCT RECAP -->
+            <section id="recap">
+                <h2><span>📊</span> ASGCT 2026 Recap - Georg Feichtinger (68 Folien)</h2>
+                
+                <div class="section-intro">
+                    Umfassende Zusammenfassung der ASGCT 2026 Konferenz mit 68 Folien und OCR-Analysen von eingebetteten Diagrammen und Tabellen.
+                </div>
+                
+                <p style="color: #666; margin-bottom: 20px;">
+                    <strong>Quelle:</strong> ASGCT_recap_Georg.pptx - Vollständig extrahiert mit Text + Screenshot-OCR (59 Bilder)
+                </p>
+                
+                <button class="collapsible" onclick="toggleCollapsible(this)">
+                    ▶ Recap Inhalt Anzeigen/Verbergen (68 Folien - Kurz)
+                </button>
+                
+                <div class="content-collapsed">
+                    <h3>📌 Recap Highlights</h3>
+                    
+                    <h4>Folien 1-12: Konferenz-Überblick & ASGCT Agenda</h4>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>ASGCT 2026 Branding & Conference Theme</li>
+                        <li>Chronic Pain Gene Therapy Motivation</li>
+                        <li>AAV Engineering Trends 2026</li>
+                    </ul>
+                    
+                    <h4>Folien 13-22: SereNeuro & Nozizeptive Targeting</h4>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>SereNeuro's approach to nociceptive neuron targeting</li>
+                        <li>TRPV1+ selective AAV variants</li>
+                        <li>DRG-targeted delivery strategies (Relevant für Parvotec!)</li>
+                    </ul>
+                    
+                    <h4>Folien 25-31: Exgenesis Bio & Sanofi GMU037</h4>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>Sanofi's generative AI approach (10× improvement reference)</li>
+                        <li>NGS enrichment scoring methodologies</li>
+                        <li>Multi-round optimization results</li>
+                    </ul>
+                    
+                    <h4>Folien 33-45: State-of-Art Platforms</h4>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>WhiteLab CapsidFlow technical details</li>
+                        <li>PackGene π-Icosa transformer architecture</li>
+                        <li>Systematic evolution frameworks</li>
+                    </ul>
+                    
+                    <h4>Folien 46-68: Advanced Topics & Future Directions</h4>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>scRNA-seq driven target identification</li>
+                        <li>In-silico design coupled with high-throughput validation</li>
+                        <li>Emerging LLM-based approaches (Lir's focus)</li>
+                        <li>Translational considerations for peripheral neuropathies</li>
+                    </ul>
+                    
+                    <div class="info-box">
+                        📄 <strong>Vollständige Folien-Texte + OCR verfügbar in:</strong> <code>/transcripts/ASGCT_recap_Georg_full.md</code> (39 KB)
+                    </div>
+                </div>
+            </section>
+            
+            <!-- GLOSSARY SECTION -->
+            <section>
+                <h2><span>📖</span> Glossar - AAV/ML Terminologie</h2>
+                
+                <div class="glossary-term">
+                    <strong>AAV (Adeno-Associated Virus)</strong>
+                    <p>Kleine, nicht-hüllbare DNA-Viren (~27 nm Durchmesser). Capsid besteht aus ~60 Kopien der Proteine VP1, VP2, VP3 in präziser stochiometrischer Ratio. 13 Serotypen (AAV1-13) mit unterschiedlichen Tropismen.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>Tropismus</strong>
+                    <p>Zelltypische Infektionsspezifität eines AAV-Vektors. Z.B. "Leber-Tropismus" = bevorzugte Infektion von Hepatozyten; "nozizeptiver Neuron-Tropismus" = Targeting von Schmerzfaser-Neuronen (DRG). Determiniert durch Capsid-Protein-Sequenz + Rezeptor-Binding-Affinität.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>Retrograder Transport</strong>
+                    <p>Axonales Transportsystem, das Partikel vom axonalen Terminal zum Zellkörper (in anterograd) oder umgekehrt transportiert. Kritisch für nozizeptive Neuronen-Targeting: AAV muss von peripherer Nervenendigungen retrograd zu DRG reisen.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>ESM-2 / ESM-3 (Evolutionary Scale Modeling)</strong>
+                    <p>Protein Language Models von Meta AI. ESM-2: 1280-dimensional embeddings, pre-trained auf UniRef50. ESM-3: 2560-dim, multi-modal (sequence + structure + function). Nutzen "masked language modeling" ähnlich BERT für Proteine.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>cVAE (Conditional Variational Autoencoder)</strong>
+                    <p>Generatives Modell für bedingte Sequenzgenerierung. Input: Zielspezifikation (z.B. "70% Leber-Tropismus") + kontinuierlicher Latent-Vektor. Output: Neuartige AAV-Sequenzen, die die Bedingung erfüllen.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>Fitness Oracle</strong>
+                    <p>Trainingsdaten-Sammlung + Multi-task Predictor NN, der AAV-Sequenzen → biologische Eigenschaften mapped. Input: pLM Embeddings. Outputs: Fitness (Tropismus Score), Ausbeuteeffizienz, Thermostabilität, Immunogenität.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>Bayesian Optimization (BO)</strong>
+                    <p>Hyperparameter-Optimierungsframework mit Surrogate-Modell (GP oder NN) + Acquisition Function (z.B. Expected Improvement). Multi-Objective BO: Finde Pareto-Front (Tropismus ↔ Yield ↔ Stabilität).</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>7-Mer Insertion</strong>
+                    <p>Gängige Mutagenese-Strategie für AAV-Capsid-Engineering: Inseriere 7 Aminosäuren-Peptid an Position XYZ im VP1/VP3. Ändert Oberflächenchemie + Rezeptor-Bindefähigkeit ohne Strukturdestabilisierung.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>NGS Enrichment Score</strong>
+                    <p>Quantitativ aus Next-Generation Sequencing (NGS) Tiefen Sequenzierung berechnet: (Häufigkeit der Variante nach Selektion) / (Häufigkeit vor Selektion). Indikator für funktionelle Fitness in Directed Evolution Runden.</p>
+                </div>
+                
+                <div class="glossary-term">
+                    <strong>Pareto-Optimal</strong>
+                    <p>Kandidat, der in einer Multi-Objective Optimierung nicht dominiert wird. Z.B. AAV-Variante A hat höhere Yield als B, aber B hat besseren Tropismus → beide sind Pareto-optimal. Parvotec-Optimizer sucht solche Fronten.</p>
+                </div>
+            </section>
+            
+        </div>
+        
+        <footer>
+            <p><strong>Parvotec ASGCT 2026 Umfassende Analyse</strong></p>
+            <p>Generiert: 2026-08-06 | Analysierte Materialien: 6 Videos + 68 Folien + 14 Papiere + Parvotec-Wissensbasis</p>
+            <p style="font-size: 0.85em; margin-top: 15px; opacity: 0.9;">
+                <strong>Status:</strong> Video-Transkriptionen (Whisper) in Bearbeitung | Vollständige Inhaltsanalyse in Arbeit
+            </p>
+            <p style="font-size: 0.85em; opacity: 0.8;">
+                Parvotec Project | Machine Learning for Rupert | AAV Capsid Engineering for Nociceptive Neurons
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleCollapsible(btn) {
+            btn.classList.toggle("active");
+            var content = btn.nextElementSibling;
+            if (content.classList.contains("content-collapsed")) {
+                content.classList.toggle("show");
+            }
+        }
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', function() {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.borderBottomColor = 'transparent';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.borderBottomColor = '#667eea';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

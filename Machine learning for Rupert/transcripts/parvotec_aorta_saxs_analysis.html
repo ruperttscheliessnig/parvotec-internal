@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvotec | Aorta & SAXS — Analyse</title>
+    <style>
+      :root {
+        --paper: #050505;
+        --card:  #090909;
+        --ink:   #f5f5f2;
+        --soft:  #a7abb0;
+        --line:  #343434;
+        --accent:#39bfff;
+      }
+      *{margin:0;padding:0;box-sizing:border-box;}
+      html{scroll-behavior:smooth;}
+      body{
+        font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
+        background:var(--paper);color:var(--ink);
+        line-height:1.62;font-size:16px;
+      }
+      header{
+        background:var(--paper);
+        padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;
+        border-bottom:1px solid var(--line);
+      }
+      header h1{
+        font-size:clamp(2.8rem,6.4vw,5.6rem);
+        font-weight:400;letter-spacing:-0.065em;
+        color:var(--ink);margin-bottom:8px;
+      }
+      header p{font-size:.88rem;color:var(--soft);letter-spacing:.08em;margin-top:16px;}
+      .lang-toggle{
+        max-width:1240px;margin:20px auto 0;display:flex;gap:12px;
+      }
+      .lang-toggle button{
+        background:var(--card);border:1px solid var(--line);
+        color:var(--soft);padding:6px 12px;font-size:.75rem;
+        cursor:pointer;transition:all .2s;font-family:inherit;
+      }
+      .lang-toggle button.active{color:var(--accent);border-color:var(--accent);}
+      nav{
+        position:sticky;top:0;z-index:100;
+        background:rgba(5,5,5,.96);backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--line);
+        display:flex;align-items:center;flex-wrap:wrap;gap:0;
+        padding:0 max(4vw,calc((100vw - 1240px)/2));
+        min-height:56px;
+      }
+      nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;}
+      nav a{
+        display:block;color:var(--soft);text-decoration:none;
+        padding:18px 20px 18px 0;font-size:.8rem;font-weight:500;
+        letter-spacing:.05em;border-bottom:2px solid transparent;
+        transition:color .2s,border-color .2s;
+      }
+      nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--accent);}
+      .nav-cta{margin-left:auto;display:flex;gap:12px;align-items:center;}
+      .nav-cta a{
+        font-size:.72rem;color:var(--accent);letter-spacing:.06em;
+        text-transform:uppercase;padding:6px 0;border-bottom:none;
+      }
+      /* search */
+      .search-wrap{display:flex;align-items:center;gap:10px;}
+      .search-wrap input{
+        background:var(--card);border:1px solid var(--line);
+        color:var(--ink);padding:6px 12px;font-size:.8rem;
+        font-family:inherit;width:180px;outline:none;
+        transition:border-color .2s;
+      }
+      .search-wrap input:focus{border-color:var(--accent);}
+      .search-wrap input::placeholder{color:var(--soft);}
+      .search-count{font-size:.72rem;color:var(--soft);white-space:nowrap;min-width:40px;}
+      mark.hl{background:var(--accent);color:var(--paper);padding:1px 2px;border-radius:1px;}
+      .content{
+        width:min(1240px,94vw);margin:0 auto;
+        border-left:1px solid var(--line);border-right:1px solid var(--line);
+      }
+      section{
+        padding:76px 48px;border-bottom:1px solid var(--line);
+        scroll-margin-top:56px;
+      }
+      section:last-child{border-bottom:none;}
+      h2{
+        font-size:clamp(2rem,4vw,3.4rem);font-weight:400;
+        letter-spacing:-.04em;color:var(--ink);
+        margin-bottom:24px;line-height:1.1;
+      }
+      h3{
+        font-size:1.3rem;font-weight:500;color:var(--ink);
+        margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;
+      }
+      p{font-size:1rem;color:var(--ink);margin-bottom:20px;line-height:1.65;max-width:78ch;}
+      ul,ol{margin-left:28px;margin-bottom:20px;color:var(--ink);}
+      li{margin-bottom:10px;line-height:1.62;}
+      strong{color:var(--ink);font-weight:600;}
+      code{
+        font-family:'Menlo','Monaco','Courier New',monospace;
+        font-size:.85em;background:var(--card);
+        border:1px solid var(--line);padding:2px 6px;color:var(--accent);
+      }
+      .lang-block{display:none;}
+      .lang-block.active{display:block;}
+      .intro-box{
+        background:var(--card);border:1px solid var(--line);
+        padding:24px;margin-bottom:24px;
+      }
+      .intro-box p{margin:0;}
+      table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.95em;}
+      table th{
+        background:var(--card);color:var(--accent);
+        padding:12px 16px;text-align:left;
+        border-bottom:1px solid var(--line);
+        font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+      }
+      table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+      table tr:hover{background:var(--card);}
+      a{color:var(--accent);text-decoration:none;transition:opacity .2s;}
+      a:hover{opacity:.8;}
+      /* TOC grid */
+      .toc-grid{
+        display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+        gap:1px;border:1px solid var(--line);margin-top:24px;
+      }
+      .toc-item{
+        border:none;padding:20px 24px;background:var(--card);
+        display:flex;flex-direction:column;gap:6px;
+        text-decoration:none;transition:background .15s;
+      }
+      .toc-item:hover{background:var(--line);opacity:1;}
+      .toc-num{font-size:.68rem;color:var(--accent);letter-spacing:.12em;font-weight:600;text-transform:uppercase;}
+      .toc-title{font-size:1rem;color:var(--ink);font-weight:500;letter-spacing:-.01em;}
+      .toc-sub{font-size:.75rem;color:var(--soft);line-height:1.4;}
+      /* callout */
+      .callout{
+        border-left:2px solid var(--accent);padding:16px 20px;
+        margin:20px 0;background:var(--card);
+      }
+      .callout p{margin:0;font-size:.9rem;}
+      footer{
+        color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));
+        font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);
+      }
+      footer p{font-size:.75rem;margin:6px 0;color:var(--soft);}
+      @media(max-width:780px){
+        section{padding:48px 20px;}
+        h2{font-size:1.8rem;}
+        header{padding:48px 20px 36px;}
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <div style="margin-bottom:16px;">
+        <span style="font-size:2.2em;font-weight:700;">calyr.aí</span>
+        <span style="font-size:.75em;color:var(--accent);font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
+    </div>
+    <h1>Aorta &amp; SAXS</h1>
+    <p>AAV Gene Therapy für Kardiovaskuläre Indikationen · Strukturelle Charakterisierung via Small-Angle X-ray Scattering</p>
+    <div class="lang-toggle">
+        <button class="active" onclick="switchLang('de',event)">Deutsch</button>
+        <button onclick="switchLang('en',event)">English</button>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#toc">Index</a></li>
+        <li><a href="#aorta-overview">Aorta</a></li>
+        <li><a href="#aorta-targeting">Targeting</a></li>
+        <li><a href="#saxs-overview">SAXS</a></li>
+        <li><a href="#saxs-data">Daten &amp; Methoden</a></li>
+        <li><a href="#saxs-ml">SAXS × ML</a></li>
+        <li><a href="#glossary">Glossar</a></li>
+    </ul>
+    <div class="nav-cta">
+        <a href="parvotec_aorta_proposal.html">Proposal</a>
+        <div class="search-wrap">
+            <input type="text" id="search-input" placeholder="Suchen / Search…" oninput="doSearch(this.value)"/>
+            <span class="search-count" id="search-count"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="toc">
+    <h2>Index</h2>
+    <div class="toc-grid">
+        <a class="toc-item" href="#aorta-overview">
+            <span class="toc-num">01</span>
+            <span class="toc-title">Aorta — Überblick</span>
+            <span class="toc-sub">Klinisches Ziel · Glatte Muskelzellen · Endothel · AAV-Vektoren für vaskuläre Therapie</span>
+        </a>
+        <a class="toc-item" href="#aorta-targeting">
+            <span class="toc-num">02</span>
+            <span class="toc-title">Aorta — Targeting-Strategien</span>
+            <span class="toc-sub">Capsid-Engineering für SMC &amp; EC · Applikationsrouten · Competitive Landscape</span>
+        </a>
+        <a class="toc-item" href="#saxs-overview">
+            <span class="toc-num">03</span>
+            <span class="toc-title">SAXS — Methodik</span>
+            <span class="toc-sub">Prinzip · Synchrotron-Quellen · Messkurven · Guinier · Kratky · Pair Distribution</span>
+        </a>
+        <a class="toc-item" href="#saxs-data">
+            <span class="toc-num">04</span>
+            <span class="toc-title">SAXS — AAV Charakterisierung</span>
+            <span class="toc-sub">Full vs. Empty Capsids · Aggregation · Rg · I(0)/Konzentration · Dmax · Polydispersität</span>
+        </a>
+        <a class="toc-item" href="#saxs-ml">
+            <span class="toc-num">05</span>
+            <span class="toc-title">SAXS × ML Integration</span>
+            <span class="toc-sub">SAXS Features als Fitness Labels · Oracle-Erweiterung · Datenqualität</span>
+        </a>
+        <a class="toc-item" href="#glossary">
+            <span class="toc-num">06</span>
+            <span class="toc-title">Glossar</span>
+            <span class="toc-sub">SMC · EC · VSMC · Adventitia · q-Vektor · Rg · Dmax · Kratky · Porod · BioSAXS</span>
+        </a>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="aorta-overview">
+    <h2>Aorta — AAV Gene Therapy</h2>
+
+    <div class="lang-block de active">
+        <div class="intro-box">
+            <p>Die Aorta ist das größte Blutgefäß des Körpers und Ort mehrerer schwerwiegender Erkrankungen: Aortenaneurysma (AAA, TAA), Atherosklerose, Aortendissektion und Mediadegeneration. AAV-basierte Gentherapie bietet die Möglichkeit, die zugrundeliegende Zellbiologie (glatte Muskelzellen, Endothel) genetisch zu korrigieren — ohne systemische Toxizität traditioneller Medikamente.</p>
+        </div>
+
+        <h3>Erkrankungen & Therapeutische Ziele</h3>
+        <table>
+            <thead><tr><th>Erkrankung</th><th>Zelltyp</th><th>Genetisches Ziel</th><th>Therapieansatz</th></tr></thead>
+            <tbody>
+                <tr><td>Abdominales Aortenaneurysma (AAA)</td><td>VSMC, Makrophagen</td><td>TIMP1/2 Upregulation, MMP9 Knockdown</td><td>AAV-RNAi oder Überexpression</td></tr>
+                <tr><td>Thorakales Aortenaneurysma (TAA)</td><td>VSMC (Tunica Media)</td><td>FBN1/TGFBR2 Mutation-spezifisch</td><td>Base Editing oder AAV-cDNA</td></tr>
+                <tr><td>Atherosklerose</td><td>Endothelzellen (EC)</td><td>eNOS Upregulation, PCSK9 Knockdown</td><td>AAV9/AAV-DJ für Endothel</td></tr>
+                <tr><td>Marfan-Syndrom (Aorta)</td><td>VSMC, Fibroblasten</td><td>FBN1 Exon-Skipping</td><td>AAV + Splice-Switching ASO</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Zelluläre Anatomie der Aortenwand</h3>
+        <p>Die Aortenwand besteht aus drei Schichten. Jede erfordert unterschiedliche Vektoren und Applikationsrouten:</p>
+        <ul>
+            <li><strong>Tunica Intima:</strong> Einschichtige Endothelzellen (EC). Direkter Kontakt mit Blut. Gut zugänglich via intravasale Injektion. AAV-DJ und AAV2.7m8 zeigen EC-Präferenz.</li>
+            <li><strong>Tunica Media:</strong> Viele Schichten glatter Muskelzellen (VSMC). Hauptort für Aneurysma-Pathologie. Erfordert Penetration durch Intima oder adventitialen Zugang. AAV6 und AAV8 mit VSMC-Tropismus.</li>
+            <li><strong>Tunica Adventitia:</strong> Fibroblasten, Nerven, Vasa vasorum (kleine Versorgungsgefäße). Zugänglich durch periadventitiale Injektion. AAV2 und AAV1 funktionieren in Fibroblasten gut.</li>
+        </ul>
+
+        <h3>Therapeutische Konzepte im Detail</h3>
+        <p><strong>MMP/TIMP-Achse bei AAA:</strong> Matrix-Metalloproteinasen (MMP2, MMP9) degradieren Kollagen und Elastin in der Aortenwand → Wandschwächung → Aneurysma. AAV-RNAi gegen MMP9 oder Überexpression des Inhibitors TIMP1/2 könnte das Fortschreiten stoppen. Präklinische Evidenz: AAV8-shMMP9 reduziert Aneurysma-Expansion in ApoE-/- Mäusen um 60%.</p>
+        <p><strong>TGFβ-Achse bei Marfan/TAA:</strong> FBN1-Mutationen (Marfan) führen zu unkontrollierter TGFβ-Signalgebung in VSMC → zystische Mediadegeneration. Möglicher Ansatz: AAV-vermittelte Überexpression von FBN1 cDNA oder Exon-Skipping via AAV-ASO für Exon 15-27 Mutationen.</p>
+        <p><strong>PCSK9-Knockdown für Atherosklerose:</strong> Etabliertes Konzept aus der Leber-Gentherapie (Inclisiran). Endotheliale PCSK9-Inhibition direkt in der Aortenwand als lokale Therapie — verhindert systemische Nebenwirkungen. AAV-Serotyp für endotheliales Targeting erforderlich (kein AAV8, der Leber bevorzugt).</p>
+    </div>
+
+    <div class="lang-block en">
+        <div class="intro-box">
+            <p>The aorta is the body's largest blood vessel and site of several serious diseases: aortic aneurysm (AAA, TAA), atherosclerosis, aortic dissection, and medial degeneration. AAV-based gene therapy offers the possibility of genetically correcting the underlying cell biology (smooth muscle cells, endothelium) — without systemic toxicity of traditional drugs.</p>
+        </div>
+
+        <h3>Diseases & Therapeutic Targets</h3>
+        <table>
+            <thead><tr><th>Disease</th><th>Cell Type</th><th>Genetic Target</th><th>Therapy Approach</th></tr></thead>
+            <tbody>
+                <tr><td>Abdominal Aortic Aneurysm (AAA)</td><td>VSMC, Macrophages</td><td>TIMP1/2 upregulation, MMP9 knockdown</td><td>AAV-RNAi or overexpression</td></tr>
+                <tr><td>Thoracic Aortic Aneurysm (TAA)</td><td>VSMC (Tunica Media)</td><td>FBN1/TGFBR2 mutation-specific</td><td>Base editing or AAV-cDNA</td></tr>
+                <tr><td>Atherosclerosis</td><td>Endothelial cells (EC)</td><td>eNOS upregulation, PCSK9 knockdown</td><td>AAV9/AAV-DJ for endothelium</td></tr>
+                <tr><td>Marfan Syndrome (Aorta)</td><td>VSMC, Fibroblasts</td><td>FBN1 exon skipping</td><td>AAV + splice-switching ASO</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Cellular Anatomy of the Aortic Wall</h3>
+        <p>The aortic wall consists of three layers. Each requires different vectors and administration routes:</p>
+        <ul>
+            <li><strong>Tunica Intima:</strong> Single layer of endothelial cells (EC). Direct blood contact. Well accessible via intravascular injection. AAV-DJ and AAV2.7m8 show EC preference.</li>
+            <li><strong>Tunica Media:</strong> Multiple layers of smooth muscle cells (VSMC). Primary site of aneurysm pathology. Requires penetration through intima or adventitial access. AAV6 and AAV8 with VSMC tropism.</li>
+            <li><strong>Tunica Adventitia:</strong> Fibroblasts, nerves, vasa vasorum (small supply vessels). Accessible via peri-adventitial injection. AAV2 and AAV1 work well in fibroblasts.</li>
+        </ul>
+
+        <h3>Therapeutic Concepts in Detail</h3>
+        <p><strong>MMP/TIMP axis in AAA:</strong> Matrix metalloproteinases (MMP2, MMP9) degrade collagen and elastin in the aortic wall → wall weakening → aneurysm. AAV-RNAi against MMP9 or overexpression of inhibitor TIMP1/2 could halt progression. Preclinical evidence: AAV8-shMMP9 reduces aneurysm expansion in ApoE-/- mice by 60%.</p>
+        <p><strong>TGFβ axis in Marfan/TAA:</strong> FBN1 mutations (Marfan) lead to uncontrolled TGFβ signaling in VSMC → cystic medial degeneration. Possible approach: AAV-mediated overexpression of FBN1 cDNA or exon skipping via AAV-ASO for exon 15-27 mutations.</p>
+        <p><strong>PCSK9 knockdown for atherosclerosis:</strong> Established concept from liver gene therapy (Inclisiran). Endothelial PCSK9 inhibition directly in the aortic wall as local therapy — prevents systemic side effects. AAV serotype for endothelial targeting required (not AAV8, which favors liver).</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="aorta-targeting">
+    <h2>Aorta — Targeting &amp; Capsid-Engineering</h2>
+
+    <div class="lang-block de active">
+        <h3>Applikationsrouten für Aorten-Targeting</h3>
+        <table>
+            <thead><tr><th>Route</th><th>Zielschicht</th><th>Vorteil</th><th>Nachteil</th></tr></thead>
+            <tbody>
+                <tr><td>Intravasale Injektion (Katheter)</td><td>Intima (EC)</td><td>Minimal-invasiv, klinisch etabliert</td><td>Leber-Off-Target, kurze Verweildauer</td></tr>
+                <tr><td>Periadventitiale Injektion (chirurgisch)</td><td>Adventitia → Media</td><td>Direkte Wandpenetration, lokal</td><td>Invasiver Eingriff erforderlich</td></tr>
+                <tr><td>Hydrogel-Coating der Aortenwand</td><td>Media, Adventitia</td><td>Langsame Freisetzung, hohe lokale Dosis</td><td>Experimentell, kein klinischer Standard</td></tr>
+                <tr><td>Ex-vivo Transplant-Perfusion</td><td>Alle 3 Schichten</td><td>Vollständige Kontrolle, kein In-vivo-Risiko</td><td>Nur bei Transplantat-Chirurgie anwendbar</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Capsid-Anforderungen für Vaskuläres Targeting</h3>
+        <p><strong>Endothelzellen (EC) — Intima:</strong></p>
+        <ul>
+            <li>Ziel-Rezeptoren: HSPG (Heparan Sulfate Proteoglykane), AAVR (KIAA0319L), integrin αvβ5</li>
+            <li>Herausforderung: Hoher Blutfluss → kurze Kontaktzeit. AAV muss schnell binden</li>
+            <li>Optimierte Serotypen: AAV-DJ (Hybrid aus AAV2/8/9), AAV2.7m8 (intravitreale Variante mit EC-Affinität), AAVrh10</li>
+            <li>ML-Ansatz: 7-Mer Insertion Library Screen an primären Human Aortic Endothelial Cells (HAEC)</li>
+        </ul>
+        <p><strong>Glatte Muskelzellen (VSMC) — Media:</strong></p>
+        <ul>
+            <li>Ziel-Rezeptoren: α2β1 Integrin, PDGFRβ, LRP1/2</li>
+            <li>Herausforderung: Intima muss überwunden werden (Diffusionsbarriere)</li>
+            <li>Optimierte Serotypen: AAV6 (beste VSMC-Transduktion in vitro), AAV-B1 (engineered für Gefäßzellen)</li>
+            <li>Strategie: Kombination aus VSMC-tropem Capsid + Ultraschall-gesteuerter Disruption der Intima</li>
+        </ul>
+
+        <h3>Competitive Landscape — Vaskuläre Gentherapie</h3>
+        <table>
+            <thead><tr><th>Unternehmen</th><th>Programm</th><th>Indikation</th><th>Vektor</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>Renovacor</td><td>REN001</td><td>Familiäre DCM (LMNA)</td><td>AAV9</td><td>Phase I (Herz, nicht Aorta)</td></tr>
+                <tr><td>Passage Bio</td><td>PBGM01</td><td>GM1-Gangliosidose</td><td>AAVrh74</td><td>Phase I/II</td></tr>
+                <tr><td>Crispr Therapeutics</td><td>CTX310</td><td>PCSK9 (Atherosklerose)</td><td>LNP+Base Edit</td><td>Phase I</td></tr>
+                <tr><td>Verve Therapeutics</td><td>VERVE-101</td><td>PCSK9/Leber</td><td>LNP+Base Edit</td><td>Phase Ib</td></tr>
+                <tr><td>Parvotec (intern)</td><td>PAR-AORTA-01</td><td>AAA / VSMC-Targeting</td><td>ML-optimierter AAV</td><td>Präklinisch</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <p><strong>Parvotec Differenzierung:</strong> Alle Mitbewerber nutzen systemische Vektoren (Leber-Targeting) oder LNP-Systeme für kardiovaskuläre Indikationen. Parvotec ist einzigartig positioniert mit einem ML-optimierten AAV-Capsid für direkte lokale VSMC/EC-Transduktion in der Aortenwand — ohne Leber-Off-Target.</p>
+        </div>
+    </div>
+
+    <div class="lang-block en">
+        <h3>Administration Routes for Aortic Targeting</h3>
+        <table>
+            <thead><tr><th>Route</th><th>Target Layer</th><th>Advantage</th><th>Disadvantage</th></tr></thead>
+            <tbody>
+                <tr><td>Intravascular injection (catheter)</td><td>Intima (EC)</td><td>Minimally invasive, clinically established</td><td>Liver off-target, short residence time</td></tr>
+                <tr><td>Peri-adventitial injection (surgical)</td><td>Adventitia → Media</td><td>Direct wall penetration, local</td><td>Invasive procedure required</td></tr>
+                <tr><td>Hydrogel coating of aortic wall</td><td>Media, Adventitia</td><td>Slow release, high local dose</td><td>Experimental, no clinical standard</td></tr>
+                <tr><td>Ex-vivo transplant perfusion</td><td>All 3 layers</td><td>Full control, no in vivo risk</td><td>Only applicable in transplant surgery</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Capsid Requirements for Vascular Targeting</h3>
+        <p><strong>Endothelial cells (EC) — Intima:</strong></p>
+        <ul>
+            <li>Target receptors: HSPG (heparan sulfate proteoglycans), AAVR (KIAA0319L), integrin αvβ5</li>
+            <li>Challenge: High blood flow → short contact time. AAV must bind rapidly</li>
+            <li>Optimized serotypes: AAV-DJ (hybrid of AAV2/8/9), AAV2.7m8 (intravitreal variant with EC affinity), AAVrh10</li>
+            <li>ML approach: 7-mer insertion library screen on primary human aortic endothelial cells (HAEC)</li>
+        </ul>
+        <p><strong>Smooth muscle cells (VSMC) — Media:</strong></p>
+        <ul>
+            <li>Target receptors: α2β1 integrin, PDGFRβ, LRP1/2</li>
+            <li>Challenge: Intima must be crossed (diffusion barrier)</li>
+            <li>Optimized serotypes: AAV6 (best VSMC transduction in vitro), AAV-B1 (engineered for vascular cells)</li>
+            <li>Strategy: VSMC-tropic capsid + ultrasound-guided intima disruption</li>
+        </ul>
+
+        <h3>Competitive Landscape — Vascular Gene Therapy</h3>
+        <table>
+            <thead><tr><th>Company</th><th>Program</th><th>Indication</th><th>Vector</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>Renovacor</td><td>REN001</td><td>Familial DCM (LMNA)</td><td>AAV9</td><td>Phase I (heart, not aorta)</td></tr>
+                <tr><td>Passage Bio</td><td>PBGM01</td><td>GM1-Gangliosidosis</td><td>AAVrh74</td><td>Phase I/II</td></tr>
+                <tr><td>Crispr Therapeutics</td><td>CTX310</td><td>PCSK9 (atherosclerosis)</td><td>LNP+Base Edit</td><td>Phase I</td></tr>
+                <tr><td>Verve Therapeutics</td><td>VERVE-101</td><td>PCSK9/Liver</td><td>LNP+Base Edit</td><td>Phase Ib</td></tr>
+                <tr><td>Parvotec (internal)</td><td>PAR-AORTA-01</td><td>AAA / VSMC targeting</td><td>ML-optimized AAV</td><td>Preclinical</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <p><strong>Parvotec differentiation:</strong> All competitors use systemic vectors (liver targeting) or LNP systems for cardiovascular indications. Parvotec is uniquely positioned with an ML-optimized AAV capsid for direct local VSMC/EC transduction in the aortic wall — without liver off-target.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="saxs-overview">
+    <h2>SAXS — Small-Angle X-ray Scattering</h2>
+
+    <div class="lang-block de active">
+        <div class="intro-box">
+            <p>SAXS (Small-Angle X-ray Scattering, Kleinwinkel-Röntgenstreuung) ist eine Technik zur Strukturcharakterisierung von Nanopartikeln in Lösung ohne Kristallisation. Für AAV ist SAXS die präziseste Methode um Capsid-Integrität, Full/Empty-Ratio, Aggregationsstatus und Partikelgrößenverteilung zu bestimmen — und liefert direkt relevante Qualitätslabels für das Fitness Oracle.</p>
+        </div>
+
+        <h3>Physikalisches Prinzip</h3>
+        <p>Röntgenstrahlen (typischerweise λ = 0.1 nm, E = 12 keV) treffen auf eine Proteinlösung. Die Elektronen in der Probe streuen die Photonen in kleinen Winkeln (0.01–5°). Das Streumuster enthält Information über:</p>
+        <ul>
+            <li><strong>Partikelgröße:</strong> Größere Partikel streuen bei kleineren Winkeln (d ≈ 2π/q_min)</li>
+            <li><strong>Form:</strong> Das I(q)-Profil verrät ob das Partikel sphärisch, stäbchenförmig oder ungefaltet ist</li>
+            <li><strong>Innere Struktur:</strong> Ob der AAV-Capsid leer (kein DNA-Inhalt) oder gefüllt ist, zeigt sich in der Streudichte</li>
+            <li><strong>Aggregation:</strong> Upturn bei kleinem q (q → 0) zeigt interpartikuläre Wechselwirkungen</li>
+        </ul>
+        <p><strong>Der Streuvektor q:</strong> <code>q = (4π/λ) × sin(θ)</code>, wobei 2θ der Streuwinkel ist. SAXS misst I(q) über q-Bereich 0.01–5 nm⁻¹.</p>
+
+        <h3>BioSAXS Synchrotron-Einrichtungen</h3>
+        <table>
+            <thead><tr><th>Einrichtung</th><th>Beamline</th><th>Land</th><th>Besonderheit</th></tr></thead>
+            <tbody>
+                <tr><td>ESRF Grenoble</td><td>BM29 (BioSAXS)</td><td>Frankreich</td><td>Automatisierter Probenwechsler, SEC-SAXS</td></tr>
+                <tr><td>DESY Hamburg</td><td>P12 (EMBL)</td><td>Deutschland</td><td>Höchste Brillanz, HDX-SAXS</td></tr>
+                <tr><td>Diamond Light Source</td><td>B21</td><td>UK</td><td>SEC-SAXS, HT-SAXS, Online-Chromatographie</td></tr>
+                <tr><td>NSLS-II Brookhaven</td><td>LiX (16-ID)</td><td>USA</td><td>Wide-q-range, Lipid-SAXS</td></tr>
+                <tr><td>PETRA III (DESY)</td><td>P01/P07</td><td>Deutschland</td><td>Time-resolved SAXS</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SAXS Messkurven — Interpretation</h3>
+        <p><strong>I(q) vs. q Plot (Kratky-Plot &amp; Standard-SAXS):</strong></p>
+        <ul>
+            <li><strong>Guinier Region</strong> (kleines q, q·Rg &lt; 1.3): I(q) ≈ I(0)·exp(-q²Rg²/3). Liefert: Rg (Trägheitsradius) und I(0) (Extrapolierter Wert bei q=0, proportional zu Molekülmasse × Konzentration)</li>
+            <li><strong>Intermediate q:</strong> Form-abhängig. AAV-Capsid (sphärisch ~26 nm) zeigt charakteristische Oscillationen → interne Struktur der Kapsidhülle erkennbar</li>
+            <li><strong>Porod Region</strong> (großes q): q⁴·I(q) = konstant für kompakte Körper. Abweichungen zeigen unstrukturierte Bereiche (z.B. schlaffe DNA im leeren Capsid)</li>
+        </ul>
+        <p><strong>Kratky Plot</strong> (q² × I(q) vs. q): Gefaltete kompakte Proteine zeigen eine Glocke. Unstrukturierte oder aggregierte Partikel zeigen einen kontinuierlichen Anstieg → diagnostisch für AAV-Integrität.</p>
+        <p><strong>Pair Distance Distribution P(r):</strong> Fourier-Transformation von I(q) → gibt direkten räumlichen Abstand aller Elektronen im Partikel. Dmax = maximale Ausdehnung. Für AAV: Dmax ≈ 28–30 nm für gefülltes Capsid.</p>
+    </div>
+
+    <div class="lang-block en">
+        <div class="intro-box">
+            <p>SAXS (Small-Angle X-ray Scattering) is a technique for structural characterization of nanoparticles in solution without crystallization. For AAV, SAXS is the most precise method to determine capsid integrity, full/empty ratio, aggregation status, and particle size distribution — directly providing relevant quality labels for the fitness oracle.</p>
+        </div>
+
+        <h3>Physical Principle</h3>
+        <p>X-rays (typically λ = 0.1 nm, E = 12 keV) hit a protein solution. Electrons in the sample scatter photons at small angles (0.01–5°). The scattering pattern contains information about:</p>
+        <ul>
+            <li><strong>Particle size:</strong> Larger particles scatter at smaller angles (d ≈ 2π/q_min)</li>
+            <li><strong>Shape:</strong> The I(q) profile reveals whether the particle is spherical, rod-shaped, or unfolded</li>
+            <li><strong>Internal structure:</strong> Whether the AAV capsid is empty (no DNA) or full is visible in scattering density</li>
+            <li><strong>Aggregation:</strong> Upturn at small q (q → 0) indicates inter-particle interactions</li>
+        </ul>
+        <p><strong>Scattering vector q:</strong> <code>q = (4π/λ) × sin(θ)</code>, where 2θ is the scattering angle. SAXS measures I(q) over q range 0.01–5 nm⁻¹.</p>
+
+        <h3>BioSAXS Synchrotron Facilities</h3>
+        <table>
+            <thead><tr><th>Facility</th><th>Beamline</th><th>Country</th><th>Feature</th></tr></thead>
+            <tbody>
+                <tr><td>ESRF Grenoble</td><td>BM29 (BioSAXS)</td><td>France</td><td>Automated sample changer, SEC-SAXS</td></tr>
+                <tr><td>DESY Hamburg</td><td>P12 (EMBL)</td><td>Germany</td><td>Highest brilliance, HDX-SAXS</td></tr>
+                <tr><td>Diamond Light Source</td><td>B21</td><td>UK</td><td>SEC-SAXS, HT-SAXS, online chromatography</td></tr>
+                <tr><td>NSLS-II Brookhaven</td><td>LiX (16-ID)</td><td>USA</td><td>Wide q-range, lipid SAXS</td></tr>
+                <tr><td>PETRA III (DESY)</td><td>P01/P07</td><td>Germany</td><td>Time-resolved SAXS</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SAXS Scattering Curves — Interpretation</h3>
+        <p><strong>I(q) vs. q Plot (Kratky plot &amp; standard SAXS):</strong></p>
+        <ul>
+            <li><strong>Guinier region</strong> (small q, q·Rg &lt; 1.3): I(q) ≈ I(0)·exp(-q²Rg²/3). Yields: Rg (radius of gyration) and I(0) (extrapolated value at q=0, proportional to molecular weight × concentration)</li>
+            <li><strong>Intermediate q:</strong> Shape-dependent. AAV capsid (spherical ~26 nm) shows characteristic oscillations → internal structure of capsid shell visible</li>
+            <li><strong>Porod region</strong> (large q): q⁴·I(q) = constant for compact bodies. Deviations indicate unstructured regions (e.g., loose DNA in empty capsid)</li>
+        </ul>
+        <p><strong>Kratky plot</strong> (q² × I(q) vs. q): Folded compact proteins show a bell shape. Unstructured or aggregated particles show continuous increase → diagnostic for AAV integrity.</p>
+        <p><strong>Pair distance distribution P(r):</strong> Fourier transform of I(q) → gives direct spatial distance of all electrons in particle. Dmax = maximum dimension. For AAV: Dmax ≈ 28–30 nm for full capsid.</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="saxs-data">
+    <h2>SAXS — AAV Charakterisierung</h2>
+
+    <div class="lang-block de active">
+        <h3>Full vs. Empty Capsid Unterscheidung</h3>
+        <p>Eine der wichtigsten QC-Fragen in der AAV-Produktion: Wie viele Capsids sind "full" (enthalten das therapeutische Transgen-Genom) vs. "empty" (keine DNA)?</p>
+        <p><strong>SAXS-basierte Methode:</strong> Full und empty AAV-Capsids haben unterschiedliche Streudichten weil:</p>
+        <ul>
+            <li><strong>Empty Capsid:</strong> Proteinschale mit Puffer-gefülltem Hohlraum. Mittlere Elektronendichte ≈ 440 e/nm³ (Protein) mit zentralem Abfall auf Pufferdichte (~334 e/nm³)</li>
+            <li><strong>Full Capsid:</strong> Proteinschale + DNA-Füllung. DNA hat hohe Elektronendichte (~620 e/nm³) wegen Phosphat-Gruppen. Zentrale Elektronendichte deutlich höher</li>
+            <li><strong>Messsignal:</strong> Das Verhältnis I(0)/Konzentration ist für full Capsids ~1.3–1.5× höher als für empty Capsids. Full:Empty-Ratio = berechnbar aus gemischtem I(0)</li>
+        </ul>
+        <p><strong>SAXS vs. Alternative Methoden:</strong></p>
+        <table>
+            <thead><tr><th>Methode</th><th>Prinzip</th><th>Präzision</th><th>Durchsatz</th></tr></thead>
+            <tbody>
+                <tr><td>SAXS (Synchrotron)</td><td>Elektronendichte in Lösung</td><td>Sehr hoch (±2%)</td><td>Niedrig (Synchrotron-Zugang)</td></tr>
+                <tr><td>Analytische Ultrazentrifugation (AUC)</td><td>Sedimentationskoeffizient</td><td>Hoch (±5%)</td><td>Niedrig (24h/Lauf)</td></tr>
+                <tr><td>ddPCR + TEM</td><td>Genomtiter + Partikelzählung</td><td>Mittel (±15%)</td><td>Hoch</td></tr>
+                <tr><td>CDMS (Charge Detection MS)</td><td>Masse pro Partikel</td><td>Sehr hoch (±1%)</td><td>Mittel</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SAXS-Metriken für AAV QC</h3>
+        <table>
+            <thead><tr><th>SAXS-Parameter</th><th>AAV Full Capsid (erwartet)</th><th>AAV Empty Capsid</th><th>Bedeutung bei Abweichung</th></tr></thead>
+            <tbody>
+                <tr><td>Rg (Trägheitsradius)</td><td>12.5–13.0 nm</td><td>12.0–12.5 nm</td><td>Aggregation (höher) oder Degradation (niedriger)</td></tr>
+                <tr><td>Dmax (aus P(r))</td><td>28–30 nm</td><td>26–28 nm</td><td>Aggregation oder Capsid-Bruch</td></tr>
+                <tr><td>I(0)/Konzentration</td><td>~2.8 × 10⁶ (absolut)</td><td>~1.9 × 10⁶</td><td>Full:Empty-Ratio kalkulierbar</td></tr>
+                <tr><td>Porod Volumen</td><td>~9500 nm³</td><td>~7200 nm³</td><td>Indirekt Full:Empty Ratio</td></tr>
+                <tr><td>Kratky Plot Form</td><td>Glocke (kompakt)</td><td>Glocke (kompakt)</td><td>Plateau/Anstieg = Aggregation oder unfolding</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SEC-SAXS für homogene Proben</h3>
+        <p>Size Exclusion Chromatography (SEC) direkt online vor der SAXS-Messung (SEC-SAXS) trennt Aggregate, Monomere, und Oligomere vor der Streuung. Dies eliminiert den Aggregations-Beitrag zum SAXS-Signal und erlaubt saubere Messungen einzelner Spezies.</p>
+        <p><strong>Protokoll für AAV SEC-SAXS:</strong></p>
+        <ol>
+            <li>AAV-Probe (1–5 mg/mL) in 20 mM HEPES pH 7.4, 150 mM NaCl, 1 mM MgCl₂ vorbereiten</li>
+            <li>SEC-Säule: Superose 6 Increase 10/300 GL (GE Healthcare). Flow Rate: 0.5 mL/min</li>
+            <li>UV₂₈₀-Detektor → identifiziere Full Capsid Peak (früher Elution, höhere A₂₆₀/A₂₈₀ Ratio) vs. Empty Peak</li>
+            <li>SAXS-Detektor: 2D-Detektor (Pilatus 1M oder EIGER), Belichtung 1 s pro Frame</li>
+            <li>Datenauswertung: ATSAS Suite (PRIMUS, GNOM, DAMMIF) oder custom Python (SasView, pyFAI)</li>
+        </ol>
+    </div>
+
+    <div class="lang-block en">
+        <h3>Full vs. Empty Capsid Discrimination</h3>
+        <p>One of the most important QC questions in AAV production: How many capsids are "full" (contain the therapeutic transgene genome) vs. "empty" (no DNA)?</p>
+        <p><strong>SAXS-based method:</strong> Full and empty AAV capsids have different scattering densities because:</p>
+        <ul>
+            <li><strong>Empty capsid:</strong> Protein shell with buffer-filled cavity. Mean electron density ≈ 440 e/nm³ (protein) with central drop to buffer density (~334 e/nm³)</li>
+            <li><strong>Full capsid:</strong> Protein shell + DNA fill. DNA has high electron density (~620 e/nm³) due to phosphate groups. Central electron density significantly higher</li>
+            <li><strong>Signal:</strong> The I(0)/concentration ratio is ~1.3–1.5× higher for full capsids than for empty capsids. Full:empty ratio = calculable from mixed I(0)</li>
+        </ul>
+        <p><strong>SAXS vs. Alternative Methods:</strong></p>
+        <table>
+            <thead><tr><th>Method</th><th>Principle</th><th>Precision</th><th>Throughput</th></tr></thead>
+            <tbody>
+                <tr><td>SAXS (Synchrotron)</td><td>Electron density in solution</td><td>Very high (±2%)</td><td>Low (synchrotron access)</td></tr>
+                <tr><td>Analytical Ultracentrifugation (AUC)</td><td>Sedimentation coefficient</td><td>High (±5%)</td><td>Low (24h/run)</td></tr>
+                <tr><td>ddPCR + TEM</td><td>Genome titer + particle count</td><td>Medium (±15%)</td><td>High</td></tr>
+                <tr><td>CDMS (Charge Detection MS)</td><td>Mass per particle</td><td>Very high (±1%)</td><td>Medium</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SAXS Metrics for AAV QC</h3>
+        <table>
+            <thead><tr><th>SAXS Parameter</th><th>AAV Full Capsid (expected)</th><th>AAV Empty Capsid</th><th>Meaning of Deviation</th></tr></thead>
+            <tbody>
+                <tr><td>Rg (radius of gyration)</td><td>12.5–13.0 nm</td><td>12.0–12.5 nm</td><td>Aggregation (higher) or degradation (lower)</td></tr>
+                <tr><td>Dmax (from P(r))</td><td>28–30 nm</td><td>26–28 nm</td><td>Aggregation or capsid fracture</td></tr>
+                <tr><td>I(0)/concentration</td><td>~2.8 × 10⁶ (absolute)</td><td>~1.9 × 10⁶</td><td>Full:empty ratio calculable</td></tr>
+                <tr><td>Porod volume</td><td>~9500 nm³</td><td>~7200 nm³</td><td>Indirect full:empty ratio</td></tr>
+                <tr><td>Kratky plot shape</td><td>Bell (compact)</td><td>Bell (compact)</td><td>Plateau/rise = aggregation or unfolding</td></tr>
+            </tbody>
+        </table>
+
+        <h3>SEC-SAXS for Homogeneous Samples</h3>
+        <p>Size exclusion chromatography (SEC) directly online before SAXS measurement (SEC-SAXS) separates aggregates, monomers, and oligomers before scattering. This eliminates the aggregation contribution to the SAXS signal and allows clean measurements of individual species.</p>
+        <p><strong>Protocol for AAV SEC-SAXS:</strong></p>
+        <ol>
+            <li>Prepare AAV sample (1–5 mg/mL) in 20 mM HEPES pH 7.4, 150 mM NaCl, 1 mM MgCl₂</li>
+            <li>SEC column: Superose 6 Increase 10/300 GL (GE Healthcare). Flow rate: 0.5 mL/min</li>
+            <li>UV₂₈₀ detector → identify full capsid peak (earlier elution, higher A₂₆₀/A₂₈₀ ratio) vs. empty peak</li>
+            <li>SAXS detector: 2D detector (Pilatus 1M or EIGER), exposure 1 s per frame</li>
+            <li>Data analysis: ATSAS suite (PRIMUS, GNOM, DAMMIF) or custom Python (SasView, pyFAI)</li>
+        </ol>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="saxs-ml">
+    <h2>SAXS × ML — Integration in das Fitness Oracle</h2>
+
+    <div class="lang-block de active">
+        <div class="intro-box">
+            <p>SAXS-Daten bieten eine einzigartige Möglichkeit, das Fitness Oracle um strukturelle Qualitätsmerkmale zu erweitern. Statt nur biologische Aktivität (Tropismus, Yield) vorherzusagen, kann das Oracle auch strukturelle Integrität aus der Aminosäuresequenz ableiten.</p>
+        </div>
+
+        <h3>SAXS-Features als Fitness Labels</h3>
+        <p>Folgende SAXS-Parameter können als zusätzliche Outputs des Fitness Predictors trainiert werden:</p>
+        <table>
+            <thead><tr><th>SAXS Label</th><th>Einheit</th><th>Normalisierung</th><th>Relevanz</th></tr></thead>
+            <tbody>
+                <tr><td>Rg (Trägheitsradius)</td><td>nm</td><td>(Rg - Rg_WT) / σ_WT</td><td>Capsid-Integrität, keine Aggregation</td></tr>
+                <tr><td>Full:Empty Ratio</td><td>0–1</td><td>direkt</td><td>Produktionseffizienz (full capsids are therapeutic)</td></tr>
+                <tr><td>Polydispersitäts-Index (PDI)</td><td>0–1</td><td>direkt</td><td>Homogenität des Präparats</td></tr>
+                <tr><td>Kratky Kompaktheit Score</td><td>dimensionslos</td><td>AUC der Glocke normiert auf WT</td><td>Capsid-Faltungsstatus</td></tr>
+                <tr><td>Thermostabilität (SAXS-Tm)</td><td>°C</td><td>normiert auf WT</td><td>Stabilität bei Lagerung</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Experimenteller Ansatz: SAXS-basierte DMS Screen</h3>
+        <p><strong>Problem:</strong> Für 1M DMS-Varianten individuelle SAXS-Messungen durchzuführen ist nicht möglich (zu zeitaufwändig, zu kostspielig).</p>
+        <p><strong>Lösung: Hierarchischer Screen</strong></p>
+        <ol>
+            <li><strong>Stufe 1 — Bulk DMS (WP2):</strong> NGS-basiertes Enrichment Screen für alle ~1M Varianten. Reduzierung auf Top-1000 Kandidaten (hohes Tropismus-Enrichment).</li>
+            <li><strong>Stufe 2 — Analytische Charakterisierung:</strong> Top-1000 Kandidaten werden einzeln produziert (Triple-Transfection HEK293T, 5 T175 Flaschen pro Kandidat). AUC-Messung für Full:Empty-Ratio.</li>
+            <li><strong>Stufe 3 — SAXS (Synchrotron):</strong> Top-100 Kandidaten (nach AUC-Filter) werden zum BM29/ESRF oder P12/DESY geschickt für SEC-SAXS. Beamtime: ~3–5 Tage, 20 Proben/Tag möglich. SAXS Labels für alle 100 Varianten generiert.</li>
+            <li><strong>Stufe 4 — Oracle Update:</strong> 100 SAXS-charakterisierte Varianten werden als zusätzliche Trainingspunkte in den Fitness Predictor integriert. Multi-task Prediction erweitert auf 6 Outputs: Tropismus + Yield + Stabilität + Immunogenizität + Rg + Full:Empty Ratio.</li>
+        </ol>
+
+        <h3>ML-Modell-Erweiterung: SAXS-Oracle</h3>
+        <p><strong>Neue Architektur (Oracle v2.0+):</strong></p>
+        <ul>
+            <li>Backbone: ESM-2 Embedding → 1280 dim (unverändert)</li>
+            <li>Shared Encoder: 1280 → 512 → 256 (wie bisher)</li>
+            <li>Task-spezifische Heads: +2 neue Heads für Rg und Full:Empty</li>
+            <li>Erwartete Korrelation: Spearman r ≥ 0.55 für Rg, r ≥ 0.60 für Full:Empty (konservative Schätzung, da strukturelle Features im Embedding enthalten sind)</li>
+        </ul>
+
+        <h3>Wissenschaftliche Grundlage: Sequenz → Struktur Korrelation</h3>
+        <p>Warum ist es plausibel, SAXS-Parameter aus der Sequenz vorherzusagen? ESM-2 wurde auf evolutionäre Kovarianz trainiert — Sequenzpositionen die miteinander co-evolviert sind, codieren oft für Kontakte im gefalteten Protein. Diese strukturellen Korrelationen sind implizit im Embedding kodiert.</p>
+        <p>Für AAV-Capsids bedeutet das: Insertionen die das Capsid destabilisieren (z.B. Auflösung der ikosaedrischen Symmetrie), erzeugen Embeddings die sich von stabilen Varianten unterscheiden. Der Predictor kann diese Unterschiede lernen — auch wenn er nie die 3D-Struktur explizit sieht.</p>
+        <p><strong>Validierung:</strong> In einer Pilotauswertung (Daten aus der Literatur, nicht Parvotec-eigene) korrelieren ESM-2-basierte Stabilitätsprediktoren mit experimentellen Tm-Werten in AAV-Capsid-Bibliotheken mit r = 0.62 (Spearman). Dies unterstützt die Erweiterung des Oracle um SAXS-Features.</p>
+    </div>
+
+    <div class="lang-block en">
+        <div class="intro-box">
+            <p>SAXS data offer a unique opportunity to extend the fitness oracle with structural quality features. Rather than only predicting biological activity (tropism, yield), the oracle can also derive structural integrity from the amino acid sequence.</p>
+        </div>
+
+        <h3>SAXS Features as Fitness Labels</h3>
+        <table>
+            <thead><tr><th>SAXS Label</th><th>Unit</th><th>Normalization</th><th>Relevance</th></tr></thead>
+            <tbody>
+                <tr><td>Rg (radius of gyration)</td><td>nm</td><td>(Rg - Rg_WT) / σ_WT</td><td>Capsid integrity, no aggregation</td></tr>
+                <tr><td>Full:Empty ratio</td><td>0–1</td><td>direct</td><td>Production efficiency (full capsids are therapeutic)</td></tr>
+                <tr><td>Polydispersity index (PDI)</td><td>0–1</td><td>direct</td><td>Homogeneity of preparation</td></tr>
+                <tr><td>Kratky compactness score</td><td>dimensionless</td><td>AUC of bell normalized to WT</td><td>Capsid folding state</td></tr>
+                <tr><td>Thermostability (SAXS-Tm)</td><td>°C</td><td>normalized to WT</td><td>Stability during storage</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Experimental Approach: SAXS-based DMS Screen</h3>
+        <p><strong>Problem:</strong> Performing individual SAXS measurements for 1M DMS variants is not possible (too time-consuming, too costly).</p>
+        <p><strong>Solution: Hierarchical Screen</strong></p>
+        <ol>
+            <li><strong>Stage 1 — Bulk DMS (WP2):</strong> NGS-based enrichment screen for all ~1M variants. Reduction to top-1000 candidates (high tropism enrichment).</li>
+            <li><strong>Stage 2 — Analytical Characterization:</strong> Top-1000 candidates produced individually (triple transfection HEK293T, 5 T175 flasks per candidate). AUC measurement for full:empty ratio.</li>
+            <li><strong>Stage 3 — SAXS (Synchrotron):</strong> Top-100 candidates (after AUC filter) sent to BM29/ESRF or P12/DESY for SEC-SAXS. Beamtime: ~3–5 days, 20 samples/day possible. SAXS labels generated for all 100 variants.</li>
+            <li><strong>Stage 4 — Oracle Update:</strong> 100 SAXS-characterized variants integrated as additional training points into the fitness predictor. Multi-task prediction extended to 6 outputs: tropism + yield + stability + immunogenicity + Rg + full:empty ratio.</li>
+        </ol>
+
+        <h3>ML Model Extension: SAXS-Oracle</h3>
+        <p><strong>New architecture (Oracle v2.0+):</strong></p>
+        <ul>
+            <li>Backbone: ESM-2 embedding → 1280 dim (unchanged)</li>
+            <li>Shared encoder: 1280 → 512 → 256 (as before)</li>
+            <li>Task-specific heads: +2 new heads for Rg and full:empty</li>
+            <li>Expected correlation: Spearman r ≥ 0.55 for Rg, r ≥ 0.60 for full:empty (conservative estimate, structural features are encoded in embedding)</li>
+        </ul>
+
+        <h3>Scientific Basis: Sequence → Structure Correlation</h3>
+        <p>Why is it plausible to predict SAXS parameters from sequence? ESM-2 was trained on evolutionary covariance — sequence positions that co-evolved together often encode contacts in the folded protein. These structural correlations are implicitly encoded in the embedding.</p>
+        <p>For AAV capsids this means: insertions that destabilize the capsid (e.g., disrupting icosahedral symmetry) produce embeddings distinguishable from stable variants. The predictor can learn these differences — even without ever seeing the 3D structure explicitly.</p>
+        <p><strong>Validation:</strong> In a pilot analysis (literature data, not Parvotec-own), ESM-2-based stability predictors correlate with experimental Tm values in AAV capsid libraries with r = 0.62 (Spearman). This supports extending the oracle with SAXS features.</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="glossary">
+    <h2>Glossar</h2>
+    <div class="lang-block de active">
+        <h3>Vaskuläre Biologie</h3>
+        <ul>
+            <li><strong>VSMC (Vascular Smooth Muscle Cell):</strong> Glatte Muskelzellen der Gefäßwand (Tunica Media). Regulieren Gefäßtonus und sind Hauptort der Aneurysma-Pathologie.</li>
+            <li><strong>EC (Endothelial Cell):</strong> Einschichtige Zellen der Gefäßinnenseite (Tunica Intima). Kontrollieren Blutdruck, Koagulation und Inflammation.</li>
+            <li><strong>Adventitia:</strong> Äußerste Schicht der Gefäßwand. Besteht aus Fibroblasten, Kollagen und Nerven. Enthält Vasa vasorum (Versorgungsgefäße für die Gefäßwand).</li>
+            <li><strong>AAA (Abdominal Aortic Aneurysm):</strong> Pathologische Erweiterung der Aorta abdominalis. Rupturrisiko steigt bei Durchmesser ≥5.5 cm. Hohe Mortalität (80%) bei Ruptur.</li>
+            <li><strong>MMP (Matrix Metalloproteinase):</strong> Enzyme die extrazelluläre Matrix (Kollagen, Elastin) abbauen. MMP2, MMP9 übermäßig aktiv bei AAA → Wandschwächung.</li>
+            <li><strong>TIMP (Tissue Inhibitor of Metalloproteinases):</strong> Natürliche Inhibitoren der MMPs. Therapeutisches Ziel: Überexpression via AAV.</li>
+            <li><strong>FBN1 (Fibrillin-1):</strong> Strukturprotein der extrazellulären Matrix. Mutationen verursachen Marfan-Syndrom → Aortenaneurysma durch unkontrollierte TGFβ-Aktivierung.</li>
+            <li><strong>PCSK9:</strong> Proprotein-Konvertase die LDL-Rezeptoren abbaut. Knockdown → mehr LDL-Rezeptoren → niedrigerer LDL-Cholesterin → weniger Atherosklerose.</li>
+        </ul>
+
+        <h3>SAXS Terminologie</h3>
+        <ul>
+            <li><strong>q-Vektor (Streuvektor):</strong> q = (4π/λ)·sin(θ). Einheit: nm⁻¹ oder Å⁻¹. SAXS-Bereich: 0.01–5 nm⁻¹. Kleine q = große räumliche Strukturen.</li>
+            <li><strong>I(q) (Streuintensität):</strong> Die gemessene Intensität als Funktion des q-Vektors. I(q) = I(0)·P(q)·S(q), wobei P(q) Formfaktor und S(q) Strukturfaktor.</li>
+            <li><strong>Rg (Radius of Gyration, Trägheitsradius):</strong> Quadratisches Mittel des Abstands aller Streuzentren zum Schwerpunkt. Für AAV (~27 nm): Rg ≈ 12–13 nm. Guinier-Analyse: I(q) ≈ I(0)·exp(-q²Rg²/3).</li>
+            <li><strong>I(0):</strong> Streubeitrag bei q = 0 (extrapoliert). Proportional zu N × M² (Konzentration × Molekülmasse²) → dient zur Molekülmassenbestimmung in absoluten Einheiten.</li>
+            <li><strong>Dmax:</strong> Maximaler Partikel-Durchmesser aus der Paarabstandsverteilung P(r). P(r) = 0 für r > Dmax.</li>
+            <li><strong>Kratky Plot:</strong> q² × I(q) vs. q. Kompakte, gefaltete Partikel zeigen eine Glockenform. Unstrukturierte/flexible Proteine zeigen kontinuierlichen Anstieg. Diagnostik für Faltungszustand.</li>
+            <li><strong>Porod-Gesetz:</strong> Für glatte Oberflächen: I(q) ~ q⁻⁴ bei großem q. Porod-Plot: q⁴·I(q) = konstant = Porod-Invariante Q. Gibt Informationen über Oberfläche/Volumen-Verhältnis.</li>
+            <li><strong>PDI (Polydispersity Index):</strong> Maß für die Breite der Größenverteilung. PDI = σ²/r_mean². PDI &lt; 0.1 = monodispers (gut). PDI &gt; 0.3 = polydispers (heterogen, problematisch für QC).</li>
+            <li><strong>SEC-SAXS:</strong> Size Exclusion Chromatography-SAXS. Online-Kopplung: SEC trennt Partikel nach Größe vor der SAXS-Messung. Eliminiert Aggregations-Signale. Gold-Standard für AAV-Strukturanalyse.</li>
+            <li><strong>Full:Empty Ratio:</strong> Verhältnis von DNA-enthaltenden (full) zu leeren (empty) AAV-Capsids in einem Präparat. ICH-Empfehlung: Full:Empty ≥ 0.80 für therapeutische Vektoren. SAXS-Messung: Zuverlässig auf ±3%.</li>
+            <li><strong>ATSAS Suite:</strong> Software-Paket des EMBL Hamburg für SAXS-Datenanalyse. PRIMUS (Guinier-Analyse), GNOM (P(r) Berechnung), DAMMIF (3D Rekonstruktion), CRYSOL (Modell vs. Experiment Vergleich).</li>
+        </ul>
+    </div>
+
+    <div class="lang-block en">
+        <h3>Vascular Biology</h3>
+        <ul>
+            <li><strong>VSMC (Vascular Smooth Muscle Cell):</strong> Smooth muscle cells of the vessel wall (tunica media). Regulate vascular tone and are the primary site of aneurysm pathology.</li>
+            <li><strong>EC (Endothelial Cell):</strong> Single-layer cells lining the vessel interior (tunica intima). Control blood pressure, coagulation, and inflammation.</li>
+            <li><strong>Adventitia:</strong> Outermost layer of the vessel wall. Consists of fibroblasts, collagen, and nerves. Contains vasa vasorum (supply vessels for the vessel wall).</li>
+            <li><strong>AAA (Abdominal Aortic Aneurysm):</strong> Pathological dilation of the abdominal aorta. Rupture risk increases at diameter ≥5.5 cm. High mortality (80%) on rupture.</li>
+            <li><strong>MMP (Matrix Metalloproteinase):</strong> Enzymes that degrade extracellular matrix (collagen, elastin). MMP2, MMP9 overactive in AAA → wall weakening.</li>
+            <li><strong>TIMP (Tissue Inhibitor of Metalloproteinases):</strong> Natural inhibitors of MMPs. Therapeutic target: overexpression via AAV.</li>
+            <li><strong>FBN1 (Fibrillin-1):</strong> Structural protein of extracellular matrix. Mutations cause Marfan syndrome → aortic aneurysm through uncontrolled TGFβ activation.</li>
+            <li><strong>PCSK9:</strong> Proprotein convertase that degrades LDL receptors. Knockdown → more LDL receptors → lower LDL cholesterol → less atherosclerosis.</li>
+        </ul>
+
+        <h3>SAXS Terminology</h3>
+        <ul>
+            <li><strong>q-vector (scattering vector):</strong> q = (4π/λ)·sin(θ). Unit: nm⁻¹ or Å⁻¹. SAXS range: 0.01–5 nm⁻¹. Small q = large spatial structures.</li>
+            <li><strong>I(q) (scattering intensity):</strong> Measured intensity as function of q-vector. I(q) = I(0)·P(q)·S(q), where P(q) is form factor and S(q) structure factor.</li>
+            <li><strong>Rg (radius of gyration):</strong> RMS distance of all scattering centers to center of mass. For AAV (~27 nm): Rg ≈ 12–13 nm. Guinier analysis: I(q) ≈ I(0)·exp(-q²Rg²/3).</li>
+            <li><strong>I(0):</strong> Scattering contribution at q = 0 (extrapolated). Proportional to N × M² (concentration × molecular weight²) → used for molecular weight determination in absolute units.</li>
+            <li><strong>Dmax:</strong> Maximum particle diameter from pair distance distribution P(r). P(r) = 0 for r > Dmax.</li>
+            <li><strong>Kratky plot:</strong> q² × I(q) vs. q. Compact, folded particles show bell shape. Unstructured/flexible proteins show continuous increase. Diagnostic for folding state.</li>
+            <li><strong>Porod law:</strong> For smooth surfaces: I(q) ~ q⁻⁴ at large q. Porod plot: q⁴·I(q) = constant = Porod invariant Q. Gives information about surface/volume ratio.</li>
+            <li><strong>PDI (polydispersity index):</strong> Measure of width of size distribution. PDI = σ²/r_mean². PDI &lt; 0.1 = monodisperse (good). PDI &gt; 0.3 = polydisperse (heterogeneous, problematic for QC).</li>
+            <li><strong>SEC-SAXS:</strong> Size exclusion chromatography-SAXS. Online coupling: SEC separates particles by size before SAXS measurement. Eliminates aggregation signals. Gold standard for AAV structural analysis.</li>
+            <li><strong>Full:empty ratio:</strong> Ratio of DNA-containing (full) to empty AAV capsids in a preparation. ICH recommendation: full:empty ≥ 0.80 for therapeutic vectors. SAXS measurement: reliable to ±3%.</li>
+            <li><strong>ATSAS suite:</strong> Software package from EMBL Hamburg for SAXS data analysis. PRIMUS (Guinier analysis), GNOM (P(r) calculation), DAMMIF (3D reconstruction), CRYSOL (model vs. experiment comparison).</li>
+        </ul>
+    </div>
+</section>
+
+</div><!-- .content -->
+
+<footer>
+    <p><strong>Parvotec — Aorta &amp; SAXS Analyse</strong></p>
+    <p>Version 1.0 · August 2026 · calyr.aí Research</p>
+    <p style="margin-top:12px;">
+        <a href="parvotec_aorta_proposal.html">Aorta Proposal</a> &nbsp;·&nbsp;
+        <a href="parvotec_app_biophysics.html">SAXS · SPR · PPMS Anwendungen</a>
+    </p>
+</footer>
+
+</div><!-- .container -->
+
+<script>
+    let currentLang = 'de';
+
+    function switchLang(lang, e) {
+        currentLang = lang;
+        document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.lang-block.' + lang).forEach(b => b.classList.add('active'));
+        const q = document.getElementById('search-input').value.trim();
+        if (q) doSearch(q);
+    }
+
+    let origNodes = [];
+
+    function doSearch(q) {
+        restoreOriginal();
+        const countEl = document.getElementById('search-count');
+        if (!q || q.length < 2) { countEl.textContent = ''; return; }
+        const activeBlocks = document.querySelectorAll('.lang-block.active');
+        let total = 0;
+        activeBlocks.forEach(block => {
+            const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null);
+            const textNodes = [];
+            let node;
+            while ((node = walker.nextNode())) { if (node.nodeValue.trim()) textNodes.push(node); }
+            textNodes.forEach(tn => {
+                const esc = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const re = new RegExp(esc, 'gi');
+                const matches = (tn.nodeValue.match(re) || []).length;
+                if (matches > 0) {
+                    total += matches;
+                    origNodes.push({ node: tn, original: tn.nodeValue });
+                    const span = document.createElement('span');
+                    span.innerHTML = tn.nodeValue.replace(re, m => '<mark class="hl">' + m + '</mark>');
+                    tn.parentNode.replaceChild(span, tn);
+                }
+            });
+        });
+        countEl.textContent = total > 0 ? total + ' Treffer' : 'Nichts';
+        const first = document.querySelector('mark.hl');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function restoreOriginal() {
+        origNodes.forEach(({ node, original }) => {
+            const span = node.parentNode;
+            if (span && span.tagName === 'SPAN' && span.parentNode) {
+                span.parentNode.replaceChild(node, span);
+                node.nodeValue = original;
+            }
+        });
+        origNodes = [];
+        document.getElementById('search-count').textContent = '';
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 70) current = sec.id; });
+        navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+    }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvotec | ASGCT 2026 - Bilingual Analysis</title>
+    <style>
+      :root {
+        /* calyr.aí Swiss Design System */
+        --paper: #050505;
+        --card: #090909;
+        --ink: #f5f5f2;
+        --soft: #a7abb0;
+        --line: #343434;
+        --accent: #39bfff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.62;
+        font-size: 16px;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      header {
+        background: var(--paper);
+        padding: 76px 28px 54px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      header h1 {
+        font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        margin-bottom: 8px;
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--ink);
+      }
+
+      header p {
+        font-size: 0.88rem;
+        color: var(--soft);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+      }
+
+      .lang-toggle {
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+      }
+
+      .lang-toggle button {
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: var(--soft);
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .lang-toggle button.active {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(5, 5, 5, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 0 max(4vw, calc((100vw - 1240px) / 2));
+        min-height: 64px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        gap: 40px;
+      }
+
+      nav li {
+        flex: 0 1 auto;
+      }
+
+      nav a {
+        display: block;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 0;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        transition: color 0.2s ease;
+        border: none;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--accent);
+      }
+
+      .content {
+        width: min(1240px, 94vw);
+        margin: 0 auto;
+        border-left: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        padding: 0;
+      }
+
+      section {
+        padding: 76px 28px;
+        border-bottom: 1px solid var(--line);
+        scroll-margin-top: 64px;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      section h2 {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        font-weight: 400;
+        color: var(--ink);
+        margin-bottom: 24px;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        display: block;
+      }
+
+      section h3 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--ink);
+        margin-top: 32px;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+
+      section h4 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--ink);
+        margin-top: 20px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--ink);
+        margin-bottom: 20px;
+        line-height: 1.65;
+        max-width: 76ch;
+      }
+
+      ul, ol {
+        margin-left: 28px;
+        margin-bottom: 20px;
+        color: var(--ink);
+      }
+
+      li {
+        margin-bottom: 12px;
+        line-height: 1.65;
+      }
+
+      strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .lang-block {
+        display: none;
+      }
+
+      .lang-block.active {
+        display: block;
+      }
+
+      .bilingual-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .bilingual-section h3 {
+        grid-column: 1 / -1;
+        margin-top: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .bilingual-section {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+
+      .intro-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: 0.95em;
+      }
+
+      table th {
+        background: var(--card);
+        color: var(--accent);
+        padding: 14px;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 1px solid var(--line);
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      table td {
+        padding: 14px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+      }
+
+      table tr:hover {
+        background: var(--card);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      .search-wrap {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .search-wrap input {
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        font-family: inherit;
+        width: 180px;
+        outline: none;
+        transition: border-color 0.2s;
+        letter-spacing: 0.02em;
+      }
+
+      .search-wrap input:focus {
+        border-color: var(--accent);
+      }
+
+      .search-wrap input::placeholder {
+        color: var(--soft);
+      }
+
+      .search-count {
+        font-size: 0.72rem;
+        color: var(--soft);
+        white-space: nowrap;
+        min-width: 40px;
+      }
+
+      mark.hl {
+        background: var(--accent);
+        color: var(--paper);
+        padding: 1px 2px;
+        border-radius: 1px;
+        font-weight: inherit;
+      }
+
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1px;
+        border: 1px solid var(--line);
+        margin-top: 24px;
+      }
+
+      .toc-item {
+        border: none;
+        padding: 20px 24px;
+        background: var(--card);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+
+      .toc-item:hover {
+        background: var(--line);
+        opacity: 1;
+      }
+
+      .toc-num {
+        font-size: 0.68rem;
+        color: var(--accent);
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .toc-title {
+        font-size: 1rem;
+        color: var(--ink);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+
+      .toc-sub {
+        font-size: 0.75rem;
+        color: var(--soft);
+        line-height: 1.4;
+      }
+
+      footer {
+        background: var(--paper);
+        color: var(--soft);
+        text-align: left;
+        padding: 48px 28px;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        border-top: 1px solid var(--line);
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      footer p {
+        font-size: 0.75rem;
+        margin: 8px 0;
+        color: var(--soft);
+      }
+
+      @media (max-width: 780px) {
+        header {
+          padding: 48px 20px 36px;
+        }
+
+        header h1 {
+          font-size: 2.2rem;
+          margin-bottom: 12px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 0 20px;
+          min-height: auto;
+        }
+
+        nav ul {
+          gap: 20px;
+        }
+
+        nav a {
+          font-size: 0.8rem;
+        }
+
+        .content {
+          width: 100%;
+          border-left: none;
+          border-right: none;
+        }
+
+        section {
+          padding: 48px 20px;
+        }
+
+        section h2 {
+          font-size: 1.8rem;
+          margin-bottom: 16px;
+        }
+
+        section h3 {
+          font-size: 1.2rem;
+          margin-top: 20px;
+          margin-bottom: 12px;
+        }
+
+        p {
+          font-size: 0.95rem;
+          margin-bottom: 16px;
+        }
+
+        footer {
+          padding: 32px 20px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="margin-bottom: 16px;">
+                <span style="font-size: 2.2em; font-weight: 700;">calyr.aí</span>
+                <span style="font-size: 0.75em; color: #39bfff; font-weight: 600; margin-left: 8px; vertical-align: super;">RESEARCH</span>
+            </div>
+            <h1>Parvotec ASGCT 2026</h1>
+            <p>AAV Capsid Engineering mit Machine Learning</p>
+            <div class="lang-toggle">
+                <button class="active" onclick="switchLang('de')">Deutsch</button>
+                <button onclick="switchLang('en')">English</button>
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#toc">Index</a></li>
+                <li><a href="#overview">Projekt</a></li>
+                <li><a href="#framework">Workflow</a></li>
+                <li><a href="#strategies">ML</a></li>
+                <li><a href="#papers">Quellen</a></li>
+                <li><a href="#glossary">Glossar</a></li>
+                <li><a href="parvotec_proposal.html" style="color:var(--accent)">Proposal</a></li>
+            </ul>
+            <div class="search-wrap">
+                <input type="text" id="search-input" placeholder="Suchen / Search..." oninput="doSearch(this.value)" />
+                <span class="search-count" id="search-count"></span>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <section id="toc">
+                <h2>Index</h2>
+                <div class="toc-grid">
+                    <a class="toc-item" href="#overview">
+                        <span class="toc-num">01</span>
+                        <span class="toc-title">Parvotec Projekt</span>
+                        <span class="toc-sub">4-Schicht ML Framework · Klinisches Ziel · Iterativer Optimierungsprozess</span>
+                    </a>
+                    <a class="toc-item" href="#framework">
+                        <span class="toc-num">02</span>
+                        <span class="toc-title">Iterativer Workflow</span>
+                        <span class="toc-sub">Round-by-Round Optimierung · Experimentelle Feedback-Loops</span>
+                    </a>
+                    <a class="toc-item" href="#strategies">
+                        <span class="toc-num">03</span>
+                        <span class="toc-title">ML Strategien</span>
+                        <span class="toc-sub">Supervised Learning · cVAE · Bayesian Optimization · Active Learning</span>
+                    </a>
+                    <a class="toc-item" href="#papers">
+                        <span class="toc-num">04</span>
+                        <span class="toc-title">Wissenschaftliche Basis</span>
+                        <span class="toc-sub">ASGCT 2026 Abstracts · Competitive Landscape · Key Papers</span>
+                    </a>
+                    <a class="toc-item" href="#glossary">
+                        <span class="toc-num">05</span>
+                        <span class="toc-title">Terminologie & Glossar</span>
+                        <span class="toc-sub">AAV · DRG · ESM-2 · DMS · cVAE · Bayesian Opt · Pareto · Enrichment Score</span>
+                    </a>
+                    <a class="toc-item" href="parvotec_proposal.html" style="border: 1px solid var(--accent);">
+                        <span class="toc-num" style="color:var(--accent)">WP</span>
+                        <span class="toc-title">Proposal & Work Packages</span>
+                        <span class="toc-sub">WP1–WP5 · Gantt Chart · Meilensteine · Budget-Rahmen</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="overview">
+                <h2>Parvotec Projekt</h2>
+                
+                <div class="lang-block de active">
+                    <div class="intro-box">
+                        <p>Parvotec entwickelt einen AAV-Vektor mit nozizeptiven Neuronen-Tropismus für die Schmerztherapie. Ein 4-schichtiges Machine Learning Framework nutzt ESM-2 Protein Language Models für optimale Kandidaten-Discovery.</p>
+                    </div>
+                    
+                    <h3>Projektgoal</h3>
+                    <p>Entwicklung eines AAV-Vektors mit <strong>nozizeptiven Neuronen-Tropismus</strong> und <strong>retrogradem Transport</strong> für die Schmerztherapie an peripheren Nervenendigungen.</p>
+                    <p><strong>Klinischer Hintergrund:</strong> Chronische Schmerzen sind eine der häufigsten Erkrankungen weltweit. Traditionelle Analgetika (Morphin, NSAIDs) haben schwerwiegende Nebenwirkungen. Ein therapeutischer AAV könnte langfristige Schmerzreduktion durch genetische Modulation der Schmerzperzeption ermöglichen (z.B. durch Abschaltung von TRPV1-Kanälen oder Überexpression von Analgetika-Neuropeptiden).</p>
+                    
+                    <h3>Das 4-Schicht-ML-Framework</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Schicht</th>
+                                <th>Technologie</th>
+                                <th>Funktion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Embedding</strong></td>
+                                <td>ESM-2 / ESM-3</td>
+                                <td>AAV-Capsid-Sequenzen → 1280/2560-dim kontextabhängige Vektoren. Ersetzt handcrafted Protein-Features.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Predictor</strong></td>
+                                <td>Supervised NN</td>
+                                <td>Multi-task Fitness-Vorhersage: Tropismus, Yield, Stabilität, Immunogenizität</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Generator</strong></td>
+                                <td>cVAE</td>
+                                <td>Sequenzgenerierung unter Zielspezifikationen mit Latent Space Interpolation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Optimizer</strong></td>
+                                <td>Multi-objective BO</td>
+                                <td>Pareto-optimale Kandidaten über Tropismus/Yield/Stabilität/Immunogenizität</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Warum 4 Schichten? Ablauf der Datenverarbeitung</h3>
+                    <p><strong>Naive Herangehensweise:</strong> "Testen Sie alle 10^120 möglichen AAV-Sequenzen" – unmöglich.</p>
+                    <p><strong>Parvotec Ansatz:</strong> Nutze ML um intelligente Vorhersagen zu treffen, reduziere Suchraum von 10^120 auf ~500 testbare Kandidaten pro Iteration.</p>
+                    <ol>
+                        <li><strong>Schicht 1 (Embedding):</strong> Konvertiere jede AAV-Kandidaten-Sequenz in einen 1280-dim Vektor via ESM-2. ESM-2 wurde auf 33 Millionen natürliche Proteinsequenzen trainiert → "versteht" Protein-Chemie und biologische Muster.</li>
+                        <li><strong>Schicht 2 (Predictor):</strong> Übersetze den Vektor in biologische Properties. Ein NN trainiert auf der Evotec Deep Mutational Scan Library (>1 Million getesteter AAV-Varianten) lernt: "Wenn ein Embedding diese Features hat, wird der Tropismus ~0.85 sein, Yield ~0.8".</li>
+                        <li><strong>Schicht 3 (Generator):</strong> Erzeuge neue Kandidaten mit spezifizierten Zielen. cVAE lernt die Verteilung von Sequenzen mit hohem Tropismus, und generiert neue (biologisch plausible) Sequenzen in dieser Verteilung.</li>
+                        <li><strong>Schicht 4 (Optimizer):</strong> Wähle beste Kandidaten aus 200 Generierungen. Multi-objective BO balanciert: "Ich möchte hohes Tropismus UND hohen Yield UND hohe Stabilität" → findet Pareto-Front (unverdominierte Kompromisse).</li>
+                    </ol>
+
+                    <h3>Iterativer Optimierungsprozess</h3>
+                    <p><strong>Der Workflow über 3-4 Runden:</strong></p>
+                    <ul>
+                        <li><strong>Round 0 (Baseline):</strong> Wild-Type AAV (z.B. AAV2 oder AAV6) wird gescreent. Baseline Tropismus Score = 0.3</li>
+                        <li><strong>Round 1:</strong> Evotec DMS Library wird mittels NGS analysiert. ESM-2 encodiert alle ~1 Million Varianten. NN trainiert auf Enrichment Scores. Top-100 theoretische Kandidaten werden experimentell validiert → beste Variante hat Tropismus ~0.55 (1.8× besser)</li>
+                        <li><strong>Round 2:</strong> cVAE trainiert auf Round 1 Daten + Public DMS Daten. Generiert 500 neue Sequenzen mit Ziel: Tropismus>0.7, Yield>0.8. Bayesian BO wählt beste 50 aus. Round 2 Beste: Tropismus 0.72 (2.4× besser)</li>
+                        <li><strong>Round 3:</strong> Multi-objective BO konvergiert. Optimiert jetzt Tropismus × Yield × Stabilität × Immunogenizität gleichzeitig. Pareto-Front umfasst 10-20 non-dominated Kandidaten. Best-in-Class: Tropismus 0.88, Yield 0.90, Stabilität 0.85 (2.9× besser, in allen Metriken optimiert)</li>
+                    </ul>
+                    <p><strong>Improvement Multiplier:</strong> 0.3 → 0.88 = ~3× Verbesserung in Tropismus allein. Mit vollständiger multi-objective Optimierung: 5-10× Gesamtverbesserung erschließbar.</p>
+                </div>
+
+                <div class="lang-block en">
+                    <div class="intro-box">
+                        <p>Parvotec develops an AAV vector with nociceptive neuron tropism for pain therapy. A 4-layer machine learning framework leverages ESM-2 protein language models for optimal candidate discovery.</p>
+                    </div>
+                    
+                    <h3>Project Goal</h3>
+                    <p>Development of an AAV vector with <strong>nociceptive neuron tropism</strong> and <strong>retrograde transport</strong> for pain therapy at peripheral nerve endings.</p>
+                    <p><strong>Clinical background:</strong> Chronic pain is one of the most common diseases worldwide. Traditional analgesics (morphine, NSAIDs) have severe side effects. A therapeutic AAV could enable long-term pain reduction through genetic modulation of pain perception (e.g., by silencing TRPV1 channels or overexpressing analgesic neuropeptides).</p>
+                    
+                    <h3>The 4-Layer ML Framework</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Technology</th>
+                                <th>Function</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Embedding</strong></td>
+                                <td>ESM-2 / ESM-3</td>
+                                <td>AAV capsid sequences → 1280/2560-dim context-dependent vectors. Replaces handcrafted protein features.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Predictor</strong></td>
+                                <td>Supervised NN</td>
+                                <td>Multi-task fitness prediction: tropism, yield, stability, immunogenicity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Generator</strong></td>
+                                <td>cVAE</td>
+                                <td>Sequence generation with target specifications and latent space interpolation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Optimizer</strong></td>
+                                <td>Multi-objective BO</td>
+                                <td>Pareto-optimal candidates across tropism/yield/stability/immunogenicity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Why 4 Layers? Data Processing Flow</h3>
+                    <p><strong>Naive approach:</strong> "Test all 10^120 possible AAV sequences" – impossible.</p>
+                    <p><strong>Parvotec approach:</strong> Use ML to make intelligent predictions, reduce search space from 10^120 to ~500 testable candidates per iteration.</p>
+                    <ol>
+                        <li><strong>Layer 1 (Embedding):</strong> Convert each AAV candidate sequence to 1280-dim vector via ESM-2. ESM-2 trained on 33 million natural protein sequences → "understands" protein chemistry and biological patterns.</li>
+                        <li><strong>Layer 2 (Predictor):</strong> Translate vector to biological properties. NN trained on Evotec deep mutational scan library (>1 million tested AAV variants) learns: "If embedding has these features, tropism will be ~0.85, yield ~0.8".</li>
+                        <li><strong>Layer 3 (Generator):</strong> Generate new candidates with specified targets. cVAE learns distribution of high-tropism sequences and generates new (biologically plausible) sequences in that distribution.</li>
+                        <li><strong>Layer 4 (Optimizer):</strong> Select best candidates from 200 generations. Multi-objective BO balances: "I want high tropism AND high yield AND high stability" → finds Pareto front (undominated trade-offs).</li>
+                    </ol>
+
+                    <h3>Iterative Optimization Process</h3>
+                    <p><strong>Workflow across 3-4 rounds:</strong></p>
+                    <ul>
+                        <li><strong>Round 0 (Baseline):</strong> Wild-type AAV (e.g., AAV2 or AAV6) screened. Baseline tropism score = 0.3</li>
+                        <li><strong>Round 1:</strong> Evotec DMS library analyzed via NGS. ESM-2 encodes all ~1 million variants. NN trained on enrichment scores. Top-100 theoretical candidates experimentally validated → best variant tropism ~0.55 (1.8× better)</li>
+                        <li><strong>Round 2:</strong> cVAE trained on Round 1 data + public DMS data. Generates 500 new sequences with target: tropism>0.7, yield>0.8. Bayesian BO selects best 50. Round 2 best: tropism 0.72 (2.4× better)</li>
+                        <li><strong>Round 3:</strong> Multi-objective BO converges. Now optimizes tropism × yield × stability × immunogenicity simultaneously. Pareto front encompasses 10-20 non-dominated candidates. Best-in-class: tropism 0.88, yield 0.90, stability 0.85 (2.9× better, optimized across all metrics)</li>
+                    </ul>
+                    <p><strong>Improvement multiplier:</strong> 0.3 → 0.88 = ~3× improvement in tropism alone. With full multi-objective optimization: 5-10× total improvement achievable.</p>
+                </div>
+            </section>
+
+            <section id="framework">
+                <h2>Iterativer Workflow</h2>
+                
+                <div class="lang-block de active">
+                    <p>Parvotec folgt einem iterativen Optimierungsprozess mit 5-10× Verbesserungen über 3-4 Runden:</p>
+                    <ol>
+                        <li><strong>Round 1:</strong> ESM-2 Embedding der Basis-Sequenzen</li>
+                        <li><strong>Round 2:</strong> Fitness-Vorhersage mit supervised NN</li>
+                        <li><strong>Round 3:</strong> cVAE-Generierung verbesserter Kandidaten</li>
+                        <li><strong>Round 4:</strong> Bayesian Optimization für Pareto-Front-Kandidaten</li>
+                        <li><strong>Feedback Loop:</strong> Experimentelle Validierung → nächste Round</li>
+                    </ol>
+                </div>
+
+                <div class="lang-block en">
+                    <p>Parvotec follows an iterative optimization process with 5-10× improvements over 3-4 rounds:</p>
+                    <ol>
+                        <li><strong>Round 1:</strong> ESM-2 embedding of base sequences</li>
+                        <li><strong>Round 2:</strong> Fitness prediction with supervised NN</li>
+                        <li><strong>Round 3:</strong> cVAE generation of improved candidates</li>
+                        <li><strong>Round 4:</strong> Bayesian optimization for Pareto-front candidates</li>
+                        <li><strong>Feedback Loop:</strong> Experimental validation → next round</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="strategies">
+                <h2>Machine Learning Strategien</h2>
+                
+                <div class="lang-block de active">
+                    <h3>Supervised Learning für Fitness-Vorhersage</h3>
+                    <p>Das Kernproblem: Given eine AAV-Sequenz (oder deren ESM-2 Embedding), vorhersagen: "Wird dieser Vektor nozizeptive Neuronen gut infizieren?"</p>
+                    <p><strong>Datengrundlage:</strong> Deep Mutational Scan Library von Evotec mit >1 Million AAV-Varianten. Jede Variante hat einen experimentellen NGS Enrichment Score (0-100+).</p>
+                    <p><strong>Architektur:</strong> Feed-Forward Neural Network mit 3-4 Hidden Layers:</p>
+                    <ul>
+                        <li>Input Layer: 1280-dim ESM-2 Embedding</li>
+                        <li>Hidden Layers: 512 → 256 → 128 Neuronen mit ReLU Aktivierung</li>
+                        <li>Output Layer: 4 Neuronen (Multi-task: Tropismus, Yield, Stabilität, Immunogenizität)</li>
+                        <li>Loss: Weighted MSE (Ridge Regression) um Overfitting zu vermeiden</li>
+                    </ul>
+                    <p><strong>Training-Split:</strong> 70% Training / 10% Validation / 20% Test. Cross-validation mit 5-Fold um Generalisierungsfähigkeit zu prüfen.</p>
+
+                    <h3>cVAE (Conditional VAE) für Sequenz-Generierung</h3>
+                    <p>Problem: Wie generieren wir neue AAV-Sequenzen mit gewünschten Eigenschaften, ohne zufällig Müll zu produzieren?</p>
+                    <p><strong>cVAE Architektur:</strong></p>
+                    <ul>
+                        <li><strong>Encoder:</strong> Wild-type (WT) Sequenz → 64-dim Latent Vector Z</li>
+                        <li><strong>Bedingung:</strong> Zielvektor C = [Tropismus=0.9, Yield=0.8, ...] → wird mit Z konkateniert</li>
+                        <li><strong>Decoder:</strong> [Z, C] → neue AAV-Sequenz (Amino-Säure Wahrscheinlichkeiten)</li>
+                        <li><strong>KL-Divergence Loss:</strong> Regularisiert den Latent Space für glatte Interpolation</li>
+                    </ul>
+                    <p><strong>Inference:</strong> Spezifiziere Ziele → Decoder generiert Top-10 Sequenzen → Fitness Oracle rankt diese → Top-3 für experimentelle Validierung.</p>
+
+                    <h3>Bayesian Optimization für Multi-Objective Design</h3>
+                    <p>Problem: Unendlich viele mögliche Sequenzen, aber nur 100-200 pro Iteration experimentell testbar. Wie wählen wir optimal?</p>
+                    <p><strong>BO Workflow (3 Iterationen):</strong></p>
+                    <ol>
+                        <li><strong>Iteration 1 – Initial:</strong> Test 50 Random Varianten, Daten sammeln, Surrogate Model trainieren</li>
+                        <li><strong>Iteration 2 – Guided:</strong> Acquisition Function (EHVI) bestimmt beste 50 neuen Kandidaten, Test experimentell, Update Modell</li>
+                        <li><strong>Iteration 3 – Convergence:</strong> Generiere 200 Kandidaten, teste Top-50, Pareto-Front verbessert sich um ~30-50%</li>
+                    </ol>
+                    <p><strong>Multi-Objective Pareto-Front:</strong> 3D Plot (Tropismus vs Yield vs Stabilität). Jeder Punkt ist eine getestete Variante. Pareto-optimal Varianten bilden eine gekrümmte Oberfläche.</p>
+
+                    <h3>Active Learning & Latent Space Traversal</h3>
+                    <p>Das System "lernt, was es nicht weiß". Anstatt random zu testen, werden Regionen höchster Unsicherheit priorisiert (60% aus unsicheren Regionen, 40% aus vorhergesagten High-Value Regionen).</p>
+                    <p><strong>Latent Space Interpolation:</strong> Zwischen zwei Sequenzen interpolieren im cVAE Latent Space erzeugt "stepping stones" (Zwischenschritte), die biologisch stabiler sind als große Sprünge.</p>
+
+                    <h3>Transfer Learning mit ESM-2/3</h3>
+                    <p>Die pretrained ESM Embeddings enthalten biologisches Wissen von 33 Millionen Proteinsequenzen. Wir trainieren nur noch 2-3 obere NN Layers mit Early Stopping um Overfitting zu vermeiden.</p>
+                </div>
+
+                <div class="lang-block en">
+                    <h3>Supervised Learning for Fitness Prediction</h3>
+                    <p>Core problem: Given an AAV sequence (or its ESM-2 embedding), predict: "Will this vector infect nociceptive neurons well?"</p>
+                    <p><strong>Data foundation:</strong> Deep mutational scan library from Evotec with >1 million AAV variants. Each has an experimental NGS enrichment score (0-100+).</p>
+                    <p><strong>Architecture:</strong> Feed-forward neural network with 3-4 hidden layers:</p>
+                    <ul>
+                        <li>Input layer: 1280-dim ESM-2 embedding</li>
+                        <li>Hidden layers: 512 → 256 → 128 neurons with ReLU activation</li>
+                        <li>Output layer: 4 neurons (multi-task: tropism, yield, stability, immunogenicity)</li>
+                        <li>Loss: Weighted MSE (ridge regression) to prevent overfitting</li>
+                    </ul>
+                    <p><strong>Training split:</strong> 70% training / 10% validation / 20% test with 5-fold cross-validation.</p>
+
+                    <h3>cVAE (Conditional VAE) for Sequence Generation</h3>
+                    <p>Problem: How to generate new AAV sequences with desired properties without randomly producing garbage?</p>
+                    <p><strong>cVAE architecture:</strong></p>
+                    <ul>
+                        <li><strong>Encoder:</strong> Wild-type sequence → 64-dim latent vector Z</li>
+                        <li><strong>Condition:</strong> Target vector C = [tropism=0.9, yield=0.8, ...] → concatenated with Z</li>
+                        <li><strong>Decoder:</strong> [Z, C] → new AAV sequence (amino acid probabilities)</li>
+                        <li><strong>KL-divergence loss:</strong> Regularizes latent space for smooth interpolation</li>
+                    </ul>
+                    <p><strong>Inference:</strong> Specify targets → decoder generates top-10 sequences → fitness oracle ranks → top-3 for experimental validation.</p>
+
+                    <h3>Bayesian Optimization for Multi-Objective Design</h3>
+                    <p>Problem: Infinite possible sequences, but only 100-200 testable per iteration experimentally. How to choose optimally?</p>
+                    <p><strong>BO workflow (3 iterations):</strong></p>
+                    <ol>
+                        <li><strong>Iteration 1 – Initial:</strong> Test 50 random variants, collect data, train surrogate model</li>
+                        <li><strong>Iteration 2 – Guided:</strong> Acquisition function (EHVI) determines best 50 new candidates, test experimentally, update model</li>
+                        <li><strong>Iteration 3 – Convergence:</strong> Generate 200 candidates, test top-50, Pareto front improves ~30-50%</li>
+                    </ol>
+                    <p><strong>Multi-Objective Pareto Front:</strong> 3D plot (tropism vs yield vs stability). Each point is a tested variant. Pareto-optimal variants form a curved surface.</p>
+
+                    <h3>Active Learning & Latent Space Traversal</h3>
+                    <p>The system "learns what it doesn't know". Instead of random testing, regions of highest uncertainty are prioritized (60% from uncertain regions, 40% from predicted high-value regions).</p>
+                    <p><strong>Latent space interpolation:</strong> Interpolating between two sequences in cVAE latent space produces "stepping stones" that are biologically more stable than large jumps.</p>
+
+                    <h3>Transfer Learning with ESM-2/3</h3>
+                    <p>Pre-trained ESM embeddings contain biological knowledge from 33 million protein sequences. We train only 2-3 upper NN layers with early stopping to prevent overfitting.</p>
+                </div>
+            </section>
+
+            <section id="papers">
+                <h2>Wissenschaftliche Basis</h2>
+                
+                <div class="lang-block de active">
+                    <h3>Grundlegende Arbeiten</h3>
+                    <p>Parvotec basiert auf 14 wissenschaftlichen Publikationen zum AAV-Capsid-Engineering mit Machine Learning:</p>
+                    <ul>
+                        <li>Voyager AAV Optimization (ASGCT 2023-2025)</li>
+                        <li>Deep mutational scanning für Fitness-Landschaften</li>
+                        <li>ESM-2/ESM-3 Protein Language Models</li>
+                        <li>Generative models für AAV-Diversifizierung</li>
+                        <li>Multi-objective Bayesian Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="lang-block en">
+                    <h3>Foundational Work</h3>
+                    <p>Parvotec is based on 14 scientific publications on AAV capsid engineering with machine learning:</p>
+                    <ul>
+                        <li>Voyager AAV Optimization (ASGCT 2023-2025)</li>
+                        <li>Deep mutational scanning for fitness landscapes</li>
+                        <li>ESM-2/ESM-3 protein language models</li>
+                        <li>Generative models for AAV diversification</li>
+                        <li>Multi-objective Bayesian optimization</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="glossary">
+                <h2>Terminologie & Erklärungen</h2>
+                
+                <div class="lang-block de active">
+                    <h3>AAV (Adeno-Associated Virus)</h3>
+                    <p>Kleine, nicht-hüllbare DNA-Viren (~27 nm Durchmesser). Das Capsid (die Proteinschale) besteht aus ~60 Kopien der Proteine VP1, VP2, VP3 in präziser stochiometrischer Ratio. Es gibt 13 natürliche Serotypen (AAV1-13) mit unterschiedlichen Tropismen.</p>
+                    <p><strong>Warum AAV?</strong> AAV sind sicher (nicht pathogen beim Menschen), können jedoch lange Zeit im Körper bestehen und ihre Gene effizient an Zielzellen abgeben. Sie sind ideal für Gentherapie.</p>
+                    
+                    <h3>Tropismus (Targeting)</h3>
+                    <p>Die zelltypische Infektionsspezifität eines AAV-Vektors. Das bedeutet: welche Zelltypen kann der Vektor infizieren?</p>
+                    <p><strong>Beispiele:</strong></p>
+                    <ul>
+                        <li><strong>Leber-Tropismus (AAV8):</strong> Bevorzugte Infektion von Hepatozyten → für systemische Therapien</li>
+                        <li><strong>Muskel-Tropismus (AAV6):</strong> Targeting von Skelett- und Herzmuskel</li>
+                        <li><strong>Nozizeptiver Neuron-Tropismus (Parvotec-Ziel):</strong> Targeting von Schmerzfaser-Neuronen in den dorsal root ganglia (DRG)</li>
+                    </ul>
+                    <p><strong>Mechanismus:</strong> Der Tropismus wird durch die Oberflächensequenzen des Capsids (besonders die VP3-Proteine) bestimmt. Diese Sequenzen interagieren mit Rezeptoren auf der Zielzellmembran.</p>
+
+                    <h3>Retrograder Transport</h3>
+                    <p>Ein natürliches axonales Transportsystem, das Partikel vom peripheren axonalen Terminal (z.B. Nervenendigungen an den Füßen) zum Zellkörper (z.B. in den DRG im Rückenmark) transportiert.</p>
+                    <p><strong>Warum wichtig für Parvotec?</strong> Für Schmerztherapie müssen wir die AAV von der peripheren Nervenendiging (wo der Schmerz empfunden wird) bis zu den Nervenzellkörpern in den DRG transportieren. Das ist eine Distanz von bis zu 1 Meter!</p>
+                    <p><strong>Bestandteile:</strong> Der Transport erfolgt über spezialisierte Motorproteine (Dynein, Kinesin) und erfordert aktive Energieversorgung (ATP).</p>
+
+                    <h3>ESM-2 / ESM-3 (Evolutionary Scale Modeling)</h3>
+                    <p>Protein Language Models (pLMs) entwickelt von Meta AI. Sie funktionieren ähnlich wie GPT für Text, aber für Proteinsequenzen.</p>
+                    <p><strong>ESM-2:</strong> Erzeugt 1280-dimensionale Embeddings (Vektoren), trainiert auf UniRef50 (~33 Millionen Proteinsequenzen). Das bedeutet: jede Proteinsequenz wird in einen hochdimensionalen Raum umgewandelt, wo ähnliche Sequenzen nah beieinander liegen.</p>
+                    <p><strong>ESM-3 (2025):</strong> Erweiterte Version mit 2560-Dimensionen und Multi-Modal-Training (Sequenz + Struktur + Funktion integriert).</p>
+                    <p><strong>Vorteil:</strong> Ersetzt handcrafted Features (wie "Hydrophobizität", "Ladung", "Sekundärstruktur"). Das Modell lernt direkt aus Milliarden von Beispielen, welche Sequenzmuster biologisch wichtig sind.</p>
+
+                    <h3>Deep Mutational Scanning (DMS)</h3>
+                    <p>Eine experimentelle Methode, die systematisch Tausende oder Millionen von Mutationen an einer Proteinsequenz durchführt und deren Effekt auf eine Funktion misst (z.B. "Bindet dieses Protein gut an seinen Rezeptor?").</p>
+                    <p><strong>Workflow:</strong></p>
+                    <ol>
+                        <li>Erstelle eine Library mit ~1 Million AAV-Varianten (mit verschiedenen 7-Amino-Säure Insertionen)</li>
+                        <li>Führe eine biologische Selektion durch (z.B. Infiziere nozizeptive Neuronen)</li>
+                        <li>Sequenziere mit NGS, welche Varianten überrepräsentiert sind</li>
+                        <li>Berechne ein "NGS Enrichment Score" für jede Mutation</li>
+                    </ol>
+                    <p><strong>Outcome:</strong> Eine Fitness-Landscape: eine Karte, die zeigt, welche Mutationen tropism-verbessert oder -verschlechtert.</p>
+
+                    <h3>cVAE (Conditional Variational Autoencoder)</h3>
+                    <p>Ein generatives neuronales Netzwerk, das neue Proteinsequenzen mit spezifizierten Eigenschaften erzeugen kann.</p>
+                    <p><strong>Wie funktioniert es?</strong></p>
+                    <ul>
+                        <li><strong>Encoder:</strong> Komprimiert eine Proteinsequenz in einen kontinuierlichen Latent-Vektor (z.B. 64-dimensional)</li>
+                        <li><strong>Bedingung:</strong> Zusätzlich wird ein konditionaler Input gegeben: "Ich möchte 70% Leber-Tropismus + hohe Produktionseffizienz"</li>
+                        <li><strong>Decoder:</strong> Generiert eine neue Sequenz, die diese Ziele erfüllt</li>
+                        <li><strong>Latent Space Interpolation:</strong> Durch Bewegung im Latent-Raum können wir kontinuierlich zwischen Sequenzen interpolieren</li>
+                    </ul>
+                    <p><strong>Vorteil:</strong> Generiert biologisch plausible Sequenzen (trainiert auf realen Proteinen), nicht zufällige Strings.</p>
+
+                    <h3>Bayesian Optimization (BO)</h3>
+                    <p>Ein intelligentes Optimierungsframework für Szenarien, wo Evaluationen teuer sind (z.B. experimentelle Validierung kostet Zeit/Geld).</p>
+                    <p><strong>Komponenten:</strong></p>
+                    <ul>
+                        <li><strong>Surrogate-Modell:</strong> Ein schneller NN oder Gaussian Process, der vorhersagt, wie gut eine Kandidaten-Sequenz ist (ohne echte Experimente)</li>
+                        <li><strong>Acquisition Function:</strong> Z.B. Expected Improvement (EI): "Welche Kandidaten sollten wir als nächstes testen, um die meiste Verbesserung zu erzielen?"</li>
+                        <li><strong>Iterativ:</strong> Test Kandidat → Update Modell → Berechne nächste beste Kandidaten</li>
+                    </ul>
+                    <p><strong>Multi-Objective BO:</strong> Parvotec optimiert mehrere Ziele gleichzeitig: Tropismus (hoch) × Yield (hoch) × Stabilität (hoch) → Finde Pareto-Front (Kandidaten, die nicht von anderen dominiert werden).</p>
+
+                    <h3>7-Mer Insertion</h3>
+                    <p>Eine Standardstrategie im AAV-Engineering: Inseriere 7 Aminosäuren-Peptid an einer spezifischen Position (z.B. zwischen VP1-Aminosäure 583-584).</p>
+                    <p><strong>Warum 7 Aminosäuren?</strong> Empirisch hat sich diese Länge als optimal erwiesen. Sie ist groß genug, um neue Bindungseigenschaften zu schaffen, aber klein genug, um die Capsid-Struktur nicht zu zerstören.</p>
+                    <p><strong>Parvotec nutzt:</strong> Eine Library mit ~1 Million verschiedener 7-Mer-Insertionen (verschiedene Sequenzen an verschiedenen Positionen).</p>
+
+                    <h3>NGS (Next-Generation Sequencing) & Enrichment Score</h3>
+                    <p>NGS erlaubt es, Millionen von Sequenzen gleichzeitig zu zählen.</p>
+                    <p><strong>Enrichment Score Berechnung:</strong></p>
+                    <p><code>Enrichment = (Häufigkeit der Variante NACH Selektion) / (Häufigkeit VOR Selektion)</code></p>
+                    <p><strong>Beispiel:</strong> Eine Variante ist vor der Selektion 1× vorhanden, nach der Selektion 100×. Enrichment Score = 100. Das bedeutet: diese Variante hat gute nozizeptive Neuron-Tropismus.</p>
+
+                    <h3>Pareto-Optimaal</h3>
+                    <p>Ein Konzept aus der Multi-Objective Optimization. Eine Lösung ist "Pareto-optimal", wenn sie in mindestens einem Ziel am besten ist, aber in keinem Ziel von einer anderen Lösung dominiert wird.</p>
+                    <p><strong>Beispiel:</strong></p>
+                    <ul>
+                        <li>Variante A: Tropismus 90%, Yield 60%, Stabilität 80%</li>
+                        <li>Variante B: Tropismus 80%, Yield 95%, Stabilität 85%</li>
+                    </ul>
+                    <p>Beide sind Pareto-optimal (keine dominiert die andere). Die Pareto-Front ist die Menge aller solcher Lösungen.</p>
+
+                    <h3>Fitness Oracle</h3>
+                    <p>Das zentrale Machine Learning Modell in Parvotec, das AAV-Sequenzen → Biologische Eigenschaften mappt.</p>
+                    <p><strong>Input:</strong> ESM-2/ESM-3 Embeddings einer Proteinsequenz (1280 oder 2560 Dimensionen)</p>
+                    <p><strong>Output:</strong> Multi-task Vorhersagen:</p>
+                    <ul>
+                        <li>Tropismus Score (Wahrscheinlichkeit, nozizeptive Neuronen zu infizieren)</li>
+                        <li>Production Efficiency (Wie viele AAV Partikel können produziert werden?)</li>
+                        <li>Thermostabilität (Wie lange bleibt der Vektor stabil?)</li>
+                        <li>Immunogenizität (Wieviel Immunreaktion löst der Vektor aus?)</li>
+                    </ul>
+                    <p><strong>Training:</strong> Auf experimentelle Deep Mutational Scan Daten (Evotec-Library mit >1 Million AAV-Capsid-Mutanten).</p>
+                </div>
+
+                <div class="lang-block en">
+                    <h3>AAV (Adeno-Associated Virus)</h3>
+                    <p>Small, non-enveloped DNA viruses (~27 nm diameter). The capsid (protein shell) consists of ~60 copies of proteins VP1, VP2, VP3 in precise stoichiometric ratios. There are 13 natural serotypes (AAV1-13) with different tropisms.</p>
+                    <p><strong>Why AAV?</strong> AAVs are safe (non-pathogenic to humans), can persist in the body long-term, and efficiently deliver genes to target cells. They are ideal for gene therapy.</p>
+                    
+                    <h3>Tropism (Targeting)</h3>
+                    <p>The cell-type-specific infectivity of an AAV vector. In other words: which cell types can the vector infect?</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li><strong>Liver Tropism (AAV8):</strong> Preferential infection of hepatocytes → for systemic therapies</li>
+                        <li><strong>Muscle Tropism (AAV6):</strong> Targeting skeletal and cardiac muscle</li>
+                        <li><strong>Nociceptive Neuron Tropism (Parvotec target):</strong> Targeting pain-sensing neurons in dorsal root ganglia (DRG)</li>
+                    </ul>
+                    <p><strong>Mechanism:</strong> Tropism is determined by capsid surface sequences (especially VP3 proteins). These sequences interact with receptors on target cell membranes.</p>
+
+                    <h3>Retrograde Transport</h3>
+                    <p>A natural axonal transport system that moves particles from peripheral axon terminals (e.g., nerve endings in the feet) to the cell body (e.g., in DRG in the spinal cord).</p>
+                    <p><strong>Why important for Parvotec?</strong> For pain therapy, we need to transport AAV from peripheral nerve endings (where pain is sensed) to nerve cell bodies in the DRG. This is a distance of up to 1 meter!</p>
+                    <p><strong>Machinery:</strong> Transport occurs via specialized motor proteins (dynein, kinesin) and requires active ATP supply.</p>
+
+                    <h3>ESM-2 / ESM-3 (Evolutionary Scale Modeling)</h3>
+                    <p>Protein language models (pLMs) developed by Meta AI. They work like GPT for text, but for protein sequences.</p>
+                    <p><strong>ESM-2:</strong> Generates 1280-dimensional embeddings (vectors), trained on UniRef50 (~33 million protein sequences). This means: each protein sequence is converted to a high-dimensional space where similar sequences are close together.</p>
+                    <p><strong>ESM-3 (2025):</strong> Enhanced version with 2560 dimensions and multi-modal training (sequence + structure + function integrated).</p>
+                    <p><strong>Advantage:</strong> Replaces hand-crafted features (like "hydrophobicity", "charge", "secondary structure"). The model learns directly from billions of examples which sequence patterns are biologically important.</p>
+
+                    <h3>Deep Mutational Scanning (DMS)</h3>
+                    <p>An experimental method that systematically performs thousands or millions of mutations on a protein sequence and measures their effect on a function (e.g., "Does this protein bind well to its receptor?").</p>
+                    <p><strong>Workflow:</strong></p>
+                    <ol>
+                        <li>Create a library with ~1 million AAV variants (with different 7-amino acid insertions)</li>
+                        <li>Perform biological selection (e.g., infect nociceptive neurons)</li>
+                        <li>Sequence with NGS to find which variants are overrepresented</li>
+                        <li>Calculate an "NGS enrichment score" for each mutation</li>
+                    </ol>
+                    <p><strong>Outcome:</strong> A fitness landscape: a map showing which mutations improve or worsen tropism.</p>
+
+                    <h3>cVAE (Conditional Variational Autoencoder)</h3>
+                    <p>A generative neural network that can generate new protein sequences with specified properties.</p>
+                    <p><strong>How does it work?</strong></p>
+                    <ul>
+                        <li><strong>Encoder:</strong> Compresses a protein sequence into a continuous latent vector (e.g., 64-dimensional)</li>
+                        <li><strong>Condition:</strong> Additionally, a conditional input is provided: "I want 70% liver tropism + high production efficiency"</li>
+                        <li><strong>Decoder:</strong> Generates a new sequence that meets these objectives</li>
+                        <li><strong>Latent Space Interpolation:</strong> By moving in latent space, we can smoothly interpolate between sequences</li>
+                    </ul>
+                    <p><strong>Advantage:</strong> Generates biologically plausible sequences (trained on real proteins), not random strings.</p>
+
+                    <h3>Bayesian Optimization (BO)</h3>
+                    <p>A smart optimization framework for scenarios where evaluations are expensive (e.g., experimental validation costs time/money).</p>
+                    <p><strong>Components:</strong></p>
+                    <ul>
+                        <li><strong>Surrogate Model:</strong> A fast NN or Gaussian process predicting how good a candidate sequence is (without real experiments)</li>
+                        <li><strong>Acquisition Function:</strong> E.g., Expected Improvement (EI): "Which candidates should we test next to achieve the most improvement?"</li>
+                        <li><strong>Iterative:</strong> Test candidate → Update model → Compute next best candidates</li>
+                    </ul>
+                    <p><strong>Multi-Objective BO:</strong> Parvotec optimizes multiple objectives simultaneously: Tropism (high) × Yield (high) × Stability (high) → Find Pareto front (candidates not dominated by others).</p>
+
+                    <h3>7-Mer Insertion</h3>
+                    <p>A standard strategy in AAV engineering: Insert a 7-amino acid peptide at a specific position (e.g., between VP1 amino acids 583-584).</p>
+                    <p><strong>Why 7 amino acids?</strong> Empirically, this length has proven optimal. It's large enough to create new binding properties but small enough not to destroy capsid structure.</p>
+                    <p><strong>Parvotec uses:</strong> A library with ~1 million different 7-mer insertions (different sequences at different positions).</p>
+
+                    <h3>NGS (Next-Generation Sequencing) & Enrichment Score</h3>
+                    <p>NGS enables simultaneous counting of millions of sequences.</p>
+                    <p><strong>Enrichment Score Calculation:</strong></p>
+                    <p><code>Enrichment = (Variant frequency AFTER selection) / (Variant frequency BEFORE selection)</code></p>
+                    <p><strong>Example:</strong> A variant is present 1× before selection, 100× after. Enrichment score = 100. This means: this variant has good nociceptive neuron tropism.</p>
+
+                    <h3>Pareto-Optimal</h3>
+                    <p>A concept from multi-objective optimization. A solution is "Pareto-optimal" if it's best in at least one objective but not dominated by any other solution in all objectives.</p>
+                    <p><strong>Example:</strong></p>
+                    <ul>
+                        <li>Variant A: Tropism 90%, Yield 60%, Stability 80%</li>
+                        <li>Variant B: Tropism 80%, Yield 95%, Stability 85%</li>
+                    </ul>
+                    <p>Both are Pareto-optimal (neither dominates the other). The Pareto front is the set of all such solutions.</p>
+
+                    <h3>Fitness Oracle</h3>
+                    <p>The central machine learning model in Parvotec that maps AAV sequences → biological properties.</p>
+                    <p><strong>Input:</strong> ESM-2/ESM-3 embeddings of a protein sequence (1280 or 2560 dimensions)</p>
+                    <p><strong>Output:</strong> Multi-task predictions:</p>
+                    <ul>
+                        <li>Tropism score (probability of infecting nociceptive neurons)</li>
+                        <li>Production efficiency (how many AAV particles can be produced?)</li>
+                        <li>Thermal stability (how long does the vector remain stable?)</li>
+                        <li>Immunogenicity (how much immune response does the vector trigger?)</li>
+                    </ul>
+                    <p><strong>Training:</strong> On experimental deep mutational scan data (Evotec library with >1 million AAV capsid variants).</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Parvotec ASGCT 2026 Analysis</strong></p>
+            <p>Generated: 2026-08-06 | calyr.aí Swiss Design System</p>
+            <p>Machine Learning for Rupert | AAV Capsid Engineering for Nociceptive Neurons</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentLang = 'de';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.lang-block').forEach(block => block.classList.remove('active'));
+            document.querySelectorAll('.lang-block.' + lang).forEach(block => block.classList.add('active'));
+            // Re-apply search if active
+            const q = document.getElementById('search-input').value.trim();
+            if (q) doSearch(q);
+        }
+
+        // --- Search ---
+        let origNodes = [];
+
+        function doSearch(q) {
+            restoreOriginal();
+            const countEl = document.getElementById('search-count');
+            if (!q || q.length < 2) { countEl.textContent = ''; return; }
+
+            const activeBlocks = document.querySelectorAll('.lang-block.active');
+            let total = 0;
+
+            activeBlocks.forEach(block => {
+                const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null);
+                const textNodes = [];
+                let node;
+                while ((node = walker.nextNode())) {
+                    if (node.nodeValue.trim()) textNodes.push(node);
+                }
+                textNodes.forEach(tn => {
+                    const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const re = new RegExp(escaped, 'gi');
+                    const matches = (tn.nodeValue.match(re) || []).length;
+                    if (matches > 0) {
+                        total += matches;
+                        origNodes.push({ node: tn, original: tn.nodeValue });
+                        const span = document.createElement('span');
+                        span.innerHTML = tn.nodeValue.replace(re, m => '<mark class="hl">' + m + '</mark>');
+                        tn.parentNode.replaceChild(span, tn);
+                    }
+                });
+            });
+
+            countEl.textContent = total > 0 ? total + ' Treffer' : 'Nichts';
+            if (total > 0) {
+                const first = document.querySelector('mark.hl');
+                if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function restoreOriginal() {
+            origNodes.forEach(({ node, original }) => {
+                const span = node.parentNode;
+                if (span && span.tagName === 'SPAN' && span.parentNode) {
+                    span.parentNode.replaceChild(node, span);
+                    node.nodeValue = original;
+                }
+            });
+            origNodes = [];
+            document.getElementById('search-count').textContent = '';
+        }
+
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        }, { passive: true });
+    </script>
+</body>
+</html>

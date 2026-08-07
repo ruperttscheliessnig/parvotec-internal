@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvotec | Computational Anwendungen — mATOMIC · SBPA</title>
+    <style>
+      :root {
+        --paper: #050505;
+        --card:  #090909;
+        --ink:   #f5f5f2;
+        --soft:  #a7abb0;
+        --line:  #343434;
+        --accent:#f59e0b;   /* Amber — Anwendung */
+        --ap1:   #f59e0b;
+        --ap2:   #fb923c;
+        --ap3:   #f87171;
+        --ms:    #fbbf24;
+      }
+      *{margin:0;padding:0;box-sizing:border-box;}
+      html{scroll-behavior:smooth;}
+      body{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:16px;}
+      header{background:var(--paper);padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;border-bottom:1px solid var(--line);}
+      header h1{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:400;letter-spacing:-0.06em;color:var(--ink);margin-bottom:8px;}
+      header p{font-size:.88rem;color:var(--soft);letter-spacing:.08em;margin-top:12px;}
+      .app-badge{display:inline-block;background:var(--card);border:1px solid var(--accent);color:var(--accent);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px;}
+      nav{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;flex-wrap:wrap;gap:28px;padding:0 max(4vw,calc((100vw - 1240px)/2));min-height:56px;}
+      nav a{color:var(--soft);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+      nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--accent);}
+      nav a.back{color:var(--accent);margin-left:auto;}
+      .content{width:min(1240px,94vw);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);}
+      section{padding:72px 48px;border-bottom:1px solid var(--line);scroll-margin-top:56px;}
+      section:last-child{border-bottom:none;}
+      h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;letter-spacing:-.05em;color:var(--ink);margin-bottom:28px;line-height:1.1;}
+      h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;}
+      h4{margin-top:24px;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;font-weight:600;color:var(--accent);}
+      p{font-size:1rem;color:var(--ink);margin-bottom:18px;line-height:1.65;max-width:78ch;}
+      ul,ol{margin-left:28px;margin-bottom:18px;color:var(--ink);}
+      li{margin-bottom:10px;line-height:1.62;}
+      strong{color:var(--ink);font-weight:600;}
+      code{font-family:'Menlo','Monaco','Courier New',monospace;font-size:.85em;background:var(--card);border:1px solid var(--line);padding:2px 6px;color:var(--accent);}
+      pre{background:var(--card);border:1px solid var(--line);padding:20px 24px;overflow-x:auto;margin:20px 0;font-size:.85rem;font-family:'Menlo','Monaco','Courier New',monospace;color:var(--ink);line-height:1.7;}
+      pre code{background:none;border:none;padding:0;color:inherit;}
+      a{color:var(--accent);text-decoration:none;}
+      a:hover{opacity:.8;}
+      .ap-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;margin-top:28px;}
+      .ap-card{background:var(--card);border:1px solid var(--line);padding:28px 32px;position:relative;overflow:hidden;}
+      .ap-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+      .ap1::before{background:var(--ap1);}
+      .ap2::before{background:var(--ap2);}
+      .ap3::before{background:var(--ap3);}
+      .ap-tag{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;display:block;}
+      .ap1 .ap-tag{color:var(--ap1);}
+      .ap2 .ap-tag{color:var(--ap2);}
+      .ap3 .ap-tag{color:var(--ap3);}
+      .ap-card h3{margin-top:0;font-size:1.1rem;}
+      .ap-meta{display:flex;gap:20px;margin-top:16px;font-size:.75rem;color:var(--soft);flex-wrap:wrap;}
+      .ap-meta span{display:flex;flex-direction:column;gap:2px;}
+      .ap-meta strong{color:var(--ink);font-size:.82rem;}
+      .deliverables{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--soft);}
+      .deliverables strong{color:var(--ink);}
+      .g-wrap{overflow-x:auto;margin-top:28px;}
+      .g-chart{min-width:700px;border:1px solid var(--line);}
+      .g-head{display:grid;grid-template-columns:160px 1fr;border-bottom:2px solid var(--line);}
+      .g-head-label{background:var(--card);border-right:1px solid var(--line);padding:8px 14px;font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:flex-end;}
+      .g-head-track{position:relative;background:var(--card);height:44px;}
+      .g-tick{position:absolute;top:0;bottom:0;border-left:1px solid #1e1e1e;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6px;padding-left:4px;font-size:.6rem;color:#555;}
+      .g-tick.q{border-left:1px solid var(--line);color:var(--soft);}
+      .g-tick.q span{color:var(--accent);font-weight:700;font-size:.7rem;}
+      .g-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line);min-height:52px;}
+      .g-row:last-child{border-bottom:none;}
+      .g-rlabel{background:var(--card);border-right:1px solid var(--line);padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:2px;}
+      .g-rlabel strong{font-size:.8rem;color:var(--ink);font-weight:600;}
+      .g-rlabel span{font-size:.64rem;color:var(--soft);}
+      .g-track{position:relative;background:var(--paper);}
+      .g-track::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(25% - 1px),#1c1c1c calc(25% - 1px),#1c1c1c 25%);pointer-events:none;}
+      .g-bar{position:absolute;top:50%;transform:translateY(-50%);height:20px;border-radius:0;display:flex;align-items:center;padding:0 8px;font-size:.62rem;font-weight:700;color:rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;}
+      .g-ms{position:absolute;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:10px;height:10px;background:var(--ms);z-index:4;box-shadow:0 0 0 2px var(--paper);}
+      .g-ms-lbl{position:absolute;top:2px;transform:translateX(-50%);font-size:.58rem;color:var(--ms);white-space:nowrap;font-weight:700;z-index:5;}
+      .g-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;font-size:.78rem;}
+      .g-leg{display:flex;align-items:center;gap:8px;}
+      .g-dot{width:20px;height:10px;border-radius:0;flex-shrink:0;}
+      .g-diamond{width:9px;height:9px;transform:rotate(45deg);background:var(--ms);flex-shrink:0;}
+      .spec-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem;}
+      .spec-table th{background:var(--card);color:var(--accent);padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+      .spec-table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+      .spec-table tr:hover{background:var(--card);}
+      .callout{border-left:2px solid var(--accent);padding:16px 20px;margin:20px 0;background:var(--card);}
+      .callout p{margin:0;font-size:.9rem;}
+      .step-list{counter-reset:steps;list-style:none;margin-left:0;margin-top:12px;}
+      .step-list li{counter-increment:steps;padding:14px 16px 14px 52px;border-bottom:1px solid var(--line);position:relative;font-size:.95rem;}
+      .step-list li::before{content:counter(steps,'decimal-leading-zero');position:absolute;left:16px;top:14px;font-size:.68rem;color:var(--accent);font-weight:700;letter-spacing:.1em;}
+      footer{color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);}
+      footer p{font-size:.75rem;margin:6px 0;color:var(--soft);}
+      @media(max-width:500px){section{padding:48px 20px;}.ap-cards{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="margin-bottom:14px;">
+        <span style="font-size:2em;font-weight:700;">calyr.aí</span>
+        <span style="font-size:.72em;color:var(--accent);font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
+    </div>
+    <div class="app-badge">Anwendungsdokument</div>
+    <h1>Computational Anwendungen</h1>
+    <h1 style="font-size:clamp(1.2rem,2.5vw,2rem);color:var(--soft);font-weight:400;letter-spacing:-.02em;margin-top:4px;">mATOMIC · SBPA — Molekulare Simulation &amp; Sequenzanalyse</h1>
+    <p>Anwendungsworkflows · Implementierung · Datenintegration · August 2026</p>
+</header>
+
+<nav>
+    <a href="#overview">Übersicht</a>
+    <a href="#matomic">mATOMIC</a>
+    <a href="#sbpa">SBPA</a>
+    <a href="#gantt">Gantt</a>
+    <a href="#integration">Oracle Integration</a>
+    <a href="#api">API &amp; Workflows</a>
+    <a href="parvotec_app_biophysics.html" class="back">← SAXS · SPR · PPMS</a>
+</nav>
+
+<div class="content">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="overview">
+    <h2>Übersicht — Computational Anwendungsplattform</h2>
+    <p>mATOMIC und SBPA sind die zwei zentralen computationalen Anwendungen der Parvotec-Plattform. Sie ergänzen die biophysikalischen Methoden (SAXS, SPR, PPMS) um strukturelle Simulationen und sequenzbasierte Vorhersagen — und erweitern den Fitness Oracle um physikalisch begründete Features die rein experimentell schwer zugänglich sind.</p>
+
+    <div class="callout">
+        <p><strong>Computational als Oracle-Vorfilter:</strong> mATOMIC und SBPA liefern Features für 100% der ~1 Million DMS-Varianten (kein Synchrotron-Zugang nötig). Sie werden als erster Filterungsschritt eingesetzt: Kandidaten mit schlechten Stabilitäts- oder Immunogenizitäts-Scores werden vor der teuren experimentellen Validierung aussortiert.</p>
+    </div>
+
+    <table class="spec-table">
+        <thead><tr><th>Tool</th><th>Typ</th><th>AAV-spezifische Information</th><th>Oracle Feature</th><th>Abdeckung</th></tr></thead>
+        <tbody>
+            <tr><td><strong>mATOMIC</strong></td><td>Molekulardynamik + Coarse-Grained Simulation</td><td>Insertions-Stabilität, Bindungsfreie Energie ΔG, RMSF per Residue</td><td>ΔΔG, RMSF, Stabilitätsscore</td><td>Top-10.000 Kandidaten</td></tr>
+            <tr><td><strong>SBPA</strong></td><td>Sequenzbasierte Property Analysis</td><td>Konservierungsscore, T-Zell-Epitop-Vorhersage, Aggregationspropensität, Herstellbarkeit</td><td>Immuno-Risk, AggScore, Manuf-Score</td><td>Alle ~1M Varianten</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="matomic">
+    <h2>mATOMIC — Multiscale ATOMIC Molecular Dynamics</h2>
+
+    <h3>Anwendungsziel</h3>
+    <p>mATOMIC (Multiscale AT/CG Simulation Infrastructure for Capsid) simuliert die strukturellen Auswirkungen von 7-Mer Insertionen auf den AAV-Capsid. Es kombiniert All-Atom Molecular Dynamics (MD) für lokale Strukturanalysen mit Coarse-Grained (CG) Simulationen für große Systeme und längere Zeitskalen. Output ist ein mechanistisch begründeter Stabilitätsscore pro Insertion.</p>
+
+    <div class="ap-cards">
+        <div class="ap-card ap1">
+            <span class="ap-tag">AP1 · M1–M2</span>
+            <h3>Infrastruktur-Setup</h3>
+            <ul>
+                <li><strong>All-Atom MD:</strong> GROMACS 2024, CHARMM36m Kraftfeld. AAV6-Capsid Struktur (PDB 3ZGW) als Startpunkt. Protonierungszustand bei pH 7.4 via PROPKA3</li>
+                <li><strong>Coarse-Grained:</strong> MARTINI 3.0 Kraftfeld für AAV-Kapsidhülle. CG ermöglicht 10–100× längere Simulationen (µs-Skala) für Stabilitäts-Assessment</li>
+                <li><strong>GPU-Infrastruktur:</strong> 2× NVIDIA A100 (oder äquivalent). GROMACS mit CUDA-Beschleunigung. Typisch: 100 ns All-Atom-Simulation / 4h auf A100</li>
+                <li>Validierung: Vergleich simulierter Rg mit SAXS-Messungen von WT-AAV6 (Soll: Rg_sim ≈ Rg_SAXS ± 0.5 nm)</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> GROMACS Setup-Protokoll · WT-AAV6 Validierungssimulation · SOP-mAT-01</div>
+        </div>
+        <div class="ap-card ap2">
+            <span class="ap-tag">AP2 · M2–M8</span>
+            <h3>7-Mer Insertions-Screening</h3>
+            <ul>
+                <li><strong>ΔΔG Berechnung:</strong> Free Energy Perturbation (FEP) oder MM-GBSA für ΔG(insertion) – ΔG(WT). Negatives ΔΔG = Insertion destabilisiert Capsid. Schwellenwert: ΔΔG &gt; +2 kcal/mol → Kandidat verwerfen</li>
+                <li><strong>RMSF-Analyse:</strong> Root Mean Square Fluctuation pro Residue. Hohe RMSF an Insertionsstelle → flexible, strukturell tolerante Region (positiv für Insertionstoleranz)</li>
+                <li><strong>Receptor Docking:</strong> ClusPro oder HADDOCK für AAV-HSPG Docking. ΔG_bind als Vorhersage der Rezeptorbindung (validiert gegen SPR KD)</li>
+                <li>Durchsatz: CG-Vorscreening für Top-10.000 Kandidaten (1 µs/Kandidat, ~2 min/Kandidat auf GPU). Full AA-MD für Top-500 (100 ns, ~4h/Kandidat)</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> ΔΔG-Dataset (Top-10.000) · RMSF-Profile · Docking-Scores · Korrelation zu SPR KD</div>
+        </div>
+        <div class="ap-card ap3">
+            <span class="ap-tag">AP3 · M8–M12</span>
+            <h3>Oracle-Integration</h3>
+            <ul>
+                <li>mATOMIC-Features: [ΔΔG_norm, RMSF_insert, ΔG_HSPG_norm, contact_map_entropy] als 4 Oracle-Inputs</li>
+                <li>Korrelationsvalidierung: ΔΔG vs. SAXS Rg (Pearson r ≥ 0.55 erwartet) · ΔG_HSPG vs. SPR KD (r ≥ 0.60 erwartet)</li>
+                <li>Vorfilterung: Alle ~1M DMS-Kandidaten zuerst durch CG-ΔΔG Screen. Kandidaten mit ΔΔG &lt; -3 kcal/mol (stark destabilisierend) vor experimentellem Screen eliminieren — spart ~20% Produktionsaufwand</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> mATOMIC-Oracle Pipeline · Vorfilter-Modul · Validierungsreport</div>
+        </div>
+    </div>
+
+    <h3>mATOMIC Simulationsparameter</h3>
+    <table class="spec-table">
+        <thead><tr><th>Modus</th><th>Kraftfeld</th><th>Simulationslänge</th><th>Laufzeit/A100</th><th>Einsatz</th></tr></thead>
+        <tbody>
+            <tr><td>CG Prescreening</td><td>MARTINI 3.0</td><td>1 µs</td><td>~2 min</td><td>Alle Top-10.000 Kandidaten</td></tr>
+            <tr><td>AA-MD Vollsimulation</td><td>CHARMM36m</td><td>100 ns</td><td>~4h</td><td>Top-500 nach CG-Filter</td></tr>
+            <tr><td>FEP ΔΔG</td><td>CHARMM36m</td><td>2 × 5 ns (FEP-Fenster)</td><td>~8h</td><td>Top-100 (Finalkandidaten)</td></tr>
+            <tr><td>Docking (HADDOCK)</td><td>CNS 1.3</td><td>Starre Docking, 1000 Strukturen</td><td>~30 min</td><td>Top-500 gegen HSPG/AAVR</td></tr>
+        </tbody>
+    </table>
+
+    <pre><code># mATOMIC CG Prescreening Pipeline
+import subprocess, pandas as pd, numpy as np
+from pathlib import Path
+
+def run_cg_screening(insert_sequences: list[str],
+                      aav_base_pdb: str = "aav6_wt.pdb",
+                      output_dir: str = "matomic_results") -> pd.DataFrame:
+    """CG Prescreening für alle 7-Mer Insertionen via GROMACS/MARTINI."""
+    results = []
+    for seq in insert_sequences:
+        # Insertion modellieren (PyMOL API oder Modeller)
+        pdb = model_insertion(aav_base_pdb, seq, position=587)
+        # GROMACS martinize2 + GROMACS run
+        cg_pdb = martinize2(pdb)
+        ddg = run_gromacs_cg(cg_pdb, sim_length="1us", output=output_dir)
+        rmsf = extract_rmsf(ddg["traj"], residue_range=(580, 600))
+        results.append({"sequence": seq, "ddg_kcal": ddg["ddg"],
+                         "rmsf_insert": rmsf.mean(), "passed": ddg["ddg"] > -3.0})
+    return pd.DataFrame(results)
+
+def prescreening_filter(df: pd.DataFrame, ddg_threshold=-3.0) -> pd.DataFrame:
+    """Entfernt stark destabilisierende Insertionen vor experimentellem Screen."""
+    return df[df["ddg_kcal"] > ddg_threshold].copy()</code></pre>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="sbpa">
+    <h2>SBPA — Sequence-Based Property Analysis</h2>
+
+    <h3>Anwendungsziel</h3>
+    <p>SBPA (Sequence-Based Property Analysis) ist eine mehrstufige Bioinformatik-Pipeline die direkt aus der AAV-Aminosäuresequenz eine Vielzahl von Eigenschaften berechnet: evolutionäre Konservierung, Immunogenizitätsrisiko (T-Zell-Epitope), Aggregationspropensität, Hydrophobizitätsprofil und Herstellbarkeitsindex. SBPA deckt 100% der ~1M DMS-Varianten ab (keine Synchrotron- oder Instrumentenzeit nötig) und ist damit das wichtigste Vorfilterungs-Tool.</p>
+
+    <div class="ap-cards">
+        <div class="ap-card ap1">
+            <span class="ap-tag">AP1 · M1–M2</span>
+            <h3>Pipeline-Setup &amp; Validierung</h3>
+            <ul>
+                <li><strong>Konservierungsanalyse:</strong> BLAST gegen UniRef90 (E-value ≤1e-10). ConSurf-Server oder lokale MSA via MUSCLE/MAFFT. Output: Konservierungsrate pro Residue (0–1), evolutionärer Score</li>
+                <li><strong>Immunogenizitätsprädiktion:</strong> NetMHCII 4.0 für MHC-II-gebundene T-Zell-Epitope (9-mer Peptide). IEDB Immunogenicity Calculator für jede Insertion. EpitopeFinder für lineare B-Zell-Epitope</li>
+                <li><strong>Aggregationsprädiktion:</strong> CamSol-Intrinsic für Löslichkeitsscore. AGGRESCAN3D für strukturbasierte Aggregationspropensität. SAP (Spatial Aggregation Propensity) via BioPython</li>
+                <li><strong>Herstellbarkeit:</strong> Kodon-Optimierungsscore (IDT CodonOpt API), Komplementarität zu HEK293T Expressionsprofil</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SBPA Pipeline v1.0 · Validierung an bekannten AAV-Varianten · SOP-SBPA-01</div>
+        </div>
+        <div class="ap-card ap2">
+            <span class="ap-tag">AP2 · M2–M8</span>
+            <h3>Massenscreening aller DMS-Varianten</h3>
+            <ul>
+                <li>Batch-Verarbeitung aller ~1M DMS-Kandidaten (parallelisiert, ~10.000 Sequenzen/h auf 8-core CPU)</li>
+                <li>Output pro Variante: [ConSurf_score, NetMHCII_max_score, CamSol_score, AggPropensity, Manuf_score]</li>
+                <li>Dual-Filterung: (1) Immunogenizitäts-Hardcut: NetMHCII IC50 &lt;50 nM → automatisch disqualifiziert. (2) Aggregations-Softcut: AggPropensity &gt;0.8 → Flagging, nicht automatisches Ausschließen</li>
+                <li>Korrelationsanalyse: SBPA Scores vs. In-vitro-Messdaten (Yield aus ddPCR, Immunogenizitäts-Assay ELISpot)</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SBPA-Dataset (~1M Varianten × 5 Scores) · Immunogenizitäts-Filter-Report</div>
+        </div>
+        <div class="ap-card ap3">
+            <span class="ap-tag">AP3 · M8–M12</span>
+            <h3>Oracle-Integration &amp; Kontinuierliche Analyse</h3>
+            <ul>
+                <li>5 SBPA-Scores als Oracle-Features (alle ~1M Varianten gelabelt — keine fehlenden Werte)</li>
+                <li>SBPA-Immunogenizitätsscore als Soft-Constraint im cVAE: Generierte Sequenzen mit hohem Immunogenizitätsrisiko werden down-gewichtet</li>
+                <li>Automatisierte SBPA-Analyse für alle neu generierten BO-Kandidaten vor experimenteller Validierung</li>
+                <li>Kontinuierliche Aktualisierung: Wenn neue experimentelle Immunogenizitätsdaten (NAb-Titer, ELISpot) verfügbar → Re-Kalibrierung des NetMHCII-Vorhersagemodells</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SBPA-Oracle Pipeline · Immunogenizitäts-Constraint-Modul · Kontinuierlicher Update-Workflow</div>
+        </div>
+    </div>
+
+    <h3>SBPA Scores — Übersicht &amp; Schwellenwerte</h3>
+    <table class="spec-table">
+        <thead><tr><th>Score</th><th>Tool</th><th>Einheit / Range</th><th>Go-Schwellenwert</th><th>Interpretation</th></tr></thead>
+        <tbody>
+            <tr><td>Konservierung</td><td>ConSurf / MUSCLE</td><td>0–1 (1 = hoch konserviert)</td><td>Insert-Region: ≤0.5 (flexible Region)</td><td>Hoch konservierte Positionen → Insertion wenig toleriert</td></tr>
+            <tr><td>MHC-II Immunogenizität</td><td>NetMHCII 4.0</td><td>IC50 [nM]</td><td>≥50 nM (schwache Bindung = gut)</td><td>&lt;50 nM → starkes T-Zell-Epitop → Disqualifikation</td></tr>
+            <tr><td>Löslichkeit (CamSol)</td><td>CamSol-Intrinsic</td><td>-3 bis +3 (höher = löslicher)</td><td>≥ -0.5</td><td>Sehr negativ → Aggregationsrisiko</td></tr>
+            <tr><td>Aggregationspropensität</td><td>AGGRESCAN3D</td><td>0–1 (1 = hoch aggregationsanfällig)</td><td>≤0.6</td><td>&gt;0.8 → Flag für PPMS-Monitoring</td></tr>
+            <tr><td>Herstellbarkeitsindex</td><td>IDT CodonOpt</td><td>0–100 (100 = optimal)</td><td>≥60</td><td>Niedrig → Expressionsprobleme in HEK293T</td></tr>
+        </tbody>
+    </table>
+
+    <pre><code># SBPA Pipeline — Massenscreening
+from Bio import SeqIO
+import pandas as pd
+
+class SBPAPipeline:
+    """Sequenzbasierte Property Analysis für AAV 7-Mer Insertionen."""
+
+    def __init__(self):
+        self.consurfdb   = ConSurfDatabase("aav6_msa.fasta")
+        self.netmhcii    = NetMHCIIPredictor(alleles=["DRB1*04:01", "DRB1*07:01"])
+        self.camsol      = CamSolIntrinsic()
+        self.aggrescan   = AGGRESCAN3D(template_pdb="aav6_wt_cg.pdb")
+
+    def analyze(self, sequence: str, position: int = 587) -> dict:
+        full_seq = self._insert_into_wt(sequence, position)
+        return {
+            "consurv_score":  self.consurfdb.score(position, position+7),
+            "mhcii_ic50_min": self.netmhcii.min_ic50(full_seq[580:600]),
+            "camsol_score":   self.camsol.score(full_seq),
+            "agg_propensity": self.aggrescan.score(position, position+7),
+            "manuf_score":    self._codon_optimization_score(full_seq),
+        }
+
+    def batch_analyze(self, sequences: list[str]) -> pd.DataFrame:
+        return pd.DataFrame([self.analyze(s) for s in sequences])
+
+    def apply_hard_filter(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Entfernt Kandidaten mit starken T-Zell-Epitopen."""
+        return df[df["mhcii_ic50_min"] >= 50.0].copy()</code></pre>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="gantt">
+    <h2>Gantt — Implementierung 12 Monate</h2>
+
+    <div class="g-legend">
+        <div class="g-leg"><div class="g-dot" style="background:var(--ap1)"></div>mATOMIC Setup &amp; Screening</div>
+        <div class="g-leg"><div class="g-dot" style="background:var(--ap2)"></div>SBPA Pipeline &amp; Massenscreening</div>
+        <div class="g-leg"><div class="g-diamond"></div>Meilenstein</div>
+    </div>
+
+    <div class="g-wrap">
+      <div class="g-chart">
+        <div class="g-head">
+          <div class="g-head-label">Anwendung</div>
+          <div class="g-head-track">
+            <div class="g-tick q" style="left:0%"><span>Q1</span></div>
+            <div class="g-tick" style="left:8.33%">M2</div>
+            <div class="g-tick" style="left:16.67%">M3</div>
+            <div class="g-tick q" style="left:25%"><span>Q2</span></div>
+            <div class="g-tick" style="left:33.33%">M5</div>
+            <div class="g-tick" style="left:41.67%">M6</div>
+            <div class="g-tick q" style="left:50%"><span>Q3</span></div>
+            <div class="g-tick" style="left:58.33%">M8</div>
+            <div class="g-tick" style="left:66.67%">M9</div>
+            <div class="g-tick q" style="left:75%"><span>Q4</span></div>
+            <div class="g-tick" style="left:83.33%">M11</div>
+            <div class="g-tick" style="left:91.67%">M12</div>
+          </div>
+        </div>
+        <div class="g-row">
+          <div class="g-rlabel"><strong>mATOMIC</strong><span>GROMACS · MARTINI</span></div>
+          <div class="g-track">
+            <div class="g-bar" style="background:var(--ap1);left:0%;width:16.67%">AP1 Setup</div>
+            <div class="g-bar" style="background:var(--ap1);left:16.67%;width:50%">AP2 CG + AA Screening</div>
+            <div class="g-bar" style="background:var(--ap1);left:66.67%;width:33.33%">AP3 Oracle</div>
+            <div class="g-ms" style="left:16.67%"></div><div class="g-ms-lbl" style="left:19%">Setup ✓</div>
+            <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:69%">Integriert</div>
+          </div>
+        </div>
+        <div class="g-row">
+          <div class="g-rlabel"><strong>SBPA</strong><span>ConSurf · NetMHCII</span></div>
+          <div class="g-track">
+            <div class="g-bar" style="background:var(--ap2);left:0%;width:16.67%">AP1</div>
+            <div class="g-bar" style="background:var(--ap2);left:16.67%;width:41.67%">AP2 — 1M Varianten Massenscreening</div>
+            <div class="g-bar" style="background:var(--ap2);left:58.33%;width:41.67%">AP3 — Fortlaufende Analyse aller BO-Kandidaten</div>
+            <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:36%">1M Screen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="integration">
+    <h2>Oracle Integration — mATOMIC &amp; SBPA</h2>
+    <p>Zusammen liefern mATOMIC und SBPA 9 zusätzliche Oracle-Features. Da SBPA alle ~1M Varianten abdeckt, sind diese Features besonders wertvoll als Vorfilter und als maskenlose Training-Labels:</p>
+
+    <table class="spec-table">
+        <thead><tr><th>Tool</th><th>Feature</th><th>Einheit</th><th>Normalisierung</th><th>Abdeckung</th></tr></thead>
+        <tbody>
+            <tr><td>mATOMIC</td><td>ΔΔG (Insertionsstabilität)</td><td>kcal/mol</td><td>normalisiert auf σ(DMS-Set)</td><td>Top-10.000 (CG) / Top-500 (AA)</td></tr>
+            <tr><td>mATOMIC</td><td>RMSF Insert-Region</td><td>Å</td><td>normalisiert auf WT</td><td>Top-10.000</td></tr>
+            <tr><td>mATOMIC</td><td>ΔG_HSPG (Docking)</td><td>kcal/mol</td><td>normalisiert</td><td>Top-500</td></tr>
+            <tr><td>SBPA</td><td>ConSurf Konservierungsscore</td><td>0–1</td><td>direkt</td><td>Alle ~1M</td></tr>
+            <tr><td>SBPA</td><td>NetMHCII IC50 (min)</td><td>nM (log)</td><td>log10, normalisiert</td><td>Alle ~1M</td></tr>
+            <tr><td>SBPA</td><td>CamSol Löslichkeit</td><td>-3 bis +3</td><td>min-max norm.</td><td>Alle ~1M</td></tr>
+            <tr><td>SBPA</td><td>AggPropensity</td><td>0–1</td><td>direkt</td><td>Alle ~1M</td></tr>
+            <tr><td>SBPA</td><td>Herstellbarkeitsindex</td><td>0–100</td><td>/100</td><td>Alle ~1M</td></tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <p><strong>Vorfilterungspotenzial:</strong> SBPA eliminiert ~15–20% aller DMS-Kandidaten durch den MHC-II Hardcut (IC50 &lt;50 nM) und weitere ~10% durch den Aggregationssoftcut, bevor ein einziger Liter Zellkulturmedium verbraucht wird. mATOMIC eliminiert weitere ~20% durch den ΔΔG Stabilitätsfilter. Gesamteffekt: ~35–45% weniger experimentelle Validierungen nötig.</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="api">
+    <h2>API &amp; Integrierter Workflow</h2>
+
+    <h3>Kombinierter Vorfilterungs-Workflow (Pre-Experimental Screen)</h3>
+    <ol class="step-list">
+        <li><strong>SBPA Massenscreening (Tag 1, automatisiert).</strong> Alle ~1M DMS-Sequenzen durch SBPA laufen lassen (batch_analyze). Hardcut: Entferne Kandidaten mit MHC-II IC50 &lt;50 nM. Softcut: Flagge Kandidaten mit AggPropensity &gt;0.6. Ausgabe: ~700k–800k Kandidaten nach Filter.</li>
+        <li><strong>mATOMIC CG Prescreening (Tag 1–2, GPU).</strong> Alle SBPA-gefilterten Kandidaten (oder Top-10k nach Oracle-Ranking) durch CG-ΔΔG Screen. Filter: ΔΔG &lt;-3 kcal/mol → verwerfen. Ausgabe: ~600k–700k Kandidaten nach kombiniertem Filter.</li>
+        <li><strong>Oracle-Scoring (Tag 2, automatisiert).</strong> ESM-2 Embedding aller verbleibenden Kandidaten (Pre-computed). Fitness Predictor Vorhersage (VSMC, EC, Leber, SAXS-Features). Composite Score Berechnung. Ranking aller Kandidaten.</li>
+        <li><strong>BO-Selektion (Tag 2, automatisiert).</strong> Multi-objective BO (EHVI) auf Top-50.000 nach Composite Score. Ausgabe: 50 Kandidaten für experimentelle Validierung. Diese 50 sind bereits durch SBPA + mATOMIC + Oracle dreifach validiert.</li>
+        <li><strong>Experimentelle Validierung (Tag 3–28).</strong> Synthese und Produktion der 50 Kandidaten. PPMS-Prescreening aller 50 (Tag 3–5). SPR-Screening Top-20 (Tag 5–15). SAXS Top-10 (Synchrotron oder Labor). In vitro Transduktionsassay (FACS).</li>
+    </ol>
+
+    <h3>Python Integration — Unified Screening API</h3>
+    <pre><code>from parvotec.oracle import VascularOracle
+from parvotec.sbpa import SBPAPipeline
+from parvotec.matomic import mATOMICScreener
+
+# Initialisierung
+oracle   = VascularOracle.load("vascular_oracle_v2.0.pth")
+sbpa     = SBPAPipeline()
+matomic  = mATOMICScreener(gpu_device="cuda:0")
+
+# Kombinierter Vorfilterungs-Workflow
+def prescreen_candidates(sequences: list[str]) -> list[str]:
+    """Dreistufige Vorfilterung vor experimenteller Validierung."""
+    # Stufe 1: SBPA (100% Abdeckung, schnell)
+    sbpa_df  = sbpa.batch_analyze(sequences)
+    s1       = sbpa.apply_hard_filter(sbpa_df)["sequence"].tolist()
+    print(f"Nach SBPA: {len(s1)}/{len(sequences)} ({100*len(s1)//len(sequences)}%)")
+
+    # Stufe 2: mATOMIC CG Prescreening (Top-10k, GPU)
+    top10k   = oracle.rank_by_embedding(s1)[:10_000]
+    mat_df   = matomic.cg_prescreening(top10k)
+    s2       = mat_df[mat_df["passed"]]["sequence"].tolist()
+    print(f"Nach mATOMIC: {len(s2)}/{len(top10k)}")
+
+    # Stufe 3: Oracle BO-Selektion
+    candidates = oracle.generate(
+        sequences=s2, targets={"vsmc":0.85, "liver":0.08}, n=50, strategy="bo"
+    )
+    return candidates
+
+# Ergebnis: 50 dreifach-validierte Kandidaten für experimentellen Screen
+final_50 = prescreen_candidates(all_dms_sequences)</code></pre>
+</section>
+
+</div>
+
+<footer>
+    <p><strong>Parvotec — Computational Anwendungen: mATOMIC · SBPA</strong></p>
+    <p>Anwendungsdokument v1.0 · August 2026 · calyr.aí Research</p>
+    <p style="margin-top:12px;">
+        <a href="parvotec_app_biophysics.html">← SAXS · SPR · PPMS Anwendungen</a> &nbsp;·&nbsp;
+        <a href="parvotec_aorta_saxs_analysis.html">Aorta &amp; SAXS Analyse</a> &nbsp;·&nbsp;
+        <a href="parvotec_aorta_proposal.html">Aorta Proposal</a>
+    </p>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a:not(.back)');
+    window.addEventListener('scroll', () => {
+        let cur = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+        navLinks.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + cur) a.classList.add('active'); });
+    }, { passive: true });
+</script>
+</body>
+</html>

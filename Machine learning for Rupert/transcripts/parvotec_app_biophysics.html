@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvotec | Biophysikalische Anwendungen — SAXS · SPR · PPMS</title>
+    <style>
+      :root {
+        --paper: #050505;
+        --card:  #090909;
+        --ink:   #f5f5f2;
+        --soft:  #a7abb0;
+        --line:  #343434;
+        --accent:#f59e0b;   /* Amber — Anwendung, nicht Research Proposal */
+        --ap1:   #f59e0b;
+        --ap2:   #fb923c;
+        --ap3:   #f87171;
+        --ms:    #fbbf24;
+      }
+      *{margin:0;padding:0;box-sizing:border-box;}
+      html{scroll-behavior:smooth;}
+      body{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:16px;}
+      header{background:var(--paper);padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;border-bottom:1px solid var(--line);}
+      header h1{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:400;letter-spacing:-0.06em;color:var(--ink);margin-bottom:8px;}
+      header p{font-size:.88rem;color:var(--soft);letter-spacing:.08em;margin-top:12px;}
+      .app-badge{display:inline-block;background:var(--card);border:1px solid var(--accent);color:var(--accent);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px;}
+      nav{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;flex-wrap:wrap;gap:28px;padding:0 max(4vw,calc((100vw - 1240px)/2));min-height:56px;}
+      nav a{color:var(--soft);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+      nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--accent);}
+      nav a.back{color:var(--accent);margin-left:auto;}
+      .content{width:min(1240px,94vw);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);}
+      section{padding:72px 48px;border-bottom:1px solid var(--line);scroll-margin-top:56px;}
+      section:last-child{border-bottom:none;}
+      h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;letter-spacing:-.05em;color:var(--ink);margin-bottom:28px;line-height:1.1;}
+      h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;}
+      h4{margin-top:24px;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;font-weight:600;color:var(--accent);}
+      p{font-size:1rem;color:var(--ink);margin-bottom:18px;line-height:1.65;max-width:78ch;}
+      ul,ol{margin-left:28px;margin-bottom:18px;color:var(--ink);}
+      li{margin-bottom:10px;line-height:1.62;}
+      strong{color:var(--ink);font-weight:600;}
+      code{font-family:'Menlo','Monaco','Courier New',monospace;font-size:.85em;background:var(--card);border:1px solid var(--line);padding:2px 6px;color:var(--accent);}
+      pre{background:var(--card);border:1px solid var(--line);padding:20px 24px;overflow-x:auto;margin:20px 0;font-size:.85rem;font-family:'Menlo','Monaco','Courier New',monospace;color:var(--ink);line-height:1.7;}
+      pre code{background:none;border:none;padding:0;color:inherit;}
+      a{color:var(--accent);text-decoration:none;}
+      a:hover{opacity:.8;}
+      /* Application Packages */
+      .ap-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;margin-top:28px;}
+      .ap-card{background:var(--card);border:1px solid var(--line);padding:28px 32px;position:relative;overflow:hidden;}
+      .ap-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+      .ap1::before{background:var(--ap1);}
+      .ap2::before{background:var(--ap2);}
+      .ap3::before{background:var(--ap3);}
+      .ap-tag{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;display:block;}
+      .ap1 .ap-tag{color:var(--ap1);}
+      .ap2 .ap-tag{color:var(--ap2);}
+      .ap3 .ap-tag{color:var(--ap3);}
+      .ap-card h3{margin-top:0;font-size:1.1rem;}
+      .ap-meta{display:flex;gap:20px;margin-top:16px;font-size:.75rem;color:var(--soft);flex-wrap:wrap;}
+      .ap-meta span{display:flex;flex-direction:column;gap:2px;}
+      .ap-meta strong{color:var(--ink);font-size:.82rem;}
+      .deliverables{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--soft);}
+      .deliverables strong{color:var(--ink);}
+      /* Gantt */
+      .g-wrap{overflow-x:auto;margin-top:28px;}
+      .g-chart{min-width:700px;border:1px solid var(--line);}
+      .g-head{display:grid;grid-template-columns:160px 1fr;border-bottom:2px solid var(--line);}
+      .g-head-label{background:var(--card);border-right:1px solid var(--line);padding:8px 14px;font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:flex-end;}
+      .g-head-track{position:relative;background:var(--card);height:44px;}
+      .g-tick{position:absolute;top:0;bottom:0;border-left:1px solid #1e1e1e;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6px;padding-left:4px;font-size:.6rem;color:#555;letter-spacing:.04em;}
+      .g-tick.q{border-left:1px solid var(--line);color:var(--soft);}
+      .g-tick.q span{color:var(--accent);font-weight:700;font-size:.7rem;}
+      .g-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line);min-height:52px;}
+      .g-row:last-child{border-bottom:none;}
+      .g-rlabel{background:var(--card);border-right:1px solid var(--line);padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:2px;}
+      .g-rlabel strong{font-size:.8rem;color:var(--ink);font-weight:600;}
+      .g-rlabel span{font-size:.64rem;color:var(--soft);}
+      .g-track{position:relative;background:var(--paper);}
+      .g-track::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(25% - 1px),#1c1c1c calc(25% - 1px),#1c1c1c 25%);pointer-events:none;}
+      .g-bar{position:absolute;top:50%;transform:translateY(-50%);height:20px;border-radius:0;display:flex;align-items:center;padding:0 8px;font-size:.62rem;font-weight:700;color:rgba(0,0,0,.75);letter-spacing:.05em;white-space:nowrap;overflow:hidden;}
+      .g-ms{position:absolute;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:10px;height:10px;background:var(--ms);z-index:4;box-shadow:0 0 0 2px var(--paper);}
+      .g-ms-lbl{position:absolute;top:2px;transform:translateX(-50%);font-size:.58rem;color:var(--ms);white-space:nowrap;font-weight:700;letter-spacing:.04em;z-index:5;}
+      .g-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;font-size:.78rem;}
+      .g-leg{display:flex;align-items:center;gap:8px;}
+      .g-dot{width:20px;height:10px;border-radius:0;flex-shrink:0;}
+      .g-diamond{width:9px;height:9px;transform:rotate(45deg);background:var(--ms);flex-shrink:0;}
+      /* Tables */
+      .spec-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem;}
+      .spec-table th{background:var(--card);color:var(--accent);padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+      .spec-table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+      .spec-table tr:hover{background:var(--card);}
+      .callout{border-left:2px solid var(--accent);padding:16px 20px;margin:20px 0;background:var(--card);}
+      .callout p{margin:0;font-size:.9rem;}
+      .step-list{counter-reset:steps;list-style:none;margin-left:0;margin-top:12px;}
+      .step-list li{counter-increment:steps;padding:14px 16px 14px 52px;border-bottom:1px solid var(--line);position:relative;font-size:.95rem;}
+      .step-list li::before{content:counter(steps,'decimal-leading-zero');position:absolute;left:16px;top:14px;font-size:.68rem;color:var(--accent);font-weight:700;letter-spacing:.1em;}
+      footer{color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);}
+      footer p{font-size:.75rem;margin:6px 0;color:var(--soft);}
+      @media(max-width:500px){section{padding:48px 20px;}.ap-cards{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="margin-bottom:14px;">
+        <span style="font-size:2em;font-weight:700;">calyr.aí</span>
+        <span style="font-size:.72em;color:var(--accent);font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
+    </div>
+    <div class="app-badge">Anwendungsdokument</div>
+    <h1>Biophysikalische Anwendungen</h1>
+    <h1 style="font-size:clamp(1.2rem,2.5vw,2rem);color:var(--soft);font-weight:400;letter-spacing:-.02em;margin-top:4px;">SAXS · SPR · PPMS — AAV Capsid Charakterisierung</h1>
+    <p>Anwendungsworkflows · Implementierung · Datenintegration · August 2026</p>
+</header>
+
+<nav>
+    <a href="#overview">Übersicht</a>
+    <a href="#saxs">SAXS</a>
+    <a href="#spr">SPR</a>
+    <a href="#ppms">PPMS</a>
+    <a href="#gantt">Gantt</a>
+    <a href="#integration">Oracle Integration</a>
+    <a href="#sops">SOPs</a>
+    <a href="parvotec_aorta_proposal.html" class="back">← Aorta Proposal</a>
+</nav>
+
+<div class="content">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="overview">
+    <h2>Übersicht — Biophysikalische Anwendungsplattform</h2>
+    <p>SAXS, SPR und PPMS sind die drei zentralen biophysikalischen Charakterisierungsmethoden der Parvotec AAV-Entwicklungsplattform. Als <strong>Anwendungen</strong> sind sie keine eigenständigen Forschungsprogramme, sondern strukturierte Workflows die in den iterativen ML-Optimierungszyklus eingebettet sind und den Fitness Oracle mit experimentellen Labels versorgen.</p>
+
+    <div class="callout">
+        <p><strong>Anwendungsprinzip:</strong> Jede Methode liefert quantifizierbare AAV-Capsid-Labels (Rg, KD, Partikelgröße, Ladung) die als zusätzliche Oracle-Outputs trainiert und in den Bayesian Optimization Loop integriert werden. Alle drei Methoden sind QC-validiert und SOP-geregelt.</p>
+    </div>
+
+    <h3>Methodenübersicht</h3>
+    <table class="spec-table">
+        <thead><tr><th>Methode</th><th>Prinzip</th><th>AAV-spezifische Information</th><th>Oracle Label</th><th>Durchsatz</th></tr></thead>
+        <tbody>
+            <tr><td><strong>SAXS</strong></td><td>Röntgenkleinwinkelstreuung in Lösung</td><td>Rg, Dmax, Full:Empty Ratio, PDI, Capsid-Integrität</td><td>Rg, F:E, PDI</td><td>20 Proben/Tag (Synchrotron)</td></tr>
+            <tr><td><strong>SPR</strong></td><td>Surface Plasmon Resonance</td><td>Bindungskinetik zu Rezeptoren (HSPG, AAVR, Integrine)</td><td>KD, kon, koff</td><td>6–10 Proben/Tag</td></tr>
+            <tr><td><strong>PPMS</strong></td><td>Partikel-Property Measurement System (DLS + NTA + ZP)</td><td>Hydrodynamischer Radius, Partikelzahl/-konzentration, Zeta-Potential</td><td>Rh, PdI, ζ-Potential</td><td>50+ Proben/Tag</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="saxs">
+    <h2>SAXS — Small-Angle X-ray Scattering</h2>
+
+    <h3>Anwendungsziel</h3>
+    <p>SAXS liefert die präziseste strukturelle Charakterisierung von AAV-Capsids in Lösung: Capsid-Integrität, Full/Empty-Ratio (±2%), Trägheitsradius Rg, Polydispersitätsindex PDI. Als Gold-Standard für AAV-Qualitätskontrolle wird SAXS am Anfang jeder BO-Optimierungsrunde für die Top-100 Kandidaten eingesetzt.</p>
+
+    <div class="ap-cards">
+        <div class="ap-card ap1">
+            <span class="ap-tag">AP1 · M1–M2</span>
+            <h3>Setup &amp; Methodenvalidierung</h3>
+            <ul>
+                <li>Zugang zu BM29/ESRF Grenoble oder P12/DESY Hamburg (Beamtime-Beantragung, typisch 3–6 Monate Vorlaufzeit)</li>
+                <li>Alternativ: Labor-SAXS Setup — Xenocs Nano-inXider S (0.1–10 nm⁻¹, Cu Kα Strahlung, ~4h/Probe)</li>
+                <li>Methodenvalidierung mit AAV2 full und empty Standards (ATCC oder Vigene Biosciences)</li>
+                <li>ATSAS Suite 3.x Installation und Konfiguration (PRIMUS, GNOM, DAMMIF, CRYSOL)</li>
+                <li>Datenverarbeitungs-Pipeline: Python-Skripte für automatisierte Guinier/Kratky/P(r)-Analyse</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> Validierungsreport (WT-AAV Referenzwerte: Rg = 12.5±0.3 nm, Dmax = 28±1 nm) · ATSAS Pipeline · SOP-SAX-01</div>
+        </div>
+        <div class="ap-card ap2">
+            <span class="ap-tag">AP2 · M2–M8</span>
+            <h3>AAV-Kandidaten Applikation</h3>
+            <ul>
+                <li>Probenvorbereitung: 1–5 mg/mL in 20 mM HEPES pH 7.4, 150 mM NaCl, 1 mM MgCl₂ (Gesamtvolumen ≥200 µL/Probe)</li>
+                <li>SEC-SAXS: Superose 6 Increase 10/300 GL, 0.5 mL/min, UV₂₈₀-Detektor online vor SAXS-Detektor</li>
+                <li>Messung: 1s Belichtung, 10 Frames vor Peak (Buffer) + 40 Frames über Peak</li>
+                <li>Rohdaten → ATSAS PRIMUS (Guinier: Rg, I(0)) → GNOM (P(r): Dmax) → Full:Empty Kalibrierung</li>
+                <li>Batch-Messung bei Synchrotron: 20 Proben/Tag, Laufzeit ~3 Tage/100 Proben</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SAXS Dataset (Rg, Dmax, F:E, PDI, Kratky Score für alle Kandidaten) · Qualitätsreport</div>
+        </div>
+        <div class="ap-card ap3">
+            <span class="ap-tag">AP3 · M8–M12</span>
+            <h3>Oracle-Integration &amp; Routine-QC</h3>
+            <ul>
+                <li>SAXS-Labels (Rg, F:E, PDI) als zusätzliche Oracle Fitness-Outputs (maskierter Loss für SAXS-Heads)</li>
+                <li>Automatisierte ATSAS → Oracle Feature-Pipeline (Python): SAXS CSV → normalisierte Features → HDF5</li>
+                <li>Routine-QC: SAXS-Messung aller finalen Lead-Kandidaten vor IND-Submission (absolute Werte, keine Batches)</li>
+                <li>Langzeit-Stabilitätsstudie via SAXS: t=0, t=1 Monat, t=6 Monate (Rg-Drift &lt;0.3 nm als Stabilitätsmarker)</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SAXS-Oracle Feature Pipeline · Stabilitätsdaten · SOP-SAX-02</div>
+        </div>
+    </div>
+
+    <h3>SAXS Kenngrößen für AAV</h3>
+    <table class="spec-table">
+        <thead><tr><th>Parameter</th><th>Full Capsid</th><th>Empty Capsid</th><th>Out-of-Spec → Ursache</th></tr></thead>
+        <tbody>
+            <tr><td>Rg (nm)</td><td>12.5–13.0</td><td>12.0–12.5</td><td>&gt;14 nm → Aggregation · &lt;11 nm → Degradation</td></tr>
+            <tr><td>Dmax (nm)</td><td>28–30</td><td>26–28</td><td>&gt;35 nm → Aggregate</td></tr>
+            <tr><td>I(0)/c (absolut)</td><td>~2.8 × 10⁶</td><td>~1.9 × 10⁶</td><td>Aus Ratio: Full:Empty kalkulierbar</td></tr>
+            <tr><td>PDI (Kratky)</td><td>&lt;0.1</td><td>&lt;0.1</td><td>&gt;0.3 → polydispers (Aggregation oder Mischpräparat)</td></tr>
+            <tr><td>Full:Empty Ratio</td><td>≥0.75 (Ziel)</td><td>—</td><td>&lt;0.50 → Produktionsproblem</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="spr">
+    <h2>SPR — Surface Plasmon Resonance</h2>
+
+    <h3>Anwendungsziel</h3>
+    <p>SPR misst die Bindungskinetik von AAV-Capsids an ihre Zielrezeptoren in Echtzeit. Für Parvotec liefert SPR den direktesten Beweis ob ein ML-optimierter Capsid auch tatsächlich besser an den Zielrezeptor bindet — als mechanistische Validierung des Tropismus-Enrichment-Signals aus dem NGS-Screen.</p>
+    <p><strong>Messziele:</strong> (1) Bindung an HSPG (Heparan Sulfate Proteoglykan — primärer AAV2/AAV6 Rezeptor). (2) Bindung an AAVR (KIAA0319L, universeller AAV-Rezeptor). (3) Bindung an Zielzell-spezifische Rezeptoren (α2β1 Integrin für VSMC, TRPV1-N-terminal für nozizeptive Neuronen).</p>
+
+    <div class="ap-cards">
+        <div class="ap-card ap1">
+            <span class="ap-tag">AP1 · M1–M2</span>
+            <h3>Instrument-Setup &amp; Chipvalidierung</h3>
+            <ul>
+                <li>Instrument: Biacore T200 (Cytiva) oder OpenSPR (Nicoya Life Sciences, günstigere Alternative)</li>
+                <li>Chip-Typen: CM5-Chip (standard, Amin-Kopplung) für HSPG-Mimetic; NTA-Chip für His-tagged AAVR ECD</li>
+                <li>Kontrollmessung: AAV2 WT gegen HSPG (Literaturwert: KD ~1–10 nM) zur Methodenvalidierung</li>
+                <li>Puffer-Optimierung: HBS-EP+ (10 mM HEPES, 150 mM NaCl, 3 mM EDTA, 0.05% Tween-20) pH 7.4</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> Chip-Validierungsreport · AAV2 WT KD als Referenz · SOP-SPR-01</div>
+        </div>
+        <div class="ap-card ap2">
+            <span class="ap-tag">AP2 · M2–M8</span>
+            <h3>Kandidaten-Screening</h3>
+            <ul>
+                <li>Ligandenimmobilisierung: HSPG-Mimetic (Sigma H9902) via Amin-Kopplung auf CM5, Ziellevel 400–600 RU</li>
+                <li>AAVR ECD (His-Tag): Einfangen auf NTA-Chip, 200–400 RU</li>
+                <li>Analyt: AAV-Kandidaten bei 3–5 Konzentrationen (typisch: 1, 3, 10, 30, 100 nM), Duplikat-Injektionen</li>
+                <li>Messung: 180s Assoziation, 600s Dissoziation, Regeneration 30 mM NaOH (2×30s)</li>
+                <li>Kinetische Auswertung: BIAevaluation (Cytiva) oder Scrubber2 — 1:1 Langmuir-Modell, χ² &lt;2.0</li>
+                <li>Output: kon [M⁻¹s⁻¹], koff [s⁻¹], KD [nM]. Referenz WT-AAV6: KD_HSPG ≈5 nM</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SPR-Dataset (KD, kon, koff für alle Top-100 Kandidaten gegen HSPG und AAVR) · Sensogramm-Archive</div>
+        </div>
+        <div class="ap-card ap3">
+            <span class="ap-tag">AP3 · M8–M12</span>
+            <h3>Oracle-Integration &amp; Mechanistische Validierung</h3>
+            <ul>
+                <li>SPR-Labels: KD (nM, log-normalisiert) und koff/kon-Ratio als Oracle-Features</li>
+                <li>Korrelationsanalyse: SPR-KD vs. FACS Transduktionseffizienz — validiert ob in vitro Bindung Tropismus vorhersagt</li>
+                <li>Off-target Screening: Ausgewählte Kandidaten gegen Hepatozyten-spezifische Rezeptoren (ASGR1, LRP1)</li>
+                <li>Thermische Stabilität: SPR-Shift Assay (Temperaturrampe 25–60°C) als Tm-Proxy</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> SPR-Korrelationsreport · Off-target KD Panel · SOP-SPR-02</div>
+        </div>
+    </div>
+
+    <h3>SPR Zielwerte für Lead-Selektion</h3>
+    <table class="spec-table">
+        <thead><tr><th>Rezeptor</th><th>Ziel-KD (nM)</th><th>Referenz WT-AAV6</th><th>Interpretation</th></tr></thead>
+        <tbody>
+            <tr><td>HSPG (DRG-Programm)</td><td>≤5 nM</td><td>~5 nM</td><td>Mindestens so gut wie WT oder besser</td></tr>
+            <tr><td>AAVR (KIAA0319L)</td><td>≤10 nM</td><td>~8 nM</td><td>Universeller Eintritt — muss erhalten bleiben</td></tr>
+            <tr><td>α2β1 Integrin (Aorta VSMC)</td><td>≤50 nM</td><td>~200 nM</td><td>4× Verbesserung gegenüber WT als Go-Kriterium</td></tr>
+            <tr><td>ASGR1 (Leber — Off-Target)</td><td>≥500 nM</td><td>~800 nM</td><td>Hohe KD = schwache Bindung = gut</td></tr>
+            <tr><td>LRP1 (Makrophagen — Off-Target)</td><td>≥200 nM</td><td>~150 nM</td><td>Muss besser als WT (höhere KD)</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="ppms">
+    <h2>PPMS — Particle Properties Measurement System</h2>
+
+    <h3>Anwendungsziel</h3>
+    <p>PPMS ist die Parvotec-interne Bezeichnung für die kombinierte Partikelcharakterisierungsplattform: DLS (Dynamic Light Scattering), NTA (Nanoparticle Tracking Analysis) und Zeta-Potentialmessung. Diese drei Methoden bilden das Routine-QC-Fundament für alle AAV-Präparationen und liefern schnell (2–4h/Probe) kritische Stabilitäts- und Homogenitätsdaten ohne Synchrotron-Zugang.</p>
+
+    <div class="ap-cards">
+        <div class="ap-card ap1">
+            <span class="ap-tag">AP1 · M1–M2</span>
+            <h3>Instrumenten-Setup</h3>
+            <ul>
+                <li><strong>DLS:</strong> Malvern Panalytical Zetasizer Ultra (633 nm Laser, 173° Rückstreuung). Messbereich: 0.3 nm – 10 µm. Routine: Z-average Rh, PDI, Intensitätsverteilung</li>
+                <li><strong>NTA:</strong> Malvern NanoSight NS300 (405 nm Laser). Messbereich: 50–1000 nm. Output: Partikelkonzentration (Partikel/mL), modale Partikelgröße, Größenverteilung</li>
+                <li><strong>Zeta-Potential:</strong> Malvern Zetasizer Ultra Folded Capillary Cell. Output: ζ-Potential (mV), Beweglichkeit</li>
+                <li>Referenzmessung: NIST-traceable Polystyrol-Latexpartikel 60 nm (Thermo Scientific 3060A)</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> Instrument-Validierungsprotokoll · Referenzwerte WT-AAV · SOP-PPMS-01</div>
+        </div>
+        <div class="ap-card ap2">
+            <span class="ap-tag">AP2 · Fortlaufend</span>
+            <h3>Routine-AAV-Charakterisierung</h3>
+            <ul>
+                <li><strong>DLS Protokoll:</strong> 0.1–1 mg/mL in PBS (HBS-EP+), 25°C, 3 Messungen × 10 Läufe. Akzeptanzkriterium: Z-average 25–30 nm, PDI &lt;0.2</li>
+                <li><strong>NTA Protokoll:</strong> ~10⁹ Partikel/mL (1:100–1:1000 Verdünnung aus Stock). 5 × 60s Videos, Kameraeinstellung 50–60%. Output: Partikelkonzentration in vg/mL (Kreuzvalidierung mit ddPCR)</li>
+                <li><strong>Zeta-Potential:</strong> 0.01–0.1 mg/mL in 1 mM KCl pH 7.0. Akzeptanzkriterium: ζ = -10 bis -30 mV (typisch für AAV). Stärker negativ = bessere Stabilität vs. Aggregation</li>
+                <li>Kombinations-Index: PPMS Score = 0.4×(Rh_norm) + 0.3×(1-PDI) + 0.3×(ζ_norm) → als Oracle-Feature</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> PPMS-Datenbank aller Produktionschargen · QC-Freigabereport</div>
+        </div>
+        <div class="ap-card ap3">
+            <span class="ap-tag">AP3 · M4–M12</span>
+            <h3>Stabilitätsstudien &amp; Oracle-Integration</h3>
+            <ul>
+                <li>Stabilitätsprofil: PPMS-Messung bei t=0, 1d, 7d, 1M, 3M, 6M (–80°C, –20°C, 4°C). Rh-Shift &lt;1 nm als Stabilitätskriterium</li>
+                <li>Aggregationstendenz-Assay: Inkubation bei 37°C, 72h → PPMS → aggregationsanfällige Kandidaten frühzeitig eliminieren</li>
+                <li>PPMS-Features im Oracle: [Rh, PDI, ζ-Potential, PPMS-Score] als 4 zusätzliche Feature-Columns im Training Dataset</li>
+                <li>Hochdurchsatz-Screening: 96-Well-DLS (DynaPro Plate Reader II) für schnelles Prescreening aller BO-Kandidaten vor experimenteller Validierung</li>
+            </ul>
+            <div class="deliverables"><strong>Deliverables:</strong> Stabilitätsdatenbank · PPMS-Oracle Integration · SOP-PPMS-02</div>
+        </div>
+    </div>
+
+    <h3>PPMS Akzeptanzkriterien (Produktionsfreigabe)</h3>
+    <table class="spec-table">
+        <thead><tr><th>Parameter</th><th>Methode</th><th>Akzeptanzkriterium</th><th>Out-of-Spec Aktion</th></tr></thead>
+        <tbody>
+            <tr><td>Rh (hydrodynamischer Radius)</td><td>DLS</td><td>25–30 nm</td><td>SEC-Reinigung + erneute Messung</td></tr>
+            <tr><td>PDI</td><td>DLS</td><td>≤ 0.20</td><td>Probe verwerfen bei PDI &gt; 0.30</td></tr>
+            <tr><td>Partikelkonzentration</td><td>NTA</td><td>≥10¹² vg/mL</td><td>Konzentrieren (Amicon 100 kDa)</td></tr>
+            <tr><td>NTA Modus-Größe</td><td>NTA</td><td>25–35 nm</td><td>Größer → Aggregate; kleiner → Capsid-Bruchstücke</td></tr>
+            <tr><td>Zeta-Potential</td><td>ZP</td><td>-10 bis -30 mV</td><td>&gt;-5 mV → Aggregationsrisiko hoch</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="gantt">
+    <h2>Gantt — Implementierung 12 Monate</h2>
+
+    <div class="g-legend">
+        <div class="g-leg"><div class="g-dot" style="background:var(--ap1)"></div>SAXS Setup &amp; Anwendung</div>
+        <div class="g-leg"><div class="g-dot" style="background:var(--ap2)"></div>SPR Setup &amp; Anwendung</div>
+        <div class="g-leg"><div class="g-dot" style="background:var(--ap3)"></div>PPMS Plattform</div>
+        <div class="g-leg"><div class="g-diamond"></div>Meilenstein</div>
+    </div>
+
+    <div class="g-wrap">
+      <div class="g-chart">
+        <div class="g-head">
+          <div class="g-head-label">Methode</div>
+          <div class="g-head-track">
+            <div class="g-tick q" style="left:0%"><span>Q1</span></div>
+            <div class="g-tick" style="left:8.33%">M2</div>
+            <div class="g-tick" style="left:16.67%">M3</div>
+            <div class="g-tick q" style="left:25%"><span>Q2</span></div>
+            <div class="g-tick" style="left:33.33%">M5</div>
+            <div class="g-tick" style="left:41.67%">M6</div>
+            <div class="g-tick q" style="left:50%"><span>Q3</span></div>
+            <div class="g-tick" style="left:58.33%">M8</div>
+            <div class="g-tick" style="left:66.67%">M9</div>
+            <div class="g-tick q" style="left:75%"><span>Q4</span></div>
+            <div class="g-tick" style="left:83.33%">M11</div>
+            <div class="g-tick" style="left:91.67%">M12</div>
+          </div>
+        </div>
+        <div class="g-row">
+          <div class="g-rlabel"><strong>SAXS</strong><span>BM29/ESRF · ATSAS</span></div>
+          <div class="g-track">
+            <div class="g-bar" style="background:var(--ap1);left:0%;width:16.67%">AP1 Setup</div>
+            <div class="g-bar" style="background:var(--ap1);left:16.67%;width:50%">AP2 Kandidaten-Screening</div>
+            <div class="g-bar" style="background:var(--ap1);left:66.67%;width:33.33%">AP3 Integration</div>
+            <div class="g-ms" style="left:16.67%"></div><div class="g-ms-lbl" style="left:16.67%">Validiert</div>
+            <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:66.67%">Oracle</div>
+          </div>
+        </div>
+        <div class="g-row">
+          <div class="g-rlabel"><strong>SPR</strong><span>Biacore T200</span></div>
+          <div class="g-track">
+            <div class="g-bar" style="background:var(--ap2);left:0%;width:16.67%">AP1 Setup</div>
+            <div class="g-bar" style="background:var(--ap2);left:16.67%;width:50%">AP2 KD-Screening</div>
+            <div class="g-bar" style="background:var(--ap2);left:66.67%;width:33.33%">AP3 Integration</div>
+            <div class="g-ms" style="left:16.67%"></div><div class="g-ms-lbl" style="left:20%">KD-Ref</div>
+            <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:70%">Oracle</div>
+          </div>
+        </div>
+        <div class="g-row">
+          <div class="g-rlabel"><strong>PPMS</strong><span>DLS · NTA · ZP</span></div>
+          <div class="g-track">
+            <div class="g-bar" style="background:var(--ap3);left:0%;width:16.67%">AP1</div>
+            <div class="g-bar" style="background:var(--ap3);left:16.67%;width:83.33%">AP2+AP3 — Fortlaufende Routine-QC aller Produktionschargen</div>
+            <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:33.33%">Routine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="integration">
+    <h2>Oracle Integration — Alle drei Methoden</h2>
+    <p>SAXS, SPR und PPMS liefern zusammen 8 zusätzliche Oracle-Features die den Fitness Predictor von 4 (DRG-Programm) auf bis zu 12 Outputs erweitern:</p>
+
+    <table class="spec-table">
+        <thead><tr><th>Methode</th><th>Feature</th><th>Einheit</th><th>Normalisierung</th><th>Verfügbarkeit</th></tr></thead>
+        <tbody>
+            <tr><td>SAXS</td><td>Rg</td><td>nm</td><td>(Rg – Rg_WT) / σ</td><td>Top-100 (Synchrotron) oder Top-500 (Labor-SAXS)</td></tr>
+            <tr><td>SAXS</td><td>Full:Empty Ratio</td><td>0–1</td><td>direkt</td><td>Top-1000 (AUC), Top-100 (SAXS)</td></tr>
+            <tr><td>SAXS</td><td>PDI (Kratky)</td><td>0–1</td><td>direkt</td><td>Top-100</td></tr>
+            <tr><td>SPR</td><td>KD_HSPG</td><td>nM (log)</td><td>log10(KD) normalisiert</td><td>Top-100 bis Top-200</td></tr>
+            <tr><td>SPR</td><td>KD_AAVR</td><td>nM (log)</td><td>log10(KD) normalisiert</td><td>Top-100 bis Top-200</td></tr>
+            <tr><td>SPR</td><td>koff/kon Ratio</td><td>s⁻¹</td><td>normalisiert auf WT</td><td>Top-100</td></tr>
+            <tr><td>PPMS</td><td>Rh (DLS)</td><td>nm</td><td>normalisiert auf WT</td><td>Alle Kandidaten (Hochdurchsatz)</td></tr>
+            <tr><td>PPMS</td><td>PDI (DLS)</td><td>0–1</td><td>direkt</td><td>Alle Kandidaten</td></tr>
+            <tr><td>PPMS</td><td>Zeta-Potential</td><td>mV</td><td>normalisiert auf -20 mV Ref</td><td>Alle Kandidaten</td></tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <p><strong>Maskierter Loss-Ansatz:</strong> Da nicht alle Kandidaten alle 9 Labels haben (nur Top-100 haben SAXS, Top-200 haben SPR, alle haben PPMS), werden fehlende Labels als NaN geführt. Task-specific Loss maskiert NaN-Werte — kein Gradient von fehlenden Labels. Dies erlaubt das Modell trotzdem von der vollen Datenmenge zu lernen.</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="sops">
+    <h2>SOPs — Standard Operating Procedures</h2>
+
+    <h3>SOP-SAX-01: SAXS Probenvorbereitung</h3>
+    <ol class="step-list">
+        <li>AAV-Probe auf 1 mg/mL in Laufpuffer einstellen (20 mM HEPES pH 7.4, 150 mM NaCl, 1 mM MgCl₂)</li>
+        <li>Filtration durch 0.2 µm Membran (Spin-Filter Millipore UFC30GV00). Filtrat verwenden.</li>
+        <li>Konzentration prüfen via UV₂₈₀ (ε = 1.2 mg⁻¹mL cm⁻¹ für AAV). Mindestens 200 µL Probenvolumen für SEC-SAXS.</li>
+        <li>Transport: Probe auf Eis, maximale Transportzeit 24h. Am Synchrotron: Probe frisch auftauen direkt vor Messung.</li>
+        <li>Blanks: 500 µL Laufpuffer in identischer Küvette/Kapillare. Subtraktion vor Auswertung zwingend.</li>
+    </ol>
+
+    <h3>SOP-SPR-01: Ligandenimmobilisierung auf CM5-Chip</h3>
+    <ol class="step-list">
+        <li>NHS/EDC Aktivierung: 60s Injektion bei 10 µL/min (1:1 Mix 0.4 M EDC + 0.1 M NHS)</li>
+        <li>HSPG-Mimetic (Heparin, Sigma H9892): 50 µg/mL in 10 mM NaAc pH 5.0, Injektion bis Ziellevel 500 RU</li>
+        <li>Blockierung: 70s 1 M Ethanolamin pH 8.5</li>
+        <li>Referenzkanal: identisch ohne Ligand (NHS/EDC → Blockierung direkt)</li>
+        <li>Qualitätskontrolle: AAV2 WT-Messung nach Immobilisierung → KD muss im erwarteten Bereich (1–10 nM)</li>
+    </ol>
+
+    <h3>SOP-PPMS-01: DLS Routine-Messung</h3>
+    <ol class="step-list">
+        <li>Probe: 0.1–0.5 mg/mL in HBS-EP+ (10 mM HEPES, 150 mM NaCl, 0.005% Tween-20, pH 7.4)</li>
+        <li>DTS0012 Einwegküvette, 70 µL Probenvolumen. Equilibrierung 2 min bei 25°C.</li>
+        <li>Messung: 3 Messungen à 10 Läufe, automatische Dauer (5–20s je nach Partikelgröße). Z-Average und PDI aufzeichnen.</li>
+        <li>Akzeptanzkriterium: Cumulant-Fit χ² &lt; 0.003. Bei χ² &gt; 0.01 → Probe heterogen, erneute Aufreinigung.</li>
+        <li>Rohdaten und Auswertungsreport archivieren (Dateinamen: YYYYMMDD_SampleID_DLS.dts)</li>
+    </ol>
+</section>
+
+</div>
+
+<footer>
+    <p><strong>Parvotec — Biophysikalische Anwendungen: SAXS · SPR · PPMS</strong></p>
+    <p>Anwendungsdokument v1.0 · August 2026 · calyr.aí Research</p>
+    <p style="margin-top:12px;">
+        <a href="parvotec_app_computational.html">mATOMIC · SBPA Anwendungen</a> &nbsp;·&nbsp;
+        <a href="parvotec_aorta_saxs_analysis.html">Aorta &amp; SAXS Analyse</a> &nbsp;·&nbsp;
+        <a href="parvotec_aorta_proposal.html">Aorta Proposal</a>
+    </p>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a:not(.back)');
+    window.addEventListener('scroll', () => {
+        let cur = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+        navLinks.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + cur) a.classList.add('active'); });
+    }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+metadata:
+  title: "Parvotec Analysis"
+  subtitle: "AAV Capsid Engineering × ML × Pain Therapy"
+  date: 2026-08-06
+
+sections:
+  - id: "parvotec"
+    title: "Parvotec Project"
+  - id: "framework"
+    title: "ML Framework"
+  - id: "lir"
+    title: "Lir_AAV_LLM Presentation"
+  - id: "videos"
+    title: "ASGCT 2026 Videos"
+  - id: "papers"
+    title: "Research Papers"
+  - id: "glossary"
+    title: "Glossary"
