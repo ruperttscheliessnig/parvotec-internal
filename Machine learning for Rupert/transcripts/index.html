@@ -20,120 +20,121 @@
       body{
         font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
         background:var(--paper);color:var(--ink);
-        line-height:1.62;font-size:16px;
-        min-height:100vh;
+        line-height:1.62;font-size:16px;min-height:100vh;
       }
-
       header{
         padding:72px max(4vw,calc((100vw - 1240px)/2)) 60px;
         border-bottom:1px solid var(--line);
       }
       header h1{
-        font-size:clamp(3rem,7vw,6rem);
-        font-weight:400;letter-spacing:-.07em;
-        color:var(--ink);line-height:1;
+        font-size:clamp(3rem,7vw,6rem);font-weight:400;
+        letter-spacing:-.07em;color:var(--ink);line-height:1;
       }
-      header p{
-        font-size:.88rem;color:var(--soft);
-        letter-spacing:.1em;text-transform:uppercase;
-        margin-top:18px;
-      }
+      header p{font-size:.88rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;margin-top:18px;}
 
-      .projects{
+      /* ── Two equal proposals ─────────────────────── */
+      .proposals{
         width:min(1240px,94vw);margin:0 auto;
         border-left:1px solid var(--line);border-right:1px solid var(--line);
         display:grid;grid-template-columns:1fr 1fr;
-        min-height:70vh;
       }
-
-      .project{
-        padding:64px 48px;
-        border-bottom:1px solid var(--line);
+      .proposal-block{
+        padding:56px 48px;
+        border-bottom:2px solid var(--line);
         position:relative;
       }
-      .project:first-child{border-right:1px solid var(--line);}
+      .proposal-block:first-child{border-right:1px solid var(--line);}
+      .proposal-block::before{
+        content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+      }
+      .drg-block::before{background:var(--drg);}
+      .aorta-block::before{background:var(--aorta);}
 
-      .project-label{
-        font-size:.65rem;font-weight:700;letter-spacing:.18em;
-        text-transform:uppercase;margin-bottom:20px;display:block;
+      .proj-num{font-size:.62rem;color:var(--soft);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;display:block;}
+      .proposal-block h2{
+        font-size:clamp(1.6rem,3vw,2.6rem);font-weight:400;
+        letter-spacing:-.05em;color:var(--ink);margin-bottom:4px;
       }
-      .drg .project-label{color:var(--drg);}
-      .aorta .project-label{color:var(--aorta);}
-      .link-type.app{color:var(--app)!important;}
+      .proposal-sub{font-size:.9rem;color:var(--soft);margin-bottom:28px;}
 
-      .project h2{
-        font-size:clamp(2rem,4vw,3.6rem);font-weight:400;
-        letter-spacing:-.06em;color:var(--ink);
-        line-height:1.05;margin-bottom:8px;
+      /* Main proposal CTA */
+      .proposal-cta{
+        display:block;text-decoration:none;
+        border:1px solid var(--line);background:var(--card);
+        padding:20px 24px;margin-bottom:16px;
+        transition:border-color .2s;
       }
-      .project-sub{
-        font-size:1rem;color:var(--soft);margin-bottom:32px;
-        font-weight:400;letter-spacing:-.01em;
+      .proposal-cta:hover{border-color:var(--drg);}
+      .aorta-block .proposal-cta:hover{border-color:var(--aorta);}
+      .cta-label{
+        font-size:.65rem;font-weight:700;letter-spacing:.14em;
+        text-transform:uppercase;margin-bottom:6px;display:block;
       }
-      .project-desc{
-        font-size:.95rem;color:var(--soft);
-        line-height:1.65;margin-bottom:36px;
-        max-width:48ch;
-      }
+      .drg-block .cta-label{color:var(--drg);}
+      .aorta-block .cta-label{color:var(--aorta);}
+      .cta-title{font-size:1.05rem;color:var(--ink);font-weight:500;display:block;margin-bottom:3px;}
+      .cta-sub{font-size:.76rem;color:var(--soft);}
 
-      .project-links{display:flex;flex-direction:column;gap:1px;}
-
-      .link-item{
-        display:flex;align-items:center;justify-content:space-between;
-        padding:14px 0;border-bottom:1px solid var(--line);
-        text-decoration:none;
-        transition:background .15s;
-        gap:12px;
+      /* Secondary links */
+      .secondary-links{display:flex;flex-direction:column;gap:1px;margin-top:4px;}
+      .sec-link{
+        display:flex;justify-content:space-between;align-items:center;
+        padding:12px 0;border-bottom:1px solid var(--line);
+        text-decoration:none;gap:12px;
       }
-      .link-item:last-child{border-bottom:none;}
-      .link-item:hover .link-arrow{transform:translateX(4px);}
+      .sec-link:last-child{border-bottom:none;}
+      .sec-link:hover .sec-arrow{transform:translateX(3px);}
+      .sec-left{display:flex;flex-direction:column;gap:2px;}
+      .sec-type{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
+      .drg-block  .sec-type{color:var(--drg);}
+      .aorta-block .sec-type.research{color:var(--aorta);}
+      .sec-type.app{color:var(--app)!important;}
+      .sec-title{font-size:.88rem;color:var(--ink);}
+      .sec-sub{font-size:.7rem;color:var(--soft);}
+      .sec-arrow{color:var(--soft);font-size:.85rem;transition:transform .15s;flex-shrink:0;}
 
-      .link-left{display:flex;flex-direction:column;gap:3px;}
-      .link-type{
-        font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
-        font-weight:600;
+      /* ── BPO hint ───────────────────────────────── */
+      .bpo-hint{
+        width:min(1240px,94vw);margin:0 auto;
+        border-left:1px solid var(--line);border-right:1px solid var(--line);
+        padding:24px 48px;
+        display:flex;align-items:center;gap:20px;
+        border-bottom:1px solid var(--line);
+        opacity:.5;
       }
-      .drg .link-type{color:var(--drg);}
-      .aorta .link-type{color:var(--aorta);}
-      .link-title{font-size:.95rem;color:var(--ink);font-weight:500;}
-      .link-sub{font-size:.75rem;color:var(--soft);}
-      .link-arrow{
-        color:var(--soft);font-size:.9rem;
-        transition:transform .15s;flex-shrink:0;
+      .bpo-hint:hover{opacity:.8;transition:opacity .2s;}
+      .bpo-icon{
+        width:32px;height:32px;border:1px dashed var(--soft);
+        border-radius:0;display:flex;align-items:center;justify-content:center;
+        flex-shrink:0;font-size:.6rem;color:var(--soft);letter-spacing:.04em;
+        font-weight:700;
       }
-
-      .divider{
+      .bpo-text{font-size:.8rem;color:var(--soft);}
+      .bpo-text strong{color:var(--soft);font-weight:600;}
+      .legend-bar{
         width:min(1240px,94vw);margin:0 auto;
         border-left:1px solid var(--line);border-right:1px solid var(--line);
         border-bottom:1px solid var(--line);
-        padding:40px 48px;
-        display:flex;gap:40px;align-items:center;
-        flex-wrap:wrap;
+        padding:24px 48px;
+        display:flex;gap:32px;align-items:center;flex-wrap:wrap;
       }
-      .divider-label{
-        font-size:.68rem;color:var(--soft);
-        letter-spacing:.1em;text-transform:uppercase;
-      }
-      .divider-dot{
-        width:10px;height:10px;border-radius:0;flex-shrink:0;
-      }
-      .divider-item{display:flex;align-items:center;gap:10px;font-size:.78rem;}
+      .leg-lbl{font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;margin-right:8px;}
+      .leg-item{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--soft);}
+      .leg-dot{width:14px;height:4px;flex-shrink:0;}
 
       footer{
-        padding:32px max(4vw,calc((100vw - 1240px)/2));
+        padding:28px max(4vw,calc((100vw - 1240px)/2));
         border-top:1px solid var(--line);
-        display:flex;justify-content:space-between;align-items:center;
-        flex-wrap:wrap;gap:12px;
+        display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
       }
       footer p{font-size:.72rem;color:var(--soft);letter-spacing:.06em;}
 
       @media(max-width:780px){
-        .projects{grid-template-columns:1fr;}
-        .project:first-child{border-right:none;border-bottom:1px solid var(--line);}
-        .project{padding:48px 24px;}
+        .proposals{grid-template-columns:1fr;}
+        .proposal-block:first-child{border-right:none;}
+        .proposal-block{padding:40px 24px;}
         header{padding:48px 24px 40px;}
-        .divider{padding:28px 24px;}
-        footer{padding:24px;}
+        .legend-bar{padding:20px 24px;}
       }
     </style>
 </head>
@@ -145,98 +146,113 @@
         <span style="font-size:.65em;color:#39bfff;font-weight:600;margin-left:8px;vertical-align:super;letter-spacing:.06em;">RESEARCH</span>
     </div>
     <h1>Parvotec</h1>
-    <p>Zwei unabhängige Projekte · AAV Capsid Engineering × ML-guided Optimization</p>
+    <p>Zwei unabhängige Research-Projekte · AAV Capsid Engineering × ML-guided Optimization</p>
 </header>
 
-<div class="projects">
+<div class="proposals">
 
-    <!-- ── Projekt 1: DRG / Schmerz ────────────────────── -->
-    <div class="project drg">
-        <span class="project-label">Projekt 01 — Research Program</span>
-        <h2>DRG<br>Schmerz</h2>
-        <p class="project-sub">Nozizeptive Neuron-Therapie</p>
-        <p class="project-desc">ML-optimierter AAV-Vektor für selektiven Tropismus in nozizeptiven Neuronen der Dorsal Root Ganglia. Retrograder Transport. 4-Schicht ML-Framework mit ESM-2, cVAE, Multi-objective Bayesian Optimization.</p>
+    <!-- ── Projekt 01: DRG ── -->
+    <div class="proposal-block drg-block">
+        <span class="proj-num">Projekt 01 · DRG / Schmerz</span>
+        <h2>Nozizeptive<br>Neuron-Therapie</h2>
+        <p class="proposal-sub">ESM-2 · cVAE · Bayesian Optimization · Retrograder Transport</p>
 
-        <div class="project-links">
-            <a class="link-item" href="parvotec_asgct2026_analysis_bilingual.html">
-                <div class="link-left">
-                    <span class="link-type">Analyse</span>
-                    <span class="link-title">ASGCT 2026 — Bilingual</span>
-                    <span class="link-sub">Übersicht · ML Strategien · Glossar · Wettbewerb</span>
+        <!-- MAIN PROPOSAL — prominently featured -->
+        <a class="proposal-cta" href="parvotec_proposal.html">
+            <span class="cta-label">Main Proposal &amp; Oracle Manual</span>
+            <span class="cta-title">DRG Fitness Oracle — Projektproposal</span>
+            <span class="cta-sub">WP1–WP5 · Gantt 24M · 4-Task Predictor NN · cVAE · BO API</span>
+        </a>
+
+        <div class="secondary-links">
+            <a class="sec-link" href="parvotec_asgct2026_analysis_bilingual.html">
+                <div class="sec-left">
+                    <span class="sec-type research">Analyse · DE/EN</span>
+                    <span class="sec-title">ASGCT 2026 Bilingual Analysis</span>
+                    <span class="sec-sub">ML Strategien · Glossar · Wettbewerb · Suchfunktion</span>
                 </div>
-                <span class="link-arrow">→</span>
-            </a>
-            <a class="link-item" href="parvotec_proposal.html">
-                <div class="link-left">
-                    <span class="link-type">Proposal · Oracle Manual</span>
-                    <span class="link-title">DRG Proposal &amp; Fitness Oracle</span>
-                    <span class="link-sub">WP1–WP5 · Gantt 24M · Predictor NN · cVAE · BO · API</span>
-                </div>
-                <span class="link-arrow">→</span>
+                <span class="sec-arrow">→</span>
             </a>
         </div>
     </div>
 
-    <!-- ── Projekt 2: Aorta ─────────────────────────────── -->
-    <div class="project aorta">
-        <span class="project-label">Projekt 02 — Research Program + Applications</span>
-        <h2>Aorta<br>Vaskulär</h2>
-        <p class="project-sub">VSMC-Targeting &amp; Aneurysma-Therapie</p>
-        <p class="project-desc">ML-optimierter AAV-Vektor für vaskuläre glatte Muskelzellen (VSMC). Dual-Screen (VSMC vs. Leber), SAXS-Integration, Vascular Oracle mit 6 Outputs. Biophysikalische und computational Anwendungsplattform.</p>
+    <!-- ── Projekt 02: Aorta ── -->
+    <div class="proposal-block aorta-block">
+        <span class="proj-num">Projekt 02 · Aorta / Vaskulär</span>
+        <h2>VSMC-Targeting<br>Aneurysma-Therapie</h2>
+        <p class="proposal-sub">Dual-Screen · SAXS · 6-Task Oracle · CaCl₂-AAA Modell</p>
 
-        <div class="project-links">
-            <a class="link-item" href="parvotec_aorta_saxs_analysis.html">
-                <div class="link-left">
-                    <span class="link-type">Analyse</span>
-                    <span class="link-title">Aorta &amp; SAXS</span>
-                    <span class="link-sub">Vaskuläre GT · VSMC/EC · SAXS Prinzip · Full:Empty · Oracle-Erweiterung</span>
+        <!-- MAIN PROPOSAL — prominently featured -->
+        <a class="proposal-cta" href="parvotec_aorta_proposal.html">
+            <span class="cta-label">Main Proposal &amp; Oracle Manual</span>
+            <span class="cta-title">Vascular Oracle — Projektproposal</span>
+            <span class="cta-sub">WP1–WP5 · Gantt 24M · 6-Task NN · Leber-Constraint · SAXS-Labels</span>
+        </a>
+
+        <div class="secondary-links">
+            <a class="sec-link" href="parvotec_aorta_saxs_analysis.html">
+                <div class="sec-left">
+                    <span class="sec-type research">Analyse</span>
+                    <span class="sec-title">Aorta &amp; SAXS Analyse</span>
+                    <span class="sec-sub">Vaskuläre GT · VSMC/EC · SAXS Prinzip · Full:Empty · ML-Integration</span>
                 </div>
-                <span class="link-arrow">→</span>
+                <span class="sec-arrow">→</span>
             </a>
-            <a class="link-item" href="parvotec_aorta_proposal.html">
-                <div class="link-left">
-                    <span class="link-type">Proposal · Oracle Manual</span>
-                    <span class="link-title">Aorta Proposal &amp; Vascular Oracle</span>
-                    <span class="link-sub">WP1–WP5 · Gantt 24M · 6-Task NN · Leber-Constraint · SAXS · CaCl₂-AAA</span>
+            <a class="sec-link" href="parvotec_app_biophysics.html#saxs">
+                <div class="sec-left">
+                    <span class="sec-type app">Anwendung</span>
+                    <span class="sec-title">SAXS</span>
+                    <span class="sec-sub">Small-Angle X-ray Scattering · Rg · Full:Empty · SEC-SAXS</span>
                 </div>
-                <span class="link-arrow">→</span>
+                <span class="sec-arrow">→</span>
             </a>
-            <a class="link-item" href="parvotec_app_biophysics.html">
-                <div class="link-left">
-                    <span class="link-type app">Anwendung</span>
-                    <span class="link-title">SAXS · SPR · PPMS</span>
-                    <span class="link-sub">Biophysikalische Charakterisierung · Implementierung · SOPs · Oracle-Integration</span>
+            <a class="sec-link" href="parvotec_app_biophysics.html#spr">
+                <div class="sec-left">
+                    <span class="sec-type app">Anwendung</span>
+                    <span class="sec-title">SPR</span>
+                    <span class="sec-sub">Surface Plasmon Resonance · KD · kon · koff · Biacore</span>
                 </div>
-                <span class="link-arrow">→</span>
+                <span class="sec-arrow">→</span>
             </a>
-            <a class="link-item" href="parvotec_app_computational.html">
-                <div class="link-left">
-                    <span class="link-type app">Anwendung</span>
-                    <span class="link-title">mATOMIC · SBPA</span>
-                    <span class="link-sub">Molekulardynamik · Sequenzbasierte Analyse · Immunogenizitäts-Filter · API</span>
+            <a class="sec-link" href="parvotec_app_biophysics.html#ppms">
+                <div class="sec-left">
+                    <span class="sec-type app">Anwendung</span>
+                    <span class="sec-title">PPMS</span>
+                    <span class="sec-sub">Particle Properties · DLS · NTA · Zeta-Potential</span>
                 </div>
-                <span class="link-arrow">→</span>
+                <span class="sec-arrow">→</span>
+            </a>
+            <a class="sec-link" href="parvotec_app_computational.html#matomic">
+                <div class="sec-left">
+                    <span class="sec-type app">Anwendung</span>
+                    <span class="sec-title">mATOMIC</span>
+                    <span class="sec-sub">Molekulardynamik · GROMACS · MARTINI · ΔΔG · Docking</span>
+                </div>
+                <span class="sec-arrow">→</span>
+            </a>
+            <a class="sec-link" href="parvotec_app_computational.html#sbpa">
+                <div class="sec-left">
+                    <span class="sec-type app">Anwendung</span>
+                    <span class="sec-title">SBPA</span>
+                    <span class="sec-sub">Sequenzbasierte Analyse · Immunogenizität · Aggregation · Herstellbarkeit</span>
+                </div>
+                <span class="sec-arrow">→</span>
             </a>
         </div>
     </div>
 
 </div>
 
-<div class="divider">
-    <span class="divider-label">Farbcodierung</span>
-    <div class="divider-item">
-        <div class="divider-dot" style="background:#39bfff"></div>
-        <span style="color:var(--soft)">Cyan — Research Projects (DRG · Aorta)</span>
-    </div>
-    <div class="divider-item">
-        <div class="divider-dot" style="background:#f59e0b"></div>
-        <span style="color:var(--soft)">Amber — Anwendungen (SAXS · SPR · PPMS · mATOMIC · SBPA)</span>
-    </div>
+<div class="legend-bar">
+    <span class="leg-lbl">Farbcode</span>
+    <div class="leg-item"><div class="leg-dot" style="background:#39bfff"></div>Cyan — Research Projects &amp; Proposals</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div>Amber — 5 Einzelanwendungen (SAXS · SPR · PPMS · mATOMIC · SBPA)</div>
+    <span style="margin-left:auto;font-size:.68rem;color:var(--soft)">Keine Querverweise zwischen Projekten</span>
 </div>
 
 <footer>
     <p>calyr.aí Research · August 2026 · Parvotec AAV Platform</p>
-        <p>Parvotec DRG und Parvotec Aorta sind unabhängige Research-Projekte — Anwendungen (SAXS · SPR · PPMS · mATOMIC · SBPA) im Aorta-Ökosystem.</p>
+    <p>github.com/ruperttscheliessnig/parvotec-internal</p>
 </footer>
 
 </body>
