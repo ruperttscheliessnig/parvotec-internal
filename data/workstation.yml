@@ -1,0 +1,313 @@
+meta:
+  output: "Machine learning for Rupert/transcripts/parvotec_app_workstation.html"
+  title: "Workstation Specification & WP Integration"
+  subtitle: "€10k Hardware + M1–M24 DRG/Aorta Timeline"
+  description: "ASUS GX10 + 2× Dell Pro Max · ESM-2 / cVAE / BO · Work Package Alignment"
+  accent: "#f59e0b"
+  back_href: "index.html"
+  back_label: "← Index"
+  nav_links:
+    - href: "#hardware"
+      label: "Hardware"
+    - href: "#wp-mapping"
+      label: "WP Mapping"
+    - href: "#timeline"
+      label: "Timeline"
+    - href: "#costs"
+      label: "Kostenanalyse"
+    - href: "#storage"
+      label: "Storage"
+    - href: "#software"
+      label: "Software"
+
+sections:
+  - id: "hardware"
+    title: "Hardware Procurement — €10k Investment"
+    content: |
+      <h3>Bestellte Systeme</h3>
+      <table class="spec-table">
+        <thead><tr><th>Gerät</th><th>Spezifikation</th><th>GPU</th><th>Kosten</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>ASUS Ascent GX10</strong><br>(Storage + Orchestration)</td>
+            <td>GB10 Prozessor (20c), 128GB RAM, 1TB NVMe</td>
+            <td>—</td>
+            <td>€3.415,83</td>
+          </tr>
+          <tr>
+            <td><strong>Dell Pro Max Tower T2</strong><br>(Master Training)</td>
+            <td>Core Ultra 7-265 (20c, 5.2GHz), 32GB RAM, 1TB NVMe</td>
+            <td>RTX 2000 16GB</td>
+            <td>€3.192,50</td>
+          </tr>
+          <tr>
+            <td><strong>Dell Pro Max Tower T2</strong><br>(Secondary Training)</td>
+            <td>Core Ultra 7-265 (20c, 5.2GHz), 32GB RAM, 1TB NVMe</td>
+            <td>RTX A1000 8GB</td>
+            <td>€2.199,17</td>
+          </tr>
+          <tr>
+            <td colspan="3"><strong>Total System</strong></td>
+            <td><strong>€8.807,50</strong><br>(€10,5k inkl. 20% MwSt)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>GPU Compute Capacity</h3>
+      <table class="spec-table">
+        <thead><tr><th>Parameter</th><th>RTX 2000 16GB</th><th>RTX A1000 8GB</th><th>Combined</th></tr></thead>
+        <tbody>
+          <tr><td>CUDA Cores</td><td>2560</td><td>1792</td><td>4352</td></tr>
+          <tr><td>Memory</td><td>16GB GDDR6</td><td>8GB GDDR6</td><td>24GB total</td></tr>
+          <tr><td>Memory Bandwidth</td><td>288 GB/s</td><td>192 GB/s</td><td>480 GB/s</td></tr>
+          <tr><td>FP32 Perf</td><td>~13 TFLOPS</td><td>~7 TFLOPS</td><td>~20 TFLOPS</td></tr>
+          <tr><td>Max Power</td><td>70W</td><td>50W</td><td>120W</td></tr>
+          <tr><td>Best For</td><td>ESM-2, cVAE Training</td><td>NN Training, BO</td><td>Sequential pipeline</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Key Difference vs. A100:</strong> A100 = 312 TFLOPS; RTX 2000+A1000 = 20 TFLOPS (~15× slower). Compensated by sequential, not parallel training.</p>
+
+  - id: "wp-mapping"
+    title: "Work Package Alignment (DRG + Aorta)"
+    content: |
+      <h3>WP1: Target Definition (M1–M3)</h3>
+      <div class="spec-card">
+        <h4>Hardware Requirement: ASUS + 1× Dell (RTX 2000)</h4>
+        <p><strong>Task:</strong> Sequence Library Assembly, Initial Screening, ESM-2 Embedding Pilot</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>DMS Setup</td><td>RAW FASTQ/BAM import → HDF5 conversion (CPU-bound on ASUS 128GB)</td></tr>
+          <tr><td>ESM-2 Pilot</td><td>100–500 sequences on RTX 2000 (test embedding quality)</td></tr>
+          <tr><td>GPU Hours</td><td>~20–40 GPU-h (RTX 2000)</td></tr>
+          <tr><td>Duration</td><td>~1 week (sequential, includes validation)</td></tr>
+        </table>
+      </div>
+
+      <h3>WP2: DMS Library (M2–M8)</h3>
+      <div class="spec-card">
+        <h4>Hardware Requirement: ASUS (Cache) + Dell1 (RTX 2000, 24/7)</h4>
+        <p><strong>Task:</strong> Full ESM-2 650M Embedding (500k sequences)</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>Input</td><td>500k AAV sequences (DRG + Aorta combined)</td></tr>
+          <tr><td>ESM-2 Model</td><td>650M parameters on RTX 2000 (BatchSize=8, FP32)</td></tr>
+          <tr><td>Output</td><td>~600GB HDF5 (500k × 1280-dim embeddings)</td></tr>
+          <tr><td>GPU Hours</td><td>~1200 GPU-h (RTX 2000) = 72h continuous</td></tr>
+          <tr><td>Timeline</td><td>M2–M8 (6 months for library; embedding = first 3 weeks)</td></tr>
+          <tr><td>Storage</td><td>ASUS 128GB RAM (embedding cache) + 1TB NVMe (output)</td></tr>
+        </table>
+        <p style="color:var(--accent);"><strong>✓ Fits within M2–M8 window</strong></p>
+      </div>
+
+      <h3>WP3: Oracle v1.0 (M4–M10)</h3>
+      <div class="spec-card">
+        <h4>Hardware Requirement: Dell1 (RTX 2000) + Dell2 (RTX A1000)</h4>
+        <p><strong>Task:</strong> Multi-Task Neural Network + cVAE Architecture Design</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>Model Training</td><td>4-Task NN (Tropismus, Yield, Thermostability, Immunogenicity) on RTX 2000</td></tr>
+          <tr><td>cVAE Training</td><td>Conditional VAE on RTX A1000 (lower memory footprint)</td></tr>
+          <tr><td>GPU Hours</td><td>~150 GPU-h (RTX 2000) + ~100 GPU-h (RTX A1000) = 250 GPU-h total</td></tr>
+          <tr><td>Timeline</td><td>M4–M10 (6 months design + validation; training = 4–6 weeks)</td></tr>
+          <tr><td>Parallel Work</td><td>Both Dells used simultaneously: DDP over Ethernet (limited by network)</td></tr>
+        </table>
+        <p style="color:var(--accent);"><strong>✓ Fits within M4–M10 window (slack for hyperparameter tuning)</strong></p>
+      </div>
+
+      <h3>WP4: BO Runden (M8–M18)</h3>
+      <div class="spec-card">
+        <h4>Hardware Requirement: Both Dells (RTX 2000 + RTX A1000) + ASUS (Orchestration)</h4>
+        <p><strong>Task:</strong> 3 Rounds of Bayesian Optimization · Library Screening · Ranking</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>Round 1 (M8–M11)</td><td>Embedding: 72h (RTX 2000) → NN: 18h (RTX A1000) → BO: 48h (CPU Gaussian Process) = 8–9 days</td></tr>
+          <tr><td>Round 2 (M11–M14)</td><td>Same as R1 (validated 2nd candidates)</td></tr>
+          <tr><td>Round 3 (M14–M18)</td><td>Same as R1 (refined final ranking)</td></tr>
+          <tr><td>Total GPU Hours</td><td>~2400 GPU-h (72h × 3) on RTX 2000 + 54h × 3 on RTX A1000 = 378 GPU-h A1000</td></tr>
+          <tr><td>Continuous Runtime</td><td>~30 calendar days for 3 rounds (with sequential GPU scheduling)</td></tr>
+          <tr><td>Storage Pressure</td><td>Cumulative: 3 × 600GB embeddings + 3 × checkpoints = ~2TB (need external NAS)</td></tr>
+        </table>
+        <p style="color:var(--accent);"><strong>✓ CRITICAL: Requires external 4TB NAS by M8 (€1.5–2k additional)</strong></p>
+      </div>
+
+      <h3>WP5: Lead Validation (M14–M24)</h3>
+      <div class="spec-card">
+        <h4>Hardware Requirement: Both Dells (parallel wet lab + simulation)</h4>
+        <p><strong>Task:</strong> Experimental Validation, Refinement, Final Lead Selection</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>Simulation</td><td>Molecular dynamics, structure prediction (CPU on ASUS or Dell CPUs)</td></tr>
+          <tr><td>ML Support</td><td>Transfer learning from Oracle (retrain final NN on 50–100 new candidates per month)</td></tr>
+          <tr><td>GPU Hours</td><td>~300 GPU-h (spread over 10 months, ~30 GPU-h/month)</td></tr>
+          <tr><td>Storage</td><td>Experimental results, wet lab data, logs (~100GB/month)</td></tr>
+          <tr><td>Availability</td><td>Both Dells in intermittent use (not 24/7 like WP4)</td></tr>
+        </table>
+        <p style="color:var(--accent);"><strong>✓ Sufficient capacity; Dells can be repurposed for other tasks in parallel</strong></p>
+      </div>
+
+  - id: "timeline"
+    title: "M1–M24 Integration Timeline"
+    content: |
+      <h3>Monthly Hardware Utilization</h3>
+      <table class="spec-table">
+        <thead><tr><th>Month</th><th>WP Phase</th><th>RTX 2000 (Dell1)</th><th>RTX A1000 (Dell2)</th><th>ASUS (Storage)</th><th>GPU-h / Month</th></tr></thead>
+        <tbody>
+          <tr><td>M1–M3</td><td>WP1: Target Def</td><td>30% (Pilot ESM-2)</td><td>—</td><td>100% (Data Prep)</td><td>~30</td></tr>
+          <tr><td>M2–M8</td><td>WP2: DMS Library</td><td>95% (500k embedding)</td><td>—</td><td>100% (Cache + Staging)</td><td>~900</td></tr>
+          <tr><td>M4–M10</td><td>WP3: Oracle v1.0</td><td>50% (NN training)</td><td>40% (cVAE training)</td><td>100% (Coord.)</td><td>~350</td></tr>
+          <tr><td>M8–M11</td><td>WP4.1: BO Round 1</td><td>99% (ESM-2 + NN)</td><td>80% (BO inference)</td><td>100% (Orchest.)</td><td>~450</td></tr>
+          <tr><td>M11–M14</td><td>WP4.2: BO Round 2</td><td>99% (Sequential)</td><td>80%</td><td>100%</td><td>~450</td></tr>
+          <tr><td>M14–M18</td><td>WP4.3: BO Round 3</td><td>99%</td><td>80%</td><td>100%</td><td>~450</td></tr>
+          <tr><td>M14–M24</td><td>WP5: Validation</td><td>20% (Transfer Learn.)</td><td>10% (Inference)</td><td>100% (Results Storage)</td><td>~50</td></tr>
+          <tr><td colspan="4"><strong>Total M1–M24</strong></td><td><strong>—</strong></td><td><strong>~2730 GPU-h</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="color:#34d399;"><strong>Status:</strong> ✓ Feasible with continuous operation M2–M18 (8 months heavy, 16 months light/idle)</p>
+
+      <h3>Critical Path</h3>
+      <ul>
+        <li><strong>M2–M8:</strong> ESM-2 embedding (bottleneck) must complete before M8 BO start</li>
+        <li><strong>M8–M18:</strong> 3 BO rounds sequential; no parallelism due to GPU memory constraints</li>
+        <li><strong>M18+:</strong> Dells available for other projects (Aorta continuation, new features)</li>
+      </ul>
+
+  - id: "costs"
+    title: "Kostenanalyse & Procurement (€13.5k Active Workbase)"
+    content: |
+      <h3>Hauptinvestition: Hardware (€10.5k brutto)</h3>
+      <table class="spec-table">
+        <thead><tr><th>System</th><th>Komponenten</th><th>Netto</th><th>Brutto (+20% MwSt)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ASUS Ascent GX10</strong></td><td>GB10 20c, 128GB RAM, 1TB NVMe</td><td>€3.416</td><td>€4.100</td></tr>
+          <tr><td><strong>Dell Pro Max T2</strong> (RTX 2000)</td><td>Core Ultra 7-265, 32GB RAM, RTX 2000 16GB</td><td>€3.193</td><td>€3.832</td></tr>
+          <tr><td><strong>Dell Pro Max T2</strong> (RTX A1000)</td><td>Core Ultra 7-265, 32GB RAM, RTX A1000 8GB</td><td>€2.199</td><td>€2.639</td></tr>
+          <tr><td colspan="2"><strong>HARDWARE SUBTOTAL</strong></td><td><strong>€8.808</strong></td><td><strong>€10.571</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Zusätzliche Investitionen (Workstation-Ready)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Komponente</th><th>Spezifikation</th><th>Kosten (brutto)</th><th>Timeline</th><th>Kritikalität</th></tr></thead>
+        <tbody>
+          <tr><td><strong>4TB NAS</strong></td><td>Synology DS420+ oder QNAP TS-464 (RAID-1)</td><td>€1.800–2.000</td><td>Vor M8</td><td style="color:#ef4444;">🔴 KRITISCH</td></tr>
+          <tr><td><strong>10GbE Netzwerk</strong></td><td>2× 10GbE Card + 8-port Switch + Kabel</td><td>€2.500–3.500</td><td>Vor M2</td><td style="color:#eab308;">🟡 HOCH</td></tr>
+          <tr><td><strong>UPS + PDU</strong></td><td>APC Smart-UPS 6kVA + Eaton PDU</td><td>€3.000–3.500</td><td>Vor M1</td><td style="color:#eab308;">🟡 HOCH</td></tr>
+          <tr><td><strong>Software Licenses</strong></td><td>Weights & Biases + Optuna Pro (optional)</td><td>€200–300/Monat</td><td>Ongoing</td><td style="color:#f59e0b;">🟠 MEDIUM</td></tr>
+          <tr><td colspan="3"><strong>INFRASTRUKTUR SUBTOTAL</strong></td><td colspan="2"><strong>€7.500–9.500</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--accent);"><strong>📊 TOTAL "ACTIVE WORKBASE":</strong> <strong>€18.0–20.0k</strong> (Hardware €10.5k + Infrastruktur €7.5–9.5k)</p>
+
+      <h3>RTX 2000+A1000 vs. Enterprise A100 — Kostenvergleich</h3>
+      <table class="spec-table">
+        <thead><tr><th>Metrik</th><th>RTX 2000+A1000 (€8.8k)</th><th>4× A100 80GB (€320k)</th><th>Speedup Faktor</th></tr></thead>
+        <tbody>
+          <tr><td>GPU FLOPS (FP32)</td><td>20 TFLOPS</td><td>312 TFLOPS</td><td><strong>15.6×</strong></td></tr>
+          <tr><td>GPU Memory</td><td>24GB total</td><td>320GB total</td><td>13.3×</td></tr>
+          <tr><td>Memory Bandwidth</td><td>480 GB/s</td><td>2.4 TB/s</td><td>5×</td></tr>
+          <tr><td><strong>ESM-2 Embedding Time</strong> (500k seq)</td><td><strong>72 hours</strong></td><td><strong>4 hours</strong></td><td><strong>18×</strong></td></tr>
+          <tr><td><strong>Per-Round Total (3 batches)</strong></td><td><strong>8–11 days</strong></td><td><strong>3–4 days</strong></td><td><strong>2.5–2.75×</strong></td></tr>
+          <tr><td><strong>Cost per GPU-Hour</strong></td><td><strong>€0.36</strong></td><td><strong>€3.20</strong></td><td><strong>8.9× cheaper</strong></td></tr>
+          <tr><td><strong>Power Consumption</strong></td><td>360W peak</td><td>1.6kW</td><td>4.4× less</td></tr>
+        </tbody>
+      </table>
+      <p style="color:#34d399;"><strong>✓ Fazit:</strong> €10.5k Setup ist <strong>2.5–3× langsamer</strong>, aber <strong>36× billiger</strong> und <strong>fits within 24-month project window</strong>.</p>
+
+      <h3>Procurement & Shopping Links</h3>
+      <ul style="font-size:0.9em;">
+        <li><strong>Deutschland (Primär):</strong>
+          <ul>
+            <li><a href="https://www.amazon.de/s?k=Dell+Pro+Max+Tower+T2">Amazon.de — Hardware-Vergleich</a></li>
+            <li><a href="https://www.alternate.de/">Alternate.de — B2B-Preise</a></li>
+            <li><a href="https://www.cyberport.de/">Cyberport.de — Gaming-Hardware</a></li>
+          </ul>
+        </li>
+        <li><strong>Spezial-Hardware:</strong>
+          <ul>
+            <li><a href="https://www.synology.com/de-de">Synology.de — NAS</a></li>
+            <li><a href="https://www.qnap.com/de-de/">QNAP.de — Alternative NAS</a></li>
+            <li><a href="https://eu.ui.com/">Ubiquiti EU — 10GbE Switches</a></li>
+          </ul>
+        </li>
+        <li><strong>Distributor (B2B):</strong>
+          <ul>
+            <li><a href="https://www.techdata.eu/">TechData.eu</a></li>
+            <li><a href="https://www.ingrammicro.com/">Ingram Micro</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Procurement Timeline</h3>
+      <table class="spec-table">
+        <tr><td><strong>M0</strong> (Jetzt)</td><td>Planung, RFQ an 3 Anbieter, CIO-Genehmigung</td></tr>
+        <tr><td><strong>M1</strong></td><td>Bestellung Dells + ASUS, 10GbE-Netzwerk, OS-Planung</td></tr>
+        <tr><td><strong>M2</strong></td><td>Inbetriebnahme: BIOS, Ubuntu 24.04 LTS, NVIDIA Driver 555+</td></tr>
+        <tr><td><strong>M3</strong></td><td>Pilot-Testing: ESM-2 Embedding (100 seq), NN Training</td></tr>
+        <tr><td><strong>M8</strong></td><td>⚠️ NAS-Deployment Deadline (vor BO Round 1)</td></tr>
+      </table>
+
+      <h3>Kritische Entscheidungen</h3>
+      <table class="spec-table">
+        <thead><tr><th>Entscheidung</th><th>Option A</th><th>Option B</th><th>Empfehlung</th></tr></thead>
+        <tbody>
+          <tr><td>GPU Pair</td><td>RTX 2000+A1000</td><td>2× RTX 2000</td><td><strong>A</strong> (Spezialisierung)</td></tr>
+          <tr><td>NAS RAID</td><td>RAID-1 (2TB usable)</td><td>RAID-6 (3TB usable)</td><td><strong>RAID-1</strong> (Budget)</td></tr>
+          <tr><td>Netzwerk</td><td>10GbE dedicated</td><td>Shared 1GbE</td><td><strong>10GbE</strong> (M8 deadline)</td></tr>
+          <tr><td>OS</td><td>Ubuntu 24.04 LTS</td><td>Windows 11 Pro</td><td><strong>Ubuntu</strong> (CUDA stability)</td></tr>
+          <tr><td>Backup Strategy</td><td>iCloud + S3 Glacier</td><td>Local HDD</td><td><strong>iCloud + NAS</strong></td></tr>
+        </tbody>
+      </table>
+
+  - id: "storage"
+    title: "Storage Architecture (3TB → 4TB Required)"
+    content: |
+      <h3>Tier 1: Local NVMe (Installed)</h3>
+      <table class="spec-table">
+        <tr><td>ASUS 1TB</td><td>OS + Python env + cache layer</td><td>~150GB headroom</td></tr>
+        <tr><td>Dell1 1TB (RTX 2000)</td><td>Embeddings cache + Models + Checkpoints</td><td>~250GB headroom</td></tr>
+        <tr><td>Dell2 1TB (RTX A1000)</td><td>Training data staging + BO results</td><td>~300GB headroom</td></tr>
+        <tr><td><strong>Total Installed</strong></td><td><strong>3TB</strong></td><td>✓ Sufficient for M1–M10 (single round)</td></tr>
+      </table>
+      <p style="color:var(--accent);"><strong>⚠️ Bottleneck for WP4 (3 rounds):</strong> 3× 600GB embeddings = 1.8TB. Need external storage by M8.</p>
+
+      <h3>Tier 2: External NAS (Required by M8)</h3>
+      <div class="spec-card">
+        <h4>Recommendation: Synology DS420+ or QNAP TS-464 (4TB RAID-1)</h4>
+        <p><strong>Cost:</strong> €1.5–2k (budget separately from €10k hardware)</p>
+        <table class="spec-table" style="margin:10px 0;">
+          <tr><td>Purpose</td><td>Warm archive (Embeddings Rounds 1–3, Model Checkpoints, Logs)</td></tr>
+          <tr><td>Connection</td><td>10GbE (or Gigabit Ethernet, acceptable for sequential access)</td></tr>
+          <tr><td>Capacity</td><td>4TB RAID-1 (2TB usable, 2TB redundancy)</td></tr>
+          <tr><td>Retention</td><td>Historical rounds (keep all for reproducibility)</td></tr>
+        </table>
+      </div>
+
+      <h3>Tier 3: Cloud S3 (Optional)</h3>
+      <p>AWS S3 Glacier or Azure Blob (cold archive after M24) for long-term regulatory compliance (~€0.03/GB/month)</p>
+
+  - id: "software"
+    title: "ML Software Stack (Adjusted for RTX 2000/A1000)"
+    content: |
+      <h3>Core Stack</h3>
+      <table class="spec-table">
+        <thead><tr><th>Component</th><th>Version</th><th>Notes for RTX Hardware</th></tr></thead>
+        <tbody>
+          <tr><td><code>Python</code></td><td>3.12</td><td>via uv venv (locked deps)</td></tr>
+          <tr><td><code>PyTorch</code></td><td>2.4.0 + cu125</td><td>Torch.compile() disabled (overhead). FP32 default (RTX A1000 stability).</td></tr>
+          <tr><td><code>transformers</code></td><td>4.46.0</td><td>ESM-2 650M (not 3B). gradient_checkpointing=True for 16GB VRAM</td></tr>
+          <tr><td><code>biotite</code></td><td>0.45.0</td><td>Sequence I/O, validation</td></tr>
+          <tr><td><code>scikit-optimize</code></td><td>0.9.0</td><td>BO, Gaussian Processes (CPU-bound OK)</td></tr>
+          <tr><td><code>botorch</code></td><td>1.14.0</td><td>Multi-objective BO (simplified GP kernels for CPU-bound execution)</td></tr>
+          <tr><td><code>optuna</code></td><td>3.6.0</td><td>Hyperparameter search (not critical; manual tuning OK on this budget)</td></tr>
+          <tr><td><code>pandas / numpy</code></td><td>2.2.0 / 2.0.0</td><td>Data manipulation (not GPU-dependent)</td></tr>
+        </tbody>
+      </table>
+      <h3>Development &amp; Monitoring</h3>
+      <ul>
+        <li><strong>Jupyter Lab 4.2.0:</strong> Prototyping on ASUS or Dell (remote via SSH)</li>
+        <li><strong>Weights &amp; Biases:</strong> Experiment tracking (cloud logging, budget-friendly)</li>
+        <li><strong>pytest 8.0.0:</strong> Unit tests</li>
+        <li><strong>black / isort / pylint:</strong> Code quality</li>
+      </ul>
+      <h3>OS &amp; Drivers</h3>
+      <p><strong>Recommended:</strong> Ubuntu 24.04 LTS (Dual-boot from Windows 11 Pro)</p>
+      <table class="spec-table">
+        <tr><td>NVIDIA Driver</td><td>Latest (555+) for RTX 2000 / A1000 support</td></tr>
+        <tr><td>CUDA Toolkit</td><td>12.5 (matches PyTorch cu125)</td></tr>
+        <tr><td>cuDNN</td><td>9.0 (RTX 2000: SM 7.0; RTX A1000: SM 8.0 compatible)</td></tr>
+      </table>
+

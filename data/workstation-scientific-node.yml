@@ -1,0 +1,226 @@
+meta:
+  output: "Machine learning for Rupert/transcripts/parvotec_scientific_node.html"
+  title: "Parvotec | Scientific Compute Node — €8–10k Workstation"
+  subtitle: "Threadripper 24c + RTX 5090 32GB + 128GB ECC + 10GbE"
+  description: "Local Compute Bridge: MacBook M5 ↔ Workstation ↔ HPC | Training, BO, Simulations"
+  accent: "#f59e0b"
+  back_href: "index.html"
+  back_label: "← Parvotec Hub"
+  nav_links:
+    - href: "#rationale"
+      label: "Rationale"
+    - href: "#hardware"
+      label: "Hardware"
+    - href: "#costs"
+      label: "Kosten"
+    - href: "#wp-mapping"
+      label: "WP Mapping"
+    - href: "#timeline"
+      label: "Timeline"
+
+sections:
+  - id: "rationale"
+    title: "Scientific Node — Compute Bridge Architecture"
+    content: |
+      <h3>Design Philosophy</h3>
+      <p><strong>NOT a gaming PC. NOT a replace-HPC machine. A bridge.</strong></p>
+      <table class="spec-table">
+        <thead><tr><th>Layer</th><th>Hardware</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Mobile Frontend</strong></td><td>MacBook M5 Pro (Aorta)</td><td>Interactive coding, field research, remote control</td></tr>
+          <tr><td><strong>Local Compute</strong></td><td><strong>Scientific Node</strong> (Parvotec)</td><td>Training, BO, simulations, overnight batches</td></tr>
+          <tr><td><strong>Heavy Compute</strong></td><td>HPC / VSC Vienna</td><td>Large-scale CFD, ensemble methods, production runs</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Why Threadripper instead of Intel/AMD EPYC?</h3>
+      <ul>
+        <li><strong>PCIe 5.0:</strong> Fast NVMe + multi-GPU expansion ready</li>
+        <li><strong>24–32 cores:</strong> Good balance for CPU parallelism (CFD, molecular dynamics)</li>
+        <li><strong>Cost:</strong> €600–1.200 vs EPYC €2.500–8.000</li>
+        <li><strong>Expandability:</strong> TRX50 boards have 10GbE + dual GPU slots standard</li>
+      </ul>
+
+      <h3>Why RTX 5090 not RTX PRO 6000?</h3>
+      <table class="spec-table">
+        <tr><td><strong>RTX 5090 (32 GB)</strong></td><td>~€4.500–6.000</td><td>CUDA 12.5, Tensor cores, fast; good for training + BO</td></tr>
+        <tr><td><strong>RTX PRO 6000 (96 GB)</strong></td><td>~€13.000–16.700</td><td>96 GB VRAM; aber fast dein gesamtes Budget</td></tr>
+      </table>
+      <p style="color:var(--accent);"><strong>Decision Rule:</strong> Start with 32 GB. If you hit VRAM ceiling regularly → upgrade later. Mainboard is 2-GPU-ready.</p>
+
+      <h3>10GbE is Non-Negotiable</h3>
+      <p>Parvotec generates ~1.8 TB embeddings per BO round. Without 10GbE:</p>
+      <ul>
+        <li>1GbE = 40+ hours per transfer → defeats overnight batch scheduling</li>
+        <li>10GbE = 4 hours per transfer → fits within M1–M8 window</li>
+      </ul>
+      <p><strong>Cost addition: €300–800 (cards + switch)</strong> — mandatory.</p>
+
+  - id: "hardware"
+    title: "Scientific Node — Hardware Bill of Materials"
+    content: |
+      <h3>Complete System (~€8–10k netto, €9.5–12k brutto)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Komponente</th><th>Modell</th><th>Netto</th><th>Brutto</th><th>Link / Quelle</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CPU</strong></td><td>AMD Threadripper 9960X (24c, 5.7 GHz)</td><td>€800</td><td>€960</td><td><a href="https://geizhals.at">Geizhals.at</a></td></tr>
+          <tr><td><strong>Mainboard</strong></td><td>ASUS ProArt TRX50-CREATOR</td><td>€1.100</td><td>€1.320</td><td>10GbE, dual PCIe x16, ECC support</td></tr>
+          <tr><td><strong>RAM</strong></td><td>Crucial CT2K64G56C46S5 (2×64 GB, DDR5-5600, ECC)</td><td>€1.800</td><td>€2.160</td><td><a href="https://alternate.de">Alternate.de</a></td></tr>
+          <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090 32 GB (Founder's Edition or AIB)</td><td>€4.500–5.500</td><td>€5.400–6.600</td><td>aktuell €5–6k, MSRP war $1.999</td></tr>
+          <tr><td><strong>System SSD</strong></td><td>Samsung 990 Pro 2 TB (PCIe 4.0)</td><td>€180</td><td>€216</td><td>OS, containers, compilers</td></tr>
+          <tr><td><strong>Data SSD</strong></td><td>SK Hynix Platinum P41 4 TB (PCIe 4.0)</td><td>€280</td><td>€336</td><td>Embeddings cache, training data, models</td></tr>
+          <tr><td><strong>PSU</strong></td><td>CORSAIR AX1600i (1600 W, Titanium-rated)</td><td>€400</td><td>€480</td><td>RTX 5090 + Threadripper = ~700 W peak; 1600 W = 2.3× headroom</td></tr>
+          <tr><td><strong>Case</strong></td><td>NZXT H7 Flow RGB oder Corsair 5000T</td><td>€120</td><td>€144</td><td>Good airflow, quiet, full-size for later GPU expansion</td></tr>
+          <tr><td><strong>Cooler (CPU)</strong></td><td>Noctua NH-U14S TR5-SP6 oder be quiet! Dark Rock Pro TR4</td><td>€150</td><td>€180</td><td>Threadripper runs hot; high-quality cooler essential</td></tr>
+          <tr><td><strong>10GbE Card</strong></td><td>Mellanox ConnectX-6 (QSFP28, dual-port)</td><td>€250</td><td>€300</td><td>Or Cisco ENIC (cheaper used)</td></tr>
+          <tr><td><strong>10GbE Switch</strong></td><td>NVIDIA Mellanox SN3700 (16-port managed)</td><td>€1.500</td><td>€1.800</td><td>High-performance, power-efficient, redundant PSU support</td></tr>
+          <tr><td><strong>Cables + Misc</strong></td><td>QSFP+ cables (2×3m), PCIe risers, thermal paste</td><td>€100</td><td>€120</td><td></td></tr>
+          <tr><td colspan="2"><strong>TOTAL HARDWARE</strong></td><td><strong>€11.180</strong></td><td><strong>€13.416</strong></td><td><strong>Without 10GbE switch: €9.5k netto</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Optional Expansions (Für später)</h3>
+      <ul>
+        <li><strong>RTX 5090 #2:</strong> Add second GPU when VRAM becomes bottleneck (~€5.5k)</li>
+        <li><strong>RAM → 256 GB:</strong> For large molecular dynamics sims (~€3.6k for 4×64GB more)</li>
+        <li><strong>NVMe #3:</strong> 8 TB archive NVMe (€400–600)</li>
+      </ul>
+
+  - id: "costs"
+    title: "Cost Analysis & Procurement Timeline"
+    content: |
+      <h3>Budget Breakdown</h3>
+      <table class="spec-table">
+        <thead><tr><th>Kategorie</th><th>Komponenten</th><th>Netto</th><th>Brutto (20% MwSt)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Core Compute</strong></td><td>CPU + Mainboard + RAM + GPU</td><td>€8.200</td><td>€9.840</td></tr>
+          <tr><td><strong>Storage</strong></td><td>2×NVMe (2TB + 4TB)</td><td>€460</td><td>€552</td></tr>
+          <tr><td><strong>Power &amp; Cooling</strong></td><td>PSU + Cooler</td><td>€550</td><td>€660</td></tr>
+          <tr><td><strong>Gehäuse</strong></td><td>Case + Cables + Misc</td><td>€220</td><td>€264</td></tr>
+          <tr><td colspan="2"><strong>SYSTEM SUBTOTAL</strong></td><td><strong>€9.430</strong></td><td><strong>€11.316</strong></td></tr>
+          <tr><td colspan="2"></td><td></td><td></td></tr>
+          <tr><td><strong>Network (Shared)</strong></td><td>10GbE Card + Switch + Cables</td><td>€1.850</td><td>€2.220</td></tr>
+          <tr><td colspan="2"><strong>TOTAL WITH 10GbE</strong></td><td><strong>€11.280</strong></td><td><strong>€13.536</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Procurement Strategy (M0–M2)</h3>
+      <table class="spec-table">
+        <tr><td><strong>M0 (Now)</strong></td><td>Order CPU, Mainboard, RAM, PSU (longest lead time)</td></tr>
+        <tr><td><strong>M0+2w</strong></td><td>GPU pre-order (RTX 5090 supply constrained; check Geizhals daily)</td></tr>
+        <tr><td><strong>M1</strong></td><td>Receive core components, assemble + BIOS setup</td></tr>
+        <tr><td><strong>M1+2w</strong></td><td>GPU arrives, 10GbE NIC + Switch (can order in parallel)</td></tr>
+        <tr><td><strong>M2</strong></td><td>Full system operational: Ubuntu 24.04 LTS + CUDA 12.5</td></tr>
+      </table>
+
+      <h3>Austrian Retailers</h3>
+      <ul style="font-size:0.9em;">
+        <li><strong>Geizhals.at</strong> — Price comparator, ships from DE/AT</li>
+        <li><strong>Alternate.de</strong> — B2B pricing, fast Vienna shipping</li>
+        <li><strong>Cyberport.de</strong> — Gaming + Pro hardware, occasional discounts</li>
+        <li><strong>NBB.com</strong> — Budget alternative (sometimes lower prices)</li>
+        <li><strong>IT&amp;T Austria</strong> — Local distributor for ASUS/Corsair</li>
+      </ul>
+
+  - id: "wp-mapping"
+    title: "Work Package Integration — What Do You Need When?"
+    content: |
+      <h3>WP1: Target Definition (M1–M3)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Task</th><th>Hardware Requirement</th><th>Why Workstation?</th><th>Fallback</th></tr></thead>
+        <tbody>
+          <tr><td>Sequence assembly (FASTQ → HDF5)</td><td>CPU (16 cores) + 32 GB RAM</td><td>Threadripper 9960X handles bioinformatics pipelines faster than MacBook</td><td>MacBook M5 (slower)</td></tr>
+          <tr><td>ESM-2 pilot embedding (100–500 seqs)</td><td>GPU (RTX 5090, ~4h)</td><td>5090 ~100× faster than M5 Metal; parallelize batches</td><td>MacBook M5 (~30h, offline only)</td></tr>
+          <tr><td>Result visualization + QC</td><td>CPU only</td><td>Local Jupyter, metadata inspection</td><td>MacBook (preferred, but workstation OK)</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--accent);"><strong>WP1 Hardware Status:</strong> ✓ READY with Threadripper + RTX 5090</p>
+
+      <h3>WP2: DMS Library (M2–M8)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Task</th><th>Hardware Requirement</th><th>Timeline</th><th>Criticality</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Full ESM-2 embedding (500k seqs)</strong></td><td>GPU 24/7 (RTX 5090, ~72h continuous)</td><td>M2–M5 (first 3 weeks)</td><td style="color:#ef4444;">🔴 CRITICAL PATH</td></tr>
+          <tr><td>Data staging (500k seq input)</td><td>CPU + 128 GB RAM + 4 TB SSD cache</td><td>M1–M2</td><td style="color:#eab308;">🟡 High</td></tr>
+          <tr><td>Embedding validation sampling</td><td>CPU + metadata QC (no GPU)</td><td>M5–M8</td><td style="color:#f59e0b;">🟠 Medium</td></tr>
+          <tr><td><strong>External NAS deployment</strong></td><td>10GbE network + 4 TB RAID-1 NAS</td><td>Before M8 BO start</td><td style="color:#ef4444;">🔴 CRITICAL (storage pressure)</td></tr>
+        </tbody>
+      </table>
+      <p style="color:#34d399;"><strong>⚠️ KEY CONSTRAINT:</strong> Workstation must have 10GbE + external NAS by M8, else 3TB local NVMe becomes bottleneck for WP4 (1.8 TB embeddings × 3 rounds).</p>
+
+      <h3>WP3: Oracle v1.0 (M4–M10)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Task</th><th>Hardware</th><th>GPU Hours</th><th>Why Workstation</th></tr></thead>
+        <tbody>
+          <tr><td>4-Task NN training (4 epochs)</td><td>RTX 5090 + 128 GB RAM</td><td>~150 GPU-h</td><td>5090 = 10–20× faster than M5 Metal; memory bandwidth critical</td></tr>
+          <tr><td>cVAE training (conditional VAE)</td><td>RTX 5090 (lower footprint)</td><td>~100 GPU-h</td><td>Generative task; M5 Metal insufficient</td></tr>
+          <tr><td>Hyperparameter sweep (Optuna)</td><td>CPU (Threadripper 24c) + GPU</td><td>~50 GPU-h (BO search)</td><td>Parallelizable; Threadripper >> M5 cores</td></tr>
+          <tr><td>Model checkpointing + validation</td><td>Storage + CPU</td><td>—</td><td>Both systems OK; prefer workstation for automation</td></tr>
+        </tbody>
+      </table>
+      <p><strong>WP3 Status:</strong> RTX 5090 + Threadripper ✓ SUFFICIENT for M4–M10 timeline.</p>
+
+      <h3>WP4: BO Runden (M8–M18)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Round</th><th>Workload</th><th>Hardware Bottleneck</th><th>Estimated Time</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Round 1 (M8–M11)</strong></td><td>Embed (72h) → NN Infer (18h) → BO GP (48h CPU)</td><td>GPU embedding (RTX 5090)</td><td>~8–9 calendar days (sequential)</td></tr>
+          <tr><td><strong>Round 2 (M11–M14)</strong></td><td>Repeat Round 1 with 2nd candidate set</td><td>GPU + 4 TB NAS (1.2 TB embeddings now)</td><td>~8–9 days (may slow with NAS I/O)</td></tr>
+          <tr><td><strong>Round 3 (M14–M18)</strong></td><td>Repeat Round 1 refined final set</td><td>Storage pressure: ~1.8 TB cumulative</td><td>~8–9 days (watch NAS bandwidth)</td></tr>
+          <tr><td><strong>Total BO</strong></td><td>3 rounds sequential (no DDP parallelism)</td><td>GPU sustained 24/7 × ~24 days</td><td>~30 calendar days (fits M8–M18)</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--accent);"><strong>⚠️ CRITICAL:</strong> 10GbE + NAS Tier 2 are MANDATORY for WP4. Without them, 4TB local NVMe insufficient.</p>
+
+      <h3>WP5: Lead Validation (M14–M24)</h3>
+      <table class="spec-table">
+        <tr><td><strong>Wet Lab Integration</strong></td><td>MacBook M5 (field) + Workstation (overnight)</td><td>MacBook handles field data ingest; Workstation processes batch</td></tr>
+        <tr><td><strong>Transfer Learning</strong></td><td>RTX 5090 + Threadripper (re-training)</td><td>~300 GPU-h spread over 10 months</td></tr>
+        <tr><td><strong>Inference on New Candidates</strong></td><td>Either system; prefer M5 for interactivity</td><td>Oracle inference = ~1s/seq on M5 (acceptable)</td></tr>
+      </table>
+
+      <h3>Summary: Hardware Readiness by WP</h3>
+      <table class="spec-table">
+        <thead><tr><th>WP</th><th>Core Compute</th><th>Storage</th><th>Network</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>WP1</strong></td><td>Threadripper + RTX 5090</td><td>6 TB local NVMe</td><td>1GbE OK</td><td>✓ Ready M2</td></tr>
+          <tr><td><strong>WP2</strong></td><td>✓ (Threadripper 24c parallelism)</td><td>⚠️ Need 4TB NAS by M8</td><td>⚠️ Need 10GbE before BO</td><td>✓ M2–M8 feasible</td></tr>
+          <tr><td><strong>WP3</strong></td><td>✓ (RTX 5090 training)</td><td>✓ (Tier 1 + Tier 2 warm)</td><td>✓ 10GbE for Parvotec↔Mac sync</td><td>✓ Ready M4</td></tr>
+          <tr><td><strong>WP4</strong></td><td>✓ (RTX 5090 24/7)</td><td>🔴 <strong>CRITICAL: 4TB NAS MANDATORY</strong></td><td>🔴 <strong>10GbE MANDATORY</strong></td><td>⚠️ M8 only if NAS+10GbE deployed</td></tr>
+          <tr><td><strong>WP5</strong></td><td>Workstation + MacBook (hybrid)</td><td>✓ Archive to S3 Glacier</td><td>✓</td><td>✓ Ready M14</td></tr>
+        </tbody>
+      </table>
+
+  - id: "timeline"
+    title: "M1–M24 Timeline & Workstation Usage"
+    content: |
+      <h3>Monthly GPU/CPU Utilization (Workstation)</h3>
+      <table class="spec-table">
+        <thead><tr><th>Month</th><th>WP</th><th>GPU Usage</th><th>CPU Usage</th><th>NAS Pressure</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>M1–M2</td><td>Setup + WP1 start</td><td>~20% (pilot embedding)</td><td>50% (sequence prep)</td><td>—</td><td>OS setup, CUDA drivers, Python env</td></tr>
+          <tr><td>M2–M5</td><td>WP2 main (DMS)</td><td>95% (500k embedding)</td><td>30% (I/O scheduling)</td><td>—</td><td>Continuous 72h ESM-2 run; local cache OK</td></tr>
+          <tr><td>M4–M8</td><td>WP3 overlap</td><td>60% (NN training)</td><td>80% (hyperparameter BO)</td><td>—</td><td>Both systems busy; parallelizable</td></tr>
+          <tr><td><strong>M8</strong></td><td>WP2 complete</td><td>—</td><td>—</td><td>🔴 NAS deployment DEADLINE</td><td>Must have 4TB RAID-1 before WP4 start</td></tr>
+          <tr><td>M8–M11</td><td>WP4.1 (Round 1)</td><td>99% (BO embedding)</td><td>70% (GP process)</td><td>~600 GB written</td><td>Intensive; 10GbE critical for staging</td></tr>
+          <tr><td>M11–M14</td><td>WP4.2 (Round 2)</td><td>99%</td><td>70%</td><td>~1.2 TB total</td><td>Potential NAS bandwidth bottleneck; monitor</td></tr>
+          <tr><td>M14–M18</td><td>WP4.3 + WP5 start</td><td>99% (BO final)</td><td>50% (validation)</td><td>~1.8 TB final</td><td>Hottest period; M5 does WP5 field work</td></tr>
+          <tr><td>M18–M24</td><td>WP5 main</td><td>20% (transfer learn)</td><td>40% (analysis)</td><td>Archive to S3</td><td>Workstation in idle/standby most days</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Critical Dependencies</h3>
+      <ul style="color:#ef4444;">
+        <li><strong>🔴 M8 Deadline:</strong> 4TB NAS + 10GbE operational, else WP4 BO blocked</li>
+        <li><strong>🔴 M2 Deadline:</strong> Workstation fully operational (Ubuntu 24.04 + CUDA + Python env)</li>
+        <li><strong>🟡 M5 Deadline:</strong> 500k embeddings complete (WP2 bottleneck for WP4 downstream)</li>
+      </ul>
+
+      <h3>Workstation Power Consumption</h3>
+      <table class="spec-table">
+        <tr><td><strong>Idle</strong></td><td>~150 W (mostly PSU fan)</td></tr>
+        <tr><td><strong>CPU-only load</strong></td><td>~300 W (Threadripper + fans)</td></tr>
+        <tr><td><strong>GPU streaming (RTX 5090)</strong></td><td>~700 W peak (Threadripper 200W + GPU 450W + PSU loss)</td></tr>
+        <tr><td><strong>24/7 continuous (M8–M18)</strong></td><td>~5,040 kWh/month (worst case, avg ~600W)</td></tr>
+      </table>
+      <p style="color:#34d399;"><strong>Recommendation:</strong> UPS 6 kVA (€3k) highly recommended for WP4 BO rounds. Sudden power loss = 72h embedding lost.</p>

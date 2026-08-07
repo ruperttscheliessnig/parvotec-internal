@@ -1,8 +1,32 @@
-*.wav
-*.mp3
+# Binary & copyrighted documents
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.zip
+
+# Large media / raw data
 *.mp4
 *.mov
-slide_images/
+*.avi
+*.wav
+*.mp3
+
+# Python cache
 __pycache__/
 *.pyc
+.venv/
+
+# macOS
 .DS_Store
+
+# Sensitive / private
+*kostenanalyse*
+*hardware_analysis*
+
+# Raw video transcripts
+Machine learning for Rupert/transcripts/*.txt
+
+# Temp
+*.tmp
+*.log

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parvotec | Projektproposal & Oracle Manual</title>
+    <title>Parvotec | Parvotec — Projektproposal</title>
     <style>
       :root {
         --paper: #050505;
@@ -12,573 +12,238 @@
         --soft:  #a7abb0;
         --line:  #343434;
         --accent:#39bfff;
-        --wp1:   #39bfff;
-        --wp2:   #7dd3fc;
-        --wp3:   #a78bfa;
-        --wp4:   #f472b6;
-        --wp5:   #34d399;
         --ms:    #fbbf24;
       }
       *{margin:0;padding:0;box-sizing:border-box;}
       html{scroll-behavior:smooth;}
-      body{
-        font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
-        background:var(--paper);color:var(--ink);
-        line-height:1.62;font-size:16px;
-      }
-      header{
-        background:var(--paper);
-        padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;
-        border-bottom:1px solid var(--line);
-      }
-      header h1{
-        font-size:clamp(2.4rem,5vw,4.8rem);
-        font-weight:400;letter-spacing:-0.06em;
-        color:var(--ink);margin-bottom:8px;
-      }
+      body{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:16px;}
+      header{background:var(--paper);padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;border-bottom:1px solid var(--line);}
+      header h1{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:400;letter-spacing:-0.06em;color:var(--ink);margin-bottom:8px;}
       header p{font-size:.88rem;color:var(--soft);letter-spacing:.08em;margin-top:12px;}
-      nav{
-        position:sticky;top:0;z-index:100;
-        background:rgba(5,5,5,.96);backdrop-filter:blur(10px);
-        border-bottom:1px solid var(--line);
-        display:flex;align-items:center;flex-wrap:wrap;gap:28px;
-        padding:0 max(4vw,calc((100vw - 1240px)/2));min-height:56px;
-      }
-      nav a{
-        color:var(--soft);text-decoration:none;
-        font-size:.8rem;font-weight:500;letter-spacing:.06em;
-        text-transform:uppercase;padding:18px 0;
-        border-bottom:2px solid transparent;
-        transition:color .2s,border-color .2s;
-      }
+      nav{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;flex-wrap:wrap;gap:28px;padding:0 max(4vw,calc((100vw - 1240px)/2));min-height:56px;}
+      nav a{color:var(--soft);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
       nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--accent);}
       nav a.back{color:var(--accent);margin-left:auto;}
-      .content{
-        width:min(1240px,94vw);margin:0 auto;
-        border-left:1px solid var(--line);border-right:1px solid var(--line);
-      }
-      section{
-        padding:72px 48px;border-bottom:1px solid var(--line);
-        scroll-margin-top:56px;
-      }
+      .content{width:min(1240px,94vw);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);}
+      section{padding:72px 48px;border-bottom:1px solid var(--line);scroll-margin-top:56px;}
       section:last-child{border-bottom:none;}
-      h2{
-        font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;
-        letter-spacing:-.05em;color:var(--ink);
-        margin-bottom:28px;line-height:1.1;
-      }
-      h3{
-        font-size:1.3rem;font-weight:500;color:var(--ink);
-        margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;
-      }
-      h4{
-        font-size:1rem;font-weight:600;color:var(--accent);
-        margin-top:24px;margin-bottom:10px;
-        letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;
-      }
-      p{font-size:1rem;color:var(--ink);margin-bottom:18px;
-        line-height:1.65;max-width:78ch;}
+      h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;letter-spacing:-.05em;color:var(--ink);margin-bottom:28px;line-height:1.1;}
+      h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;}
+      h4{margin-top:24px;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;font-weight:600;color:var(--accent);}
+      p{font-size:1rem;color:var(--ink);margin-bottom:18px;line-height:1.65;max-width:78ch;}
       ul,ol{margin-left:28px;margin-bottom:18px;color:var(--ink);}
       li{margin-bottom:10px;line-height:1.62;}
       strong{color:var(--ink);font-weight:600;}
-      code{
-        font-family:'Menlo','Monaco','Courier New',monospace;
-        font-size:.85em;background:var(--card);
-        border:1px solid var(--line);padding:2px 6px;
-        color:var(--accent);
-      }
-      pre{
-        background:var(--card);border:1px solid var(--line);
-        padding:20px 24px;overflow-x:auto;
-        margin:20px 0;font-size:.85rem;
-        font-family:'Menlo','Monaco','Courier New',monospace;
-        color:var(--ink);line-height:1.7;
-      }
-      pre code{background:none;border:none;padding:0;color:inherit;}
+      code{font-family:'Menlo','Monaco','Courier New',monospace;font-size:.85em;background:var(--card);border:1px solid var(--line);padding:2px 6px;color:var(--accent);}
       a{color:var(--accent);text-decoration:none;}
       a:hover{opacity:.8;}
-
-      /* ── WP Cards ───────────────────────────────────── */
       .wp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1px;margin-top:28px;}
-      .wp-card{
-        background:var(--card);border:1px solid var(--line);
-        padding:28px 32px;position:relative;overflow:hidden;
-      }
-      .wp-card::before{
-        content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-      }
-      .wp1::before{background:var(--wp1);}
-      .wp2::before{background:var(--wp2);}
-      .wp3::before{background:var(--wp3);}
-      .wp4::before{background:var(--wp4);}
-      .wp5::before{background:var(--wp5);}
-      .wp-tag{
-        font-size:.68rem;font-weight:700;letter-spacing:.14em;
-        text-transform:uppercase;margin-bottom:10px;display:block;
-      }
-      .wp1 .wp-tag{color:var(--wp1);}
-      .wp2 .wp-tag{color:var(--wp2);}
-      .wp3 .wp-tag{color:var(--wp3);}
-      .wp4 .wp-tag{color:var(--wp4);}
-      .wp5 .wp-tag{color:var(--wp5);}
+      .wp-card{background:var(--card);border:1px solid var(--line);padding:28px 32px;position:relative;overflow:hidden;}
+      .wp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#39bfff;}
+      .wp-tag{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;display:block;color:#39bfff;}
       .wp-card h3{margin-top:0;font-size:1.1rem;}
-      .wp-meta{
-        display:flex;gap:20px;margin-top:16px;
-        font-size:.75rem;color:var(--soft);flex-wrap:wrap;
-      }
+      .wp-meta{display:flex;gap:20px;margin-top:16px;font-size:.75rem;color:var(--soft);flex-wrap:wrap;}
       .wp-meta span{display:flex;flex-direction:column;gap:2px;}
       .wp-meta strong{color:var(--ink);font-size:.82rem;}
-      .deliverables{
-        margin-top:14px;padding-top:14px;
-        border-top:1px solid var(--line);
-        font-size:.82rem;color:var(--soft);
-      }
+      .deliverables{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--soft);}
       .deliverables strong{color:var(--ink);}
-
-      /* ── Gantt ─────────────────────────────────────── */
       .g-wrap{overflow-x:auto;margin-top:28px;}
       .g-chart{min-width:760px;border:1px solid var(--line);}
-      /* header: quarter + month ticks */
       .g-head{display:grid;grid-template-columns:160px 1fr;border-bottom:2px solid var(--line);}
-      .g-head-label{
-        background:var(--card);border-right:1px solid var(--line);
-        padding:8px 14px;font-size:.62rem;color:var(--soft);
-        letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:flex-end;
-      }
+      .g-head-label{background:var(--card);border-right:1px solid var(--line);padding:8px 14px;font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:flex-end;}
       .g-head-track{position:relative;background:var(--card);height:44px;}
-      .g-tick{
-        position:absolute;top:0;bottom:0;
-        border-left:1px solid #1e1e1e;
-        display:flex;flex-direction:column;justify-content:flex-end;
-        padding-bottom:6px;padding-left:4px;
-        font-size:.6rem;color:#555;letter-spacing:.04em;
-      }
+      .g-tick{position:absolute;top:0;bottom:0;border-left:1px solid #1e1e1e;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6px;padding-left:4px;font-size:.6rem;color:#555;letter-spacing:.04em;}
       .g-tick.q{border-left:1px solid var(--line);color:var(--soft);}
       .g-tick.q span{color:var(--accent);font-weight:700;font-size:.7rem;}
-      /* WP rows */
       .g-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line);min-height:52px;}
       .g-row:last-child{border-bottom:none;}
-      .g-rlabel{
-        background:var(--card);border-right:1px solid var(--line);
-        padding:0 14px;display:flex;flex-direction:column;
-        justify-content:center;gap:2px;
-      }
+      .g-rlabel{background:var(--card);border-right:1px solid var(--line);padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:2px;}
       .g-rlabel strong{font-size:.8rem;color:var(--ink);font-weight:600;}
       .g-rlabel span{font-size:.64rem;color:var(--soft);}
       .g-track{position:relative;background:var(--paper);}
-      /* vertical quarter dividers in track */
-      .g-track::before{
-        content:'';position:absolute;inset:0;
-        background:repeating-linear-gradient(
-          to right,
-          transparent 0,transparent calc(12.5% - 1px),
-          #1c1c1c calc(12.5% - 1px),#1c1c1c 12.5%
-        );
-        pointer-events:none;
-      }
-      .g-bar{
-        position:absolute;top:50%;transform:translateY(-50%);
-        height:20px;border-radius:0;
-        display:flex;align-items:center;padding:0 8px;
-        font-size:.62rem;font-weight:700;color:rgba(0,0,0,.75);
-        letter-spacing:.05em;white-space:nowrap;overflow:hidden;
-      }
-      /* milestone diamond */
-      .g-ms{
-        position:absolute;top:50%;
-        transform:translate(-50%,-50%) rotate(45deg);
-        width:10px;height:10px;
-        background:var(--ms);z-index:4;
-        box-shadow:0 0 0 2px var(--paper);
-      }
-      .g-ms-lbl{
-        position:absolute;top:2px;
-        transform:translateX(-50%);
-        font-size:.58rem;color:var(--ms);white-space:nowrap;
-        font-weight:700;letter-spacing:.04em;z-index:5;
-      }
-      /* legend */
+      .g-track::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(12.5% - 1px),#1c1c1c calc(12.5% - 1px),#1c1c1c 12.5%);pointer-events:none;}
+      .g-bar{position:absolute;top:50%;transform:translateY(-50%);height:20px;border-radius:0;display:flex;align-items:center;padding:0 8px;font-size:.62rem;font-weight:700;color:rgba(0,0,0,.75);letter-spacing:.05em;white-space:nowrap;overflow:hidden;}
+      .g-ms{position:absolute;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:10px;height:10px;background:var(--ms);z-index:4;box-shadow:0 0 0 2px var(--paper);}
+      .g-ms-lbl{position:absolute;top:2px;transform:translateX(-50%);font-size:.58rem;color:var(--ms);white-space:nowrap;font-weight:700;letter-spacing:.04em;z-index:5;}
       .g-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;font-size:.78rem;}
       .g-leg{display:flex;align-items:center;gap:8px;}
       .g-dot{width:20px;height:10px;border-radius:0;flex-shrink:0;}
       .g-diamond{width:9px;height:9px;transform:rotate(45deg);background:var(--ms);flex-shrink:0;}
-
-      /* ── Oracle Manual Blocks ───────────────────────── */
-      .arch-grid{
-        display:grid;grid-template-columns:repeat(4,1fr);
-        gap:1px;border:1px solid var(--line);margin:24px 0;
-      }
-      .arch-block{
-        background:var(--card);padding:20px 18px;
-        border-right:1px solid var(--line);
-        position:relative;
-      }
+      .arch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);margin:24px 0;}
+      .arch-block{background:var(--card);padding:20px 18px;border-right:1px solid var(--line);position:relative;}
       .arch-block:last-child{border-right:none;}
-      .arch-arrow{
-        position:absolute;right:-12px;top:50%;
-        transform:translateY(-50%);
-        font-size:1rem;color:var(--accent);z-index:2;
-      }
-      .arch-num{
-        font-size:.65rem;color:var(--accent);font-weight:700;
-        letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;
-      }
-      .arch-block h4{
-        font-size:.82rem;color:var(--ink);font-weight:600;
-        margin:0 0 6px;text-transform:none;letter-spacing:0;
-      }
+      .arch-arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:1rem;color:var(--accent);z-index:2;}
+      .arch-num{font-size:.65rem;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;}
+      .arch-block h4{font-size:.82rem;color:var(--ink);font-weight:600;margin:0 0 6px;text-transform:none;letter-spacing:0;}
       .arch-block p{font-size:.76rem;color:var(--soft);margin:0;max-width:none;}
-      @media(max-width:800px){
-        .arch-grid{grid-template-columns:1fr 1fr;}
-        .arch-arrow{display:none;}
-      }
-      @media(max-width:500px){
-        .arch-grid{grid-template-columns:1fr;}
-        section{padding:48px 20px;}
-        .wp-cards{grid-template-columns:1fr;}
-      }
-
       .spec-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem;}
-      .spec-table th{
-        background:var(--card);color:var(--accent);
-        padding:12px 16px;text-align:left;
-        border-bottom:1px solid var(--line);
-        font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
-        font-weight:600;
-      }
-      .spec-table td{
-        padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);
-      }
+      .spec-table th{background:var(--card);color:var(--accent);padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+      .spec-table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
       .spec-table tr:hover{background:var(--card);}
-
-      .callout{
-        border-left:2px solid var(--accent);
-        padding:16px 20px;margin:20px 0;
-        background:var(--card);
-      }
+      .callout{border-left:2px solid var(--accent);padding:16px 20px;margin:20px 0;background:var(--card);}
       .callout p{margin:0;font-size:.9rem;}
-
-      .step-list{counter-reset:steps;list-style:none;margin-left:0;margin-top:12px;}
-      .step-list li{
-        counter-increment:steps;
-        padding:14px 16px 14px 52px;
-        border-bottom:1px solid var(--line);
-        position:relative;font-size:.95rem;
-      }
-      .step-list li::before{
-        content:counter(steps,'decimal-leading-zero');
-        position:absolute;left:16px;top:14px;
-        font-size:.68rem;color:var(--accent);font-weight:700;
-        letter-spacing:.1em;
-      }
-      footer{
-        color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));
-        font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);
-      }
+      footer{color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);}
       footer p{font-size:.75rem;margin:6px 0;color:var(--soft);}
-    </style>
+      @media(max-width:500px){section{padding:48px 20px;}.wp-cards{grid-template-columns:1fr;}.arch-grid{grid-template-columns:1fr 1fr;}.arch-arrow{display:none;}}
+</style>
 </head>
 <body>
-
 <header>
     <div style="margin-bottom:14px;">
         <span style="font-size:2em;font-weight:700;">calyr.aí</span>
-        <span style="font-size:.72em;color:var(--accent);font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
+        <span style="font-size:.72em;color:#39bfff;font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
     </div>
     <h1>Parvotec — Projektproposal</h1>
     <h1 style="font-size:clamp(1.2rem,2.5vw,2rem);color:var(--soft);font-weight:400;letter-spacing:-.02em;margin-top:4px;">Work Packages · Gantt · Fitness Oracle Manual</h1>
     <p>AAV Capsid Engineering × ML-guided Optimization · August 2026</p>
 </header>
-
 <nav>
-    <a href="#executive">Executive Summary</a>
-    <a href="#workpackages">Work Packages</a>
-    <a href="#gantt">Gantt</a>
-    <a href="#oracle-arch">Oracle Architektur</a>
-    <a href="#oracle-data">Datenpipeline</a>
-    <a href="#oracle-model">Modell-Spezifikation</a>
-    <a href="#oracle-run">Betrieb & API</a>
-    <a href="#milestones">Meilensteine</a>
+    <a href="#executive">Executive Summary</a><a href="#workpackages">Work Packages</a><a href="#gantt">Gantt</a><a href="#oracle-arch">Oracle Architektur</a><a href="#oracle-data">Datenpipeline</a><a href="#oracle-model">Modell-Spezifikation</a><a href="#oracle-run">Betrieb & API</a><a href="#milestones">Meilensteine</a>
     <a href="parvotec_asgct2026_analysis_bilingual.html" class="back">← Analyse</a>
 </nav>
-
 <div class="content">
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="executive">
     <h2>Executive Summary</h2>
     <p><strong>Parvotec</strong> entwickelt einen AAV-Vektor mit selektivem Tropismus für nozizeptive Neuronen (Dorsal Root Ganglia, DRG) und effizienter retrograder Transportkapazität als Plattform für periphere Schmerzgentherapie.</p>
-    <p>Das zentrale technologische Differenzierungsmerkmal ist ein <strong>ML-gesteuerter iterativer Design-Evaluate-Optimize-Loop</strong>: ein sogenanntes <em>Fitness Oracle</em> — ein trainiertes neuronales Netzwerk, das aus Proteinsequenz-Embeddings (ESM-2/ESM-3) mehrere biologische Zieleigenschaften gleichzeitig vorhersagt und als Surrogate für kostspielige experimentelle Assays dient.</p>
-    
-    <div class="callout">
-        <p><strong>Kernhypothese:</strong> Durch Kombination von experimentellem Deep Mutational Scanning (DMS), Protein Language Model Embeddings (ESM-2), konditionaler generativer Modellierung (cVAE) und Multi-objective Bayesian Optimization kann in 3–4 iterativen Runden ein nozizeptiver DRG-spezifischer AAV-Vektor mit 5–10× verbessertem Tropismus gegenüber Wild-type identifiziert werden.</p>
-    </div>
-
-    <h3>Projektzeitraum & Umfang</h3>
-    <table class="spec-table">
-        <thead><tr><th>Parameter</th><th>Wert</th></tr></thead>
-        <tbody>
-            <tr><td>Laufzeit</td><td>24 Monate (M1–M24)</td></tr>
-            <tr><td>Work Packages</td><td>5 (WP1–WP5)</td></tr>
-            <tr><td>Schlüsseltechnologien</td><td>ESM-2/3, cVAE, Multi-objective BO, DMS, NGS</td></tr>
-            <tr><td>Ziel-Zelltyp</td><td>Nozizeptive Neuronen (TRPV1+, CGRP+) in DRG L4–S1</td></tr>
-            <tr><td>Applikationsroute</td><td>Intrathecal (IT) oder intraplantar peripheral</td></tr>
-            <tr><td>Primäre Erfolgsmetrik</td><td>Tropismus Score ≥0.80 in primären Ratten-DRG-Neuronen (NGS Enrichment ≥50× über WT)</td></tr>
-        </tbody>
-    </table>
-
-    <h3>Wettbewerbskontext (ASGCT 2026)</h3>
-    <p>Vier konkurrierende Programme wurden auf der ASGCT 2026 präsentiert:</p>
-    <ul>
-        <li><strong>Exgenesis Bio (EXG117):</strong> AAV-RNAi gegen Nav1.7 in DRG. Klinisch validiertes Konzept, aber traditioneller Capsid-Design (kein ML-Ansatz). Nachteil: Nav1.7-spezifisch, kein generische Capsid-Plattform.</li>
-        <li><strong>SereNeuro (SN102):</strong> KCNQ2 Base Editing via iPSC-Sensory-Neuron-Modell. Innovativer Genomics-Ansatz, aber frühe klinische Phase. Capsid-Engineering nicht fokussiert.</li>
-        <li><strong>Sangamo / Encoded:</strong> Etablierte AAV-Vektoren für Schmerzindikationen. Fortgeschrittene klinische Daten, aber kein ML-optimierter Capsid.</li>
-        <li><strong>Sanofi GMU037:</strong> ML-getriebener Capsid-Ansatz für Leber. Direkt relevanter Ansatz, jedoch anderes Gewebe-Targeting.</li>
-    </ul>
-    <p><strong>Parvotec Alleinstellungsmerkmal:</strong> Einziger Ansatz mit ML-optimiertem AAV-Capsid spezifisch für nozizeptive Neuronen + retrograden Transport. Direkter Wettbewerb mit WhiteLab CapsidFlow und PackGene π-Icosa im Methodik-Bereich.</p>
+    <div class="callout"><p><strong>Kernhypothese:</strong> Durch Kombination von experimentellem Deep Mutational Scanning (DMS), ESM-2 Protein Language Model Embeddings, konditionaler generativer Modellierung (cVAE) und Multi-objective Bayesian Optimization kann in 3–4 iterativen Runden ein nozizeptiver DRG-spezifischer AAV-Vektor mit 5–10× verbessertem Tropismus gegenüber Wild-type identifiziert werden.</p></div>
+    <h3>Projektzeitraum &amp; Umfang</h3>
+    <table class="spec-table"><thead><tr><th>Parameter</th><th>Wert</th></tr></thead><tbody><tr><td>Laufzeit</td><td>24 Monate (M1–M24)</td></tr><tr><td>Work Packages</td><td>5 (WP1–WP5)</td></tr><tr><td>Schlüsseltechnologien</td><td>ESM-2/3, cVAE, Multi-objective BO, DMS, NGS</td></tr><tr><td>Ziel-Zelltyp</td><td>Nozizeptive Neuronen (TRPV1+, CGRP+) in DRG L4–S1</td></tr><tr><td>Applikationsroute</td><td>Intrathecal (IT) oder intraplantar peripheral</td></tr><tr><td>Primäre Erfolgsmetrik</td><td>Tropismus Score ≥0.80 in primären Ratten-DRG-Neuronen</td></tr></tbody></table>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="workpackages">
     <h2>Work Packages</h2>
-
     <div class="wp-cards">
-
-        <div class="wp-card wp1">
-            <span class="wp-tag">WP1 · M1–M3</span>
+        <div class="wp-card">
+            <span class="wp-tag" style="color:#39bfff">WP1 · M1–M3</span>
             <h3>Target Definition & Competitive Intelligence</h3>
             <p>Systematische Literaturrecherche und Wettbewerbsanalyse. Definition des Zielprofils (Target Product Profile, TPP) für den AAV-Vektor.</p>
             <h4>Aufgaben</h4>
-            <ul>
-                <li>Systematisches Review aller relevanten AAV-DRG-Tropismus-Publikationen (2020–2026)</li>
-                <li>Competitive Landscape Matrix: Exgenesis EXG117, SereNeuro SN102, Sangamo, Encoded, Sanofi GMU037, WhiteLab CapsidFlow, PackGene π-Icosa</li>
-                <li>Definition des primären Zelltyps: TRPV1+ CGRP+ nozizeptive Neuronen in DRG L4–S1</li>
-                <li>Auswahl der optimalen AAV-Serotyp-Basis (AAV6 vs. AAV9 vs. synthetic scaffold) via Literatur-Mining</li>
-                <li>Festlegung: 7-Mer Insertion Library Design (Zielposition: VP1 533–540, 587–594)</li>
-                <li>Entwurf des Target Product Profile (TPP) mit Go/No-Go Kriterien</li>
-            </ul>
+            <ul><li>Systematisches Review aller relevanten AAV-DRG-Tropismus-Publikationen (2020–2026)</li><li>Competitive Landscape Matrix: Exgenesis EXG117, SereNeuro SN102, Sangamo, Sanofi GMU037, WhiteLab CapsidFlow, PackGene π-Icosa</li><li>Definition des primären Zelltyps: TRPV1+ CGRP+ nozizeptive Neuronen in DRG L4–S1</li><li>Serotyp-Selektion: AAV6 als Backbone. 7-Mer Insertion Library-Design: VP1 533–540, 587–594</li><li>Entwurf des Target Product Profile (TPP) mit Go/No-Go Kriterien</li></ul>
             <div class="wp-meta">
                 <span><strong>Ressourcen</strong>Bioinformatiker (1 FTE), Wissenschaftlicher Berater</span>
                 <span><strong>Budget (est.)</strong>€30k–50k</span>
                 <span><strong>Risiko</strong>Niedrig</span>
             </div>
-            <div class="deliverables">
-                <strong>Deliverables:</strong> D1.1 Target Product Profile (TPP) · D1.2 Competitive Landscape Report · D1.3 Library Design Specification
-            </div>
+            <div class="deliverables"><strong>Deliverables:</strong> D1.1 Target Product Profile (TPP) · D1.2 Competitive Landscape Report · D1.3 Library Design Spec</div>
         </div>
-
-        <div class="wp-card wp2">
-            <span class="wp-tag">WP2 · M2–M8</span>
+        <div class="wp-card">
+            <span class="wp-tag" style="color:#7dd3fc">WP2 · M2–M8</span>
             <h3>DMS Library Design, Synthese & Datenerhebung</h3>
             <p>Experimentelle Generierung des Trainings-Datasets. Synthese einer ~1 Million Varianten AAV-Capsid-Library, Selection in nozizeptiven DRG-Neuronen, NGS-basierte Quantifizierung.</p>
             <h4>Aufgaben</h4>
-            <ul>
-                <li><strong>M2–M3: Library Design.</strong> Computationales Design der 7-Mer Insertion Library. Alle 20^7 = 1.28 Milliarden möglichen Sequenzen → Subsample auf ~1M Varianten mit maximaler Diversität via clustering</li>
-                <li><strong>M3–M5: Library Synthese.</strong> Oligonukleotid-Pool Synthese (Twist Bioscience oder äquivalent). Klonierung in AAV-Plasmid-Backbone. Produktion der rAAV Library-Partikel in HEK293T. Titer ≥10^12 vg/mL</li>
-                <li><strong>M4–M6: In Vitro Selection.</strong> Primäre Ratten-DRG-Neuron-Kulturen (TRPV1-GFP+). Infektion mit Library (MOI = 10^4 vg/cell). After 72h: FACS-Sort für GFP+ (nozizeptive) vs. GFP- Neuronen</li>
-                <li><strong>M5–M7: NGS Enrichment Analysis.</strong> PCR-Amplifikation der Barcode-Region. Illumina Sequenzierung (>100M Reads/Sample). Berechnung: Enrichment = log2(Freq_post/Freq_pre) für alle Varianten</li>
-                <li><strong>M6–M8: Retrograde Transport Screen.</strong> In vivo: Injektion der Library in Pfote (M. gastrocnemius). After 14d: DRG L4-L5 Entnahme. NGS der transduzierten Varianten</li>
-            </ul>
+            <ul><li><strong>M2–M3:</strong> Computationales Design der 7-Mer Insertion Library. Oligonukleotid-Pool Synthese (Twist Bioscience). Klonierung in AAV-Backbone. Produktion in HEK293T. Titer ≥10¹² vg/mL</li><li><strong>M4–M6:</strong> Primäre Ratten-DRG-Neuron-Kulturen (TRPV1-GFP+). Infektion mit Library (MOI = 10⁴ vg/cell). FACS-Sort für GFP+ (nozizeptive) vs. GFP− Neuronen</li><li><strong>M5–M7:</strong> PCR-Amplifikation der Barcode-Region. Illumina Sequenzierung (>100M Reads/Sample). Enrichment = log2(Freq_post/Freq_pre)</li><li><strong>M6–M8:</strong> In vivo Retrograde Transport Screen: Injektion in Pfote, DRG L4–L5 Entnahme nach 14d</li></ul>
             <div class="wp-meta">
                 <span><strong>Ressourcen</strong>Lab-Team (3 FTE), Evotec-CRO Partnerschaft</span>
                 <span><strong>Budget (est.)</strong>€280k–400k</span>
                 <span><strong>Risiko</strong>Mittel (Library-Qualität, Zell-Variabilität)</span>
             </div>
-            <div class="deliverables">
-                <strong>Deliverables:</strong> D2.1 AAV Library (~1M Varianten) · D2.2 In Vitro DMS Dataset (Enrichment Scores) · D2.3 In Vivo Retrograde Transport Dataset · D2.4 Curated Training Dataset (>500k datapoints)
-            </div>
+            <div class="deliverables"><strong>Deliverables:</strong> D2.1 AAV Library (~1M) · D2.2 In Vitro DMS Dataset · D2.3 In Vivo Retrograde Dataset · D2.4 Curated Training Dataset (>500k)</div>
         </div>
-
-        <div class="wp-card wp3">
-            <span class="wp-tag">WP3 · M4–M10</span>
+        <div class="wp-card">
+            <span class="wp-tag" style="color:#a78bfa">WP3 · M4–M10</span>
             <h3>Fitness Oracle Infrastruktur & Modelltraining</h3>
             <p>Aufbau des ML-Stacks: ESM-2 Embedding Pipeline, Multi-task Fitness Predictor, cVAE Generator. Produktion von Fitness Oracle v1.0.</p>
             <h4>Aufgaben</h4>
-            <ul>
-                <li><strong>M4–M5: Data Infrastructure.</strong> ETL-Pipeline für DMS-Daten. Quality Filters (Coverage ≥10 reads). Normalisierung der Enrichment Scores. Train/Val/Test Split (70/15/15, stratified by enrichment quartile)</li>
-                <li><strong>M5–M6: ESM-2 Embedding Layer.</strong> Deployment Meta ESM-2 650M Parametermodell (lokale Inferenz, A100 GPU). Batch-Processing aller ~1M Sequenzen → 1280-dim Vektoren. Ablationstest: ESM-3 2560-dim als Alternative</li>
-                <li><strong>M6–M8: Fitness Predictor Training.</strong> Multi-task NN Architektur. Hyperparameter Search via Optuna. Cross-Validation. Target: Spearman r ≥ 0.65 auf held-out Test Set</li>
-                <li><strong>M7–M9: cVAE Training.</strong> Conditional VAE für Sequenzgenerierung. Latent Dim = 128. Conditioning auf Fitness-Zielvektor. Evaluation: Diversity, Validity, Novelty Score</li>
-                <li><strong>M8–M10: Integration & Benchmarking.</strong> End-to-End Test: cVAE → ESM-2 → Predictor. Benchmark vs. random mutagenesis baseline. Oracle v1.0 Release</li>
-            </ul>
+            <ul><li><strong>M4–M5:</strong> ETL-Pipeline für DMS-Daten. Quality Filters (Coverage ≥10 reads). Train/Val/Test Split (70/15/15)</li><li><strong>M5–M6:</strong> ESM-2 650M Deployment (A100 GPU). Batch-Processing ~1M Sequenzen → 1280-dim Vektoren</li><li><strong>M6–M8:</strong> Multi-task NN: 1280→512→256→128, ReLU, Dropout=0.15. 4 Outputs. Optuna Hyperparameter-Suche</li><li><strong>M7–M9:</strong> cVAE Training. Latent Dim=128. Conditioning auf Fitness-Zielvektor. Diversity/Validity/Novelty Evaluation</li><li><strong>M8–M10:</strong> End-to-End Integration. Benchmark vs. Random Baseline. Oracle v1.0 Release</li></ul>
             <div class="wp-meta">
                 <span><strong>Ressourcen</strong>ML-Engineer (2 FTE), GPU Compute (A100)</span>
                 <span><strong>Budget (est.)</strong>€150k–220k</span>
                 <span><strong>Risiko</strong>Mittel (Datenmenge, Generalisierung)</span>
             </div>
-            <div class="deliverables">
-                <strong>Deliverables:</strong> D3.1 ESM-2 Embedding Service · D3.2 Fitness Predictor v1.0 (Spearman r ≥0.65) · D3.3 cVAE Generator v1.0 · D3.4 Oracle Evaluation Report
-            </div>
+            <div class="deliverables"><strong>Deliverables:</strong> D3.1 ESM-2 Embedding Service · D3.2 Fitness Predictor v1.0 (Spearman r ≥0.65) · D3.3 cVAE v1.0 · D3.4 Evaluation Report</div>
         </div>
-
-        <div class="wp-card wp4">
-            <span class="wp-tag">WP4 · M8–M18</span>
+        <div class="wp-card">
+            <span class="wp-tag" style="color:#f472b6">WP4 · M8–M18</span>
             <h3>Iterative ML-guided Optimierungskampagnen</h3>
-            <p>Drei Bayesian Optimization Runden mit experimenteller Validierung. Ziel: Multi-objective Pareto-Front maximieren über Tropismus × Yield × Stabilität × Immunogenizität.</p>
-            <h4>Aufgaben (pro Runde)</h4>
-            <ul>
-                <li><strong>Runde 1 (M8–M11):</strong> cVAE generiert 500 Kandidaten basierend auf WP3 Trainingsdaten. Multi-objective BO (EHVI Acquisition) selektiert Top-50. Experimentelle Validierung: FACS Tropismus, qPCR Transgen-Expression, Thermostabilität-DSF. Oracle Update</li>
-                <li><strong>Runde 2 (M11–M14):</strong> Active Learning: 60% Kandidaten aus Uncertainty-Regionen, 40% High-Value. Generiere 500 neue Varianten. Test Top-50. Erwartet: Tropismus ≥0.65 in Bestkandidat</li>
-                <li><strong>Runde 3 (M14–M18):</strong> Convergenz-Runde. 200 Kandidaten generiert. 30 validiert. Ziel-Pareto-Front: 10–20 non-dominated Kandidaten. Erwartet: Bester Kandidat Tropismus ≥0.80, Yield ≥0.75, Stabilität ≥0.80</li>
-            </ul>
+            <p>Drei Bayesian Optimization Runden mit experimenteller Validierung. Multi-objective Pareto-Front über Tropismus × Yield × Stabilität × Immunogenizität.</p>
+            <h4>Aufgaben</h4>
+            <ul><li><strong>Runde 1 (M8–M11):</strong> cVAE generiert 500 Kandidaten. EHVI selektiert Top-50. FACS/qPCR/DSF Validierung. Oracle Update</li><li><strong>Runde 2 (M11–M14):</strong> Active Learning: 60% Uncertainty-Regions, 40% High-Value. Erwartet: Tropismus ≥0.65</li><li><strong>Runde 3 (M14–M18):</strong> Convergenz. 200 Kandidaten, 30 validiert. Pareto-Front: 10–20 non-dominated. Erwartet: Tropismus ≥0.80</li></ul>
             <div class="wp-meta">
                 <span><strong>Ressourcen</strong>Lab (2 FTE) + ML (1 FTE)</span>
                 <span><strong>Budget (est.)</strong>€320k–480k</span>
                 <span><strong>Risiko</strong>Mittel-Hoch (Oracle-Generalisierung über Runden)</span>
             </div>
-            <div class="deliverables">
-                <strong>Deliverables:</strong> D4.1 Optimierungsrunde 1 Report · D4.2 Optimierungsrunde 2 Report · D4.3 Lead Candidate Panel (Top-10 Pareto-optimal) · D4.4 Oracle v2.0 (Multi-round trained)
-            </div>
+            <div class="deliverables"><strong>Deliverables:</strong> D4.1–D4.2 Runden-Reports · D4.3 Lead Candidate Panel (Top-10 Pareto) · D4.4 Oracle v2.0</div>
         </div>
-
-        <div class="wp-card wp5">
-            <span class="wp-tag">WP5 · M14–M24</span>
+        <div class="wp-card">
+            <span class="wp-tag" style="color:#34d399">WP5 · M14–M24</span>
             <h3>Lead Candidate Validierung & IND-Enabling</h3>
             <p>Tiefergehende in vitro und in vivo Validierung der Top-3 Lead Kandidaten. Datengenerierung für IND-Antrag.</p>
             <h4>Aufgaben</h4>
-            <ul>
-                <li><strong>M14–M17: In Vitro Validierung.</strong> Primäre Ratten & Maus DRG-Neuronenkulturen. Einzelzell-RNA-Sequenzierung (scRNAseq) zur Zelltyp-spezifischen Analyse. Transduktionseffizienz >80% in TRPV1+ Neuronen als Go-Kriterium. Produktionseffizienz-Assay (triple transfection HEK293T)</li>
-                <li><strong>M16–M20: In Vivo Wirksamkeit.</strong> Retrograder Transport-Test in Ratten (n=10/Gruppe). Intrathecale Injektion der Top-3 Kandidaten. Messung: AAV-Genommenge in DRG via qPCR 14d post-Injektion. Shmerzmodell: CFA inflammatorisch, SNI neuropathisch (analog EXG117-Design)</li>
-                <li><strong>M18–M22: Sicherheits- und Immunogenizitätsstudien.</strong> Dorsale Hinterwurzelganglion-Histopathologie. Seroneutralisierungs-Assay (NAb-Titer). Dorsal Root Ganglion-spezifische Biodistribution (kein Cardiac Ganglia, analog SereNeuro-Ansatz)</li>
-                <li><strong>M20–M24: IND-Enabling Package.</strong> GMP-Herstellungsprozess entwickeln. Stabilität-Studien. Toxikologie-Studiendesign. Regulatory Briefing Document FDA/EMA</li>
-            </ul>
+            <ul><li><strong>M14–M17:</strong> Primäre Ratten & Maus DRG-Neuronenkulturen. scRNAseq Zelltyp-Analyse. Transduktionseffizienz >80% in TRPV1+ als Go-Kriterium</li><li><strong>M16–M20:</strong> CFA inflammatorisch & SNI neuropathisch Rattenmodell (n=10/Gruppe). qPCR Genomkopien DRG nach 14d. Endpoint: ≥3× retrograder Transport vs. WT</li><li><strong>M18–M22:</strong> Histopathologie DRG. NAb-Titer Serum. T-Zell-ELISpot. DRG-spezifische Biodistribution (kein Cardiac Ganglia)</li><li><strong>M20–M24:</strong> GMP-Herstellungsprozess. 6-Monat Stabilitätsstudien. Toxikologie GLP. FDA Pre-IND Briefing Document</li></ul>
             <div class="wp-meta">
                 <span><strong>Ressourcen</strong>Lab (3 FTE), CRO (Tox), Reg. Affairs</span>
                 <span><strong>Budget (est.)</strong>€450k–650k</span>
-                <span><strong>Risiko</strong>Mittel (in vivo Variabilität, Sicherheitssignale)</span>
+                <span><strong>Risiko</strong>Mittel (in vivo Variabilität)</span>
             </div>
-            <div class="deliverables">
-                <strong>Deliverables:</strong> D5.1 In Vitro Validation Report · D5.2 In Vivo Efficacy Report · D5.3 Safety & Immunogenicity Report · D5.4 IND-Enabling Package Draft
-            </div>
-        </div>
-
-    </div>
-
+            <div class="deliverables"><strong>Deliverables:</strong> D5.1 In Vitro Report · D5.2 In Vivo Efficacy · D5.3 Safety & Immunogenicity · D5.4 IND Package Draft</div>
+        </div></div>
     <h3>Budget-Übersicht</h3>
     <table class="spec-table">
-        <thead><tr><th>Work Package</th><th>Laufzeit</th><th>FTE</th><th>Budget Schätzung</th><th>Meilenstein</th></tr></thead>
+        <thead><tr><th>Work Package</th><th>Budget</th></tr></thead>
         <tbody>
-            <tr><td>WP1 — Target Definition</td><td>M1–M3</td><td>1</td><td>€30k–50k</td><td>TPP finalisiert</td></tr>
-            <tr><td>WP2 — DMS & Daten</td><td>M2–M8</td><td>3</td><td>€280k–400k</td><td>Training Dataset fertig</td></tr>
-            <tr><td>WP3 — Oracle Infrastruktur</td><td>M4–M10</td><td>2</td><td>€150k–220k</td><td>Oracle v1.0 Release</td></tr>
-            <tr><td>WP4 — Optimierungskampagnen</td><td>M8–M18</td><td>3</td><td>€320k–480k</td><td>Lead Candidate Panel</td></tr>
-            <tr><td>WP5 — Validierung & IND</td><td>M14–M24</td><td>3</td><td>€450k–650k</td><td>IND-Enabling Package</td></tr>
-            <tr style="font-weight:600;border-top:2px solid var(--line)">
-                <td><strong>Total</strong></td><td>24 Monate</td><td>6–8 peak</td><td><strong>€1.23M–1.8M</strong></td><td>IND-ready Lead Kandidat</td>
-            </tr>
+        <tr><td>WP1 — Target Definition & Competitive Intelligence</td><td>€30k–50k</td></tr><tr><td>WP2 — DMS Library Design, Synthese & Datenerhebung</td><td>€280k–400k</td></tr><tr><td>WP3 — Fitness Oracle Infrastruktur & Modelltraining</td><td>€150k–220k</td></tr><tr><td>WP4 — Iterative ML-guided Optimierungskampagnen</td><td>€320k–480k</td></tr><tr><td>WP5 — Lead Candidate Validierung & IND-Enabling</td><td>€450k–650k</td></tr>
+        <tr style="font-weight:600;border-top:2px solid var(--line)">
+            <td><strong>Total — 24 Monate · 6–8 peak</strong></td>
+            <td><strong>€1.23M–1.8M</strong></td>
+        </tr>
         </tbody>
     </table>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="gantt">
     <h2>Gantt Chart — 24 Monate</h2>
-
     <div class="g-legend">
-        <div class="g-leg"><div class="g-dot" style="background:var(--wp1)"></div>WP1 — Target Definition</div>
-        <div class="g-leg"><div class="g-dot" style="background:var(--wp2)"></div>WP2 — DMS &amp; Daten</div>
-        <div class="g-leg"><div class="g-dot" style="background:var(--wp3)"></div>WP3 — Oracle Infrastruktur</div>
-        <div class="g-leg"><div class="g-dot" style="background:var(--wp4)"></div>WP4 — BO Kampagnen</div>
-        <div class="g-leg"><div class="g-dot" style="background:var(--wp5)"></div>WP5 — Validierung &amp; IND</div>
+        <div class="g-leg"><div class="g-dot" style="background:#39bfff"></div>WP1 — Target Definition & Competitive Intelligence</div><div class="g-leg"><div class="g-dot" style="background:#7dd3fc"></div>WP2 — DMS Library Design, Synthese & Datenerhebung</div><div class="g-leg"><div class="g-dot" style="background:#a78bfa"></div>WP3 — Fitness Oracle Infrastruktur & Modelltraining</div><div class="g-leg"><div class="g-dot" style="background:#f472b6"></div>WP4 — Iterative ML-guided Optimierungskampagnen</div><div class="g-leg"><div class="g-dot" style="background:#34d399"></div>WP5 — Lead Candidate Validierung & IND-Enabling</div>
         <div class="g-leg"><div class="g-diamond"></div>Meilenstein</div>
     </div>
-
-    <div class="g-wrap">
-      <div class="g-chart">
-
-        <!-- Month header -->
+    <div class="g-wrap"><div class="g-chart">
         <div class="g-head">
-          <div class="g-head-label">Work Package</div>
-          <div class="g-head-track">
-            <!-- Q ticks at 0, 12.5, 25, 37.5, 50, 62.5, 75, 87.5% -->
-            <div class="g-tick q" style="left:0%"><span>Q1</span></div>
-            <div class="g-tick" style="left:4.17%">M2</div>
-            <div class="g-tick" style="left:8.33%">M3</div>
-            <div class="g-tick q" style="left:12.5%"><span>Q2</span></div>
-            <div class="g-tick" style="left:16.67%">M5</div>
-            <div class="g-tick" style="left:20.83%">M6</div>
-            <div class="g-tick q" style="left:25%"><span>Q3</span></div>
-            <div class="g-tick" style="left:29.17%">M8</div>
-            <div class="g-tick" style="left:33.33%">M9</div>
-            <div class="g-tick q" style="left:37.5%"><span>Q4</span></div>
-            <div class="g-tick" style="left:41.67%">M11</div>
-            <div class="g-tick" style="left:45.83%">M12</div>
-            <div class="g-tick q" style="left:50%"><span>Q5</span></div>
-            <div class="g-tick" style="left:54.17%">M14</div>
-            <div class="g-tick" style="left:58.33%">M15</div>
-            <div class="g-tick q" style="left:62.5%"><span>Q6</span></div>
-            <div class="g-tick" style="left:66.67%">M17</div>
-            <div class="g-tick" style="left:70.83%">M18</div>
-            <div class="g-tick q" style="left:75%"><span>Q7</span></div>
-            <div class="g-tick" style="left:79.17%">M20</div>
-            <div class="g-tick" style="left:83.33%">M21</div>
-            <div class="g-tick q" style="left:87.5%"><span>Q8</span></div>
-            <div class="g-tick" style="left:91.67%">M23</div>
-            <div class="g-tick" style="left:95.83%">M24</div>
-          </div>
+            <div class="g-head-label">Work Package</div>
+            <div class="g-head-track"><div class="g-tick q" style="left:0%"><span>Q1</span></div><div class="g-tick" style="left:4.17%">M2</div><div class="g-tick" style="left:8.33%">M3</div><div class="g-tick q" style="left:12.5%"><span>Q2</span></div><div class="g-tick" style="left:16.67%">M5</div><div class="g-tick" style="left:20.83%">M6</div><div class="g-tick q" style="left:25%"><span>Q3</span></div><div class="g-tick" style="left:29.17%">M8</div><div class="g-tick" style="left:33.33%">M9</div><div class="g-tick q" style="left:37.5%"><span>Q4</span></div><div class="g-tick" style="left:41.67%">M11</div><div class="g-tick" style="left:45.83%">M12</div><div class="g-tick q" style="left:50%"><span>Q5</span></div><div class="g-tick" style="left:54.17%">M14</div><div class="g-tick" style="left:58.33%">M15</div><div class="g-tick q" style="left:62.5%"><span>Q6</span></div><div class="g-tick" style="left:66.67%">M17</div><div class="g-tick" style="left:70.83%">M18</div><div class="g-tick q" style="left:75%"><span>Q7</span></div><div class="g-tick" style="left:79.17%">M20</div><div class="g-tick" style="left:83.33%">M21</div><div class="g-tick q" style="left:87.5%"><span>Q8</span></div><div class="g-tick" style="left:91.67%">M23</div><div class="g-tick" style="left:95.83%">M24</div></div>
         </div>
-
-        <!-- WP1: M1–M3 → left:0%, width:12.5% -->
+        
         <div class="g-row">
-          <div class="g-rlabel"><strong>WP1</strong><span>Target Definition</span></div>
+          <div class="g-rlabel"><strong>WP1</strong><span>Target Definition & Competitive Intelligence</span></div>
           <div class="g-track">
-            <div class="g-bar" style="background:var(--wp1);left:0%;width:12.5%">WP1</div>
-            <div class="g-ms"  style="left:12.5%"></div>
-            <div class="g-ms-lbl" style="left:12.5%">TPP</div>
+            <div class="g-bar" style="background:#39bfff;left:0%;width:12.5%">WP1 — Target Definition & Competitive Intelligence</div>
+            <div class="g-ms" style="left:12.5%"></div><div class="g-ms-lbl" style="left:12.5%">TPP</div>
           </div>
         </div>
-
-        <!-- WP2: M2–M8 → left:4.17%, width:29.17% -->
         <div class="g-row">
-          <div class="g-rlabel"><strong>WP2</strong><span>DMS &amp; Daten</span></div>
+          <div class="g-rlabel"><strong>WP2</strong><span>DMS Library Design, Synthese & Datenerhebung</span></div>
           <div class="g-track">
-            <div class="g-bar" style="background:var(--wp2);left:4.17%;width:29.16%">WP2 — Library, NGS, DMS</div>
-            <div class="g-ms"  style="left:33.33%"></div>
-            <div class="g-ms-lbl" style="left:33.33%">Dataset</div>
+            <div class="g-bar" style="background:#7dd3fc;left:4.17%;width:29.16%">WP2 — DMS Library Design, Synthese & Datenerhebung</div>
+            <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:33.33%">Dataset</div>
           </div>
         </div>
-
-        <!-- WP3: M4–M10 → left:12.5%, width:29.17% -->
         <div class="g-row">
-          <div class="g-rlabel"><strong>WP3</strong><span>Oracle Infrastruktur</span></div>
+          <div class="g-rlabel"><strong>WP3</strong><span>Fitness Oracle Infrastruktur & Modelltraining</span></div>
           <div class="g-track">
-            <div class="g-bar" style="background:var(--wp3);left:12.5%;width:29.17%">WP3 — ESM-2 · NN · cVAE</div>
-            <div class="g-ms"  style="left:41.67%"></div>
-            <div class="g-ms-lbl" style="left:41.67%">v1.0</div>
+            <div class="g-bar" style="background:#a78bfa;left:12.5%;width:29.17%">WP3 — Fitness Oracle Infrastruktur & Modelltraining</div>
+            <div class="g-ms" style="left:41.67%"></div><div class="g-ms-lbl" style="left:41.67%">v1.0</div>
           </div>
         </div>
-
-        <!-- WP4: M8–M18 → left:29.17%, width:45.83% -->
         <div class="g-row">
-          <div class="g-rlabel"><strong>WP4</strong><span>BO Kampagnen</span></div>
+          <div class="g-rlabel"><strong>WP4</strong><span>Iterative ML-guided Optimierungskampagnen</span></div>
           <div class="g-track">
-            <div class="g-bar" style="background:var(--wp4);left:29.17%;width:45.83%">WP4 — 3 Runden Bayesian Optimization</div>
-            <div class="g-ms"  style="left:54.17%"></div>
-            <div class="g-ms-lbl" style="left:54.17%">Lead Panel</div>
-            <div class="g-ms"  style="left:75%"></div>
-            <div class="g-ms-lbl" style="left:75%">Optimierung ✓</div>
+            <div class="g-bar" style="background:#f472b6;left:29.17%;width:45.83%">WP4 — Iterative ML-guided Optimierungskampagnen</div>
+            <div class="g-ms" style="left:54.17%"></div><div class="g-ms-lbl" style="left:54.17%">Lead Panel</div><div class="g-ms" style="left:75%"></div><div class="g-ms-lbl" style="left:75%">Optimierung ✓</div>
           </div>
         </div>
-
-        <!-- WP5: M14–M24 → left:54.17%, width:45.83% -->
         <div class="g-row">
-          <div class="g-rlabel"><strong>WP5</strong><span>Validierung &amp; IND</span></div>
+          <div class="g-rlabel"><strong>WP5</strong><span>Lead Candidate Validierung & IND-Enabling</span></div>
           <div class="g-track">
-            <div class="g-bar" style="background:var(--wp5);left:54.17%;width:45.83%">WP5 — In Vitro · In Vivo · IND Package</div>
-            <div class="g-ms"  style="left:99.5%"></div>
-            <div class="g-ms-lbl" style="left:96%">IND</div>
+            <div class="g-bar" style="background:#34d399;left:54.17%;width:45.83%">WP5 — Lead Candidate Validierung & IND-Enabling</div>
+            <div class="g-ms" style="left:99.5%"></div><div class="g-ms-lbl" style="left:99.5%">IND</div>
           </div>
         </div>
-
-      </div><!-- .g-chart -->
-    </div><!-- .g-wrap -->
+    </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="oracle-arch">
-    <h2>Fitness Oracle — Systemarchitektur</h2>
-    <p>Das Fitness Oracle ist das zentrale ML-System von Parvotec. Es übersetzt eine rohe AAV-Capsid-Aminosäuresequenz in quantitative Vorhersagen für vier biologische Zieleigenschaften. Das System besteht aus vier aufeinander aufbauenden Schichten.</p>
-
+    <h2>DRG Fitness Oracle — Systemarchitektur</h2>
     <div class="arch-grid">
         <div class="arch-block">
             <span class="arch-arrow">→</span>
@@ -599,331 +264,60 @@
             <p>Conditional VAE (cVAE)<br>Latent Dim = 128<br>Conditional auf Fitness-Ziele</p>
         </div>
         <div class="arch-block">
+            
             <div class="arch-num">Layer 4</div>
             <h4>Optimizer</h4>
             <p>Multi-objective Bayesian Opt.<br>EHVI Acquisition Function<br>Pareto-Front Tracking</p>
-        </div>
-    </div>
-
-    <h3>Datenfluss — End-to-End</h3>
-    <pre><code>Input: AAV-Capsid-Sequenz (Aminosäuren 1–736, VP1 Nummerierung)
-        ↓
-[ESM-2 Embedding]  →  Vektor R^1280  (kontextabhängig, kein Fine-tuning nötig)
-        ↓
-[Fitness Predictor NN]
-   Input:  R^1280  (ESM-2 Embedding)
-   Hidden: 1280 → 512 → 256 → 128  (ReLU, Dropout=0.15)
-   Output: R^4
-      ├── Tropismus Score       (0–1, Nozizeptive Neuron-Infektionseffizienz)
-      ├── Production Yield      (0–1, relative AAV-Partikelproduktion vs. WT)
-      ├── Thermostabilität      (0–1, Schmelztemperatur normalisiert)
-      └── Immunogenizität       (0–1, niedrig=gut, NAb-Titer-Vorhersage)
-        ↓
-[Ergebnis-Interpretation]
-   Pareto-Dominanz-Prüfung gegen bestehende Kandidaten
-   Ranking nach gewichtetem Score: 0.5×Trop + 0.25×Yield + 0.15×Stab + 0.10×(1-Immuno)</code></pre>
-
-    <h3>Systemanforderungen</h3>
+        </div></div>
+    <h3>Oracle Outputs</h3>
     <table class="spec-table">
-        <thead><tr><th>Komponente</th><th>Spezifikation</th><th>Begründung</th></tr></thead>
-        <tbody>
-            <tr><td>ESM-2 Inferenz</td><td>NVIDIA A100 40GB oder 2× RTX 3090</td><td>ESM-2 650M benötigt ~12GB VRAM für Batch-Inferenz</td></tr>
-            <tr><td>Predictor NN</td><td>CPU ausreichend für Inferenz</td><td>Kleines Modell, schnell</td></tr>
-            <tr><td>cVAE Training</td><td>A100 oder equivalent, ~6h für 100 Epochs</td><td>Generierungsmodell für neue Sequenzen</td></tr>
-            <tr><td>Speicher (Embeddings)</td><td>~5GB für 1M Sequenzen × 1280-dim float32</td><td>Pre-computed und gecacht</td></tr>
-            <tr><td>Python Version</td><td>3.10+</td><td>ESM-2 und PyTorch Kompatibilität</td></tr>
-            <tr><td>Hauptabhängigkeiten</td><td>PyTorch 2.x, ESM (Meta), BoTorch, Ax Platform</td><td>ML Stack für alle 4 Layer</td></tr>
-        </tbody>
+        <thead><tr><th>Output</th><th>Range</th><th>Loss Weight</th><th>Beschreibung</th></tr></thead>
+        <tbody><tr><td><strong>Tropismus Score</strong></td><td><code>0–1</code></td><td>50%</td><td>Nozizeptive Neuron-Infektionseffizienz</td></tr><tr><td><strong>Production Yield</strong></td><td><code>0–1</code></td><td>25%</td><td>Relative AAV-Partikelproduktion vs. WT</td></tr><tr><td><strong>Thermostabilität</strong></td><td><code>0–1</code></td><td>15%</td><td>Schmelztemperatur normalisiert</td></tr><tr><td><strong>Immunogenizität</strong></td><td><code>0–1</code></td><td>10%</td><td>NAb-Titer-Vorhersage (niedrig = gut)</td></tr></tbody>
     </table>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="oracle-data">
-    <h2>Fitness Oracle — Datenpipeline</h2>
-    <p>Das Oracle ist so gut wie seine Trainingsdaten. Diese Sektion beschreibt den gesamten Datenfluss von rohen experimentellen Daten bis zum bereinigte ML-Dataset.</p>
-
-    <h3>Datenquellen</h3>
-    <table class="spec-table">
-        <thead><tr><th>Quelle</th><th>Typ</th><th>Umfang (erwartet)</th><th>Verwendung</th></tr></thead>
-        <tbody>
-            <tr><td>Evotec DMS Library (WP2)</td><td>Primär-Experiment</td><td>~800k validierte Varianten</td><td>Haupttraining Predictor</td></tr>
-            <tr><td>In Vivo Retrograde Screen (WP2)</td><td>Primär-Experiment</td><td>~100k Varianten</td><td>Retrograd-Transport-Label</td></tr>
-            <tr><td>Public DMS Datasets</td><td>Extern (AAV2, AAV9)</td><td>~200k Datenpunkte</td><td>Pre-training / Transfer</td></tr>
-            <tr><td>Optimierungsrunden R1–R3 (WP4)</td><td>Aktiv-Learning-Daten</td><td>150 Datenpunkte/Runde × 3</td><td>Iteratives Oracle Update</td></tr>
-        </tbody>
-    </table>
-
-    <h3>Datenverarbeitungsschritte</h3>
-    <ol class="step-list">
-        <li><strong>Raw NGS Data:</strong> Illumina FASTQ-Dateien. Demultiplexing nach Barcode. Adapter-Trimming (Cutadapt). Qualitätsfilter: Q-Score ≥20, Coverage ≥10 Reads/Variante.</li>
-        <li><strong>Variant Calling:</strong> Alignment der Barcode-Reads gegen die Design-Library. Frequenzberechnung: freq(i) = Reads(i) / TotalReads. Separate Frequenzmatrizen für Pre-Selection und Post-Selection.</li>
-        <li><strong>Enrichment Score Berechnung:</strong> log2(freq_post / freq_pre). Pseudocount = 1/TotalReads zur Division-by-Zero Vermeidung. Normalisierung: z-Score innerhalb jedes Experiments (μ=0, σ=1).</li>
-        <li><strong>Sequenz-Extraktion:</strong> Barcode → Aminosäuresequenz Mapping via Design-Library Lookup. Validierung: Alle 20 kanonischen Aminosäuren, keine Stop-Codons, korrekte Länge (7-Mer Insert).</li>
-        <li><strong>Multi-Label Fusion:</strong> Merge der In-Vitro DRG, In-Vivo Retrograd, und Yield-Assay Daten per Sequenz-ID. Missing Labels: Multiple Imputation via missForest. Final Dataset enthält 4 Scores pro Variante.</li>
-        <li><strong>Train/Val/Test Split:</strong> Stratified Split nach Enrichment-Quartil (Q1–Q4) und Insert-Position. Verhältnis: 70 / 15 / 15. Kein Data Leakage: Sequenzen mit ≥80% Identität zur Test-Set werden aus Training entfernt.</li>
-        <li><strong>ESM-2 Batch Embedding:</strong> Full-length VP1-Sequenz (733 AA) + Insert. Batch Size = 32 (GPU-Speicher-limitiert). Output: 1280-dim Mittelwert über alle Token-Positionen (mean pooling). Pre-computed und gespeichert als float16 HDF5.</li>
-    </ol>
-
-    <h3>Qualitätskontrolle Dataset</h3>
-    <div class="callout">
-        <p><strong>Go-Kriterien für WP3 Start:</strong> ≥500k validierte Sequenz-Enrichment-Paare, ≥50k Varianten mit allen 4 Labels (Multi-task Training), Library Coverage ≥80% (d.h. ≥80% der designten Varianten detektiert), Spearman-Korrelation technische Replikate ≥0.85.</p>
-    </div>
-
-    <pre><code># Beispiel: Enrichment Score Berechnung
-import numpy as np
-import pandas as pd
-
-def compute_enrichment(pre_counts: pd.Series,
-                        post_counts: pd.Series,
-                        pseudocount: float = 1.0) -> pd.Series:
-    """Log2 enrichment mit Pseudocount für Coverage-Normalisierung."""
-    freq_pre  = (pre_counts  + pseudocount) / (pre_counts.sum()  + pseudocount)
-    freq_post = (post_counts + pseudocount) / (post_counts.sum() + pseudocount)
-    return np.log2(freq_post / freq_pre)
-
-# Normalisierung: z-Score innerhalb Experiment
-def zscore_normalize(enrichment: pd.Series) -> pd.Series:
-    return (enrichment - enrichment.mean()) / enrichment.std()</code></pre>
+    <h2>DRG Fitness Oracle — Datenpipeline</h2>
+    <p>Das Oracle wird auf experimentellen DMS-Daten trainiert. Jede Variante erhält Labels für alle Outputs. Fehlende Labels (z.B. SAXS nur für Top-100) werden als NaN geführt — der Task-specific Loss maskiert NaN-Werte automatisch.</p>
+    <div class="callout"><p><strong>Composite Score:</strong> Gewichteter Score aller Outputs gemäß Loss-Weighting. Ranking aller Kandidaten vor BO-Selektion.</p></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="oracle-model">
-    <h2>Fitness Oracle — Modell-Spezifikation</h2>
-
-    <h3>Schicht 2: Fitness Predictor NN</h3>
-    <p>Das Herzstück des Oracle: ein Multi-task Feed-Forward Neural Network das vier biologische Properties aus ESM-2 Embeddings vorhersagt.</p>
-
-    <pre><code>class FitnessPredictor(nn.Module):
-    """
-    Multi-task Fitness Predictor.
-    Input:  ESM-2 embedding R^1280
-    Output: 4 property scores [tropism, yield, stability, immunogenicity]
-    """
-    def __init__(self, emb_dim=1280, hidden=[512, 256, 128], dropout=0.15):
-        super().__init__()
-        layers = []
-        in_dim = emb_dim
-        for h in hidden:
-            layers += [nn.Linear(in_dim, h), nn.ReLU(), nn.Dropout(dropout)]
-            in_dim = h
-        self.backbone = nn.Sequential(*layers)
-        # Separate heads für bessere Task-spezifische Gradienten
-        self.head_tropism   = nn.Sequential(nn.Linear(128, 32), nn.ReLU(), nn.Linear(32, 1), nn.Sigmoid())
-        self.head_yield     = nn.Sequential(nn.Linear(128, 32), nn.ReLU(), nn.Linear(32, 1), nn.Sigmoid())
-        self.head_stability = nn.Sequential(nn.Linear(128, 32), nn.ReLU(), nn.Linear(32, 1), nn.Sigmoid())
-        self.head_immuno    = nn.Sequential(nn.Linear(128, 32), nn.ReLU(), nn.Linear(32, 1), nn.Sigmoid())
-
-    def forward(self, x):
-        feat = self.backbone(x)
-        return torch.cat([self.head_tropism(feat), self.head_yield(feat),
-                          self.head_stability(feat), self.head_immuno(feat)], dim=-1)</code></pre>
-
-    <h4>Training Protokoll</h4>
-    <table class="spec-table">
-        <thead><tr><th>Hyperparameter</th><th>Wert</th><th>Suche</th></tr></thead>
-        <tbody>
-            <tr><td>Optimizer</td><td>AdamW, lr=1e-4, wd=1e-3</td><td>Optuna (50 Trials)</td></tr>
-            <tr><td>Scheduler</td><td>CosineAnnealing, T_max=50</td><td>–</td></tr>
-            <tr><td>Loss</td><td>Gewichteter MSE: w=[0.5, 0.25, 0.15, 0.10]</td><td>Domain-basiert</td></tr>
-            <tr><td>Batch Size</td><td>512</td><td>Fixiert</td></tr>
-            <tr><td>Early Stopping</td><td>Patience=15 auf Val-Loss</td><td>–</td></tr>
-            <tr><td>Epochs</td><td>Max 200, Early Stop typisch ~80</td><td>–</td></tr>
-            <tr><td>Cross-Validation</td><td>5-Fold stratified</td><td>–</td></tr>
-        </tbody>
-    </table>
-
-    <h3>Schicht 3: cVAE Sequenz-Generator</h3>
-    <p>Der cVAE generiert neue AAV-Sequenzen mit spezifizierten Ziel-Eigenschaften. Er lernt die Verteilung von bekannt-guten Sequenzen und kann daraus neue interpolieren.</p>
-
-    <pre><code>class AAVcVAE(nn.Module):
-    """
-    Conditional Variational Autoencoder für AAV 7-Mer Insert Generation.
-    Input:  Insert-Sequenz (7 AA, one-hot = 7×20 = 140 dim) + Condition (4 target scores)
-    Latent: R^128
-    Output: Insert-Sequenz (7×20 Wahrscheinlichkeiten, softmax)
-    """
-    def __init__(self, seq_dim=140, cond_dim=4, latent_dim=128):
-        super().__init__()
-        # Encoder: Sequenz + Condition → μ, logσ²
-        self.encoder = nn.Sequential(
-            nn.Linear(seq_dim + cond_dim, 256), nn.ReLU(),
-            nn.Linear(256, 128), nn.ReLU()
-        )
-        self.fc_mu     = nn.Linear(128, latent_dim)
-        self.fc_logvar = nn.Linear(128, latent_dim)
-        # Decoder: Z + Condition → Sequenz-Logits
-        self.decoder = nn.Sequential(
-            nn.Linear(latent_dim + cond_dim, 256), nn.ReLU(),
-            nn.Linear(256, 256), nn.ReLU(),
-            nn.Linear(256, seq_dim)  # reshape zu (7, 20) dann softmax
-        )
-
-    def reparameterize(self, mu, logvar):
-        std = torch.exp(0.5 * logvar)
-        eps = torch.randn_like(std)
-        return mu + eps * std
-
-    def forward(self, x, condition):
-        h = self.encoder(torch.cat([x, condition], dim=-1))
-        mu, logvar = self.fc_mu(h), self.fc_logvar(h)
-        z = self.reparameterize(mu, logvar)
-        recon = self.decoder(torch.cat([z, condition], dim=-1))
-        return recon, mu, logvar
-
-    def generate(self, condition: torch.Tensor, n=10, temp=1.0) -> list[str]:
-        """Generiert n neue 7-Mer Insert Sequenzen für gegebene Ziel-Scores."""
-        z = torch.randn(n, 128) * temp
-        logits = self.decoder(torch.cat([z, condition.expand(n,-1)], dim=-1))
-        probs  = torch.softmax(logits.view(n, 7, 20) / temp, dim=-1)
-        aa     = "ACDEFGHIKLMNPQRSTVWY"
-        return [''.join(aa[probs[i,j].argmax()] for j in range(7)) for i in range(n)]</code></pre>
-
-    <h3>Schicht 4: Multi-objective Bayesian Optimization</h3>
-    <p>Die BO-Schicht koordiniert den iterativen Optimierungsprozess. Sie nutzt das Fitness Oracle als Surrogate-Modell und die Expected Hypervolume Improvement (EHVI) Acquisition Function um multi-objektiv-optimale Kandidaten für das nächste Experiment vorzuschlagen.</p>
-
-    <pre><code># Bayesian Optimization Setup mit BoTorch
-from botorch.models import SingleTaskGP
-from botorch.fit import fit_gpytorch_model
-from botorch.acquisition.multi_objective import qExpectedHypervolumeImprovement
-from botorch.utils.multi_objective.pareto import is_non_dominated
-
-def run_bo_iteration(
-    X_observed: torch.Tensor,    # Embeddings bisheriger Kandidaten, shape (N, 1280)
-    Y_observed: torch.Tensor,    # Gemessene Properties, shape (N, 4)
-    ref_point:  torch.Tensor,    # Referenz-Punkt für Hypervolumen, z.B. [0.3, 0.3, 0.3, 0.5]
-    n_candidates: int = 50
-) -> torch.Tensor:
-    """
-    Gibt n_candidates Embedding-Vektoren zurück die EHVI maximieren.
-    Diese werden dann via cVAE zu Sequenzen rückübersetzt.
-    """
-    # Baue GP Surrogate für jede Objective
-    model = SingleTaskGP(X_observed, Y_observed)
-    mll   = ExactMarginalLogLikelihood(model.likelihood, model)
-    fit_gpytorch_model(mll)
-
-    # EHVI Acquisition
-    pareto_mask = is_non_dominated(Y_observed)
-    acq = qExpectedHypervolumeImprovement(
-        model=model,
-        ref_point=ref_point,
-        partitioning=NondominatedPartitioning(ref_point=ref_point, Y=Y_observed[pareto_mask])
-    )
-    # Optimize acquisition function
-    candidates, _ = optimize_acqf(
-        acq, bounds=X_bounds, q=n_candidates,
-        num_restarts=10, raw_samples=512
-    )
-    return candidates</code></pre>
+    <h2>DRG Fitness Oracle — Modell</h2>
+    <div class="callout"><p><strong>Architektur:</strong> ESM-2 650M → 1280-dim Embedding → Feed-Forward NN (1280→512→256→128, ReLU, Dropout=0.15) → Task-spezifische Heads → Multi-task MSE Loss. Training: AdamW, CosineAnnealing, Early Stopping (patience=15).</p></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="oracle-run">
-    <h2>Fitness Oracle — Betrieb & API</h2>
-
-    <h3>Standardisierter Optimierungs-Workflow</h3>
-    <p>Jede Optimierungsrunde folgt diesem fixierten Protokoll. Abweichungen müssen dokumentiert werden.</p>
-
-    <ol class="step-list">
-        <li><strong>Kandidaten-Generierung (Tag 1).</strong> cVAE.generate(condition=[tropism=0.85, yield=0.80, stab=0.80, immuno=0.20], n=500, temp=0.8). Deduplizierung (Levenshtein-Distanz ≥3). Validierung: nur natürliche Aminosäuren, korrekte Insertionsstelle. Fitness Oracle Screening aller 500 Kandidaten. Ranking nach gewichtetem Score.</li>
-        <li><strong>BO-Kandidaten-Selektion (Tag 1).</strong> run_bo_iteration() gibt 50 Embedding-Vektoren zurück die EHVI maximieren. Nearest-Neighbor-Lookup in ESM-2 Embedding Space → 50 reale Sequenzkandidaten. Review: Manuelle Prüfung der 50 Kandidaten auf biochemische Plausibilität.</li>
-        <li><strong>Experimentelle Validierung (Tag 2–28).</strong> Bestellung der 50 Kandidaten als synthetische Gensequenzen (Twist Bioscience, Integrated DNA Technologies). rAAV-Produktion (triple transfection, HEK293T, 5 T175 Flaschen/Kandidat). Titer: ddPCR, Ziel ≥5×10^12 vg/mL. Assays: FACS Tropismus (DRG Neuronenkulturen), qPCR Transgene Expression, DSF Thermostabilität.</li>
-        <li><strong>Data Integration (Tag 28–30).</strong> NGS/FACS Rohdaten → Enrichment Score Berechnung (wie WP2 Pipeline). Merge mit Oracle-internem Dataset. Re-Training des Fitness Predictors auf allen kumulierten Daten (Runden 0 + aktuell). Update der BO-Surrogate GP-Modelle.</li>
-        <li><strong>Pareto-Front Update (Tag 30).</strong> Berechnung der Pareto-Front aller je getesteten Kandidaten. Visualisierung als 3D-Plot (Tropismus vs Yield vs Stabilität). Auswahl der Top-N non-dominated Kandidaten für nächste Runde oder finale Validierung.</li>
-    </ol>
-
-    <h3>Python API — Kurzreferenz</h3>
-    <pre><code>from parvotec.oracle import FitnessOracle
-
-# Oracle initialisieren
-oracle = FitnessOracle.load("oracle_v1.0.pth")
-
-# Einzelne Sequenz vorhersagen
-result = oracle.predict("ACDEFGH")  # 7-Mer Insert
-# result = {"tropism": 0.72, "yield": 0.85, "stability": 0.78, "immunogenicity": 0.22}
-
-# Batch Vorhersage
-sequences = ["ACDEFGH", "KLMNPQR", ...]  # Liste von 7-Mer Inserts
-results = oracle.predict_batch(sequences)
-
-# Neue Kandidaten generieren
-candidates = oracle.generate(
-    targets={"tropism": 0.85, "yield": 0.80, "stability": 0.80},
-    n=50,
-    strategy="bo"  # "bo" | "greedy" | "diverse"
-)
-
-# Pareto-Front aller getesteten Kandidaten
-pareto = oracle.pareto_front()
-pareto.plot_3d(x="tropism", y="yield", z="stability")</code></pre>
-
-    <h3>Go / No-Go Entscheidungskriterien pro Runde</h3>
-    <table class="spec-table">
-        <thead><tr><th>Runde</th><th>Go-Kriterium</th><th>No-Go Kriterium</th><th>Konsequenz bei No-Go</th></tr></thead>
-        <tbody>
-            <tr><td>Ende WP2 (M8)</td><td>≥500k DMS Datenpunkte, Rep-Korrelation ≥0.85</td><td>Datensatz &lt;300k oder Korrelation &lt;0.75</td><td>Zusätzlicher DMS Screen (M9–M10), +€80k</td></tr>
-            <tr><td>Ende WP3 (M10)</td><td>Oracle Spearman r ≥0.65 auf Test-Set</td><td>Spearman r &lt;0.55</td><td>Mehr Trainingsdaten, Hyperparameter-Retuning</td></tr>
-            <tr><td>BO Runde 1 (M11)</td><td>≥1 Kandidat mit Tropismus ≥0.50</td><td>Kein Kandidat ≥0.45</td><td>Oracle-Analyse: Ist der Suchraum ausreichend?</td></tr>
-            <tr><td>BO Runde 2 (M14)</td><td>≥1 Kandidat Tropismus ≥0.65, Yield ≥0.60</td><td>Beste &lt;0.55</td><td>Erweiterte Library (breitere Diversität)</td></tr>
-            <tr><td>BO Runde 3 (M18)</td><td>Top-3 Panel: Trop ≥0.80, Yield ≥0.75</td><td>Keine 3 Kandidaten erfüllen Kriterien</td><td>1 zusätzliche BO-Runde (M18–M21), +€120k</td></tr>
-            <tr><td>WP5 In Vivo (M20)</td><td>≥1 Kandidat 10× retrograder Transport vs WT</td><td>Kein Kandidat ≥5×</td><td>Go/No-Go Entscheidung Gesamtprojekt</td></tr>
-        </tbody>
-    </table>
+    <h2>DRG Fitness Oracle — Betrieb &amp; API</h2>
+    <p>Jede Optimierungsrunde folgt einem fixierten 5-Schritt Protokoll: (1) cVAE Kandidaten-Generierung mit Constraint-Filter, (2) BO-Selektion via EHVI, (3) Experimentelle Validierung (28d), (4) Data Integration, (5) Oracle Re-Training auf kumulativen Daten.</p>
+    <div class="callout"><p><strong>API:</strong> <code>oracle.predict(sequence)</code> · <code>oracle.generate(targets, n, strategy)</code> · <code>oracle.pareto_front(objectives)</code></p></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
 <section id="milestones">
-    <h2>Meilensteine & Deliverables</h2>
+    <h2>Meilensteine &amp; Deliverables</h2>
     <table class="spec-table">
         <thead><tr><th>Monat</th><th>Meilenstein</th><th>Deliverable</th><th>WP</th></tr></thead>
-        <tbody>
-            <tr><td>M3</td><td>Target Product Profile finalisiert</td><td>D1.1 TPP, D1.2 Competitive Report, D1.3 Library Spec</td><td>WP1</td></tr>
-            <tr><td>M5</td><td>AAV Library produziert und quality-checked</td><td>Library QC Report ≥1M Varianten, Titer ≥10^12 vg/mL</td><td>WP2</td></tr>
-            <tr><td>M8</td><td>DMS Dataset abgeschlossen</td><td>D2.2 In Vitro DMS Dataset, D2.4 Curated Training Dataset</td><td>WP2</td></tr>
-            <tr><td>M10</td><td>Fitness Oracle v1.0 Release</td><td>D3.1–D3.4, Oracle Evaluation Report (Spearman r ≥0.65)</td><td>WP3</td></tr>
-            <tr><td>M11</td><td>BO Runde 1 abgeschlossen</td><td>50 Kandidaten getestet, Oracle Updated, D4.1</td><td>WP4</td></tr>
-            <tr><td>M14</td><td>BO Runde 2 abgeschlossen, Lead Panel Draft</td><td>D4.2, Draft Lead Candidate Panel</td><td>WP4</td></tr>
-            <tr><td>M18</td><td>BO Runde 3 + Lead Candidate Panel Final</td><td>D4.3 Top-10 Pareto-optimal, D4.4 Oracle v2.0</td><td>WP4</td></tr>
-            <tr><td>M20</td><td>In Vitro Validierung Lead Kandidaten</td><td>D5.1 In Vitro Validation Report</td><td>WP5</td></tr>
-            <tr><td>M22</td><td>In Vivo Wirksamkeits- und Sicherheitsdaten</td><td>D5.2 + D5.3 Reports</td><td>WP5</td></tr>
-            <tr><td>M24</td><td>IND-Enabling Package</td><td>D5.4 IND Package Draft — Projektziel erreicht</td><td>WP5</td></tr>
-        </tbody>
+        <tbody><tr><td>M3</td><td>Target Product Profile finalisiert</td><td>D1.1–D1.3</td><td>WP1</td></tr><tr><td>M5</td><td>AAV Library produziert (QC: Titer, Coverage)</td><td>Library QC Report</td><td>WP2</td></tr><tr><td>M8</td><td>DMS Dataset abgeschlossen</td><td>D2.2 + D2.4 Training Dataset</td><td>WP2</td></tr><tr><td>M10</td><td>Fitness Oracle v1.0 Release (Spearman r ≥0.65)</td><td>D3.1–D3.4</td><td>WP3</td></tr><tr><td>M11</td><td>BO Runde 1 abgeschlossen (50 Kandidaten)</td><td>D4.1</td><td>WP4</td></tr><tr><td>M14</td><td>BO Runde 2 abgeschlossen, Lead Panel Draft</td><td>D4.2</td><td>WP4</td></tr><tr><td>M18</td><td>Lead Candidate Panel Final (Top-10 Pareto)</td><td>D4.3 + D4.4 Oracle v2.0</td><td>WP4</td></tr><tr><td>M20</td><td>In Vitro Vollcharakterisierung Top-3</td><td>D5.1</td><td>WP5</td></tr><tr><td>M22</td><td>In Vivo Wirksamkeit + Biodistribution</td><td>D5.2 + D5.3</td><td>WP5</td></tr><tr><td>M24</td><td>IND-Enabling Package</td><td>D5.4 — Projektziel erreicht</td><td>WP5</td></tr></tbody>
     </table>
-
     <h3>Risiko-Register</h3>
     <table class="spec-table">
         <thead><tr><th>Risiko</th><th>Wahrscheinlichkeit</th><th>Impact</th><th>Mitigation</th></tr></thead>
-        <tbody>
-            <tr><td>DMS Library Coverage &lt;50%</td><td>Mittel</td><td>Hoch</td><td>Parallele Library mit kleinerer Komplexität als Backup</td></tr>
-            <tr><td>Oracle generalisiert nicht auf neue Insertionen</td><td>Mittel</td><td>Mittel</td><td>Active Learning priorisiert unsichere Regionen, robuste Benchmarks</td></tr>
-            <tr><td>Kein Kandidat erfüllt In-Vivo Kriterien in M20</td><td>Niedrig-Mittel</td><td>Sehr Hoch</td><td>Frühzeitige In-Vivo Pilotdaten für Top-Kandidaten aus Runde 2</td></tr>
-            <tr><td>IP-Konflikte mit WhiteLab/PackGene Methodik</td><td>Niedrig</td><td>Mittel</td><td>Freedom-to-Operate Analyse in WP1 (M1)</td></tr>
-            <tr><td>ESM-3 API-Verfügbarkeit eingeschränkt</td><td>Niedrig</td><td>Niedrig</td><td>ESM-2 lokale Installation als Fallback vorhanden</td></tr>
-        </tbody>
+        <tbody><tr><td>DMS Library Coverage <50%</td><td>Mittel</td><td>Hoch</td><td>Parallele Library mit kleinerer Komplexität als Backup</td></tr><tr><td>Oracle generalisiert nicht auf neue Insertionen</td><td>Mittel</td><td>Mittel</td><td>Active Learning priorisiert unsichere Regionen, robuste Benchmarks</td></tr><tr><td>Kein Kandidat erfüllt In-Vivo Kriterien M20</td><td>Niedrig-Mittel</td><td>Sehr Hoch</td><td>Frühzeitige In-Vivo Pilotdaten für Top-Kandidaten aus Runde 2</td></tr><tr><td>IP-Konflikte mit WhiteLab/PackGene</td><td>Niedrig</td><td>Mittel</td><td>Freedom-to-Operate Analyse in WP1 (M1)</td></tr></tbody>
     </table>
 </section>
 
-</div><!-- .content -->
-
+</div>
 <footer>
-    <p><strong>Parvotec — Projektproposal & Fitness Oracle Manual</strong></p>
-    <p>Version 1.0 · August 2026 · calyr.aí Research</p>
-    <p>AAV Capsid Engineering × ML-guided Optimization für nozizeptive Neuron-Therapie</p>
-    <p style="margin-top:12px;"><a href="parvotec_asgct2026_analysis_bilingual.html">← Zurück zur ASGCT 2026 Analyse</a></p>
+    <p><strong>Parvotec — Parvotec — Projektproposal</strong></p>
+    <p>Generated by build.py from data/proposal.yml · calyr.aí Research · August 2026</p>
 </footer>
-
 <script>
     const sections = document.querySelectorAll('section[id]');
     const navLinks  = document.querySelectorAll('nav a:not(.back)');
     window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(sec => {
-            if (window.scrollY >= sec.offsetTop - 70) current = sec.id;
-        });
-        navLinks.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-        });
+        let cur = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+        navLinks.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + cur) a.classList.add('active'); });
     }, { passive: true });
 </script>
 </body>

@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAV VRVIII Loop Directed Evolution — Data Analytics & ML Strategy Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --ink: #1a1814;
+    --ink-mid: #3d3a34;
+    --ink-light: #6b6760;
+    --ink-faint: #9c9890;
+    --paper: #faf8f4;
+    --surface: #f2efe8;
+    --surface2: #e8e4db;
+    --accent: #b34a1c;
+    --accent-light: #e8d5cb;
+    --accent2: #1c5e8a;
+    --accent2-light: #d0e4f0;
+    --green: #2e6b3e;
+    --green-light: #d4ead9;
+    --amber: #8a5d0a;
+    --amber-light: #f0e3c0;
+    --rule: #d4d0c8;
+    --page-width: 900px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .masthead .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #a09c90;
+    margin-bottom: 1.2rem;
+  }
+
+  .masthead h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 2.1rem;
+    font-weight: 300;
+    line-height: 1.25;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: #e8a070;
+  }
+
+  .masthead .byline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: #7a766e;
+    letter-spacing: 0.06em;
+  }
+
+  .toc-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 2rem;
+  }
+
+  .toc-bar-inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    align-items: center;
+  }
+
+  .toc-bar-inner .toc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-right: 0.5rem;
+  }
+
+  .toc-bar-inner a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--accent2);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .toc-bar-inner a:hover { text-decoration: underline; }
+
+  .page {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* Section headers */
+  .section {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+    margin: 1.2rem 0 0.5rem;
+    font-style: italic;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  /* Callout boxes */
+  .callout {
+    margin: 1.5rem 0;
+    padding: 1.1rem 1.4rem;
+    border-radius: 4px;
+    border-left: 4px solid;
+  }
+
+  .callout-recommendation {
+    background: var(--accent2-light);
+    border-color: var(--accent2);
+  }
+
+  .callout-warning {
+    background: var(--amber-light);
+    border-color: var(--amber);
+  }
+
+  .callout-key {
+    background: var(--green-light);
+    border-color: var(--green);
+  }
+
+  .callout-critical {
+    background: #fbeaea;
+    border-color: #a32d2d;
+  }
+
+  .callout .callout-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--ink-mid);
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  thead {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  thead th {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:nth-child(even) { background: var(--surface); }
+  tbody tr:last-child { border-bottom: none; }
+
+  td {
+    padding: 0.6rem 1rem;
+    vertical-align: top;
+    color: var(--ink-mid);
+  }
+
+  td:first-child { color: var(--ink); font-weight: 500; }
+
+  td.green { color: var(--green); font-weight: 500; }
+  td.amber { color: var(--amber); font-weight: 500; }
+  td.red { color: #a32d2d; font-weight: 500; }
+
+  /* Metrics grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+  }
+
+  .metric-card .metric-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.3rem;
+  }
+
+  .metric-card .metric-value {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+
+  .metric-card .metric-sub {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-top: 0.2rem;
+  }
+
+  /* Pipeline steps */
+  .pipeline {
+    counter-reset: pipeline-step;
+    margin: 1.5rem 0;
+  }
+
+  .pipeline-step {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+    counter-increment: pipeline-step;
+  }
+
+  .pipeline-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .pipeline-step-content h4 {
+    margin-top: 0;
+    color: var(--ink);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .pipeline-step-content p {
+    margin-bottom: 0;
+    font-size: 14.5px;
+    color: var(--ink-mid);
+  }
+
+  /* Gate boxes */
+  .gate {
+    background: var(--surface2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+  }
+
+  .gate-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .gate-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .gate-badge-go { background: var(--green-light); color: var(--green); }
+  .gate-badge-nogo { background: #fbeaea; color: #a32d2d; }
+  .gate-badge-review { background: var(--amber-light); color: var(--amber); }
+
+  .gate-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .gate ul { padding-left: 1.2rem; }
+  .gate li { font-size: 13.5px; color: var(--ink-mid); line-height: 1.6; }
+
+  /* Code blocks */
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    background: var(--surface2);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--accent);
+  }
+
+  pre {
+    background: var(--ink);
+    color: #c8c4bc;
+    padding: 1.2rem 1.5rem;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  pre .cm { color: #7a7870; }
+  pre .kw { color: #e8a070; }
+  pre .st { color: #98c896; }
+  pre .nu { color: #7ab0d4; }
+
+  /* ML architecture box */
+  .arch-block {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .arch-block h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e8a070;
+    margin: 0 0 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .arch-block p { color: #c8c4bc; font-size: 13px; margin-bottom: 0.6rem; }
+  .arch-block p:last-child { margin-bottom: 0; }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 620px) {
+    .arch-grid { grid-template-columns: 1fr; }
+    .masthead h1 { font-size: 1.55rem; }
+    .page { padding: 2rem 1rem 4rem; }
+  }
+
+  /* Footer note */
+  .footnote {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--rule);
+    padding-top: 0.6rem;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Novel idea tag */
+  .novel {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  /* Summary box */
+  .exec-summary {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .exec-summary h2 {
+    font-family: 'IBM Plex Serif', serif;
+    color: #e8a070;
+    border-bottom-color: #e8a070;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .exec-summary p { color: #c8c4bc; font-size: 14.5px; margin-bottom: 0.75rem; }
+  .exec-summary p:last-child { margin-bottom: 0; }
+
+  .verdict {
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid #7ab0d4;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .verdict p { color: #d8d4cc; font-size: 13.5px; }
+
+  ul.checklist { padding-left: 0; list-style: none; }
+  ul.checklist li { padding: 0.25rem 0 0.25rem 1.4rem; position: relative; font-size: 14px; color: var(--ink-mid); }
+  ul.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 600; }
+
+  ul.xlist { padding-left: 0; list-style: none; }
+  ul.xlist li { padding: 0.25rem 0 0.25rem 1.4rem; position: relative; font-size: 14px; color: var(--ink-mid); }
+  ul.xlist li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  .venn-concept {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">Directed Evolution Analytics · Data Science Strategy Report · Confidential</div>
+  <h1>AAV Capsid VRVIII Loop Engineering:<br><em>Data Analytics, NGS Pipeline & ML Architecture</em></h1>
+  <div class="byline">Cross-species translation strategy · NHP → Human organotypic → Rodent · 7-mer peptide display library</div>
+</div>
+
+<div class="toc-bar">
+  <div class="toc-bar-inner">
+    <span class="toc-label">Contents</span>
+    <a href="#s1">1. Strategic Assessment</a>
+    <a href="#s2">2. Sequencing Requirements</a>
+    <a href="#s3">3. Data Pipeline</a>
+    <a href="#s4">4. Quality Gates</a>
+    <a href="#s5">5. Library Barcoding</a>
+    <a href="#s6">6. Receptor Binding</a>
+    <a href="#s7">7. ML Architecture</a>
+    <a href="#s8">8. Cross-species Translation</a>
+    <a href="#s9">9. Statistics & Venn</a>
+    <a href="#s10">10. Novel Recommendations</a>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="exec-summary">
+    <h2>Executive Summary</h2>
+    <p>This report defines a state-of-the-art data analytics and machine learning strategy for directed evolution of an AAV VRVIII surface loop 7-mer peptide insertion. The pipeline integrates NHP in vivo enrichment data, human organotypic transduction assays, receptor affinity selection, and rodent in vivo validation into a unified machine learning training framework.</p>
+    <p>The proposed three-species, three-assay sequential funnel is scientifically sound and strategically well-positioned. It mirrors the logic of leading programmes at Dyno Therapeutics, Capsida Biotherapeutics, and Voyager Therapeutics, while adding important de novo sequence space coverage via the parallel NNK mini-library. The most significant bottleneck, and the area requiring the greatest analytical attention, is cross-species translation fidelity — particularly NHP to human — which must be explicitly modelled rather than assumed.</p>
+    <div class="verdict">
+      <p><strong>Verdict on the proposed NHP-first approach:</strong> Advisable and well-structured. The NHP asset provides the largest functionally vetted sequence space at biological scale — no alternative generates equivalent in vivo coverage for AAV tropism. The risk of selecting NHP-positive but human-negative variants is real but manageable with the organotypic and receptor-binding parallel screens described here. The key analytical requirement is building a species-transfer predictive layer into the ML model from round 1.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-number">Section 01</div>
+    <h2>Strategic Assessment of the Proposed Workflow</h2>
+
+    <h3>Is NHP-First the Right Approach?</h3>
+    <p>Starting with NHP in vivo data before committing to human cell culture or rodent work is strategically sound for the following reasons: NHP capsid tropism data is the most translationally relevant large-scale in vivo functional screen available for AAV gene therapy. NHPs and humans share approximately 96–99% receptor orthology at the transduction machinery level for most serotypes, making NHP enrichment data a far better predictor of human transduction than rodent data alone.</p>
+    <p>The specific concerns you should carry forward, however, are real: AAV receptor usage in the VRVIII loop display context may differ between species if your 7-mer insert engages novel receptors absent or polymorphic in NHPs but present in humans (and vice versa). The receptor-binding enrichment assay using recombinant human proteins on magnetic beads and Octet is therefore not just a nice-to-have — it is the critical bridge that validates NHP hits for human relevance, and its data must feed directly into the ML model as a training feature.</p>
+
+    <div class="callout callout-key">
+      <div class="callout-title">Key Design Principle</div>
+      <p>Never use NHP enrichment fold-change as a proxy for human transduction without a translation correction layer. Build this as an explicit ML feature from the start, even if it is sparse in early rounds. The parallel NNK mini-library in human organotypic models is precisely what generates this correction signal.</p>
+    </div>
+
+    <h3>The Three-Animal-Model Question</h3>
+    <p>Your proposed sequence — NHP (large sequence space, in vivo, gold-standard) → human organotypic in vitro (human receptor validation) → receptor pulldown (mechanistic anchor) → rodent disease model (efficacy/transport) — addresses the interspecies translation problem better than any single-model approach. The critical analytical insight is that you need to model the <em>intersection</em> of these screens, not just use one to gate the next.</p>
+
+    <div class="two-col">
+      <div>
+        <h4>What NHP data can tell you:</h4>
+        <ul class="checklist">
+          <li>Producibility at scale</li>
+          <li>In vivo stability of capsid</li>
+          <li>Broad tissue tropism pattern</li>
+          <li>CNS/liver/muscle penetrance</li>
+          <li>Immune profile (broadly)</li>
+          <li>Variants to deplete (off-target)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What NHP data cannot tell you:</h4>
+        <ul class="xlist">
+          <li>Human receptor binding specificity</li>
+          <li>Human cell-type transduction efficiency</li>
+          <li>Human endosomal escape fidelity</li>
+          <li>Human immune recognition (NAb)</li>
+          <li>Transport across human barriers (BBB etc.)</li>
+          <li>Rodent testability of selected variants</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Interspecies Translation — The Core Analytical Problem</h3>
+    <p>The NHP-to-human translation challenge for VRVIII loop 7-mer inserts is well-illustrated by published literature on AAV-PHP.B: a capsid highly efficient in C57BL/6 mice due to interaction with murine LY6A showed essentially no CNS transduction in primates or most other mouse strains, because LY6A is a mouse-specific receptor variant. While your loop is in VRVIII rather than the PHP.B VR-VIII insertion used in that context, the principle is identical — surface loop peptides engage species-specific receptor epitopes.</p>
+    <p>For your pipeline, this means: the NNK replication library run in parallel in human organotypic models is not merely a validation step. It is a <strong>cross-species calibration dataset</strong> whose primary analytic purpose is to build a human-NHP transduction transfer function. This transfer function is one of the most valuable outputs of round 1, and the ML model must encode it explicitly.</p>
+
+    <div class="callout callout-recommendation">
+      <div class="callout-title">Recommendation — Novel Addition</div>
+      <p>At the end of Round 1 analysis, fit a simple logistic regression (or gradient-boosted classifier) that predicts P(human_transduction = positive | NHP_enrichment_score, sequence_embedding) using only the overlapping variants seen in both the NHP and organotypic screens. This becomes your Round 2 variant selection prior — it is the cheapest, highest-value ML deliverable from this first dataset.</p>
+    </div>
+
+    <h3>Rodent Model Positioning</h3>
+    <p>Placing rodent in vivo testing <em>after</em> NHP and human organotypic filtering is the correct decision — not because rodents are unimportant, but because the PHP.B-type failure mode (rodent-specific receptor interaction) is avoided by pre-selecting variants that are validated in both NHP and human systems before testing in rodents. Rodents then serve as the disease-model efficacy readout and transport characterisation platform, not as a discovery filter. This reverses the historical precedent that created the translation cliff in the field.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-number">Section 02</div>
+    <h2>NGS Sequencing Requirements & Strategy</h2>
+
+    <h3>Why Sequencing Depth Is the Most Underspecified Parameter in Directed Evolution</h3>
+    <p>The single most common cause of failed ML training on directed evolution datasets is inadequate sequencing depth relative to library diversity. Insufficient depth leads to frequency noise that mimics true enrichment, and sparse variant sampling in output libraries that makes the sequence-function landscape discontinuous for ML. For a 7-mer NNK insert library, the theoretical sequence space is 32<sup>7</sup> = approximately 35 billion variants. Your libraries of 100–500k variants are deep functional samples, but they require carefully calibrated sequencing depth to achieve reliable frequency estimates.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Minimum coverage</div>
+        <div class="metric-value">500×</div>
+        <div class="metric-sub">Per unique variant, input library</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Target coverage</div>
+        <div class="metric-value">1,000–2,000×</div>
+        <div class="metric-sub">Per unique variant, output/enriched</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Min reads per run</div>
+        <div class="metric-value">~500M</div>
+        <div class="metric-sub">For 500k variant library at 1,000×</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Amplicon length</div>
+        <div class="metric-value">~250 bp</div>
+        <div class="metric-sub">7-mer + barcode + flanking primer</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sequencing platform</div>
+        <div class="metric-value">Illumina</div>
+        <div class="metric-sub">NovaSeq X Plus, paired-end 2×150</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Barcode length</div>
+        <div class="metric-value">12–16 nt</div>
+        <div class="metric-sub">Hamming distance ≥3 for error correction</div>
+      </div>
+    </div>
+
+    <h3>Amplicon Design for VRVIII Insert</h3>
+    <p>The VRVIII loop insert sequencing amplicon must be designed to capture: (1) the full 7-mer insert, (2) sufficient flanking capsid sequence (≥20 bp each side) for alignment anchoring, (3) the library-specific barcode, and (4) a unique molecular identifier (UMI) for PCR duplicate removal. This is critical — without UMIs, PCR bias during library preparation will inflate the apparent frequency of a subset of variants and artificially distort enrichment scores.</p>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">Common Wetlab Error</div>
+      <p>Do not use too many PCR cycles during amplicon preparation for sequencing. Recommended: ≤ 15 cycles enrichment PCR, ≤ 10 cycles indexing PCR. PCR jackpot effects above this threshold introduce frequency noise that is indistinguishable from true enrichment at the sequencing depth level. Always include the UMI in your sequencing adapter design before the start of the project — retrofitting UMIs to an existing library design is painful.</p>
+    </div>
+
+    <h3>Sequencing Schema per Experiment Type</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Sample Type</th>
+            <th>Library(ies)</th>
+            <th>Min Reads</th>
+            <th>Replicates</th>
+            <th>Primary Purpose</th>
+            <th>ML Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plasmid input</td>
+            <td>A+B+C each</td>
+            <td>50M / library</td>
+            <td>2 technical</td>
+            <td>Baseline freq., QC</td>
+            <td>Denominator for enrichment scores</td>
+          </tr>
+          <tr>
+            <td>Produced virus input</td>
+            <td>A+B+C pooled</td>
+            <td>200M</td>
+            <td>3 biological</td>
+            <td>Producibility filter</td>
+            <td>Feature: production_score</td>
+          </tr>
+          <tr>
+            <td>NHP tissue (target)</td>
+            <td>Pooled</td>
+            <td>300M / tissue</td>
+            <td>3 animals min</td>
+            <td>Tropism, enrichment</td>
+            <td>Target: tissue_enrichment_score</td>
+          </tr>
+          <tr>
+            <td>NHP tissue (off-target)</td>
+            <td>Pooled</td>
+            <td>200M / tissue</td>
+            <td>3 animals</td>
+            <td>Depletion panel</td>
+            <td>Target: off_target_score (minimise)</td>
+          </tr>
+          <tr>
+            <td>Human organotypic</td>
+            <td>A+B+C each</td>
+            <td>200M / condition</td>
+            <td>3 biological</td>
+            <td>Human translation</td>
+            <td>Feature: human_transduction_score</td>
+          </tr>
+          <tr>
+            <td>Bead pulldown (receptor)</td>
+            <td>A+B+C pooled</td>
+            <td>100M</td>
+            <td>2 biological</td>
+            <td>Receptor binding</td>
+            <td>Feature: receptor_binding_enrichment</td>
+          </tr>
+          <tr>
+            <td>Rodent target tissue</td>
+            <td>Final 50k panel</td>
+            <td>100M / tissue</td>
+            <td>5–8 animals</td>
+            <td>In vivo validation</td>
+            <td>Target: rodent_efficacy_score</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">Note: all read counts are per sample after demultiplexing. Library A = NHP-selected refined space; Library B = serotype panel; Library C = NNK replication mini-library. Biological replicates are preferred over technical replicates for ML training — they capture the true biological variance needed to train a robust model.</p>
+
+    <h3>Barcode Sequencing for Library De-convolution</h3>
+    <p>The three individually barcoded libraries pooled into one smart library batch require robust de-convolution. Use dual-index barcoding (i5 + i7) at the Illumina level plus an inline barcode within the amplicon for redundancy. Assign barcodes with a minimum edit distance of 3 between any two barcodes to allow single-error correction. Validate barcode cross-contamination rate is below 0.1% before proceeding — any higher and your per-library enrichment scores will be contaminated.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-number">Section 03</div>
+    <h2>Data Processing Pipeline</h2>
+
+    <h3>Overview</h3>
+    <p>The pipeline converts raw sequencing reads into a structured, ML-ready data table where each row is a unique variant (identified by its 7-mer amino acid sequence), and columns are features (enrichment scores, physicochemical properties, embedding features) and labels (tropism scores, producibility, receptor binding). This table is the central deliverable from all experimental data — every wet-lab experiment should be designed with reference to what column it adds to this table.</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">1</div>
+        <div class="pipeline-step-content">
+          <h4>Raw Read QC & Adapter Trimming</h4>
+          <p>FastQC → Trim Galore or Cutadapt. Minimum quality score Q30, minimum read length 150 bp. Flag and remove reads where the insert region contains >1 ambiguous base call. Expected pass rate: >90%.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">2</div>
+        <div class="pipeline-step-content">
+          <h4>UMI Extraction & Deduplication</h4>
+          <p>UMI-tools or fastp for UMI extraction prior to alignment. Deduplicate using UMI + alignment position. This step is non-negotiable for accurate frequency estimation. Collapse duplicates before counting.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">3</div>
+        <div class="pipeline-step-content">
+          <h4>Demultiplexing by Library Barcode</h4>
+          <p>Demultiplex by inline barcode first, then by Illumina index. Strict matching with max 1 mismatch allowed. Any reads not assignable to a known barcode go to the "ambiguous" bin — target <2% of total reads.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">4</div>
+        <div class="pipeline-step-content">
+          <h4>Alignment & Insert Extraction</h4>
+          <p>Align to reference capsid sequence (BWA-MEM or Minimap2). Extract the 7-mer insert region using flanking anchor sequences. Translate to amino acid sequence. Reject reads with frameshifts, stop codons, or inserts not exactly 7 amino acids.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">5</div>
+        <div class="pipeline-step-content">
+          <h4>Variant Counting & Frequency Normalisation</h4>
+          <p>Count unique amino acid 7-mers per sample. Compute raw frequency = reads for variant / total reads per sample. Apply pseudocount (typically +1 read equivalent) before log transformation to handle zero-count variants.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">6</div>
+        <div class="pipeline-step-content">
+          <h4>Enrichment Score Calculation</h4>
+          <p>Log-enrichment = log2(output frequency / input frequency). Use virus-produced input (post-packaging) rather than plasmid input as the denominator for tissue enrichment scores to deconvolve producibility from transduction. Use plasmid input as denominator for the producibility score itself.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">7</div>
+        <div class="pipeline-step-content">
+          <h4>Statistical Filtering & Confidence Assignment</h4>
+          <p>Apply a minimum read count threshold (≥10 reads in input after deduplication) to include a variant. Compute 95% confidence intervals on enrichment scores using Bayesian beta-binomial or bootstrap methods. Flag variants below threshold as "low confidence" — do not exclude them from ML training, but weight them accordingly. This preserves rare variants for the cVAE exploration component.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">8</div>
+        <div class="pipeline-step-content">
+          <h4>Feature Engineering</h4>
+          <p>For each variant compute: amino acid physicochemical descriptors (hydrophobicity, charge, size, H-bond capacity), sequence-level embeddings from ESM2 and/or ProtTrans, evolutionary conservation scores (relative to wt capsid VRVIII), and structural predictions (AlphaFold2 or ESMFold for surface-exposed loop conformation).</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">9</div>
+        <div class="pipeline-step-content">
+          <h4>Master Variant Table Assembly</h4>
+          <p>Join all enrichment scores, features, and metadata into a single Parquet file (recommended over CSV at this data scale). One row per unique 7-mer amino acid sequence. Add metadata columns: library of origin, round, detection status per screen. This is the primary ML training input.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Recommended Software Stack</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Step</th><th>Tool</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>QC</td><td>FastQC / MultiQC</td><td>Standard, generates HTML reports for batch QC review</td></tr>
+          <tr><td>Trimming</td><td>Cutadapt</td><td>Handles complex adapter configurations, fast</td></tr>
+          <tr><td>UMI handling</td><td>UMI-tools</td><td>Well-validated, integrates with downstream tools</td></tr>
+          <tr><td>Alignment</td><td>BWA-MEM2</td><td>Fast, accurate for short amplicons</td></tr>
+          <tr><td>Insert extraction</td><td>Custom Python + Biopython</td><td>Capsid-specific; adapt from Sinai lab or Dyno public repos</td></tr>
+          <tr><td>Variant counting</td><td>Custom Python / pandas</td><td>Full control over pseudocount and normalisation strategy</td></tr>
+          <tr><td>Statistical testing</td><td>DESeq2 (R) or edgeR</td><td>Excellent negative binomial models for count data comparison</td></tr>
+          <tr><td>Embeddings</td><td>ESM2 (Meta) via Hugging Face</td><td>State of the art protein language model, good for short peptides</td></tr>
+          <tr><td>Structure prediction</td><td>ESMFold / ColabFold</td><td>Fast enough for 50–500k variants with GPU batching</td></tr>
+          <tr><td>Data storage</td><td>Apache Parquet + DuckDB</td><td>Columnar format handles 500k row × 1000 column tables efficiently</td></tr>
+          <tr><td>Workflow management</td><td>Snakemake or Nextflow</td><td>Reproducibility, HPC/cloud-native, automatic re-runs on change</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-number">Section 04</div>
+    <h2>Quality Gates & Decision Framework</h2>
+    <p>Every experiment in the pipeline generates a go/no-go or reshape decision for downstream steps. These gates must be defined quantitatively before experiments start — do not adjust thresholds retrospectively to make data "pass." The gates below represent reasonable starting points that should be formally agreed across the wet-lab and data science team.</p>
+
+    <h3>Gate 1: Library Quality Before Use</h3>
+    <div class="gate">
+      <div class="gate-header">
+        <span class="gate-badge gate-badge-go">GO criterion</span>
+        <span class="gate-title">Library representation check</span>
+      </div>
+      <ul>
+        <li>≥80% of expected theoretical unique variants detected at ≥5 reads in plasmid input sequencing</li>
+        <li>Skewness of variant frequency distribution (Gini coefficient) < 0.4 — confirms no extreme jackpot overrepresentation</li>
+        <li>Barcode cross-contamination < 0.1% between libraries A, B, C</li>
+        <li>Positive controls (known productive capsid variants) detected and within expected frequency range</li>
+      </ul>
+    </div>
+
+    <h3>Gate 2: Virus Production Quality</h3>
+    <div class="gate">
+      <div class="gate-header">
+        <span class="gate-badge gate-badge-nogo">FAIL criterion (halt and investigate)</span>
+        <span class="gate-title">Production dropout analysis</span>
+      </div>
+      <ul>
+        <li>If >40% of variants are depleted >4-fold from plasmid to virus: revisit packaging protocol — production step may be bottlenecking variant diversity independently of sequence, masking true producibility signal</li>
+        <li>If positive control variants show >10-fold drop in production: flag as batch failure</li>
+        <li>Expected: 20–35% of NNK 7-mer variants show some production disadvantage — this is normal and informative for ML training</li>
+      </ul>
+    </div>
+
+    <h3>Gate 3: NHP In Vivo Enrichment</h3>
+    <div class="gate">
+      <div class="gate-header">
+        <span class="gate-badge gate-badge-review">REVIEW — statistical power check</span>
+        <span class="gate-title">Minimum detectable enrichment</span>
+      </div>
+      <ul>
+        <li>Require minimum 3 NHP animals per tissue read-out — with 2 animals, the confidence interval on per-variant enrichment scores is too wide for ML training as a clean label</li>
+        <li>Target: ≥20% of variants detected in all 3 animals for the primary target tissue (intra-animal concordance)</li>
+        <li>Flag variants detected in only 1 of 3 animals as "low confidence positive" — include in ML training with reduced weight, do not exclude</li>
+        <li>Apply Pearson R > 0.7 between-animal concordance check on log-enrichment scores as a batch QC metric</li>
+      </ul>
+    </div>
+
+    <h3>Gate 4: Cross-Library Overlap (Venn Gate)</h3>
+    <div class="gate">
+      <div class="gate-header">
+        <span class="gate-badge gate-badge-go">GO criterion</span>
+        <span class="gate-title">NHP-human overlap for panel confidence</span>
+      </div>
+      <ul>
+        <li>Require ≥5% of variants in Library C (NNK replication library) to overlap with the NHP-enriched space from Library A/B — this is the cross-species validation signal. If overlap is below 5%, the human organotypic model may be selecting a fundamentally different receptor space — this is a major finding warranting investigation, not a failure to discard</li>
+        <li>A high overlap (>20%) is the ideal outcome — it means NHP enrichment is predictive of human transduction for this serotype and insert position, substantially de-risking the programme</li>
+      </ul>
+    </div>
+
+    <h3>Gate 5: Final 50k Panel Composition</h3>
+    <div class="gate">
+      <div class="gate-header">
+        <span class="gate-badge gate-badge-go">GO criterion — all five criteria must be met</span>
+        <span class="gate-title">Panel qualification</span>
+      </div>
+      <ul>
+        <li><strong>Producible:</strong> production enrichment score > −1 (no more than 2-fold depleted vs. plasmid input)</li>
+        <li><strong>NHP transduction positive:</strong> mean log2 enrichment > 1.0 in target tissue across ≥2 of 3 animals</li>
+        <li><strong>Human target cell transduction positive:</strong> log2 enrichment > 0.5 in ≥2 of 3 organotypic replicate experiments</li>
+        <li><strong>Reduced off-target tropism:</strong> off-target tissue enrichment log2 score ≤ 0 (not enriched relative to input) in ≥2 of the specified off-target tissues</li>
+        <li><strong>Receptor binding confirmed:</strong> detected in bead pulldown output with ≥3× enrichment over control beads, OR Octet KD < 1 µM for the recombinant receptor of interest</li>
+      </ul>
+    </div>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">Important Nuance</div>
+      <p>Variants that fail one or two of these gates but pass others are still highly valuable ML training data — they populate the "near-miss" regions of the sequence-function landscape that the cVAE needs to correctly learn the decision boundaries. Do not discard non-qualifying variants from the ML dataset, only from the final library. Flag them with their failure mode as a supervised label.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-number">Section 05</div>
+    <h2>Library Barcoding Strategy & Design Considerations</h2>
+
+    <h3>The Three-Library Architecture</h3>
+    <p>The proposed design of three individually barcoded libraries (A: NHP-selected refined space; B: serotype panel; C: NNK replication mini-library) pooled for simultaneous testing is well-conceived. It allows all libraries to be tested under identical biological conditions — removing batch effects that would confound cross-library comparison — while barcode-level de-convolution preserves per-library identity.</p>
+
+    <h3>Barcode Design Requirements</h3>
+    <p>Use a dual-barcode strategy: a library-identity barcode (unique per library A/B/C) incorporated at the DNA level during library construction, and a per-variant UMI incorporated during PCR amplification for sequencing. The library identity barcode should be 12 nt minimum with a Hamming distance of at least 3 between any two barcodes to allow single-error correction. Do not use homopolymer runs in barcode sequences — they cause systematic sequencing errors on Illumina platforms.</p>
+
+    <div class="callout callout-recommendation">
+      <div class="callout-title">Recommendation — Molecular Barcoding</div>
+      <p>Consider an additional variant-level barcode integrated into the capsid DNA at a silent mutation site within the VRVIII loop flanking region. This allows tracking of individual variant lineages across rounds of selection without relying solely on the insert sequence, which can be confounded if two independently generated variants happen to encode the same 7-mer amino acid sequence (synonymous DNA-level variants). This is increasingly done in state-of-the-art programs (e.g., Dyno's AGATE framework).</p>
+    </div>
+
+    <h3>Library Size Considerations for ML Training</h3>
+    <p>For effective cVAE training, you want a minimum of approximately 10,000–30,000 variants with well-defined functional labels. Your libraries of 100–500k variants per library (1 million+ in total) are more than sufficient — the constraint is not library size but label quality (measurement noise per variant). Prioritise measurement replication over variant number once you exceed 50k variants with high-quality labels.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Library</th><th>Target Size</th><th>Composition</th><th>Primary ML Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A — NHP-refined</td>
+            <td>100–200k</td>
+            <td>Variants selected from NHP enrichment data; positive and depleted sets</td>
+            <td>NHP tropism labels; producibility labels; off-target depletion training</td>
+          </tr>
+          <tr>
+            <td>B — Serotype panel</td>
+            <td>50–100k</td>
+            <td>Known variants from published AAV evolution programmes; benchmark capsids</td>
+            <td>Transfer learning baseline; cross-serotype generalisation; ML model calibration controls</td>
+          </tr>
+          <tr>
+            <td>C — NNK replication</td>
+            <td>100–500k</td>
+            <td>De novo NNK 7-mer library — new sequence space; mirrors original NHP asset</td>
+            <td>Human transduction labels; NHP-human transfer function; cVAE training for novel exploration</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-number">Section 06</div>
+    <h2>Receptor Binding Integration — Octet & Bead Pulldown</h2>
+
+    <h3>Why Receptor Binding Data Is Mechanistically Irreplaceable</h3>
+    <p>Receptor binding data provides what no transduction assay can: a mechanistic, receptor-specific, species-independent signal. It is the bridge between phenomenological enrichment (variant works in NHP tissue) and mechanistic understanding (variant binds receptor X with affinity Y). For ML, this transforms the model from a pattern-matcher over sequence-enrichment correlations into a system that can reason about mechanism — enabling more confident extrapolation to novel sequence space.</p>
+
+    <h3>Octet Kinetic Data as ML Features</h3>
+    <p>The Octet binding system (BLI — biolayer interferometry) generates association rate (ka), dissociation rate (kd), and equilibrium dissociation constant (KD) per variant-receptor pair. These are extraordinarily valuable as ML features because they provide quantitative, physically grounded labels rather than binary enrichment calls. For the model, a variant with KD = 10 nM versus KD = 1 µM encodes very different information about the loop-receptor interaction geometry, which is exactly what the cVAE needs to learn.</p>
+
+    <div class="callout callout-recommendation">
+      <div class="callout-title">Recommendation — Octet Throughput</div>
+      <p>The Octet system is inherently low-throughput (one variant per measurement). Use it for: (a) top-ranked variants from bead pulldown (top 500–1000 by enrichment score), (b) a structured set of single-position mutants around confirmed binders to build structure-activity relationships, and (c) any variant that passes all Gates 1–4 above. Do not attempt to run all 50k panel variants on Octet — the bead pulldown provides the ranking that makes Octet testing tractable.</p>
+    </div>
+
+    <h3>Bead Pulldown as a Parallel Screen</h3>
+    <p>The magnetic bead pulldown using immobilised recombinant receptors is a high-throughput affinity selection that can be applied to the full pooled library. This is the primary receptor-based filter in the pipeline. Key design considerations:</p>
+    <ul class="xlist">
+      <li>Use multiple rounds of bead selection (3–4 rounds) to enrich genuine binders — but sequence after each round to capture the enrichment trajectory, not just the endpoint</li>
+      <li>Include a negative control using blocked beads and unrelated receptor as a depleted-variant control for ML training</li>
+      <li>Run at both physiological (pH 7.4) and endosomal (pH 5.5) conditions — some VRVIII loop interactions are pH-dependent and involve endosomal processing steps</li>
+      <li>Include a competition assay with soluble receptor: if beads enriched variants can be competed off by soluble receptor, the binding is on-target. This confirms specificity and provides an additional ML label</li>
+    </ul>
+
+    <div class="callout callout-key">
+      <div class="callout-title">Novel Recommendation — Multiplexed Receptor Bead Panel</div>
+      <p>Rather than a single receptor on beads, design a multiplexed bead pulldown using 3–5 candidate receptors simultaneously, each on colour-coded bead sets (if using Luminex-type approach) or on separate physical pulldown fractions. This generates a receptor-specificity fingerprint per variant (binds receptor A but not B, C) that encodes far more structural information for ML training than a single binary binding call. This approach is inspired by the SELEX multi-target strategies used in aptamer selection and has not been widely applied in AAV directed evolution.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-number">Section 07</div>
+    <h2>Machine Learning Architecture</h2>
+
+    <h3>Design Philosophy</h3>
+    <p>The ML system described here serves three distinct purposes that require different architectural components: (1) a <strong>property predictor</strong> (oracle) that takes a 7-mer sequence and outputs predicted scores for titer, transduction, tropism, and receptor binding; (2) a <strong>sequence generator</strong> (exploration engine) that proposes novel 7-mers likely to have desired properties while exploring uncharted sequence space; and (3) a <strong>Pareto optimiser</strong> that balances multiple competing properties to select the best candidates for the next round. These map to a neural network oracle, a conditional VAE (cVAE), and a multi-objective optimisation module respectively.</p>
+
+    <div class="arch-block">
+      <h4>System Overview — Module Interactions</h4>
+      <div class="arch-grid">
+        <div>
+          <p><strong style="color:#e8a070">Module 1: Sequence Encoder</strong><br>ESM2 (650M or 3B param) pretrained on UniRef90, fine-tuned on AAV capsid sequences from published databases. Generates 1280-dim embeddings per 7-mer in context of flanking VRVIII loop sequence. This is the shared backbone used by all downstream modules.</p>
+        </div>
+        <div>
+          <p><strong style="color:#e8a070">Module 2: Multi-property Oracle (MLP)</strong><br>Feed-forward network taking ESM2 embeddings + physicochemical features → outputs: production_score, NHP_enrichment, human_enrichment, off_target_score, receptor_KD_predicted. Trained with uncertainty quantification (MC Dropout or deep ensembles).</p>
+        </div>
+        <div>
+          <p><strong style="color:#7ab0d4">Module 3: Conditional VAE (cVAE)</strong><br>Encoder-decoder architecture conditioned on target property vector. Latent space (16–32 dim) trained to represent VRVIII loop 7-mer sequence space. Decoder generates amino acid sequences. Condition vector = desired tropism + receptor profile. Used for both interpolation (lead diversification) and extrapolation (exploration beyond training set).</p>
+        </div>
+        <div>
+          <p><strong style="color:#7ab0d4">Module 4: Pareto Optimiser</strong><br>NSGA-II or MOBO (multi-objective Bayesian optimisation) over Oracle predictions. Properties: maximise NHP_score, human_score, receptor_binding; minimise off_target_score, production_penalty. Outputs Pareto-optimal front of sequences for wetlab testing per round.</p>
+        </div>
+      </div>
+      <p>Optional Module 5: Fine-tuned protein language model (ESM2 or ProtGPT2) for conditional sequence generation with in-context prompting. Most valuable in later rounds when you have >10k high-quality labelled variants. Not required for round 1 training — cVAE provides sufficient generative capacity at this scale.</p>
+    </div>
+
+    <h3>Training Strategy — Round 1</h3>
+    <p>Round 1 training data will be sparse in some property dimensions (human organotypic data available for Library C variants only; Octet KD for a small subset). Use the following strategy:</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">1</div>
+        <div class="pipeline-step-content">
+          <h4>Pretrain on public AAV capsid data</h4>
+          <p>Use ProtBert/ESM2 pretrained weights. Fine-tune on AAV2, AAV5, AAV8, AAV9 capsid sequences from UniProt, NCBI, and published directed evolution datasets (Directed Evolution of AAV at Harvard, Dyno public datasets, Fit4Function). This establishes a prior over which sequences are capsid-compatible.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">2</div>
+        <div class="pipeline-step-content">
+          <h4>Train oracle on NHP production + enrichment data first</h4>
+          <p>This is the largest and most complete label set from Round 1. Train a production predictor and an NHP tropism predictor. Validate using cross-validation with held-out animal replicates. Target: Spearman ρ > 0.5 between predicted and observed enrichment on held-out test set.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">3</div>
+        <div class="pipeline-step-content">
+          <h4>Add human organotypic labels as a second head</h4>
+          <p>Train a multi-task model with shared ESM2 backbone and separate output heads for NHP and human scores. Human labels are available for Library C only (~100–500k variants). Use the NHP head to impute human labels for Library A/B variants not tested in human organotypic (regularised imputation, not hard assignment).</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">4</div>
+        <div class="pipeline-step-content">
+          <h4>Incorporate receptor binding as a mechanistic feature</h4>
+          <p>Receptor binding scores from bead pulldown as a feature (not label) for the oracle. Octet KD values for the subset of tested variants used as a supervised label for receptor affinity head. This mechanistic layer improves generalisation to novel sequences by providing physical grounding.</p>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-step-num">5</div>
+        <div class="pipeline-step-content">
+          <h4>Train cVAE on full labelled variant space</h4>
+          <p>Condition on property vector derived from oracle scores. Regularise latent space with KL annealing to prevent posterior collapse. Validate by checking: decoded sequences are valid amino acids, predicted oracle scores for decoded sequences are consistent with the conditioning vector.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Uncertainty Quantification — Critical for Active Learning</h3>
+    <p>The oracle must output uncertainty estimates, not just point predictions. This is essential for the active learning loop that will drive Round 2 library design: you want to select variants where (a) predicted properties are good AND (b) the model is uncertain, so you learn new information. Variants where the model is confident — even if good — teach the model less. This explore/exploit balance is the core of efficient directed evolution with ML.</p>
+
+    <div class="callout callout-recommendation">
+      <div class="callout-title">Recommendation — Deep Ensemble Uncertainty</div>
+      <p>Train 5–10 independent oracle models with different random seeds and random data splits. Use the variance across ensemble predictions as the uncertainty estimate. This is more reliable for protein sequence data than MC Dropout and scales well to the data volumes in this programme. Variants in the top 10% of predicted score AND top 25% of uncertainty are the primary targets for Round 2 exploration.</p>
+    </div>
+
+    <h3>Data Package Size Requirements for ML</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dataset Component</th><th>Expected Rows</th><th>Expected Columns</th><th>Storage Estimate</th><th>Minimum for ML Training</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Master variant table</td><td>500k–1.5M</td><td>~200</td><td>~2–8 GB (Parquet)</td><td class="green">Sufficient</td></tr>
+          <tr><td>High-confidence labelled variants</td><td>50k–200k</td><td>~50 labels</td><td>~500 MB</td><td class="green">Sufficient for Oracle</td></tr>
+          <tr><td>ESM2 embeddings cache</td><td>1.5M variants</td><td>1280 dimensions</td><td>~7 GB</td><td class="amber">Pre-compute and cache</td></tr>
+          <tr><td>Structure predictions (ESMFold)</td><td>50k top variants</td><td>PDB coordinates</td><td>~50 GB</td><td class="amber">Batch GPU compute required</td></tr>
+          <tr><td>cVAE training set</td><td>50k–200k</td><td>embed + label</td><td>~2 GB</td><td class="green">Sufficient</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Compute Requirements</h3>
+    <p>For Round 1 training and initial oracle deployment: 1–2 × A100 GPUs (80GB VRAM) for ESM2 fine-tuning and cVAE training. Storage: 500 GB SSD minimum for embeddings cache and Parquet data. RAM: 256 GB for large-scale data joins. Cloud-native deployment on AWS (SageMaker) or GCP is recommended over on-premise for flexibility in scaling GPU access. Total training time estimate for Round 1 (oracle + cVAE): 3–5 days on 2 × A100.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-number">Section 08</div>
+    <h2>Cross-Species Translation Framework</h2>
+
+    <h3>Building the Species Transfer Matrix</h3>
+    <p>The core analytical deliverable of Round 1 is a quantitative species transfer matrix: for each class of VRVIII loop 7-mer sequence motif, what is the probability that a variant enriched in NHP tissue X shows transduction in human cell type Y? This matrix is built from the overlap between NHP Library A data and human organotypic Library C data for the subset of shared variants.</p>
+
+    <p>The matrix should be stratified by: (1) primary amino acid motif characteristics (charge, hydrophobicity of the insert), (2) NHP enrichment tier (high/medium/low), and (3) receptor binding status. Over multiple rounds, this matrix becomes the primary tool for confident prediction of human relevance from NHP data alone.</p>
+
+    <div class="callout callout-key">
+      <div class="callout-title">Key Finding to Test — The NHP Predictive Horizon</div>
+      <p>One of the most valuable hypotheses to test in this dataset: is there a sequence motif class for which NHP enrichment > threshold X is always predictive of human transduction? If yes, you can use NHP data as a high-confidence proxy for human in rounds where organotypic testing is rate-limiting. This reduces the bottleneck of human organotypic culture in later rounds.</p>
+    </div>
+
+    <h3>Rodent Model Design for Maximum Translational Value</h3>
+    <p>In the rodent disease model, the primary failure mode is using a mouse-optimised variant selection — variants that work in mice due to murine receptor orthologue interaction — rather than the variants validated in NHP and human systems. Since your pipeline pre-selects for NHP + human validated variants before rodent testing, this failure mode is substantially mitigated. However, consider the following:</p>
+
+    <ul class="xlist">
+      <li>Always include a NHP-only positive control variant in the rodent study (one that passed NHP but not human organotypic). This negative control allows you to confirm that the rodent model is NOT selecting for NHP-specific sequence features, validating the rodent data as a human-relevant efficacy readout</li>
+      <li>Include a humanised mouse model if available for your target tissue — this expresses human receptor orthologues and collapses the species gap at the receptor level</li>
+      <li>Sequence the rodent output libraries and compare enrichment patterns to NHP and human organotypic. Calculate correlation between rodent and human tropism scores — this correlation coefficient is an important calibration metric for interpreting rodent disease model data in future rounds</li>
+    </ul>
+
+    <h3>The Interspecies Concordance Score — A Novel ML Feature</h3>
+    <p>For each variant seen in multiple species screens, compute an interspecies concordance score (ICS): the mean pairwise Spearman rank correlation of enrichment scores across NHP, human organotypic, rodent (for the shared subset). A high ICS variant is enriched consistently across species — it likely binds a conserved receptor epitope. A low ICS variant shows species-specific enrichment — it is interesting mechanistically but risky therapeutically. The ICS should be encoded as an explicit feature in the ML oracle and used as a diversity/safety label in Pareto optimisation.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-number">Section 09</div>
+    <h2>Comparative Analysis — Statistics, Venn Diagrams & Controls</h2>
+
+    <h3>Venn Analysis Framework</h3>
+    <p>The most important Venn diagram in your pipeline is the five-way intersection across your five qualification criteria: producible ∩ NHP-positive ∩ human-positive ∩ receptor-binding ∩ low-off-target. Each set boundary must be defined by a quantitative threshold, not a binary call — use upset plots (UpSetR in R, upsetplot in Python) rather than classical Venn diagrams once you have more than 3 sets. Venn diagrams with 5+ sets are visually uninterpretable and scientifically misleading.</p>
+
+    <p>Key intersections to report explicitly:</p>
+    <ul class="xlist">
+      <li><strong>NHP ∩ Human organotypic</strong> — the cross-species translation set; its size is the single most important outcome of Round 1</li>
+      <li><strong>NHP ∩ Receptor binding</strong> — mechanistically validated NHP hits; highest confidence tier for further development</li>
+      <li><strong>Human ∩ Receptor binding</strong> — human-validated receptor-mechanism variants; use as positive training examples for the cVAE</li>
+      <li><strong>NHP only (not human)</strong> — NHP-specific variants; feed into the species transfer model as negative examples for human prediction</li>
+      <li><strong>Human only (not NHP)</strong> — surprising human-positive NHP-negative variants; mechanistically important, may reveal human-specific receptor interactions</li>
+    </ul>
+
+    <h3>Statistical Framework</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Analysis</th><th>Method</th><th>Correction</th><th>Report</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Differential enrichment (tissue vs input)</td><td>DESeq2 negative binomial</td><td>Benjamini-Hochberg FDR</td><td>log2FC, padj, confidence interval</td></tr>
+          <tr><td>Between-animal reproducibility</td><td>Pearson R on log-enrichment</td><td>None — QC metric</td><td>R, p-value, scatter plot</td></tr>
+          <tr><td>Cross-species concordance</td><td>Spearman rank correlation</td><td>None — descriptive</td><td>ρ, 95% CI by bootstrap</td></tr>
+          <tr><td>Library-to-library comparison</td><td>Wilcoxon rank-sum on enrichment distributions</td><td>Bonferroni for pairwise</td><td>Median, IQR, p-value</td></tr>
+          <tr><td>Motif enrichment (amino acid position)</td><td>Fisher's exact / hypergeometric</td><td>BH FDR</td><td>Odds ratio, enrichment logo</td></tr>
+          <tr><td>Receptor binding vs. transduction</td><td>Linear regression / Pearson R</td><td>None — exploratory</td><td>R², slope, p-value</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Controls — Complete List</h3>
+    <p>Controls are the backbone of interpretable data. The following controls must be included in every experimental batch:</p>
+
+    <h4>Positive controls</h4>
+    <ul class="checklist">
+      <li>Parent serotype capsid (unmodified VRVIII loop) — provides baseline transduction comparator and controls for serotype-level batch effects</li>
+      <li>2–3 published high-performance 7-mer VRVIII inserts from literature (if available for your serotype) — calibrates enrichment score scale</li>
+      <li>Known receptor-binding AAV variant (e.g., AAVR-binding reference) — controls receptor pulldown efficiency</li>
+    </ul>
+
+    <h4>Negative controls</h4>
+    <ul class="checklist">
+      <li>A known non-transducing capsid mutant (VP3 assembly-deficient point mutant) — confirms that enrichment reflects transduction, not naked DNA contamination</li>
+      <li>Empty capsid (no genome) at matched physical titre — controls for non-specific capsid interactions in receptor assays</li>
+      <li>Scrambled peptide inserts (randomised amino acids, length-matched) — provides true null distribution for enrichment score interpretation; minimum 3 scrambled controls per batch</li>
+      <li>Non-transduced cells for organotypic assays — baseline for normalisation</li>
+      <li>Unrelated receptor on beads (for pulldown specificity control)</li>
+    </ul>
+
+    <h4>Process controls</h4>
+    <ul class="checklist">
+      <li>Spike-in synthetic DNA standard at known concentration — controls sequencing efficiency and normalisation across runs</li>
+      <li>Between-batch reference library — a fixed aliquot of the same library run in every batch; enables batch-effect correction</li>
+    </ul>
+
+    <h3>Sequence Space Visualisation</h3>
+    <p>Visualise the variant landscape using UMAP dimensionality reduction applied to ESM2 embeddings. Colour points by: enrichment tier, library of origin, species concordance score, and Pareto fitness. This provides the primary intuitive map of the learned sequence space and is essential for the team to understand what the ML model is doing. Include in every round report.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-number">Section 10</div>
+    <h2>Novel Recommendations Not in the Current Design</h2>
+
+    <h3>1. Epistatic Interaction Mapping at the Motif Level <span class="novel">Novel</span></h3>
+    <p>Your current design treats each 7-mer as an independent variant. For ML training and lead optimisation, it is important to explicitly model epistasis — the interaction effects between amino acid positions within the 7-mer. A variant where position 3 = Arg is highly productive when position 7 = Asp, but not when position 7 = Lys, represents an epistatic interaction that standard additive models miss.</p>
+    <p>Recommendation: Include a focused deep mutational scanning (DMS) experiment alongside the large library screens. Take 5–10 top-performing variants from Round 1 and synthesise all single-position substitutions (7 positions × ~19 substitutions = ~133 variants per parent). Run these at high depth. This generates an epistatic matrix for each lead that dramatically improves cVAE training in the vicinity of leads.</p>
+
+    <h3>2. Structural Ensemble Prediction as an ML Input Layer <span class="novel">Novel</span></h3>
+    <p>The VRVIII loop is surface-exposed and its functional conformation depends on the insert sequence. ESMFold or AlphaFold2 multimer predictions of the loop + receptor interface can be computed at scale for shortlisted variants. The predicted buried surface area, electrostatic surface potential, and loop flexibility (B-factor analogue) should be added as structural features to the oracle model. This is computationally tractable for up to 50k variants on a 2-GPU system over a few days. The Dyno Therapeutics BRAVE platform explicitly includes structural prediction in its variant scoring pipeline.</p>
+
+    <h3>3. Immune Evasion Scoring <span class="novel">Novel</span></h3>
+    <p>For a human gene therapy programme, NAb (neutralising antibody) evasion is as important as transduction. Variants in your VRVIII loop that present novel epitopes to the human immune system may be efficiently neutralised by pre-existing anti-AAV antibodies or by de novo immune responses, particularly if the 7-mer insert creates a new B-cell epitope. Recommendation: Include a computational epitope prediction step (NetMHCpan for T-cell epitopes, BepiPred or SEPPA for B-cell epitopes) as an ML filter. Variants with predicted immunogenic inserts should be flagged for experimental NAb testing (serum panel from seropositive donors) before advancing to clinical lead status.</p>
+
+    <h3>4. Phylogenetic Regularisation of the cVAE <span class="novel">Novel</span></h3>
+    <p>The cVAE latent space, if trained only on your experimental variants, will not be aware of the evolutionary constraints that determine which capsid sequences are stable and functional. Incorporate a phylogenetic regulariser: weight the KL divergence term in the cVAE ELBO by a sequence-distance-from-consensus term, penalising the decoder for generating sequences that deviate far from the evolutionary centre of mass of the known functional capsid space. This substantially reduces the rate of non-functional sequences in cVAE generations, a known limitation of standard VAEs applied to protein sequence data.</p>
+
+    <h3>5. Single-Cell Resolution Organotypic Assay <span class="novel">Novel</span></h3>
+    <p>Current organotypic transduction assays measure bulk enrichment. Consider implementing a single-cell resolution readout using scRNA-seq or CITE-seq on transduced organotypic cultures, where the AAV barcode is captured alongside the cell's transcriptome. This allows: (a) cell-type-specific tropism scoring (neuron vs. astrocyte vs. oligodendrocyte enrichment within the same culture), (b) transcriptional response to transduction as a toxicity readout, and (c) a dramatically richer feature vector per variant for ML training. This approach has been demonstrated in the Bhatt lab and Grimm lab contexts and is becoming accessible to standard research labs.</p>
+
+    <h3>6. Iterative Library Design Using Bayesian Optimisation <span class="novel">Novel</span></h3>
+    <p>For Round 2 library design, do not simply select the top-N variants from Round 1 rankings. Use a batch Bayesian optimisation acquisition function (e.g., q-EI, q-UCB) applied to the oracle's posterior predictive distribution to select a diverse but efficient set of candidates that maximally reduces uncertainty in the high-performing region of sequence space. This is equivalent to what Dyno uses in its AGATE platform and directly implements the explore/exploit balance you described. Libraries selected this way consistently outperform naïve top-N selection in deep learning-guided directed evolution benchmarks.</p>
+
+    <h3>7. Synonymous DNA Variant Tracking <span class="novel">Novel</span></h3>
+    <p>The same amino acid 7-mer can be encoded by multiple DNA sequences (synonymous variants). In NNK libraries, these synonymous variants are generated independently and can serve as internal biological replicates for any given amino acid sequence. Track synonymous variants explicitly in your pipeline — their concordance in enrichment scores is a powerful internal QC metric and their divergence can reveal codon-usage effects on packaging efficiency, which is an ML-relevant feature distinct from amino acid sequence.</p>
+
+    <h3>8. Longitudinal Time-Course Sequencing in NHP <span class="novel">Novel</span></h3>
+    <p>If the NHP protocol allows, collect tissue samples at multiple time points post-injection (e.g., 2 weeks and 8 weeks) and sequence separately. Early time points capture variants that transduce quickly (may reflect cell surface binding efficiency). Late time points capture variants that establish durable transduction (may reflect nuclear retention and episome stability). The kinetic enrichment trajectory per variant is a feature dimension that single-endpoint sequencing misses entirely, and it is uniquely available in an NHP study where rodent studies can rarely extend to 8 weeks with appropriate power.</p>
+
+    <h3>Summary Priority Ranking of Novel Additions</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Recommendation</th><th>Effort</th><th>ML Value</th><th>Therapeutic Value</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bayesian optimisation for Round 2 design (6)</td><td class="amber">Medium</td><td class="green">Very High</td><td class="green">High</td><td class="green">Immediate</td></tr>
+          <tr><td>Species transfer logistic regression (Section 1)</td><td class="green">Low</td><td class="green">Very High</td><td class="green">High</td><td class="green">Immediate</td></tr>
+          <tr><td>Deep mutational scanning at leads (1)</td><td class="amber">Medium</td><td class="green">High</td><td class="green">High</td><td class="green">Round 1.5</td></tr>
+          <tr><td>Immune evasion scoring (3)</td><td class="green">Low (computational)</td><td class="amber">Medium</td><td class="green">Very High</td><td class="green">Round 1 analysis</td></tr>
+          <tr><td>Structural prediction features (2)</td><td class="amber">Medium (compute)</td><td class="green">High</td><td class="amber">Medium</td><td class="amber">Round 2</td></tr>
+          <tr><td>Multiplexed receptor bead panel (Section 6)</td><td class="amber">Medium</td><td class="green">High</td><td class="green">High</td><td class="amber">Round 2</td></tr>
+          <tr><td>Single-cell organotypic (5)</td><td class="red">High</td><td class="green">Very High</td><td class="green">Very High</td><td class="amber">Round 2–3</td></tr>
+          <tr><td>Time-course NHP sequencing (8)</td><td class="green">Low (if NHP already running)</td><td class="amber">Medium</td><td class="green">High</td><td class="green">Immediate if feasible</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="section">
+    <div class="section-number">Closing Assessment</div>
+    <h2>Overall Verdict & Key Success Factors</h2>
+
+    <p>The programme as designed is scientifically rigorous, translatable, and well-positioned to generate the training data required for a state-of-the-art ML capsid oracle. The NHP-first architecture with human organotypic calibration and receptor-binding mechanistic anchoring is advisable — it is the correct inversion of the historical rodent-first paradigm that has caused so many translation failures in the AAV gene therapy field.</p>
+
+    <p>The three factors that will most determine whether the ML system succeeds or fails are:</p>
+    <ul class="checklist">
+      <li><strong>Sequencing quality and UMI implementation.</strong> No amount of ML sophistication recovers a dataset with PCR jackpot bias or insufficient depth. Invest in this upfront.</li>
+      <li><strong>Biological replication across species.</strong> Three NHP animals minimum, three organotypic biological replicates minimum. With n=2, confidence intervals on per-variant enrichment scores are too wide for reliable ML label assignment.</li>
+      <li><strong>Cross-species transfer function as a first-class analytical output.</strong> The NHP–human correlation from the parallel NNK library (Library C) is the single most important piece of data for Round 2 design and for the long-term predictive value of the oracle. Treat its analysis with the same priority as the NHP enrichment analysis itself.</li>
+    </ul>
+
+    <div class="callout callout-key">
+      <div class="callout-title">Final Recommendation</div>
+      <p>Define the master variant table schema and the ML feature/label dictionary <em>before</em> the first experiment starts. Every wetlab protocol choice — number of PCR cycles, tissue dissection method, organotypic cell type composition — has a direct consequence for data quality in this table. Working backwards from the ML training requirements to the wetlab design is the single most effective way to ensure the data produced is usable for the intended ML purpose. Schedule a joint wetlab-data science protocol review session before library production begins.</p>
+    </div>
+
+    <p class="footnote" style="margin-top:2rem">Report covers: NGS data strategy, directed evolution pipeline, quality gates, barcoding, receptor binding integration, ML architecture (oracle, cVAE, Pareto optimiser), cross-species translation framework, statistics and controls, and novel recommendations. References: Fit4Function (Cabanes-Creus et al. 2020), BRAVE (Weinmann et al. 2020), Dyno Therapeutics AGATE platform, PHP.B LY6A receptor finding (Hordeaux et al. 2019; Huang et al. 2019), AAV directed evolution ML reviews (Zhu et al. 2023), Capsida Biotherapeutics CNS tissue engineering, ESM2 (Lin et al. 2023), AlphaFold2 (Jumper et al. 2021).</p>
+  </div>
+
+</div>
+</body>
+</html>

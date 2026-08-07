@@ -1,0 +1,273 @@
+meta:
+  output: "Machine learning for Rupert/transcripts/parvotec_aorta_proposal.html"
+  title: "Aorta — Projektproposal"
+  subtitle: "Work Packages · Gantt · Vascular Oracle Manual"
+  description: "AAV Capsid Engineering × ML-guided Vascular Targeting · August 2026"
+  accent: "#39bfff"
+  back_href: "parvotec_aorta_saxs_analysis.html"
+  back_label: "← Aorta Analyse"
+  nav_links:
+    - href: "#executive"
+      label: "Executive Summary"
+    - href: "#workpackages"
+      label: "Work Packages"
+    - href: "#gantt"
+      label: "Gantt"
+    - href: "#oracle-arch"
+      label: "Oracle Architektur"
+    - href: "#oracle-data"
+      label: "Datenpipeline"
+    - href: "#oracle-model"
+      label: "Modell-Spezifikation"
+    - href: "#oracle-run"
+      label: "Betrieb & API"
+    - href: "#milestones"
+      label: "Meilensteine"
+
+executive:
+  headline: >
+    **Parvotec — Aorta Program** entwickelt einen ML-optimierten AAV-Vektor mit selektivem
+    Tropismus für vaskuläre glatte Muskelzellen (VSMC) der Tunica Media als Plattform für
+    lokale Gentherapie bei Aortenaneurysma (AAA/TAA).
+  callout: >
+    **Kernhypothese:** Durch DMS-Screening in primären humanen Aorten-VSMC (HUASMC) und
+    Endothelzellen (HAEC), kombiniert mit ESM-2 Embeddings und Multi-objective BO, kann
+    in 3 Runden ein AAV-Capsid mit ≥10× verbesserter VSMC-Transduktion und minimalem
+    systemischen Leber-Targeting identifiziert werden.
+  params:
+    Laufzeit: "24 Monate (M1–M24)"
+    Work Packages: "5 (WP1–WP5)"
+    Schlüsseltechnologien: "ESM-2/3, cVAE, Multi-objective BO, DMS, SAXS, SEC-SAXS"
+    Ziel-Zelltypen: "Primär: VSMC (Tunica Media) · Sekundär: EC (Tunica Intima)"
+    Therapeutische Indikation: "Abdominales Aortenaneurysma (AAA), Thorakales Aortenaneurysma (TAA)"
+    Applikationsroute: "Periadventitial (chirurgisch) oder Katheter-basiert intraluminal"
+    Primäre Erfolgsmetrik: "VSMC Transduktionseffizienz ≥80% bei MOI 10⁴ · Leber Off-target ≤5%"
+    Genetische Payload: "TIMP1/TIMP2 Überexpression oder shMMP9 (AAA)"
+
+work_packages:
+  - id: wp1
+    color: "#39bfff"
+    label: "WP1 · M1–M3"
+    title: "Target Definition & Vaskuläres Zielprofil"
+    description: >
+      Definition des Target Product Profile (TPP) für den vaskulären AAV-Vektor.
+      Auswahl der therapeutischen Hypothese (AAA) und des primären Zelltyps (VSMC).
+    tasks:
+      - "Systematisches Review: AAV-Vektoren für vaskuläre Anwendungen 2020–2026"
+      - "Indikations-Entscheidung: AAA (MMP/TIMP-Achse) als Primärindikation. Rationale: 60% Reduktion Aneurysma-Wachstum AAV8-shMMP9 in ApoE⁻/⁻ Mäusen"
+      - "Zelltyp-Priorisierung: VSMC (Tunica Media) primär, EC (Tunica Intima) sekundär"
+      - "Serotyp-Selektion: AAV6 als Backbone (~40% VSMC in vitro). Library: VP1 453–460 und 587–594"
+      - "Freedom-to-Operate (FTO) Analyse für AAV VSMC-Targeting und ML-Capsid-Design"
+    resources: "Bioinformatiker (1 FTE), Kardiologischer Berater, Patent Attorney"
+    budget: "€35k–60k"
+    risk: "Niedrig"
+    deliverables: "D1.1 Vaskuläres TPP · D1.2 Competitive Landscape · D1.3 Library Design Spec · D1.4 FTO-Memo"
+    gantt_left: 0
+    gantt_width: 12.5
+    milestones:
+      - pct: 12.5
+        label: "TPP"
+
+  - id: wp2
+    color: "#7dd3fc"
+    label: "WP2 · M2–M8"
+    title: "Vaskuläre DMS Library & SAXS Datengenerierung"
+    description: >
+      Synthese der AAV VSMC-Targeting Library (~1M Varianten). Dual-Screen in HUASMC
+      und Hepatozyten. SAXS-basierte Strukturcharakterisierung der Top-100 Kandidaten.
+    tasks:
+      - "**M2–M3:** 7-Mer Library an VP1 453–460 und 587–594. Oligonukleotid-Pool (Twist). AAV6-Backbone. Titer ≥5×10¹² vg/mL"
+      - "**M3–M5:** HUASMC Screen (Lonza CC-2571, Passage ≤8). MOI 10⁴ vg/cell. FACS: αSMA+ vs. CD31+. Paralleler HAEC Screen"
+      - "**M4–M6:** Ko-Infektion HUASMC + THLE-2 Hepatozyten. Dual-Score: VSMC_Score – 0.5 × Liver_Score. Negativselektion: Liver_Score >2.0 → eliminieren"
+      - "**M6–M8:** AUC Full:Empty Screen Top-1000. SEC-SAXS Top-100 (BM29/ESRF oder P12/DESY). SAXS-Labels: Rg, Dmax, F:E, PDI"
+    resources: "Lab-Team (3 FTE), SAXS Beamtime (ESRF/DESY), HUASMC-Lieferant"
+    budget: "€310k–450k"
+    risk: "Mittel (HUASMC-Variabilität, SAXS-Beamtime)"
+    deliverables: "D2.1 Library (~1M) · D2.2 VSMC Screen · D2.3 Dual-Screen (VSMC/Leber) · D2.4 SAXS Strukturdaten · D2.5 Training Dataset (6 Labels)"
+    gantt_left: 4.17
+    gantt_width: 29.16
+    milestones:
+      - pct: 33.33
+        label: "Dataset"
+
+  - id: wp3
+    color: "#a78bfa"
+    label: "WP3 · M4–M10"
+    title: "Vascular Oracle Infrastruktur & Modelltraining"
+    description: >
+      Aufbau des Vascular Fitness Oracle: 6-Task Predictor, cVAE mit Negativselektion
+      gegen Leber, SAXS-integrierter Stabilitätshead.
+    tasks:
+      - "**M4–M5:** ETL-Pipeline inkl. SAXS-Merge. Composite Score = VSMC_Score – 0.5 × Liver_Score. Train/Val/Test Split (70/15/15)"
+      - "**M5–M6:** ESM-2 650M Deployment. Full VP1 + Insert → 1280-dim. Ablationstest ESM-2 vs. ESM-3"
+      - "**M6–M8:** 6-Task NN: VSMC, EC, Leber, Rg, F:E, PDI. Masked Loss für SAXS-Heads (nur 100 Varianten gelabelt). Loss-Weighting: 0.35/0.15/0.20/0.10/0.15/0.05"
+      - "**M7–M9:** cVAE mit 6-dim Konditionierungsvektor. Leber_penalty als negatives Conditioning. Diversity-Regularisierung"
+    resources: "ML-Engineer (2 FTE), GPU Compute (A100), Bioinformatik"
+    budget: "€160k–240k"
+    risk: "Mittel (SAXS-Feature-Integration, 6-Task-Balancing)"
+    deliverables: "D3.1 ESM-2 Service · D3.2 Vascular Predictor v1.0 (VSMC r ≥0.60) · D3.3 cVAE v1.0 mit Negativselektion · D3.4 Oracle Report"
+    gantt_left: 12.5
+    gantt_width: 29.17
+    milestones:
+      - pct: 41.67
+        label: "v1.0"
+
+  - id: wp4
+    color: "#f472b6"
+    label: "WP4 · M8–M18"
+    title: "Iterative ML-guided Vaskuläre Optimierung"
+    description: >
+      Drei BO-Runden für vaskuläres Targeting. Leber-Off-target als hartes Constraint.
+      VSMC-Tropismus × EC-Tropismus × Leber × SAXS-Stabilität.
+    tasks:
+      - "**Runde 1 (M8–M11):** cVAE generiert 500 Kandidaten (VSMC_goal=0.80, Leber_penalty=0.10). EHVI Top-50. FACS VSMC/EC + Hepatozyten Ko-Kultur. Oracle Update"
+      - "**Runde 2 (M11–M14):** Active Learning: 60% Uncertainty, 40% High-Value. Erwartet: ≥1 Kandidat VSMC ≥0.65 bei Leber ≤0.08. SAXS Top-10"
+      - "**Runde 3 (M14–M18):** 200 Kandidaten, 30 validiert. Pareto-Front: VSMC ≥0.80, Leber ≤0.05, F:E ≥0.75, Rg ≤13.5 nm. Final SAXS SEC Top-10"
+    resources: "Lab (2 FTE) + ML (1 FTE), kurze SAXS Beamtime Runde 2+3"
+    budget: "€340k–500k"
+    risk: "Mittel-Hoch (VSMC/Leber-Tradeoff)"
+    deliverables: "D4.1–D4.2 Runden-Reports · D4.3 Lead Panel (Top-10 Pareto, SAXS) · D4.4 Vascular Oracle v2.0"
+    gantt_left: 29.17
+    gantt_width: 45.83
+    milestones:
+      - pct: 54.17
+        label: "Lead Panel"
+      - pct: 75
+        label: "Optimierung ✓"
+
+  - id: wp5
+    color: "#34d399"
+    label: "WP5 · M14–M24"
+    title: "In Vivo Validierung & IND-Enabling"
+    description: >
+      Validierung der Top-3 Lead-Kandidaten im CaCl₂-AAA-Rattenmodell.
+      Periadventitiale Applikation. IND-Enabling Package.
+    tasks:
+      - "**M14–M17:** Top-3 in HUASMC, HAEC, HCASMC, Rattenhepatozyten. GFP-Reporter FACS. 3D-Aortenwand-Organoid-Assay. SAXS Vollcharakter (BM29/ESRF)"
+      - "**M16–M20:** CaCl₂-AAA-Modell (n=12/Gruppe, Sprague-Dawley). Periadventitiale Injektion AAV + AAV-TIMP1 (10¹¹ vg/Tier). Ultraschall Woche 4/8/12. Endpoint: ≥40% Reduktion Aneurysma-Expansion"
+      - "**M18–M22:** Biodistribution qPCR (Aorta, Leber, Herz, DRG, Niere). ALT/AST. NAb-Titer. T-Zell-ELISpot. Ziel: Leber ≤10% Aorten-Kopien"
+      - "**M20–M24:** GMP-Herstellungsprozess. 6-Monat Stabilitätsstudien (SAXS + Infektivität). Einzeldosis-Tox (GLP). FDA Pre-IND Briefing"
+    resources: "Lab (3 FTE), CRO (Tox/GLP), Tierhaus, Reg. Affairs"
+    budget: "€480k–700k"
+    risk: "Mittel (CaCl₂-Modell-Variabilität)"
+    deliverables: "D5.1 In Vitro + SAXS · D5.2 In Vivo AAA · D5.3 Biodistribution + Sicherheit · D5.4 IND Package Draft"
+    gantt_left: 54.17
+    gantt_width: 45.83
+    milestones:
+      - pct: 99.5
+        label: "IND"
+
+budget_total:
+  ftes: "6–9 peak"
+  duration: "24 Monate"
+  range: "€1.33M–1.95M"
+  milestone: "IND-ready VSMC Lead"
+
+milestones_table:
+  - month: M3
+    milestone: "Vaskuläres TPP + FTO finalisiert"
+    deliverable: "D1.1–D1.4"
+    wp: WP1
+  - month: M5
+    milestone: "AAV6 Vaskuläre Library produziert (QC)"
+    deliverable: "Library QC Report"
+    wp: WP2
+  - month: M7
+    milestone: "Dual-Screen (VSMC + Leber) abgeschlossen"
+    deliverable: "D2.2 + D2.3"
+    wp: WP2
+  - month: M8
+    milestone: "SAXS Top-100 Charakterisierung abgeschlossen"
+    deliverable: "D2.4 + D2.5"
+    wp: WP2
+  - month: M10
+    milestone: "Vascular Oracle v1.0 (6-Task, VSMC r ≥0.60)"
+    deliverable: "D3.1–D3.4"
+    wp: WP3
+  - month: M11
+    milestone: "BO Runde 1 abgeschlossen"
+    deliverable: "D4.1"
+    wp: WP4
+  - month: M14
+    milestone: "BO Runde 2 + Lead Panel Draft"
+    deliverable: "D4.2"
+    wp: WP4
+  - month: M18
+    milestone: "Lead Candidate Panel Final (Top-10, SAXS)"
+    deliverable: "D4.3 + D4.4 Oracle v2.0"
+    wp: WP4
+  - month: M19
+    milestone: "In Vitro Vollcharakter. Top-3 (VSMC, EC, SAXS)"
+    deliverable: "D5.1"
+    wp: WP5
+  - month: M22
+    milestone: "In Vivo AAA + Biodistribution"
+    deliverable: "D5.2 + D5.3"
+    wp: WP5
+  - month: M24
+    milestone: "IND-Enabling Package + FDA Pre-IND"
+    deliverable: "D5.4 — Projektziel erreicht"
+    wp: WP5
+
+risks:
+  - risk: "VSMC / Leber Tradeoff nicht auflösbar"
+    probability: "Mittel"
+    impact: "Sehr Hoch"
+    mitigation: "Periadventitiale Route eliminiert systemisches Leber-Off-target. Threshold auf 0.25 lockern möglich"
+  - risk: "HUASMC Batch-Variabilität"
+    probability: "Mittel"
+    impact: "Mittel"
+    mitigation: "Parallel-Freeze 50 Flaschen HUASMC bei Projektstart. Technische Triplikate für kritische Kandidaten"
+  - risk: "SAXS Beamtime nicht verfügbar"
+    probability: "Niedrig-Mittel"
+    impact: "Mittel"
+    mitigation: "Backup: Labor-SAXS (Xenocs Nano-inXider oder Rigaku BioSAXS-1000)"
+  - risk: "CaCl₂-Modell keine Wirksamkeit"
+    probability: "Niedrig"
+    impact: "Hoch"
+    mitigation: "Backup: AngII-ApoE⁻/⁻ Maus. Intraaortaler Katheter-Zugang als Alternative"
+  - risk: "Oracle generalisiert nicht von HUASMC auf In Vivo VSMC"
+    probability: "Niedrig-Mittel"
+    impact: "Hoch"
+    mitigation: "Validierung Top-5 in primären Ratten-VSMC (ex vivo Aorten-Stück-Assay) vor In-Vivo"
+
+oracle:
+  type: "Vascular Fitness Oracle"
+  layers:
+    - num: "Layer 1"
+      title: "Embedding"
+      desc: "ESM-2 650M\nFull VP1 + Insert\nOutput: 1280-dim"
+    - num: "Layer 2"
+      title: "Predictor"
+      desc: "6-Task NN\nVSMC · EC · Leber\nRg · F:E · PDI"
+    - num: "Layer 3"
+      title: "Generator"
+      desc: "cVAE mit\nNegativselektion\nLeber-Penalty"
+    - num: "Layer 4"
+      title: "Optimizer"
+      desc: "Multi-obj. BO\nVSMC↑ EC↑ Leber↓\nPareto + Constraint"
+  outputs:
+    - name: "VSMC Tropismus"
+      range: "0–1"
+      weight: 0.35
+      description: "Primäres Ziel — glatte Muskelzellen Aortenwand"
+    - name: "EC Tropismus"
+      range: "0–1"
+      weight: 0.15
+      description: "Sekundäres Ziel — Endothelzellen"
+    - name: "Leber Off-target"
+      range: "0–1"
+      weight: 0.20
+      description: "MINIMIEREN — hartes Constraint: >0.15 → disqualifiziert"
+    - name: "Rg / SAXS"
+      range: "nm"
+      weight: 0.10
+      description: "Strukturelle Integrität (normalisiert auf WT-AAV6)"
+    - name: "Full:Empty Ratio"
+      range: "0–1"
+      weight: 0.15
+      description: "Produktionseffizienz — therapeutisch relevante Partikel"
+    - name: "PDI"
+      range: "0–1"
+      weight: 0.05
+      description: "Polydispersitätsindex — Präparat-Homogenität"

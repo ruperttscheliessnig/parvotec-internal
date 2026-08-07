@@ -1,0 +1,256 @@
+meta:
+  output: "Machine learning for Rupert/transcripts/parvotec_proposal.html"
+  title: "Parvotec — Projektproposal"
+  subtitle: "Work Packages · Gantt · Fitness Oracle Manual"
+  description: "AAV Capsid Engineering × ML-guided Optimization · August 2026"
+  accent: "#39bfff"
+  back_href: "parvotec_asgct2026_analysis_bilingual.html"
+  back_label: "← Analyse"
+  nav_links:
+    - href: "#executive"
+      label: "Executive Summary"
+    - href: "#workpackages"
+      label: "Work Packages"
+    - href: "#gantt"
+      label: "Gantt"
+    - href: "#oracle-arch"
+      label: "Oracle Architektur"
+    - href: "#oracle-data"
+      label: "Datenpipeline"
+    - href: "#oracle-model"
+      label: "Modell-Spezifikation"
+    - href: "#oracle-run"
+      label: "Betrieb & API"
+    - href: "#milestones"
+      label: "Meilensteine"
+
+executive:
+  headline: >
+    **Parvotec** entwickelt einen AAV-Vektor mit selektivem Tropismus für nozizeptive Neuronen
+    (Dorsal Root Ganglia, DRG) und effizienter retrograder Transportkapazität als Plattform
+    für periphere Schmerzgentherapie.
+  callout: >
+    **Kernhypothese:** Durch Kombination von experimentellem Deep Mutational Scanning (DMS),
+    ESM-2 Protein Language Model Embeddings, konditionaler generativer Modellierung (cVAE)
+    und Multi-objective Bayesian Optimization kann in 3–4 iterativen Runden ein nozizeptiver
+    DRG-spezifischer AAV-Vektor mit 5–10× verbessertem Tropismus gegenüber Wild-type identifiziert werden.
+  params:
+    Laufzeit: "24 Monate (M1–M24)"
+    Work Packages: "5 (WP1–WP5)"
+    Schlüsseltechnologien: "ESM-2/3, cVAE, Multi-objective BO, DMS, NGS"
+    Ziel-Zelltyp: "Nozizeptive Neuronen (TRPV1+, CGRP+) in DRG L4–S1"
+    Applikationsroute: "Intrathecal (IT) oder intraplantar peripheral"
+    Primäre Erfolgsmetrik: "Tropismus Score ≥0.80 in primären Ratten-DRG-Neuronen"
+
+work_packages:
+  - id: wp1
+    color: "#39bfff"
+    label: "WP1 · M1–M3"
+    title: "Target Definition & Competitive Intelligence"
+    description: >
+      Systematische Literaturrecherche und Wettbewerbsanalyse. Definition des Zielprofils
+      (Target Product Profile, TPP) für den AAV-Vektor.
+    tasks:
+      - "Systematisches Review aller relevanten AAV-DRG-Tropismus-Publikationen (2020–2026)"
+      - "Competitive Landscape Matrix: Exgenesis EXG117, SereNeuro SN102, Sangamo, Sanofi GMU037, WhiteLab CapsidFlow, PackGene π-Icosa"
+      - "Definition des primären Zelltyps: TRPV1+ CGRP+ nozizeptive Neuronen in DRG L4–S1"
+      - "Serotyp-Selektion: AAV6 als Backbone. 7-Mer Insertion Library-Design: VP1 533–540, 587–594"
+      - "Entwurf des Target Product Profile (TPP) mit Go/No-Go Kriterien"
+    resources: "Bioinformatiker (1 FTE), Wissenschaftlicher Berater"
+    budget: "€30k–50k"
+    risk: "Niedrig"
+    deliverables: "D1.1 Target Product Profile (TPP) · D1.2 Competitive Landscape Report · D1.3 Library Design Spec"
+    gantt_left: 0
+    gantt_width: 12.5
+    milestones:
+      - pct: 12.5
+        label: "TPP"
+
+  - id: wp2
+    color: "#7dd3fc"
+    label: "WP2 · M2–M8"
+    title: "DMS Library Design, Synthese & Datenerhebung"
+    description: >
+      Experimentelle Generierung des Trainings-Datasets. Synthese einer ~1 Million Varianten
+      AAV-Capsid-Library, Selection in nozizeptiven DRG-Neuronen, NGS-basierte Quantifizierung.
+    tasks:
+      - "**M2–M3:** Computationales Design der 7-Mer Insertion Library. Oligonukleotid-Pool Synthese (Twist Bioscience). Klonierung in AAV-Backbone. Produktion in HEK293T. Titer ≥10¹² vg/mL"
+      - "**M4–M6:** Primäre Ratten-DRG-Neuron-Kulturen (TRPV1-GFP+). Infektion mit Library (MOI = 10⁴ vg/cell). FACS-Sort für GFP+ (nozizeptive) vs. GFP− Neuronen"
+      - "**M5–M7:** PCR-Amplifikation der Barcode-Region. Illumina Sequenzierung (>100M Reads/Sample). Enrichment = log2(Freq_post/Freq_pre)"
+      - "**M6–M8:** In vivo Retrograde Transport Screen: Injektion in Pfote, DRG L4–L5 Entnahme nach 14d"
+    resources: "Lab-Team (3 FTE), Evotec-CRO Partnerschaft"
+    budget: "€280k–400k"
+    risk: "Mittel (Library-Qualität, Zell-Variabilität)"
+    deliverables: "D2.1 AAV Library (~1M) · D2.2 In Vitro DMS Dataset · D2.3 In Vivo Retrograde Dataset · D2.4 Curated Training Dataset (>500k)"
+    gantt_left: 4.17
+    gantt_width: 29.16
+    milestones:
+      - pct: 33.33
+        label: "Dataset"
+
+  - id: wp3
+    color: "#a78bfa"
+    label: "WP3 · M4–M10"
+    title: "Fitness Oracle Infrastruktur & Modelltraining"
+    description: >
+      Aufbau des ML-Stacks: ESM-2 Embedding Pipeline, Multi-task Fitness Predictor,
+      cVAE Generator. Produktion von Fitness Oracle v1.0.
+    tasks:
+      - "**M4–M5:** ETL-Pipeline für DMS-Daten. Quality Filters (Coverage ≥10 reads). Train/Val/Test Split (70/15/15)"
+      - "**M5–M6:** ESM-2 650M Deployment (A100 GPU). Batch-Processing ~1M Sequenzen → 1280-dim Vektoren"
+      - "**M6–M8:** Multi-task NN: 1280→512→256→128, ReLU, Dropout=0.15. 4 Outputs. Optuna Hyperparameter-Suche"
+      - "**M7–M9:** cVAE Training. Latent Dim=128. Conditioning auf Fitness-Zielvektor. Diversity/Validity/Novelty Evaluation"
+      - "**M8–M10:** End-to-End Integration. Benchmark vs. Random Baseline. Oracle v1.0 Release"
+    resources: "ML-Engineer (2 FTE), GPU Compute (A100)"
+    budget: "€150k–220k"
+    risk: "Mittel (Datenmenge, Generalisierung)"
+    deliverables: "D3.1 ESM-2 Embedding Service · D3.2 Fitness Predictor v1.0 (Spearman r ≥0.65) · D3.3 cVAE v1.0 · D3.4 Evaluation Report"
+    gantt_left: 12.5
+    gantt_width: 29.17
+    milestones:
+      - pct: 41.67
+        label: "v1.0"
+
+  - id: wp4
+    color: "#f472b6"
+    label: "WP4 · M8–M18"
+    title: "Iterative ML-guided Optimierungskampagnen"
+    description: >
+      Drei Bayesian Optimization Runden mit experimenteller Validierung. Multi-objective
+      Pareto-Front über Tropismus × Yield × Stabilität × Immunogenizität.
+    tasks:
+      - "**Runde 1 (M8–M11):** cVAE generiert 500 Kandidaten. EHVI selektiert Top-50. FACS/qPCR/DSF Validierung. Oracle Update"
+      - "**Runde 2 (M11–M14):** Active Learning: 60% Uncertainty-Regions, 40% High-Value. Erwartet: Tropismus ≥0.65"
+      - "**Runde 3 (M14–M18):** Convergenz. 200 Kandidaten, 30 validiert. Pareto-Front: 10–20 non-dominated. Erwartet: Tropismus ≥0.80"
+    resources: "Lab (2 FTE) + ML (1 FTE)"
+    budget: "€320k–480k"
+    risk: "Mittel-Hoch (Oracle-Generalisierung über Runden)"
+    deliverables: "D4.1–D4.2 Runden-Reports · D4.3 Lead Candidate Panel (Top-10 Pareto) · D4.4 Oracle v2.0"
+    gantt_left: 29.17
+    gantt_width: 45.83
+    milestones:
+      - pct: 54.17
+        label: "Lead Panel"
+      - pct: 75
+        label: "Optimierung ✓"
+
+  - id: wp5
+    color: "#34d399"
+    label: "WP5 · M14–M24"
+    title: "Lead Candidate Validierung & IND-Enabling"
+    description: >
+      Tiefergehende in vitro und in vivo Validierung der Top-3 Lead Kandidaten.
+      Datengenerierung für IND-Antrag.
+    tasks:
+      - "**M14–M17:** Primäre Ratten & Maus DRG-Neuronenkulturen. scRNAseq Zelltyp-Analyse. Transduktionseffizienz >80% in TRPV1+ als Go-Kriterium"
+      - "**M16–M20:** CFA inflammatorisch & SNI neuropathisch Rattenmodell (n=10/Gruppe). qPCR Genomkopien DRG nach 14d. Endpoint: ≥3× retrograder Transport vs. WT"
+      - "**M18–M22:** Histopathologie DRG. NAb-Titer Serum. T-Zell-ELISpot. DRG-spezifische Biodistribution (kein Cardiac Ganglia)"
+      - "**M20–M24:** GMP-Herstellungsprozess. 6-Monat Stabilitätsstudien. Toxikologie GLP. FDA Pre-IND Briefing Document"
+    resources: "Lab (3 FTE), CRO (Tox), Reg. Affairs"
+    budget: "€450k–650k"
+    risk: "Mittel (in vivo Variabilität)"
+    deliverables: "D5.1 In Vitro Report · D5.2 In Vivo Efficacy · D5.3 Safety & Immunogenicity · D5.4 IND Package Draft"
+    gantt_left: 54.17
+    gantt_width: 45.83
+    milestones:
+      - pct: 99.5
+        label: "IND"
+
+budget_total:
+  ftes: "6–8 peak"
+  duration: "24 Monate"
+  range: "€1.23M–1.8M"
+  milestone: "IND-ready Lead Kandidat"
+
+milestones_table:
+  - month: M3
+    milestone: "Target Product Profile finalisiert"
+    deliverable: "D1.1–D1.3"
+    wp: WP1
+  - month: M5
+    milestone: "AAV Library produziert (QC: Titer, Coverage)"
+    deliverable: "Library QC Report"
+    wp: WP2
+  - month: M8
+    milestone: "DMS Dataset abgeschlossen"
+    deliverable: "D2.2 + D2.4 Training Dataset"
+    wp: WP2
+  - month: M10
+    milestone: "Fitness Oracle v1.0 Release (Spearman r ≥0.65)"
+    deliverable: "D3.1–D3.4"
+    wp: WP3
+  - month: M11
+    milestone: "BO Runde 1 abgeschlossen (50 Kandidaten)"
+    deliverable: "D4.1"
+    wp: WP4
+  - month: M14
+    milestone: "BO Runde 2 abgeschlossen, Lead Panel Draft"
+    deliverable: "D4.2"
+    wp: WP4
+  - month: M18
+    milestone: "Lead Candidate Panel Final (Top-10 Pareto)"
+    deliverable: "D4.3 + D4.4 Oracle v2.0"
+    wp: WP4
+  - month: M20
+    milestone: "In Vitro Vollcharakterisierung Top-3"
+    deliverable: "D5.1"
+    wp: WP5
+  - month: M22
+    milestone: "In Vivo Wirksamkeit + Biodistribution"
+    deliverable: "D5.2 + D5.3"
+    wp: WP5
+  - month: M24
+    milestone: "IND-Enabling Package"
+    deliverable: "D5.4 — Projektziel erreicht"
+    wp: WP5
+
+risks:
+  - risk: "DMS Library Coverage <50%"
+    probability: "Mittel"
+    impact: "Hoch"
+    mitigation: "Parallele Library mit kleinerer Komplexität als Backup"
+  - risk: "Oracle generalisiert nicht auf neue Insertionen"
+    probability: "Mittel"
+    impact: "Mittel"
+    mitigation: "Active Learning priorisiert unsichere Regionen, robuste Benchmarks"
+  - risk: "Kein Kandidat erfüllt In-Vivo Kriterien M20"
+    probability: "Niedrig-Mittel"
+    impact: "Sehr Hoch"
+    mitigation: "Frühzeitige In-Vivo Pilotdaten für Top-Kandidaten aus Runde 2"
+  - risk: "IP-Konflikte mit WhiteLab/PackGene"
+    probability: "Niedrig"
+    impact: "Mittel"
+    mitigation: "Freedom-to-Operate Analyse in WP1 (M1)"
+
+oracle:
+  type: "DRG Fitness Oracle"
+  layers:
+    - num: "Layer 1"
+      title: "Embedding"
+      desc: "ESM-2 650M / ESM-3 3B\nProtein Language Model\nOutput: 1280-dim Vektor"
+    - num: "Layer 2"
+      title: "Predictor"
+      desc: "Feed-Forward NN\nMulti-task (4 Outputs)\nSpearman r ≥ 0.65"
+    - num: "Layer 3"
+      title: "Generator"
+      desc: "Conditional VAE (cVAE)\nLatent Dim = 128\nConditional auf Fitness-Ziele"
+    - num: "Layer 4"
+      title: "Optimizer"
+      desc: "Multi-objective Bayesian Opt.\nEHVI Acquisition Function\nPareto-Front Tracking"
+  outputs:
+    - name: "Tropismus Score"
+      range: "0–1"
+      weight: 0.5
+      description: "Nozizeptive Neuron-Infektionseffizienz"
+    - name: "Production Yield"
+      range: "0–1"
+      weight: 0.25
+      description: "Relative AAV-Partikelproduktion vs. WT"
+    - name: "Thermostabilität"
+      range: "0–1"
+      weight: 0.15
+      description: "Schmelztemperatur normalisiert"
+    - name: "Immunogenizität"
+      range: "0–1"
+      weight: 0.10
+      description: "NAb-Titer-Vorhersage (niedrig = gut)"
