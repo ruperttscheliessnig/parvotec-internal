@@ -1,0 +1,6353 @@
+WEBVTT
+
+00:00.000 --> 00:04.840
+introduce our first speaker, Gang Wang,
+
+00:04.840 --> 00:07.520
+which will be sharing about the directed evolution
+
+00:07.520 --> 00:12.200
+in non-human primates, which identifies the AAV capsits
+
+00:12.200 --> 00:15.680
+with the novel motive enabling efficient muscle
+
+00:15.680 --> 00:19.680
+targeting and reduced liver tropism.
+
+00:19.680 --> 00:20.680
+Sorry about that.
+
+00:21.880 --> 00:25.080
+Just before Gang starts,
+
+00:25.080 --> 00:28.160
+I just a reminder that no flash photography
+
+00:28.160 --> 00:30.840
+is allowed.
+
+00:30.840 --> 00:35.840
+And if you haven't connected to the west in this wall room,
+
+00:37.280 --> 00:40.560
+the password is ASGCT 2026.
+
+00:40.560 --> 00:43.560
+And without any further ado, welcome, Gang.
+
+00:43.560 --> 00:44.400
+Thank you.
+
+00:44.400 --> 00:46.440
+Thank you for the introduction.
+
+00:46.440 --> 00:48.440
+Good morning, everyone.
+
+00:48.440 --> 00:51.640
+I'm Gang Wang from Beyond Genes Therapeutics.
+
+00:51.640 --> 00:54.440
+It's my honor to be here today.
+
+00:54.440 --> 00:59.440
+I will introduce our capsaid engineering platform
+
+00:59.480 --> 01:04.240
+and we identified muscle targeting motive
+
+01:04.240 --> 01:07.920
+by this platform.
+
+01:07.920 --> 01:12.920
+And this motive can be effectively tuned
+
+01:14.040 --> 01:16.480
+for optimal liberty targeting.
+
+01:20.880 --> 01:23.920
+All these findings come from
+
+01:23.920 --> 01:26.480
+our platform, Dynamo-Lib.
+
+01:26.480 --> 01:30.560
+We have a capsaid libraries.
+
+01:30.560 --> 01:34.040
+We have a calibrator,
+
+01:34.040 --> 01:37.400
+the calibrated barcoded libraries,
+
+01:37.400 --> 01:40.600
+and in vivo validation system
+
+01:40.600 --> 01:45.600
+combined with the capture, the signal recovery system.
+
+01:46.360 --> 01:51.120
+This pipeline allows us to find the clinical lead.
+
+01:52.120 --> 01:56.640
+Parasite is our capsaid library.
+
+01:56.640 --> 02:00.320
+We have two distinct kind of library.
+
+02:00.320 --> 02:04.000
+One is a random peptide insertion.
+
+02:06.120 --> 02:09.760
+We are eight of AV9 capsaid.
+
+02:10.760 --> 02:15.760
+Another one is a rationally designed peptide
+
+02:15.880 --> 02:20.440
+derived from a cell surface binding protein.
+
+02:21.320 --> 02:25.280
+And we use a dual DNA packaging system.
+
+02:25.280 --> 02:30.280
+This system yield a very high viral titer of library
+
+02:31.600 --> 02:36.600
+and this also achieves very good high-fusility packaging
+
+02:38.480 --> 02:42.280
+with very low backbone contamination
+
+02:42.280 --> 02:47.280
+and excellent consistency of phenotype and genotype.
+
+02:48.280 --> 02:53.280
+A calibrator is our calibrated barcoded library.
+
+02:55.320 --> 03:00.320
+We use AV9 as internal standards
+
+03:01.440 --> 03:03.800
+with different doses.
+
+03:03.800 --> 03:08.800
+And then we create central curve
+
+03:09.680 --> 03:12.960
+based on the dosage of AV9
+
+03:12.960 --> 03:17.680
+and the in vivo t-show expression.
+
+03:17.680 --> 03:22.520
+And then all variants are mapped to this curve
+
+03:22.520 --> 03:27.040
+to calculate normalized for the change against AV9.
+
+03:29.240 --> 03:33.280
+In chemo, we label the different variants
+
+03:33.280 --> 03:37.760
+with distinct epitope tags
+
+03:37.760 --> 03:42.220
+for multi-level capsaid benchmarking in a single animal.
+
+03:43.520 --> 03:48.440
+This is our signal recovery platform.
+
+03:48.440 --> 03:53.440
+We named the capture with magnetic bits
+
+03:54.720 --> 03:59.720
+contracted with a virus-specific probe
+
+04:02.340 --> 04:06.360
+to recover the viral MRI.
+
+04:06.360 --> 04:11.360
+And this method facilitated the RT preparation
+
+04:13.640 --> 04:17.600
+from a large amount of NHP tissues.
+
+04:19.240 --> 04:22.560
+This is our integrated dynamo-lib.
+
+04:23.760 --> 04:28.560
+We integrated multi-librates, multi-root,
+
+04:28.560 --> 04:31.400
+and multi-tissue screening,
+
+04:31.400 --> 04:36.400
+all in a single NHP model.
+
+04:36.640 --> 04:41.640
+The aim is to maximize the data output per NHP.
+
+04:43.080 --> 04:46.440
+This strategy is very productive.
+
+04:46.440 --> 04:48.640
+From intravenous delivery,
+
+04:48.640 --> 04:53.640
+we identified mild-cap series targeting to muscle
+
+04:55.240 --> 05:00.240
+and the lead candidate targeting to deep brain.
+
+05:01.720 --> 05:04.120
+From intracecho delivery,
+
+05:04.120 --> 05:08.040
+we identified syn-cap series
+
+05:08.040 --> 05:12.240
+which can transduce almost all NHP
+
+05:12.240 --> 05:13.440
+looking at cells.
+
+05:14.720 --> 05:18.600
+Now we move to our discovery
+
+05:18.600 --> 05:23.600
+of muscle targeting motif.
+
+05:25.560 --> 05:29.240
+And this is the first round in vivo screening.
+
+05:29.240 --> 05:31.960
+At this early stage,
+
+05:31.960 --> 05:36.960
+we didn't find a reliable linear motif,
+
+05:37.000 --> 05:42.000
+but we found a very strong argument
+
+05:43.240 --> 05:48.240
+about the arginine accumulation across all clusters.
+
+05:49.560 --> 05:51.680
+In the second round screening,
+
+05:52.440 --> 05:57.120
+we eyes the selection pressure increase,
+
+05:58.360 --> 06:03.360
+R6, the arginine at the sixth position accumulated dramatically.
+
+06:04.360 --> 06:09.360
+And we then analyzed the round of the R6 anchor
+
+06:10.560 --> 06:14.560
+revealed that dominant PRT motif
+
+06:14.560 --> 06:18.680
+across all the muscles and the heart.
+
+06:18.680 --> 06:23.680
+And then we recasturing fixed R energy
+
+06:25.120 --> 06:30.120
+and we confirmed that it's the first round
+
+06:30.520 --> 06:34.720
+R energy and we confirmed that it's the PRG motif.
+
+06:35.960 --> 06:40.960
+And then we verified this motif in different species
+
+06:42.520 --> 06:47.520
+and we select four PRG variants
+
+06:49.000 --> 06:53.400
+and package them individually,
+
+06:53.400 --> 06:58.400
+label them with different IPP attacks
+
+06:59.400 --> 07:02.760
+and mix them together and then
+
+07:02.760 --> 07:07.760
+admit to animal by intravenous injection.
+
+07:08.640 --> 07:13.640
+And we tested them in Rhesus macaque
+
+07:15.680 --> 07:19.440
+SDRS and two species of mice.
+
+07:19.440 --> 07:24.440
+And all the PRT variants show a higher muscle expression
+
+07:25.440 --> 07:30.440
+than AB9 and the best one is BY087.
+
+07:36.320 --> 07:41.320
+And then we further validated BY087 in Rhesus macaque
+
+07:45.000 --> 07:50.000
+and at the dose of five times the power of 12,
+
+07:51.000 --> 07:56.000
+VG protege, BY087 outperforms every now across
+
+07:56.720 --> 08:00.920
+DNA, MRI and protein levels in all tested muscles.
+
+08:02.360 --> 08:07.360
+And since we have already verified the PRG motif,
+
+08:07.840 --> 08:12.840
+then we did the optimization of this PRG motif
+
+08:13.200 --> 08:17.560
+and the structure modeling by alpha fold
+
+08:17.560 --> 08:22.560
+reveals that there is a distinct protrusion
+
+08:23.560 --> 08:28.560
+introduced by SALTPRG insertion of BY087.
+
+08:31.880 --> 08:36.480
+We hypothesized, optimized the
+
+08:36.480 --> 08:41.480
+and terminal of the PRG motif could be
+
+08:42.360 --> 08:47.000
+maximized the muscle potency of the PRG.
+
+08:47.000 --> 08:52.000
+So we established the next round of HP screening
+
+08:53.400 --> 08:58.020
+by NNK saturation library.
+
+08:59.960 --> 09:04.960
+And the correlation analysis of the NNK library screening
+
+09:07.160 --> 09:12.160
+revealed that there is a very strong positive correlation
+
+09:12.840 --> 09:17.840
+between muscle expression and the liver expression.
+
+09:17.840 --> 09:22.840
+First, we identified the consensus sequence
+
+09:24.080 --> 09:29.080
+for muscle tropism, it is SAXY PRG.
+
+09:30.440 --> 09:35.440
+And then we focus on the afterlife population
+
+09:36.000 --> 09:41.000
+as shown in the right color with high muscle expression
+
+09:41.880 --> 09:46.880
+and low liver expression compared to the background.
+
+09:48.480 --> 09:53.120
+We found a distinct Hesidian accumulation
+
+09:53.120 --> 09:58.120
+in the second position and the fourth position.
+
+09:58.160 --> 10:02.440
+We named it the H switch.
+
+10:04.680 --> 10:08.280
+And then we developed our next generation
+
+10:08.280 --> 10:13.280
+male cap from white lab direct evolution
+
+10:15.360 --> 10:20.080
+and the structure informed design using H switch.
+
+10:20.080 --> 10:23.520
+And also the AI guide discovery
+
+10:23.520 --> 10:28.120
+to expand our candidate.
+
+10:28.120 --> 10:33.120
+Finally, we got 32 unique next generation variants
+
+10:33.200 --> 10:38.200
+and we tested them using our calibrator platform.
+
+10:43.320 --> 10:48.320
+The result shows most of the next generation variants
+
+10:49.400 --> 10:54.400
+show a higher muscle expression than BY 087.
+
+10:55.960 --> 11:00.960
+And the H switch works in the same way
+
+11:03.680 --> 11:06.560
+very well in these variants.
+
+11:08.040 --> 11:12.400
+When the double H incorporation
+
+11:14.600 --> 11:19.600
+achieves very high muscle liver ratio
+
+11:22.280 --> 11:27.040
+around 32 times and 23 times,
+
+11:28.040 --> 11:33.040
+it's much higher than the BY 087.
+
+11:34.520 --> 11:38.520
+It is only 3.8 fold.
+
+11:38.520 --> 11:43.520
+And the single H incorporation is also very effective.
+
+11:46.720 --> 11:51.720
+It reached the ratio of 17 fold.
+
+11:52.000 --> 11:57.000
+And then we selected the two kind of variants.
+
+12:00.320 --> 12:05.320
+The blue one is the muscle potency
+
+12:05.760 --> 12:09.880
+and the right one is the liberally targeting group.
+
+12:09.880 --> 12:14.080
+And for the right group,
+
+12:14.080 --> 12:18.000
+it's much published mile away.
+
+12:19.000 --> 12:24.000
+And this is the BY 438 result in calibrator.
+
+12:26.080 --> 12:31.080
+And the linear, we can see the linear regression of AV9.
+
+12:33.240 --> 12:38.240
+And also we can see the muscle expression here
+
+12:38.360 --> 12:43.360
+for the BY 488, much higher than AV9.
+
+12:44.360 --> 12:49.360
+And with liver, less expressed in the liver.
+
+12:51.160 --> 12:56.160
+And then we make higher to higher comparison
+
+12:56.400 --> 13:01.280
+between BY 438 and AV9.
+
+13:01.280 --> 13:06.280
+And we can see the BY 483 expressed much higher MRI
+
+13:06.280 --> 13:11.280
+in muscles than liver.
+
+13:15.800 --> 13:20.800
+And only 40% MRI expression in liver compared to AV9.
+
+13:23.400 --> 13:28.400
+The protein, the IF 10 confirmed protein expression
+
+13:30.640 --> 13:33.080
+consistent with MRI expression.
+
+13:33.080 --> 13:36.760
+This is the last presentation slide.
+
+13:36.760 --> 13:41.520
+We did cross species validation in Santa Mogas
+
+13:41.520 --> 13:43.800
+for myocardium variants.
+
+13:43.800 --> 13:48.800
+And the H switch works very well in Santa Mogas.
+
+13:51.560 --> 13:55.000
+It's actually for the double H incorporation.
+
+13:57.080 --> 14:00.040
+As shown in red color,
+
+14:00.040 --> 14:05.040
+the auto-perform the published control myocardium and VG7.
+
+14:08.760 --> 14:13.760
+For conclusion, Danily is end-to-end pipeline
+
+14:14.840 --> 14:17.120
+for calibrator discovery.
+
+14:17.120 --> 14:22.120
+And the PRD motif, so as a strong muscle targeting motif
+
+14:25.160 --> 14:27.320
+while flanking H residue,
+
+14:27.320 --> 14:32.320
+acts as a precise switch to abolish the level of targeting.
+
+14:32.560 --> 14:37.560
+The myocype series, like BY 438,
+
+14:38.160 --> 14:43.160
+demonstrate a special muscle transduction
+
+14:44.680 --> 14:48.440
+and hepatic escape in other HP,
+
+14:48.440 --> 14:53.440
+serving as ideal vector for muscle-related gene therapy.
+
+14:53.720 --> 14:54.560
+Thank you.
+
+14:55.560 --> 14:56.560
+Thank you.
+
+15:00.560 --> 15:01.840
+Thank you, Gang.
+
+15:01.840 --> 15:03.840
+Do we have any questions for Gang?
+
+15:05.600 --> 15:06.760
+We have one minute.
+
+15:08.360 --> 15:10.040
+I'm sorry, I may have missed it.
+
+15:10.040 --> 15:12.320
+Did you mention the receptor that you believe
+
+15:12.320 --> 15:13.320
+this is binding to?
+
+15:14.400 --> 15:18.240
+No, we are trying to find the receptor.
+
+15:18.240 --> 15:20.600
+Unfortunately, until now, we didn't find it.
+
+15:21.600 --> 15:25.520
+Hi, I'm nice to talk.
+
+15:25.520 --> 15:28.920
+You mentioned that you use dose calibration curve
+
+15:28.920 --> 15:30.400
+in your libraries.
+
+15:30.400 --> 15:32.600
+I'm curious how you use that data on the other end
+
+15:32.600 --> 15:35.120
+and what you've learned about dose response
+
+15:35.120 --> 15:37.320
+of various AV variants.
+
+15:38.680 --> 15:42.160
+You mean the mechanism of our calibrator?
+
+15:43.080 --> 15:45.600
+Yeah, like how you use the calibrator data?
+
+15:45.600 --> 15:49.920
+Yeah, we have our algorithm, calibrated algorithm,
+
+15:49.960 --> 15:54.960
+and we use the change fold,
+
+15:56.320 --> 16:01.320
+change fold to represent the potency of each variant.
+
+16:02.640 --> 16:07.640
+We get the T2 expression data,
+
+16:11.520 --> 16:15.800
+put them, might put them into the standard curve
+
+16:15.800 --> 16:20.400
+and then we will calculate the fold change
+
+16:20.400 --> 16:22.280
+compared to the standard curve.
+
+16:22.280 --> 16:27.280
+That means the increase fold against the AV9.
+
+16:28.120 --> 16:29.440
+Okay, thank you.
+
+16:29.440 --> 16:30.360
+Thank you, Gang.
+
+16:35.360 --> 16:36.440
+Thank you, Gang.
+
+16:36.440 --> 16:39.600
+With that, I would like to invite our next speaker,
+
+16:39.600 --> 16:43.760
+Benjamin, and he is my joint collaboration
+
+16:43.800 --> 16:46.120
+of the Tevira Therapeutics
+
+16:46.120 --> 16:49.720
+and the Department of Cellular and Molecular Medicine
+
+16:49.720 --> 16:53.320
+in Belgium, so welcome, Benjamin.
+
+16:53.320 --> 16:56.720
+Thank you, it's nice being here.
+
+16:56.720 --> 16:59.160
+So today I wanted to tell you a little bit
+
+16:59.160 --> 17:00.840
+about what we have been doing with Tevira
+
+17:00.840 --> 17:02.560
+over the last year and we've been working
+
+17:02.560 --> 17:04.600
+on a novel capsa platform,
+
+17:04.600 --> 17:09.080
+which we call the DEV platform, some of my disclosures.
+
+17:09.960 --> 17:12.880
+So I think I'm preaching to the choir here
+
+17:12.880 --> 17:16.800
+when I say that AV development is kind of hindered
+
+17:16.800 --> 17:20.440
+by the specificity and the potency of AV vectors
+
+17:20.440 --> 17:23.040
+and also the manufacturing can be sometimes
+
+17:23.040 --> 17:24.400
+always quite complex.
+
+17:24.400 --> 17:26.680
+So at Tevira, we wondered, okay,
+
+17:26.680 --> 17:30.920
+can we make this more streamlined and more directed
+
+17:30.920 --> 17:33.040
+by zip coding AVs to send them directly
+
+17:33.040 --> 17:36.160
+to specific tissues in a rational way?
+
+17:36.160 --> 17:37.800
+And the way we did that is through
+
+17:37.800 --> 17:38.960
+what we call our DEV platform,
+
+17:38.960 --> 17:40.840
+stands for Decorated AVs.
+
+17:40.840 --> 17:42.920
+What we basically did is we started
+
+17:42.920 --> 17:45.920
+with a parental AV serotype and in our case,
+
+17:45.920 --> 17:49.280
+we checked the AV2 and AV9, but we went ahead with AV9
+
+17:49.280 --> 17:51.800
+and we did some minimal vector engineering.
+
+17:51.800 --> 17:56.480
+What we did was we added in the surfaces post loops,
+
+17:56.480 --> 18:00.320
+we added a recognition tag for an enzyme called sortase A.
+
+18:00.320 --> 18:03.360
+And what happens is this sortase can recognize this tag
+
+18:03.360 --> 18:06.960
+and then when it does so it can attach targeting groups
+
+18:06.960 --> 18:08.840
+to the capsits and these targeting groups
+
+18:08.840 --> 18:13.840
+then afford specificity and potency of the vector.
+
+18:13.840 --> 18:18.480
+So as you see here, this tag is in all the viral proteins
+
+18:18.480 --> 18:19.320
+of the capsits.
+
+18:21.160 --> 18:22.680
+So here a little animation, how it works.
+
+18:22.680 --> 18:25.520
+You see the tag is in the pink loops.
+
+18:25.520 --> 18:28.000
+The sortase recognizes it and a targeting group.
+
+18:28.000 --> 18:30.760
+In this case, I'm just showing a VHH domain
+
+18:30.760 --> 18:33.520
+but can be anything, comes in, recognizes it
+
+18:33.520 --> 18:37.400
+and is covalently attached to the capsits.
+
+18:39.800 --> 18:41.560
+So how do we make it?
+
+18:41.560 --> 18:43.560
+So basically just make the AV first
+
+18:43.560 --> 18:46.240
+and we go to our up and downstream manufacturing.
+
+18:46.240 --> 18:49.440
+Then we do the conjugation in what we sometimes refer
+
+18:49.440 --> 18:50.920
+to as a shake and bake reaction.
+
+18:50.920 --> 18:52.800
+You just incubate it for a given amount of time
+
+18:52.800 --> 18:55.840
+at room temperature after which you purify out
+
+18:55.840 --> 18:58.440
+the enzyme in the non-reactive targeting groups.
+
+18:59.440 --> 19:02.320
+And that affords a very strong platform modularity.
+
+19:02.320 --> 19:05.520
+As I said, we can do with AV2, with AV9,
+
+19:05.520 --> 19:09.880
+we can target several surface exposed loops.
+
+19:09.880 --> 19:11.400
+Some of them work better than the other
+
+19:11.400 --> 19:14.440
+and we can target anything from small molecules
+
+19:14.440 --> 19:18.440
+to VHH domains on those capsits.
+
+19:18.440 --> 19:21.000
+And that makes that we have a predictable
+
+19:21.000 --> 19:22.600
+and reproducible product.
+
+19:22.600 --> 19:24.040
+So we have confirmed the structure
+
+19:24.040 --> 19:28.680
+of these conjugated molecules using mass spec.
+
+19:28.680 --> 19:32.640
+We can quantify them using Westerblot and Eliza assays.
+
+19:33.560 --> 19:35.000
+And when we do transduction assays,
+
+19:35.000 --> 19:38.320
+we see in vitro that it is nice and reproducible.
+
+19:39.520 --> 19:43.040
+So the first thing we did for just for the heck of it,
+
+19:43.040 --> 19:45.520
+I guess, was conjugating biotin to it.
+
+19:45.520 --> 19:48.280
+And what you can see here on the left-hand side,
+
+19:48.280 --> 19:50.360
+that is a non-conjugated AV vector.
+
+19:50.360 --> 19:52.880
+You see the VP123 bands.
+
+19:52.880 --> 19:55.600
+And then when we do the conjugation with biotin,
+
+19:55.600 --> 19:57.920
+if we just stain for the viral protein,
+
+19:57.920 --> 20:00.680
+we have basically the C terminal fragment.
+
+20:00.680 --> 20:05.680
+So that is downstream of the recognition side
+
+20:06.160 --> 20:08.600
+that you see here at the bottom.
+
+20:08.600 --> 20:11.240
+And that's the sort of cleft fragment.
+
+20:11.240 --> 20:12.880
+So that confirms the conjugation.
+
+20:12.880 --> 20:15.280
+But then when we also look at the biotin staining,
+
+20:15.280 --> 20:17.280
+that is attached to the N terminal fragment
+
+20:17.280 --> 20:18.520
+of the viral protein,
+
+20:18.520 --> 20:23.520
+you see that we conjugate both VP1, VP2N, VP3 of the capsits.
+
+20:25.480 --> 20:26.880
+So that's all really good,
+
+20:26.880 --> 20:28.760
+but we don't care too much about biotin.
+
+20:28.760 --> 20:30.240
+So we want to do cell targeting.
+
+20:30.240 --> 20:32.560
+And again, in the early days of this platform,
+
+20:32.560 --> 20:34.520
+when we just wanted to validate this,
+
+20:34.520 --> 20:36.840
+we used the HER2 binding VHH.
+
+20:36.840 --> 20:40.360
+And what you can see is in HER2 negative cells,
+
+20:40.360 --> 20:41.880
+we barely have any transduction.
+
+20:41.880 --> 20:44.400
+That's because we do the specific engineering
+
+20:44.400 --> 20:46.520
+that makes the capsit, basically,
+
+20:46.520 --> 20:50.160
+not transduced so well in any cell type.
+
+20:50.160 --> 20:52.920
+But then when we conjugate the HER2 VHH,
+
+20:52.920 --> 20:54.760
+we have specific targeting.
+
+20:54.760 --> 20:57.440
+Again, HER2, not super interesting for us.
+
+20:57.440 --> 21:01.360
+What we wanted to do is we wanted to reach the CNS.
+
+21:01.360 --> 21:05.440
+And we did that with, obviously, the transfer receptor,
+
+21:05.440 --> 21:08.080
+what so many others are doing as well,
+
+21:08.080 --> 21:09.600
+trying to piggyback on that receptor,
+
+21:09.600 --> 21:11.320
+shuttling across the anothelial cells
+
+21:11.320 --> 21:12.840
+to get into the brain prankima.
+
+21:14.720 --> 21:15.760
+And that's what you can see here.
+
+21:15.760 --> 21:17.880
+We started off with a mouse transfer receptor
+
+21:17.880 --> 21:20.960
+in mouse transfer receptor overexpressing cells.
+
+21:20.960 --> 21:24.480
+But crucially, we also went into human transfer
+
+21:24.480 --> 21:25.480
+receptor positive cells.
+
+21:25.480 --> 21:27.800
+And you can see that compared to NAV9,
+
+21:27.800 --> 21:30.000
+our constructs have, at least in vitro,
+
+21:30.000 --> 21:32.800
+an 18-fold improved transduction efficiency.
+
+21:32.800 --> 21:36.040
+Of course, again, we don't want to transduce
+
+21:36.040 --> 21:37.280
+HDFR positive cells.
+
+21:37.280 --> 21:39.440
+We want to cross the BBB.
+
+21:39.440 --> 21:42.280
+And so we did an in vivo bi-distribution study.
+
+21:42.280 --> 21:46.560
+So what we did is just with a GFP reporter gene
+
+21:46.560 --> 21:51.560
+and human transfer receptor knock in mice
+
+21:52.760 --> 21:54.920
+at those of 5V, 11VG per mouse.
+
+21:54.920 --> 21:58.480
+We injected this IV and we looked at the bi-distribution.
+
+21:58.480 --> 22:01.360
+So on the left here, you see AV9.
+
+22:01.360 --> 22:06.000
+That's kind of typical of what we would see at this dose.
+
+22:06.000 --> 22:08.720
+But then when we took our lead CNS, Dave Kapsit,
+
+22:08.720 --> 22:10.400
+you see that we have nice and widespread
+
+22:10.400 --> 22:14.600
+brain distribution, including the deeper brain areas.
+
+22:14.600 --> 22:18.000
+And if we zoom in a little bit here in the top row,
+
+22:18.000 --> 22:21.400
+you can see AV9 with a new end counterstain for neurons.
+
+22:21.400 --> 22:25.440
+And in the bottom row, you can see our Dave Kapsit.
+
+22:25.440 --> 22:29.440
+And again, you see that almost all brain regions
+
+22:29.440 --> 22:31.220
+are efficiently transduced.
+
+22:32.600 --> 22:35.800
+Of course, we want to quantify this.
+
+22:35.800 --> 22:37.920
+So here on the left-hand side,
+
+22:37.920 --> 22:39.600
+you see the VG copies in the brain.
+
+22:39.600 --> 22:41.480
+And you see that we have two logs
+
+22:41.480 --> 22:43.520
+improvement in brain targeting.
+
+22:43.520 --> 22:47.360
+And then when we look at the neuronal transduction,
+
+22:47.360 --> 22:50.000
+you see that we have anywhere depending on the brain region
+
+22:50.000 --> 22:53.600
+between 20% and 80% of the neurons transduced,
+
+22:53.600 --> 22:56.760
+which I think is quite important
+
+22:56.760 --> 23:00.080
+and strongly improved relative to, for instance, AV9.
+
+23:01.520 --> 23:03.400
+Very importantly, the liver, of course,
+
+23:03.400 --> 23:07.620
+if we go systemic with many Kapsits out there,
+
+23:07.620 --> 23:08.880
+you see they end up in the liver
+
+23:08.880 --> 23:11.280
+associated with liver tox.
+
+23:11.280 --> 23:14.160
+Our Dave Kapsits are, again, two log
+
+23:14.160 --> 23:18.600
+de-targeted from the liver on the VG level.
+
+23:18.600 --> 23:20.680
+And that's something that is inherent to our platform.
+
+23:20.680 --> 23:23.200
+So we see the same effect if we don't conjugate.
+
+23:23.200 --> 23:26.080
+So this is really due to how we do the engineering
+
+23:26.080 --> 23:27.160
+in the Kapsits.
+
+23:27.160 --> 23:31.080
+And basically these 100-fold improvement in brain targeting
+
+23:31.080 --> 23:33.000
+and 100-fold reduction in liver targeting
+
+23:33.000 --> 23:36.280
+opens up that therapeutic window with four logs.
+
+23:38.360 --> 23:40.840
+So that's on CNS.
+
+23:40.840 --> 23:42.280
+But of course, this is platform technology.
+
+23:42.280 --> 23:43.880
+We don't only want to target CNS.
+
+23:43.880 --> 23:46.280
+We want to go more broadly as well.
+
+23:46.280 --> 23:49.240
+There's a large need for Kapsits that target kidney.
+
+23:49.240 --> 23:52.760
+There's a large number of genetic kidney diseases
+
+23:52.760 --> 23:57.760
+with devastating outcomes and very limited treatment options.
+
+23:58.120 --> 24:02.640
+So we said, okay, can we make vectors, AV vectors,
+
+24:02.640 --> 24:07.640
+that more strongly target cell types in the kidney?
+
+24:07.720 --> 24:10.200
+And we focused on a little bit of polycytes.
+
+24:10.200 --> 24:12.240
+I'm not showing you that work today,
+
+24:12.240 --> 24:15.640
+but also we focus on tubular epithelial cells
+
+24:15.640 --> 24:18.640
+with a vision of treating tuberopathies down the line.
+
+24:20.120 --> 24:23.320
+And what you can see here, this is just in vitro data.
+
+24:23.320 --> 24:25.920
+We're still working on the in vivo work,
+
+24:25.920 --> 24:28.440
+but you see that again here compared to an AV9
+
+24:28.440 --> 24:31.600
+in cell culture, we have that 20-fold improvement
+
+24:31.600 --> 24:35.680
+in cell targeting with our ligand tree here.
+
+24:35.680 --> 24:37.960
+So we're still improving on that.
+
+24:37.960 --> 24:41.040
+We think that we haven't reached the ceiling.
+
+24:41.040 --> 24:43.920
+We can do some engineering there on both the Kapsits
+
+24:43.920 --> 24:47.200
+and the ligand level to improve that.
+
+24:47.200 --> 24:50.600
+And at the same time, Tevira is planning to put this
+
+24:50.600 --> 24:52.920
+in an in vivo study.
+
+24:55.560 --> 24:59.480
+So to summarize, the Dave platform that we have developed
+
+24:59.480 --> 25:02.800
+gives a modular design for designing potents,
+
+25:02.800 --> 25:05.720
+but also very specific AV Kapsits.
+
+25:05.720 --> 25:08.600
+It's something, these post-manufactured conjugation
+
+25:08.600 --> 25:13.040
+technologies, and I think we will hear some more about it
+
+25:13.080 --> 25:17.560
+in this session, that has a strong potential
+
+25:17.560 --> 25:20.640
+to rationally engineer AV Kapsits
+
+25:20.640 --> 25:23.080
+also in a human targeted context.
+
+25:24.000 --> 25:27.120
+Our platform can do that by enzymatic conjugation
+
+25:28.080 --> 25:29.880
+with an inherent liberty targeting.
+
+25:31.040 --> 25:33.600
+We have strong proof of concept for CNS targeting
+
+25:33.600 --> 25:37.160
+and then in vitro proof of concept in kidney targeting,
+
+25:37.160 --> 25:39.280
+which we will further work on.
+
+25:40.400 --> 25:42.280
+Of course, this is work that we haven't done alone.
+
+25:42.280 --> 25:44.800
+We developed the Dave platform was initially developed
+
+25:44.800 --> 25:47.480
+at the University of Leuven,
+
+25:47.480 --> 25:49.440
+which we whom we have a collaboration.
+
+25:50.680 --> 25:55.480
+And with that, I would like to thank you for your attention
+
+25:55.480 --> 25:57.320
+and take any question you have.
+
+25:57.320 --> 26:02.160
+Thank you Benjamin.
+
+26:03.160 --> 26:05.760
+And so floor is open for questions.
+
+26:05.760 --> 26:08.040
+Great talk, real simple system.
+
+26:08.040 --> 26:11.560
+Are you disclosing just how many of the subunits
+
+26:12.040 --> 26:15.120
+are either contain your targeting loop
+
+26:15.120 --> 26:17.240
+and then after conjugation contain
+
+26:17.240 --> 26:19.360
+an actual conjugation event?
+
+26:19.360 --> 26:21.560
+We're not disclosing it, but I don't want to disappoint you.
+
+26:21.560 --> 26:24.600
+So I'll say it's not 60 and it's not zero.
+
+26:24.600 --> 26:29.600
+So we know that, the reason is if we go too high
+
+26:29.960 --> 26:31.440
+and that's what others have seen as well,
+
+26:31.440 --> 26:33.920
+then you end up with a particle that's not really an AV.
+
+26:33.920 --> 26:36.160
+It's an AV covered in a number of molecules
+
+26:36.160 --> 26:38.880
+and probably it doesn't traffic as well in the cell.
+
+26:38.880 --> 26:40.800
+So we see that we can go quite low.
+
+26:41.840 --> 26:43.360
+And it depends a bit on the system
+
+26:43.360 --> 26:47.040
+and on the ligand that you attach and so on and so forth.
+
+26:47.040 --> 26:50.000
+But the exact number is currently not disclosed.
+
+26:50.000 --> 26:51.080
+Okay, thank you.
+
+26:53.200 --> 26:54.040
+Hi.
+
+26:54.040 --> 26:56.280
+Hi, my name is Lou Johnson from Ohio.
+
+26:56.280 --> 26:57.120
+Sorry.
+
+26:57.120 --> 26:57.960
+Oh, sorry.
+
+26:57.960 --> 26:58.800
+Yeah.
+
+26:58.800 --> 27:02.120
+Okay, the retina is part of the CNS.
+
+27:02.120 --> 27:06.080
+Did you look and see if you get any targeting in the retina?
+
+27:06.080 --> 27:06.920
+Sorry, come again?
+
+27:06.920 --> 27:09.800
+The retina is part of the central nervous system.
+
+27:09.840 --> 27:11.840
+We did not look at the retina though.
+
+27:13.960 --> 27:15.400
+Maybe we can go further.
+
+27:15.400 --> 27:16.240
+Okay.
+
+27:16.240 --> 27:17.080
+Thank you.
+
+27:17.080 --> 27:17.920
+Really wonderful talk.
+
+27:17.920 --> 27:19.880
+Very impressive data.
+
+27:19.880 --> 27:20.920
+So I'm just curious.
+
+27:20.920 --> 27:24.840
+You mentioned that the conjugation was specific
+
+27:24.840 --> 27:27.040
+to the real one, real four and the H.
+
+27:27.040 --> 27:28.320
+I'm just curious.
+
+27:28.320 --> 27:31.840
+Is the conjugation, how can you like specifically
+
+27:31.840 --> 27:34.040
+conjugate to a specific loop
+
+27:34.040 --> 27:36.040
+or it is actually not specific?
+
+27:37.040 --> 27:41.440
+So we do the, we add the tag by which,
+
+27:41.440 --> 27:44.040
+so the sort is recognized a tag, it's five amino acids
+
+27:44.040 --> 27:47.000
+and we add that either to loop four or to loop eight.
+
+27:47.000 --> 27:50.440
+Okay, so the tag is in the genome, AV genome.
+
+27:50.440 --> 27:51.280
+Packaging.
+
+27:51.280 --> 27:53.520
+Yes, the tag is in the genetic sequence of the capsic.
+
+27:53.520 --> 27:54.600
+Thank you very much.
+
+27:54.600 --> 27:56.200
+Capsic, yes.
+
+27:56.200 --> 27:57.920
+Hi, great talk.
+
+27:57.920 --> 28:02.160
+So I have a quick question about how your retargeting impacts
+
+28:02.160 --> 28:05.000
+the secondary interaction with AVR.
+
+28:05.000 --> 28:07.960
+Have you looked at that and do you know if you're forcing
+
+28:07.960 --> 28:10.480
+AV through different like uptake pathways
+
+28:10.480 --> 28:12.040
+once you've initially bound through
+
+28:12.040 --> 28:13.720
+transparent receptor or whatever?
+
+28:13.720 --> 28:14.560
+We have not looked at that.
+
+28:14.560 --> 28:17.440
+No, it's something that has come up in the past.
+
+28:17.440 --> 28:20.600
+In one of the earlier versions of the capsid that we had,
+
+28:20.600 --> 28:22.520
+we saw very funky results.
+
+28:22.520 --> 28:25.360
+And then we were thinking somewhat the interaction
+
+28:25.360 --> 28:27.600
+with AVR or all the receptors in mind,
+
+28:27.600 --> 28:30.040
+and especially the trafficking as a whole
+
+28:30.040 --> 28:30.880
+might be impacted.
+
+28:30.880 --> 28:32.160
+And then we did some re-engineering,
+
+28:32.160 --> 28:34.160
+solved the problem and didn't look back.
+
+28:35.480 --> 28:37.240
+We haven't looked at it with this specific version
+
+28:37.240 --> 28:38.080
+of the capsid.
+
+28:38.080 --> 28:39.920
+Thank you very much.
+
+28:39.920 --> 28:44.920
+Does your HFTR TFR targeted capsid also recognize
+
+28:45.200 --> 28:46.360
+the Sino receptor?
+
+28:48.720 --> 28:53.720
+Yes, although, and that's the case with any capsid,
+
+28:55.600 --> 28:58.200
+we know that there's a gap between the affinity,
+
+28:58.200 --> 29:00.320
+for instance, for Sino and human.
+
+29:00.320 --> 29:03.600
+So it does recognize, so we are pretty comfortable
+
+29:03.600 --> 29:06.600
+going into an HP studies with the caveat
+
+29:06.600 --> 29:09.320
+that of course it's a different system.
+
+29:09.320 --> 29:11.640
+So, but it does recognize, yes, thanks.
+
+29:13.640 --> 29:16.160
+Thank you, great talk, just a quick question.
+
+29:16.160 --> 29:18.880
+Why do you think the NCNS like deep brain structures
+
+29:18.880 --> 29:22.400
+such as telomeres being targeted by the conjugated?
+
+29:22.400 --> 29:23.960
+It's highly vascularized.
+
+29:23.960 --> 29:24.800
+Oh, okay.
+
+29:27.920 --> 29:29.520
+Since we have a little bit of time,
+
+29:29.520 --> 29:31.800
+I have my own questions.
+
+29:31.800 --> 29:36.800
+So, how do you remove the unbound or the,
+
+29:38.400 --> 29:42.920
+if there is something in there in the system, not the...
+
+29:42.920 --> 29:44.960
+Yeah, so after the conjugation...
+
+29:44.960 --> 29:47.320
+The purification process?
+
+29:47.320 --> 29:49.360
+Yes, so after the conjugation,
+
+29:49.360 --> 29:51.760
+which is just an incubation,
+
+29:51.760 --> 29:53.880
+we do a purification system currently.
+
+29:53.880 --> 29:55.200
+We were using small scales,
+
+29:55.200 --> 29:58.040
+so we're using something like a dialysis
+
+29:58.040 --> 30:00.400
+or a size exclusion, but of course at larger scales,
+
+30:00.400 --> 30:03.040
+we intend to do it with a TFF process, for instance,
+
+30:03.040 --> 30:05.200
+or an extra affinity capture step.
+
+30:05.200 --> 30:06.840
+Okay, thank you, Andrew.
+
+30:08.200 --> 30:09.520
+Great talk.
+
+30:09.520 --> 30:11.840
+Follow-up question on the synomologous macaques.
+
+30:11.840 --> 30:12.880
+Do you have data?
+
+30:12.880 --> 30:14.160
+No, not yet.
+
+30:14.160 --> 30:15.200
+That's in the making.
+
+30:17.040 --> 30:18.760
+So, we have data on binding,
+
+30:18.760 --> 30:22.640
+how the ligand itself binds to the sinus receptor,
+
+30:22.640 --> 30:24.760
+but no indevo data on that yet.
+
+30:24.760 --> 30:26.600
+We can take questions from the...
+
+30:26.600 --> 30:27.440
+Oh, sorry.
+
+30:27.440 --> 30:28.280
+Yeah.
+
+30:29.280 --> 30:30.520
+So, I have two questions.
+
+30:30.520 --> 30:32.520
+First one about the stability of the capsid
+
+30:32.520 --> 30:34.440
+after these conjugations.
+
+30:34.440 --> 30:36.800
+Do you have any idea about that?
+
+30:36.800 --> 30:40.800
+And also, the surface modifications could introduce
+
+30:40.800 --> 30:43.000
+like new immunogenic epitopes.
+
+30:43.000 --> 30:46.400
+So, are you planning to do like any immunogenic studies?
+
+30:46.400 --> 30:50.920
+Yeah, so the first one was the stability.
+
+30:50.920 --> 30:53.680
+So, what we have seen is sometimes inserting these loops
+
+30:53.680 --> 30:57.240
+destabilizes the capsid prior to conjugation,
+
+30:57.280 --> 30:59.440
+so those are variants that we discarded.
+
+31:01.240 --> 31:03.640
+Gaging the thermal stability of the capsid
+
+31:03.640 --> 31:06.120
+after conjugation is not super straightforward
+
+31:06.120 --> 31:09.000
+because you have multiple variants there.
+
+31:09.000 --> 31:12.200
+What we see is that we have pretty good transduction.
+
+31:12.200 --> 31:14.560
+So, we assume that the quaternary structure still holds
+
+31:14.560 --> 31:17.920
+also because we don't fully conjugate the whole particle.
+
+31:17.920 --> 31:20.680
+So, there's only a number of sites that are conjugated.
+
+31:22.080 --> 31:24.320
+But we haven't measured it directly.
+
+31:24.360 --> 31:27.560
+The second thing is the epitopes.
+
+31:29.240 --> 31:30.440
+Immunogenic epitopes.
+
+31:30.440 --> 31:32.400
+Immunogenic epitopes.
+
+31:32.400 --> 31:36.720
+So, basically what we add is just these five amino acids
+
+31:36.720 --> 31:38.320
+which is LPETG.
+
+31:39.760 --> 31:42.880
+We don't assume, we assume they're not immunogenic
+
+31:42.880 --> 31:45.160
+and they haven't been shown in other systems
+
+31:45.160 --> 31:46.240
+to be immunogenic.
+
+31:46.240 --> 31:50.240
+And then we just have the nanobody, for instance,
+
+31:50.240 --> 31:51.880
+or the targeting group that is there.
+
+31:51.880 --> 31:54.080
+So, the sortase is fully out.
+
+31:54.160 --> 31:57.120
+It's not attached to the capsid anymore.
+
+31:57.120 --> 32:00.240
+But we will measure that in our NHP studies for sure.
+
+32:00.240 --> 32:01.840
+Okay, one last question.
+
+32:03.240 --> 32:08.240
+You showed a series of different AV conjugates.
+
+32:09.240 --> 32:12.920
+Are they different nanobodies
+
+32:12.920 --> 32:15.840
+or just different formulations, same nanobody?
+
+32:17.400 --> 32:18.720
+They are different ligands.
+
+32:19.600 --> 32:20.960
+They are different ligands.
+
+32:20.960 --> 32:24.000
+And you're referring to the...
+
+32:24.000 --> 32:28.080
+I can give you an example for the neural lines.
+
+32:29.080 --> 32:31.240
+For instance, here, ligand one, two, and three,
+
+32:31.240 --> 32:33.160
+they are different ligands.
+
+32:33.160 --> 32:34.280
+Oh, okay, okay.
+
+32:36.320 --> 32:38.320
+With that, thank you, Benjamin.
+
+32:38.320 --> 32:39.160
+Thank you.
+
+32:44.600 --> 32:47.560
+Moving on to our third speaker.
+
+32:47.640 --> 32:49.840
+We welcome Luizha Zhang.
+
+32:50.880 --> 32:54.120
+She will be talking about the uncoupling capsid structure,
+
+32:54.120 --> 32:55.360
+functional performance,
+
+32:55.360 --> 32:58.240
+and clinical translation of AAV virons.
+
+33:02.520 --> 33:03.840
+Well, thank you.
+
+33:03.840 --> 33:07.200
+And as always, I want to thank the organizers
+
+33:07.200 --> 33:10.280
+for the opportunity to present our work.
+
+33:10.280 --> 33:11.680
+My name is Luizhan Song.
+
+33:11.680 --> 33:14.800
+I've been presenting on behalf of the team.
+
+33:14.800 --> 33:18.680
+So I'll be talking about uncoupling capsid structure,
+
+33:18.680 --> 33:19.840
+functional performance,
+
+33:19.840 --> 33:22.640
+and the clinical translation of AAV virons,
+
+33:22.640 --> 33:23.600
+very non-title.
+
+33:25.640 --> 33:27.360
+So here are my disclosures.
+
+33:28.840 --> 33:31.320
+So to engineer capsids,
+
+33:31.320 --> 33:33.160
+we have so many different strategies
+
+33:33.160 --> 33:34.960
+that could be used, right?
+
+33:34.960 --> 33:38.080
+So we could do site-direct mutagenesis.
+
+33:38.080 --> 33:39.280
+We could do shuffling.
+
+33:39.280 --> 33:42.400
+We could do a lot of things,
+
+33:42.400 --> 33:45.880
+aeroprom, PCR, AI, machine learning,
+
+33:45.880 --> 33:47.360
+directory evolution.
+
+33:47.360 --> 33:49.800
+But one of the strategies we are using,
+
+33:49.800 --> 33:52.480
+usually we show a common goal.
+
+33:52.480 --> 33:55.760
+It's very similar that we want our capsid to be
+
+33:55.760 --> 33:57.720
+detected from the lever,
+
+33:57.720 --> 34:01.240
+and we want the capsid to cross a certain
+
+34:01.240 --> 34:03.240
+biologic barrier better,
+
+34:03.240 --> 34:05.640
+or we want the capsid to target,
+
+34:05.640 --> 34:08.640
+to transduce our target cells or tissues better
+
+34:08.640 --> 34:10.720
+at higher efficiency.
+
+34:10.720 --> 34:12.080
+This is the common goal,
+
+34:12.080 --> 34:14.880
+but today I don't want to share
+
+34:14.880 --> 34:19.400
+another exciting capsid engineering success story.
+
+34:19.400 --> 34:23.960
+Instead, I wanted to share some of our observations
+
+34:23.960 --> 34:28.960
+on a few candidates that are in our capsid engineering
+
+34:28.960 --> 34:31.920
+process, and hopefully that could provide you
+
+34:31.920 --> 34:35.920
+a little bit additional perspective or considerations
+
+34:35.920 --> 34:38.480
+when we think about capsid engineering
+
+34:38.480 --> 34:40.360
+and the clinical translation.
+
+34:42.560 --> 34:47.560
+So, I'd like to hear this slide.
+
+34:50.760 --> 34:51.600
+How do I go back?
+
+34:51.600 --> 34:53.880
+Yeah, okay, yes.
+
+34:55.400 --> 34:56.400
+Oh, this is the one.
+
+34:58.520 --> 35:02.160
+Yeah, so here this slide introduce you,
+
+35:02.160 --> 35:05.680
+introduce all the capsid that I'll be discussing
+
+35:05.680 --> 35:08.000
+throughout this presentation.
+
+35:08.000 --> 35:10.920
+So, firstly, AV-9 will obviously
+
+35:10.920 --> 35:12.560
+is our parent capsid,
+
+35:12.560 --> 35:15.720
+and this is our benchmark control,
+
+35:15.720 --> 35:20.720
+and AV-902, O3, O4, and these are
+
+35:20.720 --> 35:24.440
+the in-house engineered capsid variants.
+
+35:24.440 --> 35:27.320
+So, these variants were engineered
+
+35:27.320 --> 35:31.840
+either including some mutations on the VR1 region,
+
+35:31.840 --> 35:36.840
+or it has the peptide insertion at the VRH region,
+
+35:37.120 --> 35:38.480
+or a combination of both,
+
+35:38.480 --> 35:42.440
+and all these peptide candidates are identified
+
+35:42.440 --> 35:46.440
+in our previous NHP Direct Evolution libraries.
+
+35:48.200 --> 35:52.480
+So, our structure specialist
+
+35:52.480 --> 35:57.480
+analyzed the structure as everyone do.
+
+35:57.600 --> 36:01.880
+So, as you can see, the VP3 unit structure
+
+36:01.880 --> 36:04.320
+is usually highly conserved,
+
+36:04.320 --> 36:08.640
+and the VRH structure actually is very flexible
+
+36:08.640 --> 36:10.640
+where you insert the peptide.
+
+36:10.640 --> 36:13.600
+So, the structure is a little bit difficult
+
+36:13.600 --> 36:16.360
+to predict accurately.
+
+36:16.360 --> 36:20.000
+So, our structure specialist also
+
+36:20.000 --> 36:25.000
+analyzed the surface potential charges, those charges.
+
+36:25.000 --> 36:28.800
+So, if we, basically the red
+
+36:30.560 --> 36:32.200
+stands for the positive charge
+
+36:32.200 --> 36:34.640
+and the blue stands for the negative charge,
+
+36:34.640 --> 36:39.240
+and the white or gray, it stands for the neutral charge.
+
+36:39.240 --> 36:44.240
+So, if we subtract the AV-9 from the variants,
+
+36:44.400 --> 36:47.800
+you can see there are some differences
+
+36:47.800 --> 36:50.680
+become more obvious that the variants
+
+36:50.680 --> 36:53.600
+introduced on the surface of the capsid.
+
+36:53.600 --> 36:55.760
+And if we take a closer look,
+
+36:55.760 --> 36:59.720
+you can see at the tri-fold, at the three-fold axis,
+
+36:59.720 --> 37:01.880
+there will be show some different pattern
+
+37:01.880 --> 37:04.360
+across different candidates.
+
+37:04.360 --> 37:06.680
+And one of the things interesting
+
+37:06.680 --> 37:11.440
+on the bottom right middle panel for the AV-03,
+
+37:11.440 --> 37:14.240
+you can see there is a strong positive patch
+
+37:14.240 --> 37:15.400
+at the three-fold.
+
+37:16.600 --> 37:19.560
+So, when we work on the capsid,
+
+37:19.560 --> 37:22.920
+it's very natural to speculate or imagine,
+
+37:22.920 --> 37:25.280
+maybe this could do something.
+
+37:25.280 --> 37:30.280
+So, maybe this kind of feature could affect their AV life cycle
+
+37:30.840 --> 37:34.840
+or some type of trope or something.
+
+37:34.840 --> 37:39.680
+Now I will show you how does each of these capsid
+
+37:39.680 --> 37:42.240
+perform in the animal models.
+
+37:42.240 --> 37:45.800
+So, just for your information that we actually
+
+37:45.800 --> 37:49.240
+have another talk, we are happy right after this session
+
+37:49.240 --> 37:53.080
+where Dr. Jules Muske will present our recent
+
+37:53.080 --> 37:55.800
+clinical data if you are interested in.
+
+37:55.800 --> 37:58.560
+So, here I'm just showing the animal data.
+
+37:58.560 --> 38:03.560
+So, firstly, AV-901, this is a very busy slide,
+
+38:04.320 --> 38:07.960
+but I want to draw your attention to this bar graph.
+
+38:07.960 --> 38:11.600
+And you can see, hopefully, the second bar
+
+38:11.600 --> 38:14.720
+represents the liver, so at the DNA level,
+
+38:14.720 --> 38:17.360
+you can see that this capsid appears
+
+38:17.360 --> 38:19.840
+to be a liver-detocated capsid.
+
+38:19.840 --> 38:22.720
+And you can see all the bars which represent
+
+38:22.720 --> 38:25.440
+for the brain, different part of the brain
+
+38:25.440 --> 38:26.880
+and the spinal cord.
+
+38:26.880 --> 38:30.960
+Then you can tell they are actually having more copies
+
+38:30.960 --> 38:34.840
+compared to AV-9, which indicating that this capsid
+
+38:34.840 --> 38:37.200
+is crossing BBB better.
+
+38:37.200 --> 38:40.560
+And we also, of course, examined the RNA protein
+
+38:40.560 --> 38:45.560
+and it appears that we have a liver-detocated capsid
+
+38:47.000 --> 38:49.200
+and it crossed the BBB better.
+
+38:49.200 --> 38:54.200
+And it has a very kind of good transduction profile
+
+38:54.400 --> 38:55.840
+for the motor neurons.
+
+38:56.920 --> 39:01.920
+So, the next one I'm showing you here is the AV-902,
+
+39:02.240 --> 39:06.280
+which you can see is also liver-detocated
+
+39:06.280 --> 39:10.520
+and it transduces the spinal cord of the brain well,
+
+39:10.520 --> 39:14.200
+but it doesn't really cross the BBB significantly better
+
+39:14.200 --> 39:18.760
+than the AV-9 and even a little bit worse or similar.
+
+39:18.760 --> 39:23.120
+So, we think this capsid is liver-detocated,
+
+39:23.120 --> 39:25.960
+but it doesn't cross BBB more efficiently,
+
+39:25.960 --> 39:29.240
+but it does transduce the serum at similar
+
+39:29.240 --> 39:32.080
+or comparable level compared to AV-9.
+
+39:32.080 --> 39:35.840
+So, the very last two AV-903,
+
+39:35.840 --> 39:38.440
+now four AV-904 works very quickly.
+
+39:38.440 --> 39:43.000
+From the DNA level, you can tell it is not liver-detocated
+
+39:43.000 --> 39:46.960
+capsid at all, but it does cross the BBB better,
+
+39:46.960 --> 39:48.600
+more efficiently.
+
+39:48.600 --> 39:49.440
+So,
+
+39:50.440 --> 39:56.120
+so just to summarize what I just showed you
+
+39:56.120 --> 39:58.240
+in the animal are animals.
+
+39:58.240 --> 40:03.240
+So, it appears that for this four AV-9 variants,
+
+40:03.760 --> 40:08.760
+we have AV-1901 and 02 appear to be liver-detocated
+
+40:10.920 --> 40:15.920
+and we have all these capsid except the AV-902
+
+40:15.920 --> 40:20.520
+appear to not better than AV-9 in crossing the BBB,
+
+40:20.520 --> 40:23.200
+but all others across the BBB better.
+
+40:23.200 --> 40:26.720
+And they all transduce the urine pretty well,
+
+40:26.720 --> 40:30.360
+but the next major question is how would this translate
+
+40:30.360 --> 40:35.360
+to therapeutic effect when we put it on the animal models?
+
+40:35.520 --> 40:40.520
+So, here I'm going to show you the performance
+
+40:40.600 --> 40:42.160
+in the disease model.
+
+40:42.160 --> 40:47.160
+Here we are using the very famous Delta-7SMA mouse model,
+
+40:47.240 --> 40:52.240
+which is originally established by Dr. Burgess
+
+40:52.880 --> 40:54.840
+at the Ohio State University.
+
+40:54.840 --> 40:58.200
+And this is the mouse model, the key mouse model
+
+40:58.200 --> 41:03.200
+that successfully supports the DSMA development,
+
+41:03.480 --> 41:05.360
+the eventual approver.
+
+41:05.360 --> 41:08.920
+So, this actually is kind of rapidly then a model
+
+41:08.920 --> 41:12.120
+that could kind of predict the translatability
+
+41:12.120 --> 41:15.620
+for the capsids for the CNS disease implications.
+
+41:17.100 --> 41:20.720
+So, we packed all these AV-9 variants
+
+41:20.720 --> 41:23.840
+into a CCE AV format,
+
+41:23.840 --> 41:27.800
+and then we packed the same human SMM1 gene,
+
+41:27.800 --> 41:29.180
+a stethogensma.
+
+41:29.180 --> 41:33.480
+So, then we put these vectors into the animal model.
+
+41:33.480 --> 41:37.080
+And here I'm going to show you just one dataset,
+
+41:37.080 --> 41:38.560
+which is the survival data.
+
+41:38.560 --> 41:40.600
+Of course, we test all the other stuff,
+
+41:40.600 --> 41:43.760
+like the body weight, the motor functions, everything,
+
+41:43.760 --> 41:45.760
+but here just the survival data.
+
+41:45.760 --> 41:48.960
+And here you can see the dotted line
+
+41:48.960 --> 41:51.400
+represent the non-trading mouse,
+
+41:51.400 --> 41:55.400
+and the black line represent the AV-9,
+
+41:55.400 --> 41:57.520
+which is similar to Zogesma.
+
+41:57.520 --> 42:00.920
+And then here is the AV-901,
+
+42:00.920 --> 42:05.600
+which actually from the biodestribution expression data,
+
+42:06.280 --> 42:09.440
+we know that this is a liver-detocated capsid,
+
+42:09.440 --> 42:11.880
+and it crossed the BBB efficiently,
+
+42:11.880 --> 42:14.400
+much more efficiently compared to AV-9,
+
+42:14.400 --> 42:16.920
+and actually it transduces our target cell,
+
+42:16.920 --> 42:19.520
+which is the modern neuron cell pretty well,
+
+42:19.520 --> 42:24.200
+but it didn't rescue the phenotypes in the SMM1 model
+
+42:24.200 --> 42:27.480
+compared to AV-9, it doesn't rescue better than AV-9.
+
+42:27.480 --> 42:31.800
+And the AV-902, which is also a liver-detocated capsid,
+
+42:31.800 --> 42:34.560
+but it didn't cross the BBB more efficiently
+
+42:34.560 --> 42:38.320
+compared to AV-9, it actually works very well
+
+42:38.320 --> 42:40.160
+on the SMM1 model.
+
+42:40.160 --> 42:42.720
+The third and the fourth capsid,
+
+42:42.720 --> 42:45.120
+if you still remember the big table,
+
+42:45.120 --> 42:49.840
+the three and the four, they are very similar to each other
+
+42:49.840 --> 42:53.720
+in terms of the biodestribution or expression profile,
+
+42:53.720 --> 42:58.720
+but eventually there are a therapeutic effect
+
+42:59.600 --> 43:01.600
+on this model, it's totally different.
+
+43:01.600 --> 43:06.600
+The AV-903 is similar or actually worse compared to AV-9,
+
+43:07.440 --> 43:11.800
+but the AV-904, that just works perfectly,
+
+43:11.800 --> 43:15.360
+even at lower dose, I forgot the exact dose,
+
+43:15.360 --> 43:19.960
+but it could be up to a lower dose compared to AV-9,
+
+43:19.960 --> 43:22.120
+can still rescue the phenotypes.
+
+43:22.120 --> 43:27.120
+So this is very interesting because these two peptides,
+
+43:28.120 --> 43:30.320
+as I said, they are all NHP,
+
+43:30.320 --> 43:32.720
+they are library directory evolution,
+
+43:32.720 --> 43:35.360
+they are top candidates for targeting the CNS,
+
+43:35.360 --> 43:37.760
+they are supposed to cross the BBB better,
+
+43:37.760 --> 43:39.800
+and they are very similar profiling
+
+43:39.800 --> 43:42.720
+all what our preclinic evaluation,
+
+43:42.720 --> 43:45.040
+but eventually they are performed totally differently
+
+43:45.040 --> 43:47.000
+in the SMM1 models.
+
+43:48.400 --> 43:52.280
+And the one more interesting thing is actually three and four,
+
+43:52.280 --> 43:56.480
+they contain the same mutations as AV-902,
+
+43:56.520 --> 44:00.560
+which in AV-902, these mutations in the VA1
+
+44:00.560 --> 44:02.960
+actually resulted in liver detoxing,
+
+44:02.960 --> 44:05.800
+but when we combine the top candidates,
+
+44:05.800 --> 44:08.640
+the peptide candidates together with this,
+
+44:08.640 --> 44:13.640
+we are one mutations, they are not liver detoxing anymore.
+
+44:13.840 --> 44:16.000
+So they are talking to each other,
+
+44:16.000 --> 44:19.520
+even one is at a VR8, one is at a VR1.
+
+44:19.520 --> 44:22.560
+So here is the data and the summary,
+
+44:22.560 --> 44:25.880
+it ends up that we have expected or unexpected,
+
+44:25.880 --> 44:28.960
+we have two capsules that works better than AV-9,
+
+44:28.960 --> 44:33.080
+and two capsules is actually work worse than AV-9.
+
+44:34.520 --> 44:39.520
+So I think it is obvious that there are some
+
+44:40.160 --> 44:43.160
+like biology behind this phenomena
+
+44:43.160 --> 44:46.240
+that we may need to pay a little more attention
+
+44:46.240 --> 44:49.720
+or considerations when we talk about capsules engineering.
+
+44:49.720 --> 44:54.720
+And I would say our observation may demonstrate
+
+44:54.840 --> 44:58.680
+that the importance of the deriving translation capsules
+
+44:58.680 --> 45:00.960
+versus the best transducing capsules,
+
+45:00.960 --> 45:03.720
+we should always consider everything together,
+
+45:03.720 --> 45:05.960
+the structure, the performance,
+
+45:05.960 --> 45:09.600
+and we should choose the appropriate animal disease model
+
+45:09.600 --> 45:14.360
+to evaluate the real potential for the clinical translation.
+
+45:14.360 --> 45:19.360
+So with that, I'd like to conclude the talk
+
+45:20.040 --> 45:22.600
+by thanking all my team members
+
+45:22.640 --> 45:27.120
+for their tremendous support and all their contributions.
+
+45:27.120 --> 45:31.400
+Specifically, I want to thank Sophia,
+
+45:31.400 --> 45:35.240
+she carried out all the structure analysis for the team,
+
+45:35.240 --> 45:40.080
+and Zhongliang basically led all the UVA experiments,
+
+45:40.080 --> 45:43.280
+the main takes care of all the production aspect.
+
+45:43.280 --> 45:46.680
+And I thank Dr. Jules Muski
+
+45:46.680 --> 45:48.720
+for letting me to lead the project,
+
+45:48.720 --> 45:51.960
+and I thank everyone, thank you for your attention.
+
+45:51.960 --> 45:53.880
+And I'm happy to take any questions.
+
+45:53.880 --> 45:54.720
+Thank you.
+
+45:59.440 --> 46:01.360
+Any questions for Liu?
+
+46:01.360 --> 46:03.600
+Come on, give me some questions, please.
+
+46:05.360 --> 46:06.200
+Not so many.
+
+46:09.520 --> 46:10.360
+Thank you very much.
+
+46:10.360 --> 46:11.720
+It was an interesting talk.
+
+46:11.720 --> 46:13.240
+My name is Adrian from Geneton.
+
+46:13.240 --> 46:14.240
+Nice to meet you.
+
+46:14.240 --> 46:17.960
+So when you look at your capsid bio-distribution
+
+46:18.040 --> 46:22.040
+and the actual effect it had in the disease models,
+
+46:22.040 --> 46:25.120
+what cells do you think actually need to be targeted
+
+46:25.120 --> 46:26.960
+for curative effect?
+
+46:26.960 --> 46:30.720
+For SMA, we majorly want the motor urine
+
+46:30.720 --> 46:33.400
+to be transduced in the spinal cord.
+
+46:33.400 --> 46:38.400
+And also because based on the SMA1 protein atlas in humans,
+
+46:39.920 --> 46:43.800
+it's not just the motor urine has the SMA1 expression.
+
+46:43.800 --> 46:47.280
+So we think other cells or organs
+
+46:47.280 --> 46:52.280
+may need certain levels of transduction.
+
+46:52.720 --> 46:55.880
+But majorly, we want the motor urine to be transduced.
+
+46:55.880 --> 46:57.760
+And do you think the motor urine transduction
+
+46:57.760 --> 46:59.960
+can happen outside of the CNS?
+
+46:59.960 --> 47:03.080
+So if they're peripherally transduced, it's enough.
+
+47:03.080 --> 47:05.520
+Since you had non-BBB crossing variants,
+
+47:05.520 --> 47:07.440
+that still had a curative effect.
+
+47:07.440 --> 47:08.880
+I'm sorry, I may miss your question.
+
+47:08.880 --> 47:10.520
+What's the question?
+
+47:10.520 --> 47:12.520
+Do you think the motor neurons need to be transduced
+
+47:12.520 --> 47:15.360
+in the CNS or can they be transduced peripherally?
+
+47:15.360 --> 47:20.200
+And then the AV retrograde the transports to the nucleus?
+
+47:22.280 --> 47:24.760
+I still don't think I get the question 100%.
+
+47:24.760 --> 47:29.520
+But I think the motor urine in the spinal cord,
+
+47:29.520 --> 47:33.640
+yeah, we do wanna target one high transduction.
+
+47:33.640 --> 47:36.560
+But for the peripheral tissues, we wanna,
+
+47:36.560 --> 47:39.960
+so no capsules that's really targeting the CNS,
+
+47:39.960 --> 47:43.040
+like absolutely, like 100%, right?
+
+47:43.080 --> 47:47.240
+You always have a disfunction in the peripheral tissues.
+
+47:47.240 --> 47:49.600
+I'm asking for the peripheral neurons.
+
+47:49.600 --> 47:51.840
+Because the motor neurons obviously starts in the CNS.
+
+47:51.840 --> 47:53.280
+That's something we haven't checked yet.
+
+47:53.280 --> 47:55.640
+We don't know, we don't have data.
+
+47:55.640 --> 47:57.360
+We'll do the next question.
+
+47:58.560 --> 48:01.000
+Gadex coffin gene therapeutics optimized.
+
+48:01.000 --> 48:02.680
+I'm curious, I may have missed it,
+
+48:02.680 --> 48:04.960
+but do you have any data in human cells yet
+
+48:04.960 --> 48:06.560
+or any tropism?
+
+48:07.440 --> 48:10.880
+We are building on AV agilis in humans, yes.
+
+48:10.880 --> 48:12.760
+We are going to publish very soon.
+
+48:13.240 --> 48:17.200
+For certain capsules, not all capsules, obviously.
+
+48:17.200 --> 48:20.040
+Can you share whether these ones were found in that atlas?
+
+48:21.400 --> 48:23.280
+This one is still ongoing.
+
+48:23.280 --> 48:25.920
+We haven't connected any data yet.
+
+48:25.920 --> 48:27.440
+Yeah, on human, not yet.
+
+48:28.600 --> 48:29.440
+Thank you.
+
+48:31.760 --> 48:32.600
+Interesting talk.
+
+48:32.600 --> 48:34.000
+I'm Travis from Genentech.
+
+48:35.120 --> 48:39.040
+You know, BBV transcytosis and liver transduction
+
+48:39.040 --> 48:41.320
+can both be affected by AVR binding.
+
+48:41.320 --> 48:44.480
+I was curious if you looked at AVR binding with your capsules.
+
+48:44.480 --> 48:47.320
+We did a structure analysis,
+
+48:47.320 --> 48:49.120
+but just to be honest,
+
+48:49.120 --> 48:51.640
+we didn't do the structure cryoEM.
+
+48:51.640 --> 48:52.480
+No, we didn't.
+
+48:52.480 --> 48:55.200
+And we didn't do the affinity test, no.
+
+48:55.200 --> 49:00.200
+But we do what everyone do is do the structure prediction,
+
+49:01.440 --> 49:05.080
+the binding assay by the computer.
+
+49:06.360 --> 49:10.280
+It is consistent, inconsistent in a way.
+
+49:11.280 --> 49:15.360
+We don't find any of variants of the indirect
+
+49:15.360 --> 49:18.040
+with AVR PKD1 domain,
+
+49:18.040 --> 49:20.920
+but for the PKD2 domain,
+
+49:20.920 --> 49:24.640
+for the AV901, it actually shows stronger binding
+
+49:25.520 --> 49:28.440
+compared to AV9, but it is liver detected,
+
+49:28.440 --> 49:30.440
+so which is a little bit contradictory
+
+49:30.440 --> 49:32.960
+to what everyone, including myself,
+
+49:32.960 --> 49:34.480
+thought it would happen.
+
+49:34.480 --> 49:38.720
+And for the AV902, it is consistent
+
+49:38.720 --> 49:41.400
+with what we currently thought it would be.
+
+49:41.400 --> 49:44.160
+So it has less binding affinity.
+
+49:44.160 --> 49:48.920
+And AV903 and AV04, I'm a little bit forgetting,
+
+49:48.920 --> 49:51.320
+but it seems to be stronger,
+
+49:51.320 --> 49:54.680
+which consistent because 903 is not liver detected,
+
+49:54.680 --> 49:56.520
+and it has stronger binding.
+
+49:56.520 --> 50:00.600
+But again, AV901 is higher binding,
+
+50:00.600 --> 50:04.720
+but liver detected, so it's hard to explain.
+
+50:04.720 --> 50:05.560
+Thank you.
+
+50:05.560 --> 50:07.640
+That would thank Luis.
+
+50:07.640 --> 50:12.640
+So for that, I would invite our next speaker
+
+50:17.560 --> 50:19.960
+from Sanofi Saurav Chaudhry,
+
+50:19.960 --> 50:22.880
+and he will be talking about the metagenomics
+
+50:22.880 --> 50:26.400
+AAV caches with deep petascale mining.
+
+50:26.400 --> 50:27.680
+Welcome, Saurav.
+
+50:28.520 --> 50:30.280
+Well, thank you, Smriti.
+
+50:30.280 --> 50:32.600
+And I'd like to start by thanking the organizers
+
+50:32.600 --> 50:34.880
+for this opportunity to talk about our work.
+
+50:36.560 --> 50:39.080
+Here's my disclosure slide, and my title slide.
+
+50:43.480 --> 50:46.200
+About 50% of the human population
+
+50:46.200 --> 50:48.880
+is ineligible for a gene therapy trial.
+
+50:49.960 --> 50:54.960
+And that is largely because of neutralizing antibodies
+
+50:54.960 --> 50:56.120
+that humans have.
+
+50:59.040 --> 51:02.840
+Actually, can we switch to the non-presenter mode?
+
+51:02.840 --> 51:05.320
+Just the slides, full screen, please.
+
+51:05.720 --> 51:06.560
+Thank you.
+
+51:08.520 --> 51:10.800
+Now, the reason human populations
+
+51:10.800 --> 51:13.600
+have neutralizing antibodies is largely
+
+51:13.600 --> 51:16.960
+because we have exposure to natural AV capsids
+
+51:16.960 --> 51:19.360
+throughout life, but also because humans
+
+51:19.360 --> 51:24.240
+have co-evolved with capsids of primate origin.
+
+51:24.240 --> 51:28.360
+And as you guys know, every single capsid
+
+51:28.360 --> 51:31.960
+we have in a clinical trial is either of primate origin
+
+51:31.960 --> 51:34.800
+or has been engineered from primate origin.
+
+51:34.800 --> 51:36.080
+So it's a massive problem.
+
+51:38.120 --> 51:40.960
+We hypothesized that if we could find capsids
+
+51:40.960 --> 51:43.280
+from a non-primate origin,
+
+51:43.280 --> 51:45.080
+we'd be able to get around this problem.
+
+51:45.080 --> 51:47.240
+Now, we're not the first ones to do it.
+
+51:47.240 --> 51:51.200
+There are landmark papers that have done it before.
+
+51:51.200 --> 51:53.560
+But one of the things that we thought
+
+51:53.560 --> 51:57.640
+was relatively unexplored is the heterogenomic space
+
+51:57.640 --> 51:59.280
+or the extra genomic space.
+
+52:00.440 --> 52:02.840
+So to aid discovery from that,
+
+52:02.880 --> 52:06.680
+we build this custom-built capsid discovery pipeline
+
+52:06.680 --> 52:08.120
+called MATCAP.
+
+52:08.120 --> 52:11.680
+I know you've up to your neck in acronyms, this is ours.
+
+52:13.320 --> 52:16.880
+The challenge with finding or mining metagenomes,
+
+52:17.720 --> 52:20.920
+capsids from metagenomes is just the scale
+
+52:20.920 --> 52:21.920
+at which you have to find.
+
+52:21.920 --> 52:25.360
+It's literally a proverbial needle in a haystack.
+
+52:25.360 --> 52:28.760
+We have about four, if you just go to NCBI,
+
+52:28.760 --> 52:33.480
+you have about 4.2 million SRAs or Sequence Read Archives
+
+52:33.480 --> 52:34.880
+that you have to search through,
+
+52:34.880 --> 52:36.760
+and that represents petabytes of data.
+
+52:36.760 --> 52:39.760
+So we built this three-layer screen
+
+52:39.760 --> 52:42.880
+where we first did a more crude screen
+
+52:42.880 --> 52:46.040
+to just identify SRAs that had power viral reads.
+
+52:46.040 --> 52:49.720
+So out of these 4.2 million, we landed about 12,000 of them.
+
+52:49.720 --> 52:54.720
+And then we essentially assembled these contexts de novo
+
+52:54.880 --> 52:58.800
+by overlapping these reads through Synoteca II,
+
+52:58.800 --> 53:00.880
+and then these contexts were annotated,
+
+53:00.880 --> 53:03.720
+and we identified novel AAV capsids
+
+53:03.720 --> 53:05.640
+from that batch of things.
+
+53:08.840 --> 53:11.720
+Using this method, we found capsids throughout the globe.
+
+53:11.720 --> 53:14.760
+We found a lot of capsids from the US,
+
+53:14.760 --> 53:17.440
+which is not surprising because there is a lot of studies
+
+53:17.440 --> 53:20.160
+in metagenomic studies in wastewater from the US,
+
+53:20.160 --> 53:23.840
+but we also found a lot of capsids in Southeast Asia.
+
+53:25.160 --> 53:28.880
+We found capsids in a variety of architectures.
+
+53:28.880 --> 53:30.120
+We found linear capsids.
+
+53:30.120 --> 53:32.960
+We found in complete genomes,
+
+53:32.960 --> 53:34.920
+with just the capsidum and no rep.
+
+53:34.920 --> 53:38.600
+We found capsids that looked like they could be circular
+
+53:38.600 --> 53:41.960
+in their genomes, not entirely clear why.
+
+53:41.960 --> 53:46.960
+But as a summation, we found about 139 novel capsids.
+
+53:48.000 --> 53:49.280
+So just to set the scale,
+
+53:49.280 --> 53:54.280
+this about doubles the universe of known AAV capsidum.
+
+53:55.280 --> 53:58.280
+So that's what we found in this class of variants.
+
+53:58.280 --> 54:01.440
+What is particularly interesting in this cladogram
+
+54:01.440 --> 54:06.440
+that you see is the divergent madcap sequence.
+
+54:06.440 --> 54:08.440
+So divergent madcap sequence is a sequence
+
+54:08.440 --> 54:13.440
+that we actually could not find a close natural relative to.
+
+54:13.440 --> 54:17.040
+There wasn't really a base capsid or a parental capsid
+
+54:17.040 --> 54:19.840
+that we could see that it had evolved away from.
+
+54:19.840 --> 54:23.680
+And that's what we're gonna talk about throughout this talk,
+
+54:23.720 --> 54:27.040
+and focus on, given the context of what we were searching for.
+
+54:29.440 --> 54:33.400
+In this data set, we are looking at percentage neutralization.
+
+54:33.400 --> 54:37.720
+And I like to point you out sort of the two big buckets
+
+54:37.720 --> 54:39.200
+of capsids that we were able to find.
+
+54:39.200 --> 54:40.920
+There's this blue bucket, right?
+
+54:40.920 --> 54:42.440
+Which is mildly neutralizable.
+
+54:42.440 --> 54:45.200
+They get neutralized, especially as you keep increasing
+
+54:45.200 --> 54:47.200
+the concentration of human IVIG,
+
+54:47.200 --> 54:49.360
+which contains preexisting neutralizing antibodies
+
+54:49.360 --> 54:51.240
+throughout the globe.
+
+54:51.280 --> 54:54.080
+They are much better compared to the black lines there,
+
+54:54.080 --> 54:58.440
+which are the natural isolates like AV1, AV2, and AV9.
+
+54:58.440 --> 55:01.440
+And then you have what we think is the most promising one,
+
+55:01.440 --> 55:04.760
+which are the pink squiggly lines, the pink capsids here,
+
+55:04.760 --> 55:07.160
+which are these non-neutralizing capsids
+
+55:07.160 --> 55:09.760
+that do not seem to hit 50% neutralization
+
+55:09.760 --> 55:12.480
+at any concentration of IVIG that we dose.
+
+55:12.480 --> 55:17.400
+There's literally no nab response
+
+55:17.400 --> 55:20.000
+that we could record for these, which is very surprising.
+
+55:20.280 --> 55:23.960
+We have not seen that previously.
+
+55:23.960 --> 55:27.360
+This is just the same data graphed out differently
+
+55:27.360 --> 55:30.560
+to show you the gulf between the natural isolates,
+
+55:30.560 --> 55:32.840
+the neutralizable mat caps,
+
+55:32.840 --> 55:35.400
+and the completely non-neutralizable mat caps.
+
+55:36.960 --> 55:40.800
+We decided to focus on two of these pink capsids,
+
+55:40.800 --> 55:44.840
+two of the non-neutralizable mat caps, MC46 and MC55.
+
+55:44.840 --> 55:46.280
+Again, more acronyms.
+
+55:47.120 --> 55:49.920
+I'll talk to you about in a second
+
+55:49.920 --> 55:52.040
+of why we decided to focus on it,
+
+55:52.040 --> 55:53.400
+but the first thing to show is that
+
+55:53.400 --> 55:57.160
+because these are caps as we haven't seen before,
+
+55:57.160 --> 55:59.080
+we confirm that these are able to package,
+
+55:59.080 --> 56:02.520
+these are able to make what we consider classic virions.
+
+56:03.520 --> 56:05.800
+But very interestingly, when we dose them
+
+56:05.800 --> 56:10.240
+into a non-human primate, these stood out significantly
+
+56:10.240 --> 56:11.480
+compared to AV9.
+
+56:11.480 --> 56:15.000
+You can see AV9 on the bottom right of the curve,
+
+56:15.000 --> 56:18.840
+high neutralization, but low brain penetrance,
+
+56:18.840 --> 56:22.280
+and you can see MC55, and especially MC46,
+
+56:22.280 --> 56:24.280
+on the left of that curve.
+
+56:26.160 --> 56:29.240
+If you look at where they are on the cladogram
+
+56:31.200 --> 56:33.760
+in relation to other capsids,
+
+56:33.760 --> 56:37.880
+what you're seeing here in the purple Manhattan skyscrapers
+
+56:37.880 --> 56:41.280
+is the extent to which they can be neutralized.
+
+56:41.280 --> 56:43.840
+And you can clearly point out with those two boxes
+
+56:43.840 --> 56:48.200
+that MC45, MC46 is completely non-neutralizable,
+
+56:48.200 --> 56:51.160
+whereas MC55 has a degree of neutralization,
+
+56:51.160 --> 56:53.280
+but is much less compared to its neighbors
+
+56:53.280 --> 56:55.480
+and natural isolates.
+
+56:57.360 --> 56:59.720
+Here is a representative brain map
+
+56:59.720 --> 57:03.840
+showing the brain penetrance of MC46 and MC55
+
+57:03.840 --> 57:05.720
+compared to AV9.
+
+57:05.720 --> 57:08.880
+What you're seeing on the left is DNA fitness,
+
+57:08.880 --> 57:10.280
+or DNA recounts.
+
+57:10.280 --> 57:12.960
+What you're seeing on the right of this brain heat map
+
+57:12.960 --> 57:16.560
+is the RNA, and you can see that we think that MC46
+
+57:16.560 --> 57:19.240
+and MC55 show widespread transduction
+
+57:19.240 --> 57:22.480
+of the non-human primate brain after intravenous delivery.
+
+57:25.200 --> 57:29.680
+We wanted to next confirm how good,
+
+57:29.680 --> 57:34.280
+or how good at avoiding nab neutralization are these capsids.
+
+57:34.280 --> 57:35.800
+So we basically compared them
+
+57:35.800 --> 57:37.880
+to their closest natural isolate.
+
+57:37.880 --> 57:40.000
+I'm just showing you this MSA just to show you
+
+57:40.000 --> 57:42.800
+that when we say closest is not very close,
+
+57:42.800 --> 57:44.280
+it's actually quite far,
+
+57:44.280 --> 57:46.280
+but their closest natural isolates,
+
+57:46.280 --> 57:49.280
+and we benchmarked it to AV1 and AV9.
+
+57:50.120 --> 57:53.040
+And what you're seeing here is basically
+
+57:53.040 --> 57:55.680
+person neutralization in about 15
+
+57:55.680 --> 57:58.120
+individual human donors that we sourced.
+
+57:58.120 --> 58:00.840
+And what you can see here, the more yellier you get,
+
+58:00.840 --> 58:04.440
+the more seropositive these donors are
+
+58:04.440 --> 58:07.240
+for a specific capsid.
+
+58:07.240 --> 58:10.280
+And what you can see is that your natural AV capsids,
+
+58:10.280 --> 58:13.080
+a majority of donors are seropositive for them.
+
+58:13.080 --> 58:17.320
+As you go to MC55, which is the last but one column,
+
+58:17.320 --> 58:20.520
+you can see that few donors are seropositive.
+
+58:20.520 --> 58:21.880
+And as you get to MC46,
+
+58:21.880 --> 58:24.360
+we did not see a single donor out of the 15
+
+58:24.360 --> 58:26.000
+that was seropositive.
+
+58:26.000 --> 58:27.440
+We've actually done this exact study
+
+58:27.440 --> 58:29.920
+with about 100 non-human primates right now,
+
+58:29.920 --> 58:33.320
+and we found two that maybe could be seropositive.
+
+58:35.320 --> 58:39.340
+We also confirmed that if you take serum from these donors,
+
+58:39.340 --> 58:42.740
+you are still able to get full transduction
+
+58:42.740 --> 58:45.300
+with MC46 and MC55.
+
+58:48.380 --> 58:51.140
+Now the next question is, if that is true,
+
+58:52.100 --> 58:54.780
+is this a paradigm for re-dosing?
+
+58:55.700 --> 58:58.320
+What we confirmed is that MC46 transduction
+
+58:58.320 --> 59:00.180
+is unaffected by prior AV dosing.
+
+59:00.180 --> 59:02.700
+So on the left, we are showing you
+
+59:02.700 --> 59:04.420
+this passive transfer model,
+
+59:04.420 --> 59:07.140
+where rodents are pre-dosed with human IVIG,
+
+59:07.140 --> 59:09.300
+and then they are challenged with AV.
+
+59:09.300 --> 59:11.380
+And what you can see is that as expected,
+
+59:11.380 --> 59:14.620
+AV9 completely loses all transduction
+
+59:14.620 --> 59:19.100
+if in a passive transfer mouse model,
+
+59:19.100 --> 59:22.540
+which is rescued by IDES, as expected.
+
+59:22.540 --> 59:26.480
+On the other hand, MC46 loses none of its transduction.
+
+59:30.020 --> 59:32.460
+And a pretty similar assay on the right,
+
+59:32.460 --> 59:34.620
+where we are showing that in rodents
+
+59:34.620 --> 59:37.620
+that are dosed with AV1, or AVRS7233,
+
+59:37.620 --> 59:39.100
+pretty diverse capsules,
+
+59:39.100 --> 59:40.980
+you see exactly the same phenomena
+
+59:40.980 --> 59:43.100
+where gene transfer is not inhibited.
+
+59:44.260 --> 59:47.300
+Using this when challenged with the seed of these mice,
+
+59:47.300 --> 59:49.660
+there is no inhibition of gene transfer at all
+
+59:49.660 --> 59:51.540
+with MC46 and MC55.
+
+59:54.180 --> 59:58.020
+So your holy grail capsid
+
+59:58.020 --> 01:00:02.180
+has all three of these components augmented.
+
+01:00:03.020 --> 01:00:05.980
+Last year, we showed you some data at ASGCT on Apex,
+
+01:00:05.980 --> 01:00:08.020
+which is our generative AI modeling,
+
+01:00:08.020 --> 01:00:11.100
+where we take a known capsid, a known natural isolate,
+
+01:00:11.100 --> 01:00:13.220
+and we evolve the sequence space around it
+
+01:00:13.220 --> 01:00:15.100
+with generative AI modeling
+
+01:00:15.100 --> 01:00:17.700
+to find a retinotropic capsid
+
+01:00:17.700 --> 01:00:19.220
+that is both manufacturable
+
+01:00:19.220 --> 01:00:22.220
+and has high degree of retinotropism.
+
+01:00:23.060 --> 01:00:24.540
+This year, we're talking about mad gas,
+
+01:00:24.540 --> 01:00:26.700
+where instead of going this way,
+
+01:00:26.700 --> 01:00:28.140
+we're going this way,
+
+01:00:28.140 --> 01:00:30.580
+and discovering novel ABs by mining
+
+01:00:30.580 --> 01:00:33.580
+this vast amount of available metagenomic space.
+
+01:00:35.980 --> 01:00:37.740
+Why are we excited about this work?
+
+01:00:37.780 --> 01:00:39.940
+We are excited about this work
+
+01:00:39.940 --> 01:00:41.980
+because of the discovery potential, right?
+
+01:00:41.980 --> 01:00:43.260
+So we have hit upon this,
+
+01:00:43.260 --> 01:00:47.900
+what we think is this incredibly black box unexplored
+
+01:00:47.900 --> 01:00:52.180
+mother lord of this rich vein of nav-naive capsids
+
+01:00:52.180 --> 01:00:55.220
+that have exciting properties that we don't know about.
+
+01:00:56.540 --> 01:01:00.020
+We are excited to find out more about the biology of this.
+
+01:01:00.020 --> 01:01:01.780
+Why do these capsids,
+
+01:01:01.780 --> 01:01:06.540
+how these capsids evolve to avoid nab recognition?
+
+01:01:06.540 --> 01:01:11.020
+How is MC-46 doing what it's doing
+
+01:01:11.020 --> 01:01:12.660
+in the non-human primate CNS,
+
+01:01:12.660 --> 01:01:15.780
+and why it hasn't likely seen a primate?
+
+01:01:17.620 --> 01:01:20.340
+Is it, does it have deep brain penetrance,
+
+01:01:20.340 --> 01:01:22.580
+or is it limited to basically existing
+
+01:01:22.580 --> 01:01:24.460
+or transducing the blood-brain barrier?
+
+01:01:24.460 --> 01:01:26.340
+Does it actually cross it?
+
+01:01:26.340 --> 01:01:29.500
+Are these novel capsids responsive to AVR,
+
+01:01:29.500 --> 01:01:31.780
+or is there a different pathway by which they go through?
+
+01:01:31.780 --> 01:01:34.980
+What is the natural receptor for these capsids?
+
+01:01:34.980 --> 01:01:38.500
+So much, so much interesting biology that we are,
+
+01:01:38.500 --> 01:01:41.380
+we are digging into and every day is an exciting day.
+
+01:01:42.780 --> 01:01:46.460
+We're excited for the impact that it can have on patients.
+
+01:01:46.460 --> 01:01:51.460
+Very clearly, this satisfies a very fundamental ask
+
+01:01:51.940 --> 01:01:53.460
+from the capsid engineering community.
+
+01:01:53.460 --> 01:01:57.220
+Can you give us a capsule that is completely nab naive?
+
+01:01:57.220 --> 01:02:00.020
+And we are already working with some teams
+
+01:02:00.020 --> 01:02:02.820
+on exploring this in the pre-clinical space.
+
+01:02:02.940 --> 01:02:06.580
+If this is of interest to any of you,
+
+01:02:06.580 --> 01:02:08.700
+please feel free to reach out,
+
+01:02:08.700 --> 01:02:10.340
+and we'll have a chat on this.
+
+01:02:10.340 --> 01:02:12.420
+We are completely open about sharing these.
+
+01:02:12.420 --> 01:02:14.140
+We are completely, we really want people
+
+01:02:14.140 --> 01:02:16.180
+to be using it if it's of interest.
+
+01:02:17.100 --> 01:02:21.260
+And lastly, speaking as a capsid biologist,
+
+01:02:22.340 --> 01:02:24.940
+I love this for the platform value that it brings.
+
+01:02:24.940 --> 01:02:29.140
+Like it's, the value for us is now this is a chassis for us
+
+01:02:29.140 --> 01:02:32.420
+to evolve capsid with desired properties based off on.
+
+01:02:32.420 --> 01:02:36.460
+We've essentially switched from your AV9 and like
+
+01:02:36.460 --> 01:02:40.220
+to these matcap capsids for our chassis almost immediately
+
+01:02:40.220 --> 01:02:43.100
+because I think this is how we're gonna,
+
+01:02:43.100 --> 01:02:46.100
+our lab or our team is gonna start doing capsid discovery.
+
+01:02:47.340 --> 01:02:50.900
+So it takes a village, it's not just us.
+
+01:02:50.900 --> 01:02:53.460
+I like to highlight three individuals,
+
+01:02:53.460 --> 01:02:57.020
+Tess Tarragosa, Eugenia Lashanko and Alex Isasi,
+
+01:02:57.020 --> 01:02:58.900
+who are the key contributors for this
+
+01:02:58.900 --> 01:03:00.940
+and are the first authors in a manuscript
+
+01:03:00.940 --> 01:03:03.300
+that is under review.
+
+01:03:03.300 --> 01:03:06.060
+And I'd like to have a heartfelt thanks
+
+01:03:06.060 --> 01:03:10.460
+for Christian Mueller, who's the global head of JMU,
+
+01:03:10.460 --> 01:03:13.500
+for investing time and resource into something,
+
+01:03:13.500 --> 01:03:15.620
+especially in the early days when it's blue sky research.
+
+01:03:15.620 --> 01:03:18.940
+It's sometimes hard to do that with corporate KPIs
+
+01:03:18.940 --> 01:03:20.860
+and term sheets and all of that.
+
+01:03:20.860 --> 01:03:24.540
+So with that, thank you, and I'm happy to take questions.
+
+01:03:24.540 --> 01:03:25.380
+Thank you.
+
+01:03:30.380 --> 01:03:31.940
+Thank you, Sara.
+
+01:03:31.940 --> 01:03:33.180
+Hi, nice talk.
+
+01:03:33.180 --> 01:03:34.540
+I'm Dan Stone from Fred Hutch.
+
+01:03:34.540 --> 01:03:36.220
+I'm also the associate editor in chief
+
+01:03:36.220 --> 01:03:37.700
+of molecular therapy advances,
+
+01:03:37.700 --> 01:03:40.340
+which I'll get to why I'm saying that in a second.
+
+01:03:41.460 --> 01:03:46.380
+So many of us in the room have submitted AV sequences
+
+01:03:46.380 --> 01:03:48.380
+and capsids to SRA.
+
+01:03:49.380 --> 01:03:51.780
+So when you are panning this stuff,
+
+01:03:51.780 --> 01:03:55.340
+if say I had a novel capsid that I'd submitted the SRA to
+
+01:03:55.340 --> 01:03:57.180
+and I hadn't published it,
+
+01:03:57.180 --> 01:04:01.740
+would that be captured in your novel AV
+
+01:04:01.740 --> 01:04:02.580
+that you're pulling out?
+
+01:04:02.580 --> 01:04:04.180
+So really, are you discovering things
+
+01:04:04.180 --> 01:04:06.540
+that people have other discovered, already discovered,
+
+01:04:06.540 --> 01:04:09.020
+or is this stuff that's coming from, say,
+
+01:04:09.020 --> 01:04:12.580
+a non-AV related study that happens to have an AV in there?
+
+01:04:12.580 --> 01:04:13.980
+The part one.
+
+01:04:13.980 --> 01:04:15.580
+Okay.
+
+01:04:15.580 --> 01:04:16.940
+The latter.
+
+01:04:16.940 --> 01:04:19.380
+In fact, I can tell you that MC46 comes
+
+01:04:19.380 --> 01:04:23.620
+from a completely unrelated study, nothing to do with AV,
+
+01:04:23.620 --> 01:04:27.300
+generally more to do with a post-COVID virology screen
+
+01:04:27.300 --> 01:04:29.700
+in a seafood market in Southeast Asia.
+
+01:04:29.700 --> 01:04:31.180
+So nothing to do with AV.
+
+01:04:31.180 --> 01:04:32.020
+Okay, great.
+
+01:04:32.020 --> 01:04:32.860
+Thank you.
+
+01:04:32.860 --> 01:04:33.820
+And then part two.
+
+01:04:33.820 --> 01:04:35.420
+So at molecular therapy advances,
+
+01:04:35.420 --> 01:04:37.900
+we publish a lot of novel AV capsids
+
+01:04:37.900 --> 01:04:42.900
+and we see a lot of biotechs wanting to publish capsids,
+
+01:04:43.580 --> 01:04:46.980
+but they call them AVXB, et cetera.
+
+01:04:47.020 --> 01:04:50.020
+Since you are harvesting this from publicly available database,
+
+01:04:50.020 --> 01:04:52.860
+are you willing to put these capsid sequences
+
+01:04:52.860 --> 01:04:55.500
+back into the databases where you got them from?
+
+01:04:55.500 --> 01:04:56.340
+Absolutely.
+
+01:04:58.020 --> 01:05:01.020
+I speak for Sanofi here that we are incredibly open.
+
+01:05:01.020 --> 01:05:05.900
+We've published Apex and other platforms we've published.
+
+01:05:05.900 --> 01:05:07.980
+This is, as I said, in press.
+
+01:05:07.980 --> 01:05:09.540
+We will absolutely have a full disclosure,
+
+01:05:09.540 --> 01:05:12.820
+including not just the sequences, which is obvious,
+
+01:05:12.820 --> 01:05:14.900
+but obviously also the code by which you discovered it,
+
+01:05:14.900 --> 01:05:16.540
+in case there are things that we didn't discover,
+
+01:05:16.540 --> 01:05:17.820
+that other people find interesting.
+
+01:05:17.820 --> 01:05:19.500
+So we are entirely transparent.
+
+01:05:19.500 --> 01:05:21.460
+That's fantastic, and I commend you
+
+01:05:21.460 --> 01:05:23.700
+and I recommend that all other companies
+
+01:05:23.700 --> 01:05:25.740
+that submit to any of the molecular therapy journals
+
+01:05:25.740 --> 01:05:27.580
+have a similar...
+
+01:05:27.580 --> 01:05:28.420
+I love it.
+
+01:05:28.420 --> 01:05:29.260
+Thank you very much.
+
+01:05:29.260 --> 01:05:30.100
+Thank you.
+
+01:05:32.180 --> 01:05:34.260
+Hi, great talk.
+
+01:05:34.260 --> 01:05:36.180
+Ashuna from University of Louisville.
+
+01:05:36.180 --> 01:05:38.420
+So anything that we make novel
+
+01:05:38.420 --> 01:05:42.420
+also can trigger the immunogenicity profile.
+
+01:05:42.420 --> 01:05:44.500
+Have you looked into how this,
+
+01:05:45.300 --> 01:05:46.900
+while the transduction is great,
+
+01:05:46.900 --> 01:05:49.780
+but how does it trigger the innate
+
+01:05:49.780 --> 01:05:52.740
+and the innate immunity of these?
+
+01:05:52.740 --> 01:05:55.100
+Have you looked into the immunity profiles
+
+01:05:55.100 --> 01:05:58.900
+of these animals that you have been investigating?
+
+01:05:58.900 --> 01:05:59.740
+Great question.
+
+01:05:59.740 --> 01:06:00.740
+We do.
+
+01:06:00.740 --> 01:06:02.460
+We have not seen anything adverse.
+
+01:06:02.460 --> 01:06:04.460
+The animals, the non-human primates,
+
+01:06:04.460 --> 01:06:07.100
+seem to be able to tolerate it
+
+01:06:07.100 --> 01:06:09.580
+with the specific set of trans genes with a caveat
+
+01:06:09.580 --> 01:06:11.980
+that we have a specific set of trans genes
+
+01:06:11.980 --> 01:06:13.980
+that we are interested in and so on and so forth.
+
+01:06:13.980 --> 01:06:16.660
+With that caveat, we have seen no adverse effects.
+
+01:06:16.660 --> 01:06:18.580
+We've seen some very interesting phenomena
+
+01:06:18.580 --> 01:06:21.180
+in terms of, which we still have to confirm
+
+01:06:21.180 --> 01:06:25.100
+in terms of it seems, whether it can be completely
+
+01:06:25.100 --> 01:06:28.100
+re-dosed as a second dose by itself.
+
+01:06:28.100 --> 01:06:29.860
+I think that study is ongoing,
+
+01:06:29.860 --> 01:06:32.780
+but in terms of phenomena that might be interesting
+
+01:06:32.780 --> 01:06:34.940
+to the clinical community, these behave
+
+01:06:34.940 --> 01:06:37.380
+pretty much like other capsules.
+
+01:06:37.380 --> 01:06:38.380
+Okay, thank you.
+
+01:06:40.340 --> 01:06:43.740
+In the interest of time, maybe we can have the questions
+
+01:06:43.740 --> 01:06:44.580
+later.
+
+01:06:44.580 --> 01:06:47.380
+I see there are many more questions for you.
+
+01:06:47.380 --> 01:06:50.180
+So maybe you can talk to all the people.
+
+01:06:50.180 --> 01:06:51.020
+I would love to.
+
+01:06:51.020 --> 01:06:53.220
+Please, please, please feel free to catch me.
+
+01:06:53.220 --> 01:06:54.380
+Thank you, Saurabh.
+
+01:06:54.380 --> 01:06:55.220
+Thank you.
+
+01:06:55.220 --> 01:06:56.060
+Thank you.
+
+01:06:56.060 --> 01:06:56.900
+Thank you.
+
+01:06:59.900 --> 01:07:02.300
+Moving on to our next speaker.
+
+01:07:02.300 --> 01:07:06.660
+And I want to emphasize here that he is a travel awardee.
+
+01:07:06.660 --> 01:07:11.540
+And here we welcome John Zachary for his talk
+
+01:07:11.580 --> 01:07:13.500
+on the structural investigation
+
+01:07:13.500 --> 01:07:17.860
+of naturally occurring human anti-AV2 antibodies
+
+01:07:17.860 --> 01:07:21.180
+with antigenic profile of AV2.
+
+01:07:21.180 --> 01:07:22.300
+And welcome, John.
+
+01:07:22.300 --> 01:07:23.700
+Hi, good morning, thank you.
+
+01:07:23.700 --> 01:07:26.500
+All right, so as she said, my name's John,
+
+01:07:26.500 --> 01:07:29.540
+and I am a PhD student at the University of Florida,
+
+01:07:29.540 --> 01:07:32.100
+so I don't have any disclosures at this time.
+
+01:07:32.100 --> 01:07:34.180
+I'm gonna go ahead and launch into a portion
+
+01:07:34.180 --> 01:07:38.780
+of my dissertation work that we're working on currently.
+
+01:07:38.780 --> 01:07:43.780
+So as we just heard, the use of AAVs in the clinic
+
+01:07:43.980 --> 01:07:47.300
+uses a large variety of native occurring capsids,
+
+01:07:47.300 --> 01:07:49.100
+and those capsids have preexisting,
+
+01:07:49.100 --> 01:07:50.740
+neutralizing antibodies circulating
+
+01:07:50.740 --> 01:07:52.260
+throughout the population.
+
+01:07:52.260 --> 01:07:54.660
+In fact, as of last January,
+
+01:07:54.660 --> 01:07:57.740
+about 80% of the clinical trials that had occurred
+
+01:07:57.740 --> 01:08:01.540
+or were occurring at the time used native type capsids.
+
+01:08:01.540 --> 01:08:04.020
+And as we've seen in the past few days,
+
+01:08:04.020 --> 01:08:06.300
+the proportion of engineered capsids
+
+01:08:06.300 --> 01:08:07.980
+can be expected to increase,
+
+01:08:07.980 --> 01:08:12.260
+but the resistance through neutralizing antibodies
+
+01:08:12.260 --> 01:08:14.540
+may not be affected by some of these changes.
+
+01:08:14.540 --> 01:08:16.780
+And depending on the serotype that you investigate,
+
+01:08:16.780 --> 01:08:20.780
+you can have anywhere from five to 95% seropositivity
+
+01:08:20.780 --> 01:08:23.460
+for this neutralizing antibodies in your population.
+
+01:08:24.660 --> 01:08:27.140
+In response to this, our lab recently,
+
+01:08:27.140 --> 01:08:31.940
+and a few years ago, did a study using AV9 antibodies
+
+01:08:31.940 --> 01:08:35.220
+that were sourced from Zoologism treated patients
+
+01:08:35.220 --> 01:08:36.980
+that were neutralizing.
+
+01:08:36.980 --> 01:08:41.620
+And then use high resolution cryoem data
+
+01:08:41.620 --> 01:08:45.900
+in order to characterize where those exact antibodies
+
+01:08:45.900 --> 01:08:47.260
+bound on the surface.
+
+01:08:47.260 --> 01:08:50.980
+And from that, we determined about three quarters
+
+01:08:50.980 --> 01:08:52.060
+of them bound to the surface
+
+01:08:52.060 --> 01:08:53.620
+at the two full portion of the capsid.
+
+01:08:53.620 --> 01:08:55.140
+And for those of you that aren't overly familiar
+
+01:08:55.140 --> 01:08:58.180
+with the exact structure, I'll show that in a moment.
+
+01:08:59.540 --> 01:09:00.780
+And then from this data,
+
+01:09:00.780 --> 01:09:04.100
+we then developed a antibody escape capable variant
+
+01:09:04.100 --> 01:09:06.820
+that was able to escape 17 of those 21 antibodies
+
+01:09:06.820 --> 01:09:09.540
+that we investigated, maintained its tropism
+
+01:09:09.540 --> 01:09:12.300
+and biodistributions and maintained transduction
+
+01:09:12.300 --> 01:09:14.460
+in the presence of sera, both from these patients
+
+01:09:14.460 --> 01:09:16.420
+that these antibodies were isolated from
+
+01:09:16.420 --> 01:09:18.860
+and from patients whose antibodies weren't included
+
+01:09:18.860 --> 01:09:20.340
+in this portion of the study.
+
+01:09:22.340 --> 01:09:26.100
+Recently, there's been a, well, in 2022,
+
+01:09:26.100 --> 01:09:27.780
+following the COVID lockdown,
+
+01:09:27.780 --> 01:09:29.900
+there was an outbreak of pediatric hepatitis
+
+01:09:29.900 --> 01:09:31.620
+and during the ideological studies for these,
+
+01:09:31.620 --> 01:09:35.220
+patients were found to also be co-infected with AAV2.
+
+01:09:35.220 --> 01:09:39.740
+This was not necessarily unexpected as many of the viruses
+
+01:09:39.740 --> 01:09:42.660
+that were found to be part of this outbreak
+
+01:09:42.660 --> 01:09:46.460
+were the common helper viruses for AAVs.
+
+01:09:46.460 --> 01:09:49.140
+And using access to our collaborators,
+
+01:09:49.140 --> 01:09:52.420
+we were able to generate samples of the antibodies
+
+01:09:52.420 --> 01:09:54.500
+from these patients that are specific
+
+01:09:54.500 --> 01:09:58.860
+to this native type infection for AAV2.
+
+01:09:58.860 --> 01:10:01.620
+And so the goal of this work then is to clone out those
+
+01:10:01.620 --> 01:10:05.200
+and generate a high resolution cryoAM data again,
+
+01:10:05.200 --> 01:10:07.640
+in order to identify those specific epitopes
+
+01:10:07.640 --> 01:10:10.680
+on the surface of the capsid and compare that for now
+
+01:10:10.680 --> 01:10:13.000
+to the epitopes found in AAV9
+
+01:10:13.000 --> 01:10:16.080
+and other mouse-derived anti-AAV2 antibodies.
+
+01:10:17.640 --> 01:10:19.880
+And so beginning with the work from my collaborators,
+
+01:10:19.880 --> 01:10:21.360
+they were able to isolate out these,
+
+01:10:21.360 --> 01:10:24.240
+demonstrate both binding and neutralization in vitro,
+
+01:10:24.240 --> 01:10:26.120
+which is important for this type of work.
+
+01:10:26.120 --> 01:10:30.320
+And moving on from there, using high resolution cryoAM,
+
+01:10:30.320 --> 01:10:33.160
+I've characterized the binding of 10 of these so far.
+
+01:10:33.280 --> 01:10:35.920
+Go ahead and break that down for you.
+
+01:10:35.920 --> 01:10:38.000
+The AAV capsid is an icosahedron,
+
+01:10:38.000 --> 01:10:39.720
+and so it has a two-fold, three-fold,
+
+01:10:39.720 --> 01:10:41.360
+and five-fold symmetry axes,
+
+01:10:41.360 --> 01:10:45.280
+and these give rise to different important
+
+01:10:45.280 --> 01:10:47.760
+structural features on the surface of the capsid.
+
+01:10:47.760 --> 01:10:50.880
+And for the clusters of antibodies that I have,
+
+01:10:50.880 --> 01:10:54.760
+five of these AAV2 antibodies bound around the three-fold,
+
+01:10:54.760 --> 01:10:57.320
+which is about 50% of these,
+
+01:10:57.320 --> 01:11:00.920
+two bound to the two-fold and three bound to the five-fold.
+
+01:11:00.920 --> 01:11:03.360
+And then doing the same breakdown for AAV9,
+
+01:11:03.360 --> 01:11:05.640
+just to remind us, as I said,
+
+01:11:05.640 --> 01:11:08.960
+three-quarters of these 21 bound to the two-fold,
+
+01:11:08.960 --> 01:11:12.160
+so that's about 16, if I remember correctly,
+
+01:11:12.160 --> 01:11:14.160
+and then two bound to the three-fold
+
+01:11:14.160 --> 01:11:15.960
+and three bound to the five-fold.
+
+01:11:15.960 --> 01:11:18.760
+Now, this is a very interesting piece of information,
+
+01:11:18.760 --> 01:11:22.040
+but structurally, why is this happening?
+
+01:11:22.040 --> 01:11:22.880
+And so,
+
+01:11:25.640 --> 01:11:28.760
+I must have pressed it back at some point, sorry.
+
+01:11:28.760 --> 01:11:30.720
+All right, here we go, next slide.
+
+01:11:30.720 --> 01:11:33.320
+All right, so just to re-orient you for a moment,
+
+01:11:33.320 --> 01:11:35.480
+now we're looking down at a section of the capsid
+
+01:11:35.480 --> 01:11:38.200
+that have been pulled out and look isolated,
+
+01:11:38.200 --> 01:11:39.480
+and so the three-folds there,
+
+01:11:39.480 --> 01:11:40.640
+represented by the triangles,
+
+01:11:40.640 --> 01:11:42.640
+and the two-fold by this oval shape,
+
+01:11:42.640 --> 01:11:44.560
+and I wanna draw your attention first
+
+01:11:44.560 --> 01:11:46.920
+to these red squares on the top.
+
+01:11:46.920 --> 01:11:48.600
+The top portions of the panel here
+
+01:11:48.600 --> 01:11:52.760
+are hydrophobicity matrix six on the surface of the capsid,
+
+01:11:52.760 --> 01:11:55.600
+and those two squares on the right are highlighting
+
+01:11:55.600 --> 01:11:59.080
+two residues that are found within the two-fold pocket
+
+01:11:59.080 --> 01:12:01.200
+on the surface of the capsid,
+
+01:12:01.200 --> 01:12:05.600
+and these residues were bound by 100%
+
+01:12:05.600 --> 01:12:07.040
+for the one on the furthest right,
+
+01:12:07.040 --> 01:12:10.640
+and 50% of the antibodies that bounded the two-fold.
+
+01:12:10.640 --> 01:12:12.960
+And then, looking onto the left box,
+
+01:12:12.960 --> 01:12:15.240
+we see that there's this residue here,
+
+01:12:15.240 --> 01:12:16.520
+this is a tryptophan that's found
+
+01:12:16.520 --> 01:12:19.040
+in the center of the three-fold protrusions here,
+
+01:12:19.040 --> 01:12:20.200
+and this was bound by both
+
+01:12:20.200 --> 01:12:22.600
+of those three-fold binding antibodies.
+
+01:12:22.600 --> 01:12:24.960
+Conversely, when we look at AAV2,
+
+01:12:24.960 --> 01:12:27.600
+you can see that those hydrophobic spots
+
+01:12:27.600 --> 01:12:30.520
+were represented by those orange colors are not present,
+
+01:12:30.520 --> 01:12:35.120
+and AAV2, that right box has been changed
+
+01:12:35.120 --> 01:12:37.200
+from a tyrosine to an asparagine,
+
+01:12:37.200 --> 01:12:39.760
+no longer has this hydrophobic interaction surface,
+
+01:12:39.760 --> 01:12:42.120
+and then the surface of the AAV2 capsid,
+
+01:12:42.120 --> 01:12:43.960
+actually, at the three-fold protrusion,
+
+01:12:43.960 --> 01:12:46.120
+extends out over the two-fold pocket
+
+01:12:46.120 --> 01:12:49.440
+and presents itself and obscures the interaction
+
+01:12:49.440 --> 01:12:52.960
+that would occur to the, oh, there's another one here.
+
+01:12:52.960 --> 01:12:54.400
+That would obscures the interaction
+
+01:12:54.400 --> 01:12:56.800
+to that other residue,
+
+01:12:56.800 --> 01:13:00.960
+and the tryptophan also is not present in the AAV2 surface.
+
+01:13:00.960 --> 01:13:02.720
+At the bottom panel now, we're looking
+
+01:13:02.720 --> 01:13:06.560
+at an electrostatic representation of the capsid surface.
+
+01:13:06.560 --> 01:13:08.760
+I'm gonna draw your attention to the pink squares.
+
+01:13:08.760 --> 01:13:10.120
+Good.
+
+01:13:10.120 --> 01:13:13.000
+And this pocket highlighted on the right for the AAV9,
+
+01:13:13.000 --> 01:13:16.200
+it's an intensely negatively charged portion of the capsid,
+
+01:13:16.200 --> 01:13:20.040
+which, in general, antibodies tend to favor,
+
+01:13:20.040 --> 01:13:25.040
+though it's not entirely 100% of the time,
+
+01:13:25.120 --> 01:13:27.480
+negative regions on antigenic surfaces,
+
+01:13:27.480 --> 01:13:30.440
+and this pocket is obscured in AAV2
+
+01:13:30.440 --> 01:13:32.240
+when we look at the left pink box.
+
+01:13:32.240 --> 01:13:33.920
+I wanna draw your attention to the greater region
+
+01:13:33.920 --> 01:13:37.480
+of the AAV2 surface, which highlights,
+
+01:13:37.480 --> 01:13:39.280
+trying to highlight that there's just, in general,
+
+01:13:39.280 --> 01:13:40.960
+a larger distribution of charges
+
+01:13:40.960 --> 01:13:43.880
+across the AAV2 surface outside of that pocket,
+
+01:13:43.880 --> 01:13:47.280
+so there's easier points to contact for AAV2
+
+01:13:47.280 --> 01:13:50.240
+versus that deep pocket for AAV9.
+
+01:13:50.240 --> 01:13:53.520
+And then when we make this a similar comparison
+
+01:13:53.520 --> 01:13:55.720
+to mouse monoclonal antibodies
+
+01:13:55.720 --> 01:13:59.320
+that were generated towards AAV2 in the past,
+
+01:13:59.320 --> 01:14:02.400
+there are two so far that I wanna point out here.
+
+01:14:02.400 --> 01:14:05.240
+We have Fab A20, which is a five-fold binder,
+
+01:14:05.240 --> 01:14:08.280
+and Fab C37B, which is a three-fold binder,
+
+01:14:08.280 --> 01:14:12.760
+and when we look at a stereographic representation
+
+01:14:12.760 --> 01:14:15.480
+of the binding footprints of these antibodies,
+
+01:14:15.480 --> 01:14:19.520
+we see that in the case of anti-AAV2 mouse antibodies,
+
+01:14:19.520 --> 01:14:21.840
+they're fairly prototypic of what we see for humans,
+
+01:14:21.840 --> 01:14:24.560
+and this is different from what we saw for AAV9,
+
+01:14:24.560 --> 01:14:27.520
+where anti-AAV9 antibodies for mice
+
+01:14:27.520 --> 01:14:32.520
+were not highly similar to human antibodies for AAV9.
+
+01:14:33.840 --> 01:14:38.040
+This is true for all except for the two two-fold binders,
+
+01:14:38.040 --> 01:14:41.200
+which for now there's not a mouse monoclonal antibody,
+
+01:14:41.200 --> 01:14:42.680
+it's representative of these,
+
+01:14:42.680 --> 01:14:45.960
+but in the past, work has been used A20
+
+01:14:45.960 --> 01:14:50.080
+as a prototypic escape for human IVIG,
+
+01:14:50.080 --> 01:14:52.640
+and so this kind of highlights some of the structural
+
+01:14:54.000 --> 01:14:58.560
+underlying reasons for that capability.
+
+01:14:58.560 --> 01:15:00.880
+Moving forward, we're taking this on
+
+01:15:00.880 --> 01:15:04.640
+to develop an escape variant as we did in the past,
+
+01:15:04.640 --> 01:15:08.200
+and I'm working on that currently.
+
+01:15:08.200 --> 01:15:10.000
+So just as a summary,
+
+01:15:10.000 --> 01:15:12.880
+talking about the antigenic profile of AAV2
+
+01:15:12.880 --> 01:15:17.600
+seems to favor the three-fold a bit more than for AAV9,
+
+01:15:17.600 --> 01:15:19.880
+and while this is one of our studies,
+
+01:15:20.520 --> 01:15:22.800
+there are fairly few studies that fully characterize
+
+01:15:22.800 --> 01:15:25.800
+the antigenic regions of AAVs in general,
+
+01:15:25.800 --> 01:15:28.120
+and this represents right now the largest study
+
+01:15:28.120 --> 01:15:31.440
+of human anti-AAV2 antibodies,
+
+01:15:32.680 --> 01:15:34.920
+and is the only study that's conducted
+
+01:15:34.920 --> 01:15:37.400
+on naturally occurring AAV2 infections
+
+01:15:37.400 --> 01:15:41.400
+as opposed to a clinical application of a therapy,
+
+01:15:41.400 --> 01:15:45.400
+and while I've highlighted some different structural reasons
+
+01:15:45.400 --> 01:15:48.120
+for why these antibodies could interact differently
+
+01:15:48.160 --> 01:15:51.440
+at the surface, there is also the difference
+
+01:15:51.440 --> 01:15:53.680
+in the context of the infection for AAV9.
+
+01:15:53.680 --> 01:15:55.640
+Presumably, there was no helper virus present
+
+01:15:55.640 --> 01:15:57.280
+for these patients when they were treated,
+
+01:15:57.280 --> 01:15:59.240
+and they were treated at a much higher dose
+
+01:15:59.240 --> 01:16:01.320
+than they would have been if they were exposed
+
+01:16:01.320 --> 01:16:06.000
+to AAV9 naturally, such as the case for these AAV2 patients,
+
+01:16:06.000 --> 01:16:10.040
+and for the future, we're expanding this study
+
+01:16:10.040 --> 01:16:12.440
+with another patient and other set of antibodies,
+
+01:16:12.440 --> 01:16:16.720
+and then developing of an escape capable vector
+
+01:16:16.760 --> 01:16:19.240
+for these pre-existing antibodies,
+
+01:16:19.240 --> 01:16:22.640
+and I wanna thank my lab, my PI, Dr. Rob McKenna,
+
+01:16:22.640 --> 01:16:25.400
+Mario, who will be giving a talk at 3.30 today
+
+01:16:25.400 --> 01:16:28.640
+about AAV trafficking and seeing some really interesting
+
+01:16:28.640 --> 01:16:30.640
+cool data coming out of our lab,
+
+01:16:30.640 --> 01:16:32.480
+and our collaborators at the University of Sydney,
+
+01:16:32.480 --> 01:16:35.840
+especially Dr. Grant, who will be giving a talk tomorrow
+
+01:16:35.840 --> 01:16:39.720
+about more of this data concerning the AAV2 antibody
+
+01:16:39.720 --> 01:16:42.040
+and immune response from these same patients
+
+01:16:42.040 --> 01:16:43.560
+that were used for this study,
+
+01:16:43.560 --> 01:16:46.200
+but in a different context tomorrow morning.
+
+01:16:46.240 --> 01:16:47.560
+Thank you.
+
+01:16:47.560 --> 01:16:48.400
+Thank you.
+
+01:16:48.400 --> 01:16:49.240
+Thank you.
+
+01:16:53.480 --> 01:16:54.320
+Thank you, John.
+
+01:16:55.720 --> 01:16:56.560
+Questions?
+
+01:16:58.840 --> 01:17:00.080
+There's one right there.
+
+01:17:08.080 --> 01:17:11.000
+AAV2, a natural infection in presence of a helper virus
+
+01:17:11.000 --> 01:17:14.200
+in AAV9 with Zolgensma,
+
+01:17:14.240 --> 01:17:16.280
+I'm curious how these two,
+
+01:17:16.280 --> 01:17:18.400
+because they're mapping to different regions,
+
+01:17:18.400 --> 01:17:20.720
+but in most humans actually have
+
+01:17:20.720 --> 01:17:22.440
+quite cross-reactive antibodies,
+
+01:17:22.440 --> 01:17:25.600
+and I'm curious if you could talk about the differences
+
+01:17:25.600 --> 01:17:27.480
+that you might have noticed in other studies
+
+01:17:27.480 --> 01:17:31.640
+with cross-reactive antibodies in normal human's era,
+
+01:17:31.640 --> 01:17:33.960
+and how well where those map to.
+
+01:17:33.960 --> 01:17:35.880
+So in terms of cross-reactivity
+
+01:17:35.880 --> 01:17:37.040
+for the antibodies we presented,
+
+01:17:37.040 --> 01:17:41.160
+we did do, and let me see if I have it in here.
+
+01:17:41.160 --> 01:17:43.080
+I don't have the cross-reactivity studies
+
+01:17:43.080 --> 01:17:44.600
+for the AAV2 antibodies,
+
+01:17:44.600 --> 01:17:47.280
+but we did those by native.immunable, sorry.
+
+01:17:48.120 --> 01:17:49.960
+Should be right.
+
+01:17:54.080 --> 01:17:55.520
+No, it's not on here, sorry.
+
+01:17:56.440 --> 01:17:57.960
+Several of these were cross-reactive,
+
+01:17:57.960 --> 01:18:00.160
+and we found that that kind of correlated,
+
+01:18:00.160 --> 01:18:03.360
+cross-reactivity generally correlated
+
+01:18:03.360 --> 01:18:05.120
+with some of the more conserved regions of the capsid.
+
+01:18:05.120 --> 01:18:06.600
+The five-fold region especially,
+
+01:18:06.600 --> 01:18:09.280
+which is highly conserved on the surface of the capsid,
+
+01:18:09.280 --> 01:18:11.680
+tends to be more cross-reactive than others.
+
+01:18:11.680 --> 01:18:16.680
+That was true for three of these for the AAV9,
+
+01:18:17.280 --> 01:18:20.120
+possibly more, and that data is included
+
+01:18:20.120 --> 01:18:21.920
+in those papers there.
+
+01:18:21.920 --> 01:18:25.480
+And then for the AAV2, I have one's highly cross-reactive,
+
+01:18:25.480 --> 01:18:27.760
+and that one also binds to the five-fold surface.
+
+01:18:27.760 --> 01:18:29.920
+Great, thank you so much.
+
+01:18:29.920 --> 01:18:31.040
+Great talk.
+
+01:18:31.040 --> 01:18:32.800
+I may have missed this detail at the moment,
+
+01:18:32.800 --> 01:18:34.560
+so this might be a really quick question for you.
+
+01:18:34.560 --> 01:18:36.880
+Are these all neutralizing antibodies?
+
+01:18:36.880 --> 01:18:37.760
+Yes.
+
+01:18:37.760 --> 01:18:40.000
+Okay, do you have any reason to believe
+
+01:18:40.000 --> 01:18:42.720
+why there might be a different landscape
+
+01:18:42.720 --> 01:18:44.600
+in terms of whether binding for non-neutralizers
+
+01:18:44.600 --> 01:18:46.400
+versus neutralizers, or do you think this would be
+
+01:18:46.400 --> 01:18:49.240
+a common for both classes?
+
+01:18:50.600 --> 01:18:55.600
+So, I've not looked at where non-neutralizing antibodies
+
+01:18:55.760 --> 01:18:57.520
+would necessarily bind.
+
+01:18:57.520 --> 01:19:02.520
+I don't know if we have that data, at least internally.
+
+01:19:04.760 --> 01:19:06.360
+Haven't seen any in the literature,
+
+01:19:06.360 --> 01:19:08.840
+but I would imagine that for non-neutralizing antibodies,
+
+01:19:08.880 --> 01:19:10.280
+they would probably bind away
+
+01:19:10.280 --> 01:19:13.360
+from where you would expect receptor sites,
+
+01:19:13.360 --> 01:19:18.280
+and thereby are unable to inhibit transduction
+
+01:19:18.280 --> 01:19:20.560
+directly on their own, but they're still fully capable
+
+01:19:20.560 --> 01:19:22.880
+of recruiting other elements of the immune system,
+
+01:19:22.880 --> 01:19:26.360
+complement, et cetera, in order to clear out the virus.
+
+01:19:29.080 --> 01:19:33.200
+Hi, I'm Wunit from Seaver Research.
+
+01:19:33.200 --> 01:19:34.480
+Thank you for presenting this.
+
+01:19:34.480 --> 01:19:38.480
+It was very interesting, and I understood your assumption
+
+01:19:38.520 --> 01:19:41.200
+that the differences you see might be associated
+
+01:19:41.200 --> 01:19:43.040
+with the way of transduction, but have you considered
+
+01:19:43.040 --> 01:19:47.080
+that difference in post-translational modifications
+
+01:19:47.080 --> 01:19:49.600
+as part of the AAV manufacturing process
+
+01:19:49.600 --> 01:19:52.200
+may contribute to these differences?
+
+01:19:52.200 --> 01:19:55.840
+That is an interesting question, and I haven't looked into it,
+
+01:19:55.840 --> 01:19:58.800
+but it's possible.
+
+01:19:58.800 --> 01:20:00.600
+I don't really know, have the knowledge
+
+01:20:00.600 --> 01:20:02.080
+to say much more right now.
+
+01:20:02.080 --> 01:20:04.080
+So, there are some de-amidation sites
+
+01:20:04.080 --> 01:20:06.840
+that have been shown to increase immunogenicity,
+
+01:20:06.840 --> 01:20:09.680
+and are prone to occur in AAV in storage.
+
+01:20:09.680 --> 01:20:10.760
+We can talk later.
+
+01:20:10.760 --> 01:20:11.840
+Of course, thank you.
+
+01:20:13.120 --> 01:20:15.440
+John, since we have a little bit of time,
+
+01:20:16.440 --> 01:20:17.280
+I have a question.
+
+01:20:17.280 --> 01:20:21.200
+So, do you have any specific amino acid residues
+
+01:20:21.200 --> 01:20:26.200
+that are involved in on this contact point for the PAPS?
+
+01:20:28.400 --> 01:20:31.440
+We have identified those, and for the sake
+
+01:20:31.440 --> 01:20:33.200
+of my dissertation, I'm holding onto them
+
+01:20:33.200 --> 01:20:36.000
+until I get it all worked out,
+
+01:20:36.000 --> 01:20:39.560
+but I will be publishing that, and that will be available.
+
+01:20:39.560 --> 01:20:40.600
+All right.
+
+01:20:40.600 --> 01:20:45.560
+Is there any more questions for John, if not?
+
+01:20:45.560 --> 01:20:46.560
+Thank you, John.
+
+01:20:46.560 --> 01:20:47.400
+Thank you.
+
+01:20:47.400 --> 01:20:48.240
+Thank you.
+
+01:20:48.240 --> 01:20:49.080
+Thank you.
+
+01:20:52.920 --> 01:20:56.360
+So, with that, I would like to invite our next speaker,
+
+01:20:56.360 --> 01:21:00.080
+Simon Pecorre, and he will be talking
+
+01:21:00.080 --> 01:21:03.440
+about a modular capsid engineering platform
+
+01:21:03.440 --> 01:21:07.640
+to confirm neutralizing antibody evasion to CNS
+
+01:21:07.640 --> 01:21:10.520
+and muscle-targeted AAVs.
+
+01:21:10.520 --> 01:21:11.360
+Welcome.
+
+01:21:11.360 --> 01:21:12.200
+Thank you.
+
+01:21:12.200 --> 01:21:15.040
+Thanks for the opportunity to present our work today.
+
+01:21:15.040 --> 01:21:20.040
+So, there are several ways we can deliver genes to the CNS.
+
+01:21:20.040 --> 01:21:21.800
+You can go intraparenchymal.
+
+01:21:21.800 --> 01:21:25.080
+You can deliver into the CSF, or go intravenous.
+
+01:21:25.080 --> 01:21:29.560
+And because some brain diseases impact the entire brain,
+
+01:21:29.560 --> 01:21:32.560
+we believe that there is a need to deliver cargos
+
+01:21:32.560 --> 01:21:35.480
+and as many neurons of the CNS as possible.
+
+01:21:35.480 --> 01:21:38.520
+And we believe that the only practical way of achieving that
+
+01:21:38.520 --> 01:21:44.000
+is to use the vasculature, so the third one, and the GOIV.
+
+01:21:44.000 --> 01:21:45.480
+But there are a couple of challenges
+
+01:21:45.480 --> 01:21:50.960
+in achieving CNS, it's systemic gene delivery to the CNS.
+
+01:21:50.960 --> 01:21:53.320
+One is that naturally occurring serotypes
+
+01:21:53.320 --> 01:21:56.000
+do not cross the blood-brain barrier efficiently.
+
+01:21:56.000 --> 01:21:57.400
+And the second one is that they're
+
+01:21:57.400 --> 01:22:00.280
+susceptible to a neutralizing antibodies resulting
+
+01:22:00.280 --> 01:22:02.760
+from pre-exposure to the virus.
+
+01:22:02.760 --> 01:22:04.720
+So in the next few minutes, I'm going to tell you
+
+01:22:04.720 --> 01:22:08.800
+how our lab tackled both challenges sequentially.
+
+01:22:08.800 --> 01:22:13.360
+And we'll start with the BBB crossing.
+
+01:22:13.360 --> 01:22:18.040
+So to cross the BBB, my colleagues Ken Shan, Helen Wong,
+
+01:22:18.040 --> 01:22:21.480
+and Jean Lien reprogrammed AV-9 to bind to the human
+
+01:22:21.480 --> 01:22:23.240
+transfer and receptor.
+
+01:22:23.240 --> 01:22:26.840
+And this led to the discovery of a second generation human
+
+01:22:26.840 --> 01:22:28.560
+transfer and receptor binding capsid
+
+01:22:28.560 --> 01:22:33.200
+that we call BHGF01B2, aka TF01CAPX.
+
+01:22:33.200 --> 01:22:35.480
+So if you want more information about this capsid,
+
+01:22:35.480 --> 01:22:38.000
+I strongly recommend that you go to talk to my colleague Ken
+
+01:22:38.000 --> 01:22:38.500
+Shan.
+
+01:22:38.500 --> 01:22:39.160
+He's right here.
+
+01:22:39.160 --> 01:22:42.320
+He'll be presenting this afternoon his poster number
+
+01:22:42.320 --> 01:22:47.760
+3037 on BHGF01B2 characterization.
+
+01:22:47.760 --> 01:22:50.640
+I'm just going to share a little piece of data here.
+
+01:22:50.640 --> 01:22:54.360
+This second generation capsid is capable of efficient
+
+01:22:54.360 --> 01:22:57.520
+transduction of the brain in human transfer and receptor
+
+01:22:57.520 --> 01:23:02.240
+knocking animals, as seen on the right of that slide here.
+
+01:23:02.240 --> 01:23:04.200
+It outperforms the first generation
+
+01:23:04.200 --> 01:23:07.520
+variant BHGF01 as well as AV-9, and it mainly
+
+01:23:07.520 --> 01:23:09.920
+transduces neurons.
+
+01:23:09.920 --> 01:23:11.560
+And what's interesting to notice here
+
+01:23:11.560 --> 01:23:16.840
+is we work in that type of study as a dose of 2E10VG
+
+01:23:16.840 --> 01:23:23.880
+per kilogram, 2E12, sorry, which is about 50-fold lower
+
+01:23:23.880 --> 01:23:25.480
+than Zolgenzma.
+
+01:23:25.480 --> 01:23:27.920
+So lowering the dose is great because it
+
+01:23:27.920 --> 01:23:30.440
+reduces the risk of toxicity.
+
+01:23:30.440 --> 01:23:32.640
+But at the same time, if you lower the dose,
+
+01:23:32.640 --> 01:23:35.040
+then you have more neutralizing antibodies per capsid.
+
+01:23:35.040 --> 01:23:39.520
+And the neutralizing antibody problem becomes even bigger.
+
+01:23:39.520 --> 01:23:42.880
+So that brings us to a second challenge.
+
+01:23:42.880 --> 01:23:48.320
+So how did we take BHGF01B2 and further engineer it
+
+01:23:48.320 --> 01:23:51.720
+to evade neutralizing antibodies?
+
+01:23:51.720 --> 01:23:56.880
+So I want to start with a model of BHGF01B2 capsid.
+
+01:23:56.880 --> 01:23:58.520
+It's an alpha-4-3 model.
+
+01:23:58.520 --> 01:24:00.640
+And in blue is represented the region that
+
+01:24:00.640 --> 01:24:05.320
+was engineered to bind to the human transfer and receptor.
+
+01:24:05.320 --> 01:24:07.880
+So as you can see, it's a very small region of the capsid.
+
+01:24:07.880 --> 01:24:11.000
+And the rest of the capsid actually looks like AV-9.
+
+01:24:11.000 --> 01:24:14.840
+So to make it evade neutralizing antibodies,
+
+01:24:14.840 --> 01:24:17.960
+we kind of decided that we had to disrupt
+
+01:24:17.960 --> 01:24:22.520
+as many anti-AV-9 antibody epitopes as possible,
+
+01:24:22.520 --> 01:24:27.120
+possibly with as few modifications as we could.
+
+01:24:27.120 --> 01:24:30.120
+And we looked in nature and found
+
+01:24:30.120 --> 01:24:32.680
+what strategy that was pretty appealing that
+
+01:24:32.680 --> 01:24:35.840
+consists in modulating surface charge.
+
+01:24:35.840 --> 01:24:38.200
+So we have seen that during COVID with the Omicron
+
+01:24:38.200 --> 01:24:41.200
+variant that actually was shown to evade
+
+01:24:41.200 --> 01:24:44.600
+the great majority of antibody-based drugs that
+
+01:24:44.600 --> 01:24:47.520
+were developed to neutralize the original strain.
+
+01:24:47.520 --> 01:24:50.280
+And this was attributed to a few mutations in the protein
+
+01:24:50.280 --> 01:24:53.880
+spike that created a positively charged patch.
+
+01:24:53.880 --> 01:24:59.720
+So the question became, can we apply this strategy to BHGF01B2
+
+01:24:59.720 --> 01:25:02.440
+in order to make it evade neutralizing antibodies
+
+01:25:02.440 --> 01:25:06.120
+while retaining its BBB crossing phenotype?
+
+01:25:06.120 --> 01:25:10.600
+To do that, we started from the parental capsid, V2.
+
+01:25:10.600 --> 01:25:13.280
+We identified surface-exposed target residues
+
+01:25:13.280 --> 01:25:15.800
+that we mutated to either positively charge
+
+01:25:15.800 --> 01:25:18.880
+neutral or negatively charge residue.
+
+01:25:18.880 --> 01:25:20.760
+We took the resulting library, and we
+
+01:25:20.760 --> 01:25:22.640
+screened it for production fitness,
+
+01:25:22.640 --> 01:25:25.820
+for in vitro antibody evasion, as well as blood-brain
+
+01:25:25.820 --> 01:25:27.960
+barrier crossing in human transfer and receptor
+
+01:25:27.960 --> 01:25:29.640
+knocking animals.
+
+01:25:29.640 --> 01:25:32.240
+We did that in two rounds, modified a total of seven
+
+01:25:32.240 --> 01:25:34.960
+capsid regions, and characterized the selected
+
+01:25:34.960 --> 01:25:37.000
+variants individually.
+
+01:25:37.000 --> 01:25:40.000
+And to increase the probability of identifying
+
+01:25:40.000 --> 01:25:42.800
+capsid scaffolds that would be compatible with other loop
+
+01:25:42.800 --> 01:25:45.760
+eight modifications, we also added
+
+01:25:46.400 --> 01:25:49.200
+three different peptides crossing the BBB in mice
+
+01:25:49.200 --> 01:25:53.000
+using three different receptors, so EBBI28 and 9P31,
+
+01:25:53.000 --> 01:25:55.360
+to the original library.
+
+01:25:55.360 --> 01:25:58.480
+So first, we can walk through the NGS data.
+
+01:25:58.480 --> 01:26:01.880
+Here's the production fitness profile of the library.
+
+01:26:01.880 --> 01:26:06.480
+As you can see, AV9 and V2 have like pretty similar scores.
+
+01:26:06.480 --> 01:26:09.000
+And we selected variants within that blue regions
+
+01:26:09.000 --> 01:26:13.480
+that produced within a reasonable distance of AV9.
+
+01:26:13.520 --> 01:26:16.840
+We looked at brain transduction in TF4C knocking animals,
+
+01:26:16.840 --> 01:26:19.920
+and here each dot represents a variant with four
+
+01:26:19.920 --> 01:26:23.080
+codon replicates, and you're looking at the
+
+01:26:23.080 --> 01:26:26.360
+transduction score in one mice versus the other.
+
+01:26:26.360 --> 01:26:30.080
+As expected, BHTF1V2 are performed AV9,
+
+01:26:30.080 --> 01:26:33.360
+and we selected variants within that green region.
+
+01:26:33.360 --> 01:26:36.800
+Last, we look at antibody evasion in H2993 cells.
+
+01:26:37.960 --> 01:26:42.000
+And here I'm showing you the transduction score
+
+01:26:42.000 --> 01:26:44.720
+in the absence of IVIG on the x-axis
+
+01:26:44.720 --> 01:26:48.120
+versus presence of IVIG on the y-axis.
+
+01:26:48.120 --> 01:26:51.760
+And we selected variants that had like a high score
+
+01:26:51.760 --> 01:26:54.440
+in the presence of neutralizing antibodies.
+
+01:26:54.440 --> 01:26:56.640
+So now when you take the intersection of these three
+
+01:26:56.640 --> 01:26:59.400
+regions, you find a limited set of variants,
+
+01:26:59.400 --> 01:27:04.240
+including one that we called BHTF1V2E for evasion,
+
+01:27:04.240 --> 01:27:07.040
+and that we characterized more in detail.
+
+01:27:07.920 --> 01:27:10.320
+So the first thing we did was to look at the surface
+
+01:27:10.320 --> 01:27:13.520
+charge profile of V2E, and what we could observe
+
+01:27:13.520 --> 01:27:16.600
+is that it was pretty different from the parental capsid
+
+01:27:16.600 --> 01:27:20.320
+as expected, considering the strategy that was used
+
+01:27:20.320 --> 01:27:22.000
+in that project.
+
+01:27:22.000 --> 01:27:25.000
+So now, what is the impact of those modifications
+
+01:27:25.000 --> 01:27:26.600
+on tropism?
+
+01:27:26.600 --> 01:27:28.240
+We looked at that in human transfer
+
+01:27:28.240 --> 01:27:30.640
+and receptor knocking animals.
+
+01:27:30.640 --> 01:27:33.640
+You're looking at a comparative analysis of V2E,
+
+01:27:33.640 --> 01:27:36.360
+V2 and AV9 in human transfer and knocking mice,
+
+01:27:36.360 --> 01:27:39.120
+and you're looking at the transduction data on the left,
+
+01:27:39.120 --> 01:27:41.680
+and VG by distribution data on the right.
+
+01:27:41.680 --> 01:27:44.920
+And as you can see is that the BBB crossing phenotype
+
+01:27:44.920 --> 01:27:49.160
+of V2E is maintained in V2E in spite of the differences
+
+01:27:49.160 --> 01:27:50.240
+in surface charge.
+
+01:27:51.240 --> 01:27:54.400
+Let's look at antibody evasion now in vitro.
+
+01:27:54.400 --> 01:27:59.400
+So we did that with 73 human sera from individual donors,
+
+01:28:00.080 --> 01:28:05.080
+and we used AV9, AV5, and BHTF1V2S controls.
+
+01:28:05.080 --> 01:28:07.560
+So here I'm plotting all the neutralization curves
+
+01:28:07.560 --> 01:28:10.800
+that were measured for sera neutralizing AV9,
+
+01:28:10.800 --> 01:28:15.160
+color coded by their IC50, red meaning high neutralization
+
+01:28:15.160 --> 01:28:17.600
+and blue meaning low neutralization.
+
+01:28:17.600 --> 01:28:20.200
+So as you can see, the profile are pretty similar
+
+01:28:20.200 --> 01:28:23.240
+for V9 and V2, but you see a lot of curves
+
+01:28:23.240 --> 01:28:25.280
+that get like right shifted for V2E,
+
+01:28:25.280 --> 01:28:27.800
+suggesting some level of antibody evasion.
+
+01:28:28.640 --> 01:28:31.240
+And when you take that and measure the IC50
+
+01:28:31.240 --> 01:28:35.240
+for all these human sera, they are all represented
+
+01:28:36.040 --> 01:28:37.800
+as columns in that heat map.
+
+01:28:38.760 --> 01:28:41.800
+You see that the IC50 values go down across the board
+
+01:28:41.800 --> 01:28:45.520
+for V2E compared to the other three serotypes
+
+01:28:45.520 --> 01:28:49.680
+with actually 40% of the human sera
+
+01:28:49.680 --> 01:28:54.680
+that neutralize BHTF1V2 that exhibit IC50 below
+
+01:28:55.160 --> 01:28:59.440
+or limit of detection of one of four for BHTF1V2E.
+
+01:28:59.440 --> 01:29:00.360
+So that's good news.
+
+01:29:00.360 --> 01:29:02.000
+It means like we're potentially able
+
+01:29:02.000 --> 01:29:05.400
+to expand the patient pool for CNS gene therapy,
+
+01:29:05.400 --> 01:29:09.520
+but we wanted to validate these results first in vivo.
+
+01:29:09.520 --> 01:29:14.520
+So we worked on a model where we passively immunized
+
+01:29:14.800 --> 01:29:16.800
+human transfer and receptor knocking animals
+
+01:29:16.800 --> 01:29:19.520
+with IgG pre-fight from human sera.
+
+01:29:19.520 --> 01:29:24.520
+A day later, we co-injected AV9, V2E and V2E IV.
+
+01:29:24.520 --> 01:29:27.680
+And at day 21, we looked at function in the brain
+
+01:29:27.680 --> 01:29:29.120
+by RTD PCR.
+
+01:29:30.120 --> 01:29:32.720
+So let's look at the human sera first
+
+01:29:32.720 --> 01:29:36.400
+from which we pre-fight IgG for the passive immunization.
+
+01:29:36.400 --> 01:29:38.240
+You can see first that they have different
+
+01:29:38.240 --> 01:29:41.560
+neutralization potencies with C being monetizing
+
+01:29:41.560 --> 01:29:43.640
+then B and A overall.
+
+01:29:43.640 --> 01:29:48.640
+And then you can also see that BHTF1V2E evades this sera
+
+01:29:49.240 --> 01:29:51.320
+to a greater extent than the other two
+
+01:29:51.320 --> 01:29:52.800
+because it's IC50 value.
+
+01:29:52.800 --> 01:29:56.040
+It's actually lower when measured in vitro.
+
+01:29:56.040 --> 01:30:00.720
+So now let's look at the sera of mice
+
+01:30:00.720 --> 01:30:03.480
+that were passively immunized with these IgG.
+
+01:30:03.480 --> 01:30:06.600
+So again, you can see that the mice that receive
+
+01:30:06.600 --> 01:30:10.200
+the compound C or have a serum that's monetizing
+
+01:30:10.200 --> 01:30:13.000
+to all three capsids compared to B and A.
+
+01:30:13.000 --> 01:30:16.640
+And you also see those response at the 30 milligram dose
+
+01:30:16.640 --> 01:30:19.400
+versus 10 milligram IgG per animal.
+
+01:30:19.400 --> 01:30:24.080
+And again, BHTF1V2E show IC50 below
+
+01:30:24.120 --> 01:30:28.440
+or limit of detection of one to 20 in that particular assay.
+
+01:30:28.440 --> 01:30:30.360
+So now let's look at function.
+
+01:30:30.360 --> 01:30:33.960
+This is the function in the absence of IgG.
+
+01:30:33.960 --> 01:30:38.960
+So as you can see, V2 and V2E as expected outperform AV9.
+
+01:30:38.980 --> 01:30:40.800
+And now when you look at all the conditions
+
+01:30:40.800 --> 01:30:43.280
+and you normalize that score to the saline control,
+
+01:30:43.280 --> 01:30:46.480
+you can see that you have a greater rescue
+
+01:30:46.480 --> 01:30:51.480
+of your brain signal in animals treated with BHTF1V2E
+
+01:30:52.040 --> 01:30:55.880
+as opposed to V2 and AV9 with a full change ranging
+
+01:30:55.880 --> 01:30:59.480
+from three to 40 fold in serum C and B.
+
+01:30:59.480 --> 01:31:00.960
+A wasn't neutralizing enough
+
+01:31:00.960 --> 01:31:03.640
+that we could really observe anything in vivo.
+
+01:31:03.640 --> 01:31:06.920
+So that enabled us to conclude that this serotype
+
+01:31:06.920 --> 01:31:10.300
+was also capable of antibody evasion in vivo.
+
+01:31:12.040 --> 01:31:13.680
+We looked at production titers
+
+01:31:13.680 --> 01:31:15.560
+in suspension and adherence cells.
+
+01:31:15.560 --> 01:31:17.760
+And in the absence of optimization,
+
+01:31:17.760 --> 01:31:22.760
+we were able to produce V2E within a two-fold of AV9.
+
+01:31:22.760 --> 01:31:24.160
+And we were able to also show
+
+01:31:24.160 --> 01:31:27.520
+that it was compatible with porous AVX, AV pure AV9
+
+01:31:27.520 --> 01:31:31.520
+for a capture affinity chromatography, but not porous AV9.
+
+01:31:33.760 --> 01:31:36.760
+Last, we wanted to see whether
+
+01:31:36.760 --> 01:31:39.040
+some of our antibody evading scaffolds
+
+01:31:39.040 --> 01:31:42.520
+were compatible with muscle targeting peptides.
+
+01:31:42.520 --> 01:31:46.640
+So we identified five potential candidates
+
+01:31:46.640 --> 01:31:51.160
+that we combined with two muscle peptide myoav4A
+
+01:31:51.160 --> 01:31:54.520
+as well as one that we call RGD1.
+
+01:31:54.520 --> 01:31:58.000
+And we characterized the resulting variants.
+
+01:31:58.000 --> 01:32:01.480
+And so we were able to show that one was compatible
+
+01:32:01.480 --> 01:32:03.680
+with both and we followed up on this one
+
+01:32:03.680 --> 01:32:06.200
+with the RGD1 peptide only.
+
+01:32:06.200 --> 01:32:09.360
+And if you look at antibody neutralization in vitro,
+
+01:32:10.840 --> 01:32:13.960
+the second generation that we call RGD1 Gen2
+
+01:32:13.960 --> 01:32:16.080
+was able to evade preexisting antibodies
+
+01:32:16.080 --> 01:32:20.200
+in about 32% of the human Sierra that neutralized RGD1.
+
+01:32:20.200 --> 01:32:22.040
+And this year, we further evolved it
+
+01:32:22.040 --> 01:32:24.960
+and we went up to around 56%.
+
+01:32:26.720 --> 01:32:30.440
+And last, we looked at function in C57 animals
+
+01:32:30.440 --> 01:32:35.440
+and we saw no major difference in muscle between RGD1,
+
+01:32:35.600 --> 01:32:38.400
+RGD1 Gen2 and Gen3.
+
+01:32:40.280 --> 01:32:45.280
+So to finish, this is actually a gift
+
+01:32:45.280 --> 01:32:48.360
+of the surface charge modulation between RGD,
+
+01:32:48.360 --> 01:32:50.960
+RGD1 Gen2 and Gen3.
+
+01:32:50.960 --> 01:32:52.640
+And this brings us to a conclusion
+
+01:32:52.640 --> 01:32:55.240
+and we applied a charge alteration with a genesis
+
+01:32:55.240 --> 01:32:58.080
+to CNS and muscle tropic capsids.
+
+01:32:58.080 --> 01:33:01.680
+The resulting variants maintained their enhanced tropism.
+
+01:33:01.680 --> 01:33:05.280
+They were able to produce within two-fold of AV9
+
+01:33:05.280 --> 01:33:09.160
+and they evaded 40 to 56% of the human Sierra
+
+01:33:09.160 --> 01:33:10.600
+that neutralized AV9.
+
+01:33:10.600 --> 01:33:12.760
+So this method is potentially applicable
+
+01:33:12.760 --> 01:33:16.480
+to any tissue-specific capsids.
+
+01:33:16.480 --> 01:33:20.600
+And with this, I would like to thank all my lab mates
+
+01:33:20.600 --> 01:33:24.440
+and colleagues and collaborators from the Deverman Lab
+
+01:33:24.440 --> 01:33:27.000
+and the Varadmini Care Lab at the Broad,
+
+01:33:27.000 --> 01:33:29.940
+especially Ken Shan, Jean Lien, and Jenselyn Johnston,
+
+01:33:29.940 --> 01:33:31.600
+who took care of all the NBSA,
+
+01:33:31.600 --> 01:33:34.520
+as well as Pam Brower and John Harvey
+
+01:33:34.520 --> 01:33:35.600
+for the manufacturing.
+
+01:33:35.600 --> 01:33:37.760
+And I'll be happy to take any questions.
+
+01:33:38.560 --> 01:33:39.400
+Thank you.
+
+01:33:44.400 --> 01:33:45.520
+Thank you, Simon.
+
+01:33:45.520 --> 01:33:48.040
+And we have questions over here.
+
+01:33:48.040 --> 01:33:49.640
+Excellent talk.
+
+01:33:49.640 --> 01:33:53.440
+So I think you said you looked in seven different areas.
+
+01:33:53.440 --> 01:33:57.040
+How many edits did the best capsid end up having?
+
+01:33:58.200 --> 01:33:59.280
+How many mutations?
+
+01:33:59.280 --> 01:34:00.120
+Yes.
+
+01:34:02.320 --> 01:34:04.440
+More than you can count on, let's say,
+
+01:34:04.440 --> 01:34:07.240
+between 10 and 50.
+
+01:34:07.240 --> 01:34:08.400
+Okay, great, thank you.
+
+01:34:11.800 --> 01:34:12.880
+Thanks for your talk.
+
+01:34:13.840 --> 01:34:16.960
+I have a conceptual question on the results
+
+01:34:16.960 --> 01:34:20.840
+of your library that looks like you had the same approach
+
+01:34:20.840 --> 01:34:25.080
+of modifying the charge surface for all your library on you,
+
+01:34:25.080 --> 01:34:27.680
+showcase some kind of positive candidate.
+
+01:34:27.680 --> 01:34:29.440
+Did you try to extract the negative one
+
+01:34:29.440 --> 01:34:32.120
+on to redox the neutralizing antibodies
+
+01:34:32.120 --> 01:34:35.760
+to try to identify which position was actually involving
+
+01:34:35.880 --> 01:34:39.240
+that kind of conceptual evading of that?
+
+01:34:39.240 --> 01:34:43.120
+When do you plan to finally make this data accessible?
+
+01:34:45.280 --> 01:34:47.840
+You're talking about the dual production fitness
+
+01:34:47.840 --> 01:34:48.800
+distribution?
+
+01:34:48.800 --> 01:34:52.760
+No, it's in the way you modify your variant,
+
+01:34:52.760 --> 01:34:55.920
+you consider on your top right of your graphics,
+
+01:34:55.920 --> 01:34:58.960
+the selection of your top variant that is evading,
+
+01:34:58.960 --> 01:35:02.120
+but you may have several AVs vector
+
+01:35:02.120 --> 01:35:04.720
+that have a modification of the charge surface,
+
+01:35:04.760 --> 01:35:07.040
+but without evading the system.
+
+01:35:07.040 --> 01:35:09.760
+So you can envision to redox actually
+
+01:35:09.760 --> 01:35:12.160
+the neutralizing antibody itself to see
+
+01:35:12.160 --> 01:35:14.120
+what is the difference, functional difference
+
+01:35:14.120 --> 01:35:17.000
+between what works to what doesn't work finally
+
+01:35:17.000 --> 01:35:22.000
+at the level of your pure capsid to antibodies binding.
+
+01:35:22.360 --> 01:35:26.960
+Yeah, we initiated some work in that direction,
+
+01:35:26.960 --> 01:35:30.160
+but I think it's not as mature as you would expect.
+
+01:35:30.160 --> 01:35:31.000
+Thank you.
+
+01:35:35.000 --> 01:35:37.080
+So I don't see any more questions.
+
+01:35:38.480 --> 01:35:40.320
+Oh, there is one.
+
+01:35:40.320 --> 01:35:41.760
+Beautiful talk, Simo.
+
+01:35:41.760 --> 01:35:42.600
+Thanks.
+
+01:35:42.600 --> 01:35:47.600
+I love that you tested both AVX and the AV9 porous resin,
+
+01:35:49.320 --> 01:35:51.160
+and you saw a major difference there,
+
+01:35:51.160 --> 01:35:54.440
+but what about things like anion exchange columns
+
+01:35:54.440 --> 01:35:55.880
+and other downstream purificate?
+
+01:35:55.880 --> 01:35:57.840
+How do you think that this charge modifications
+
+01:35:57.840 --> 01:35:59.880
+will affect things like that?
+
+01:35:59.880 --> 01:36:04.320
+Yeah, TBG, we haven't looked into that either yet.
+
+01:36:04.760 --> 01:36:05.880
+Very great work.
+
+01:36:05.880 --> 01:36:06.720
+Thank you.
+
+01:36:09.200 --> 01:36:10.040
+Thank you.
+
+01:36:14.040 --> 01:36:15.560
+Thank you, Simo.
+
+01:36:15.560 --> 01:36:20.480
+So with that, we have our last presentation
+
+01:36:20.480 --> 01:36:23.960
+from Adrian Sevi, and he will be talking
+
+01:36:23.960 --> 01:36:27.600
+about one AAV capsid from Coyev,
+
+01:36:27.600 --> 01:36:31.680
+and he is from Coyev Therapeutics, and it's all yours.
+
+01:36:31.680 --> 01:36:33.000
+Thank you for the introduction,
+
+01:36:33.000 --> 01:36:34.880
+and first of all, thanks to the organizer
+
+01:36:34.880 --> 01:36:37.560
+for giving me the opportunity to present
+
+01:36:37.560 --> 01:36:40.400
+how we are redefining targeting gene therapy
+
+01:36:40.400 --> 01:36:41.640
+at Coyev Therapeutics.
+
+01:36:43.720 --> 01:36:47.400
+And today, we'll talk about capsid engineering.
+
+01:36:47.400 --> 01:36:49.440
+We are doing bioconjugation.
+
+01:36:49.440 --> 01:36:50.280
+Why?
+
+01:36:50.280 --> 01:36:52.280
+It's mainly to address the key challenges
+
+01:36:52.280 --> 01:36:54.000
+of IV injection.
+
+01:36:54.000 --> 01:36:55.760
+The first one is the targeting.
+
+01:36:55.760 --> 01:36:58.760
+How do we bring the vector to the tissue of interest?
+
+01:36:59.760 --> 01:37:03.800
+Bioconjugation allows more efficient conjugated capsid
+
+01:37:03.800 --> 01:37:06.560
+because we are looking for non-mechanisms.
+
+01:37:06.560 --> 01:37:07.640
+How do we do it?
+
+01:37:07.640 --> 01:37:09.960
+We first rationally design ligands
+
+01:37:09.960 --> 01:37:13.560
+that interact with human receptor with the non-mechanisms.
+
+01:37:15.520 --> 01:37:17.280
+And we have a very modular platform
+
+01:37:17.280 --> 01:37:19.200
+that is based on chemical conjugation,
+
+01:37:19.200 --> 01:37:20.960
+creating a covalent bond.
+
+01:37:20.960 --> 01:37:24.520
+It's irreversible and does not require any catalyst.
+
+01:37:24.520 --> 01:37:26.280
+This is very modular.
+
+01:37:26.280 --> 01:37:28.600
+We can really fine-tune the coupling level
+
+01:37:28.600 --> 01:37:30.640
+to perfectly match the requirements
+
+01:37:30.640 --> 01:37:32.560
+of the targeted receptors.
+
+01:37:32.560 --> 01:37:35.600
+And as we are completely decoupling the tropisms
+
+01:37:35.600 --> 01:37:39.240
+from the capsid, we can integrate this platform
+
+01:37:39.240 --> 01:37:44.240
+to any existing AVs, wild type, engineers, and so on.
+
+01:37:46.840 --> 01:37:49.600
+At Coyev, we have many different kinds of ligands
+
+01:37:49.600 --> 01:37:52.880
+from small molecules to peptides to VHH.
+
+01:37:52.880 --> 01:37:54.840
+Each of them is rationally designed
+
+01:37:55.840 --> 01:38:00.000
+to target a specific receptor and also to allow
+
+01:38:00.000 --> 01:38:02.040
+a cross-reactivity among species
+
+01:38:02.040 --> 01:38:04.800
+and mostly between human and NHPs.
+
+01:38:04.800 --> 01:38:08.600
+To simplify it, you can see it like antibody drug conjugate
+
+01:38:08.600 --> 01:38:10.040
+but applied to AVs.
+
+01:38:11.280 --> 01:38:13.320
+So once we perform our bioconjugation,
+
+01:38:13.320 --> 01:38:16.440
+we are creating a new generation of targeted vectors.
+
+01:38:16.440 --> 01:38:18.480
+And at Coyev, we have three main focuses
+
+01:38:18.480 --> 01:38:21.680
+in ophthalmology, in CNS, and for muscle diseases.
+
+01:38:22.680 --> 01:38:25.160
+I don't know if you had the chance to attempt earlier
+
+01:38:25.160 --> 01:38:28.280
+this morning to our new supra-coryidal capsids
+
+01:38:28.280 --> 01:38:30.680
+but if you want, do not hesitate to be in touch.
+
+01:38:30.680 --> 01:38:34.880
+And I also strongly recommend you to attempt later today
+
+01:38:34.880 --> 01:38:38.320
+to the Poster 3026 from my colleague Lavagna
+
+01:38:38.320 --> 01:38:40.720
+that will present how the ligand conjugation
+
+01:38:40.720 --> 01:38:43.320
+is enabling cross-paces crossing
+
+01:38:43.320 --> 01:38:45.200
+through human TFR1 receptor.
+
+01:38:47.040 --> 01:38:50.160
+If we talk about the CNS and we have a look
+
+01:38:50.160 --> 01:38:55.160
+to our AV9 BBB crossings through TFR1 workflow,
+
+01:38:55.280 --> 01:38:58.680
+we first design the ligands and we can do that
+
+01:38:58.680 --> 01:39:00.080
+because we are doing bioconjugation.
+
+01:39:00.080 --> 01:39:01.840
+We are not interested by the capsid.
+
+01:39:01.840 --> 01:39:04.000
+It's really the ligands that we are working on it.
+
+01:39:04.000 --> 01:39:06.440
+We are really designed them to be specific
+
+01:39:06.440 --> 01:39:09.360
+for a human receptor but also to work in NHPs.
+
+01:39:09.360 --> 01:39:12.000
+And thanks to the bioconjugation and to our chemistry,
+
+01:39:12.000 --> 01:39:15.280
+we can really fine tune the coupling level.
+
+01:39:15.280 --> 01:39:18.600
+We can clearly increase how many ligands we put
+
+01:39:18.600 --> 01:39:20.100
+at the capsid surface and it's
+
+01:39:20.100 --> 01:39:22.920
+tightly managed control process.
+
+01:39:22.920 --> 01:39:26.400
+We then screened our conjugated AVs in vitro.
+
+01:39:26.400 --> 01:39:28.120
+In the example with two cell lines,
+
+01:39:28.120 --> 01:39:30.920
+the first one, a human expressing the transfer
+
+01:39:30.920 --> 01:39:32.560
+in one receptor cell line.
+
+01:39:32.560 --> 01:39:35.480
+And our two conjugated AV9 either with a ligand one
+
+01:39:35.480 --> 01:39:38.080
+or two have the same transaction efficiency
+
+01:39:38.080 --> 01:39:41.240
+as the published TFR1 benchmark.
+
+01:39:41.240 --> 01:39:44.640
+But if we switch to a Sino-expressing TFR1 cell line,
+
+01:39:44.640 --> 01:39:48.480
+our two conjugated AV9 either in blue or green,
+
+01:39:48.520 --> 01:39:50.160
+maintains their transaction efficiency
+
+01:39:50.160 --> 01:39:53.400
+whereas the published TFR1 benchmark does not.
+
+01:39:54.800 --> 01:39:57.200
+We then move to in vivo screening.
+
+01:39:59.560 --> 01:40:02.760
+And you know the AV9 is a poor brain transducer
+
+01:40:02.760 --> 01:40:04.040
+when injected by IV.
+
+01:40:05.320 --> 01:40:08.720
+But if you take the exact same AV9
+
+01:40:08.720 --> 01:40:12.120
+and you conjugate it with our TFR1 ligands,
+
+01:40:12.120 --> 01:40:14.280
+it's knocking humanized mice,
+
+01:40:14.280 --> 01:40:16.120
+you can see that the transaction efficiency
+
+01:40:16.120 --> 01:40:19.600
+is greatly improved with the world brain transduction.
+
+01:40:21.080 --> 01:40:23.640
+If we look at the RNA expression,
+
+01:40:23.640 --> 01:40:27.720
+we have a 40-fold difference in term of expression
+
+01:40:27.720 --> 01:40:31.320
+compared to AV9 in purple.
+
+01:40:31.320 --> 01:40:34.960
+And we are perfectly matching the published benchmark
+
+01:40:34.960 --> 01:40:36.560
+in term of brain transduction.
+
+01:40:36.560 --> 01:40:37.920
+But we also have a second effect.
+
+01:40:37.920 --> 01:40:39.840
+We have a very strong liver detargeting
+
+01:40:39.840 --> 01:40:43.200
+with our conjugated AV9 with more than 15 fold decrease
+
+01:40:43.200 --> 01:40:44.200
+in liver expression.
+
+01:40:45.200 --> 01:40:47.760
+Our platform is something that is very versatile,
+
+01:40:47.760 --> 01:40:51.680
+so we can move from the brain to the muscles.
+
+01:40:51.680 --> 01:40:55.400
+And if we take the exact same AV9 capsid backbone
+
+01:40:55.400 --> 01:40:58.600
+and with this time conjugated with a peptide
+
+01:40:58.600 --> 01:41:00.120
+that has been designed to interact
+
+01:41:00.120 --> 01:41:02.000
+with the integrin alpha V beta 6,
+
+01:41:02.000 --> 01:41:05.720
+we obtain a conjugated AV9 targeting these integrins.
+
+01:41:06.600 --> 01:41:10.080
+And this time we have a 300 fold increase
+
+01:41:10.080 --> 01:41:11.480
+in the gastrocnemius muscles
+
+01:41:11.600 --> 01:41:16.440
+and the 200 fold increase in the quadriceps,
+
+01:41:16.440 --> 01:41:20.640
+both reaching the published beta 6 benchmark again.
+
+01:41:23.400 --> 01:41:25.680
+So the Alligator platform is something
+
+01:41:25.680 --> 01:41:28.040
+that is very versatile, it's very tunable,
+
+01:41:28.040 --> 01:41:29.840
+and it's highly scalable.
+
+01:41:29.840 --> 01:41:30.920
+We can do that because again,
+
+01:41:30.920 --> 01:41:32.160
+we are doing bio-conjugations.
+
+01:41:32.160 --> 01:41:33.880
+We are not that interested by the capsid,
+
+01:41:33.880 --> 01:41:35.640
+only by the ligands.
+
+01:41:35.640 --> 01:41:39.360
+And we wanted to go beyond in term of addressing
+
+01:41:39.360 --> 01:41:40.480
+the IV challenges.
+
+01:41:40.480 --> 01:41:41.880
+So the first one was the targeting,
+
+01:41:41.880 --> 01:41:44.200
+I think that we can fix it easily now,
+
+01:41:44.200 --> 01:41:45.640
+but we wanted to go really beyond
+
+01:41:45.640 --> 01:41:47.720
+and address two other challenges.
+
+01:41:47.720 --> 01:41:49.880
+The first one was the immunovasion.
+
+01:41:49.880 --> 01:41:53.720
+And to do that, we created one AV capsid family,
+
+01:41:53.720 --> 01:41:55.240
+it's kind of proof of concept.
+
+01:41:56.480 --> 01:41:59.600
+It has been designed to completely
+
+01:41:59.600 --> 01:42:02.840
+decorelate the tropisms from the capsid.
+
+01:42:02.840 --> 01:42:06.040
+We wanted a kind of complete neutral shell,
+
+01:42:06.040 --> 01:42:07.160
+and it has been engineered
+
+01:42:07.160 --> 01:42:10.360
+from low seroprevalence serotypes in humans
+
+01:42:10.360 --> 01:42:13.360
+to address the immune response problems.
+
+01:42:13.360 --> 01:42:14.480
+And we also engineered them
+
+01:42:14.480 --> 01:42:17.600
+to completely obtain a lever day targeting.
+
+01:42:17.600 --> 01:42:20.120
+So we had a neutral shell
+
+01:42:20.120 --> 01:42:22.200
+without any interaction on its own.
+
+01:42:22.200 --> 01:42:23.800
+And thanks to the Alligator platform,
+
+01:42:23.800 --> 01:42:27.400
+we can strongly retarget them to tissue of interest.
+
+01:42:29.240 --> 01:42:33.040
+We first validated our one AV capsid by IV injections.
+
+01:42:35.000 --> 01:42:37.880
+Quite a high dose for 10 to the 13 VG per KIG
+
+01:42:37.920 --> 01:42:40.920
+with the luciferous transgene under the KAK promoter.
+
+01:42:40.920 --> 01:42:42.920
+And we compare it to the AV9
+
+01:42:42.920 --> 01:42:46.040
+in both male and female wild type mice.
+
+01:42:46.040 --> 01:42:49.320
+As expected for the AV9 groups,
+
+01:42:49.320 --> 01:42:51.920
+we saw very strong expression in the lever,
+
+01:42:51.920 --> 01:42:54.520
+whereas the expression was barely detectable
+
+01:42:54.520 --> 01:42:55.600
+with our one AV.
+
+01:42:56.640 --> 01:42:59.320
+We wanted to know where went the vectors.
+
+01:42:59.320 --> 01:43:01.680
+So three weeks but in election at Sacrifice,
+
+01:43:01.680 --> 01:43:04.840
+we look at the vector copy number in different tissue.
+
+01:43:04.840 --> 01:43:08.600
+And in the lever, we have 800 for lower copy number
+
+01:43:08.600 --> 01:43:10.200
+compared to the AV9
+
+01:43:10.200 --> 01:43:14.080
+with an astonishing 0.03 vector copy per cell.
+
+01:43:14.080 --> 01:43:16.320
+This I believe is a truly worthy targeting.
+
+01:43:17.240 --> 01:43:21.240
+Our non-conjugated one AV does not cross the BBB on its own.
+
+01:43:21.240 --> 01:43:23.360
+We have a thousand for lower expression,
+
+01:43:23.360 --> 01:43:25.760
+not expression, vector copy number in the brain.
+
+01:43:25.760 --> 01:43:29.720
+And it was quite the same in every peripheral organs
+
+01:43:29.720 --> 01:43:31.560
+that we have looked at.
+
+01:43:31.560 --> 01:43:34.000
+So we know we have this neutral shell.
+
+01:43:34.000 --> 01:43:35.360
+What can we do with it?
+
+01:43:35.360 --> 01:43:37.280
+And what is happening if we conjugated it
+
+01:43:37.280 --> 01:43:39.680
+with the TFR1 ligands?
+
+01:43:39.680 --> 01:43:44.360
+We first confirm an unprecedented lever de-targeting
+
+01:43:44.360 --> 01:43:46.400
+with a thousand for lower expression.
+
+01:43:46.400 --> 01:43:49.520
+In the lever, you can see the AV9 expression,
+
+01:43:49.520 --> 01:43:50.640
+the lever in purple,
+
+01:43:50.640 --> 01:43:53.160
+and our conjugated TFR1 when AV capsid
+
+01:43:53.160 --> 01:43:55.280
+is here with a thousand fold.
+
+01:43:55.280 --> 01:43:57.680
+In the heart, we have 400 fold.
+
+01:43:58.920 --> 01:44:01.680
+But this conjugated one AV is perfectly able
+
+01:44:01.680 --> 01:44:05.120
+to cross the BBB and to express in the brain.
+
+01:44:05.120 --> 01:44:06.840
+When we compare to the AV9 on the left
+
+01:44:06.840 --> 01:44:09.520
+and the TFR1 conjugated one AV on the right,
+
+01:44:09.520 --> 01:44:11.760
+I think it's quite clear that this vector is able
+
+01:44:11.760 --> 01:44:15.400
+to cross the BBB and to express in the deep brain regions.
+
+01:44:15.400 --> 01:44:18.680
+And if we zoom in, we know that the AV9
+
+01:44:18.680 --> 01:44:20.680
+does not have any neuronal tropisms,
+
+01:44:20.680 --> 01:44:23.120
+whereas our conjugated one AV
+
+01:44:23.120 --> 01:44:25.480
+has a very strong neuronal tropism.
+
+01:44:26.240 --> 01:44:31.240
+We continue with beta-6 integrins targeting peptides.
+
+01:44:31.240 --> 01:44:33.000
+In wild type mice this time,
+
+01:44:33.000 --> 01:44:36.040
+we confirm again a very strong lever de-targeting
+
+01:44:36.040 --> 01:44:38.920
+with a 500 fold compared to AV9.
+
+01:44:38.920 --> 01:44:41.240
+The non-conjugated one AV is in red
+
+01:44:41.240 --> 01:44:42.880
+and the conjugated is in blue.
+
+01:44:43.880 --> 01:44:46.120
+In both muscles, quadriceps and gastrocnemius,
+
+01:44:46.120 --> 01:44:48.120
+we have not been able to detect any expression
+
+01:44:48.120 --> 01:44:50.000
+of the non-conjugated vectors.
+
+01:44:50.000 --> 01:44:52.320
+But once it's conjugated with the beta-6
+
+01:44:52.320 --> 01:44:53.840
+targeting TFR1,
+
+01:44:54.080 --> 01:44:59.120
+this time we are between five and 10 fold higher
+
+01:44:59.120 --> 01:45:01.600
+in term of expression compared to AV9.
+
+01:45:04.440 --> 01:45:05.880
+Because we are doing bio-conjugation
+
+01:45:05.880 --> 01:45:07.880
+and we are working on the ligands,
+
+01:45:07.880 --> 01:45:10.480
+we have been able to create this first generation
+
+01:45:10.480 --> 01:45:11.680
+of one AV capsid.
+
+01:45:11.680 --> 01:45:15.880
+It's the very first capsid with no tropisms on its own.
+
+01:45:15.880 --> 01:45:17.720
+It's quite inert.
+
+01:45:17.720 --> 01:45:20.160
+It has an unprecedented lever de-targeting.
+
+01:45:20.160 --> 01:45:21.880
+It's highly manufacturable.
+
+01:45:21.880 --> 01:45:24.240
+It's very similar to AV9 in term of yield.
+
+01:45:25.280 --> 01:45:27.560
+It's based on low seroprevalent serotypes,
+
+01:45:27.560 --> 01:45:30.880
+but thanks to the alligator platform and the chemistry,
+
+01:45:30.880 --> 01:45:33.080
+we can really target the vector on demand
+
+01:45:33.080 --> 01:45:35.800
+only in the tissue of interest.
+
+01:45:38.960 --> 01:45:42.360
+In conclusion, the alligator platform allows us
+
+01:45:42.360 --> 01:45:45.360
+to have cross reactive ligands among species
+
+01:45:45.360 --> 01:45:49.560
+with a very strong lever and very strong tissue targeting.
+
+01:45:49.560 --> 01:45:52.840
+We went from AV9 to benchmark expression level
+
+01:45:52.840 --> 01:45:55.200
+in both the CNS and in mussels.
+
+01:45:56.720 --> 01:45:58.680
+And we believe that the combination
+
+01:45:58.680 --> 01:46:01.520
+of the bio-conjugation, the alligator platform,
+
+01:46:01.520 --> 01:46:04.320
+and the one AV, we will pave the way
+
+01:46:04.320 --> 01:46:06.040
+of a certain generation of vectors
+
+01:46:06.040 --> 01:46:08.240
+that is safer and more potent.
+
+01:46:08.240 --> 01:46:09.240
+Thank you very much.
+
+01:46:09.240 --> 01:46:11.640
+And I would like to thank all co-members
+
+01:46:11.640 --> 01:46:15.120
+for this amazing work and mainly the bio-conjugation team
+
+01:46:15.120 --> 01:46:18.000
+which is here because without the girls,
+
+01:46:18.000 --> 01:46:19.680
+nothing would have been possible.
+
+01:46:19.680 --> 01:46:20.520
+Thank you.
+
+01:46:20.520 --> 01:46:21.360
+Thank you.
+
+01:46:27.360 --> 01:46:28.280
+Very interesting work.
+
+01:46:28.280 --> 01:46:29.120
+Thank you.
+
+01:46:30.080 --> 01:46:33.600
+I am a bit concerned about the generalization
+
+01:46:33.600 --> 01:46:36.320
+claim of this platform,
+
+01:46:36.320 --> 01:46:38.880
+given that the transference receptor as far as I know
+
+01:46:38.880 --> 01:46:43.240
+is judging by symbol linear peptide.
+
+01:46:43.240 --> 01:46:46.800
+So how do we feel the generalization
+
+01:46:46.800 --> 01:46:50.760
+to more complex receptor requirements
+
+01:46:50.760 --> 01:46:54.000
+like things that requires conformational rigidity
+
+01:46:54.000 --> 01:46:56.480
+or things that require limberization,
+
+01:46:56.480 --> 01:46:58.880
+depending on judgment or things that require
+
+01:46:58.880 --> 01:47:00.560
+ligand clustering?
+
+01:47:01.760 --> 01:47:05.000
+How you feel about this?
+
+01:47:05.000 --> 01:47:06.760
+I'm not completely sure, to be honest,
+
+01:47:06.760 --> 01:47:09.280
+to have fully understood your question.
+
+01:47:09.280 --> 01:47:13.760
+Very simply, how do you think this would generalize
+
+01:47:13.760 --> 01:47:18.760
+to other receptors that have more complex requirements
+
+01:47:19.160 --> 01:47:20.680
+to get in judging?
+
+01:47:20.680 --> 01:47:23.800
+That can be either more complex ligand,
+
+01:47:23.800 --> 01:47:26.920
+some has conformational requirements
+
+01:47:26.920 --> 01:47:29.640
+or clustering of more ligands,
+
+01:47:29.640 --> 01:47:31.320
+or...
+
+01:47:31.320 --> 01:47:32.160
+I get it.
+
+01:47:32.160 --> 01:47:33.440
+...limberization, things.
+
+01:47:33.440 --> 01:47:37.000
+Yeah, again, we are decorating the capsid.
+
+01:47:37.000 --> 01:47:38.960
+We are first screening the ligands
+
+01:47:38.960 --> 01:47:40.480
+to match the receptors.
+
+01:47:40.480 --> 01:47:43.040
+We know that our ligands are reactive
+
+01:47:43.040 --> 01:47:44.680
+with a receptor of interest,
+
+01:47:44.680 --> 01:47:46.800
+and then we conjugate them to the capsid.
+
+01:47:51.800 --> 01:47:54.200
+Hi, Dmitri from Ring Therapeutics.
+
+01:47:54.200 --> 01:47:57.000
+Very nice talk and very cool platform.
+
+01:47:57.000 --> 01:48:00.480
+I'm curious, with the TFR data you showed,
+
+01:48:00.480 --> 01:48:02.240
+since you mentioned that there's not
+
+01:48:02.240 --> 01:48:05.000
+kind of an intrinsic tropism of the capsid,
+
+01:48:05.000 --> 01:48:10.000
+how much more is the TFR doing after the BBB crossing
+
+01:48:10.000 --> 01:48:12.360
+to give you the actual transduction of the neurons?
+
+01:48:12.480 --> 01:48:13.840
+How are you actually targeting neurons?
+
+01:48:13.840 --> 01:48:15.680
+Is there additional liganding,
+
+01:48:15.680 --> 01:48:17.880
+or is it just an increased concentration in the brain
+
+01:48:17.880 --> 01:48:19.280
+that is leading to that transduction?
+
+01:48:19.280 --> 01:48:20.440
+It's a very good question.
+
+01:48:20.440 --> 01:48:21.280
+I can't answer it.
+
+01:48:21.280 --> 01:48:22.720
+It's a very preliminary work,
+
+01:48:22.720 --> 01:48:24.560
+but we are looking into it.
+
+01:48:24.560 --> 01:48:25.400
+Thank you.
+
+01:48:28.120 --> 01:48:29.160
+Hello, great talk.
+
+01:48:29.160 --> 01:48:31.320
+Hugh from there, Therapeutics.
+
+01:48:31.320 --> 01:48:32.560
+I'm sorry if I missed this in the talk,
+
+01:48:32.560 --> 01:48:35.040
+but what was the method of finding
+
+01:48:35.040 --> 01:48:37.320
+the kind of neutral-based capsid?
+
+01:48:37.320 --> 01:48:38.640
+Is it one that exists,
+
+01:48:38.640 --> 01:48:42.280
+or did you have to do a lot of editing to make it neutral?
+
+01:48:42.840 --> 01:48:45.920
+We first generated a rational library.
+
+01:48:45.920 --> 01:48:47.120
+It was a very tiny one.
+
+01:48:47.120 --> 01:48:48.520
+It was only 10 capsids.
+
+01:48:49.800 --> 01:48:51.600
+So, yeah, very rational.
+
+01:48:52.440 --> 01:48:53.280
+All right, okay, great.
+
+01:48:53.280 --> 01:48:54.800
+Thanks very much.
+
+01:48:54.800 --> 01:48:55.880
+And no question from Anna.
+
+01:48:55.880 --> 01:48:56.720
+Thank you.
+
+01:48:56.720 --> 01:49:01.720
+A capsid with zero tropism is fascinating in and of itself,
+
+01:49:02.920 --> 01:49:04.600
+but where is that blockade?
+
+01:49:04.600 --> 01:49:07.200
+Is it just not entering any cells?
+
+01:49:07.200 --> 01:49:08.720
+Is it not trafficking?
+
+01:49:08.720 --> 01:49:11.640
+Is it just coming out in the urine
+
+01:49:11.640 --> 01:49:15.240
+because it's not, where's the block?
+
+01:49:15.240 --> 01:49:17.440
+I was thinking that you can help me on that.
+
+01:49:17.440 --> 01:49:19.880
+When we look on the vector distribution,
+
+01:49:19.880 --> 01:49:20.800
+the copy numbers,
+
+01:49:20.800 --> 01:49:24.360
+we have not been able to find it anywhere, to be honest.
+
+01:49:24.360 --> 01:49:26.480
+We also perform a kinetic study in the sera
+
+01:49:27.520 --> 01:49:30.880
+to try to find if we were just circulating longer,
+
+01:49:30.880 --> 01:49:33.160
+but no, it's the same as AV9.
+
+01:49:33.160 --> 01:49:35.000
+And yeah, we are thinking about the urines,
+
+01:49:35.000 --> 01:49:36.480
+but we did not collect them.
+
+01:49:36.480 --> 01:49:38.400
+Yeah, very, great work.
+
+01:49:38.400 --> 01:49:39.240
+Thank you.
+
+01:49:39.240 --> 01:49:40.080
+Thank you, Anna.
+
+01:49:41.680 --> 01:49:42.920
+Sorry, sort of related to that.
+
+01:49:42.920 --> 01:49:45.600
+Have you looked at interactions of the base capsid
+
+01:49:45.600 --> 01:49:47.720
+with things like AVR?
+
+01:49:47.720 --> 01:49:48.560
+It's ongoing.
+
+01:49:52.120 --> 01:49:55.240
+Adrian, so have you looked into the shelf life,
+
+01:49:55.240 --> 01:49:59.520
+physical stability, aggregation profile of this new capsid?
+
+01:49:59.520 --> 01:50:00.720
+It's ongoing work,
+
+01:50:00.720 --> 01:50:05.120
+but the designs that we have performed on this capsid
+
+01:50:05.120 --> 01:50:07.760
+should not change the parental one property.
+
+01:50:07.760 --> 01:50:10.120
+So without disclosing the serotype,
+
+01:50:10.120 --> 01:50:13.720
+we are confident that everything will go well.
+
+01:50:16.280 --> 01:50:18.880
+Can you talk a little bit about the site specificity
+
+01:50:18.880 --> 01:50:20.840
+of your conjugation method?
+
+01:50:20.840 --> 01:50:21.920
+Sorry, can you repeat?
+
+01:50:21.920 --> 01:50:23.160
+Can you talk a little bit about
+
+01:50:23.160 --> 01:50:26.240
+whether your conjugation method is site specific?
+
+01:50:26.240 --> 01:50:29.480
+We are conjugating a natural amino acid
+
+01:50:29.480 --> 01:50:31.200
+that's a capsid surface.
+
+01:50:31.200 --> 01:50:32.040
+Thank you.
+
+01:50:32.040 --> 01:50:33.680
+You're welcome.
+
+01:50:33.680 --> 01:50:35.000
+Any more questions?
+
+01:50:35.840 --> 01:50:40.840
+If not, then I'll conclude the session here.
+
+01:50:41.320 --> 01:50:43.120
+And if you have time,
+
+01:50:43.120 --> 01:50:45.320
+please provide the feedback for the session.
+
+01:50:45.320 --> 01:50:48.920
+It is really helpful for the ASGCT for organization.
+
+01:50:48.920 --> 01:50:50.480
+And thank you all for coming.
+

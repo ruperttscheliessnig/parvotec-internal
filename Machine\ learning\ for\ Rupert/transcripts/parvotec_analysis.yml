@@ -1,0 +1,96 @@
+---
+metadata:
+  title: "Parvotec Analysis"
+  subtitle: "AAV Capsid Engineering × Machine Learning × Pain Therapy"
+  author: "Parvotec Research Team"
+  date: 2026-08-06
+  description: "Comprehensive analysis of ASGCT 2026 conference materials for AAV capsid engineering with ML"
+
+design:
+  font_family: "Helvetica Neue, Arial, sans-serif"
+  colors:
+    navy: "#0a0e27"
+    gray_dark: "#1a1a1a"
+    gray_medium: "#666666"
+    gray_light: "#f5f5f5"
+    white: "#ffffff"
+  typography:
+    h1: 
+      size: 48px
+      weight: 300
+      letter_spacing: -1px
+    h2:
+      size: 28px
+      weight: 400
+      letter_spacing: -0.5px
+    body:
+      size: 14px
+      weight: 400
+      line_height: 1.6
+  spacing:
+    section_gap: 60px
+    element_gap: 20px
+    content_padding: 60px
+
+navigation:
+  sticky: true
+  items:
+    - label: "1. Parvotec"
+      id: "parvotec"
+    - label: "2. ML Framework"
+      id: "framework"
+    - label: "3. Lir Presentation"
+      id: "lir"
+    - label: "4. Videos"
+      id: "videos"
+    - label: "5. Papers"
+      id: "papers"
+    - label: "6. Glossary"
+      id: "glossary"
+
+sections:
+  - id: "parvotec"
+    title: "Parvotec Project"
+    type: "hero"
+    content_file: "parvotec_analysis.md#parvotec"
+    layout: "grid_3col"
+    
+  - id: "framework"
+    title: "ML Framework & Strategies"
+    type: "content"
+    content_file: "parvotec_analysis.md#framework"
+    layout: "grid_2col"
+    
+  - id: "lir"
+    title: "Lir_AAV_LLM Presentation"
+    type: "featured"
+    content_file: "parvotec_analysis.md#lir"
+    layout: "card_highlight"
+    
+  - id: "videos"
+    title: "ASGCT 2026 Videos"
+    type: "content"
+    content_file: "parvotec_analysis.md#videos"
+    layout: "grid_2col"
+    
+  - id: "papers"
+    title: "Research Papers"
+    type: "content"
+    content_file: "parvotec_analysis.md#papers"
+    layout: "grid_3col"
+    
+  - id: "glossary"
+    title: "Glossary"
+    type: "content"
+    content_file: "parvotec_analysis.md#glossary"
+    layout: "definition_list"
+
+stats:
+  - label: "Videos"
+    value: "6"
+  - label: "Papers"
+    value: "14"
+  - label: "ASGCT Slides"
+    value: "68"
+  - label: "ML Layers"
+    value: "4"
