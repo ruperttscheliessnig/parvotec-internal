@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | Shape Therapeutics — AAV5 Receptor Engineering</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Helvetica,sans-serif;
+       background:#111; color:#e0e0de; font-size:16px; line-height:1.8; }
+.wrap { max-width:860px; margin:0 auto; padding:2rem 1.5rem 5rem; }
+h1 { font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:300; letter-spacing:-.03em;
+     color:#fff; margin:1.2rem 0 .2rem; border-bottom:1px solid #333; padding-bottom:.5rem; }
+.meta { font-size:.68rem; color:#555; letter-spacing:.1em; text-transform:uppercase;
+        margin-bottom:1.8rem; }
+
+/* TOC with timestamps */
+.toc { background:#1a1a1a; border-left:3px solid #39bfff;
+       padding:.9rem 1.2rem; margin-bottom:2.5rem; }
+.toc-title { font-size:.6rem; letter-spacing:.18em; text-transform:uppercase;
+             color:#39bfff; margin-bottom:.6rem; }
+.toc-item { display:flex; align-items:baseline; gap:.75rem;
+            padding:.25rem 0; border-bottom:1px solid #1f1f1f; }
+.toc-item:last-child { border-bottom:none; }
+.toc-ts { font-family:monospace; font-size:.7rem; color:#39bfff;
+          flex-shrink:0; min-width:3.5rem; }
+.toc-a { color:#aaa; text-decoration:none; font-size:.82rem; line-height:1.4; }
+.toc-a:hover { color:#fff; }
+
+/* Section */
+.section { margin:2.5rem 0; }
+.section-header { display:flex; align-items:center; gap:1rem;
+                  border-bottom:1px solid #222; padding-bottom:.5rem;
+                  margin-bottom:1.2rem; }
+.ts { font-family:monospace; font-size:.72rem; color:#39bfff;
+      background:#1a1a1a; padding:.15rem .5rem; letter-spacing:.04em; flex-shrink:0; }
+.section-name { font-size:.65rem; font-weight:700; letter-spacing:.15em;
+                text-transform:uppercase; }
+.section-name.intro { color:#46a; }
+.section-name.body { color:#888; }
+.section-name.qa { color:#c05; }
+
+/* Text paragraphs */
+.section-body p { margin-bottom:1em; font-family:Georgia,'Times New Roman',serif;
+                   font-size:.93rem; line-height:1.85; color:#ccc; }
+.section-body p:first-child { color:#ddd; }
+
+/* Q&A */
+.qa-block { margin:1.2rem 0; }
+.speaker { display:flex; gap:.75rem; margin-bottom:.6rem; }
+.speaker-label { font-size:.6rem; font-weight:700; letter-spacing:.14em;
+                 text-transform:uppercase; flex-shrink:0; min-width:70px;
+                 padding-top:.2rem; }
+.speaker-label.q { color:#c05; }
+.speaker-label.a { color:#1a6; }
+.speaker-text { font-family:Georgia,'Times New Roman',serif;
+                font-size:.9rem; line-height:1.8; }
+.speaker-text.q { color:#cc8; font-style:italic; }
+.speaker-text.a { color:#cdc; }
+</style>
+<script src="../../../calyr-projects/assets/nav.js"></script>
+</head>
+<body>
+<div class="wrap">
+<div class="meta">1,146 words · ~12 min talk · ~5 min read</div>
+<h1>Shape Therapeutics — AAV5 Receptor Engineering</h1>
+<div class="toc">
+  <div class="toc-title">Sections with estimated timestamps</div>
+  
+<div class="toc-item">
+  <span class="toc-ts">00:00</span>
+  <a class="toc-a" href="#sec-0">Introduction</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">00:42</span>
+  <a class="toc-a" href="#sec-1">Part 1</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">03:44</span>
+  <a class="toc-a" href="#sec-2">Part 2</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">06:47</span>
+  <a class="toc-a" href="#sec-3">Part 3</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">09:49</span>
+  <a class="toc-a" href="#sec-4">Part 4</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">09:49</span>
+  <a class="toc-a" href="#sec-5">Q&A</a>
+</div>
+</div>
+
+<div class="section" id="sec-0">
+  <div class="section-header">
+    <span class="ts">00:00</span>
+    <span class="section-name intro">Introduction</span>
+  </div>
+  <div class="section-body">
+    <p>which recognizes the transplant receptor of both humans and NHPs to cross the blood-brain barrier in people. Thank you Andrew. My name is Andrew Dunn. I&#x27;m from Shape Therapeutics.</p>
+<p>Thank you for attending this talk. Let&#x27;s get started. Forward looking statements and all that. So at Shape Therapeutics one of the main pillars of the company</p>
+  </div>
+</div>
+<div class="section" id="sec-1">
+  <div class="section-header">
+    <span class="ts">00:42</span>
+    <span class="section-name body">Part 1</span>
+  </div>
+  <div class="section-body">
+    <p>is on capsid development. So I&#x27;ve been working over the last few years to develop CNS targeting capsids following systemic administration. Our platform uses AAV5. And so we employ direct mutagenesis rather than loop insertion.</p>
+<p>So we directly mutate capsids of loop 8 and these are around the residues that were previously identified by the McKinna group to interact with sialic acid. So under the theory that you could probably, if you mutate these regions, retarget from sialic acid to another receptor that hopefully is of interest and benefit to your program. So using this method we previously reported on a capsule that we call DB1 or deep brain 1. And then with a relatively moderate dose of 1E13 viral genomes per kilogram, the cinnamalgus macaque, we were able to use and deliver our RNA fix payload and achieve fairly significant on-target editing of our target transcript for our Parkinson&#x27;s disease program, specifically in deep brain structures of interest to us like the substantia nigra.</p>
+<p>So now that you have a fairly interesting biologic that you want to take forward before deploying copious amounts of capital on clinical trials, it&#x27;s probably helpful to ask the question whether or not it might work in humans. And so to that end it&#x27;s important to know what the primary receptor is that is mediating your capsid. So over the last year I&#x27;ve been onboarding and optimizing an LCMS technique to try to identify the target of these novel capsids. So again, these capsids, they were mutated randomly so we did not start a priori with a particular target in mind.</p>
+<p>So this is just a simple technique. You grind up your tissue, extract your protein, add your AAV as bait, pull down your</p>
+  </div>
+</div>
+<div class="section" id="sec-2">
+  <div class="section-header">
+    <span class="ts">03:44</span>
+    <span class="section-name body">Part 2</span>
+  </div>
+  <div class="section-body">
+    <p>AAV, purify the protein, send it off for LCMS and then try to identify the target from the soup that comes out. And LCMS is a very powerful technique. It&#x27;s very sensitive but it can also be very dirty. And so you achieve a lot of hits.</p>
+<p>Now this is an interaction assay, it&#x27;s not a functional assay so we don&#x27;t know if any of these hits are actually allowing for an enhanced functional transduction when expressed. So we identified hundreds of candidates and then filtered those down rationally based upon what might act as a receptor. Does it have a transmembrane domain? Is it GPI anchored?</p>
+<p>And over all of these hits where we then delivered a luciferase transgene in vitro, we cloned all of these hits individually and then expressed them across hex and chose and then delivered DB1, transduced to DB1, transduced with another shaped capsid, another CNS tropic shaped capsid, as well as wild type V. And there was one receptor at the very last plate that we ran that provided significant enhancement of functional transduction in vitro that was specific and that was unique to DB1 and that was transferrin receptor. And so with that in mind or with that in hand, you can start to ask the question, does it have really any chance to work in humans if we think that transferrin receptor is the primary receptor that is mediating our method of action crossing the blood-brain barrier? Does it interact with the human orthologs?</p>
+<p>So from previous studies that we know that DB1 works fairly well in old world monkeys and African green and Cinnamalgus macaques, but we also know that it doesn&#x27;t work in mice. And so then we can ask</p>
+  </div>
+</div>
+<div class="section" id="sec-3">
+  <div class="section-header">
+    <span class="ts">06:47</span>
+    <span class="section-name body">Part 3</span>
+  </div>
+  <div class="section-body">
+    <p>the question pretty easily, will it work in humans? Does it have a chance of working in humans? And so we ran an ortholog screen where you can just take all of the different orthologs of transferrin receptor and then express them individually in cell lines and then see what the functional transduction is when you over-express those receptors. And pretty obviously, unfortunately for DB1, that it did not appear to functionally interact with the human ortholog.</p>
+<p>We had excellent maintenance across the old world monkeys, but we did not have a functional transduction boost when over-expressing the human ortholog. So then we wanted to ask the question, where on what location of transferrin receptor might the DB1 be interacting with? And so we made this assumption or this hypothesis that it might be interacting with the apical domain of transferrin receptor. So if you run an alignment of Cinnamalgus transferrin receptor with human transferrin receptor, you can start to see in the apical domain a couple of locations of divergent amino acids.</p>
+<p>And so when you start to look at a structure of transferrin receptor, these divergent amino acids actually exist around the tops of loops, the loop that might be interacting, with a capsid of interest. So we broke these up into blocks, one, two, three, and four. block either contains one or a few divergent amino acids. Then you can start to create a chimera where you take the Cinnamalgus ortholog, that block from Sinnoh, graph that onto the human ortholog, and start to see if that block might rescue functional transduction. So that&#x27;s what we did.</p>
+<p>So we have the full human or the human apical domain, and then grafting the full Sinnoh</p>
+  </div>
+</div>
+<div class="section" id="sec-4">
+  <div class="section-header">
+    <span class="ts">09:49</span>
+    <span class="section-name body">Part 4</span>
+  </div>
+  <div class="section-body">
+    
+  </div>
+</div>
+<div class="section" id="sec-5">
+  <div class="section-header">
+    <span class="ts">09:49</span>
+    <span class="section-name qa">Q&A</span>
+  </div>
+  <div class="section-body">
+    <div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">the human ortholog, as well as each of the blocks individually where we take the block from the Cinnamalgus ortholog onto the human ortholog. And there was one block from all of these four blocks that rescued functional transduction of DB1 when over-expressing that human Sinnoh chimera, and that was block A. What&#x27;s nice about block A is there is a single divergent amino acid when comparing Sinnohs to humans, and that is at position 208. It is a glycine in the Cinnamalgus macaques, and it is an arginine in humans. That is one of the most divergent pairs of amino acids that you can get. So the fun continues for us. So we wanted to try to jump the speciation barrier. To do that, we ran single and double-site saturated mutagenesis of DB1 to see if we could cross over and hopefully bridge from Sinnohs into humans, to see if we can get something that works on both. And panning in vitro, where we express individually either the human transfer intercept or over-expressing human transfer intercept or over-expressing the Cinnamalgus ortholog relative to the parental cell line, the unedited cell line. So we were able to identify a population that appeared to gain this function against.</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</body>
+</html>

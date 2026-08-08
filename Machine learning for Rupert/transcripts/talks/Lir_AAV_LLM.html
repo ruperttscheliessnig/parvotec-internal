@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | Thomas Peacock / LEA — Corsair: AAV Protein Language Model</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Helvetica,sans-serif;
+       background:#111; color:#e0e0de; font-size:16px; line-height:1.8; }
+.wrap { max-width:860px; margin:0 auto; padding:2rem 1.5rem 5rem; }
+h1 { font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:300; letter-spacing:-.03em;
+     color:#fff; margin:1.2rem 0 .2rem; border-bottom:1px solid #333; padding-bottom:.5rem; }
+.meta { font-size:.68rem; color:#555; letter-spacing:.1em; text-transform:uppercase;
+        margin-bottom:1.8rem; }
+
+/* TOC with timestamps */
+.toc { background:#1a1a1a; border-left:3px solid #39bfff;
+       padding:.9rem 1.2rem; margin-bottom:2.5rem; }
+.toc-title { font-size:.6rem; letter-spacing:.18em; text-transform:uppercase;
+             color:#39bfff; margin-bottom:.6rem; }
+.toc-item { display:flex; align-items:baseline; gap:.75rem;
+            padding:.25rem 0; border-bottom:1px solid #1f1f1f; }
+.toc-item:last-child { border-bottom:none; }
+.toc-ts { font-family:monospace; font-size:.7rem; color:#39bfff;
+          flex-shrink:0; min-width:3.5rem; }
+.toc-a { color:#aaa; text-decoration:none; font-size:.82rem; line-height:1.4; }
+.toc-a:hover { color:#fff; }
+
+/* Section */
+.section { margin:2.5rem 0; }
+.section-header { display:flex; align-items:center; gap:1rem;
+                  border-bottom:1px solid #222; padding-bottom:.5rem;
+                  margin-bottom:1.2rem; }
+.ts { font-family:monospace; font-size:.72rem; color:#39bfff;
+      background:#1a1a1a; padding:.15rem .5rem; letter-spacing:.04em; flex-shrink:0; }
+.section-name { font-size:.65rem; font-weight:700; letter-spacing:.15em;
+                text-transform:uppercase; }
+.section-name.intro { color:#46a; }
+.section-name.body { color:#888; }
+.section-name.qa { color:#c05; }
+
+/* Text paragraphs */
+.section-body p { margin-bottom:1em; font-family:Georgia,'Times New Roman',serif;
+                   font-size:.93rem; line-height:1.85; color:#ccc; }
+.section-body p:first-child { color:#ddd; }
+
+/* Q&A */
+.qa-block { margin:1.2rem 0; }
+.speaker { display:flex; gap:.75rem; margin-bottom:.6rem; }
+.speaker-label { font-size:.6rem; font-weight:700; letter-spacing:.14em;
+                 text-transform:uppercase; flex-shrink:0; min-width:70px;
+                 padding-top:.2rem; }
+.speaker-label.q { color:#c05; }
+.speaker-label.a { color:#1a6; }
+.speaker-text { font-family:Georgia,'Times New Roman',serif;
+                font-size:.9rem; line-height:1.8; }
+.speaker-text.q { color:#cc8; font-style:italic; }
+.speaker-text.a { color:#cdc; }
+</style>
+<script src="../../../calyr-projects/assets/nav.js"></script>
+</head>
+<body>
+<div class="wrap">
+<div class="meta">2,392 words · ~15 min talk · ~11 min read</div>
+<h1>Thomas Peacock / LEA — Corsair: AAV Protein Language Model</h1>
+<div class="toc">
+  <div class="toc-title">Sections with estimated timestamps</div>
+  
+<div class="toc-item">
+  <span class="toc-ts">00:00</span>
+  <a class="toc-a" href="#sec-0">Introduction</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">00:30</span>
+  <a class="toc-a" href="#sec-1">Part 1</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">03:38</span>
+  <a class="toc-a" href="#sec-2">Part 2</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">06:46</span>
+  <a class="toc-a" href="#sec-3">Part 3</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">09:54</span>
+  <a class="toc-a" href="#sec-4">Part 4</a>
+</div>
+<div class="toc-item">
+  <span class="toc-ts">09:55</span>
+  <a class="toc-a" href="#sec-5">Q&A</a>
+</div>
+</div>
+
+<div class="section" id="sec-0">
+  <div class="section-header">
+    <span class="ts">00:00</span>
+    <span class="section-name intro">Introduction</span>
+  </div>
+  <div class="section-body">
+    <p>Our next speaker is Thomas Peacock. He&#x27;s going to talk to us about navigating the AAV capsid sequence space using virus specific protein language models. Good morning everyone. My name is Thomas Peacock.</p>
+<p>I am an AI research scientist at Lear Therapeutics and yes today I will introduce some of the work we&#x27;ve been doing developing virus specific protein language models for AAV capsid design. At Lear we are aiming to reimagine viral delivery starting with AAV.</p>
+  </div>
+</div>
+<div class="section" id="sec-1">
+  <div class="section-header">
+    <span class="ts">00:30</span>
+    <span class="section-name body">Part 1</span>
+  </div>
+  <div class="section-body">
+    <p>we have developed our multimodal lab in the loop platform navigator to generate AI optimized libraries with high impact mutations not just in a single region but across the entire viral surface. These libraries are validated through a combination of our in vivo tissue screens for tropism and potency and in vitro assays for immune evasion with each experiment feeding new data back into the navigator platform to retrain and refine our models. Navigator itself is a holistic AI platform for viral vectors. Some of its core components include our virus specific DNA models that we use for library generation, our structural analysis suite that we use for rapid capsid assembly and large scale docking screens and our protein language models that I will talk about throughout the rest of this talk.</p>
+<p>We&#x27;ve already made some exciting progress using our pipeline and even in our early results we have observed clear improvements in both enrichment and tissue detargeting across our libraries. As a brief introduction to protein language models these are neural networks that map amino acid sequences into high dimensional vector representations to capture the patterns that link protein sequence to protein structure and protein function. To learn these patterns the model is trained on an objective like masked language modelling where it is required to predict amino acids that have been intentionally hidden in the input sequence by observing the surrounding sequence context. And by iteratively updating its own weights the aim is to reduce the difference between its predictions and the true sequence.</p>
+<p>And the real beauty of this strategy is that the model is learning relationships between proteins using sequence alone. And this allows us to leverage the millions and millions of protein sequences that we have collected as a scientific community to learn across the full diversity of protein space. However when it comes to very specific tasks such as AAV engineering this enormous diversity becomes something of a double edged sword. Popular protein language models like ESM2 are generalists.</p>
+<p>They are trained on representative sequences across the whole protein universe but they lack the dense coverage of AAV sequence variation that is important if we want to model for example tissue specificity or immune evasion. The plot on the left here shows a sample of the ESM2 training data with the viral sequences highlighted in pink. And then on the right hand side we have subtracted the background protein families that were shown in purple and supplemented the data with additional publicly available viral sequences including AAV sequences. And it&#x27;s clear I think that not only are the AAV sequences not present in the ESM2 training data but they also largely fall out of distribution of the training data.</p>
+<p>So to address this problem we have retrained the ESM2 architecture using our viral data set shown here to create a specialist model that is tailored to AAV engineering tasks. We have benchmarked our specialist model that we are calling Corsair against the public protein</p>
+  </div>
+</div>
+<div class="section" id="sec-2">
+  <div class="section-header">
+    <span class="ts">03:38</span>
+    <span class="section-name body">Part 2</span>
+  </div>
+  <div class="section-body">
+    <p>GM viral data set and we have found that Corsair shown here in green outperforms ESM2 in pink across all the metrics that we&#x27;ve computed and for all the model sizes that we have tested. While it is important for us to validate our models on public benchmarks our main motivation is to apply them to our own in vivo data sets. We have refined Corsair on results from tissue experiments that we have done in mice and this allows us to use Corsair directly to design our new variant libraries. To apply a protein language model to our own endpoint tasks like tissue tropism or liver avoidance we need to transfer the learned representation into our AAV predictive setting and we do that by adapting the pre-trained network that we&#x27;ve previously been talking about with our new label data sets.</p>
+<p>The simplest way to do this is through fine-tuning. This is where we extend the network shown in pink with a task specific head shown here in green and this time we continue the training but for a regression or classification objective rather than the masked language modeling objective that we discussed earlier and we do that using our labeled examples. When fine-tuning there is a key trade-off between speed and performance so allowing all of the weights of the model to update offers us maximum flexibility to adapt to the new task but is computationally expensive whereas we can freeze some of these model weights to make the model faster and lighter but it will limit the ability of the model to adapt. We&#x27;ve compared performance when freezing all of the weights, some of the weights and none of the weights as part of our benchmarking.</p>
+<p>We&#x27;ve also compared these models to the LoRa fine-tuning method shown on the right hand side here and under LoRa we insert small trainable matrices into the model while keeping the base network frozen and it&#x27;s these matrices that update through the training process rather than the full network. The aim here is essentially to act as a shortcut achieving high performance by keeping the training fast and memory efficient. The results of this benchmarking showed that while reducing the number of parameter updates through freezing does improve training efficiency it generally comes at the cost of performance. The plot here shows the effect in one of our heart tissue datasets but we see a similar pattern across tissues, across both classification and regression tasks and across different model sizes.</p>
+<p>In contrast the LoRa fine-tuning method tends to preserve the performance close to full fine-tuning while significantly reducing training time so as a result this is generally the approach we have taken for our future model iterations. When comparing Corsair and ESM2 on our in-house tissue datasets we observed that Corsair improves performance across tissues. The radial plot on the right here shows varying spearmor and correlations when predicting relative transduction across one of our recent tissue libraries and this reflects our</p>
+  </div>
+</div>
+<div class="section" id="sec-3">
+  <div class="section-header">
+    <span class="ts">06:46</span>
+    <span class="section-name body">Part 3</span>
+  </div>
+  <div class="section-body">
+    <p>targeted library design where in this case we intended to probe the fitness landscape of a localized region on the capsid surface. Across the panel we see a meaningful effect size improvement using Corsair which gives us a more stable foundation for modeling transduction and identifying both high and low performing candidates. While the improvement on the previous slide may appear modest I think it&#x27;s worth highlighting the effect that this can have in large libraries. So here is an example, a toy simulation that we ran where we start with an initial pool of 5 million variants which is a fairly typical of our current pipeline.</p>
+<p>Then if we assume that 1% of those are hits and that we have two models we are comparing, models A and B, that achieve spearmor and correlations of 0.50 and 0.52 respectively then when we screen the variants with those two models and we select the top 40,000 to proceed to experimental testing we find that model B identifies over 400 additional hits compared to model A so not an insignificant increase I think for just that small 2% difference in spearmor and correlation. Alongside refining our models with more complete AAV datasets we are continuing to iterate on our model design to further improve performance. One recent example of this is our multi-tissue model. So this builds upon the core set architecture but here we are training a single model jointly across all tissues.</p>
+<p>So this not only improves our training efficiency because now we are just training a single model rather than the separate models for every single tissue but it also allows the model to use cross tissue patterns to hopefully improve its predictive performance. The plot on the right here again shows the spearmor and correlation when predicting relative transduction but this time for our multi-task model compared to our single task models in green and pink respectively and we found that the current version of our multi-task Corsair model outperforms our single task models on all tissues except for liver and spleen. To sum up our protein language module is just one component of the broader navigator platform for comprehensive modelling of the AAV virus capsid. It sits alongside our other models and our library generation tools which together enable the design of variant libraries that we validate in vivo and produce the data that drive the next generation of models which power our navigator engine.</p>
+<p>To conclude I&#x27;d like to thank the rest of the team at LEA. A special thank you to Stephen for his work on the modelling. I&#x27;ll be here at ASGCT for the rest of the week along with our co-founders Killian and Hugh so please do come and find us if you would like to know more about the work we&#x27;re doing or if you are interested in potential partnerships or collaborations. Enjoy the rest of the conference and thank you very much for listening.</p>
+<p>Thank you very much.</p>
+  </div>
+</div>
+<div class="section" id="sec-4">
+  <div class="section-header">
+    <span class="ts">09:54</span>
+    <span class="section-name body">Part 4</span>
+  </div>
+  <div class="section-body">
+    
+  </div>
+</div>
+<div class="section" id="sec-5">
+  <div class="section-header">
+    <span class="ts">09:55</span>
+    <span class="section-name qa">Q&A</span>
+  </div>
+  <div class="section-body">
+    <div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">questions from the audience I have a very naive question. I think you did mention the Corsairs can also be used for immunization.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label q">Audience</div>
+    <div class="speaker-text q">Have you tried any of that and have you put them to test?</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">Yes so we have generated immune data sets and we do train or we refine the model on those data sets. I didn&#x27;t have time to show any of those results today. We have shown them at a previous conference. So yeah we see kind of a similar performance I think so we are not getting like sort of perfect performance but we are identifying candidates that we can take forward to future screens. In our most recent immune study we did identify a pool of candidates that had a specific motif that was quite interesting where they like the variants that performed well in immunization sort of shared this motif. I think we have a lot of questions from the audience now.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label q">Audience</div>
+    <div class="speaker-text q">Hi I&#x27;m Jason from Sanofi. Could you reiterate some more on the training data used for training Corsair like specifically for the AAV variants?</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">Were they like all different AAV stereotypes? Were they all like insertions or just like slightly mutated versions of a specific serotype? Yeah so for the pre-training step which uses the huge number of unannotated sequences ESM2 uses the UniREF50 data set which essentially clusters protein sequences so you miss out on a lot of virus sequences that share similar features. So part of our data set has been just general viruses both double-stranded and single-stranded viruses to kind of keep our data set somewhat diverse rather than just AAV sequences. We have added all of the AAV like wild type serotypes into the data set and then we&#x27;ve really looked for as much AAV data as we can find so some of the data is well a lot of the data is AAV2 and AAV9 just because that&#x27;s the sort of data that&#x27;s available. We are working in AAV9 at the moment so that&#x27;s that&#x27;s sort of fine for us. How this would translate to other serotypes in the future is kind of an open question for us.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label q">Audience</div>
+    <div class="speaker-text q">Hi thanks for the talk.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">I was interested in your plot where you showed that AAV lives in a different part of the latent space than the other viral sequences. There was still a lot of structure and I was wondering if that recapitulated what we know about AAV serotypes, biogenetic relationships or even like species tropism. Yes so I think that the way that you plot this is kind of not misleading but like I think we so we this was not really the latent space what we did was we we did a KMA we split all the sequences by KMAs and then sort of plotted based on frequency of KMAs here so I think that does mean that you see this kind of distributed pattern for the AAV where you have a lot of single mutations that&#x27;s spreading out the data. The majority of the ESM2 training data that while the viral population is double stranded DNA viruses so I think this is why it clusters quite heavily in the center and the AAV sort of spreads out around the sides but yes I what we didn&#x27;t want to do was to run all of this data through ESM2 to plot the AAV data compared to the ESM2 data because then you&#x27;ve I mean it&#x27;s very difficult to tell whether that it falls out of distribution or not when doing that.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label q">Audience</div>
+    <div class="speaker-text q">Hi Dan Cox thank you for the talk.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">Well one question when you said you fine-tuned the model after the mass language modeling on specific tasks you were meaning transduction tasks a series of tasks? Right yeah so we have calculated various different endpoints the example I showed here is we we take the number of variants that we find in just the virus before it goes into tissue and then we we check the log fold change after we sequence the tissue and then compare it relative to wild type.</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label q">Audience</div>
+    <div class="speaker-text q">Would you try it on multiple tissues at once?</div>
+  </div>
+</div>
+<div class="qa-block">
+  <div class="speaker">
+    <div class="speaker-label a">Presenter</div>
+    <div class="speaker-text a">I have so we have done that for the multitask model we use all the data at once there we give the model information about which tissue that data has come from with the idea being that if it has that small amount of information it might be able to compare sequences across tissues at the same time. I haven&#x27;t tried blindly using all of the data from all the tissues sort of sort of unlabeled as one big data set I think it&#x27;d be quite interesting to try though. I see thank you. Thank you Andrew. Thank you very much. So this is the last and final.</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</body>
+</html>

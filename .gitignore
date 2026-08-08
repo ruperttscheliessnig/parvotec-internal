@@ -30,3 +30,4 @@ Machine learning for Rupert/transcripts/*.txt
 # Temp
 *.tmp
 *.log
+slide_images/

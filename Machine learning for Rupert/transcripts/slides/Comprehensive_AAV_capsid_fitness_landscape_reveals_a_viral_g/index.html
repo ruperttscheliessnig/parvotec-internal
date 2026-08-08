@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | Comprehensive AAV capsid fitness landscape reveals a viral gene and enables machine-guided design</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+       background:#111; color:#e0e0de; font-size:15px; line-height:1.75; }
+.wrap { max-width:1200px; margin:0 auto; padding:1.5rem 1.5rem 5rem; }
+h1 { font-size:clamp(1.1rem,3vw,1.7rem); font-weight:400; letter-spacing:-.03em;
+     color:#fff; margin:1.2rem 0 .2rem; border-bottom:1px solid #333; padding-bottom:.45rem; }
+.meta { font-size:.66rem; color:#555; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.4rem; }
+.toc { background:#1a1a1a; border-left:3px solid #39bfff;
+       padding:.8rem 1.1rem; margin-bottom:1.8rem; }
+.toc-title { font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:#39bfff; margin-bottom:.5rem; }
+.toc-row { display:flex; flex-wrap:wrap; gap:.4rem; }
+.toc a { color:#888; text-decoration:none; font-size:.75rem;
+         padding:.18rem .45rem; border:1px solid #2a2a2a; transition:all .12s; }
+.toc a:hover { background:#39bfff; color:#000; border-color:#39bfff; }
+.slide { display:grid; grid-template-columns:1fr 1fr; gap:0;
+         border-top:1px solid #1e1e1e; margin-top:2rem; padding-top:1.4rem; }
+@media(max-width:900px) { .slide { grid-template-columns:1fr; } }
+.slide-left { padding-right:1.3rem; border-right:1px solid #1e1e1e; }
+.slide-right { padding-left:1.3rem; }
+.slide-num { font-size:.58rem; color:#39bfff; font-weight:700;
+             letter-spacing:.14em; text-transform:uppercase;
+             margin-bottom:.55rem; display:block; font-family:monospace; }
+.slide-img { width:100%; border:1px solid #2a2a2a; background:#000;
+             display:block; cursor:zoom-in; }
+.slide-img:hover { opacity:.88; }
+.slide-chars { font-size:.56rem; color:#444; font-family:monospace; margin-top:.35rem; }
+.slide-text { font-family:Georgia,'Times New Roman',serif;
+              font-size:.86rem; line-height:1.8; color:#bbb; }
+.slide-text p { margin-bottom:.8em; }
+.slide-text p.h { font-family:'Helvetica Neue',Helvetica,sans-serif;
+                  font-weight:700; font-size:.78rem; color:#eee;
+                  text-transform:uppercase; letter-spacing:.05em;
+                  margin-top:1.1em; margin-bottom:.25em; }
+.slide-text p.ref { font-size:.74rem; color:#555; margin-bottom:.35em; }
+.slide-text.empty { color:#333; font-style:italic; font-size:.8rem; }
+#lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.94);
+      z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
+#lb.on { display:flex; }
+#lb img { max-width:94vw; max-height:94vh; }
+</style>
+<script src="../../../../calyr-projects/assets/nav.js"></script>
+</head>
+<body>
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" src="" alt=""></div>
+<div class="wrap">
+<div class="meta">9 slides · Comprehensive AAV capsid fitness landscape reveals a viral gene and enables machine-guided design.pdf · 96 dpi</div>
+<h1>Comprehensive AAV capsid fitness landscape reveals a viral gene and enables machine-guided design</h1>
+<div class="toc"><div class="toc-title">Jump to slide</div>
+<div class="toc-row"><a href="#s1">Slide 1</a><a href="#s2">Slide 2</a><a href="#s3">Slide 3</a><a href="#s4">Slide 4</a><a href="#s5">Slide 5</a><a href="#s6">Slide 6</a><a href="#s7">Slide 7</a><a href="#s8">Slide 8</a><a href="#s9">Slide 9</a></div></div>
+
+<div class="slide" id="s1">
+  <div class="slide-left">
+    <span class="slide-num">Slide 1 / 9</span>
+    <img class="slide-img" src="img/s1.png" alt="Slide 1"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">6331 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p class="h">HHS Public Access Author manuscript</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Published in final edited form as: Science. 2019 November 29; 366(6469): 1139–1143. doi:10.1126/science.aaw2900.</p>
+<p>Comprehensive AAV capsid fitness landscape reveals a viral</p>
+<p>gene and enables machine-guided design</p>
+<p>Pierce J. Ogden1,2,3,*, Eric D. Kelsic1,2,4,*,†, Sam Sinai1,2,4,5, George M. Church1,2,3,4,† 1Harvard Medical School, Boston, MA 02115, USA.</p>
+<p>2Wyss Institute for Biomedically Inspired Engineering, Boston, MA 02115, USA. 3Harvard Graduate Program in Biological and Biomedical Sciences, Boston, MA 02115, USA.</p>
+<p>4Dyno Therapeutics, Inc., Cambridge, MA 02139, USA. 5Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA 02138, USA.</p>
+<p>Adeno-associated virus (AAV) capsids can deliver transformative gene therapies, but our understanding of AAV biology remains incomplete. We generated the complete first-order AAV2 capsid fitness landscape, characterizing all single-codon substitutions, insertions, and deletions across multiple functions relevant for in vivo delivery. We discovered a frameshifted gene in the VP1 region that expresses a membrane-associated accessory protein that limits AAV production through competitive exclusion. Mutant biodistribution revealed the importance of both surface- exposed and buried residues, with a few phenotypic profiles characterizing most variants. Finally, we algorithmically designed and experimentally verified a diverse in vivo targeted capsid library</p>
+<p>with viability far exceeding random mutagenesis approaches. These results demonstrate the power of systematic mutagenesis for deciphering complex genomes and the potential of empirical machine-guided protein engineering.</p>
+<p>Since the discovery of the adeno-associated virus (AAV) in 1965 (1), AAV capsids have become a powerful tool for therapeutic in vivo gene delivery (2, 3). However, the transduction efficiency of natural capsids is still limiting for therapeutic purposes (4). Furthermore, engineering of enhanced capsids has proven challenging because of the</p>
+<p>†Corresponding author. eric.kelsic@dynotx.com (E.D.K.); gchurch@genetics.med.harvard.edu (G.M.C.). *These authors contributed equally to this work. Author contributions: Conceptualization, methodology, writing: P.J.O., E.D.K., S.S., and G.M.C.; Investigation: P.J.O. and E.D.K.; Formal analysis, Software: P.J.O., E.D.K., and S.S.; Supervision: E.D.K. and G.M.C. Competing interests: P.J.O., E.D.K., S.S., and G.M.C. are inventors on patent applications filed by Harvard University related to this work. E.D.K., S.S., and G.M.C. hold equity in Dyno Therapeutics, Inc. G.M.C.’s tech transfer and advisory roles are listed at: http:// arep.med.harvard.edu/gmc/tech.html. Data and materials availability: These data are available at the GEO website under accession number GSE139657. Barcode scripts are available at https://github.com/churchlab/AAV_fitness_landscape.Commit hash: e42505099b6d5f1f64770e4fa90f17c198915662. SUPPLEMENTARY MATERIALS science.sciencemag.org/content/366/6469/1139/suppl/DC1 Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s2">
+  <div class="slide-left">
+    <span class="slide-num">Slide 2 / 9</span>
+    <img class="slide-img" src="img/s2.png" alt="Slide 2"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">6349 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 2</p>
+<p>complexity of genotype–phenotype relationships and the many functional properties that must be simultaneously optimized (5).</p>
+<p>To better understand AAV function and inform capsid engineering, we generated all single- codon mutants of the AAV2 cap gene. AAV2 is the most well-characterized AAV serotype and is a component of the first U.S. Food and Drug Administration–approved gene therapy (2). Additionally, the AAV2 rep gene and inverted terminal repeat (ITR) sequences are commonly used for recombinant AAV production. Whereas recent high-throughput AAV mutagenesis studies have focused on limited capsid regions (6, 7), we examined the effects of mutations systematically across all 735 positions. Moreover, we included all synonymous codons for each amino acid to enable detection of noncoding elements. Wild-type (WT) AAV2 sequences and stop codon substitutions were included as positive and negative controls, respectively. In addition to codon substitutions, we generated all single-codon</p>
+<p>insertions and deletions. The full library was generated through mutant synthesis and plasmid assembly: final constructs contained ITRs flanking the full-length capsid gene with an upstream promoter and a downstream barcode, enabling pooled measurements of mutant frequencies by high-throughput sequencing (Fig. 1A and fig. S1).</p>
+<p>To understand how mutations affect virus production (e.g., capsid assembly and genome packaging), we transfected the plasmid library into human embryonic kidney (HEK) 293T cells to produce recombinant AAV and purified the resulting virus. We calculated the fitness of each variant as normalized enrichment relative to WT (Fig. 1B), summing counts for all synonymous codons of the same amino acid. VP1, VP2, and VP3 are cap isoforms that assemble into capsids with a 1:1:10 ratio (8). We observed that nonsense mutations in the VP3 region were more strongly depleted than those in VP1 and VP2 (Fig. 1C), consistent with only VP3 being essential for capsid assembly (9).</p>
+<p>We found that mutations at buried positions and those near the 5-fold axis of symmetry were more deleterious, whereas exposed residues and those at the 3-fold axis were better tolerated (Fig. 1, D and E). Additionally, mutations in variable regions identified from evolutionary capsid alignments (10) had greater average fitness than nonvariable regions (Fig. 1E). Outside of the variable regions, substitution to amino acids found within other serotypes were better tolerated than substitutions to amino acids never observed across a set of commonly studied AAVs (Fig. 1F). In contrast to alanine scanning, comprehensive</p>
+<p>mutagenesis revealed the importance of amino acid biochemical properties: positive charge was more deleterious across all positions, whereas negative charge was beneficial mainly at external projections, especially near the 3-fold axis (Fig. 1D). Mutations to methionine (ATG) were deleterious throughout the VP1 region, likely because the early initiation of translation there reduced the production of VP2 and VP3 monomers or because truncated VP1 products inhibit capsid formation.</p>
+<p>We also developed assays for measuring the evasion of neutralizing antibodies and thermostability. We identified mutations that escape neutralization by the A20 monoclonal antibody, whose binding epitope on the capsid surface has been identified through cryo– electron microscopy (11). Many mutants escaped neutralization, with escaping mutations being more likely to arise from known A20 epitope positions (fig. S4). We further measured</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s3">
+  <div class="slide-left">
+    <span class="slide-num">Slide 3 / 9</span>
+    <img class="slide-img" src="img/s3.png" alt="Slide 3"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">6285 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 3</p>
+<p>capsid thermostability by incubating the library at varying temperatures and then digesting any genomes released from capsids. Most mutations that decreased thermostability occurred at the 3-fold axis, suggesting that capsid disassembly initiates at these positions (fig. S5). These in vitro assays showed the utility and versatility of such libraries for studying complex AAV functions.</p>
+<p>Our comprehensive codon-scanning approach enabled the detection of hidden gene products and genetic elements. In particular, functions independent of coding for the capsid could manifest as fitness differences among synonymous codons. We devised a Frameshift Score (FS) to detect the presence of frameshifted open reading frames (ORFs) by comparing the differences in fitness observed among synonymous cap mutants when stop codons in alternative reading frames were present or absent. We evaluated this metric using AAV production data across Assembly Activating Protein (AAP), a known frameshifted ORF</p>
+<p>within cap (9). We observed significant FS in the +1 frame (Fig. 2A), as expected given AAP’s essential role in AAV2 capsid assembly (9). Other frameshifted ORFs, such as the X gene, have been proposed (12), however, we detected no highly significant FS within this region.</p>
+<p>Instead, we detected a +1 frameshifted ORF in the VP1 region (Fig. 2A). Guided by differences in fitness of synonymous codons, we identified cap positions 27 to 147 as the most likely ORF location. We hypothesized that the ORF starts with CTG, a noncanonical start codon. Supporting this hypothesis, all mutations to P27(CCT) were deleterious, except those that preserved the CTG start codon (fig. S6A). In this frame, translation continues until reaching a TAG stop codon, creating a protein 119 amino acids in length (fig. S7). A pBLAST search for this sequence on the National Center for Biotechnology Information (NCBI) website against the nonredundant protein database returned no proteins with significant homology.</p>
+<p>To validate the ORF’s translation in the native context we added a FLAG tag at the C terminus and transfected the plasmid construct into HEK293T cells. Using Western blotting, we confirmed the presence of a protein migrating near the expected size of 16 kDa (Fig. 2B and fig. S6B). Synonymous changes to cap that mutated the hypothesized CTG start codon ablated the primary protein product, as did a cap mutation creating an early stop codon (Fig. 2B). Light bands at lower molecular weight indicated the potential presence of additional</p>
+<p>downstream start codons. Intriguingly, although AAV2 assembles in the nucleolus (13), anti-FLAG immunofluorescence imaging revealed the ORF protein to be membrane associated (fig.</p>
+<p>S6C). We confirmed this by replacing the FLAG tag with a C-terminal GFP fusion and also by testing sequences derived from AAV5, AAV8, and AAV9. In all cases, the protein was associated with the cell membrane (Fig. 2C and figs. S6, C and D, and S8). On the basis of these observations, we proposed the name “membraneassociated accessory protein” (MAAP).</p>
+<p>To understand the functional role of MAAP, we repeated the production experiment while supplementing the library with MAAP expressed in trans. This rescued the packaging</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s4">
+  <div class="slide-left">
+    <span class="slide-num">Slide 4 / 9</span>
+    <img class="slide-img" src="img/s4.png" alt="Slide 4"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">6340 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 4</p>
+<p>abilities of VP mutants containing MAAP-null mutants (Fig. 2D). Although MAAP-null mutants produced individually did not have reduced titers relative to WT, when we assayed individual MAAP mutants in head-to-head competition with WT, MAAP mutants were outcompeted unless complemented in trans with functional MAAP (Fig. 2E). MAAP’s function therefore manifests through competitive exclusion, possibly explaining the high genome–capsid coupling observed for libraries of engineered AAV capsids (14).</p>
+<p>We studied the effects of mutations on in vivo delivery by administering the virus library to mice through retroorbital injection. We collected blood 1 hour later; spleen, liver, kidney, heart, and lung 18 days later; and then sequenced barcodes from purified virus genomes (Fig. 3A and fig. S9). We chose five mutants with divergent biodistribution profiles and verified that biodistribution from individual variants matched our library-based measurements (Fig. 3B).</p>
+<p>Principal component analysis (PCA) revealed distinct relationships between tropism profiles and capsid structure. The first two principal components explained 80% of the variance in tropism profiles. We identified three mutant clusters that increased biodistribution to at least</p>
+<p>one tissue (Fig. 3CD and fig. S10). Cluster 1 included the well-studied R585 and R588 mutants (15), which were depleted from the liver and enriched in the blood, as expected, and enriched in the heart and kidney. Cluster 2 mutants were similar, but selectively depleted from the heart. Cluster 3 mutants were depleted from the blood and spleen but enriched across the other tissues. The structural locations of these clusters were distinct: Mutants from cluster 1 and cluster 2 occurred in tight patches on the capsid surface near the 3-fold axis, whereas cluster 3 mutations were dispersed in buried positions throughout the capsid (Fig. 3E).</p>
+<p>With most single–amino-acid changes being deleterious, introducing multiple mutations without breaking capsid function has been a limitation for engineering through random mutagenesis (16). We hypothesized that an additive model built from our data would approximate the fitness of nearby variants with multiple mutations, enabling the design of functional variants with greater throughput than rational design and higher efficiency than random mutagenesis.</p>
+<p>To validate this hypothesis, we focused on capsid positions 561 to 588, a region containing both surface-exposed and buried positions. Informed by liver-biodistribution data from an additional in vivo mouse experiment focused on single mutations only at these positions (Fig. 4A), we designed multimutant variants by sampling mutations at each position proportional to their measured effect on liver delivery. Within the library, each designed</p>
+<p>target variant was tested either alone or with a complete path of stepwise edits from WT to the target itself (Fig. 4A). Using this strategy, we designed 1271 variants in addition to 10,047 randomly generated</p>
+<p>mutants with 1 to 10 mutations from the WT reference and measured liver biodistribution in mice. The designed set contained a much higher fraction of mutants targeted to the liver. This trend was most pronounced when the number of mutations was four or more: 147 designed mutants (25.6% of those tested) were functional, whereas nearly all of the 4477</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s5">
+  <div class="slide-left">
+    <span class="slide-num">Slide 5 / 9</span>
+    <img class="slide-img" src="img/s5.png" alt="Slide 5"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">6013 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 5</p>
+<p>randomly generated mutants were not viable or had weaker liver tropism than WT (99.8%; Fig. 4B).</p>
+<p>Our comprehensive, machine-guided design strategy generated viable mutants in a principled and high-throughput manner and is generalizable to other proteins and engineering challenges. Applied to AAV, such methods now enable the systematic optimization of natural capsids into synthetic variants with enhanced properties for emerging gene therapies.</p>
+<p class="h">Supplementary Material</p>
+<p>Refer to Web version on PubMed Central for supplementary material.</p>
+<p class="h">ACKNOWLEDGMENTS</p>
+<p>We thank S. Biswas, N. Davidsohn, D. Goodman, N. Jain, G. Kuznetsov, M. Schubert, D. Thompson, and members of the Church lab for helpful discussions and J. Aach, R. Kishony, S. Slomovic, and H. Wang for feedback on early versions of the manuscript. Funding: This work was supported by grant nos. NIH-P50-HG005550 and NIH-RM1-HG008525, and by internal funding from the Harvard Wyss Institute. Computational resources for this work were provided by the AWS Cloud Credits for Research Program. REFERENCES AND NOTES</p>
+<p>1. Atchison RW, Casto BC, Hammon WM, Science 149, 754–755 (1965). [PubMed: 14325163] 2. Russell S et al., Lancet 390, 849–860 (2017). [PubMed: 28712537] 3. Mendell JR et al., N. Engl. J. Med 377, 1713–1722 (2017). [PubMed: 29091557] 4. Wang D, Tai PWL, Gao G, Nat. Rev. Drug Discov 18, 358–378 (2019). [PubMed: 30710128] 5. Grimm D, Zolotukhin S, Mol. Ther 23, 1819–1831 (2015). [PubMed: 26388463] 6. Adachi K, Enoki T, Kawano Y, Veraz M, Nakai H, Nat. Commun 5, 3075(2014). [PubMed: 24435020] 7. Davidsson M et al., Barcoded rational AAV vector evolution enables systematic in vivo mapping of peptide binding motifs. bioRxiv 335372[Preprint]. 31 5 2018. 8. Srivastava A, Lusby EW, Berns KI, J. Virol 45, 555–564 (1983). [PubMed: 6300419] 9. Sonntag F, Schmidt K, Kleinschmidt JA, Proc. Natl. Acad. Sci. U.S.A 107, 10220–10225 (2010). [PubMed: 20479244] 10. Lukashov VV, Goudsmit J, J. Virol 75, 2719–2740 (2001). 11. McCraw DM, O’Donnell JK, Taylor KA, Stagg SM, Chapman MS, Virology 431, 40–49 (2012). [PubMed: 22682774] 12. Cao M, You H, Hermonat PL, PLOS ONE 9, e104596(2014). [PubMed: 25127256] 13. Wistuba A, Kern A, Weger S, Grimm D, Kleinschmidt JA, J. Virol 71, 1341–1352 (1997). [PubMed: 8995658] 14. Nonnenmacher M, van Bakel H, Hajjar RJ, Weber T, Mol. Ther 23, 675–682 (2015). [PubMed: 25586687] 15. Kern A et al., J. Virol 77, 11072–11081 (2003). [PubMed: 14512555] 16. Kelsic ED, Church GM, Cell Gene Ther. Insights 5, 523–536 (2019).</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s6">
+  <div class="slide-left">
+    <span class="slide-num">Slide 6 / 9</span>
+    <img class="slide-img" src="img/s6.png" alt="Slide 6"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">5652 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 6</p>
+<p>Fig. 1. Measurement of all single AAV2 capsid mutations in a multiplexed viral production assay. (A) Assay and calculation of production fitness (s′). (B) Barcode frequencies: plasmid (f p ) versus virus (f). (C) Fitness for WT replicates and stop codons in VP1, VP2, and VP3. (D) v Fitness for all single–amino-acid insertions, deletions (D), stop codons (*), and substitutions. Radius is from capsid center. VR, variable regions. (E) Average fitness for insertions at each position colored on the 3D structure. The triangle is the 3-fold axis and the pentagon is the 5-fold axis. (F) Fitness distributions split by conservation and location within or outside of variable regions. In all panels, *p &lt; 10−20 (Mann–Whitney U test).</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s7">
+  <div class="slide-left">
+    <span class="slide-num">Slide 7 / 9</span>
+    <img class="slide-img" src="img/s7.png" alt="Slide 7"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">5746 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 7</p>
+<p>Fig. 2. A frameshifted protein expressed from the VP1 region functions through competitive exclusion. (A) Discovery of MAAP, a frameshifted ORF in theVP1 region. Top: Production fitness for mutations with stop codons in the +1 frame (red) and for cap codons synonymous to the red points but without creating stops in the +1 frame (gray). Solid lines indicatethe 10-position moving average. Bottom: p-value for the observed difference in +1 frame stops and non- stops for the moving window of 10 positions. (B) Westernblot of MAAP-3xFLAG with M2 anti-FLAG HRP antibody and an anti-GAPDH loading control. (C) Membrane association: confocal imaging of MAAP-GFP localization for AAV serotypes 2, 5, 8, and 9. Blue is membrane stain and green is green fluorescent protein. (D) Deleterious effects on production for MAAPstop codons relative to other synonymous codonsin the cap gene, supplying in trans: pRep, pRep+MAAP, or pRep+MAAP negative controls. *p &lt; 10−5 (Mann–Whitney U test). (E) MAAP mutants produce at levels similar to WT when expressed individually (top) are outcompeted by WT in a head-to-head format, but then rescued by pRep+MAAP in trans (bottom). **p &lt; 0.05, ***p &lt; 0.01 (one-way t-test).</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s8">
+  <div class="slide-left">
+    <span class="slide-num">Slide 8 / 9</span>
+    <img class="slide-img" src="img/s8.png" alt="Slide 8"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">5630 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 8</p>
+<p>Fig. 3. Multiplexed measurement of in vivo biodistribution reveals phenotypic clustering and structural design principles. (A) Biodistri-bution assay. (B) In vivo selection values for validation mutantsin library format versus individual assays. (C) Projection of individual mutants onto PC1 and PC2 derived from PCA, colored by tissue enrichment. (D) Top: Highlighting k-means clusters of mutants with enhanced tissue targeting. Bottom: Mutant biodistribution values within each cluster. (E) Position of cluster mutants in capsid structure, rendering first all residues and then only residues from each cluster to show the importance of buried residues for cluster 3.</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+<div class="slide" id="s9">
+  <div class="slide-left">
+    <span class="slide-num">Slide 9 / 9</span>
+    <img class="slide-img" src="img/s9.png" alt="Slide 9"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">5663 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>Ogden et al. Page 9</p>
+<p>Fig. 4. Machine-guided design of AAV capsids outperforms random mutagenesis. (A) Left: Generation of multimutants from individual amino-acid liver-biodistribution measurements (black dots: WT). Mutation probability distributions for each position are calculated from single–amino-acid mutant fitness (top). Right: Sampled mutations are combined to generate a multimutant target variant and then all mutants from WT to target are synthesized and experimentally measured (top shows ordering by increasing fitness). (B) Top: Fraction of designed mutants with liver biodistribution values greater than WT for random (gray) and machine-guided design mutants (orange). Bottom: Distribution of biodistribution values for random and designed mutants separated by number of mutations. Even at distances farther than four mutations, the designed approach outperforms random mutagenesis (pink box).</p>
+<p>Science. Author manuscript; available in PMC 2020 May 04. Author Manuscript Author Manuscript Author Manuscript Author Manuscript</p></div></div>
+</div>
+</div>
+<script>
+function show(img) {
+  document.getElementById('lbi').src = img.src;
+  document.getElementById('lb').classList.add('on');
+}
+</script>
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | POSTER_ASGCT2025_VoyagerTherapeutics</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+       background:#111; color:#e0e0de; font-size:15px; line-height:1.75; }
+.wrap { max-width:1200px; margin:0 auto; padding:1.5rem 1.5rem 5rem; }
+h1 { font-size:clamp(1.1rem,3vw,1.7rem); font-weight:400; letter-spacing:-.03em;
+     color:#fff; margin:1.2rem 0 .2rem; border-bottom:1px solid #333; padding-bottom:.45rem; }
+.meta { font-size:.66rem; color:#555; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.4rem; }
+.toc { background:#1a1a1a; border-left:3px solid #39bfff;
+       padding:.8rem 1.1rem; margin-bottom:1.8rem; }
+.toc-title { font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:#39bfff; margin-bottom:.5rem; }
+.toc-row { display:flex; flex-wrap:wrap; gap:.4rem; }
+.toc a { color:#888; text-decoration:none; font-size:.75rem;
+         padding:.18rem .45rem; border:1px solid #2a2a2a; transition:all .12s; }
+.toc a:hover { background:#39bfff; color:#000; border-color:#39bfff; }
+.slide { display:grid; grid-template-columns:1fr 1fr; gap:0;
+         border-top:1px solid #1e1e1e; margin-top:2rem; padding-top:1.4rem; }
+@media(max-width:900px) { .slide { grid-template-columns:1fr; } }
+.slide-left { padding-right:1.3rem; border-right:1px solid #1e1e1e; }
+.slide-right { padding-left:1.3rem; }
+.slide-num { font-size:.58rem; color:#39bfff; font-weight:700;
+             letter-spacing:.14em; text-transform:uppercase;
+             margin-bottom:.55rem; display:block; font-family:monospace; }
+.slide-img { width:100%; border:1px solid #2a2a2a; background:#000;
+             display:block; cursor:zoom-in; }
+.slide-img:hover { opacity:.88; }
+.slide-chars { font-size:.56rem; color:#444; font-family:monospace; margin-top:.35rem; }
+.slide-text { font-family:Georgia,'Times New Roman',serif;
+              font-size:.86rem; line-height:1.8; color:#bbb; }
+.slide-text p { margin-bottom:.8em; }
+.slide-text p.h { font-family:'Helvetica Neue',Helvetica,sans-serif;
+                  font-weight:700; font-size:.78rem; color:#eee;
+                  text-transform:uppercase; letter-spacing:.05em;
+                  margin-top:1.1em; margin-bottom:.25em; }
+.slide-text p.ref { font-size:.74rem; color:#555; margin-bottom:.35em; }
+.slide-text.empty { color:#333; font-style:italic; font-size:.8rem; }
+#lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.94);
+      z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
+#lb.on { display:flex; }
+#lb img { max-width:94vw; max-height:94vh; }
+</style>
+<script src="../../../../calyr-projects/assets/nav.js"></script>
+</head>
+<body>
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" src="" alt=""></div>
+<div class="wrap">
+<div class="meta">1 slides · POSTER_ASGCT2025_VoyagerTherapeutics.pdf · 96 dpi</div>
+<h1>POSTER_ASGCT2025_VoyagerTherapeutics</h1>
+<div class="toc"><div class="toc-title">Jump to slide</div>
+<div class="toc-row"><a href="#s1">Slide 1</a></div></div>
+
+<div class="slide" id="s1">
+  <div class="slide-left">
+    <span class="slide-num">Slide 1 / 1</span>
+    <img class="slide-img" src="img/s1.png" alt="Slide 1"
+         loading="lazy" onclick="show(this)">
+    <div class="slide-chars">69342 chars</div>
+  </div>
+  <div class="slide-right"><div class="slide-text"><p>INTRODUCTION 2 PRODUCTION FITNESS MODELING 3 TRANSDUCTION FITNESS MODELING</p>
+<p>• We recently identified AAV9-capsid variants that show high CNS Figure 1. An RNN for Production Fitness Prediction Figure2. An RNN for Transduction Fitness Classification • We used the TRACER™1 system to quantify the ability of each mutant in the new ML-based library to transduction in rodents and primates. transduce mouse brain in the absence or presence of human AAV9 neutralizing antibodies. • They are relying on ALPL as their primary surface receptor for Production Fitness Histogram RNN Performance on Test Set • Mice were injected with the new library at 2.5e13 VG/kg with either 0 or 60 mg human intravenous transport across the blood-brain barrier. immunoglobulin (IVIG). Test Set = 20,014 seqs • We are also attempting to further engineer our vectors by Train Set = 64,043 seqs Classification n = 102,640 seqs Threshold 83% n = 46,512 • After 14 days the mice were sacrificed, and NGS was used to quantify RNA expression in the brain from removing major antigenic sites on the capsid surface. Here we 90% High transduction fit each mutant capsid. The results from six mice were averaged, and a CV filter of 1.0 was applied. Low production fit have made mutations in a potentially antigenic region of the r = 0.94 Parental sequence capsid. • However, we have found that most mutations in this region Production Fitness, ML-based Library Transduction Fitness Mouse Brain, ML-based Library render the capsid nonviable and many reduce its CNS- 17% Low transduction fit Parental sequence transduction efficiency. 10% Test Set = 9,303 seqs n = 40,251 High production fit Train Set = 29,767 seqs • Furthermore, there is an inverse relationship between these properties, good producers are often bad transducers and vice False Positive Rate versa. • Thus, building a diverse mutant capsid library in this region — Accuracy = 0.94, Recall = 0.98 Recurrent Neural Network Regressor Loss During Training Recurrent Neural Network Classifier Precision = 0.94, F1 = 0.96 that contains mutants that both produce well and maintain ALPL-mediated brain transduction— has been a challenge. Sequence Loss function = MSE Sequence Confusion Matrix • To meet this challenge, we have taken a machine-learning- based approach. Specifically, we have used a combination of LSTM1 LSTM1 Evasion vs Transduction, ML-based Library machine learning models to prescreen mutant-capsid sequences for both production fitness and ALPL-mediated Transduction as good or better than parental, LSTM2 LSTM2 Evasion twice or more as good as parental. transduction efficiency. • We show that this approach has allowed us to effectively build DENSE the desired library and through it identify novel capsids with Production Fitness enhanced human intravenous immunoglobulin (IVIG) evading Prediction Parental properties. sequence Transduction Classification • (A) Only 10% of mutant sequences are high production fit. 1 • (B) A RNN regressor can predict production fitness with a high correlation coefficient between • (A) ALPL-mediated transduction fitness histogram showing low and high transduction peaks. predicted and measured values, Pearson r = 0.94. • (B-D) A RNN Classifier that can predict high vs. low transduction fitness with an accuracy of 0.94 and • ~100,000 mutant AAV9 VP1 capsid sequences were • (C) Neural network architecture, (D) Loss vs. epoch during training. a ROC-AUC of 0.98 generated synthetically, containing random mutations at 8 positions in region B. CONCLUSIONS 4 PRODUCTION VS TRANSDUCTION 5 An ML-BASED LIBRARY FOR nAb • These mutants were constructed in an ALPL-binding • We have developed a machine-learning model that can make production-fitness predictions for AAV9 parental sequence previously shown to transduce mouse EVASION SCREENING Figure 3. Production is Inversely Related to Transduction capsid variants mutated in a region where 90% of random mutants are nonviable. On our test dataset, and NHP brain well. measured and predicted values strongly correlate, Pearson r = 0.94. • The sequences were packaged into virus, and both plasmid • There is an inverse relationship between • We have also developed a machine-learning model that can distinguish between high and low and viral DNA sequences were quantified by next Good production and transduction fitness production fitness and transducing mutants in a cell-based assay of ALPL-mediated viral transduction, accuracy = 0.94. generation sequencing (NGS). ALPL-mediated transduction • We have used these models to prescreen mutants for inclusion in a library to be screened for AAV9 • Production fitness was calculated as log (viral cpm / fitness among mutants. 2 neutralizing antibody evasion. plasmid cpm) for each VP1 mutant sequence. • The area in red encloses • Viral particles were exposed to HEK293 cells expressing capsids that are both • We show that this ML-based approach has allowed us to generate a diverse, largely-viable library in this ALPL. production and difficult to mutate area. transduction fit. It is mutant • Cell transduction was measured by NGS after capsid RNA • Further, it has allowed us to identify mutant capsids which display both enhanced ALPL-mediated brain capsids like these that we isolation. would like too screen transduction and AAV9-neutralizing-antibody evasion. further for nAb evasion. • Transduction fitness was calculated as log (cellular cpm / viral 2 1. Nonnenmacher, M., et al. (2021). &quot;Rapid evolution of blood-brain-barrier-penetrating AAV capsids REFERENCES input cpm). by RNA-driven biopanning.&quot; Mol Ther Methods Clin Dev 20: 366-378. 75 Hayden Avenue, Lexington, MA 02421 | www.voyagertherapeutics.com ASGCT 28th Annual Meeting I May 13 – 17, 2025 I New Orleans, etaR evitisoP eurT Machine-Learning for AAV9 Mutant-Capsid Screening for both Production and ALPL-Mediated Transduction Efficiency Daniel H. Cox, Damien Maura, Weitong Chen, Mathieu Nonnenmacher Voyager Therapeutics Inc., Lexington, MA, USA 6 RESULTS FROM THE ML-BASED LIBRARY Transduction Fitness Histogram (ALPL-expressing Cells) RNN Performance, ROC Curve, on Test Set Figure4. Results from the ML-based Library • (A) Most sequences in the new ML-based library are production fit relative to the control stop-codon containing sequences. • (B) Only a single high-transduction peak is observed in the transduction-fitness histogram of the ML-based library. The low transduction peak is largely absent. • (C) The sequences boxed in red indicate library capsids that have maintained their ALPL-mediated transduction capability (x-axis) but also demonstrate an ability to evade neutralizing DATA FOR ML MODELING antibodies relative to the parental capsid (y axis). Transduction fitness with 60 mg IVIG normalized to parental Evasion = Transduction fitness with 0 mg IVIG normalized to parental • 100,000 mutant sequences were selected for a new library to be screened for AAV9 neutralizing-antibody evasion. • These mutants were made in an ALPL-binding parental sequence. • Each sequence passed an in silico double screen of a larger pool of ~25 million randomly generated sequences containing 3, 4, 5, 6, 7 or 8 mutations. • The large pool was screened for production fitness with the model shown in Figure 1, and for transduction fitness with the model shown in Figure 2. • 3,000 stop-codon-containing sequences were also included as negative controls. • To sample uniformly across the sequence space a minimum hamming distance constraint was applied. snoitavresbO # Transduction Fitness snoitavresbO # Production Fitness Measured Production Fitness ssentiF noitcudorP detciderP Number of Points per Pixel Number of Points per Pixel Production Fitness ssentiF noitcudsnarT snoitavresbO # Production Fitness snoitavresbO # Transduction Fitness ssoL Train Validation 3 2 1 0 10 20 30 40 Epoch GIVI gm 06 noisavE A B A B A B C D C D C Predicted Negative Positive True Negative 0.72 0.28 Positive 0.02 0.98 Transduction Fitness 0 mg IVIG Normalized to Parental</p></div></div>
+</div>
+</div>
+<script>
+function show(img) {
+  document.getElementById('lbi').src = img.src;
+  document.getElementById('lb').classList.add('on');
+}
+</script>
+</body></html>

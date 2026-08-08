@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parvotec | Projektübersicht</title>
+    <title>Parvotec | DRG Nozizeptive Therapie</title>
     <style>
       :root {
         --paper:  #050505;
@@ -12,152 +12,85 @@
         --soft:   #a7abb0;
         --line:   #343434;
         --drg:    #39bfff;
-        --aorta:  #39bfff;   /* Research project — same standing as DRG */
         --app:    #f59e0b;
       }
       *{margin:0;padding:0;box-sizing:border-box;}
       html{scroll-behavior:smooth;}
-      body{
-        font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
-        background:var(--paper);color:var(--ink);
-        line-height:1.62;font-size:16px;min-height:100vh;
-      }
-      header{
-        padding:72px max(4vw,calc((100vw - 1240px)/2)) 60px;
-        border-bottom:1px solid var(--line);
-      }
-      header h1{
-        font-size:clamp(3rem,7vw,6rem);font-weight:400;
-        letter-spacing:-.07em;color:var(--ink);line-height:1;
-      }
+      body{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:16px;min-height:100vh;}
+
+      header{padding:72px max(4vw,calc((100vw - 1240px)/2)) 60px;border-bottom:1px solid var(--line);}
+      header .breadcrumb{font-size:.65rem;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;}
+      header .breadcrumb a{color:var(--drg);text-decoration:none;}
+      header h1{font-size:clamp(3rem,7vw,6rem);font-weight:400;letter-spacing:-.07em;color:var(--ink);line-height:1;}
       header p{font-size:.88rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;margin-top:18px;}
 
-      /* ── Two equal proposals ─────────────────────── */
-      .proposals{
-        width:min(1240px,94vw);margin:0 auto;
-        border-left:1px solid var(--line);border-right:1px solid var(--line);
-        display:grid;grid-template-columns:1fr 1fr;
-      }
-      .proposal-block{
-        padding:56px 48px;
-        border-bottom:2px solid var(--line);
-        position:relative;
-      }
-      .proposal-block:first-child{border-right:1px solid var(--line);}
-      .proposal-block::before{
-        content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
-      }
-      .drg-block::before{background:var(--drg);}
-      .aorta-block::before{background:var(--aorta);}
+      .main-wrap{width:min(1240px,94vw);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);}
+
+      .project-block{padding:56px 48px;border-bottom:2px solid var(--line);position:relative;}
+      .project-block::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--drg);}
 
       .proj-num{font-size:.62rem;color:var(--soft);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;display:block;}
-      .proposal-block h2{
-        font-size:clamp(1.6rem,3vw,2.6rem);font-weight:400;
-        letter-spacing:-.05em;color:var(--ink);margin-bottom:4px;
-      }
+      .project-block h2{font-size:clamp(1.6rem,3vw,2.6rem);font-weight:400;letter-spacing:-.05em;color:var(--ink);margin-bottom:4px;}
       .proposal-sub{font-size:.9rem;color:var(--soft);margin-bottom:28px;}
 
-      /* Main proposal CTA */
-      .proposal-cta{
-        display:block;text-decoration:none;
-        border:1px solid var(--line);background:var(--card);
-        padding:20px 24px;margin-bottom:16px;
-        transition:border-color .2s;
-      }
+      .proposal-cta{display:block;text-decoration:none;border:1px solid var(--line);background:var(--card);padding:20px 24px;margin-bottom:16px;transition:border-color .2s;}
       .proposal-cta:hover{border-color:var(--drg);}
-      .aorta-block .proposal-cta:hover{border-color:var(--aorta);}
-      .cta-label{
-        font-size:.65rem;font-weight:700;letter-spacing:.14em;
-        text-transform:uppercase;margin-bottom:6px;display:block;
-      }
-      .drg-block .cta-label{color:var(--drg);}
-      .aorta-block .cta-label{color:var(--aorta);}
+      .cta-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--drg);margin-bottom:6px;display:block;}
       .cta-title{font-size:1.05rem;color:var(--ink);font-weight:500;display:block;margin-bottom:3px;}
       .cta-sub{font-size:.76rem;color:var(--soft);}
 
-      /* Secondary links */
       .secondary-links{display:flex;flex-direction:column;gap:1px;margin-top:4px;}
-      .sec-link{
-        display:flex;justify-content:space-between;align-items:center;
-        padding:12px 0;border-bottom:1px solid var(--line);
-        text-decoration:none;gap:12px;
-      }
+      .sec-link{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;gap:12px;}
       .sec-link:last-child{border-bottom:none;}
       .sec-link:hover .sec-arrow{transform:translateX(3px);}
       .sec-left{display:flex;flex-direction:column;gap:2px;}
       .sec-type{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
-      .drg-block  .sec-type{color:var(--drg);}
-      .aorta-block .sec-type.research{color:var(--aorta);}
-      .sec-type.app{color:var(--app)!important;}
+      .sec-type.research{color:var(--drg);}
+      .sec-type.app{color:var(--app);}
       .sec-title{font-size:.88rem;color:var(--ink);}
       .sec-sub{font-size:.7rem;color:var(--soft);}
       .sec-arrow{color:var(--soft);font-size:.85rem;transition:transform .15s;flex-shrink:0;}
 
-      /* ── BPO hint ───────────────────────────────── */
-      .bpo-hint{
-        width:min(1240px,94vw);margin:0 auto;
-        border-left:1px solid var(--line);border-right:1px solid var(--line);
-        padding:24px 48px;
-        display:flex;align-items:center;gap:20px;
-        border-bottom:1px solid var(--line);
-        opacity:.5;
-      }
-      .bpo-hint:hover{opacity:.8;transition:opacity .2s;}
-      .bpo-icon{
-        width:32px;height:32px;border:1px dashed var(--soft);
-        border-radius:0;display:flex;align-items:center;justify-content:center;
-        flex-shrink:0;font-size:.6rem;color:var(--soft);letter-spacing:.04em;
-        font-weight:700;
-      }
-      .bpo-text{font-size:.8rem;color:var(--soft);}
-      .bpo-text strong{color:var(--soft);font-weight:600;}
-      .legend-bar{
-        width:min(1240px,94vw);margin:0 auto;
-        border-left:1px solid var(--line);border-right:1px solid var(--line);
-        border-bottom:1px solid var(--line);
-        padding:24px 48px;
-        display:flex;gap:32px;align-items:center;flex-wrap:wrap;
-      }
+      /* Nav to other projects */
+      .project-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border-top:1px solid var(--line);}
+      .nav-card{padding:24px 48px;border-right:1px solid var(--line);text-decoration:none;transition:background .2s;}
+      .nav-card:last-child{border-right:none;}
+      .nav-card:hover{background:var(--card);}
+      .nav-card-label{font-size:.58rem;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+      .nav-card-title{font-size:.9rem;color:var(--ink);font-weight:500;}
+      .nav-card-sub{font-size:.7rem;color:var(--soft);margin-top:2px;}
+
+      .legend-bar{padding:24px 48px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);}
       .leg-lbl{font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;margin-right:8px;}
       .leg-item{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--soft);}
       .leg-dot{width:14px;height:4px;flex-shrink:0;}
 
-      footer{
-        padding:28px max(4vw,calc((100vw - 1240px)/2));
-        border-top:1px solid var(--line);
-        display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-      }
+      footer{padding:28px max(4vw,calc((100vw - 1240px)/2));border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
       footer p{font-size:.72rem;color:var(--soft);letter-spacing:.06em;}
 
       @media(max-width:780px){
-        .proposals{grid-template-columns:1fr;}
-        .proposal-block:first-child{border-right:none;}
-        .proposal-block{padding:40px 24px;}
+        .project-block{padding:40px 24px;}
         header{padding:48px 24px 40px;}
-        .legend-bar{padding:20px 24px;}
+        .legend-bar,.nav-card{padding:20px 24px;}
+        .project-nav{grid-template-columns:1fr;}
       }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="margin-bottom:20px;">
-        <span style="font-size:1.8em;font-weight:700;">calyr.aí</span>
-        <span style="font-size:.65em;color:#39bfff;font-weight:600;margin-left:8px;vertical-align:super;letter-spacing:.06em;">RESEARCH</span>
-    </div>
+    <div class="breadcrumb"><a href="#">calyr.aí</a> / Parvotec</div>
     <h1>Parvotec</h1>
-    <p>Zwei unabhängige Research-Projekte · AAV Capsid Engineering × ML-guided Optimization</p>
+    <p>Projekt 01 · DRG / Schmerz · AAV Capsid Engineering × ML-guided Optimization</p>
 </header>
 
-<div class="proposals">
+<div class="main-wrap">
 
-    <!-- ── Projekt 01: DRG ── -->
-    <div class="proposal-block drg-block">
+    <div class="project-block">
         <span class="proj-num">Projekt 01 · DRG / Schmerz</span>
         <h2>Nozizeptive<br>Neuron-Therapie</h2>
         <p class="proposal-sub">ESM-2 · cVAE · Bayesian Optimization · Retrograder Transport</p>
 
-        <!-- MAIN PROPOSAL — prominently featured -->
         <a class="proposal-cta" href="parvotec_proposal.html">
             <span class="cta-label">Main Proposal &amp; Oracle Manual</span>
             <span class="cta-title">DRG Fitness Oracle — Projektproposal</span>
@@ -173,93 +106,133 @@
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
-        </div>
-    </div>
-
-    <!-- ── Projekt 02: Aorta ── -->
-    <div class="proposal-block aorta-block">
-        <span class="proj-num">Projekt 02 · Aorta / Vaskulär</span>
-        <h2>VSMC-Targeting<br>Aneurysma-Therapie</h2>
-        <p class="proposal-sub">Dual-Screen · SAXS · 6-Task Oracle · CaCl₂-AAA Modell</p>
-
-        <!-- MAIN PROPOSAL — prominently featured -->
-        <a class="proposal-cta" href="parvotec_aorta_proposal.html">
-            <span class="cta-label">Main Proposal &amp; Oracle Manual</span>
-            <span class="cta-title">Vascular Oracle — Projektproposal</span>
-            <span class="cta-sub">WP1–WP5 · Gantt 24M · 6-Task NN · Leber-Constraint · SAXS-Labels</span>
-        </a>
-
-        <div class="secondary-links">
-            <a class="sec-link" href="parvotec_aorta_saxs_analysis.html">
+            <a class="sec-link" href="parvotec_asgct2026_analysis.html">
                 <div class="sec-left">
                     <span class="sec-type research">Analyse</span>
-                    <span class="sec-title">Aorta &amp; SAXS Analyse</span>
-                    <span class="sec-sub">Vaskuläre GT · VSMC/EC · SAXS Prinzip · Full:Empty · ML-Integration</span>
+                    <span class="sec-title">ASGCT 2026 Analysis (YAML + Markdown)</span>
+                    <span class="sec-sub">Technische Tiefenanalyse · ML Methoden · Konferenzauswertung</span>
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
-            <a class="sec-link" href="parvotec_app_biophysics.html#saxs">
+            <a class="sec-link" href="ASGCT2026_master.md">
                 <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">SAXS</span>
-                    <span class="sec-sub">Small-Angle X-ray Scattering · Rg · Full:Empty · SEC-SAXS</span>
+                    <span class="sec-type research">Analyse · MD</span>
+                    <span class="sec-title">ASGCT 2026 Master Document</span>
+                    <span class="sec-sub">Vollständige Konferenzauswertung · Alle Sessions · Rohdaten</span>
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
-            <a class="sec-link" href="parvotec_app_biophysics.html#spr">
+            <a class="sec-link" href="ASGCT_recap_Georg_full.md">
                 <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">SPR</span>
-                    <span class="sec-sub">Surface Plasmon Resonance · KD · kon · koff · Biacore</span>
+                    <span class="sec-type research">Analyse · MD</span>
+                    <span class="sec-title">Georg ASGCT Recap</span>
+                    <span class="sec-sub">Persönliche Auswertung · Key Takeaways · DRG-Relevanz</span>
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
-            <a class="sec-link" href="parvotec_app_biophysics.html#ppms">
+            <a class="sec-link" href="parvotec_knowledge_snippets.md">
                 <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">PPMS</span>
-                    <span class="sec-sub">Particle Properties · DLS · NTA · Zeta-Potential</span>
+                    <span class="sec-type research">Wissensbase · MD</span>
+                    <span class="sec-title">Parvotec Knowledge Snippets</span>
+                    <span class="sec-sub">Gesammelte Erkenntnisse · Methodennotizen · Referenzen</span>
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
-            <a class="sec-link" href="parvotec_app_computational.html#matomic">
+        </div>
+
+        <div style="margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);">
+            <div style="font-size:.6rem;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Talk Transkripte (Rohdaten)</div>
+            <div class="secondary-links">
+                <a class="sec-link" href="Lir_AAV_LLM.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">Lir — AAV &amp; LLM</span>
+                        <span class="sec-sub">Language Models für AAV Design</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+                <a class="sec-link" href="AAV_Engineering_III.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">AAV Engineering III</span>
+                        <span class="sec-sub">Kapsid-Engineering Session III</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+                <a class="sec-link" href="AAV_Engineering_IV.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">AAV Engineering IV</span>
+                        <span class="sec-sub">Kapsid-Engineering Session IV</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+                <a class="sec-link" href="AAV_Trafficking.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">AAV Trafficking</span>
+                        <span class="sec-sub">Zellulärer Transport · Endosomal Escape · Retrograder Transport</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+                <a class="sec-link" href="ShapeTX_AAV5engineering.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">ShapeTX — AAV5 Engineering</span>
+                        <span class="sec-sub">ShapeTX Ansatz · AAV5 Varianten · ML-guided</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+                <a class="sec-link" href="TuningReceptorInteractions_Caltech.txt">
+                    <div class="sec-left">
+                        <span class="sec-type research">Transkript</span>
+                        <span class="sec-title">Tuning Receptor Interactions (Caltech)</span>
+                        <span class="sec-sub">Rezeptor-Bindung optimieren · Tropismus · SPR-relevanz</span>
+                    </div>
+                    <span class="sec-arrow">→</span>
+                </a>
+            </div>
+        </div>
                 <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">mATOMIC</span>
-                    <span class="sec-sub">Molekulardynamik · GROMACS · MARTINI · ΔΔG · Docking</span>
-                </div>
-                <span class="sec-arrow">→</span>
-            </a>
-            <a class="sec-link" href="parvotec_app_computational.html#sbpa">
-                <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">SBPA</span>
-                    <span class="sec-sub">Sequenzbasierte Analyse · Immunogenizität · Aggregation · Herstellbarkeit</span>
-                </div>
-                <span class="sec-arrow">→</span>
-            </a>
-            <a class="sec-link" href="parvotec_app_workstation.html">
-                <div class="sec-left">
-                    <span class="sec-type app">Anwendung</span>
-                    <span class="sec-title">Workstation Spec</span>
-                    <span class="sec-sub">Hardware · GPU · Storage · Software · Network · Deployment</span>
+                    <span class="sec-type app">Infrastruktur</span>
+                    <span class="sec-title">Workstation &amp; Scientific Node</span>
+                    <span class="sec-sub">Threadripper · RTX 5090 · WP1–WP5 Compute · GPU Mapping</span>
                 </div>
                 <span class="sec-arrow">→</span>
             </a>
         </div>
     </div>
 
-</div>
+    <!-- Navigation to other independent projects -->
+    <div class="project-nav">
+        <a class="nav-card" href="parvotec_aorta_proposal.html" style="border-left:3px solid #39bfff;">
+            <span class="nav-card-label" style="color:#39bfff;">Projekt 02 · Aorta</span>
+            <div class="nav-card-title">Vascular Oracle</div>
+            <div class="nav-card-sub">VSMC · SAXS · SPR · 6-Task NN → aorta/</div>
+        </a>
+        <a class="nav-card" href="parvotec_app_biophysics.html" style="border-left:3px solid #f59e0b;">
+            <span class="nav-card-label" style="color:#f59e0b;">Applications</span>
+            <div class="nav-card-title">Biophysics Methods</div>
+            <div class="nav-card-sub">SAXS · SPR · PPMS · mATOMIC · SBPA</div>
+        </a>
+        <a class="nav-card" href="parvotec_scientific_node.html" style="border-left:3px solid #888;">
+            <span class="nav-card-label">Infrastruktur</span>
+            <div class="nav-card-title">Scientific Node Spec</div>
+            <div class="nav-card-sub">Threadripper · RTX 5090 · 3D Scanner</div>
+        </a>
+    </div>
 
-<div class="legend-bar">
-    <span class="leg-lbl">Farbcode</span>
-    <div class="leg-item"><div class="leg-dot" style="background:#39bfff"></div>Cyan — Research Projects &amp; Proposals</div>
-    <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div>Amber — 6 Anwendungen (SAXS · SPR · PPMS · mATOMIC · SBPA · Workstation)</div>
-    <span style="margin-left:auto;font-size:.68rem;color:var(--soft)">Keine Querverweise zwischen Projekten</span>
+    <div class="legend-bar">
+        <span class="leg-lbl">Farbcode</span>
+        <div class="leg-item"><div class="leg-dot" style="background:#39bfff"></div>Cyan — Parvotec DRG Projekt &amp; Analysen</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div>Amber — Infrastruktur &amp; Anwendungen</div>
+        <span style="margin-left:auto;font-size:.68rem;color:var(--soft)">Aorta · BioPhy · calyr-design sind eigenständige Projekte</span>
+    </div>
+
 </div>
 
 <footer>
-    <p>calyr.aí Research · August 2026 · Parvotec AAV Platform</p>
+    <p>calyr.aí Research · August 2026 · Parvotec DRG Platform</p>
     <p>github.com/ruperttscheliessnig/parvotec-internal</p>
 </footer>
 
