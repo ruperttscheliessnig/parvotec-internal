@@ -1,0 +1,4013 @@
+WEBVTT
+
+00:00.000 --> 00:03.120
+I hope you guys had a wonderful conference so far.
+
+00:03.120 --> 00:05.960
+Have a great day ahead.
+
+00:05.960 --> 00:10.280
+Welcome to the AV Capsit Engineering 4 session.
+
+00:10.280 --> 00:13.280
+I'm Saurav Chaudhary.
+
+00:13.280 --> 00:15.720
+Before we begin, I have a couple of quick reminders,
+
+00:15.720 --> 00:18.520
+which you've probably heard before.
+
+00:18.520 --> 00:21.240
+As a reminder, the use of flash photography and filming
+
+00:21.240 --> 00:24.560
+is prohibited during the session.
+
+00:24.560 --> 00:26.840
+I'm supposed to tell you that there is Wi-Fi and there
+
+00:26.840 --> 00:29.200
+is an app, but if you have not used it, that's why you're
+
+00:29.200 --> 00:32.800
+not going to use it now, so it should be good.
+
+00:32.800 --> 00:34.840
+And your feedback is incredibly useful to us.
+
+00:34.840 --> 00:36.600
+I'll circle back on that topic at the end.
+
+00:36.600 --> 00:39.400
+So without further ado, it's my pleasure
+
+00:39.400 --> 00:42.720
+to welcome Tyler Moyr from Voyager Therapeutics.
+
+00:42.720 --> 00:45.000
+He's going to talk to us about the directed evolution
+
+00:45.000 --> 00:47.320
+of muscular and neuromuscular capsid variants
+
+00:47.320 --> 00:50.360
+in both mice and non-human primates.
+
+00:50.360 --> 00:51.160
+Tyler, take it away.
+
+01:00.200 --> 01:02.280
+All right, thank you for that introduction,
+
+01:02.280 --> 01:04.800
+and thank you to the organizers for allowing me
+
+01:04.800 --> 01:07.720
+to share this work with you all that we've
+
+01:07.720 --> 01:10.080
+been working on for the past few years.
+
+01:10.080 --> 01:11.440
+What I'm going to talk about today
+
+01:11.440 --> 01:13.760
+is actually probably a bit of a different direction
+
+01:13.760 --> 01:16.080
+for Voyager Therapeutics.
+
+01:16.080 --> 01:18.280
+If you're familiar with our work, you know,
+
+01:18.280 --> 01:21.960
+of our work more in the CNS and gene therapy space
+
+01:21.960 --> 01:23.600
+for neurodegenerative disorders.
+
+01:23.600 --> 01:26.040
+But today, I'm going to talk about some work
+
+01:26.040 --> 01:29.080
+that we've done developing novel capsids for muscular
+
+01:29.120 --> 01:31.280
+and neuromuscular indications.
+
+01:34.880 --> 01:37.840
+So at Voyager, we've developed the tracer platform,
+
+01:37.840 --> 01:42.840
+which is an RNA-based AAV capsid evolution platform
+
+01:43.200 --> 01:48.200
+that allows us to evolve and engineer capsids
+
+01:48.600 --> 01:53.600
+with tissue-specific targeting for maximal gene delivery
+
+01:53.640 --> 01:56.400
+to a given tissue of interest.
+
+01:56.400 --> 01:57.880
+And of course, as I mentioned,
+
+01:57.880 --> 02:00.360
+we first applied the tracer platform
+
+02:00.360 --> 02:05.360
+to engineer transformative BBB penetrant AAV vectors
+
+02:05.520 --> 02:07.760
+for CNS-specific disorders.
+
+02:08.760 --> 02:11.000
+And on that note, I hope you all got the opportunity
+
+02:11.000 --> 02:13.040
+to hear our chief scientific officer,
+
+02:13.040 --> 02:15.960
+Todd Carter, present this past Wednesday morning
+
+02:15.960 --> 02:19.040
+about the development of VY-1706.
+
+02:19.040 --> 02:20.920
+And that is our gene therapy product
+
+02:20.920 --> 02:23.360
+for Alzheimer's disease.
+
+02:23.360 --> 02:24.640
+It's a tau knockdown.
+
+02:25.520 --> 02:27.440
+We're really excited about the three-month GLP
+
+02:27.440 --> 02:29.960
+tox data that he presented,
+
+02:29.960 --> 02:33.280
+and we're hoping to take that into the clinic later this year.
+
+02:33.280 --> 02:34.520
+So please stay tuned.
+
+02:36.640 --> 02:40.400
+But of course, outside of the CNS and beyond the BBB,
+
+02:40.400 --> 02:43.160
+there is need across many therapeutic areas
+
+02:43.160 --> 02:47.360
+for better, safer, stronger AAV capsids
+
+02:47.360 --> 02:49.320
+for gene therapy programs.
+
+02:49.320 --> 02:52.400
+And that's what I'm going to talk about here momentarily.
+
+02:52.840 --> 02:57.840
+So given that this is capsid engineering four,
+
+02:58.920 --> 03:01.360
+by now I presume many of you are familiar with the
+
+03:01.360 --> 03:06.200
+and overall capsid engineering platform overview.
+
+03:07.560 --> 03:12.280
+So for us, instead of processing brain tissue,
+
+03:12.280 --> 03:14.680
+we can easily just choose another tissue of interest.
+
+03:14.680 --> 03:18.440
+And now we've begun working in skeletal muscle
+
+03:18.440 --> 03:20.360
+and cardiac muscle.
+
+03:20.360 --> 03:22.240
+So we did this over the past few years.
+
+03:22.240 --> 03:24.160
+We launched a number of campaigns
+
+03:24.160 --> 03:27.720
+to identify muscle-specific capsids.
+
+03:27.720 --> 03:31.840
+And here I'm showing the results of one of our campaigns.
+
+03:31.840 --> 03:36.440
+We're looking at the enrichment of a number of pooled variants
+
+03:36.440 --> 03:40.360
+in a synomologous macaque muscle and mouse muscle
+
+03:40.360 --> 03:42.000
+relative to AAV9.
+
+03:42.000 --> 03:45.120
+And we were able to uncover a host of variants
+
+03:45.120 --> 03:47.760
+that showed enrichment in the muscles
+
+03:47.760 --> 03:49.400
+in both of those species.
+
+03:49.400 --> 03:50.480
+And in fact, in the monkeys,
+
+03:50.720 --> 03:54.480
+some that were improved upon a known monkey benchmark
+
+03:54.480 --> 03:56.240
+muscle capsid.
+
+03:56.240 --> 03:59.440
+So we chose a collection of these to begin evaluating
+
+03:59.440 --> 04:01.680
+and we were able to quite easily evaluate a lot of them
+
+04:01.680 --> 04:04.060
+in mice, so that's where I'll start.
+
+04:05.640 --> 04:10.640
+So relative to AAV9, we examined a bunch of capsids
+
+04:11.080 --> 04:15.080
+and when we looked at whole body and vivo imaging,
+
+04:15.080 --> 04:18.360
+we had a number of capsids that had substantial
+
+04:18.400 --> 04:22.960
+muscle targeting globally in muscles relative to AAV9.
+
+04:22.960 --> 04:25.400
+And they were on the order or in some cases,
+
+04:25.400 --> 04:29.280
+better than the benchmark capsid that we evaluated.
+
+04:30.640 --> 04:32.920
+So we chose one of these capsids.
+
+04:32.920 --> 04:36.120
+We denote it VCAP290 and we'll take a closer look
+
+04:36.120 --> 04:36.920
+at that one.
+
+04:38.080 --> 04:41.160
+So when we looked at VCAP290's ability
+
+04:41.160 --> 04:44.400
+to deliver a transgene here to the muscles,
+
+04:44.400 --> 04:46.600
+what we saw was just really a substantial increase
+
+04:46.600 --> 04:51.360
+over AAV9 in all muscle tissues that we examined.
+
+04:51.360 --> 04:53.720
+And again, sort of at the level or better
+
+04:53.720 --> 04:55.680
+than a benchmark capsid.
+
+04:55.680 --> 05:00.160
+And that was confirmed when we did more bioanalytics on it.
+
+05:00.160 --> 05:02.960
+In mice, VCAP290 had about 100-fold improvement
+
+05:02.960 --> 05:05.840
+in expression over AAV9.
+
+05:05.840 --> 05:09.200
+In heart tissue, it was about 10-fold improved.
+
+05:09.200 --> 05:10.680
+And we want to note that in liver,
+
+05:10.680 --> 05:14.760
+we actually did see a mild detargeting
+
+05:14.760 --> 05:17.660
+in terms of biodistribution to the liver.
+
+05:18.680 --> 05:22.080
+Now, when we first looked at these muscle capsids,
+
+05:22.080 --> 05:25.460
+we were at least these images, these histology images,
+
+05:25.460 --> 05:28.000
+we were really struck and it looked at this global view
+
+05:28.000 --> 05:31.360
+like we were really hitting every single muscle fiber
+
+05:31.360 --> 05:33.080
+and at this dose.
+
+05:33.080 --> 05:36.400
+And we confirmed that when we zoomed in a bit
+
+05:36.400 --> 05:41.400
+in skeletal muscle at this dose of 2.5 E13 VGs per KIG,
+
+05:41.720 --> 05:44.320
+which therapeutically would say is a low dose
+
+05:44.320 --> 05:47.000
+compared to what's being used in the clinic,
+
+05:47.000 --> 05:48.960
+we were hitting every muscle fiber.
+
+05:49.840 --> 05:52.080
+So we decided to take that even lower
+
+05:52.080 --> 05:56.160
+and we did a five-fold reduction in dose
+
+05:56.160 --> 05:59.000
+down to five E12 VGs per KIG.
+
+05:59.000 --> 06:02.040
+And again, we were able to hit 100%
+
+06:02.040 --> 06:04.680
+of skeletal muscle fibers,
+
+06:04.680 --> 06:07.440
+although we are seeing more variation
+
+06:07.440 --> 06:09.960
+in on a fiber-by-fiber basis.
+
+06:10.800 --> 06:15.760
+So at this point, I'm gonna switch over to our evaluation
+
+06:15.760 --> 06:19.160
+of VCAP290 in cinemulgus macaques
+
+06:19.160 --> 06:21.520
+and we switched trans genes here
+
+06:21.520 --> 06:24.880
+and we go into what we presented a few years ago
+
+06:24.880 --> 06:28.440
+as what we call sort of our multi-tag system.
+
+06:28.440 --> 06:31.660
+This is our ability to take a number of capsids of interest.
+
+06:31.660 --> 06:34.400
+In this case, we're gonna look at AEV9,
+
+06:34.400 --> 06:39.000
+a primate benchmark muscle capsid and VCAP290
+
+06:39.000 --> 06:43.240
+and we put them head-to-head in the exact same macaques.
+
+06:43.240 --> 06:47.360
+Each capsid is dosed pretty low at four E12 VGs per KIG
+
+06:47.360 --> 06:50.040
+and each is packaged with a histone trans gene,
+
+06:50.040 --> 06:52.240
+each with a unique epitope tag
+
+06:52.240 --> 06:54.440
+so that we can differentiate the capsids
+
+06:54.440 --> 06:57.820
+based on in histology or bioanalytics.
+
+06:59.000 --> 07:01.120
+And another note before I show the data
+
+07:01.120 --> 07:03.560
+is that with a histone trans gene,
+
+07:03.560 --> 07:06.320
+we aren't gonna see that fiber-wide staining
+
+07:06.320 --> 07:09.080
+like we saw in the mouse with the cytosolic protein.
+
+07:09.080 --> 07:11.240
+You're just gonna see targeting in the nuclei
+
+07:11.240 --> 07:14.080
+that are squeezed up against the cell membrane there
+
+07:14.080 --> 07:15.360
+in the muscle fibers.
+
+07:16.720 --> 07:20.360
+But nevertheless, we can still quantify
+
+07:20.360 --> 07:22.840
+the targeting to the muscle tissue
+
+07:22.840 --> 07:25.640
+and in the macaque quadriceps,
+
+07:25.640 --> 07:29.280
+we were able to see about 30% of nuclei being targeted
+
+07:29.280 --> 07:33.200
+by VCAP290 as opposed to about 6% in AEV9.
+
+07:33.320 --> 07:34.360
+And in terms of expression,
+
+07:34.360 --> 07:37.640
+we saw about 25-fold increase
+
+07:37.640 --> 07:41.320
+in trans gene expression relative to AEV9,
+
+07:41.320 --> 07:43.800
+both of those metrics exceeding the benchmark capsid
+
+07:43.800 --> 07:44.840
+that we evaluated.
+
+07:46.920 --> 07:48.560
+When we look at heart,
+
+07:49.680 --> 07:53.880
+we saw a similar thing where VCAP290
+
+07:53.880 --> 07:57.080
+was hitting about 20% of nuclei in the heart
+
+07:57.080 --> 07:59.000
+at this dose of 40-12
+
+07:59.000 --> 08:02.600
+and that led to about a 13-fold increase
+
+08:02.600 --> 08:05.360
+in expression relative to AEV9.
+
+08:07.480 --> 08:10.680
+We also evaluated some peripheral tissues.
+
+08:11.760 --> 08:15.320
+So in the DRGs, we noted a mild detargeting
+
+08:15.320 --> 08:18.560
+with VCAP290 relative to AEV9,
+
+08:18.560 --> 08:20.960
+but in the liver, we actually did see an increase
+
+08:20.960 --> 08:25.280
+in targeting, but we really saw that as an opportunity
+
+08:25.280 --> 08:28.440
+to continue to develop VCAP290
+
+08:28.440 --> 08:32.160
+and push it into a second generation of evolution.
+
+08:32.160 --> 08:37.160
+So we performed an evolution scheme with VCAP290
+
+08:37.800 --> 08:41.840
+and we really focused choosing capsids to move forward with
+
+08:41.840 --> 08:46.840
+that had increased expression in muscle tissue in monkeys,
+
+08:47.360 --> 08:51.280
+which I'm showing here, but also mouse as well,
+
+08:51.280 --> 08:54.480
+but detargeting of those peripheral tissues like the liver.
+
+08:55.280 --> 08:57.880
+We're well underway with evaluating a number of these.
+
+08:57.880 --> 09:00.800
+We have some exciting data thus far
+
+09:00.800 --> 09:03.720
+and we hope to share that in the future.
+
+09:06.320 --> 09:11.200
+But I'm gonna switch gears just a little bit
+
+09:11.200 --> 09:13.920
+and talk about neuromuscular capsids.
+
+09:13.920 --> 09:18.440
+And the inspiration for our work here is that
+
+09:18.440 --> 09:22.120
+we took a look and we have done a lot of work
+
+09:22.120 --> 09:25.240
+in the CNS space and we've developed some great capsids
+
+09:25.240 --> 09:28.240
+that we're excited about like VCAP Gen2.
+
+09:28.240 --> 09:31.800
+And I just described our work that we are now developing
+
+09:31.800 --> 09:34.800
+muscle capsids like VCAP290.
+
+09:34.800 --> 09:36.840
+But of course, in between these two ideas,
+
+09:36.840 --> 09:40.760
+there's a therapeutic need for neuromuscular disorders
+
+09:40.760 --> 09:45.560
+where you want capsids that have broad CNS transduction
+
+09:45.560 --> 09:49.480
+as well as enhanced muscle tropism.
+
+09:49.480 --> 09:52.600
+So we set out to evolve or engineer capsids
+
+09:52.600 --> 09:54.440
+that are capable of this.
+
+09:54.560 --> 09:59.040
+And I'm gonna share results of two separate capsids today.
+
+09:59.040 --> 10:03.520
+These are VCAP336 and 337.
+
+10:03.520 --> 10:06.320
+So VCAP336 is really just gonna be our first
+
+10:06.320 --> 10:08.240
+sort of proof of concept in mouse.
+
+10:08.240 --> 10:13.240
+And then 337 is the capsid that we evaluate in primates.
+
+10:14.440 --> 10:17.120
+So I'll start with VCAP336.
+
+10:18.760 --> 10:23.480
+So we're gonna compare it in the benchmark muscle mouse
+
+10:23.480 --> 10:28.480
+capsid as well as VCAP Gen2 our own muscle capsid
+
+10:29.160 --> 10:30.600
+or brain capsid.
+
+10:30.600 --> 10:32.080
+And we can see that the benchmark capsid
+
+10:32.080 --> 10:34.320
+when you look at skeletal muscle or heart tissue,
+
+10:34.320 --> 10:36.000
+you get really strong targeting.
+
+10:36.000 --> 10:39.200
+Not so much in the motor cortex that are in the brain.
+
+10:39.200 --> 10:42.240
+VCAP Gen2 of course has the exact opposite phenotype
+
+10:42.240 --> 10:45.040
+where we don't see much targeting in muscles,
+
+10:45.040 --> 10:46.520
+but certainly in the motor cortex
+
+10:46.520 --> 10:48.800
+we see quite a strong tropism.
+
+10:48.800 --> 10:49.800
+And of course the question is,
+
+10:49.800 --> 10:52.440
+do we get a best of both worlds capsid
+
+10:52.480 --> 10:55.280
+where we combine those phenotypes?
+
+10:55.280 --> 10:58.560
+And in mice that's what we saw.
+
+10:58.560 --> 11:02.800
+With VCAP336 we were able to successfully increase
+
+11:02.800 --> 11:05.840
+the targeting in the skeletal muscle and heart,
+
+11:05.840 --> 11:07.240
+certainly relative to the baseline
+
+11:07.240 --> 11:09.520
+of where the brain capsid was.
+
+11:09.520 --> 11:12.320
+And in the cortex we still have a really strong targeting.
+
+11:12.320 --> 11:14.360
+You can see there in the histology,
+
+11:14.360 --> 11:18.800
+although we note that in terms of expression in the brain
+
+11:18.800 --> 11:21.360
+we did take a little bit of a hit.
+
+11:21.360 --> 11:25.160
+But nevertheless I think this validates our approach
+
+11:25.160 --> 11:28.360
+that we are in fact getting a best of both worlds capsid
+
+11:28.360 --> 11:31.920
+that we can target both of these tissues simultaneously
+
+11:31.920 --> 11:33.140
+with one product.
+
+11:35.280 --> 11:37.640
+And interestingly in the liver,
+
+11:37.640 --> 11:41.560
+we noted that VCAP336 took on the liver phenotype
+
+11:41.560 --> 11:46.560
+more so of our CNS capsids, which are quite liver detargeted.
+
+11:48.920 --> 11:50.560
+So switching over to monkeys,
+
+11:50.600 --> 11:54.040
+we're gonna revisit that multi-tag system
+
+11:54.040 --> 11:56.840
+that I described where we do a head-to-head evaluation
+
+11:56.840 --> 11:59.720
+in the same primates of various capsids.
+
+11:59.720 --> 12:04.200
+So here we're using AAV9, a benchmark muscle capsid,
+
+12:04.200 --> 12:08.000
+and our neuromuscular capsid VCAP337.
+
+12:09.320 --> 12:10.560
+So in terms of the quadriceps,
+
+12:10.560 --> 12:13.960
+we saw an increase with VCAP337 relative to the benchmark
+
+12:13.960 --> 12:17.320
+in terms of its ability to target the cells.
+
+12:17.320 --> 12:20.440
+We're seeing an increase in the amount of nuclei targeted.
+
+12:20.440 --> 12:23.440
+Although we do note that we saw a little bit of a reduction
+
+12:23.440 --> 12:26.600
+there in the expression in the quadriceps.
+
+12:27.600 --> 12:31.200
+But in the heart, we were able to see an increase
+
+12:31.200 --> 12:33.120
+in both of those metrics.
+
+12:33.120 --> 12:38.120
+337 targeted a higher amount of nuclei in the heart
+
+12:38.560 --> 12:40.120
+as well as increased this expression
+
+12:40.120 --> 12:43.720
+about 10-fold relative to that of AAV9.
+
+12:44.800 --> 12:47.000
+But I think the brain is actually where we see
+
+12:47.000 --> 12:48.640
+our most exciting data.
+
+12:49.920 --> 12:54.920
+So VCAP337 in the motor cortex of these primates
+
+12:55.640 --> 12:59.840
+had upwards of 50% of nuclei being targeted
+
+12:59.840 --> 13:01.120
+in the motor cortex.
+
+13:01.120 --> 13:03.120
+And that led to about, that was measured
+
+13:03.120 --> 13:08.120
+at about a 250-fold increase in AAV9 over,
+
+13:08.280 --> 13:10.880
+or with VCAP337.
+
+13:12.720 --> 13:14.600
+Now if we compare that to VCAPGEN2,
+
+13:14.600 --> 13:15.840
+and I'll make the stipulation here
+
+13:15.880 --> 13:18.640
+that VCAPGEN2 is data taken
+
+13:18.640 --> 13:20.520
+from some historical data that we have,
+
+13:20.520 --> 13:23.920
+and we presented years ago here at ASGCT.
+
+13:23.920 --> 13:26.720
+But in terms of the number of nuclei targeted
+
+13:26.720 --> 13:29.880
+and the amount of expression that we're seeing,
+
+13:29.880 --> 13:32.520
+we're more than doubling in either case,
+
+13:32.520 --> 13:34.560
+which we think is really exciting.
+
+13:37.160 --> 13:40.200
+In the liver, we see the same thing that we saw on mouse
+
+13:40.200 --> 13:44.120
+in that VCAP337 is largely reduced
+
+13:44.120 --> 13:47.840
+and more similar to our CNS crossing capsids
+
+13:47.840 --> 13:50.440
+than they are the muscle capsids.
+
+13:50.440 --> 13:55.440
+I will make the disclaimer disclosure here
+
+13:55.440 --> 14:00.440
+that the brain targeting mechanism of both 336 and 337
+
+14:00.560 --> 14:03.160
+is in fact ALPL, that is the mechanism
+
+14:03.160 --> 14:06.300
+by which they are getting into the BBB.
+
+14:08.560 --> 14:10.240
+And we are continuing to evolve these
+
+14:10.240 --> 14:13.480
+where we have next generation variants
+
+14:14.240 --> 14:17.360
+beyond 336 and 337 that we're currently evaluating.
+
+14:18.680 --> 14:22.080
+So to just give you a summary of what I described here,
+
+14:22.080 --> 14:25.480
+we've developed muscle capsids with VCAP290,
+
+14:25.480 --> 14:27.360
+has about a hundred fold increase in expression
+
+14:27.360 --> 14:30.200
+over AAV9 in mouse skeletal muscle,
+
+14:30.200 --> 14:32.640
+10 fold in cardiac muscle.
+
+14:32.640 --> 14:35.240
+In primates, we're looking at 25 fold over AAV9
+
+14:35.240 --> 14:39.360
+in the skeletal muscle and about 13 fold in heart.
+
+14:39.360 --> 14:41.160
+At low doses, we can see that we're targeting
+
+14:41.160 --> 14:43.840
+100% of muscle fibers in the mice.
+
+14:43.840 --> 14:46.920
+And we've moved on to developing neuromuscular capsids
+
+14:46.920 --> 14:50.240
+that we think have sort of the best of both worlds there
+
+14:50.240 --> 14:54.200
+with VCAP336 and 337 and those are liver-detargeted
+
+14:55.680 --> 14:58.240
+more similar to our brain capsids.
+
+14:59.080 --> 15:02.080
+So with that, I wanna thank all my colleagues
+
+15:02.080 --> 15:04.280
+at Voyager, current and former.
+
+15:05.320 --> 15:07.640
+As you all know, these projects take a lot of brain,
+
+15:07.640 --> 15:12.320
+a lot of muscle, so it's gonna give a shout out to them.
+
+15:12.320 --> 15:14.400
+And with whatever time is remaining,
+
+15:14.400 --> 15:16.400
+I'll be happy to take a question or two.
+
+15:18.280 --> 15:23.280
+I think we have time for one good question.
+
+15:26.360 --> 15:28.520
+I tell you, thanks, really exciting.
+
+15:28.520 --> 15:30.800
+I was wondering, does 336 work in NHP
+
+15:30.800 --> 15:32.840
+and does 337 work in mice?
+
+15:34.200 --> 15:38.300
+We did not test them in the other species.
+
+15:39.800 --> 15:42.280
+So I just can't say for certain.
+
+15:42.280 --> 15:44.560
+I think to some degree they both would
+
+15:44.560 --> 15:47.040
+work in the other species, but to what degree
+
+15:47.040 --> 15:50.560
+I just can't say because we didn't do that experiment.
+
+15:50.560 --> 15:53.240
+Moving forward, the next generation of variants
+
+15:53.240 --> 15:58.240
+that we are evaluating, we're same capsid, both animals.
+
+15:58.680 --> 15:59.520
+Thanks.
+
+16:01.520 --> 16:02.360
+Thank you, Tyler.
+
+16:04.600 --> 16:09.600
+Our next speaker is Nolan Graham from UC San Diego.
+
+16:10.600 --> 16:13.280
+He'll be talking about receptor-guided
+
+16:13.280 --> 16:16.160
+avetropism engineering via MATCH.
+
+16:16.160 --> 16:17.400
+Thank you.
+
+16:17.400 --> 16:18.240
+Awesome.
+
+16:23.560 --> 16:25.200
+Hello everyone, my name's Nolan Graham.
+
+16:25.200 --> 16:27.680
+I'm a PhD student in the lab of Dr. Prashant Mali
+
+16:27.680 --> 16:30.960
+at UC San Diego and today I'll be talking about my research,
+
+16:30.960 --> 16:33.640
+which is titled receptor-guided avetropism engineering
+
+16:33.640 --> 16:34.480
+via MATCH.
+
+16:36.080 --> 16:38.680
+So several of the main issues with AV gene therapy,
+
+16:38.680 --> 16:40.240
+including high cost and toxicity,
+
+16:40.240 --> 16:41.720
+stand to be overcome through the development
+
+16:41.720 --> 16:44.160
+of more specific, efficient vectors.
+
+16:45.320 --> 16:46.880
+Classically, these are identified
+
+16:46.880 --> 16:49.920
+through large-scale screens, which are resource-intensive
+
+16:49.920 --> 16:53.440
+and generally limited by the intolerance of the AAV capsid
+
+16:53.440 --> 16:55.600
+to larger peptide insertions.
+
+16:55.600 --> 16:58.760
+So previously, we've incorporated unnatural amino acids
+
+16:58.760 --> 17:01.280
+and peptide tags into the AAV capsid.
+
+17:01.280 --> 17:03.240
+And based on this, we developed the MATCH system,
+
+17:03.240 --> 17:05.120
+which stands for modulation of AAV tropism
+
+17:05.120 --> 17:07.600
+through conjugation to homing proteins.
+
+17:07.640 --> 17:09.720
+Specifically, we wanted to redirect the tropism
+
+17:09.720 --> 17:13.040
+of a couple of different AAVs to desired targets
+
+17:13.040 --> 17:16.280
+by conjugating, targeting ligands to the capsid
+
+17:16.280 --> 17:18.680
+via spy tags by catcher chemistry.
+
+17:20.680 --> 17:24.200
+So to start, we went into AAV DJ and inserted a spy tag
+
+17:24.200 --> 17:27.280
+into one of the protruding loop regions on the VP.
+
+17:27.280 --> 17:29.360
+This was flanked by flexible GS linkers,
+
+17:29.360 --> 17:30.440
+and then we incorporated this
+
+17:30.440 --> 17:33.200
+into a fully spy tag containing capsid.
+
+17:33.200 --> 17:35.280
+These capsids were reacted overnight
+
+17:35.360 --> 17:37.680
+at room temperature with spy catcher.
+
+17:38.720 --> 17:42.720
+And upon doing so, we saw a shift in the size of the VP
+
+17:43.680 --> 17:46.440
+as a result of that covalent spy catcher attachment.
+
+17:47.960 --> 17:49.440
+We took these to TEM to ensure
+
+17:49.440 --> 17:52.600
+that we were still forming fully formed capsids.
+
+17:52.600 --> 17:54.560
+And then upon spy catcher binding,
+
+17:54.560 --> 17:56.360
+they maintained their integrity
+
+17:56.360 --> 17:58.440
+with a slight topology change.
+
+17:58.440 --> 18:01.640
+And upon going to DLS, we saw that there was a slight shift
+
+18:01.640 --> 18:03.520
+in the mean diameter of these capsids.
+
+18:04.520 --> 18:06.400
+So we wanted to preempt an issue at this point
+
+18:06.400 --> 18:09.480
+that we foresaw where for covering the entire AAV capsid
+
+18:09.480 --> 18:13.760
+with spy catcher, we wouldn't be allowing the binding
+
+18:13.760 --> 18:16.440
+of secondary receptors such as AAVR,
+
+18:16.440 --> 18:17.760
+which are required for the AAV
+
+18:17.760 --> 18:20.840
+to effectively transduce and produce.
+
+18:21.760 --> 18:24.880
+So to do this, we put together a panel of mosaic AAVs
+
+18:24.880 --> 18:28.120
+with various ratios of AAV DJ to AAV spy tag
+
+18:28.120 --> 18:31.160
+with many of them primarily composed of AAV DJ.
+
+18:32.160 --> 18:36.560
+In hella cells, when we transduced in vitro,
+
+18:36.560 --> 18:39.080
+we saw that the fully spy tag containing capsids
+
+18:39.080 --> 18:41.320
+lost nearly all of the transduction ability
+
+18:41.320 --> 18:44.000
+that native AAV DJ has.
+
+18:44.000 --> 18:47.920
+And this is likely due to the insertion of the spy tag peptide
+
+18:47.920 --> 18:51.600
+immediately in the heparin sulfate proteoglycan binding domain
+
+18:51.600 --> 18:52.560
+of AAV DJ.
+
+18:53.520 --> 18:55.120
+Interestingly, in the mosaic capsids,
+
+18:55.120 --> 18:57.400
+we also saw a drop in transduction ability
+
+18:57.400 --> 18:58.480
+upon spy catcher binding,
+
+18:58.480 --> 19:00.320
+which is likely due to that steric occlusion
+
+19:00.320 --> 19:03.080
+of binding sites that I mentioned before.
+
+19:04.000 --> 19:06.920
+So we took our five to one and 11 to one mosaic capsids
+
+19:06.920 --> 19:08.520
+and decided to start targeting.
+
+19:09.600 --> 19:11.440
+So first we went into resting PBMCs,
+
+19:11.440 --> 19:12.920
+which are classically a challenging target
+
+19:12.920 --> 19:14.520
+for AAV transduction,
+
+19:14.520 --> 19:18.080
+and attached either a CD3 or CD28 SCFEs
+
+19:18.080 --> 19:20.000
+to the outside of the capsid.
+
+19:20.000 --> 19:23.040
+And saw that the CD3 targeting SCFEs,
+
+19:23.040 --> 19:24.560
+particularly the SCFE1,
+
+19:24.560 --> 19:26.680
+were able to transduce the sizable portion
+
+19:26.680 --> 19:31.080
+of the resting PBMCs without prior activation.
+
+19:31.080 --> 19:32.880
+We also wanted to go for the brain
+
+19:32.880 --> 19:35.880
+and to do so attached a murine transferrin receptor binding
+
+19:35.880 --> 19:37.960
+SCFE to the outside of the capsid
+
+19:37.960 --> 19:40.080
+and injected these retroorbitally in mice.
+
+19:41.120 --> 19:43.400
+And saw that decorated capsids were able to transduce
+
+19:43.400 --> 19:47.200
+the brain much more effectively than AAV DJ by itself.
+
+19:48.560 --> 19:51.480
+So we wanted to bring this into a more popular
+
+19:52.840 --> 19:55.120
+wild type AAV to be more therapeutically relevant.
+
+19:55.160 --> 19:58.320
+And to do so, we decided to make match AAV9.
+
+19:58.320 --> 20:01.200
+AAV9 is a wild type AAV that's already used
+
+20:01.200 --> 20:04.320
+to target the CNS with engineered capsids.
+
+20:04.320 --> 20:07.080
+And it uses a different primary receptor from AAV DJ
+
+20:07.080 --> 20:08.920
+in that it uses galactose to bind
+
+20:08.920 --> 20:11.760
+as opposed to upper and sulfate proteoglycan.
+
+20:11.760 --> 20:14.680
+So to do so, we inserted our spot tag
+
+20:14.680 --> 20:17.280
+into both loop one and loop two,
+
+20:17.280 --> 20:20.360
+which are protruding loop regions on the VP,
+
+20:20.360 --> 20:23.720
+and flank these by either 1X or 2X flexible linkers.
+
+20:23.720 --> 20:27.320
+And upon forming full capsids with these spot tag
+
+20:27.320 --> 20:30.760
+containing VP's, we saw that both L1 and L2,
+
+20:30.760 --> 20:35.760
+loop 2X contained, were able to readily bind spot catching.
+
+20:38.440 --> 20:40.120
+Additionally, when we incorporated these
+
+20:40.120 --> 20:42.520
+into mosaic AAVs at a ratio of 11 to one,
+
+20:42.520 --> 20:45.600
+they produced capsids with titers similar
+
+20:45.600 --> 20:47.000
+to that of wild type AAV9.
+
+20:48.640 --> 20:50.360
+So we went back to our T cell targeting
+
+20:50.360 --> 20:55.360
+and used our CD3 SEFE1 and saw that upon transduction,
+
+20:56.040 --> 20:58.720
+we were able to transduce over 50%
+
+20:58.720 --> 21:00.640
+of the resting PBMC population.
+
+21:02.600 --> 21:05.120
+Additionally, when we went to murine transferrin,
+
+21:06.240 --> 21:08.360
+we were able to gain transduction ability
+
+21:08.360 --> 21:10.320
+of the brain almost a hundredfold higher
+
+21:10.320 --> 21:12.520
+than native AAV9.
+
+21:13.680 --> 21:15.200
+Based on this success, we wanted to bring this
+
+21:15.200 --> 21:18.000
+into a more therapeutically relevant space
+
+21:18.000 --> 21:20.920
+using human transferrin receptor targeting.
+
+21:20.920 --> 21:23.040
+And to do so, we put together a panel
+
+21:23.040 --> 21:25.640
+from the literature of SEFE's that are targeting
+
+21:25.640 --> 21:30.360
+human transferrin receptor, and used HEC cells
+
+21:30.360 --> 21:34.960
+that had either been received a safe harbor AAVS1 locust
+
+21:34.960 --> 21:36.880
+knockout or a transferrin receptor knockout
+
+21:36.880 --> 21:41.680
+via Linty CRISPR, and saw in our AAVS1 knockout cells
+
+21:41.680 --> 21:43.560
+that we were able to transduce these cells
+
+21:43.560 --> 21:45.360
+much more efficiently than AAV9,
+
+21:45.360 --> 21:49.480
+and also with efficacy comparable to that of BIHDFR1,
+
+21:49.480 --> 21:51.480
+which is this recently engineered
+
+21:51.480 --> 21:53.800
+human transferrin targeting AAV.
+
+21:53.800 --> 21:56.000
+This improvement was attenuated in the cells
+
+21:56.000 --> 21:58.160
+that received a transferrin receptor knockout,
+
+21:58.160 --> 22:00.160
+supporting the concept that we're using
+
+22:00.160 --> 22:02.520
+the transferrin receptor to do transduce.
+
+22:04.560 --> 22:08.720
+So we took this in vivo with SEFE9 and SEFE12,
+
+22:08.720 --> 22:11.280
+and used mice that express the apical domain
+
+22:11.280 --> 22:13.520
+of the human transferrin receptor,
+
+22:13.520 --> 22:16.080
+as opposed to the murine, and saw
+
+22:16.080 --> 22:22.000
+that particularly SEFE12 yielded DNA-level and mRNA-level
+
+22:22.000 --> 22:25.640
+transduction comparable to that of BIHDFR1.
+
+22:25.640 --> 22:28.240
+We looked at the protein level next, using IHC,
+
+22:28.240 --> 22:31.760
+and saw that we were getting brain-wide distribution
+
+22:31.760 --> 22:35.920
+of our transgene, again comparable to that of BIHDFR1.
+
+22:35.920 --> 22:38.600
+So this was pretty promising, but before we proceeded,
+
+22:38.600 --> 22:41.160
+we wanted to ensure that this was more applicable
+
+22:41.160 --> 22:43.920
+for many other labs.
+
+22:43.920 --> 22:47.560
+So to do so, up until this point,
+
+22:47.560 --> 22:50.640
+everything had been produced, either separately
+
+22:50.640 --> 22:53.760
+with separate protein production from AAV production
+
+22:53.760 --> 22:58.280
+as a kind of modular system, where you could retarget AAVs.
+
+22:58.280 --> 22:59.640
+The same AAV to different targets,
+
+22:59.640 --> 23:00.960
+depending on what you conjugate.
+
+23:00.960 --> 23:02.360
+But at this point, we wanted to ensure
+
+23:02.360 --> 23:05.320
+that we could make everything together
+
+23:05.320 --> 23:07.760
+in a triple-transfection style approach.
+
+23:07.760 --> 23:11.360
+So we have our standard triple-transfection plasmids,
+
+23:11.360 --> 23:14.720
+which I'm sure many of you are familiar with.
+
+23:14.720 --> 23:16.840
+And this also includes our spy tag rep cap,
+
+23:16.840 --> 23:19.240
+which we've used up until this point in the mosaics,
+
+23:19.240 --> 23:21.840
+and then also our spy catcher ligand.
+
+23:21.840 --> 23:24.000
+So when we did this with the CD3 targeting SEFE,
+
+23:24.000 --> 23:28.040
+we got titers, similar to the wild type AAV9, once again.
+
+23:28.040 --> 23:32.480
+And when we took this in vitro, with our L1 and L2,
+
+23:32.480 --> 23:34.160
+5 to 1 and 11 to 1 mosaics, we were
+
+23:34.160 --> 23:38.680
+able to transduce a large portion of the T-cell population,
+
+23:38.680 --> 23:41.680
+or PVMC population.
+
+23:41.680 --> 23:43.480
+So in conclusion, the match AAV platform
+
+23:43.480 --> 23:46.440
+overcomes a major challenge in the AAV engineering
+
+23:46.440 --> 23:48.960
+by allowing us to put full-size proteins on the outside
+
+23:48.960 --> 23:51.440
+of the AAV.
+
+23:51.440 --> 23:53.760
+Through a series of small-scale binder screens,
+
+23:53.760 --> 23:56.040
+we identified T-cell and brain-cell targeting motifs
+
+23:56.040 --> 23:58.840
+that were pulled straight from the literature.
+
+23:58.840 --> 24:01.000
+And one of these in CD3 targeted vectors,
+
+24:01.040 --> 24:04.600
+we're able to transduce a majority of the PVMC population,
+
+24:04.600 --> 24:07.680
+while MTFR1 and HDFR1 targeted vectors
+
+24:07.680 --> 24:10.560
+transduce the brain effectively with much higher
+
+24:10.560 --> 24:13.560
+transduction ability than AAV9 and comparable transduction
+
+24:13.560 --> 24:17.360
+to that of popular engineered AAVs.
+
+24:17.360 --> 24:20.160
+And finally, the mix and match vector productions
+
+24:20.160 --> 24:23.760
+enabled one-pot generation of these targeted vectors
+
+24:23.760 --> 24:26.000
+in a method that many labs will be familiar with using
+
+24:26.000 --> 24:29.760
+the standard triple-transfection protocols.
+
+24:29.760 --> 24:33.720
+So with that, I'd like to thank my mentor, Dr. Mali,
+
+24:33.720 --> 24:36.600
+as well as my other co-authors in bold,
+
+24:36.600 --> 24:38.560
+and as well as the rest of the lab.
+
+24:38.560 --> 24:41.320
+This work has recently been accepted for publication,
+
+24:41.320 --> 24:43.160
+so be sure to follow up.
+
+24:43.160 --> 24:46.160
+Thank you.
+
+24:46.160 --> 24:52.160
+Thank you.
+
+24:52.160 --> 24:53.160
+Thanks, Nolan.
+
+24:53.160 --> 24:54.640
+The floor is open for questions.
+
+24:54.640 --> 24:55.640
+Is there any?
+
+25:00.320 --> 25:02.880
+Very quick questions.
+
+25:02.880 --> 25:08.640
+Do you have the characterization of your...
+
+25:08.640 --> 25:10.520
+It's called match AAV.
+
+25:10.520 --> 25:14.560
+Yes, how many copies of the antibody
+
+25:14.600 --> 25:17.240
+decorated of your AAV?
+
+25:17.240 --> 25:21.440
+So we're not able to directly quantify that yet.
+
+25:21.440 --> 25:24.160
+Like how many SCFEs per AAV.
+
+25:24.160 --> 25:25.840
+However, based on the kind of stochastic nature
+
+25:25.840 --> 25:28.720
+of AAV assembly, we hope that it's relatively
+
+25:28.720 --> 25:32.160
+similar to what we transfect at.
+
+25:32.160 --> 25:35.960
+How about the full partial analytics?
+
+25:35.960 --> 25:38.960
+Like, do you see a lot of full vector genome
+
+25:38.960 --> 25:42.040
+being packaged with your novel AAV?
+
+25:42.040 --> 25:44.400
+We haven't looked at that yet, but that's a great question.
+
+25:44.560 --> 25:47.800
+Thank you.
+
+25:47.800 --> 25:49.120
+That's really cool work.
+
+25:49.120 --> 25:53.000
+So I was curious, was there a difference in the amount
+
+25:53.000 --> 25:55.920
+of spy catcher that conjugated when you did it in vitro
+
+25:55.920 --> 26:00.080
+as opposed to when you did it in the cell?
+
+26:00.080 --> 26:04.360
+Transduction in vitro versus transduction in the cell?
+
+26:04.360 --> 26:06.080
+No, the amount of spy catcher that
+
+26:06.080 --> 26:10.080
+bound to the spy tag virus when you did it in vitro
+
+26:10.080 --> 26:13.520
+as opposed to when you assembled it within the cell.
+
+26:13.520 --> 26:15.200
+Oh, yes.
+
+26:15.200 --> 26:17.680
+So we use a large excess, massive excess,
+
+26:17.680 --> 26:21.640
+for all the conjugation reactions in vitro.
+
+26:21.640 --> 26:25.000
+But when we transfect, it's about a quarter.
+
+26:25.000 --> 26:26.920
+There's 100-fold excess of protein
+
+26:26.920 --> 26:29.120
+when we do it outside the cell.
+
+26:29.120 --> 26:33.120
+But in the cell, we just transfect at a certain ratio,
+
+26:33.120 --> 26:35.400
+which is about a quarter of the total DNA transfected.
+
+26:35.400 --> 26:39.440
+OK, and the second question was, so you use spy catcher 3,
+
+26:39.440 --> 26:40.960
+but you use spy tag 1.
+
+26:41.000 --> 26:43.800
+Is there a reason you didn't use spy tag 3?
+
+26:43.800 --> 26:47.160
+Yes, so spy tag 3 is a little bit longer than spy tag 1.
+
+26:47.160 --> 26:49.720
+So spy tag 1 is only 13 amino acids.
+
+26:49.720 --> 26:53.040
+And based on the cross reactivity of spy catcher 3
+
+26:53.040 --> 26:56.600
+and spy tag 1, we elected to ensure that our AVs would
+
+26:56.600 --> 27:00.800
+package using a smaller peptide insertion.
+
+27:00.800 --> 27:02.880
+OK, and the last question is, so when
+
+27:02.880 --> 27:06.560
+you did your different ratios, your 11 is to 1,
+
+27:06.560 --> 27:09.800
+is that just based on bulk ratios of how you estimated
+
+27:09.800 --> 27:12.240
+how many spy tags on each capsid?
+
+27:12.240 --> 27:13.880
+Yeah, so we transfect these plasmids
+
+27:13.880 --> 27:17.760
+at a molar ratio of 11 to 1 or 5 to 1.
+
+27:17.760 --> 27:22.000
+So yeah, the fact that they package similarly
+
+27:22.000 --> 27:24.440
+indicates that hopefully they will be at that appropriate
+
+27:24.440 --> 27:26.440
+ratio upon assembly.
+
+27:26.440 --> 27:27.440
+Thank you.
+
+27:30.120 --> 27:32.480
+Great, if there are no further questions, thank you, Nolan.
+
+27:32.480 --> 27:33.480
+Thank you.
+
+27:33.960 --> 27:34.960
+Thank you.
+
+27:39.960 --> 27:41.840
+Our next speaker is Kyle Jue.
+
+27:44.760 --> 27:48.720
+I'm waiting for his slides to come up.
+
+27:48.720 --> 27:50.200
+There you go.
+
+27:50.200 --> 27:55.040
+He'll be talking about ACE502, an AAV5 derived capsid
+
+27:55.040 --> 27:57.160
+engineered by InVivo Directed Evolution
+
+27:57.160 --> 28:00.600
+for robust CNS transduction and liver detargeting.
+
+28:00.600 --> 28:01.680
+Take it away.
+
+28:01.720 --> 28:04.120
+OK, thank you so much for your introduction.
+
+28:04.120 --> 28:05.600
+So before I start, I want to give thanks
+
+28:05.600 --> 28:08.120
+to the organized committee for having
+
+28:08.120 --> 28:13.480
+me this great opportunity to share our exciting data on ACE502,
+
+28:13.480 --> 28:18.680
+which is the AAV5 derived capsid engineered for CNS,
+
+28:18.680 --> 28:21.560
+the robust CNS transduction, and at the same time
+
+28:21.560 --> 28:23.040
+the liver detargeting.
+
+28:23.040 --> 28:24.480
+So my name is Kyle Jue.
+
+28:24.480 --> 28:29.000
+I'm the AAV Capsid Engineering Lead at Amiluid Solution
+
+28:29.040 --> 28:32.200
+and also serve as a faculty member at Ewha Women's
+
+28:32.200 --> 28:33.200
+University in Kerbya.
+
+28:36.400 --> 28:39.240
+Let me briefly introduce our company, the Amiluid Solution.
+
+28:39.240 --> 28:41.640
+So you may guess what we are doing from the name.
+
+28:41.640 --> 28:45.440
+So Amiluid Solution is just the science-driven biotech,
+
+28:45.440 --> 28:49.880
+mainly focused on developing many different disease
+
+28:49.880 --> 28:52.200
+modifying kind of the therapies, especially
+
+28:52.200 --> 28:54.400
+for Alzheimer's disease.
+
+28:54.400 --> 28:57.480
+So basically, we have three different core interconnected
+
+28:57.480 --> 29:00.520
+programs, mainly we are focusing on the brain
+
+29:00.520 --> 29:05.880
+tropic, AB-based gene therapy kind of approach and platform.
+
+29:05.880 --> 29:09.120
+And most of you are working for many different, just
+
+29:09.120 --> 29:13.000
+a restoration of clear homeostasis for Alzheimer's
+
+29:13.000 --> 29:14.840
+disease treatment.
+
+29:14.840 --> 29:17.720
+Also, we are developing some of the diagnostics
+
+29:17.720 --> 29:20.520
+for the Alzheimer's as well, too.
+
+29:20.520 --> 29:25.120
+So ACE502 is served as a foundational gene delivery
+
+29:25.120 --> 29:27.560
+vehicle for our therapeutic programs.
+
+29:30.560 --> 29:33.360
+We are mainly working on the Capsid Engineering.
+
+29:33.360 --> 29:38.720
+So this is how we discover that these noble caps of the ACE502.
+
+29:38.720 --> 29:41.600
+Basically, we are starting from the AB-5 and engineer
+
+29:41.600 --> 29:44.520
+two different variable regions at the Capsid
+
+29:44.520 --> 29:49.080
+at the same time, variable region four and region eight,
+
+29:49.080 --> 29:51.680
+and by substituting the amino acid sequences
+
+29:51.680 --> 29:54.920
+by using the random peptide display.
+
+29:54.920 --> 29:57.600
+After that, we're using the sequential crucifixes
+
+29:57.600 --> 30:00.400
+in vivo screening in order to reduce
+
+30:00.400 --> 30:05.240
+the risk of the single model, the selection bias,
+
+30:05.240 --> 30:07.680
+and then to make sure that it's a functional
+
+30:07.680 --> 30:09.520
+transduction in the brain.
+
+30:09.520 --> 30:14.520
+So we just, once more, just pursue the mRNA-based screening
+
+30:14.520 --> 30:18.480
+and the evaluation of the late Capsid variants
+
+30:18.480 --> 30:21.960
+in non-human primates by using the DNA bar coding.
+
+30:21.960 --> 30:23.640
+And after that, the most important question
+
+30:23.640 --> 30:25.560
+is a protein-level expression.
+
+30:25.560 --> 30:29.200
+So we are just selected the best single, the Capsid,
+
+30:29.200 --> 30:34.120
+ACE502, by the individual protein level
+
+30:34.120 --> 30:37.040
+head-to-head evaluation and validation
+
+30:37.040 --> 30:42.160
+compared to many of the benchmark of capsids.
+
+30:42.160 --> 30:44.600
+So based on the sequential, the mouse
+
+30:44.600 --> 30:47.080
+to non-human primate in vivo screening,
+
+30:47.080 --> 30:50.480
+so we were able to progressively enrich
+
+30:50.520 --> 30:53.680
+many different CNS tropic capsid variants
+
+30:53.680 --> 30:57.240
+over the AB5 wild time.
+
+30:57.240 --> 31:01.000
+So as you can see that AB, ACE502 and 501,
+
+31:01.000 --> 31:02.880
+located in a very high fold,
+
+31:02.880 --> 31:05.360
+kind of increasing the enrichment
+
+31:05.360 --> 31:07.200
+in the non-human primates.
+
+31:07.200 --> 31:10.360
+And also, amino acid preference, the HIMMAP,
+
+31:10.360 --> 31:13.160
+showing that they conserve the pattern
+
+31:13.160 --> 31:16.520
+of the sequences and two different,
+
+31:16.520 --> 31:20.240
+the burial region of the capsid of AB5.
+
+31:20.280 --> 31:23.120
+So across the species, we have just enrichment
+
+31:23.120 --> 31:25.240
+for that many different variants.
+
+31:26.600 --> 31:28.000
+And if you're looking a little more close
+
+31:28.000 --> 31:32.200
+into our in vivo kind of screening strategy,
+
+31:32.200 --> 31:34.040
+so we're starting from the much bigger
+
+31:34.040 --> 31:37.480
+and larger kind of volume of the library,
+
+31:37.480 --> 31:39.520
+which is 10 to the seven variants.
+
+31:39.520 --> 31:42.840
+And after the two round of the mouse in vivo screening,
+
+31:42.840 --> 31:45.800
+and then we just selected the 10,000 variants,
+
+31:45.800 --> 31:50.800
+which is successfully the transduced mouse brain
+
+31:51.120 --> 31:52.720
+and synthesized and then we inject
+
+31:52.720 --> 31:57.360
+into the non-human primate is the cynomogous macaque.
+
+31:57.360 --> 32:00.520
+And then we further screened them out
+
+32:00.520 --> 32:03.160
+by using your selection criteria,
+
+32:03.160 --> 32:06.880
+which is the CNS tissue enrichment score,
+
+32:06.880 --> 32:09.600
+and also at the same time it's a liberty targeting score,
+
+32:09.600 --> 32:13.240
+which is the upper right kind of the corner of the box,
+
+32:13.240 --> 32:17.360
+the where we identified our desired variants
+
+32:17.360 --> 32:18.800
+that we are looking for.
+
+32:20.960 --> 32:24.440
+And based on that, this kind of the in vivo screening,
+
+32:24.440 --> 32:29.280
+so we were able to identify top performing 28 capsis.
+
+32:29.280 --> 32:33.280
+And then we once again, we just do a mRNA based evaluation
+
+32:33.280 --> 32:35.720
+for the lid capsis for make sure
+
+32:35.720 --> 32:38.120
+that is a functional transduction.
+
+32:38.120 --> 32:42.480
+So as you can see the ACE502 and 501 could achieve
+
+32:43.160 --> 32:46.280
+around the 70 fold increase in enrichment
+
+32:46.280 --> 32:50.560
+compared to the wild type of AV5 and AV9 as well
+
+32:50.560 --> 32:52.480
+in the non-human primates.
+
+32:52.480 --> 32:55.280
+And also we co-injected published,
+
+32:55.280 --> 32:58.960
+kind of two of the published well-known benchmark capsis
+
+32:58.960 --> 33:01.480
+and compared to our capsid.
+
+33:01.480 --> 33:04.960
+So interestingly, we can have even higher transduction
+
+33:04.960 --> 33:09.800
+compared to those benchmark, the competitor capsis.
+
+33:09.800 --> 33:14.800
+And this heat map showing that our ACE502 and 501
+
+33:16.480 --> 33:19.560
+could transduce successfully in a different region
+
+33:19.560 --> 33:24.040
+of the brain, including the frontal cortex and motor cortex
+
+33:24.040 --> 33:27.640
+and deeper brain region, which is hippocampus
+
+33:27.640 --> 33:30.800
+and sub-sensional nigra and so on.
+
+33:30.800 --> 33:34.280
+And then we see that in peripheral tissues,
+
+33:34.280 --> 33:38.440
+including the liver and heart, including the TRG as well.
+
+33:38.440 --> 33:43.440
+So ACE501 and 502 is a significantly reduced signal
+
+33:44.040 --> 33:48.520
+compared to wild type of the AV5 and AV9
+
+33:48.520 --> 33:50.640
+in mRNA level of expression.
+
+33:52.360 --> 33:55.240
+So this is comprehensive mRNA expression profile
+
+33:56.520 --> 34:00.760
+compares ACE502 against all benchmark capsid
+
+34:00.760 --> 34:02.800
+included wild types.
+
+34:02.800 --> 34:07.800
+So dark blue is ACE501 and light blue is ACE502.
+
+34:08.480 --> 34:10.920
+So you can see that it's consistently maintained
+
+34:10.920 --> 34:15.920
+a higher transduction in all the region of the brain
+
+34:16.520 --> 34:20.200
+compared to the AV9 wild type from the celibate lung
+
+34:20.200 --> 34:23.760
+and cortex and deep brain like a hippocampus
+
+34:23.760 --> 34:27.480
+and sub-sensional nigra and thalamus and brain stem
+
+34:27.480 --> 34:30.360
+and including the spinal cord as well.
+
+34:30.360 --> 34:33.400
+And this baseline is AV5 and then you can see
+
+34:33.400 --> 34:36.080
+that green dot is AV9 wild type.
+
+34:36.400 --> 34:38.080
+And then you can see the peripheral tissue,
+
+34:38.080 --> 34:42.160
+especially in liver, ACE501 and 502,
+
+34:42.160 --> 34:45.600
+significantly reduced that mRNA expression
+
+34:45.600 --> 34:48.080
+compared to the wild type AV9.
+
+34:48.080 --> 34:50.640
+So we believe that it has a feature of the safety
+
+34:50.640 --> 34:52.800
+kind of profile of the liver de-targeting.
+
+34:53.940 --> 34:56.040
+So we move on to the most important question,
+
+34:56.040 --> 34:58.920
+is what about the protein level expression?
+
+34:58.920 --> 35:01.920
+So we have two different animals for each group
+
+35:01.920 --> 35:05.240
+and then we have a total seven groups
+
+35:05.280 --> 35:07.600
+of the non-human primate study,
+
+35:07.600 --> 35:09.400
+including the non-injection.
+
+35:09.400 --> 35:12.560
+So ACE501 and 502 and we include
+
+35:12.560 --> 35:15.480
+the two different kind of competitor capsid as well,
+
+35:15.480 --> 35:20.120
+which is well known, and AV5, AV9 wild type.
+
+35:21.040 --> 35:24.360
+So we just delivered the GFP on their CNB promoter
+
+35:24.360 --> 35:28.400
+and the IV injection at the dose of 1-E13
+
+35:28.400 --> 35:30.360
+vector genome per kilogram.
+
+35:30.360 --> 35:34.240
+So as you can see that ACE502 at this dose
+
+35:34.240 --> 35:36.680
+can achieve around the 100 fold increase
+
+35:36.680 --> 35:39.560
+in the whole brain as a protein level expression
+
+35:39.560 --> 35:43.200
+compared to the wild type of AV5 and AV9.
+
+35:43.200 --> 35:46.480
+And we just increased that higher,
+
+35:46.480 --> 35:49.960
+the dose of the ACE502,
+
+35:49.960 --> 35:54.600
+which is three times the higher of the lower dose.
+
+35:54.600 --> 35:59.400
+So as you can see that around the 3.9 fold increase
+
+35:59.400 --> 36:01.880
+in a protein level expression in the whole brain,
+
+36:01.920 --> 36:05.920
+which indicating that the ACE502 could translate the cell
+
+36:05.920 --> 36:07.880
+in a dose-dependent manner.
+
+36:07.880 --> 36:09.880
+And more greater thing is in the liver.
+
+36:09.880 --> 36:14.600
+So we can deliver at the dose of the 1-E13.
+
+36:14.600 --> 36:17.640
+So you can see that around the ACE502 can reduce
+
+36:17.640 --> 36:22.360
+that the liver accumulation by 99%.
+
+36:22.360 --> 36:25.320
+And greater thing is when we just deliver
+
+36:25.320 --> 36:28.760
+that's a higher dose of ACE502,
+
+36:28.760 --> 36:30.360
+which is three times the higher,
+
+36:30.360 --> 36:33.560
+but still we can maintain the 99% of the targeting
+
+36:33.560 --> 36:36.080
+compared to the wild type of the AV5
+
+36:36.080 --> 36:38.440
+and also the AV9 as well too.
+
+36:38.440 --> 36:41.200
+So as you can see, so Western blood is confirmed
+
+36:41.200 --> 36:45.920
+that our ACE502 can transduce in many different regions
+
+36:45.920 --> 36:49.560
+of the brain in those different manner.
+
+36:49.560 --> 36:52.200
+So kind of cortex region and deep brain region
+
+36:52.200 --> 36:55.240
+in hippocampus and sub-sensional nigra.
+
+36:55.240 --> 36:57.640
+So we can see pretty much of the signal
+
+36:57.640 --> 37:00.480
+compared to the many different benchmark capsids.
+
+37:00.480 --> 37:03.360
+And in the liver, you can see that's a very minimized
+
+37:03.360 --> 37:06.920
+and reduced signal compared to our CNS tissues.
+
+37:08.160 --> 37:12.320
+So this fluorescent imaging is kind of provide visually
+
+37:12.320 --> 37:16.040
+kind of compelling a demonstration of ACE502
+
+37:16.040 --> 37:18.040
+in greater transduction in the whole brain
+
+37:18.040 --> 37:19.720
+in a non-human primate.
+
+37:19.720 --> 37:22.840
+So compared to AV5 wild type,
+
+37:22.840 --> 37:26.600
+AV9 has a slightly brighter signal of the whole brain.
+
+37:26.600 --> 37:29.800
+And then very similar level of expression
+
+37:29.800 --> 37:34.800
+of the published capsid, two of those capsid at this dose.
+
+37:36.400 --> 37:38.960
+And then at the same dose in ACE502,
+
+37:38.960 --> 37:41.560
+you can see the brighter signal in the whole brain
+
+37:41.560 --> 37:43.560
+in a non-human primate.
+
+37:43.560 --> 37:47.840
+And then even higher and brighter signal at higher dose,
+
+37:47.840 --> 37:51.480
+which is three times the higher compared to the lower one.
+
+37:51.480 --> 37:54.640
+And we can see there is a very robust CNS
+
+37:54.640 --> 37:56.280
+and whole brain expression too.
+
+37:57.600 --> 38:00.840
+So we'll go a little more detail into the,
+
+38:00.840 --> 38:05.840
+look into the closely into the vision of each brain region.
+
+38:06.800 --> 38:10.480
+So you can see, so we're just sustaining with that,
+
+38:10.480 --> 38:13.480
+the neuron cells with the map to staining.
+
+38:13.480 --> 38:16.240
+And also we are doing in situ hybridization
+
+38:16.240 --> 38:18.880
+with the GFP with the red color.
+
+38:18.880 --> 38:20.680
+So in a cortex region,
+
+38:20.680 --> 38:23.480
+you can see pretty much of the GFP expression
+
+38:23.480 --> 38:27.000
+of overlap with the neuron cells.
+
+38:27.000 --> 38:30.640
+And also in, especially for the deep brain region,
+
+38:30.640 --> 38:33.720
+which is a substantial nigra and thalamus,
+
+38:33.720 --> 38:37.640
+we could observe that pretty much a bright signal
+
+38:37.640 --> 38:41.200
+of the protein expression of ACE502.
+
+38:42.840 --> 38:44.840
+So before they confirm with that,
+
+38:44.840 --> 38:48.280
+the immunohistochemistry to ask it to make sure
+
+38:48.280 --> 38:52.300
+that this is not exacerbated any fluorescent imaging.
+
+38:52.340 --> 38:55.180
+So very, very similar kind of result to be observed.
+
+38:55.180 --> 38:58.800
+And then it's broadly displaying the whole brain.
+
+39:00.060 --> 39:02.300
+And then the next question is how much percentage
+
+39:02.300 --> 39:06.420
+of the neuron cells can be transduced by ACE502?
+
+39:06.420 --> 39:10.100
+So it's depends on the region of the brain,
+
+39:10.100 --> 39:13.900
+from that the 20 to 50% of the neuron cells
+
+39:13.900 --> 39:17.740
+can be transduced by that, the ACE502.
+
+39:17.740 --> 39:20.420
+And interesting as compared to the transduction
+
+39:20.420 --> 39:24.820
+of the wild type AB5, it can be enhanced
+
+39:24.820 --> 39:27.460
+at around that 180 fold increase,
+
+39:27.460 --> 39:30.460
+especially for substantial nigra and thalamus,
+
+39:30.460 --> 39:32.460
+which is that kind of deep brain region.
+
+39:34.260 --> 39:37.740
+So next one is how we just had to have the kind of evaluation
+
+39:37.740 --> 39:38.940
+for the liver.
+
+39:38.940 --> 39:42.180
+So as you can see that AB5 is pretty much
+
+39:42.180 --> 39:46.060
+a chip expression all over the liver.
+
+39:46.060 --> 39:48.460
+And it's very similar to the pattern of the result
+
+39:48.460 --> 39:49.940
+in AB9 as well.
+
+39:49.940 --> 39:53.460
+And a little bit reduced signal in a two different capsid,
+
+39:53.460 --> 39:55.660
+the competitor capsid as well.
+
+39:55.660 --> 39:57.980
+For ACE502 at the same dose,
+
+39:57.980 --> 40:01.460
+we can achieve around 99% of the detargeting
+
+40:01.460 --> 40:03.060
+compared to the wild type,
+
+40:03.060 --> 40:06.820
+which is a very kind of comparing data that we have.
+
+40:06.820 --> 40:09.780
+So currently we're working for the identified receptor.
+
+40:09.780 --> 40:12.540
+Hopefully it's a find that some new receptor,
+
+40:12.540 --> 40:15.860
+you could be on another one transporting anything else.
+
+40:15.860 --> 40:18.860
+So based on that, we're gonna get the result very soon.
+
+40:18.860 --> 40:21.940
+So based on that, we can just pursue the original design
+
+40:21.940 --> 40:24.540
+for next generation of ACE502.
+
+40:25.660 --> 40:28.860
+So this is a wrap up, I'm in the slide for the,
+
+40:28.860 --> 40:30.020
+take a message.
+
+40:30.020 --> 40:32.620
+So basically whole brain of the non-human primate,
+
+40:32.620 --> 40:36.100
+we could achieve around 100 fold increase
+
+40:36.100 --> 40:40.020
+at the specific dose and CNS transduction.
+
+40:40.020 --> 40:43.500
+At the same time, we can lower that 99% of that
+
+40:43.500 --> 40:46.220
+liver detargeting and liver accumulations.
+
+40:46.220 --> 40:48.900
+So we believe that ACE502 could be promising
+
+40:48.900 --> 40:52.700
+kind of capsid for robust CNS transduction
+
+40:52.700 --> 40:54.940
+at the same time that liver detargeting.
+
+40:54.940 --> 40:57.380
+So that's what we are prepared today.
+
+40:57.380 --> 40:59.260
+So thank you so much for your attention.
+
+40:59.260 --> 41:02.660
+Some I'm happy to answer any question you may have.
+
+41:02.660 --> 41:03.500
+Thank you.
+
+41:03.500 --> 41:04.340
+Thank you.
+
+41:04.340 --> 41:05.180
+Thank you.
+
+41:09.180 --> 41:10.020
+Thanks, Guy.
+
+41:10.020 --> 41:10.860
+The floor's open.
+
+41:10.860 --> 41:13.740
+Did you look at the vector genome distribution?
+
+41:14.500 --> 41:15.340
+That's a good question.
+
+41:15.340 --> 41:16.180
+We are just working on that.
+
+41:16.180 --> 41:18.620
+So basically we will just see then hold that,
+
+41:18.620 --> 41:22.620
+the western blood and different, the fluorescent imaging,
+
+41:22.620 --> 41:26.620
+but we wanna quantify that how much kind of the vector genome
+
+41:26.620 --> 41:28.860
+can deliver to the each cells of the,
+
+41:28.860 --> 41:31.020
+in the each different region of the brain.
+
+41:32.020 --> 41:35.340
+Yeah, especially in the liver because AV5 notoriously
+
+41:35.340 --> 41:37.100
+doesn't transduce the liver well.
+
+41:37.100 --> 41:39.620
+Yeah, that's a good, yeah.
+
+41:39.620 --> 41:41.460
+So we are gonna work on that, yeah.
+
+41:42.220 --> 41:43.860
+So we are gonna work on that, yeah.
+
+41:49.340 --> 41:51.380
+Any other questions from the floor?
+
+41:53.820 --> 41:56.620
+Maybe I'll take this opportunity to ask the question myself.
+
+41:58.180 --> 42:00.460
+Interested in know the thinking behind the choice
+
+42:00.460 --> 42:04.740
+of the base capsid, why AV5 and sort of a follow up question
+
+42:04.740 --> 42:07.020
+to that, these published capsid that you benchmark with,
+
+42:07.020 --> 42:08.900
+are they also AV5 based?
+
+42:08.940 --> 42:12.100
+And now, the reason why we chose AV5 is,
+
+42:12.860 --> 42:15.780
+yeah, it's well known as a pre-existing immunity
+
+42:15.780 --> 42:17.620
+is much lower compared to the AV9.
+
+42:17.620 --> 42:19.700
+Even though it's AV9 known to the,
+
+42:19.700 --> 42:22.980
+going to the better way to the brain.
+
+42:22.980 --> 42:24.460
+That's why we're starting from that
+
+42:24.460 --> 42:28.300
+and then relatively lower accumulation to the liver
+
+42:28.300 --> 42:29.820
+compared to the AV9.
+
+42:29.820 --> 42:34.540
+And all benchmark capsid is AV9 derived capsids.
+
+42:36.220 --> 42:38.220
+Perfect, thank you guys.
+
+42:38.220 --> 42:39.220
+Thank you.
+
+42:39.220 --> 42:40.220
+Thank you.
+
+42:44.220 --> 42:48.380
+Our next speaker is Zenhua Wu, yeah, perfect.
+
+42:49.660 --> 42:52.300
+He'll be talking to us, he's from Exagenesis.
+
+42:52.300 --> 42:55.540
+He'll be talking to us about transferrin' receptor,
+
+42:55.540 --> 42:59.900
+targeting AV, achieved superior and broad CNS transduction
+
+42:59.900 --> 43:02.940
+in multiple species after intravenous administration.
+
+43:02.940 --> 43:04.180
+Zenhua, when you're ready.
+
+43:04.180 --> 43:06.460
+Thank you very much, thanks for the invitation
+
+43:06.500 --> 43:11.500
+for this great opportunity to present here at ASGCT.
+
+43:11.980 --> 43:14.860
+So this is our forward-looking statement.
+
+43:14.860 --> 43:19.060
+Our Exagenesis bio is AV-based gene therapy company
+
+43:19.060 --> 43:23.300
+focused on CNS and ophthalmology field.
+
+43:23.300 --> 43:25.620
+As the previous two talks mentioned a lot
+
+43:25.620 --> 43:28.620
+about the random library screening,
+
+43:28.620 --> 43:31.820
+there are many different ways to screen novel libraries
+
+43:31.860 --> 43:36.860
+and novel AV capsid for seeing as penetrating capsid.
+
+43:39.380 --> 43:41.340
+The random library is really great.
+
+43:42.540 --> 43:47.540
+At one time you can screen up to one million virus at one time.
+
+43:49.100 --> 43:52.300
+However, there is also caveats.
+
+43:52.300 --> 43:55.220
+Whenever there is hits you really don't know the mechanism,
+
+43:55.220 --> 43:58.300
+you really don't know which receptor binds to.
+
+43:58.300 --> 44:00.860
+So with that we really think about
+
+44:00.860 --> 44:05.860
+what we can screen seeing as penetrating capsid differently.
+
+44:06.340 --> 44:10.460
+And this is the new system that we generated.
+
+44:10.460 --> 44:14.780
+We call the receptor targeting AV engineering system.
+
+44:14.780 --> 44:18.780
+In this particular system what we do is that we come up
+
+44:18.780 --> 44:23.260
+with a transferrin' receptor binding library
+
+44:23.260 --> 44:24.820
+as a peptide library.
+
+44:24.820 --> 44:29.420
+And with that transferring, preferring a library,
+
+44:29.420 --> 44:33.620
+we insert into AV and then we screen directly
+
+44:33.620 --> 44:38.620
+into directly in monkey and see whether with a no-magnetism
+
+44:39.340 --> 44:40.740
+whether you have a better chance
+
+44:40.740 --> 44:44.180
+to find a CNS penetrating capsid.
+
+44:44.180 --> 44:47.660
+And we have a lot of, we use heavily on AI
+
+44:47.660 --> 44:50.100
+in terms of generating the peptide library.
+
+44:50.100 --> 44:53.100
+I'm gonna go through the details of the AI process.
+
+44:53.100 --> 44:58.100
+At the end we found a very good seeing as penetrating capsid
+
+44:58.300 --> 45:01.700
+we called RTAV-001.
+
+45:01.700 --> 45:06.380
+And when we got the capsid we really test the affinity
+
+45:06.380 --> 45:09.220
+against the human, TFR monkey, TFR,
+
+45:09.220 --> 45:12.220
+and also mouse TFR to see whether there is any difference.
+
+45:12.220 --> 45:14.380
+And the end result is the affinity
+
+45:14.380 --> 45:17.380
+against all three species are very, very similar.
+
+45:17.380 --> 45:19.660
+So we're very encouraged by that
+
+45:19.660 --> 45:22.780
+because we know if that particular capsid works in mouse,
+
+45:22.780 --> 45:27.780
+it should work in monkey and also should work in human.
+
+45:28.900 --> 45:33.540
+And also we later on did a TEM study to see
+
+45:33.540 --> 45:36.220
+whether we can figure out the binding pocket
+
+45:36.220 --> 45:41.220
+of the particular receptor and as shown here actually
+
+45:41.820 --> 45:44.780
+we did figure out the binding pocket is actually,
+
+45:44.780 --> 45:46.540
+first is allosteric.
+
+45:46.540 --> 45:51.540
+It does not hinder the detection of transferring,
+
+45:52.140 --> 45:54.900
+binding to transfer receptor.
+
+45:54.900 --> 45:57.940
+And also we figured out the modern kind of magnets
+
+45:57.940 --> 46:02.940
+why this particular association really render
+
+46:03.060 --> 46:05.860
+the specificity towards the TFR receptor.
+
+46:05.860 --> 46:08.780
+So we know exactly where it binds to,
+
+46:08.780 --> 46:12.900
+we know exactly how it binds to transfer receptor.
+
+46:12.900 --> 46:16.940
+And we put this particular capsid into mice.
+
+46:16.940 --> 46:20.860
+As you can see here from the top left
+
+46:20.860 --> 46:22.860
+is the GDNA results.
+
+46:22.860 --> 46:27.860
+As we can see, we see 30 to 60% fold increase
+
+46:27.860 --> 46:32.860
+in terms of, I'm sorry, 20 to 30% increase on the GDNA.
+
+46:33.540 --> 46:36.900
+And on the top right is the MRI expression.
+
+46:36.900 --> 46:41.620
+And we see up to 60 fold increase
+
+46:41.620 --> 46:44.060
+in terms of the RNA expression.
+
+46:44.060 --> 46:49.060
+At the same time, we also took a look of the GDNA distribution
+
+46:49.580 --> 46:52.740
+and MRI expression in the liver and in the muscle
+
+46:52.740 --> 46:56.620
+because we have some concerns that TFR targeting AV
+
+46:56.620 --> 47:01.620
+might increase the distribution to the muscle and the liver.
+
+47:01.780 --> 47:05.100
+As a matter of fact, we see about a three to four fold
+
+47:05.100 --> 47:07.060
+decrease in the liver.
+
+47:07.060 --> 47:11.820
+And muscle wise, we see exactly same distribution expression
+
+47:11.820 --> 47:13.060
+compared to AV9.
+
+47:14.220 --> 47:17.480
+Of course, we put into mice and we did the,
+
+47:17.480 --> 47:21.220
+you know, histochemically staining.
+
+47:21.220 --> 47:25.900
+And as we can see on the top panels are the AV9 staining.
+
+47:25.900 --> 47:30.100
+There's not much of green trenching expression.
+
+47:30.100 --> 47:35.100
+On the bottom is the RT-AV-001 as really transduced
+
+47:35.740 --> 47:38.340
+very efficiently across the brain regions.
+
+47:38.340 --> 47:43.140
+And we quantified about 50 to 80% of the neurons
+
+47:43.140 --> 47:45.180
+are actually transduced.
+
+47:45.180 --> 47:47.980
+At the same time, we also take a look of the transduction
+
+47:47.980 --> 47:50.420
+of marker-clear and astrocytes.
+
+47:50.420 --> 47:54.580
+And indeed, the RT-AV-001 can transduce
+
+47:54.580 --> 47:56.700
+some astrocytes and marker-clear.
+
+47:56.700 --> 48:00.820
+But in terms of the percentage, it's less than 5%,
+
+48:00.820 --> 48:04.380
+much less compared to neuronal transduction.
+
+48:04.380 --> 48:09.380
+Maybe because the RT-AV-001 targeting TFR
+
+48:11.100 --> 48:14.500
+and the neuronal has TFR receptor
+
+48:14.500 --> 48:17.060
+on the surface of their neurons.
+
+48:18.460 --> 48:23.460
+And also we really take a look of the RT-AV expression,
+
+48:27.300 --> 48:32.060
+whether that induce any histological change to the brain.
+
+48:32.060 --> 48:36.500
+And based on this pathological findings studies,
+
+48:36.500 --> 48:38.540
+we really don't see much change in the neuron.
+
+48:38.540 --> 48:41.620
+So prove that this is safe in mouse.
+
+48:42.580 --> 48:47.500
+Next is we really put that RT-AV into monkey studies.
+
+48:47.500 --> 48:49.660
+And because of there are a lot of reports
+
+48:49.660 --> 48:52.340
+in terms of if you switch monkey species,
+
+48:52.340 --> 48:55.380
+the AV transduction will change.
+
+48:55.380 --> 48:58.020
+So we use actually two species, monkey,
+
+48:58.020 --> 49:00.700
+sandal monkey, and also rhesus monkey.
+
+49:00.700 --> 49:05.380
+In these studies, we call those RT-AV-001 with AV-9
+
+49:05.380 --> 49:06.660
+at the same time.
+
+49:06.660 --> 49:10.660
+Each of them is a 4E13 VG per kg dose.
+
+49:10.660 --> 49:12.700
+And when we combine them,
+
+49:12.700 --> 49:17.620
+both capsules contains the same transgene,
+
+49:17.620 --> 49:18.900
+but with different tags.
+
+49:18.900 --> 49:20.500
+So at the end of the study,
+
+49:20.500 --> 49:24.820
+we can really use IHC to study
+
+49:26.860 --> 49:29.540
+which capsules are expressing at what level.
+
+49:29.540 --> 49:32.580
+And of course, we take all the organs and all the tissues
+
+49:32.580 --> 49:37.580
+and do all the DNA mRNA and the protein expression study.
+
+49:37.900 --> 49:41.300
+This is the results from rhesus monkey.
+
+49:41.300 --> 49:44.380
+Again, on the top left is GDNA.
+
+49:44.380 --> 49:46.500
+In the middle is mRNA and on the right
+
+49:46.500 --> 49:51.500
+is the GDNA and mRNA results in all the other tissues.
+
+49:52.180 --> 49:57.180
+Very, very striking difference between AV-9 versus RT-AV-001.
+
+49:59.020 --> 50:01.980
+And for mRNA expression-wise,
+
+50:01.980 --> 50:05.620
+we reach up to 250 fold increase
+
+50:05.620 --> 50:09.180
+across all the brain regions very consistently,
+
+50:09.180 --> 50:11.380
+including the spinal cord.
+
+50:11.380 --> 50:16.300
+And when we look at the distribution across other brain,
+
+50:16.300 --> 50:20.580
+other tissues, only liver, again,
+
+50:20.580 --> 50:24.740
+had a three to four fold decrease in distribution
+
+50:24.740 --> 50:28.940
+and mRNA expression and across all other regions,
+
+50:28.940 --> 50:33.020
+including spleen, including muscle,
+
+50:33.020 --> 50:36.940
+including other organs are almost the same.
+
+50:36.940 --> 50:41.940
+So has slightly leverage targeting property for RT-AV-001.
+
+50:42.860 --> 50:45.860
+And again, this is immunohistochemistraining.
+
+50:45.860 --> 50:47.300
+As you can see, this is really
+
+50:47.300 --> 50:50.460
+across all the brain regions, RT-AV-001.
+
+50:50.460 --> 50:54.100
+It was very factly transducing neuronal cells
+
+50:54.100 --> 50:59.100
+compared to AV-9, almost no positive staining was observed.
+
+50:59.660 --> 51:02.140
+And even including the spinal cord,
+
+51:02.140 --> 51:05.980
+up to 70% of the spinal neuronal,
+
+51:05.980 --> 51:08.340
+motor neurons are really transduced.
+
+51:08.340 --> 51:12.540
+And then when we quantify the neuronal transduction,
+
+51:12.540 --> 51:16.260
+about 30% to 70% of neurons are transduced
+
+51:16.260 --> 51:20.100
+depending on different brain regions, highly efficient.
+
+51:20.100 --> 51:23.340
+This is the signal monkey study and the same results.
+
+51:23.340 --> 51:25.780
+So I'm not gonna go through the details.
+
+51:25.780 --> 51:27.900
+And this is staining exactly,
+
+51:27.900 --> 51:31.660
+look like similar to resists monkey.
+
+51:31.660 --> 51:36.660
+We also took a look of the potential liability
+
+51:36.700 --> 51:41.700
+for anemia, liability for this particular capsule.
+
+51:42.060 --> 51:44.500
+Because as we know, transferring targeting
+
+51:44.500 --> 51:48.580
+can cause anemia and cause reticular sites reduction
+
+51:48.580 --> 51:50.620
+and real plus cells reduction.
+
+51:50.620 --> 51:52.260
+As you can see from here,
+
+51:52.260 --> 51:56.740
+really don't see any concerns of anemia.
+
+51:56.740 --> 52:01.460
+And at the same time, because of this AV-9 plus RT-AV,
+
+52:01.460 --> 52:04.620
+total dose is AE13BGPKG.
+
+52:04.620 --> 52:09.620
+So as expected, we see some AST and AOT transient increase,
+
+52:09.660 --> 52:11.260
+but this is really expected.
+
+52:11.260 --> 52:13.420
+So this is really very, very tolerated
+
+52:13.420 --> 52:16.300
+the capsule in monkey.
+
+52:16.300 --> 52:20.080
+We also took a look of the histopathology
+
+52:20.080 --> 52:22.940
+of this particular capsule in monkey brains
+
+52:22.940 --> 52:25.620
+and also liver as well.
+
+52:25.620 --> 52:27.420
+And we really don't see any concerns
+
+52:27.500 --> 52:31.060
+in terms of morphological changes
+
+52:31.060 --> 52:35.500
+after RT-AV-001 dosing.
+
+52:35.500 --> 52:38.160
+And the same thing for resists monkey as well.
+
+52:39.180 --> 52:43.420
+Again, we now put into the capsidine
+
+52:43.420 --> 52:46.940
+to transfer receptor, human transfer,
+
+52:46.940 --> 52:50.580
+knocking animals as you can see from here.
+
+52:51.580 --> 52:56.580
+This is highly efficient in human TFR knocking animals
+
+52:57.220 --> 52:59.300
+as well compared to white type.
+
+52:59.300 --> 53:01.580
+The transduction rate is almost,
+
+53:01.580 --> 53:03.620
+look like almost the same.
+
+53:03.620 --> 53:07.900
+So we know that that also works on human TFR,
+
+53:07.900 --> 53:11.420
+even in the TFR knocking transnet animal.
+
+53:11.420 --> 53:16.060
+And also we put that into human cells, right?
+
+53:16.060 --> 53:21.060
+We use the HEK cells, which express TFR highly
+
+53:21.060 --> 53:25.060
+and on the top is the AV-9 transaction
+
+53:25.060 --> 53:28.420
+on in vitro on HEK.
+
+53:28.420 --> 53:30.340
+And really nothing really transdues
+
+53:30.340 --> 53:35.340
+or very low transduction rate on HEK at that MOI.
+
+53:36.820 --> 53:40.700
+But at same MOI, we can see really tremendous
+
+53:40.700 --> 53:45.100
+internalization of the capsidine in the HEK cells.
+
+53:45.100 --> 53:48.420
+So again, this is a second sort of indirect proof
+
+53:48.420 --> 53:50.420
+that it might work in human,
+
+53:50.420 --> 53:52.680
+at least it binds to human receptors.
+
+53:53.680 --> 53:56.720
+And we talk a look of the manufacturability
+
+53:56.720 --> 54:00.160
+of this particular capsidine and compared to AV-9,
+
+54:00.160 --> 54:02.920
+the manufacturability is really very similar,
+
+54:02.920 --> 54:04.960
+including the upstream yield
+
+54:04.960 --> 54:09.960
+and also the upstream full and empty capsid,
+
+54:10.000 --> 54:11.240
+very similar to AV-9.
+
+54:11.240 --> 54:14.640
+So we think this is highly manufacturable as well.
+
+54:14.640 --> 54:18.920
+So next thing is we really want to put this RTAV-01
+
+54:18.920 --> 54:20.320
+into human testing.
+
+54:20.320 --> 54:23.720
+And the first indication we choose is SMA.
+
+54:23.720 --> 54:28.720
+So we did this particular study in SMA-transient animals.
+
+54:29.360 --> 54:31.280
+As you know, SMA-transient animals,
+
+54:31.280 --> 54:34.360
+if you don't rescue a majority of the mice
+
+54:34.360 --> 54:38.760
+were died before three weeks on the right,
+
+54:38.760 --> 54:41.320
+as you can see the survivor curve.
+
+54:41.320 --> 54:45.520
+The black line is the animals
+
+54:45.520 --> 54:49.120
+that without any treatment or with the vehicle treatment,
+
+54:49.120 --> 54:50.880
+the animal dies very quickly.
+
+54:50.880 --> 54:54.760
+And two red lines are AV-9 version
+
+54:54.760 --> 54:59.760
+of the vectors expressing SMA-N1 protein.
+
+55:00.680 --> 55:03.520
+And they can rescue the survivor really dramatically,
+
+55:03.520 --> 55:08.520
+especially at two E, 14 VG per kg dose,
+
+55:08.640 --> 55:11.840
+highly efficient, can push the survivor curve
+
+55:11.840 --> 55:14.320
+all the way to 120 days.
+
+55:14.320 --> 55:17.840
+But even at a four times lower dose
+
+55:17.960 --> 55:22.560
+with RTAV-001, the survivor curve rescue effect
+
+55:22.560 --> 55:25.160
+is really, really second event compared to
+
+55:26.320 --> 55:29.920
+the AV-9 version of the vector.
+
+55:29.920 --> 55:34.920
+So we believe it would really work in the SMA model.
+
+55:35.080 --> 55:39.440
+And on the left is the tissue distribution data.
+
+55:39.440 --> 55:41.880
+Even at a 10 times lower dose,
+
+55:41.880 --> 55:46.880
+RTAV-001 can have much higher tissue distribution
+
+55:47.520 --> 55:49.520
+in all brain regions.
+
+55:49.520 --> 55:52.720
+Again, indicating the RTAV-001
+
+55:52.720 --> 55:57.720
+is a really good capsular for the SMA treatment.
+
+55:59.160 --> 56:04.160
+And currently the capsular is under the development,
+
+56:04.600 --> 56:06.040
+R&D and delving development.
+
+56:06.040 --> 56:09.880
+And we plan to put this particular product
+
+56:09.880 --> 56:13.080
+into human testing, hopefully by the end of the year
+
+56:13.080 --> 56:15.000
+or beginning of next year.
+
+56:15.000 --> 56:16.320
+And this is the conclusion.
+
+56:16.320 --> 56:21.320
+Basically RTAV is seeing as penetrating AV
+
+56:21.480 --> 56:23.400
+with a really different mechanism
+
+56:23.400 --> 56:26.560
+and very known mechanism toward BBB.
+
+56:26.560 --> 56:29.000
+And we believe this particular capsular
+
+56:29.000 --> 56:32.360
+is highly manufacturable and we are gonna go
+
+56:32.360 --> 56:36.200
+on the end of the studies and put that into human testing.
+
+56:37.480 --> 56:39.240
+And thank you very much.
+
+56:39.240 --> 56:41.520
+I would address any questions you might have.
+
+56:42.380 --> 56:43.220
+Thank you.
+
+56:43.220 --> 56:44.040
+Thank you.
+
+56:44.040 --> 56:44.860
+Thank you.
+
+56:44.860 --> 56:45.680
+Thank you.
+
+56:47.680 --> 56:48.720
+Floor's open.
+
+56:48.720 --> 56:50.240
+Hi, that was a great talk.
+
+56:50.240 --> 56:53.200
+I was wondering if you looked at the immunogenicity profile
+
+56:53.200 --> 56:55.280
+of the capsid in non-human primates
+
+56:55.280 --> 56:57.700
+if it was comparable to AV9 or not.
+
+56:57.700 --> 56:59.820
+Very good question, we did.
+
+56:59.820 --> 57:02.620
+And we believe this is very similar to AV9.
+
+57:03.600 --> 57:05.160
+Great talk.
+
+57:05.160 --> 57:06.840
+So you only...
+
+57:06.840 --> 57:08.760
+Can we take a question from the other side?
+
+57:08.760 --> 57:10.040
+We'll keep switching.
+
+57:10.040 --> 57:10.880
+Okay.
+
+57:10.880 --> 57:18.920
+Hi, great talk. How did you land on the, I think, nanobody that was inserted into AV9
+
+57:18.920 --> 57:25.760
+for RTAV1? I think you just glossed over that very briefly, the screening method, I guess.
+
+57:25.760 --> 57:31.520
+Yeah, the library, the TFR binding library, we generate, it consists of really different
+
+57:31.520 --> 57:40.640
+binding peptides, long, short, including nanobody candidates. So there's a really variety of
+
+57:40.640 --> 57:45.160
+candidates in that particular library. And among this library, we found this particular AV
+
+57:45.160 --> 57:55.000
+capsid, RTAV01. And how is this library designed? As I mentioned, we use a lot of AI tools. Again,
+
+57:55.000 --> 58:00.320
+there's many different steps. We generate the scaffold first, then filling the sequences.
+
+58:00.320 --> 58:08.000
+Really, we're trying to predict the binding affinity between the binding peptides versus
+
+58:08.000 --> 58:18.680
+our transfer receptor. Thank you. Great talk. So you insert the affinity peptide in the well
+
+58:18.680 --> 58:28.160
+type AV9 on one loop, right? Correct. Yeah, so you'll keep the other side unchanged. You don't do
+
+58:28.160 --> 58:36.160
+the mutation like reducing the lever targeting? No, we didn't do lever targeting mutation. There's
+
+58:36.240 --> 58:45.400
+only one insertion of the TFR binding peptides. Okay, how that, you know, you only insert TFR affinity
+
+58:45.400 --> 58:54.440
+peptide and it can, you know, enhance BBB crossing. But when the AV in crossing to the brim, how can
+
+58:54.440 --> 59:00.200
+they mainly targeting the neural cells? Yeah, as I mentioned, the neuronal, because neurons have a
+
+59:00.200 --> 59:05.440
+high expression of the transfer receptor. And then maybe that's the reason neural has better
+
+59:05.800 --> 59:13.480
+uptake of the RT-AV001 compared to astrocytes and microglia cells. Yeah, another one, one
+
+59:13.480 --> 59:20.360
+explanation. And microglias and astrocytes are highly turnover cells. And within a month, maybe
+
+59:20.360 --> 59:26.200
+some of the instructions are gone already. Okay, another small question. How long is the peptide?
+
+59:26.880 --> 59:32.160
+How long is the peptide? Yeah, we have various of different peptides. And in this case, the
+
+59:32.160 --> 59:39.960
+peptide is really big. It's not seven or 10 or 12 amino acids, a really long peptide. And the
+
+59:39.960 --> 59:45.600
+fundamental reason is because smaller peptides will have smaller interface with the transfer
+
+59:45.600 --> 59:53.280
+receptor. And any change on the receptor, for example, species change, we're may disrupt this
+
+59:53.280 --> 01:00:00.240
+binding. That's why we're looking for a bigger binding pocket. And in our TAEM study, we finally
+
+01:00:00.240 --> 01:00:08.000
+mapped out the binding sequence or binding aptop of that interaction. And the binding sequence, the
+
+01:00:08.000 --> 01:00:16.080
+sequence is 100% conserved in mouse, in monkey and in human. That's probably why we saw similar
+
+01:00:16.080 --> 01:00:22.400
+affinity in mouse and monkey and human receptors. Okay, thank you. Thanks. I apologize. We are a
+
+01:00:22.400 --> 01:00:27.600
+little bit out of time. I encourage the questioners to ask the question after the session to the
+
+01:00:27.600 --> 01:00:31.280
+speakers. So let's maybe thank Zandua for her speech. Thank you very much.
+
+01:00:37.120 --> 01:00:42.880
+Our next speaker is Angela-Enrica Arajo. She's going to be talking about the future of CAR-T
+
+01:00:42.880 --> 01:00:49.840
+cells towards the in vivo generation of stable CAR-T T cells with T cell tropic adenos associated
+
+01:00:49.840 --> 01:00:55.600
+viral vectors. Thank you for your kind introduction. And thank you for the to the organization to give
+
+01:00:55.600 --> 01:01:01.360
+me the opportunity today to present my work about in vivo generation of CAR-T cells using AV
+
+01:01:01.360 --> 01:01:09.440
+vectors. So T cell-based gene and cell therapies are mainly focused on the use of CAR-T in the
+
+01:01:09.440 --> 01:01:14.080
+ecological field. But as we know, the field is currently expanding for the treatment of
+
+01:01:14.080 --> 01:01:19.360
+autoimmune disease, infection disease. And of course, we can also modify T cells for the treatment
+
+01:01:19.440 --> 01:01:26.720
+of immunodeficiencies. And currently, the genetic modification of T cells is based
+
+01:01:26.720 --> 01:01:38.400
+on the ex vivo modification, usually using, sorry, integrative vector, like lentiviral
+
+01:01:38.400 --> 01:01:47.280
+vector or nucleofaction. But this type of process are time consuming, very costly, depend on the
+
+01:01:47.280 --> 01:01:52.320
+presence of specialized center. And this, of course, can decrease the accessibility of the type
+
+01:01:52.320 --> 01:01:58.800
+of therapies. And modifying in vivo, the T cells directly on the bloodstream of the patient can
+
+01:01:58.800 --> 01:02:03.680
+help reduce some of this problematic. And one of the vector that's been proposed for this type of
+
+01:02:03.680 --> 01:02:12.960
+therapies are AVs. And as is the focus of today's section, AV can modify to retargeting. And in my
+
+01:02:12.960 --> 01:02:18.240
+project, we started with AV2 peptide supply library with a seven amino acid peptide insertion
+
+01:02:18.240 --> 01:02:25.760
+in the second I speak of AV2. And this library was then selected in vivo in non-human primates
+
+01:02:25.760 --> 01:02:32.080
+and we isolate different T cells populations, in particular in focus on naive and memory cells
+
+01:02:32.080 --> 01:02:38.320
+of the CD4 and CD8 T cells. And from the NGS analysis of the DNA isolated from these cells,
+
+01:02:38.400 --> 01:02:45.680
+we identified 21 candidates that were particularly enriched on the T cells. And we can see the
+
+01:02:45.680 --> 01:02:53.200
+enrichment for our 21 candidates in the different population. And we can see as our very strict
+
+01:02:53.200 --> 01:02:59.680
+condition for the first selection rounds allow us to directly select our candidate after just one
+
+01:02:59.680 --> 01:03:06.960
+selection round in vivo. In generally, the variants were enriched in all the different
+
+01:03:06.960 --> 01:03:13.760
+populations, but some show a particular preference for one of more T cells population,
+
+01:03:13.760 --> 01:03:18.560
+like for example, variant six, just in the CD4 cells memory cells,
+
+01:03:21.680 --> 01:03:28.480
+or variant nine in the CD4, different CD4 populations. And to give you our overview,
+
+01:03:28.480 --> 01:03:34.960
+how we test and confirm the trophism of our 21 candidates, we first test them in vitro,
+
+01:03:34.960 --> 01:03:41.840
+in human T cells, and this allows us already to reduce the number of candidates from 21 to 12
+
+01:03:41.840 --> 01:03:49.280
+that were equipped with a GFP with a unique barcode for each of them. And we saw then test
+
+01:03:49.280 --> 01:03:56.080
+them in pool in human blood for both efficiency and specificity. And we perform also a view
+
+01:03:56.080 --> 01:04:03.520
+distribution in vivo in like six mice. And for this experiment, we were able to identify
+
+01:04:03.520 --> 01:04:08.960
+two final candidates that we renamed NG3 and NG6, one particularly efficient and one
+
+01:04:08.960 --> 01:04:15.120
+particularly specific for the transduction of human T cells. So now let's go back and see why
+
+01:04:15.120 --> 01:04:22.560
+we choose these two candidates. And we can see here our test on human primary T cells in vitro,
+
+01:04:23.200 --> 01:04:32.880
+where a different GOI, so vector genome per cells, our variants outperform AV2 wild type
+
+01:04:33.760 --> 01:04:39.840
+in both CD4 and CD8 population that we can see in blue and in green. And the results were even
+
+01:04:39.840 --> 01:04:47.440
+more impressive when we compare these two variants with AV2 and AV6, that is considered the gold
+
+01:04:47.440 --> 01:04:55.680
+standard in the human blood. So after transduction in the human blood, we isolate also the T cells
+
+01:04:55.680 --> 01:05:01.360
+and the T cells population to look for both efficiency and selectivity. And of course we can
+
+01:05:01.360 --> 01:05:09.520
+see here in the T cells CDNA that AV6 is doing the job quite well as expected. But if we compare
+
+01:05:10.240 --> 01:05:19.120
+the expression at the CDNA level with the GNA level amount, we can see that our variants are
+
+01:05:19.120 --> 01:05:28.320
+much more effective in T cells, in aspraxine and on T cells than AV6. And if we go even forward and
+
+01:05:28.320 --> 01:05:33.520
+look at the ratio between the expression on the T cells to the non-T cells population, we can see
+
+01:05:33.600 --> 01:05:39.920
+here that AV6 is not specific at all, while our H3 and in particular the H6
+
+01:05:40.800 --> 01:05:47.600
+show up very clearly selectivity for the T cells population. And this was confirmed when also with
+
+01:05:47.600 --> 01:05:53.440
+flow cytometry for GXP expression, when we test the variants separately in human blood. And we
+
+01:05:53.440 --> 01:06:00.800
+can see here that AV6 in black clearly has a better expression efficiency in non-T cells when it's
+
+01:06:01.440 --> 01:06:08.560
+inside our perform by our variants in the T cells population. In the black six mine,
+
+01:06:08.560 --> 01:06:14.400
+our view distribution, we can see here in light green and dark green that two of our vectors show
+
+01:06:14.400 --> 01:06:22.000
+a particular enrichment in the T cells and CD4 and CD8 population, isolate for both the spleen
+
+01:06:22.000 --> 01:06:28.720
+and the blood of the mice. And H3, it's one of these two candidates and this confirmed that our
+
+01:06:28.800 --> 01:06:34.000
+variants, it's able to target in T cells in different species. And the other variants,
+
+01:06:34.000 --> 01:06:40.240
+variant two, share a very close similar peptide insertion that will also conform the
+
+01:06:40.240 --> 01:06:47.600
+strongness of our selection. But now let's go back to the in vivo generation of CAR T cells.
+
+01:06:47.600 --> 01:06:53.680
+And for this AV present a limitation, they don't, they lack an integrase, so they remain
+
+01:06:53.680 --> 01:06:59.920
+and usually epizomal form inside the cells. But this will mean that we'll lose car expression
+
+01:06:59.920 --> 01:07:06.320
+or every cell division in the activated cells. And has been sure of course that for CAR T cells
+
+01:07:06.320 --> 01:07:14.080
+therapies, the persistence in vivos of the CAR T, it's linked to the success of this type of
+
+01:07:14.080 --> 01:07:20.080
+therapies. So what is our solution? And our solution is using our selected vectors in a dual
+
+01:07:20.160 --> 01:07:26.160
+AV platform where one vector will encode for the transposase and the other will encode for the car
+
+01:07:26.160 --> 01:07:32.000
+in a transposable element. And the idea is that when both vector enter the T cells, the car will
+
+01:07:32.000 --> 01:07:39.280
+be integrated and we label a stable CAR T cells. And transposase, transposone approach, it's already
+
+01:07:39.280 --> 01:07:45.440
+in clinical trials using nucleofection, so ex vivo production of CAR T cells. And our idea is to
+
+01:07:45.440 --> 01:07:54.000
+combine this approach with our AV vectors to a stable in vivo CAR T cells generation. And we
+
+01:07:54.000 --> 01:08:00.480
+already show and test this approach in vitro, in primary T cells. And we can see in the central
+
+01:08:00.480 --> 01:08:06.320
+figure that with us two different car constructs and we were able to obtain more than 20% of
+
+01:08:06.320 --> 01:08:13.440
+CD19 positive CAR T cells with a dual vector approach or more than 10% of our raw one CAR T
+
+01:08:13.440 --> 01:08:20.080
+cells. And on the figure on the left, we can see that this, the car expression was stable
+
+01:08:20.080 --> 01:08:27.520
+maintained for more than four weeks in the presence of the transposase vector when in its absence
+
+01:08:27.520 --> 01:08:37.040
+the expression of the CAR T cells declined over time. Also the CAR T cells produced with our
+
+01:08:37.040 --> 01:08:44.160
+angiotree vector that we can see red, where at the same level or outperform the nucleofection
+
+01:08:44.160 --> 01:08:53.920
+produce CAR T, so the current standard method using this technology. And we can see in the last
+
+01:08:53.920 --> 01:09:00.880
+picture on the right, also the AV produced CAR T cells show a better viability to the one
+
+01:09:00.880 --> 01:09:08.960
+produce using the standard nucleofection method. And maybe you notice that we also test AV6
+
+01:09:08.960 --> 01:09:16.400
+as comparison and it was still performing our variants for the percentage of the CAR T cells
+
+01:09:16.400 --> 01:09:23.360
+produced. However, when we test the CAR T for cytotoxicity assay for specifics cell killing in
+
+01:09:23.360 --> 01:09:32.560
+both CD19 or raw one positive T cells, our angiotree CAR T show similar or even better
+
+01:09:32.560 --> 01:09:38.640
+killing activity in the AV6 produced one. And in both cases they were outperforming the nucleofection
+
+01:09:38.640 --> 01:09:46.480
+produced ones. So I'm already to my summary, so I hope that I show you today that we have identified
+
+01:09:46.560 --> 01:09:53.680
+two AV candidates that have increased production efficiency and trophies for T cells both in
+
+01:09:53.680 --> 01:10:01.680
+vitro in X vivo and in vivo and that a dual AV approach can be used with these candidates to
+
+01:10:01.680 --> 01:10:10.480
+have in vivo stable CAR T generation. And now after our testing we are now moving forwards with
+
+01:10:10.480 --> 01:10:18.800
+the in vivo evaluation of our approach in humanized mice and we are really hopeful that our system
+
+01:10:18.800 --> 01:10:26.160
+can become an easily adaptable platform for different CAR concerts and this can help reduce
+
+01:10:26.160 --> 01:10:33.920
+the cost and making CAR T scalable off the shelf product that can increase their accessibility
+
+01:10:33.920 --> 01:10:40.000
+in the world. And I want to finish my presentation thanking especially the CAR Tervik team that
+
+01:10:40.000 --> 01:10:46.880
+is responsible between MHH in ANOVA and the University of Woosburg of this dual AV approach
+
+01:10:46.880 --> 01:10:54.240
+and of course all my group in ANOVA and all our all our collaborators and my PI Ildegab Yuning
+
+01:10:54.240 --> 01:10:59.280
+and I want to thank all of you for listening to me today and now I open to answer any question.
+
+01:11:06.240 --> 01:11:06.880
+Floors open.
+
+01:11:10.320 --> 01:11:24.560
+Thank you for the presentation. We're already struggling and making everything we can to decrease
+
+01:11:24.560 --> 01:11:33.680
+the cost of making one AV. Here you're doubling the cost of the dose so I mean it's not the first
+
+01:11:33.680 --> 01:11:41.840
+time I see it. It works for sure. But now we are more seeing trying approaches where if we're
+
+01:11:41.840 --> 01:11:47.360
+using two vectors trying to use other type of vectors that maybe are decreasing the cost so
+
+01:11:47.360 --> 01:11:56.800
+there's already examples of that in clinical such as VLP, EV, EDV, LNPs as well combined with the AV
+
+01:11:57.440 --> 01:12:04.000
+or there's also I've seen people being able to reduce the size of the transposage or miniaturize
+
+01:12:04.000 --> 01:12:10.720
+so everything fits into one AV. So I would suggest if you want really to go for affordability
+
+01:12:10.720 --> 01:12:16.000
+and accessibility to the patient that you try to think about that strategy because this is not
+
+01:12:16.000 --> 01:12:21.680
+going to solve it. It was a great talk. Yes thank you so much. It's an interesting point but just
+
+01:12:21.760 --> 01:12:28.160
+to comment on this for now we are going at least what we saw for the in vitro results and what we
+
+01:12:28.160 --> 01:12:35.680
+plan to test in vivo if it works. We are going to the same dose that people are testing in animals
+
+01:12:35.680 --> 01:12:42.400
+for just one AV approach but like not integrative and for now it's working so we didn't have to
+
+01:12:42.400 --> 01:12:51.600
+increase the dose but yeah of course it's a great point. Thank you. Yeah very nice work. I'm Wen
+
+01:12:51.600 --> 01:12:58.000
+from VCU. I have two questions. The first one I guess you have some justification why you use AV2
+
+01:12:58.000 --> 01:13:06.880
+for the library not AV6 because AV2 not strong enough to transduce T cell. Yeah it's true but AV6
+
+01:13:06.880 --> 01:13:15.120
+it's very efficient when tested in vitro already in vivo it's really struggling to do the job even
+
+01:13:15.120 --> 01:13:23.520
+more than AV2 because it's diluted and targeting the liver and for what we have saw at least it's
+
+01:13:24.240 --> 01:13:34.080
+when we go already in the blood or in vivo in the mice our vet or it's able to do the job much
+
+01:13:34.320 --> 01:13:40.560
+better. Last question in the mouse model maybe you have the point I missed that what's the
+
+01:13:40.560 --> 01:13:49.920
+maximum efficiency for mouse T cell in vivo you can get in the mouse primary T cell so what's the
+
+01:13:49.920 --> 01:13:56.480
+maximum transducing efficiency. Oh yeah for that experiment it was barcode so at the end the results
+
+01:13:56.480 --> 01:14:03.200
+was obtained through the NGS reads and we compare the we're in a staging we compare the different
+
+01:14:04.400 --> 01:14:10.160
+variants between them so we don't have a single capsid efficiency for the mouse model but we are
+
+01:14:10.160 --> 01:14:18.160
+currently both in this project and other projects that were born from my capsid testing the
+
+01:14:18.240 --> 01:14:23.680
+efficiency in mouse of the single variant so we'll be in my next talk. Thank you.
+
+01:14:26.800 --> 01:14:29.920
+Excellent if there are no further questions thank you. Thank you.
+
+01:14:36.160 --> 01:14:42.880
+Our next speaker is Samantha Howard from Alexion. She is going to be presenting
+
+01:14:42.960 --> 01:14:48.720
+an AV capsid presenting a miniaturized anti-transferend receptor antibody enables
+
+01:14:48.720 --> 01:14:54.400
+systemic CNSY distribution with minimal liver tropism and cross-species conservation.
+
+01:14:56.480 --> 01:15:01.200
+Hi everyone my name is Samantha Howard I'm a senior scientist in biology in the genomic medicine
+
+01:15:01.200 --> 01:15:06.160
+unit at Alexion AstraZeneca and we're based in Cambridge. I'm excited to be here today to share
+
+01:15:06.160 --> 01:15:12.560
+with you some of our bio distribution data from evaluating a novel capsid that enables broad
+
+01:15:12.560 --> 01:15:21.280
+CNS distribution and liberty targeting. Here's my disclosures. So just AAV is a novel
+
+01:15:22.240 --> 01:15:26.160
+EVV punishment capsule that provides broad brain distribution and minimal liver expression.
+
+01:15:26.720 --> 01:15:34.000
+It's been developed by JCR Pharmaceuticals and licensed to Alexion AstraZeneca. Just AAV crosses
+
+01:15:34.000 --> 01:15:39.840
+the blood-brain barrier via transfer mediated transcytosis which is a clinically validated pathway
+
+01:15:40.480 --> 01:15:45.600
+with other modalities including those that has been already in the clinic by JCR Pharmaceuticals.
+
+01:15:46.800 --> 01:15:52.800
+So it's been designed to engage both somologous and human TFR which does enable
+
+01:15:53.840 --> 01:15:57.600
+animal models for multiple preclinical studies and how it actually engages transfer
+
+01:15:57.600 --> 01:16:06.560
+and receptor is it contains a miniaturized antibody that recognizes HTFR and just to orient
+
+01:16:06.640 --> 01:16:12.000
+to you with the rest of the data in this deck payload that we use to evaluate bio distribution
+
+01:16:13.120 --> 01:16:20.960
+has a neuronal specific promoter. So first we want to assess how the just AAV performs in
+
+01:16:20.960 --> 01:16:29.600
+vitro and to do that we compare just AAV versus AAV9 and both contain the same payload. We're
+
+01:16:29.600 --> 01:16:34.640
+able to see greater transduction with just AAV versus AAV9 in a human neuroblastoma cell line
+
+01:16:35.280 --> 01:16:40.160
+and that was sustained across all the MOIs tested and also with the ability to see these
+
+01:16:40.160 --> 01:16:45.920
+high transduction and RNA expression rates at these lower MOIs we felt this was really exciting
+
+01:16:45.920 --> 01:16:52.160
+because just AAV can be a nice tool capsid for various in vitro workflows such as screening
+
+01:16:52.160 --> 01:16:57.840
+or potency assays in manufacturing. So next we want to look at how this capsid performs in vivo
+
+01:16:58.080 --> 01:17:06.240
+and so for these capsid selection studies what we did was evaluated the just AAV with the same
+
+01:17:06.240 --> 01:17:11.520
+trans genes versus AAV9 in HTFR knock and mice in a line that was developed by JCR
+
+01:17:12.160 --> 01:17:18.560
+and synomologous macaque. Both animals receive a single IV injection of the AAV and we're taken
+
+01:17:18.560 --> 01:17:23.600
+out for a set endpoint with mice being just four weeks and synomologous macaques either four or
+
+01:17:23.600 --> 01:17:29.200
+thirteen weeks. For evaluating and bio-distribution we paired both biochemistry and histological
+
+01:17:29.200 --> 01:17:35.440
+analysis in particular having one hemisphere sent for the biochemistry workflow either micro
+
+01:17:35.440 --> 01:17:41.200
+dissected in the mouse or tissue punches in the NHP and the other side for histology and linking
+
+01:17:42.000 --> 01:17:46.000
+molecular and spatial bio-distribution readouts such as vector genome copies, RNA expression,
+
+01:17:46.000 --> 01:17:51.440
+protein expression or histology looking at transitioning RNA scope with tissue hybridization
+
+01:17:52.400 --> 01:17:56.560
+as well as new and immunohist chemistry to understand distribution in their own since we
+
+01:17:56.560 --> 01:18:04.160
+are using a neuronal promoter. So now into the data. So on the left hand side we have data from the
+
+01:18:04.160 --> 01:18:11.040
+HTFR knock and mice and what we did here was compare at a vehicle AAV9, PHV, a known mouse
+
+01:18:11.040 --> 01:18:17.200
+BB penetrant capsid as well as just AAV at two different doses. What we were able to see was
+
+01:18:17.200 --> 01:18:24.240
+significant increase in brain vector genome copies and transient RNA expression significantly
+
+01:18:24.240 --> 01:18:29.280
+above AAV9 and in addition we also saw significant liberty targeting in the mouse
+
+01:18:30.720 --> 01:18:37.840
+and then on the right hand side we have the data in the NHP and so again this was a single IV
+
+01:18:37.840 --> 01:18:43.200
+injection with endpoints of four or thirteen weeks and comparing AAV9 versus suggest AAV
+
+01:18:43.440 --> 01:18:49.760
+and the filled circles are the four-week endpoints, open circles are the
+
+01:18:49.760 --> 01:18:54.640
+twelve, thirteen-week endpoints and so we're able to also see increased vector genome copies
+
+01:18:54.640 --> 01:19:01.920
+and transient RNA across various brain regions at various levels but still significantly above AAV9
+
+01:19:01.920 --> 01:19:09.680
+as well as significant liberty targeting about 213 fold less than AAV9 and this is also sustained
+
+01:19:09.680 --> 01:19:14.400
+between the two different doses. So while the chemistry analysis does allow us to understand
+
+01:19:14.400 --> 01:19:19.760
+the biotrimition and RNA DNA protein relationships we are still limited to the bulk expression
+
+01:19:19.760 --> 01:19:25.440
+so we did want to pivot to including the spatial analysis to have a more thorough characterization
+
+01:19:25.440 --> 01:19:31.760
+of biotrimition with the cell type of regional specificity. So here are some example images
+
+01:19:31.760 --> 01:19:37.360
+from the different biotrimist studies in the mouse and the NHP so on the left hand side again
+
+01:19:37.360 --> 01:19:43.520
+we have the mouse RNA scope staining and then the right hand side is the NHP and so you can see
+
+01:19:43.520 --> 01:19:49.920
+that there is broad distribution definitely different patterns and intensities so we went
+
+01:19:49.920 --> 01:19:59.760
+after going ahead and quantifying that in the next slide. So using a series of AI image analysis
+
+01:19:59.760 --> 01:20:04.560
+we built different algorithms for each of the different brain regions that have the different
+
+01:20:04.560 --> 01:20:10.480
+patterns of distribution and we're able to quantify the percentage of transient RNA expression
+
+01:20:10.480 --> 01:20:16.560
+and then also paired that in subsequent slides looking at the new and positive cells to quantify
+
+01:20:16.560 --> 01:20:21.920
+an estimated level of neuronal transduction. So you can see in the mouse there is significant
+
+01:20:23.600 --> 01:20:31.360
+expression in some regions getting close to 100% at that dose 2 and then in the NHP you can also
+
+01:20:31.360 --> 01:20:37.120
+see a dose dependent increase across the various doses with some regions also at the top doses
+
+01:20:37.120 --> 01:20:44.080
+reaching closer to that 100%. But it's important to note too that we did see that just that the
+
+01:20:44.080 --> 01:20:49.200
+just AV transduction in the mouse is about five fold greater than the NHP when matching at the same
+
+01:20:49.200 --> 01:20:56.080
+dose. However what was nice to see is that the regional patterns are pretty conserved with
+
+01:20:56.080 --> 01:21:00.560
+certain regions such as the ponsentalamus trending to be the highest expression in both the species.
+
+01:21:01.840 --> 01:21:07.760
+So considering pathology is as we're all very familiar with here about 95% between the CINOS
+
+01:21:07.760 --> 01:21:12.800
+TFR and human TFR we know that small sequence differences can make a difference in impacting
+
+01:21:12.800 --> 01:21:19.120
+efficiency but still it's nice that just AV remains one of the few transfer and media
+
+01:21:19.120 --> 01:21:23.680
+BB penetration capsids with translatability across both species which does enable various
+
+01:21:23.680 --> 01:21:30.720
+preclinical workflows. So in conclusion I share with you that just AV is a novel
+
+01:21:30.720 --> 01:21:37.040
+BB penetration capsid modified and developed by JCR Pharmaceuticals that contains miniaturized
+
+01:21:37.040 --> 01:21:42.480
+anti-TFR antibody that provides broad brain distribution and liberty targeting. And just
+
+01:21:42.480 --> 01:21:49.280
+AV recognizes both the synomologous macaque and the human TFR receptors which does enable
+
+01:21:49.280 --> 01:21:54.560
+use of the multiple species in clinical studies. And in the cap selection study we did observe
+
+01:21:54.560 --> 01:21:59.840
+the disputed neuronal transaction as well as spatial analysis does support this as well.
+
+01:22:00.720 --> 01:22:06.000
+Also realize I didn't quite mention yet that we also did some of the pathology reviews and we
+
+01:22:06.000 --> 01:22:13.200
+didn't see any TA associated findings so that was also very encouraging as well. So our ongoing
+
+01:22:13.200 --> 01:22:18.880
+work includes these data sets to characterize bio-distribution in specific sub-neuronal populations
+
+01:22:19.600 --> 01:22:26.080
+which will then support indication selection and enabling pre-IND packages. Thank you.
+
+01:22:27.120 --> 01:22:28.640
+Sorry but I also acknowledge everyone.
+
+01:22:33.120 --> 01:22:37.520
+Yeah really appreciate all the work. Let's take any questions.
+
+01:22:43.920 --> 01:22:48.480
+Hi there nice talk so can you comment on the manufacturability of these these constructs?
+
+01:22:48.960 --> 01:22:53.280
+Do you see any aggregation in your final product? Can you comment on the
+
+01:22:53.280 --> 01:22:58.960
+homogeneity of your final product? Definitely there is some different nuances with novel
+
+01:22:58.960 --> 01:23:05.760
+caps as always independent of you know what size of insert or type but we didn't see any of those
+
+01:23:05.760 --> 01:23:16.880
+problems. Okay thank you. Very nice talk. Good job. So I've got a question for you.
+
+01:23:16.880 --> 01:23:22.320
+When compared to just AV and AV9 how does targeting the labor ratio change?
+
+01:23:23.920 --> 01:23:29.680
+So it's definitely lower in the with the just AAB. Is that your question? Yes. Yeah so we saw
+
+01:23:29.680 --> 01:23:35.280
+liberty targeting. You have the numbers? Regulation relatively? Oh yeah it was it was in the deck.
+
+01:23:38.880 --> 01:23:43.360
+Hi I'm curious if you've mentioned if you've measured the seroactivity of this capsid compared
+
+01:23:43.360 --> 01:23:52.320
+to AV9? It's comparable. Thanks. So and I'm kind of hinted at this at the end but I'm curious if
+
+01:23:52.320 --> 01:23:58.560
+the antibody targeting for the transfer and receptor also changes the nature of cell specificity
+
+01:23:58.560 --> 01:24:03.520
+within the tissues where you didn't have a hundred percent transduction. Do you get any kind of
+
+01:24:03.520 --> 01:24:08.400
+change in cell specificity that you would expect out of some of the serotypes or are you still looking
+
+01:24:08.400 --> 01:24:14.080
+into that? Yeah we're still looking into that but as commented earlier we know that transfer and
+
+01:24:14.080 --> 01:24:19.600
+receptor highly express on neurons and that could also be there could be some differences there as
+
+01:24:19.600 --> 01:24:26.000
+well. Thanks. Hi great talk. I'm going to ask you the question I couldn't ask before to the
+
+01:24:26.000 --> 01:24:33.600
+transfer and receptor the previous talk that is it seems to be a disconnect between the engagement
+
+01:24:33.600 --> 01:24:38.480
+for transcytosis no I'm crossing the barrier and then transduction in other tissues that are known
+
+01:24:38.480 --> 01:24:44.880
+to express the transfer receptor liver muscle is there a mechanistic understanding that you can
+
+01:24:44.880 --> 01:24:49.520
+comment on to to understand this? Yeah I think you're getting at a really big question in the field
+
+01:24:50.240 --> 01:24:54.080
+but I think there's some excellent work out there showing that affinity makes a big difference
+
+01:24:54.880 --> 01:25:00.560
+so you know each even small sequence changes can make a big impact on affinity so I'm sure that
+
+01:25:01.360 --> 01:25:06.000
+is a huge part of it. It's like a sweet spot that is better for transcytosis let's say but
+
+01:25:06.000 --> 01:25:12.000
+but it keeps you away the other tissues that are bigger and may suck up. Exactly yeah and there could
+
+01:25:12.000 --> 01:25:16.000
+also be you know different paths of expression and perhaps even different tissues of different
+
+01:25:16.000 --> 01:25:20.800
+affinities that are needed to get into different regions so I think it's a big field of research
+
+01:25:20.800 --> 01:25:29.040
+so thank you thank you. I have a question for you yeah since it's an antibody-based
+
+01:25:29.920 --> 01:25:34.480
+sort of binding to TFR as I understand that can you comment maybe a little bit on the structural
+
+01:25:35.200 --> 01:25:41.680
+aspects of this binding do you bind the same spot that that transparent binds these receptors or
+
+01:25:41.680 --> 01:25:46.400
+do you bind away from it? The reason I'm asking is because obviously we know there are capsules that
+
+01:25:46.960 --> 01:25:51.760
+bind Sinnoh and don't bind human or vice versa and I'm trying to understand if you sort of nail
+
+01:25:51.760 --> 01:25:58.960
+down that that that sweet spot. Yeah I can't comment on like the exact area but it's conserved
+
+01:25:58.960 --> 01:26:07.440
+between the species so it was taken into account. Okay there are no further questions in the room
+
+01:26:07.440 --> 01:26:18.960
+thank you Samantha. We have the last speaker for the session Rebecca Winkler.
+
+01:26:21.680 --> 01:26:26.800
+Rebecca is going to talk to us about the variable region one of AB9 capsid is a permissive
+
+01:26:26.800 --> 01:26:33.840
+site for peptide insertion whenever you're ready Rebecca. Okay thank you all for coming today and
+
+01:26:33.840 --> 01:26:41.760
+thank you for the opportunity to present our research so as he mentioned this is a more of a
+
+01:26:41.760 --> 01:26:50.960
+proof-of-concept study looking at variable region one. No disclosures. For a quick review
+
+01:26:52.800 --> 01:27:02.000
+the AAV capsid is a three-dimensional sphere made up of 60 subunits of in those the subunits are
+
+01:27:02.960 --> 01:27:09.680
+one of three isoforms VP1, VP2, VP3 that would result from different start sites
+
+01:27:09.680 --> 01:27:18.560
+in the the cap gene and then also coded for in the cap gene is the AAP protein which is not part of
+
+01:27:18.560 --> 01:27:24.480
+the final capsid but it's involved in capsid assembly and that protein is interesting because
+
+01:27:24.480 --> 01:27:32.160
+it's in a one-plus frame shift from the the viral proteins so I think like the jargon is a little
+
+01:27:32.160 --> 01:27:39.600
+confusing because VP1, 2, 3 are viral proteins the VR1 through 9 are variable regions which are
+
+01:27:39.600 --> 01:27:50.800
+different surface regions that would vary between serotypes and when people use like a peptide
+
+01:27:50.800 --> 01:27:55.760
+library or something for capsid engineering typically they will insert the peptide either
+
+01:27:55.760 --> 01:28:03.040
+into variable region eight or variable region four we instead decided to look at variable
+
+01:28:03.040 --> 01:28:09.760
+region one to see if that was going to be a region that could be used for capsid engineering
+
+01:28:10.720 --> 01:28:19.840
+so we're starting with an AV9 and then the so in the box on the left the sequences in blue
+
+01:28:19.840 --> 01:28:25.840
+are the variable region and then the red is the peptide that we inserted and so like I said this is
+
+01:28:25.840 --> 01:28:34.960
+a proof of concept study we used a flag tag peptide because it has a antibody that recognizes it
+
+01:28:35.680 --> 01:28:41.680
+very well and it also has a enzyme that will digest it so we have two different binding
+
+01:28:41.680 --> 01:28:55.520
+partners two different methods that we can use
+

@@ -1,0 +1,584 @@
+WEBVTT
+
+00:00.000 --> 00:07.200
+Our next speaker is Thomas Peacock, who's going to talk to us about navigating the
+
+00:07.200 --> 00:13.000
+avicapsid secret space using virus-specific protein language models.
+
+00:13.000 --> 00:21.840
+Okay, thank you, good morning everyone.
+
+00:21.840 --> 00:27.680
+My name is Thomas Peacock, I am an AI research scientist at Lear Therapeutics and yes, today
+
+00:27.680 --> 00:32.240
+I will introduce some of the work we've been doing developing virus-specific protein language
+
+00:32.240 --> 00:37.040
+models for AAV capsid design.
+
+00:37.040 --> 00:41.840
+At Lear, we are aiming to reimagine viral delivery starting with AAV.
+
+00:41.840 --> 00:48.820
+So we have developed our multi-modal lab-in-the-loop platform navigator to generate AI optimized
+
+00:48.820 --> 00:55.000
+libraries with high impact mutations, not just in a single region, but across the entire
+
+00:55.000 --> 00:57.000
+viral surface.
+
+00:57.000 --> 01:03.280
+These libraries are validated through a combination of our in vivo tissue screens for tropism
+
+01:03.280 --> 01:09.600
+and potency and in vitro assays for immunovasion, with each experiment feeding new data back
+
+01:09.600 --> 01:17.520
+into the navigator platform to retrain and refine our models.
+
+01:17.520 --> 01:21.360
+Navigator itself is a holistic AI platform for viral vectors.
+
+01:21.360 --> 01:26.880
+Some of its core components include our virus-specific DNA models that we use for library generation
+
+01:26.880 --> 01:31.040
+our structural analysis suite that we use for rapid capsid assembly and large scale
+
+01:31.040 --> 01:35.240
+docking screens and our protein language models that I will talk about throughout the rest
+
+01:35.240 --> 01:38.520
+of this talk.
+
+01:38.520 --> 01:43.120
+We've already made some exciting progress using our pipeline and even in our early results
+
+01:43.120 --> 01:48.360
+we have observed clear improvements in both enrichment and tissue detargeting across our
+
+01:48.360 --> 01:52.600
+libraries.
+
+01:52.600 --> 01:57.320
+As a brief introduction to protein language models, these are neural networks that map
+
+01:57.320 --> 02:02.680
+amino acid sequences into high dimensional vector representations to capture the patterns
+
+02:02.680 --> 02:08.800
+that link protein sequence to protein structure and protein function.
+
+02:08.800 --> 02:14.240
+To learn these patterns the model is trained on an objective like masked language modeling
+
+02:14.240 --> 02:19.600
+where it is required to predict amino acids that have been intentionally hidden in the
+
+02:19.600 --> 02:26.280
+input sequence by observing the surrounding sequence context and by iteratively updating
+
+02:26.280 --> 02:33.640
+its own weights the aim is to reduce the difference between its predictions and the true sequence.
+
+02:33.640 --> 02:38.920
+The real beauty of this strategy is that the model is learning relationships between proteins
+
+02:38.920 --> 02:41.760
+using sequence alone.
+
+02:41.760 --> 02:46.240
+This allows us to leverage the millions and millions of protein sequences that we have
+
+02:46.320 --> 02:57.320
+collected as a scientific community to learn across the full diversity of protein space.
+
+02:57.320 --> 03:02.640
+However when it comes to very specific tasks such as AAV engineering this enormous diversity
+
+03:02.640 --> 03:05.280
+becomes something of a double-edged sword.
+
+03:05.280 --> 03:09.280
+Popular protein language models like ESM2 are generalists.
+
+03:09.280 --> 03:15.100
+They are trained on representative sequences across the whole protein universe but they
+
+03:15.140 --> 03:22.460
+lack the dense coverage of AAV sequence variation that is important if we want to model for
+
+03:22.460 --> 03:27.140
+example tissue specificity or immunovasion.
+
+03:27.140 --> 03:32.660
+The plot on the left here shows a sample of the ESM2 training data with the viral sequences
+
+03:32.660 --> 03:38.580
+highlighted in pink and then on the right hand side we have subtracted the background protein
+
+03:38.580 --> 03:44.080
+families that were shown in purple and supplemented the data with additional publicly available
+
+03:44.080 --> 03:48.160
+viral sequences including AAV sequences.
+
+03:48.160 --> 03:53.200
+And it's clear I think that not only are the AAV sequences not present in the ESM2 training
+
+03:53.200 --> 03:58.560
+data but they also largely fall out of distribution of the training data.
+
+03:58.560 --> 04:04.760
+So to address this problem we have retrained the ESM2 architecture using our viral data
+
+04:04.760 --> 04:11.760
+section here to create a specialist model that is tailored to AAV engineering tasks.
+
+04:12.760 --> 04:18.960
+We have benchmarked our specialist model that we are calling Corsair against the public
+
+04:18.960 --> 04:25.160
+protein gym viral data set and we have found that Corsair shown here in green outperforms
+
+04:25.160 --> 04:32.160
+ESM2 in pink across all the metrics that we've computed and for all the model sizes that
+
+04:32.840 --> 04:37.640
+we have tested.
+
+04:37.640 --> 04:42.520
+While it is important for us to validate our models on public benchmarks our main motivation
+
+04:42.520 --> 04:46.680
+is to apply them to our own in vivo data sets.
+
+04:46.680 --> 04:52.040
+We have refined Corsair on results from tissue experiments that we have done in mice and this
+
+04:52.040 --> 05:00.480
+allows us to use Corsair directly to design our new variant libraries.
+
+05:00.480 --> 05:05.960
+To apply a protein language model to our own endpoint tasks like tissue troposome or liver
+
+05:05.960 --> 05:12.960
+avoidance we need to transfer the learned representation into our AAV predictive setting
+
+05:12.960 --> 05:16.880
+and we do that by adapting the pre-trained network that we've previously been talking
+
+05:16.880 --> 05:21.200
+about with our new label data sets.
+
+05:21.200 --> 05:23.760
+The simplest way to do this is through fine tuning.
+
+05:23.760 --> 05:29.720
+This is where we extend the network shown in pink with a task specific head shown here
+
+05:29.720 --> 05:35.760
+in green and this time we continue the training but for a regression or classification objective
+
+05:35.760 --> 05:40.080
+rather than the masked language modeling objective that we discussed earlier and we
+
+05:40.080 --> 05:44.840
+do that using our labeled examples.
+
+05:44.840 --> 05:49.880
+When fine tuning there is a key trade off between speed and performance so allowing
+
+05:49.880 --> 05:54.640
+all of the weights of the model to update offers us maximum flexibility to adapt to
+
+05:54.640 --> 05:59.760
+the new task but it is computationally expensive whereas we can freeze some of these model
+
+05:59.760 --> 06:04.320
+weights to make the model faster and lighter but it will limit the ability of the model
+
+06:04.320 --> 06:06.160
+to adapt.
+
+06:06.160 --> 06:09.920
+We've compared performance when freezing all of the weights, some of the weights and
+
+06:09.920 --> 06:13.700
+none of the weights as part of our benchmarking.
+
+06:13.700 --> 06:17.880
+We've also compared these models to the Laura fine tuning method shown on the right hand
+
+06:17.880 --> 06:25.960
+side here and under Laura we insert small trainable matrices into the model while keeping
+
+06:25.960 --> 06:30.880
+the base network frozen and it's these matrices that update through the training process rather
+
+06:30.880 --> 06:32.600
+than the full network.
+
+06:32.600 --> 06:36.840
+The aim here is essentially to act as a shortcut achieving high performance by keeping the
+
+06:36.840 --> 06:42.200
+training fast and memory efficient.
+
+06:42.200 --> 06:46.080
+The results of this benchmarking showed that while reducing the number of parameter updates
+
+06:46.080 --> 06:51.800
+through freezing does improve training efficiency it generally comes at the cost of performance.
+
+06:51.800 --> 06:56.400
+The plot here shows the effect in one of our heart tissue data sets but we see a similar
+
+06:56.400 --> 07:02.720
+pattern across tissues, across both classification and regression tasks and across different
+
+07:02.720 --> 07:04.920
+model sizes.
+
+07:04.920 --> 07:08.840
+In contrast the Laura fine tuning method tends to preserve the performance close to full
+
+07:08.840 --> 07:13.800
+fine tuning while significantly reducing training time so as a result this is generally
+
+07:13.800 --> 07:20.880
+the approach we have taken for our future model iterations.
+
+07:20.880 --> 07:26.000
+When comparing Corsair and ESM2 on our in-house tissue data sets we observe that Corsair improves
+
+07:26.000 --> 07:28.040
+performance across tissues.
+
+07:28.040 --> 07:32.600
+The radial plot on the right here shows varying spearmint correlations when predicting relative
+
+07:32.600 --> 07:38.240
+transduction across one of our recent tissue libraries and this reflects our targeted library
+
+07:38.240 --> 07:43.960
+design where in this case we intended to probe the fitness landscape of a localized region
+
+07:43.960 --> 07:46.520
+on the capsid surface.
+
+07:46.520 --> 07:50.400
+Across the panel we see a meaningful effect size improvement using Corsair which gives
+
+07:50.400 --> 07:55.560
+us a more stable foundation for modeling transduction and identifying both high and
+
+07:55.560 --> 07:59.440
+low performing candidates.
+
+07:59.440 --> 08:03.680
+While the improvement on the previous slide may appear modest I think it's worth highlighting
+
+08:03.680 --> 08:06.680
+the effect that this can have in large libraries.
+
+08:06.680 --> 08:12.000
+So here is a example, a toy simulation that we ran where we start with an initial pool
+
+08:12.000 --> 08:17.480
+of five million variants which is fairly typical of our current pipeline.
+
+08:17.600 --> 08:24.280
+If we assume that one percent of those are hits and that we have two models we are comparing,
+
+08:24.280 --> 08:30.840
+models A and B that achieve spearmint correlations of 0.50 and 0.52 respectively then when we
+
+08:30.840 --> 08:35.040
+screen the variance with those two models and we select the top 40,000 to proceed to
+
+08:35.040 --> 08:41.320
+experimental testing we find that model B identifies over 400 additional hits compared
+
+08:41.320 --> 08:46.400
+to model A so not an insignificant increase I think for just that small two percent difference
+
+08:46.480 --> 08:51.920
+in spearmint correlation.
+
+08:51.920 --> 08:56.360
+Alongside refining our models with more complete AAV data sets we are continuing to iterate
+
+08:56.360 --> 08:59.640
+on our model design to further improve performance.
+
+08:59.640 --> 09:02.840
+One recent example of this is our multi tissue model.
+
+09:02.840 --> 09:08.520
+So this builds upon the Corsair architecture but here we are training a single model jointly
+
+09:08.520 --> 09:10.200
+across all tissues.
+
+09:10.200 --> 09:14.720
+So this not only improves our training efficiency because now we are just training a single model
+
+09:14.720 --> 09:20.800
+rather than separate models for every single tissue but it also allows the model to use
+
+09:20.800 --> 09:27.920
+cross tissue patterns to hopefully improve its predictive performance.
+
+09:27.920 --> 09:31.720
+The plot on the right here again shows the spearmint correlation when predicting relative
+
+09:31.720 --> 09:37.280
+transduction but this time for our multi task model compared to our single task models in
+
+09:37.280 --> 09:42.120
+green and pink respectively and we found that the current version of our multi task Corsair
+
+09:42.120 --> 09:50.240
+model outperforms our single task models on all tissues except for liver and spleen.
+
+09:50.240 --> 09:55.400
+To sum up our protein language model module is just one component of the broader navigator
+
+09:55.400 --> 10:01.400
+platform for comprehensive modeling of the AAV virus capsid.
+
+10:01.400 --> 10:06.080
+It sits alongside our other models and our library generation tools which together enable
+
+10:06.080 --> 10:11.440
+the design of variant libraries that we validate in vivo and produce the data that drive the
+
+10:11.440 --> 10:17.400
+next generation of models which power our navigator engine.
+
+10:17.400 --> 10:21.560
+To conclude I'd like to thank the rest of the team at Lear, a special thank you to Stephen
+
+10:21.560 --> 10:26.760
+for his work on the modeling, I'll be here at ASGCT for the rest of the week along with
+
+10:26.760 --> 10:31.120
+our co-founders Kilian and Hugh so please do come and find us if you would like to know
+
+10:31.120 --> 10:35.920
+more about the work we're doing or if you are interested in potential partnerships or
+
+10:35.920 --> 10:36.920
+collaborations.
+
+10:36.920 --> 10:39.720
+Enjoy the rest of the conference and thank you very much for listening.
+
+10:41.440 --> 10:47.960
+Thank you very much.
+
+10:47.960 --> 10:51.960
+There are any questions from the audience?
+
+10:51.960 --> 10:54.880
+I have a very naive question.
+
+10:54.880 --> 11:01.680
+I think you did mention the Corsair can also be used for immunization.
+
+11:01.680 --> 11:04.920
+Have you tried any of that and have you put them to test?
+
+11:04.920 --> 11:05.920
+Yes.
+
+11:05.920 --> 11:12.680
+We have generated immune data sets and we do train or we refine the model on those data
+
+11:12.680 --> 11:13.680
+sets.
+
+11:13.680 --> 11:22.160
+We didn't have time to show any of those results today, we have shown them at a previous conference.
+
+11:22.160 --> 11:28.680
+We see kind of a similar performance I think so we are not getting like sort of perfect
+
+11:28.680 --> 11:37.080
+performance but we are identifying candidates that we can take forward to future screens.
+
+11:37.080 --> 11:43.720
+In our most recent immune study we did identify a pool of candidates that had a specific motif
+
+11:43.720 --> 11:53.320
+that was quite interesting where the variants that performed well in immunovasion sort of
+
+11:53.320 --> 11:55.200
+shared this motif.
+
+11:55.200 --> 11:56.200
+Thank you.
+
+11:56.200 --> 11:59.360
+I have a lot of questions from the audience now.
+
+11:59.360 --> 12:02.360
+Hi, I'm Jason from Sanofi, great talk.
+
+12:02.360 --> 12:07.840
+Could you reiterate some more on the training data used for training Corsair specifically
+
+12:07.840 --> 12:09.880
+for the AAV variants?
+
+12:09.880 --> 12:14.480
+Were they like all different AAV serotypes, were they all like insertions or just like
+
+12:14.480 --> 12:18.320
+slightly mutated versions of a specific serotype?
+
+12:18.320 --> 12:28.120
+So for the pre-training step which uses the huge number of unannotated sequences, ESM2
+
+12:28.120 --> 12:37.040
+uses the UNRF50 data set which essentially clusters protein sequences so you miss out
+
+12:37.040 --> 12:43.040
+on a lot of virus sequences that share similar features.
+
+12:43.040 --> 12:47.280
+So part of our data set has been just general viruses, both double stranded and single
+
+12:47.280 --> 12:54.720
+stranded viruses to keep our data set somewhat diverse rather than just AAV sequences.
+
+12:54.720 --> 13:02.360
+We have added all of the AAV wild type serotypes into the data set and then we've really looked
+
+13:02.360 --> 13:08.840
+for as much AAV data as we can find so some of the data is, well a lot of the data is
+
+13:08.840 --> 13:13.600
+AAV2 and AAV9 just because that's the sort of data that's available.
+
+13:13.600 --> 13:17.600
+We are working in AAV9 at the moment so that's sort of fine for us.
+
+13:17.600 --> 13:20.840
+How this would translate to other serotypes in the future is kind of an open question
+
+13:20.840 --> 13:21.840
+for us.
+
+13:21.840 --> 13:26.120
+Hi, thanks for the talk.
+
+13:26.120 --> 13:30.720
+I was interested in your plot where you showed that AAV lives in a different part of the
+
+13:30.720 --> 13:33.280
+latent space than the other viral sequences.
+
+13:33.280 --> 13:36.840
+There was still a lot of structure and I was wondering if that recapitulated what we know
+
+13:36.840 --> 13:41.400
+about AAV serotypes, phylogenetic relationships or even like species tropism.
+
+13:41.400 --> 13:53.720
+Yes, so I think that the way that you plot this is kind of not misleading but like I
+
+13:53.720 --> 14:02.440
+think this was not really the latent space, what we did was we split all the sequences
+
+14:02.440 --> 14:08.960
+by camers and then sort of plotted based on frequency of camers here so I think that does
+
+14:08.960 --> 14:14.160
+mean that you see this kind of distributed pattern for the AAV where you have a lot of
+
+14:14.160 --> 14:18.440
+single mutations that's spreading out the data.
+
+14:18.440 --> 14:25.280
+The majority of the ESM2 training data, the viral population is double stranded DNA viruses
+
+14:25.280 --> 14:29.360
+so I think this is why it clusters quite heavily in the center and the AAV sort of spreads
+
+14:29.360 --> 14:33.640
+out around the sides.
+
+14:33.640 --> 14:41.720
+But yes, what we didn't want to do was to run all of this data through ESM2 to plot the
+
+14:41.720 --> 14:47.800
+AAV data compared to the ESM2 data because then you've, I mean it's very difficult to
+
+14:47.800 --> 14:53.080
+tell whether that, it falls out of distribution or not when doing that.
+
+14:53.080 --> 14:57.760
+Hi, Dan Cox, thank you for the talk.
+
+14:57.760 --> 15:01.440
+One question, when you said you fine-tuned the model after the mass language modeling
+
+15:01.440 --> 15:08.320
+on specific tasks, you were meaning transduction tasks, a series of tasks?
+
+15:08.320 --> 15:12.280
+Right, yeah, so we have calculated various different endpoints.
+
+15:12.280 --> 15:19.880
+The example I showed here is we take the number of variants that we find in just the virus
+
+15:19.880 --> 15:25.440
+before it goes into tissue and then we check the log fold change after we sequenced the
+
+15:25.440 --> 15:30.160
+tissue and then compare it relative to wild type.
+
+15:30.160 --> 15:38.120
+Would you try it on multiple tissues at once?
+
+15:38.120 --> 15:42.600
+So we have done that for the multitask model, we use all the data at once there.
+
+15:42.600 --> 15:48.080
+We give the model information about which tissue that data has come from with the idea
+
+15:48.080 --> 15:52.760
+being that if it has that small amount of information it might be able to compare sequences
+
+15:52.760 --> 15:55.920
+across tissues at the same time.
+
+15:55.920 --> 16:01.480
+I haven't tried blindly using all of the data from all the tissues sort of unlabeled
+
+16:01.480 --> 16:02.480
+as one big data set.
+
+16:02.480 --> 16:04.600
+I think it would be quite interesting to try though.
+
+16:04.600 --> 16:06.240
+I see, thank you.
+
+16:06.240 --> 16:08.120
+Thank you.
+
+16:08.120 --> 16:11.760
+Thank you, Andrew.
+
+16:11.760 --> 16:14.920
+Thank you very much.
+
+16:14.920 --> 16:20.360
+So, this is the last one.
+

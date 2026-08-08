@@ -1,0 +1,881 @@
+WEBVTT
+
+00:00.000 --> 00:01.560
+This is transduction.
+
+00:01.560 --> 00:04.320
+So basically, how to get into the blood-brain barrier.
+
+00:04.320 --> 00:06.080
+Thank you, Alex.
+
+00:06.080 --> 00:07.560
+Thank you so much for that warm welcome,
+
+00:07.560 --> 00:08.680
+and good morning, everyone.
+
+00:08.680 --> 00:10.600
+My name is Xin-Hong Alex Chung,
+
+00:10.600 --> 00:12.280
+and I'm from the Grotto Narrow Lab,
+
+00:12.280 --> 00:13.800
+and I'm excited to share with you
+
+00:13.800 --> 00:17.440
+my talk titled CUNY-AEV Interactions with AVR
+
+00:17.440 --> 00:20.520
+and LRP6 Toggle Specters Between Vascular
+
+00:20.520 --> 00:22.200
+and Neuron Selective Tropism.
+
+00:23.760 --> 00:25.520
+A lot of the recent efforts in the field
+
+00:25.520 --> 00:27.760
+have focused on identifying receptors
+
+00:27.840 --> 00:30.200
+that are being mediated by AVs
+
+00:30.200 --> 00:33.200
+for effective transportation across the BBB.
+
+00:33.200 --> 00:36.640
+There are receptors such as L6A for PHPB,
+
+00:36.640 --> 00:41.640
+LRP6 for AV9X1, and Car4 for 9P31, amongst others.
+
+00:44.520 --> 00:46.920
+And even more recently, a lot of focus
+
+00:46.920 --> 00:49.800
+has been garnered towards targeting these receptors
+
+00:49.800 --> 00:51.680
+for more effective engineering
+
+00:51.680 --> 00:53.560
+so that we have increased predictability
+
+00:53.560 --> 00:56.800
+when we're thinking about future therapeutics.
+
+00:56.800 --> 00:58.520
+As we're going into this landscape
+
+00:58.520 --> 01:00.320
+of thinking about future therapeutics,
+
+01:00.320 --> 01:01.720
+I believe that there is something
+
+01:01.720 --> 01:03.360
+that we should also consider,
+
+01:03.360 --> 01:05.920
+which is how binding affinity to these receptors
+
+01:05.920 --> 01:07.280
+might play an important factor
+
+01:07.280 --> 01:10.200
+when we're thinking about predicting tropism.
+
+01:10.200 --> 01:11.960
+Work that's done in the antibody
+
+01:11.960 --> 01:13.840
+and nanobody engineering field
+
+01:13.840 --> 01:16.560
+has shown that maybe there could be a Goldilocks zone
+
+01:16.560 --> 01:18.360
+for binding affinity to a receptor
+
+01:18.360 --> 01:21.080
+for effective transactosis across the BBB.
+
+01:22.400 --> 01:24.960
+In work done by Bien Nai et al,
+
+01:24.960 --> 01:27.520
+they show that some engineered antibodies
+
+01:27.520 --> 01:29.160
+that target transferrin receptors
+
+01:29.160 --> 01:31.360
+with too high of a binding affinity
+
+01:31.360 --> 01:33.920
+ends up getting stuck in these endothelial cells
+
+01:33.920 --> 01:37.280
+and don't actually make it across effectively through the BBB.
+
+01:37.280 --> 01:40.480
+Conversely, those binders that are too weak
+
+01:40.480 --> 01:42.360
+to bind to transferrin receptor
+
+01:42.360 --> 01:44.760
+actually never made it through the BBB
+
+01:44.760 --> 01:47.200
+because perhaps they were being outcompeted
+
+01:47.200 --> 01:50.280
+by endogenous ligands against the transferrin receptor.
+
+01:50.280 --> 01:54.240
+And thus, they found that this medium zone
+
+01:54.240 --> 01:57.560
+of moderate binding to the transferrin receptor
+
+01:57.560 --> 01:59.520
+was the optimal binding affinity
+
+01:59.520 --> 02:02.920
+to help for effective transactosis across the BBB.
+
+02:02.920 --> 02:06.040
+And we wondered if the same principle could apply to AAVs
+
+02:06.040 --> 02:09.080
+as it's trying to cross the blood-brain barrier as well.
+
+02:09.080 --> 02:11.080
+And for this, I'm focusing on predominantly
+
+02:11.080 --> 02:14.000
+two receptors, AAVR and LRP6.
+
+02:16.840 --> 02:19.120
+And we're also looking at our engineered vector,
+
+02:19.120 --> 02:22.080
+AAV9X1, and how we can start engineering
+
+02:22.080 --> 02:24.000
+future variants of this vector
+
+02:24.000 --> 02:26.720
+in hopes that it can become more neurotropic.
+
+02:26.720 --> 02:30.200
+AAV9X1 was a previously engineered vector from our lab
+
+02:30.200 --> 02:34.160
+which targets AAVR and LRP6 for effective transduction
+
+02:34.160 --> 02:38.720
+of endothelial cells, specifically in the CNS of mouse
+
+02:38.720 --> 02:40.360
+when they're delivered systemically.
+
+02:41.400 --> 02:44.480
+And we wondered if this targeting of endothelial cells
+
+02:44.480 --> 02:49.480
+is because of the fact that AAV9X1 is binding too tightly
+
+02:49.800 --> 02:52.800
+to AAVR and LRP6 and ended up getting stuck
+
+02:52.800 --> 02:54.280
+in these endothelial cells.
+
+02:54.280 --> 02:57.400
+And therefore, by weakening its interaction to AAVR
+
+02:57.400 --> 03:00.080
+and LRP6, could we see more effective transduction
+
+03:06.080 --> 03:07.880
+of the cytosis across the BBB?
+
+03:10.260 --> 03:12.760
+So first, I wanted to go and independently
+
+03:12.760 --> 03:14.680
+weaken its interaction with AAVR
+
+03:14.680 --> 03:17.080
+in hopes to create a more neurotropic vector.
+
+03:17.080 --> 03:20.280
+And this stem from recent work that was published in our lab
+
+03:20.280 --> 03:22.080
+would showcase that KAPI-10,
+
+03:22.080 --> 03:24.760
+which is a further evolved vector from HPEB,
+
+03:24.760 --> 03:26.760
+which modified the VR4 loop
+
+03:26.760 --> 03:29.160
+to have further detargeting from PKD2,
+
+03:29.160 --> 03:31.240
+the binding domain of AAVR.
+
+03:31.240 --> 03:33.680
+This change actually was the reason why
+
+03:33.680 --> 03:36.720
+there was increased specificity in targeting neurons
+
+03:36.720 --> 03:40.560
+in the CNS of mice when this vector, KAPI-10,
+
+03:40.560 --> 03:42.640
+was delivered systemically.
+
+03:42.640 --> 03:45.500
+And we wondered if by introducing this KAPI-10 loop
+
+03:45.500 --> 03:49.640
+into AAV9X1, we could also have this drastic decrease
+
+03:49.640 --> 03:51.640
+in its binding affinity to AAVR.
+
+03:51.640 --> 03:53.680
+Unfortunately, by just simply substituting
+
+03:53.680 --> 03:57.480
+the same VR4 loop onto AAV9X1,
+
+03:57.480 --> 04:01.280
+did not dramatically decrease its binding affinity to AAVR.
+
+04:01.280 --> 04:03.240
+And therefore, we need to come up with novel ways
+
+04:03.240 --> 04:05.600
+to detarget from AAVR.
+
+04:05.600 --> 04:07.360
+And luckily, we were able to recently
+
+04:07.360 --> 04:10.140
+solve the cryo-EM structure of its interaction,
+
+04:10.140 --> 04:13.860
+AAV9X1's interaction with AAVR.
+
+04:13.860 --> 04:16.520
+And we were able to identify key residues
+
+04:16.520 --> 04:19.680
+that might be responsible for its binding to AAVR.
+
+04:19.680 --> 04:24.080
+And by targeting these locuses for effective rational
+
+04:24.080 --> 04:27.480
+engineering, we were able to create this beta mutation.
+
+04:27.480 --> 04:30.680
+And by introducing this beta mutation to AAV9X1,
+
+04:30.680 --> 04:32.640
+we were able to see a dramatic decrease
+
+04:32.640 --> 04:35.600
+in its binding affinity to AAVR.
+
+04:35.600 --> 04:38.360
+And when we delivered this vector, AAV9X1 beta,
+
+04:38.360 --> 04:40.720
+that we're calling, into mice systemically,
+
+04:40.720 --> 04:42.960
+we were able to see that this vector became
+
+04:42.960 --> 04:46.480
+a pretty specific vector in targeting neurons.
+
+04:46.480 --> 04:49.360
+And I think many of you guys might be thinking that AAV9X1
+
+04:49.360 --> 04:52.560
+beta is a pretty bad vector when it's targeting neurons
+
+04:52.560 --> 04:55.360
+altogether, because it's not targeting that many cells.
+
+04:55.360 --> 04:58.760
+And I thought the same thing when I saw these vectors.
+
+04:58.760 --> 05:02.040
+And so I wanted to play around with the second receptor, LRP6.
+
+05:02.040 --> 05:04.840
+And to see if, by weakening LRP6's interaction
+
+05:04.840 --> 05:08.480
+with AAV9X1, we could have a more increased potency
+
+05:08.480 --> 05:10.880
+when it comes to targeting neurons.
+
+05:10.880 --> 05:14.200
+However, unlike AAVR and AAV9X1,
+
+05:14.200 --> 05:16.120
+we don't have a solved cryoenium structure
+
+05:16.120 --> 05:18.840
+to identify the specific loci.
+
+05:18.840 --> 05:20.720
+And for that, we actually ended up
+
+05:20.720 --> 05:23.920
+using a more traditional method by having a scanning tumor
+
+05:23.920 --> 05:27.960
+library across a VR8 loop of AAV9X1
+
+05:27.960 --> 05:30.480
+to create mutants that could have various binding affinities
+
+05:30.480 --> 05:31.920
+to LRP6.
+
+05:31.920 --> 05:36.440
+We subjected this library into a magnetic bead conjugated E1,
+
+05:36.440 --> 05:39.440
+E2 subdomains of LRP6, and pulled them down.
+
+05:39.440 --> 05:43.120
+And we were able to analyze the enrichment values
+
+05:43.120 --> 05:47.560
+of the capsits that bound most tightly to LRP6
+
+05:47.560 --> 05:49.240
+and those that did not.
+
+05:49.240 --> 05:52.560
+And as expected, we were able to see that AAV9X1 is
+
+05:52.560 --> 05:54.360
+near the top of the ranking profile,
+
+05:54.360 --> 05:57.840
+because we know that AAV9X1 binds with LRP6.
+
+05:57.840 --> 06:00.480
+And conversely, AAV9 tends to be at the bottom
+
+06:00.480 --> 06:01.920
+of this ranking profile.
+
+06:01.920 --> 06:03.920
+And so you guys can think of this ranking profile
+
+06:03.920 --> 06:07.440
+as a proxy for binding affinities towards LRP6.
+
+06:07.440 --> 06:09.160
+And when we delivered some of the vectors
+
+06:09.160 --> 06:11.720
+that were more similar in ranking to AAV9X1,
+
+06:11.720 --> 06:16.240
+such as UX5, into my systemically,
+
+06:16.240 --> 06:18.440
+we were able to see that its transaction profile is
+
+06:18.440 --> 06:20.520
+predominantly still endothelial.
+
+06:20.520 --> 06:22.520
+Conversely, variants such as UX1,
+
+06:22.520 --> 06:24.680
+which are similar in ranking to AAV9,
+
+06:24.680 --> 06:27.400
+and very little transaction altogether.
+
+06:27.400 --> 06:30.920
+And when we looked at vectors with higher ranking than UX5
+
+06:30.920 --> 06:34.040
+or AAV9X1, we saw that it is still pretty endothelial
+
+06:34.040 --> 06:35.560
+in its targeting.
+
+06:35.560 --> 06:37.360
+However, when we started to look at variants
+
+06:37.360 --> 06:40.440
+that were in between this AAV9X1's binding affinity
+
+06:40.440 --> 06:42.680
+and AAV9, we were able to see vectors
+
+06:42.680 --> 06:45.640
+that are starting to transcytose across the BBB
+
+06:45.640 --> 06:48.440
+and start targeting some of these aster sites.
+
+06:48.440 --> 06:50.880
+And I also thought that this vector,
+
+06:50.880 --> 06:52.600
+as many of you guys are thinking right now,
+
+06:52.600 --> 06:53.840
+is a pretty messy vector.
+
+06:53.840 --> 06:55.680
+It is permeating through the BBB,
+
+06:55.680 --> 06:58.000
+but it's not at all specific in terms of the tropism
+
+06:58.000 --> 06:59.760
+that we would want to see.
+
+06:59.760 --> 07:01.880
+And so we wondered by combining these insights
+
+07:01.880 --> 07:04.320
+that we gained from understanding the interaction
+
+07:04.320 --> 07:06.560
+with AAVR and LRP6,
+
+07:06.560 --> 07:10.120
+we could see a highly potent neurotropic vector.
+
+07:10.120 --> 07:12.960
+And just to summarize, starting from AAV9X1,
+
+07:12.960 --> 07:15.800
+when we weakened independently just AAVR
+
+07:15.800 --> 07:17.640
+by introducing this beta mutation,
+
+07:17.640 --> 07:20.040
+we saw a sparsely neuronal vector.
+
+07:21.480 --> 07:23.320
+And then when we created this vector
+
+07:23.320 --> 07:25.280
+with weakened interaction with LRP6,
+
+07:25.280 --> 07:27.280
+but not per se with AAVR,
+
+07:27.280 --> 07:29.440
+we were able to get this more permeable vector
+
+07:29.440 --> 07:31.160
+that goes across the BBB.
+
+07:32.160 --> 07:34.920
+And so we wondered by introducing the same B10 mutation
+
+07:34.920 --> 07:37.360
+that we introduced to AAV9X1,
+
+07:37.360 --> 07:39.480
+could we see a strongly neuronal vector?
+
+07:40.400 --> 07:44.120
+And when we did introduce this beta mutation to UX13,
+
+07:44.120 --> 07:46.880
+we were able to see this increased potency
+
+07:46.880 --> 07:48.040
+when targeting neurons,
+
+07:48.040 --> 07:51.240
+and it is predominantly transusing only neurons
+
+07:51.240 --> 07:52.640
+when quantified.
+
+07:55.080 --> 07:57.400
+Overall, just to summarize my talk,
+
+07:57.400 --> 08:00.040
+I was able to start playing around independently
+
+08:00.040 --> 08:02.880
+these two dials, AAVR binding affinity
+
+08:02.880 --> 08:04.760
+and LRP6 binding affinity
+
+08:04.760 --> 08:08.040
+to get to looking at how these binding affinities
+
+08:08.040 --> 08:12.040
+are determining its tropism altogether.
+
+08:12.040 --> 08:14.960
+And I hope we can take this into consideration
+
+08:14.960 --> 08:17.400
+as we're going into future therapeutics research
+
+08:17.400 --> 08:19.360
+and trying to have more predictable outcomes
+
+08:19.360 --> 08:20.780
+with our engineering efforts.
+
+08:20.780 --> 08:21.620
+Thank you so much,
+
+08:21.620 --> 08:23.680
+and I open the floor up for questions.
+
+08:23.680 --> 08:24.520
+Thank you.
+
+08:24.520 --> 08:25.360
+Thank you.
+
+08:30.720 --> 08:32.240
+Questions from the audience?
+
+08:33.880 --> 08:36.220
+Hi.
+
+08:36.220 --> 08:41.220
+Did you look at vector genomes in peripheral organs,
+
+08:42.160 --> 08:44.200
+especially at the early time points?
+
+08:45.120 --> 08:46.480
+We analyzed these animals
+
+08:46.480 --> 08:48.840
+after three to four weeks post-delivery,
+
+08:48.840 --> 08:51.280
+so we didn't really look at really early time points
+
+08:51.280 --> 08:52.560
+after delivery.
+
+08:52.560 --> 08:54.600
+But an important point that you bring up
+
+08:54.600 --> 08:56.840
+is the peripheral organs,
+
+08:56.840 --> 08:58.080
+something unique that we saw
+
+08:58.080 --> 09:00.640
+with introducing this beta mutation
+
+09:00.640 --> 09:02.960
+into these AAV variants,
+
+09:02.960 --> 09:04.200
+was that we were starting to see
+
+09:04.200 --> 09:06.640
+increased transduction of the peripheral nervous system
+
+09:06.640 --> 09:07.480
+as well.
+
+09:07.480 --> 09:09.920
+You guys can see pretty much in the spring sum
+
+09:09.920 --> 09:13.040
+as one representation of how it would perform
+
+09:13.040 --> 09:14.360
+like the other peripheral vectors
+
+09:14.360 --> 09:15.680
+that were produced from our lab.
+
+09:15.680 --> 09:17.880
+And when we looked at organs such as the distal colon,
+
+09:17.880 --> 09:20.600
+we saw increased transduction profile there as well.
+
+09:20.600 --> 09:21.480
+Okay.
+
+09:21.480 --> 09:23.600
+That's true both on the transduction level
+
+09:23.600 --> 09:27.720
+as well as on the vector genome per dipole genome.
+
+09:27.720 --> 09:29.460
+We didn't do analysis
+
+09:29.460 --> 09:32.260
+about quantifying the number of genomes that were found.
+
+09:32.260 --> 09:35.060
+We currently are at the stage of just looking
+
+09:35.060 --> 09:37.260
+at the protein level of expression.
+
+09:37.260 --> 09:38.180
+Okay, thanks.
+
+09:41.900 --> 09:43.540
+Thank you, very interesting talk.
+
+09:44.540 --> 09:46.260
+I would like to know what your thoughts
+
+09:46.260 --> 09:50.460
+are on the actual role of AVR in like,
+
+09:50.460 --> 09:53.180
+why do you see this difference in cell targeting?
+
+09:53.180 --> 09:56.340
+Given that AVR should be expressed in every cell,
+
+09:56.340 --> 09:58.820
+and there's even some indication
+
+09:58.820 --> 10:00.660
+that it might be more a sorting signal
+
+10:00.660 --> 10:03.420
+than the actual entry receptor?
+
+10:03.420 --> 10:06.940
+I think that's a really important question to consider.
+
+10:06.940 --> 10:08.540
+Frankly, I don't quite understand
+
+10:08.540 --> 10:09.860
+what's happening here either,
+
+10:09.860 --> 10:11.980
+but I know there are a lot of really good talks
+
+10:11.980 --> 10:15.260
+that are happening around the role of AVR in transduction.
+
+10:15.260 --> 10:18.060
+I think AVR in general is very critical
+
+10:18.060 --> 10:20.020
+for transduction altogether.
+
+10:20.020 --> 10:22.460
+As many of you guys know, knockouts of AVR
+
+10:22.460 --> 10:24.500
+might as completely diminishes
+
+10:25.340 --> 10:27.780
+systemic delivered AV transduction.
+
+10:27.780 --> 10:31.500
+And I think these vectors are so definitely binding to AVR,
+
+10:31.500 --> 10:34.020
+but having this Goldilocks zone of binding
+
+10:34.020 --> 10:37.460
+maybe perhaps allows AVR to play more of a trafficking role
+
+10:37.460 --> 10:39.740
+rather than more of a sticky web
+
+10:39.740 --> 10:42.020
+for targeting off-target regions
+
+10:42.020 --> 10:45.060
+of other organs that we don't care about.
+
+10:45.060 --> 10:48.380
+Right, so you think you still transduce
+
+10:48.380 --> 10:49.740
+what you enter astrocytes,
+
+10:49.740 --> 10:52.580
+but they don't express them with your new vectors?
+
+10:52.580 --> 10:54.740
+We haven't looked at the genomic level yet,
+
+10:54.740 --> 10:57.380
+and I think we're hoping to go with methods
+
+10:57.380 --> 11:00.580
+that were developed such as Spectre or AV Zombie
+
+11:00.580 --> 11:02.220
+to look into the genomic level as well
+
+11:02.220 --> 11:04.300
+to see where these vectors are actually ending up.
+
+11:04.300 --> 11:06.620
+But at the current moment, we don't really know.
+
+11:06.620 --> 11:07.780
+Okay, thank you.
+
+11:13.260 --> 11:14.580
+Could I ask you a quick question?
+
+11:14.580 --> 11:15.620
+Oh, yes, of course.
+
+11:15.620 --> 11:19.020
+So if you're talking about modulating
+
+11:19.020 --> 11:22.140
+and thinking about the Goldilocks effect,
+
+11:22.140 --> 11:27.140
+analytically, how would you come to this Goldilocks
+
+11:27.660 --> 11:29.860
+composition, so...
+
+11:29.860 --> 11:30.700
+I think that's a really...
+
+11:30.700 --> 11:32.100
+And also another thing,
+
+11:32.100 --> 11:35.260
+are you looking chanced into one species,
+
+11:35.260 --> 11:36.740
+I mean, one strain of mice,
+
+11:36.740 --> 11:39.540
+or have you looked into Balbsey as well,
+
+11:39.540 --> 11:44.540
+because we have a lot of precedents regarding C57 BL6,
+
+11:44.580 --> 11:47.740
+you know, having a very different tropism
+
+11:47.740 --> 11:50.500
+versus Balbsey, we're being very different.
+
+11:50.500 --> 11:52.620
+Definitely, so regarding your first point
+
+11:52.620 --> 11:55.300
+about how are we defining the Goldilocks zone,
+
+11:55.300 --> 11:56.500
+we're actually hoping to take more
+
+11:56.540 --> 12:00.620
+of a molecular approach by determining the KD values
+
+12:00.620 --> 12:04.580
+of their binding interactions using species such as BLI.
+
+12:05.660 --> 12:08.580
+And by doing so, we can start to have this defined region
+
+12:08.580 --> 12:13.220
+of the preferred optimal rate of binding of virtual cytosis.
+
+12:13.220 --> 12:15.220
+As for the second question, I think it's really important
+
+12:15.220 --> 12:17.860
+because I work in non-traditional organisms as well.
+
+12:18.940 --> 12:23.140
+Full disclosure, these animals are C57s that we tested them in.
+
+12:23.140 --> 12:26.020
+But interestingly, LRP6, if you guys don't know,
+
+12:26.020 --> 12:29.300
+is a highly conserved receptor with over 98%
+
+12:29.300 --> 12:31.860
+sequence similarity between mice and humans.
+
+12:31.860 --> 12:35.500
+And so, hopefully, the same patterns do hold true
+
+12:35.500 --> 12:36.900
+in other strains of mice as well,
+
+12:36.900 --> 12:38.380
+but we definitely do have to test them
+
+12:38.380 --> 12:40.460
+and be able to see if this is true.
+
+12:40.460 --> 12:43.580
+Yeah, and perhaps you're going up to NHBs as well,
+
+12:43.580 --> 12:46.980
+the next two. That'll be really exciting if we can.
+
+12:46.980 --> 12:48.500
+All right, thank you very much.
+
+12:48.500 --> 12:49.340
+Thank you so much.
+
+12:51.340 --> 12:52.180
+Thank you.
+
+12:52.180 --> 12:53.020
+Thank you.
+
+12:53.020 --> 12:53.860
+Thank you.
+
+12:53.860 --> 12:54.700
+Thank you.
+
+12:54.700 --> 12:55.540
+Thank you.
+
+12:55.540 --> 12:56.380
+So I'm...
+

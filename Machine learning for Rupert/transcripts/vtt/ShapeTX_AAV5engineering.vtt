@@ -1,0 +1,494 @@
+WEBVTT
+
+00:00.000 --> 00:05.080
+which recognizes the transfer interceptor of both humans
+
+00:05.080 --> 00:08.080
+and NHPs to cross the blood-brain barrier in vivo.
+
+00:08.080 --> 00:09.880
+Thank you, Andrew.
+
+00:09.880 --> 00:11.040
+Thank you.
+
+00:11.040 --> 00:11.840
+All right.
+
+00:11.840 --> 00:12.840
+My name is Andrew Dunn.
+
+00:12.840 --> 00:14.280
+I'm from Shape Therapeutics.
+
+00:14.280 --> 00:15.920
+Thank you for attending this talk.
+
+00:15.920 --> 00:16.920
+And let's get started.
+
+00:21.480 --> 00:22.480
+All right.
+
+00:22.480 --> 00:24.960
+There we go.
+
+00:24.960 --> 00:26.640
+Maybe.
+
+00:26.640 --> 00:27.120
+OK.
+
+00:27.120 --> 00:29.560
+Forward-looking statements and all that.
+
+00:29.560 --> 00:30.200
+OK.
+
+00:30.200 --> 00:33.920
+So at Shape Therapeutics, one of the main pillars
+
+00:33.920 --> 00:36.600
+of the company is on capsid development.
+
+00:36.600 --> 00:38.640
+So I've been working over the last few years
+
+00:38.640 --> 00:41.920
+to develop CNS targeting capsids following systemic
+
+00:41.920 --> 00:43.240
+administration.
+
+00:43.240 --> 00:45.480
+And our platform uses AAV5.
+
+00:45.480 --> 00:48.280
+And so we employ direct mutagenesis
+
+00:48.280 --> 00:50.160
+rather than loop insertion.
+
+00:50.160 --> 00:53.240
+And so we directly mutate capsids of loop 8.
+
+00:53.240 --> 00:54.600
+And these are around the residues
+
+00:54.600 --> 00:56.960
+that were previously identified by the McKinnigroup
+
+00:56.960 --> 00:59.320
+to interact with sialic acid.
+
+00:59.360 --> 01:01.000
+Under the theory that you could probably,
+
+01:01.000 --> 01:04.520
+if you mutate these regions, retarget from sialic acid
+
+01:04.520 --> 01:07.640
+to another receptor that hopefully is of interest
+
+01:07.640 --> 01:09.640
+and benefit to your program.
+
+01:09.640 --> 01:12.760
+So using this method, we previously reported on a capsid
+
+01:12.760 --> 01:17.160
+that we call DB1, or deep brain 1.
+
+01:17.160 --> 01:20.400
+And then with a relatively moderate dose of 1E13 viral
+
+01:20.400 --> 01:23.320
+genomes per kilogram, the cinemologous macaque,
+
+01:23.320 --> 01:26.760
+we were able to use and deliver our RNA fix payload
+
+01:26.760 --> 01:30.840
+and achieve fairly significant on target editing
+
+01:30.840 --> 01:35.360
+of our target transcript for our Parkinson's disease program,
+
+01:35.360 --> 01:38.400
+specifically in deep brain structures of interest to us,
+
+01:38.400 --> 01:40.360
+like the substantia nigra.
+
+01:40.360 --> 01:43.120
+So now that you have a fairly interesting biologic
+
+01:43.120 --> 01:45.640
+that you want to take forward before deploying
+
+01:45.640 --> 01:48.520
+copious amounts of capital on clinical trials,
+
+01:48.520 --> 01:50.440
+it's probably helpful to ask the question
+
+01:50.440 --> 01:53.320
+whether or not it might work in humans.
+
+01:53.320 --> 01:56.480
+And so to that end, it's important to know
+
+01:56.480 --> 02:01.600
+what the primary receptor is that is mediating your capsid.
+
+02:01.600 --> 02:06.440
+So over the last year, I've been onboarding and optimizing
+
+02:06.440 --> 02:09.960
+an LCMS technique to try to identify
+
+02:09.960 --> 02:11.760
+the target of these novel capsids.
+
+02:11.760 --> 02:17.160
+And so again, these capsids, they were mutated randomly,
+
+02:17.160 --> 02:21.200
+so we did not start a priori with a particular target in mind.
+
+02:21.200 --> 02:23.120
+And so this is just a simple technique.
+
+02:23.120 --> 02:26.640
+You grind up your tissue, extract your protein,
+
+02:26.640 --> 02:30.280
+add your AAV, as bait, pull down your AAV, purify the protein,
+
+02:30.280 --> 02:32.080
+send it off for LCMS, and then try
+
+02:32.080 --> 02:36.160
+to identify the target from the soup that comes out.
+
+02:36.160 --> 02:39.880
+And LCMS is a very powerful technique.
+
+02:39.880 --> 02:42.280
+It's very sensitive, but it can also be very dirty.
+
+02:42.280 --> 02:44.280
+And so you achieve a lot of hits.
+
+02:44.280 --> 02:46.120
+Now, this is an interaction assay.
+
+02:46.120 --> 02:47.480
+It's not a functional assay, so you
+
+02:47.480 --> 02:49.600
+don't know if any of these hits are actually
+
+02:49.600 --> 02:51.920
+allowing for an enhanced functional transduction
+
+02:51.920 --> 02:53.480
+when expressed.
+
+02:53.480 --> 02:55.880
+So we identified hundreds of candidates,
+
+02:55.880 --> 02:57.480
+then filtered those down rationally
+
+02:57.480 --> 02:59.280
+based upon what might act as a receptor,
+
+02:59.280 --> 03:02.640
+to have a transmembrane domain as a GPI anchored.
+
+03:02.640 --> 03:05.360
+And over all of these hits, where we then
+
+03:05.360 --> 03:08.240
+delivered a luciferase transgene in vitro,
+
+03:08.240 --> 03:10.000
+we cloned all of these hits individually
+
+03:10.000 --> 03:12.240
+and expressed them across text and chose,
+
+03:12.240 --> 03:14.520
+and then delivered DB1, transduced to DB1,
+
+03:14.520 --> 03:16.480
+transduced with another shape capsid,
+
+03:16.680 --> 03:19.840
+CNS tropic shape capsid, as well as wild type 5.
+
+03:19.840 --> 03:23.360
+And there was one receptor at the very last plate
+
+03:23.360 --> 03:27.080
+that we ran that provided significant enhancement
+
+03:27.080 --> 03:28.600
+of functional transduction in vitro
+
+03:28.600 --> 03:31.000
+that was specific and that was unique to DB1,
+
+03:31.000 --> 03:34.240
+and that was transferrin receptor.
+
+03:34.240 --> 03:36.720
+And so with that in mind, or with that in hand,
+
+03:36.720 --> 03:38.200
+you can start to ask the question,
+
+03:38.200 --> 03:40.840
+does it have really any chance to work in humans?
+
+03:40.840 --> 03:43.040
+If we think that transferrin receptor is the primary
+
+03:43.040 --> 03:45.040
+receptor that is mediating our method of action
+
+03:45.040 --> 03:46.680
+and crossing the blood-brain barrier,
+
+03:46.680 --> 03:48.320
+does it interact with the human orthologs?
+
+03:48.320 --> 03:51.520
+So from previous studies, that we know that DB1 works
+
+03:51.520 --> 03:53.760
+fairly well in Old World monkeys in African green
+
+03:53.760 --> 03:55.120
+and in Sinemologous macaques,
+
+03:55.120 --> 03:57.160
+but we also know that it doesn't work in mice.
+
+03:57.160 --> 03:59.800
+And so then we can ask the question pretty easily,
+
+03:59.800 --> 04:00.840
+will it work in humans?
+
+04:00.840 --> 04:02.800
+Do we think, does it have a chance of working in humans?
+
+04:02.800 --> 04:05.040
+And so we ran an ortholog screen,
+
+04:05.040 --> 04:06.920
+where you can just take all the different orthologs
+
+04:06.920 --> 04:08.760
+of transferrin receptor and then express them
+
+04:08.760 --> 04:10.440
+individually in cell lines and then see
+
+04:10.440 --> 04:12.880
+what the functional transduction is
+
+04:12.880 --> 04:15.440
+when you overexpress those receptors.
+
+04:15.440 --> 04:20.440
+And pretty obviously, unfortunately for DB1,
+
+04:21.760 --> 04:23.960
+that it did not appear to functionally interact
+
+04:23.960 --> 04:25.800
+with the human ortholog.
+
+04:25.800 --> 04:27.920
+We had excellent maintenance across the Old World monkeys,
+
+04:27.920 --> 04:30.040
+but we did not have a functional transduction boost
+
+04:30.040 --> 04:32.080
+when overexpressing the human ortholog.
+
+04:33.480 --> 04:35.400
+So then we wanted to ask the question,
+
+04:35.400 --> 04:38.840
+where on what location of transferrin receptor
+
+04:38.840 --> 04:42.480
+might the DB1 be interacting with?
+
+04:42.480 --> 04:44.400
+And so we made this assumption or this hypothesis
+
+04:44.400 --> 04:45.480
+that it might be interacting
+
+04:45.480 --> 04:47.800
+with the apical domain of transferrin receptor.
+
+04:47.800 --> 04:50.560
+So if you run an alignment of Sinemologous transferrin
+
+04:50.560 --> 04:52.920
+receptor with human transferrin receptor,
+
+04:52.920 --> 04:54.440
+you can start to see in the apical domain
+
+04:54.440 --> 04:56.760
+a couple of locations of divergent amino acids.
+
+04:56.760 --> 04:58.720
+And so when you start to look at a structure
+
+04:58.720 --> 04:59.960
+of transferrin receptor,
+
+04:59.960 --> 05:02.440
+these divergent amino acids actually exist
+
+05:02.440 --> 05:04.320
+around the tops of loops,
+
+05:04.320 --> 05:05.760
+the loop that might be interacting
+
+05:05.760 --> 05:06.680
+with a capsidum interest.
+
+05:06.680 --> 05:09.040
+So we broke these up into blocks, one, two, three and four.
+
+05:09.040 --> 05:10.600
+Each block either contains one
+
+05:10.640 --> 05:12.720
+or a few divergent amino acids.
+
+05:12.720 --> 05:15.440
+Then you can start to create a chimera
+
+05:15.440 --> 05:17.280
+where you take the Sinemologous ortholog,
+
+05:17.280 --> 05:18.800
+that block from Sinnoh,
+
+05:18.800 --> 05:20.960
+graph that onto the human ortholog
+
+05:20.960 --> 05:22.200
+and start to see if that block
+
+05:22.200 --> 05:24.720
+might rescue functional transduction.
+
+05:24.720 --> 05:25.800
+So that's what we did.
+
+05:28.320 --> 05:31.480
+So we have the full human or the human apical domain
+
+05:31.480 --> 05:35.720
+and then grafting the full Sinnoh onto the human ortholog
+
+05:35.720 --> 05:37.720
+as well as each of the blocks individually
+
+05:37.720 --> 05:40.040
+where we take the block from the Sinemologous ortholog
+
+05:40.040 --> 05:41.560
+onto the human ortholog.
+
+05:41.560 --> 05:44.440
+And there was one block from all of these four blocks
+
+05:44.440 --> 05:47.280
+that rescued functional transduction of DB1
+
+05:47.280 --> 05:49.920
+when overexpressing that human Sinocamera
+
+05:49.920 --> 05:51.360
+and that was block A.
+
+05:51.360 --> 05:52.440
+What's nice about block A
+
+05:52.440 --> 05:55.000
+is there is a single divergent amino acid
+
+05:55.000 --> 05:57.160
+when comparing Sinnohs to humans.
+
+05:57.160 --> 05:58.800
+And that is that position 208.
+
+05:58.800 --> 06:01.520
+It is a glycine in the Sinemologous macaques
+
+06:01.520 --> 06:04.000
+and it is an arginine in humans.
+
+06:04.000 --> 06:06.800
+That is one of the most divergent pairs
+
+06:06.800 --> 06:08.600
+of amino acids that you can get.
+
+06:08.640 --> 06:11.000
+So the fun continues for us.
+
+06:12.480 --> 06:16.000
+So we wanted to try to jump the speciation barrier.
+
+06:16.000 --> 06:19.320
+To do that, we ran single and double site saturated
+
+06:19.320 --> 06:22.720
+mutagenesis of DB1 to see if we could cross over
+
+06:22.720 --> 06:25.200
+and hopefully bridge from Sinnohs into humans.
+
+06:25.200 --> 06:27.600
+See if we can get something that works on both.
+
+06:29.680 --> 06:33.000
+And panning in vitro where we express individually
+
+06:33.000 --> 06:34.760
+either the human transfer and receptor overexpressing
+
+06:34.760 --> 06:37.160
+human transfer and receptor overexpressing.
+
+06:39.600 --> 06:41.160
+Expressing the Sinemologous ortholog
+
+06:41.160 --> 06:43.400
+relative to the parental cell line,
+
+06:43.400 --> 06:44.240
+the unedited cell line.
+
+06:44.240 --> 06:46.000
+So we were able to identify a population
+
+06:46.000 --> 06:48.200
+that appeared to gain this function against.
+

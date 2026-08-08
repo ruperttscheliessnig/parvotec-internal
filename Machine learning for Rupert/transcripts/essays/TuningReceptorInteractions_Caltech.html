@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | Caltech — AAVR &amp; LRP6 Neurotropismus</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+       background:#0a0a0a; color:#e0e0de; font-size:15px; line-height:1.75; }
+.wrap { max-width:900px; margin:0 auto; padding:2rem 1.5rem 5rem; }
+h1 { font-size:clamp(1.2rem,3vw,1.8rem); font-weight:300; letter-spacing:-.03em;
+     color:#fff; margin:1.2rem 0 .3rem; border-bottom:1px solid #2a2a2a; padding-bottom:.5rem; }
+.meta { font-size:.64rem; color:#555; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.5rem; }
+
+/* Executive Summary */
+.exec-summary { background:#111; border:1px solid #2a2a2a; border-left:4px solid #f59e0b;
+                padding:1.5rem 1.75rem; margin-bottom:2rem; }
+.exec-label { font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+              color:#f59e0b; margin-bottom:.75rem; }
+.exec-title { font-size:1rem; font-weight:600; color:#fff; margin-bottom:.75rem; line-height:1.4; }
+.exec-body { font-family:Georgia,'Times New Roman',serif; font-size:.9rem; color:#bbb;
+             line-height:1.8; }
+.exec-body p { margin-bottom:.75em; }
+.exec-links { margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap; }
+.exec-link { font-size:.72rem; color:#39bfff; text-decoration:none;
+             border:1px solid #1a4060; padding:.25rem .7rem; transition:background .15s; }
+.exec-link:hover { background:#39bfff; color:#000; }
+.exec-link.slides { border-color:#f59e0b; color:#f59e0b; }
+.exec-link.slides:hover { background:#f59e0b; color:#000; }
+
+/* TOC */
+.toc { background:#0f0f0f; border-left:3px solid #39bfff; padding:.8rem 1.1rem; margin-bottom:2rem; }
+.toc-title { font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:#39bfff; margin-bottom:.5rem; }
+.toc a { color:#666; text-decoration:none; font-family:monospace; font-size:.75rem;
+         display:inline-block; margin:.1rem .5rem .1rem 0; }
+.toc a:hover { color:#39bfff; }
+
+/* Transcript sections */
+.section { border-top:1px solid #1a1a1a; padding-top:1.25rem; margin-top:1.75rem; }
+.section-header { display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem; }
+.ts-badge { font-family:monospace; font-size:.68rem; color:#39bfff; background:#0a1a2a;
+            border:1px solid #1a4060; padding:.15rem .45rem; flex-shrink:0; }
+.ts-badge a { color:inherit; text-decoration:none; }
+.ts-badge a:hover { color:#fff; }
+.section-text { font-family:Georgia,'Times New Roman',serif; font-size:.88rem;
+                color:#bbb; line-height:1.82; }
+
+/* Video bar */
+.video-bar { background:#111; border:1px solid #1a4060; padding:.65rem 1rem; margin-bottom:2rem;
+             display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.vb-label { font-size:.6rem; color:#39bfff; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.vb-link { font-size:.78rem; color:#39bfff; text-decoration:none;
+           border:1px solid #39bfff; padding:.2rem .6rem; }
+.vb-link:hover { background:#39bfff; color:#000; }
+#lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.95);
+      z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
+#lb.on { display:flex; }
+#lb img { max-width:94vw; max-height:94vh; }
+</style>
+<script src="../../../calyr-projects/assets/nav.js"></script>
+</head>
+<body>
+<div class="wrap">
+<div class="meta">1,987 Wörter · Whisper VTT · 293 Segmente · ASGCT 2026</div>
+<h1>Caltech — AAVR &amp; LRP6 Neurotropismus</h1>
+
+<!-- Executive Summary -->
+<div class="exec-summary">
+  <div class="exec-label">Executive Summary</div>
+  <div class="exec-body"><p>This is transduction. So basically, how to get into the blood-brain barrier. Thank you, Alex. Thank you so much for that warm welcome, and good morning, everyone. My name is Xin-Hong Alex Chung, and I&#x27;m from the Grotto Narrow Lab, and I&#x27;m excited to share with you my talk titled CUNY-AEV Interactions with AVR and LRP6 Toggle Specters Between Vascular and Neuron Selective Tropism. A lot of the recent efforts in the field have focused on identifying receptors that are being mediated by AVs for effective transportation across the BBB. There are receptors such as L6A for PHPB, LRP6 for AV9X1, and Car4 for 9P31, amongst others. And even more recently, a lot of focus has been garnered towards targeting these receptors for more effective engineering so that we have increased predictability when we&#x27;re thinking about future therapeutics. As we&#x27;re going into this landscape of thinking about future therapeutics, I believe that there is something that we should also consider, which is how binding affinity to these receptors might play an important factor when we&#x27;re thinking about predicting tropism. Work that&#x27;s done in the antibody and nanobody engineering field has shown that maybe there could be a Goldilocks zone for binding.</p>
+<p>a dramatic decrease in its binding affinity to AAVR. And when we delivered this vector, AAV9X1 beta, that we&#x27;re calling, into mice systemically, we were able to see that this vector became a pretty specific vector in targeting neurons. And I think many of you guys might be thinking that AAV9X1 beta is a pretty bad vector when it&#x27;s targeting neurons altogether, because it&#x27;s not targeting that many cells. And I thought the same thing when I saw these vectors. And so I wanted to play around with the second receptor, LRP6. And to see if, by weakening LRP6&#x27;s interaction with AAV9X1, we could have a more increased potency when it comes to targeting neurons. However, unlike AAVR and AAV9X1, we don&#x27;t have a solved cryoenium structure to identify the specific loci. And for that, we actually ended up using a more traditional method by having a scanning tumor library across a VR8 loop of AAV9X1 to create mutants that could have various binding affinities to LRP6. We subjected this library into a magnetic bead conjugated E1, E2 subdomains of LRP6, and pulled them down. And we were able to analyze the enrichment values of the capsits that bound most.</p>
+<p>similarity between mice and humans. And so, hopefully, the same patterns do hold true in other strains of mice as well, but we definitely do have to test them and be able to see if this is true. Yeah, and perhaps you&#x27;re going up to NHBs as well, the next two. That&#x27;ll be really exciting if we can. All right, thank you very much. Thank you so much. Thank you. Thank you. Thank you. Thank you. Thank you. So I&#x27;m...</p></div>
+  <div class="exec-links">
+    <a href='file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4' class='exec-link'>▶ Video (lokal)</a>
+    
+  </div>
+</div>
+
+
+<div class="video-bar">
+  <span class="vb-label">Video</span>
+  <a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4" class="vb-link">MP4 öffnen (lokal)</a>
+  <span style="font-size:.68rem;color:#444;">Timestamps unten → direkt zur Stelle im Video</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Sprung zu Abschnitten · Timestamp → Video</div>
+  <a href="#c0">00:00</a><a href="#c1">00:17</a><a href="#c2">00:46</a><a href="#c3">01:05</a><a href="#c4">01:27</a><a href="#c5">01:50</a><a href="#c6">02:19</a><a href="#c7">02:49</a><a href="#c8">03:20</a><a href="#c9">03:42</a><a href="#c10">04:07</a><a href="#c11">04:35</a><a href="#c12">05:02</a><a href="#c13">05:27</a><a href="#c14">05:54</a><a href="#c15">06:18</a><a href="#c16">06:40</a><a href="#c17">06:59</a><a href="#c18">07:23</a><a href="#c19">07:46</a><a href="#c20">08:12</a><a href="#c21">08:33</a><a href="#c22">08:56</a><a href="#c23">09:14</a><a href="#c24">09:35</a><a href="#c25">10:00</a><a href="#c26">10:22</a><a href="#c27">10:48</a><a href="#c28">11:13</a><a href="#c29">11:35</a><a href="#c30">12:00</a><a href="#c31">12:31</a><a href="#c32">12:52</a>
+</div>
+
+
+<div class="section" id="c0">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=0" title="Im Video öffnen">00:00</a></span>
+  </div>
+  <div class="section-text">This is transduction. So basically, how to get into the blood-brain barrier. Thank you, Alex. Thank you so much for that warm welcome, and good morning, everyone. My name is Xin-Hong Alex Chung, and I&#x27;m from the Grotto Narrow Lab, and I&#x27;m excited to share with you my talk titled CUNY-AEV Interactions with AVR</div>
+</div>
+<div class="section" id="c1">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=17" title="Im Video öffnen">00:17</a></span>
+  </div>
+  <div class="section-text">and LRP6 Toggle Specters Between Vascular and Neuron Selective Tropism. A lot of the recent efforts in the field have focused on identifying receptors that are being mediated by AVs for effective transportation across the BBB. There are receptors such as L6A for PHPB, LRP6 for AV9X1, and Car4 for 9P31, amongst others. And even more recently, a lot of focus</div>
+</div>
+<div class="section" id="c2">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=46" title="Im Video öffnen">00:46</a></span>
+  </div>
+  <div class="section-text">has been garnered towards targeting these receptors for more effective engineering so that we have increased predictability when we&#x27;re thinking about future therapeutics. As we&#x27;re going into this landscape of thinking about future therapeutics, I believe that there is something that we should also consider, which is how binding affinity to these receptors</div>
+</div>
+<div class="section" id="c3">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=65" title="Im Video öffnen">01:05</a></span>
+  </div>
+  <div class="section-text">might play an important factor when we&#x27;re thinking about predicting tropism. Work that&#x27;s done in the antibody and nanobody engineering field has shown that maybe there could be a Goldilocks zone for binding affinity to a receptor for effective transactosis across the BBB. In work done by Bien Nai et al, they show that some engineered antibodies</div>
+</div>
+<div class="section" id="c4">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=87" title="Im Video öffnen">01:27</a></span>
+  </div>
+  <div class="section-text">that target transferrin receptors with too high of a binding affinity ends up getting stuck in these endothelial cells and don&#x27;t actually make it across effectively through the BBB. Conversely, those binders that are too weak to bind to transferrin receptor actually never made it through the BBB because perhaps they were being outcompeted by endogenous ligands against the transferrin receptor.</div>
+</div>
+<div class="section" id="c5">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=110" title="Im Video öffnen">01:50</a></span>
+  </div>
+  <div class="section-text">And thus, they found that this medium zone of moderate binding to the transferrin receptor was the optimal binding affinity to help for effective transactosis across the BBB. And we wondered if the same principle could apply to AAVs as it&#x27;s trying to cross the blood-brain barrier as well. And for this, I&#x27;m focusing on predominantly two receptors, AAVR and LRP6. And we&#x27;re also looking at our engineered vector,</div>
+</div>
+<div class="section" id="c6">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=139" title="Im Video öffnen">02:19</a></span>
+  </div>
+  <div class="section-text">AAV9X1, and how we can start engineering future variants of this vector in hopes that it can become more neurotropic. AAV9X1 was a previously engineered vector from our lab which targets AAVR and LRP6 for effective transduction of endothelial cells, specifically in the CNS of mouse when they&#x27;re delivered systemically. And we wondered if this targeting of endothelial cells is because of the fact that AAV9X1 is binding too tightly</div>
+</div>
+<div class="section" id="c7">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=169" title="Im Video öffnen">02:49</a></span>
+  </div>
+  <div class="section-text">to AAVR and LRP6 and ended up getting stuck in these endothelial cells. And therefore, by weakening its interaction to AAVR and LRP6, could we see more effective transduction of the cytosis across the BBB? So first, I wanted to go and independently weaken its interaction with AAVR in hopes to create a more neurotropic vector. And this stem from recent work that was published in our lab</div>
+</div>
+<div class="section" id="c8">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=200" title="Im Video öffnen">03:20</a></span>
+  </div>
+  <div class="section-text">would showcase that KAPI-10, which is a further evolved vector from HPEB, which modified the VR4 loop to have further detargeting from PKD2, the binding domain of AAVR. This change actually was the reason why there was increased specificity in targeting neurons in the CNS of mice when this vector, KAPI-10, was delivered systemically.</div>
+</div>
+<div class="section" id="c9">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=222" title="Im Video öffnen">03:42</a></span>
+  </div>
+  <div class="section-text">And we wondered if by introducing this KAPI-10 loop into AAV9X1, we could also have this drastic decrease in its binding affinity to AAVR. Unfortunately, by just simply substituting the same VR4 loop onto AAV9X1, did not dramatically decrease its binding affinity to AAVR. And therefore, we need to come up with novel ways to detarget from AAVR. And luckily, we were able to recently</div>
+</div>
+<div class="section" id="c10">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=247" title="Im Video öffnen">04:07</a></span>
+  </div>
+  <div class="section-text">solve the cryo-EM structure of its interaction, AAV9X1&#x27;s interaction with AAVR. And we were able to identify key residues that might be responsible for its binding to AAVR. And by targeting these locuses for effective rational engineering, we were able to create this beta mutation. And by introducing this beta mutation to AAV9X1, we were able to see a dramatic decrease in its binding affinity to AAVR.</div>
+</div>
+<div class="section" id="c11">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=275" title="Im Video öffnen">04:35</a></span>
+  </div>
+  <div class="section-text">And when we delivered this vector, AAV9X1 beta, that we&#x27;re calling, into mice systemically, we were able to see that this vector became a pretty specific vector in targeting neurons. And I think many of you guys might be thinking that AAV9X1 beta is a pretty bad vector when it&#x27;s targeting neurons altogether, because it&#x27;s not targeting that many cells. And I thought the same thing when I saw these vectors. And so I wanted to play around with the second receptor, LRP6.</div>
+</div>
+<div class="section" id="c12">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=302" title="Im Video öffnen">05:02</a></span>
+  </div>
+  <div class="section-text">And to see if, by weakening LRP6&#x27;s interaction with AAV9X1, we could have a more increased potency when it comes to targeting neurons. However, unlike AAVR and AAV9X1, we don&#x27;t have a solved cryoenium structure to identify the specific loci. And for that, we actually ended up using a more traditional method by having a scanning tumor library across a VR8 loop of AAV9X1</div>
+</div>
+<div class="section" id="c13">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=327" title="Im Video öffnen">05:27</a></span>
+  </div>
+  <div class="section-text">to create mutants that could have various binding affinities to LRP6. We subjected this library into a magnetic bead conjugated E1, E2 subdomains of LRP6, and pulled them down. And we were able to analyze the enrichment values of the capsits that bound most tightly to LRP6 and those that did not. And as expected, we were able to see that AAV9X1 is near the top of the ranking profile,</div>
+</div>
+<div class="section" id="c14">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=354" title="Im Video öffnen">05:54</a></span>
+  </div>
+  <div class="section-text">because we know that AAV9X1 binds with LRP6. And conversely, AAV9 tends to be at the bottom of this ranking profile. And so you guys can think of this ranking profile as a proxy for binding affinities towards LRP6. And when we delivered some of the vectors that were more similar in ranking to AAV9X1, such as UX5, into my systemically, we were able to see that its transaction profile is</div>
+</div>
+<div class="section" id="c15">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=378" title="Im Video öffnen">06:18</a></span>
+  </div>
+  <div class="section-text">predominantly still endothelial. Conversely, variants such as UX1, which are similar in ranking to AAV9, and very little transaction altogether. And when we looked at vectors with higher ranking than UX5 or AAV9X1, we saw that it is still pretty endothelial in its targeting. However, when we started to look at variants that were in between this AAV9X1&#x27;s binding affinity</div>
+</div>
+<div class="section" id="c16">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=400" title="Im Video öffnen">06:40</a></span>
+  </div>
+  <div class="section-text">and AAV9, we were able to see vectors that are starting to transcytose across the BBB and start targeting some of these aster sites. And I also thought that this vector, as many of you guys are thinking right now, is a pretty messy vector. It is permeating through the BBB, but it&#x27;s not at all specific in terms of the tropism that we would want to see.</div>
+</div>
+<div class="section" id="c17">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=419" title="Im Video öffnen">06:59</a></span>
+  </div>
+  <div class="section-text">And so we wondered by combining these insights that we gained from understanding the interaction with AAVR and LRP6, we could see a highly potent neurotropic vector. And just to summarize, starting from AAV9X1, when we weakened independently just AAVR by introducing this beta mutation, we saw a sparsely neuronal vector. And then when we created this vector</div>
+</div>
+<div class="section" id="c18">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=443" title="Im Video öffnen">07:23</a></span>
+  </div>
+  <div class="section-text">with weakened interaction with LRP6, but not per se with AAVR, we were able to get this more permeable vector that goes across the BBB. And so we wondered by introducing the same B10 mutation that we introduced to AAV9X1, could we see a strongly neuronal vector? And when we did introduce this beta mutation to UX13, we were able to see this increased potency</div>
+</div>
+<div class="section" id="c19">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=466" title="Im Video öffnen">07:46</a></span>
+  </div>
+  <div class="section-text">when targeting neurons, and it is predominantly transusing only neurons when quantified. Overall, just to summarize my talk, I was able to start playing around independently these two dials, AAVR binding affinity and LRP6 binding affinity to get to looking at how these binding affinities are determining its tropism altogether.</div>
+</div>
+<div class="section" id="c20">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=492" title="Im Video öffnen">08:12</a></span>
+  </div>
+  <div class="section-text">And I hope we can take this into consideration as we&#x27;re going into future therapeutics research and trying to have more predictable outcomes with our engineering efforts. Thank you so much, and I open the floor up for questions. Thank you. Thank you. Questions from the audience?</div>
+</div>
+<div class="section" id="c21">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=513" title="Im Video öffnen">08:33</a></span>
+  </div>
+  <div class="section-text">Hi. Did you look at vector genomes in peripheral organs, especially at the early time points? We analyzed these animals after three to four weeks post-delivery, so we didn&#x27;t really look at really early time points after delivery. But an important point that you bring up is the peripheral organs,</div>
+</div>
+<div class="section" id="c22">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=536" title="Im Video öffnen">08:56</a></span>
+  </div>
+  <div class="section-text">something unique that we saw with introducing this beta mutation into these AAV variants, was that we were starting to see increased transduction of the peripheral nervous system as well. You guys can see pretty much in the spring sum as one representation of how it would perform like the other peripheral vectors</div>
+</div>
+<div class="section" id="c23">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=554" title="Im Video öffnen">09:14</a></span>
+  </div>
+  <div class="section-text">that were produced from our lab. And when we looked at organs such as the distal colon, we saw increased transduction profile there as well. Okay. That&#x27;s true both on the transduction level as well as on the vector genome per dipole genome. We didn&#x27;t do analysis about quantifying the number of genomes that were found. We currently are at the stage of just looking</div>
+</div>
+<div class="section" id="c24">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=575" title="Im Video öffnen">09:35</a></span>
+  </div>
+  <div class="section-text">at the protein level of expression. Okay, thanks. Thank you, very interesting talk. I would like to know what your thoughts are on the actual role of AVR in like, why do you see this difference in cell targeting? Given that AVR should be expressed in every cell, and there&#x27;s even some indication that it might be more a sorting signal</div>
+</div>
+<div class="section" id="c25">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=600" title="Im Video öffnen">10:00</a></span>
+  </div>
+  <div class="section-text">than the actual entry receptor? I think that&#x27;s a really important question to consider. Frankly, I don&#x27;t quite understand what&#x27;s happening here either, but I know there are a lot of really good talks that are happening around the role of AVR in transduction. I think AVR in general is very critical for transduction altogether. As many of you guys know, knockouts of AVR</div>
+</div>
+<div class="section" id="c26">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=622" title="Im Video öffnen">10:22</a></span>
+  </div>
+  <div class="section-text">might as completely diminishes systemic delivered AV transduction. And I think these vectors are so definitely binding to AVR, but having this Goldilocks zone of binding maybe perhaps allows AVR to play more of a trafficking role rather than more of a sticky web for targeting off-target regions of other organs that we don&#x27;t care about. Right, so you think you still transduce</div>
+</div>
+<div class="section" id="c27">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=648" title="Im Video öffnen">10:48</a></span>
+  </div>
+  <div class="section-text">what you enter astrocytes, but they don&#x27;t express them with your new vectors? We haven&#x27;t looked at the genomic level yet, and I think we&#x27;re hoping to go with methods that were developed such as Spectre or AV Zombie to look into the genomic level as well to see where these vectors are actually ending up. But at the current moment, we don&#x27;t really know. Okay, thank you.</div>
+</div>
+<div class="section" id="c28">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=673" title="Im Video öffnen">11:13</a></span>
+  </div>
+  <div class="section-text">Could I ask you a quick question? Oh, yes, of course. So if you&#x27;re talking about modulating and thinking about the Goldilocks effect, analytically, how would you come to this Goldilocks composition, so... I think that&#x27;s a really... And also another thing, are you looking chanced into one species,</div>
+</div>
+<div class="section" id="c29">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=695" title="Im Video öffnen">11:35</a></span>
+  </div>
+  <div class="section-text">I mean, one strain of mice, or have you looked into Balbsey as well, because we have a lot of precedents regarding C57 BL6, you know, having a very different tropism versus Balbsey, we&#x27;re being very different. Definitely, so regarding your first point about how are we defining the Goldilocks zone, we&#x27;re actually hoping to take more of a molecular approach by determining the KD values</div>
+</div>
+<div class="section" id="c30">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=720" title="Im Video öffnen">12:00</a></span>
+  </div>
+  <div class="section-text">of their binding interactions using species such as BLI. And by doing so, we can start to have this defined region of the preferred optimal rate of binding of virtual cytosis. As for the second question, I think it&#x27;s really important because I work in non-traditional organisms as well. Full disclosure, these animals are C57s that we tested them in. But interestingly, LRP6, if you guys don&#x27;t know, is a highly conserved receptor with over 98% sequence similarity between mice and humans.</div>
+</div>
+<div class="section" id="c31">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=751" title="Im Video öffnen">12:31</a></span>
+  </div>
+  <div class="section-text">And so, hopefully, the same patterns do hold true in other strains of mice as well, but we definitely do have to test them and be able to see if this is true. Yeah, and perhaps you&#x27;re going up to NHBs as well, the next two. That&#x27;ll be really exciting if we can. All right, thank you very much. Thank you so much. Thank you.</div>
+</div>
+<div class="section" id="c32">
+  <div class="section-header">
+    <span class="ts-badge"><a href="file:///Users/rtscheliessnig/workspace-active/parvotec/Machine learning for Rupert/ASGCT2026/TuningReceptorInteractions_Caltech.mp4#t=772" title="Im Video öffnen">12:52</a></span>
+  </div>
+  <div class="section-text">Thank you. Thank you. Thank you. Thank you. So I&#x27;m...</div>
+</div>
+</div>
+<script>
+function show(img) {
+  document.getElementById('lbi').src = img.src;
+  document.getElementById('lb').classList.add('on');
+}
+</script>
+</body>
+</html>
