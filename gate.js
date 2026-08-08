@@ -1,4 +1,5 @@
 /* calyr.aí — access gate, SHA-256 checked via WebCrypto */
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
   const HASH = 'ad98ac78e6fa16ff7fa4e3498e8a00f965fb725ce3aa56a47f18892b903fe010';
   const SALT = 'calyr-gate-v1';
@@ -6,8 +7,8 @@
 
   if (localStorage.getItem(KEY) === HASH) return;
 
+  document.addEventListener('DOMContentLoaded', function () {
   const CSS = `
-    #cg-overlay {
       position:fixed;inset:0;z-index:99999;
       background:#050505;display:flex;align-items:center;justify-content:center;
       font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -84,3 +85,4 @@
   btn.addEventListener('click', check);
   inp.addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
 })();
+});
