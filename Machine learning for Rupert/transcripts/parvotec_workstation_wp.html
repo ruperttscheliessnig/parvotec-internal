@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec | Workstation — WP Compute Rationale</title>
+<style>
+  :root {
+    --paper:#050505; --card:#090909; --ink:#f5f5f2; --soft:#a7abb0;
+    --line:#343434; --col:#39bfff; --amber:#f59e0b; --green:#34d399;
+    --red:#f87171; --purple:#a78bfa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background:var(--paper); color:var(--ink); line-height:1.65; font-size:16px; }
+
+  header { padding:52px max(4vw,calc((100vw - 1200px)/2)) 44px;
+    border-bottom:1px solid var(--line); }
+  .bc { font-size:.6rem; color:var(--soft); letter-spacing:.18em;
+    text-transform:uppercase; margin-bottom:14px; }
+  .bc a { color:var(--col); text-decoration:none; }
+  h1 { font-size:clamp(1.6rem,4vw,3rem); font-weight:400; letter-spacing:-.04em;
+    color:var(--ink); margin-bottom:.4rem; }
+  .sub { font-size:.88rem; color:var(--soft); }
+
+  .wrap { max-width:1200px; margin:0 auto;
+    padding:3rem max(4vw,calc((100vw - 1200px)/2)) 6rem; }
+
+  /* TOC */
+  .toc { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:3rem; }
+  .toc a { font-size:.66rem; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--soft); border:1px solid var(--line);
+    padding:.25rem .7rem; text-decoration:none; }
+  .toc a:hover { color:var(--col); border-color:var(--col); }
+
+  /* Section header */
+  h2 { font-size:1.05rem; font-weight:700; letter-spacing:-.01em;
+    color:var(--ink); margin:3.5rem 0 .5rem; border-bottom:1px solid var(--line);
+    padding-bottom:.5rem; }
+  h3 { font-size:.82rem; font-weight:700; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--col); margin:2rem 0 .6rem; }
+  p { font-size:.88rem; color:var(--soft); line-height:1.75; margin-bottom:.9rem; }
+  strong { color:var(--ink); }
+
+  /* WP card */
+  .wp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+    gap:1px; background:var(--line); margin:1.5rem 0; }
+  .wp-card { background:var(--card); padding:1.5rem 1.75rem; }
+  .wp-tag { font-size:.56rem; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; display:inline-block; padding:.2rem .55rem;
+    margin-bottom:.75rem; }
+  .wp-card h4 { font-size:.9rem; font-weight:600; color:var(--ink);
+    margin-bottom:.5rem; }
+  .wp-card p { font-size:.82rem; margin-bottom:.5rem; }
+  .wp-card ul { list-style:none; padding:0; margin:.5rem 0; }
+  .wp-card ul li { font-size:.78rem; color:var(--soft); padding:.15rem 0;
+    padding-left:1rem; position:relative; }
+  .wp-card ul li::before { content:"—"; position:absolute; left:0;
+    color:var(--line); }
+  .compute-bar { margin-top:.85rem; }
+  .compute-row { display:flex; align-items:center; gap:.6rem; margin:.2rem 0; }
+  .compute-label { font-size:.6rem; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--soft); width:90px; flex-shrink:0; }
+  .bar-bg { flex:1; height:5px; background:var(--line); border-radius:0; }
+  .bar-fill { height:100%; border-radius:0; }
+  .compute-val { font-size:.62rem; font-family:monospace; color:var(--soft);
+    width:60px; text-align:right; flex-shrink:0; }
+
+  /* Rationale block */
+  .rationale { border-left:3px solid var(--col); padding:1.25rem 1.5rem;
+    background:var(--card); margin:1.5rem 0; }
+  .rationale h3 { margin:0 0 .6rem; color:var(--col); }
+  .rationale p { margin-bottom:.5rem; }
+
+  /* Comparison table */
+  table { width:100%; border-collapse:collapse; margin:1.5rem 0;
+    font-size:.82rem; }
+  th { text-align:left; font-size:.58rem; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--soft); border-bottom:1px solid var(--line);
+    padding:.5rem .75rem; }
+  td { padding:.55rem .75rem; border-bottom:1px solid #1a1a1a; color:var(--soft); }
+  td:first-child { color:var(--ink); font-weight:500; }
+  .good { color:var(--green); font-weight:700; }
+  .bad  { color:var(--red); }
+  .ok   { color:var(--amber); }
+
+  /* CTA */
+  .cta-strip { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+  .cta { display:inline-block; font-size:.72rem; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; padding:.55rem 1.2rem;
+    text-decoration:none; border:1px solid var(--col); color:var(--col); }
+  .cta:hover { background:var(--col); color:#000; }
+  .cta.sec { border-color:var(--line); color:var(--soft); }
+  .cta.sec:hover { border-color:var(--soft); color:var(--ink); }
+
+  /* Summary table at top */
+  .summary-grid { display:grid; grid-template-columns:repeat(5,1fr);
+    gap:1px; background:var(--line); margin-bottom:3rem; }
+  @media(max-width:760px){ .summary-grid { grid-template-columns:repeat(2,1fr); }
+    .wp-grid { grid-template-columns:1fr; } }
+  .sg-cell { background:var(--card); padding:1rem 1.25rem; }
+  .sg-wp { font-size:.56rem; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; display:block; margin-bottom:.35rem; }
+  .sg-title { font-size:.78rem; font-weight:600; color:var(--ink);
+    display:block; margin-bottom:.2rem; }
+  .sg-gpu { font-size:.7rem; font-family:monospace; }
+  .sg-months { font-size:.6rem; color:var(--soft); margin-top:.15rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bc">
+    <a href="../../../calyr-projects/dist/parvotec/index.html">calyr.aí / Parvotec</a>
+    / Workstation Rationale
+  </div>
+  <h1>Workstation — Compute Rationale per Work Package</h1>
+  <p class="sub">Why local GPU infrastructure is necessary for WP1–WP5 · Threadripper + RTX 5090 · DRG Fitness Oracle</p>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <a href="#rationale">Why Local</a>
+    <a href="#wp1">WP1</a><a href="#wp2">WP2</a><a href="#wp3">WP3</a>
+    <a href="#wp4">WP4</a><a href="#wp5">WP5</a>
+    <a href="#comparison">Cloud vs. Local</a>
+    <a href="#timeline">GPU Timeline</a>
+  </div>
+
+  <!-- ── WP summary strip ── -->
+  <div class="summary-grid">
+    <div class="sg-cell">
+      <span class="sg-wp" style="color:var(--col)">WP1 · M1–M3</span>
+      <span class="sg-title">Target Definition</span>
+      <span class="sg-gpu" style="color:var(--col)">~40 GPU-h</span>
+      <div class="sg-months">ESM-2 pilot · sequence embedding</div>
+    </div>
+    <div class="sg-cell">
+      <span class="sg-wp" style="color:var(--amber)">WP2 · M2–M8</span>
+      <span class="sg-title">DMS Library</span>
+      <span class="sg-gpu" style="color:var(--amber)">~1,200 GPU-h</span>
+      <div class="sg-months">500k variants · continuous 72 h runs</div>
+    </div>
+    <div class="sg-cell">
+      <span class="sg-wp" style="color:var(--green)">WP3 · M4–M10</span>
+      <span class="sg-title">Oracle v1.0</span>
+      <span class="sg-gpu" style="color:var(--green)">~250 GPU-h</span>
+      <div class="sg-months">4-task NN + cVAE training</div>
+    </div>
+    <div class="sg-cell">
+      <span class="sg-wp" style="color:var(--red)">WP4 · M8–M18</span>
+      <span class="sg-title">BO Rounds × 3</span>
+      <span class="sg-gpu" style="color:var(--red)">~2,400 GPU-h</span>
+      <div class="sg-months">Active learning · 3 iterative rounds</div>
+    </div>
+    <div class="sg-cell">
+      <span class="sg-wp" style="color:var(--purple)">WP5 · M14–M24</span>
+      <span class="sg-title">Lead Validation</span>
+      <span class="sg-gpu" style="color:var(--purple)">~300 GPU-h</span>
+      <div class="sg-months">Transfer learning · inference</div>
+    </div>
+  </div>
+
+  <!-- ── Core rationale ── -->
+  <div class="rationale" id="rationale">
+    <h3>Why Local Infrastructure — Not Cloud</h3>
+    <p>The DRG Fitness Oracle pipeline operates on <strong>proprietary sequence–fitness data</strong> that cannot leave a controlled environment under standard industry agreements. Cloud GPU instances (AWS p4d, Azure NC, GCP A100) introduce three structural problems for this project:</p>
+    <p><strong>1. Data sovereignty.</strong> Biological assay data from DRG partner institutions is covered by material transfer agreements (MTAs) that restrict transfer to third-party compute providers. A local workstation is the only compliant option.</p>
+    <p><strong>2. Continuous training economics.</strong> WP2 requires ~1,200 GPU-hours of ESM-2 embedding at €2–4/GPU-h on cloud = <strong>€2,400–4,800</strong> for one work package alone. WP4 adds ~2,400 GPU-h = €4,800–9,600. Total cloud cost over 24 months: €15,000–25,000, exceeding the workstation purchase price and offering no long-term asset.</p>
+    <p><strong>3. Iteration latency.</strong> Active learning in WP4 requires tight <em>embed → train → propose → wet-lab</em> cycles. Cloud cold-start latency (5–20 min per instance) and scheduling uncertainty breaks the 72-hour turnaround that fits within the wet-lab's compound synthesis cycle.</p>
+  </div>
+
+  <!-- ── Per-WP detail ── -->
+  <h2 id="wp1">WP1 · Target Definition (M1–M3)</h2>
+  <p><strong>Objective:</strong> Identify the DRG-relevant sequence space. Use ESM-2 (650M) embeddings on 100–500 pilot sequences to validate the fitness signal and define the fitness assay protocol.</p>
+  <p>This phase is <strong>low-intensity</strong> but sets the calibration baseline for all downstream models. A GPU is required to run ESM-2 in batch mode; CPU inference is 40× slower and would push pilot timelines from hours to days.</p>
+  <div class="wp-card" style="margin:1rem 0;border-left:3px solid var(--col)">
+    <p><strong>Compute requirement:</strong></p>
+    <ul>
+      <li>ESM-2 650M inference on pilot set: ~20–40 GPU-h (RTX-class, 16+ GB VRAM)</li>
+      <li>Embedding storage: &lt;2 GB per 500 sequences</li>
+      <li>No training in WP1 — inference only</li>
+      <li>CPU fallback: 40–80 GPU-h equivalent → ~2 weeks on CPU vs. 2 days on GPU</li>
+    </ul>
+    <div class="compute-bar">
+      <div class="compute-row">
+        <span class="compute-label">GPU Load</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:15%;background:var(--col)"></div></div>
+        <span class="compute-val">15%</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">VRAM</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:30%;background:var(--col)"></div></div>
+        <span class="compute-val">~8 GB</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="wp2">WP2 · DMS Library Construction (M2–M8)</h2>
+  <p><strong>Objective:</strong> Generate and embed a Deep Mutational Scanning (DMS) library of ~500,000 AAV capsid variants using ESM-2. This is the <strong>largest single compute task</strong> of the project.</p>
+  <p>ESM-2 must process each variant independently (no batching across unrelated sequences at this scale). A single RTX 5090 (32 GB VRAM) can run batch sizes of 64–128 at FP16, completing the full library in ~72 hours of continuous GPU time. Without local infrastructure, this would require renting a dedicated cloud instance for 3 continuous days — impractical at research-budget scale.</p>
+  <div class="wp-card" style="margin:1rem 0;border-left:3px solid var(--amber)">
+    <p><strong>Compute requirement:</strong></p>
+    <ul>
+      <li>ESM-2 650M, 500k sequences × ~2.4 ms/seq at FP16 → ~333 GPU-h</li>
+      <li>Embedding cache: ~250 GB (1280-dim × 500k × fp16)</li>
+      <li>Must run 24/7 uninterrupted — cloud scheduling risk unacceptable</li>
+      <li>Intermediate checkpointing every 50k sequences for fault tolerance</li>
+    </ul>
+    <div class="compute-bar">
+      <div class="compute-row">
+        <span class="compute-label">GPU Load</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:95%;background:var(--amber)"></div></div>
+        <span class="compute-val">95%</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">VRAM</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:70%;background:var(--amber)"></div></div>
+        <span class="compute-val">~22 GB</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">Runtime</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:80%;background:var(--amber)"></div></div>
+        <span class="compute-val">~72 h</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="wp3">WP3 · Oracle v1.0 (M4–M10)</h2>
+  <p><strong>Objective:</strong> Train the 4-Task Predictor Neural Network (Tropism, Yield, Thermostability, Immunogenicity) and the Conditional VAE (cVAE) on the embedded DMS library from WP2.</p>
+  <p>These are <strong>training</strong> tasks, not just inference. The 4-task NN operates on pre-computed ESM-2 embeddings (no GPU needed for forward pass from WP2 cache) but backpropagation through the multi-task head requires sustained GPU memory. The cVAE additionally needs the GPU for its KL-divergence regularized latent space optimization — a compute pattern that benefits strongly from FP16 tensor cores.</p>
+  <div class="wp-card" style="margin:1rem 0;border-left:3px solid var(--green)">
+    <p><strong>Compute requirement:</strong></p>
+    <ul>
+      <li>4-Task NN: ~150 GPU-h (32-dim hidden, 4 output heads, MSE + cross-entropy)</li>
+      <li>cVAE: ~100 GPU-h (encoder 512-dim, decoder 512-dim, KL weight schedule)</li>
+      <li>Hyperparameter sweeps: ×3–5 multiplier → plan for 750 GPU-h total in WP3</li>
+      <li>Both models fit in 16 GB VRAM; RTX 5090 enables larger batch = fewer epochs</li>
+    </ul>
+    <div class="compute-bar">
+      <div class="compute-row">
+        <span class="compute-label">GPU Load</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:60%;background:var(--green)"></div></div>
+        <span class="compute-val">60%</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">VRAM</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:50%;background:var(--green)"></div></div>
+        <span class="compute-val">~16 GB</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="wp4">WP4 · Bayesian Optimization Rounds × 3 (M8–M18)</h2>
+  <p><strong>Objective:</strong> Run three active-learning cycles: propose candidates → synthesize → assay → retrain. Each cycle requires a <strong>full re-embedding + Oracle retrain + BO acquisition</strong>, all within a 4-week wet-lab turnaround window.</p>
+  <p>This is the <strong>critical-path bottleneck</strong>. Each round must complete its compute within 72 hours so the wet-lab team can order synthesis without delay. A cloud instance would add 5–20 minutes cold-start plus potential preemption risk. The local workstation guarantees on-demand availability at 03:00 when a training run finishes and the BO acquisition needs to start immediately.</p>
+  <div class="wp-card" style="margin:1rem 0;border-left:3px solid var(--red)">
+    <p><strong>Compute requirement per round:</strong></p>
+    <ul>
+      <li>ESM-2 re-embedding of new assay data: ~120 GPU-h</li>
+      <li>Oracle retrain (fine-tune from WP3 checkpoint): ~50 GPU-h</li>
+      <li>BO acquisition function (Gaussian Process): CPU-dominant but GPU-accelerated via GPyTorch</li>
+      <li>3 rounds × ~800 GPU-h = <strong>~2,400 GPU-h total</strong></li>
+      <li>Must not be interrupted — any preemption resets the 72-h clock</li>
+    </ul>
+    <div class="compute-bar">
+      <div class="compute-row">
+        <span class="compute-label">GPU Load</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:99%;background:var(--red)"></div></div>
+        <span class="compute-val">99%</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">VRAM</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:75%;background:var(--red)"></div></div>
+        <span class="compute-val">~24 GB</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">Per Round</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:85%;background:var(--red)"></div></div>
+        <span class="compute-val">~72 h</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="wp5">WP5 · Lead Validation (M14–M24)</h2>
+  <p><strong>Objective:</strong> Transfer-learn the Oracle on the top-candidate set from WP4. Run structural predictions (AlphaFold2/ESMFold) on leads. Prepare final model for partner delivery.</p>
+  <p>WP5 is <strong>lower intensity</strong> but benefits from the same hardware. AlphaFold2 inference for 10–50 candidates requires 40 GB VRAM per complex (or chunked 16 GB runs). ESMFold is lighter. The workstation GPU serves as the inference node for final validation without additional cloud cost.</p>
+  <div class="wp-card" style="margin:1rem 0;border-left:3px solid var(--purple)">
+    <p><strong>Compute requirement:</strong></p>
+    <ul>
+      <li>Transfer learning on top-50 leads: ~50 GPU-h</li>
+      <li>ESMFold inference (structural validation): ~10 GPU-h</li>
+      <li>Final Oracle inference for deliverable: ~5 GPU-h</li>
+      <li>Total: ~300 GPU-h spread over 10 months (~30 GPU-h/month)</li>
+    </ul>
+    <div class="compute-bar">
+      <div class="compute-row">
+        <span class="compute-label">GPU Load</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:20%;background:var(--purple)"></div></div>
+        <span class="compute-val">20%</span>
+      </div>
+      <div class="compute-row">
+        <span class="compute-label">VRAM</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:45%;background:var(--purple)"></div></div>
+        <span class="compute-val">~14 GB</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cloud vs Local comparison ── -->
+  <h2 id="comparison">Cloud vs. Local — Structured Comparison</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th>Cloud GPU (A100/H100)</th>
+        <th>Local RTX 5090 Workstation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total cost (24 months)</td>
+        <td class="bad">€15,000–25,000 (rental)</td>
+        <td class="good">€8,000–10,000 (one-time asset)</td>
+      </tr>
+      <tr>
+        <td>Data sovereignty (MTA)</td>
+        <td class="bad">Non-compliant for partner data</td>
+        <td class="good">Fully compliant, on-premises</td>
+      </tr>
+      <tr>
+        <td>72-h uninterrupted run (WP4)</td>
+        <td class="bad">Preemption risk on spot instances</td>
+        <td class="good">Guaranteed, no interruption</td>
+      </tr>
+      <tr>
+        <td>Cold-start latency</td>
+        <td class="bad">5–20 min per job</td>
+        <td class="good">&lt;30 sec</td>
+      </tr>
+      <tr>
+        <td>VRAM for ESM-2 FP16 (32+ GB)</td>
+        <td class="ok">A100 80 GB (expensive tier)</td>
+        <td class="good">RTX 5090 32 GB (sufficient)</td>
+      </tr>
+      <tr>
+        <td>Long-term residual value</td>
+        <td class="bad">Zero — rental</td>
+        <td class="good">Resale / next project use</td>
+      </tr>
+      <tr>
+        <td>Network transfer for 250 GB embedding cache</td>
+        <td class="bad">Upload cost + latency each run</td>
+        <td class="good">Local NVMe, zero transfer</td>
+      </tr>
+      <tr>
+        <td>Project-team accessibility</td>
+        <td class="ok">VPN + IAM setup required</td>
+        <td class="good">Direct LAN access for all</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── GPU timeline ── -->
+  <h2 id="timeline">GPU-Hour Budget per Month</h2>
+  <p>Cumulative GPU-hours across all WPs, showing the critical WP4 active-learning peak at months 8–18:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Months</th><th>Work Package</th><th>GPU-h / Month</th><th>Cumulative</th><th>Intensity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>M1–M3</td><td>WP1 — Target Definition</td><td>~13</td><td>~40</td><td class="good">Low</td></tr>
+      <tr><td>M2–M8</td><td>WP2 — DMS Library</td><td>~170</td><td>~1,200</td><td class="ok">High</td></tr>
+      <tr><td>M4–M10</td><td>WP3 — Oracle v1.0</td><td>~40</td><td>~250</td><td class="ok">Medium</td></tr>
+      <tr><td>M8–M11</td><td>WP4 Round 1</td><td>~300</td><td>~800</td><td class="bad">Peak</td></tr>
+      <tr><td>M11–M14</td><td>WP4 Round 2</td><td>~300</td><td>~800</td><td class="bad">Peak</td></tr>
+      <tr><td>M14–M18</td><td>WP4 Round 3</td><td>~300</td><td>~800</td><td class="bad">Peak</td></tr>
+      <tr><td>M14–M24</td><td>WP5 — Validation</td><td>~30</td><td>~300</td><td class="good">Low</td></tr>
+      <tr style="border-top:2px solid var(--col)">
+        <td><strong>Total</strong></td><td><strong>WP1–WP5</strong></td>
+        <td><strong>—</strong></td><td><strong>~4,190 GPU-h</strong></td>
+        <td class="ok">24 months</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="cta-strip">
+    <a class="cta" href="parvotec_app_workstation.html">Full Hardware Spec →</a>
+    <a class="cta sec" href="../../../calyr-projects/dist/parvotec/index.html">← Parvotec Hub</a>
+  </div>
+
+</div>
+</body>
+</html>
