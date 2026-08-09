@@ -57,12 +57,30 @@ h1 { font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:300; letter-spacing:-.03e
                 font-size:.9rem; line-height:1.8; }
 .speaker-text.q { color:#cc8; font-style:italic; }
 .speaker-text.a { color:#cdc; }
+
+/* YouTube embed */
+.yt-wrap { margin: 1.5rem 0 2rem; background:#1a1a1a; border:1px solid #222; }
+.yt-inner { position:relative; padding-top:56.25%; }
+.yt-inner iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.yt-pending { position:absolute; top:0; left:0; width:100%; height:100%;
+              display:flex; flex-direction:column; align-items:center; justify-content:center;
+              color:#555; text-align:center; padding:2rem; }
 </style>
 <script src="../../../calyr-projects/assets/nav.js"></script>
 </head>
 <body>
 <div class="wrap">
 <div class="meta">12,555 words · ~75 min talk · ~62 min read</div>
+<!-- YOUTUBE_EMBED_START -->
+<div class="yt-wrap" id="yt-player" data-ytid="PENDING">
+  <div class="yt-inner" id="yt-inner">
+    <div class="yt-pending">
+      <span style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#555;">VIDEO</span><br>
+      <span style="color:#333;font-size:.85rem;margin-top:.4rem;display:block;">YouTube ID pending</span>
+    </div>
+  </div>
+</div>
+<!-- YOUTUBE_EMBED_END -->
 <h1>AAV Engineering IV — Capsid Engineering Session</h1>
 <div class="toc">
   <div class="toc-title">Sections with estimated timestamps</div>
@@ -371,5 +389,14 @@ h1 { font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:300; letter-spacing:-.03e
   </div>
 </div>
 </div>
+<script>
+(function(){
+  var p=document.getElementById("yt-player");
+  var id=p&&p.getAttribute("data-ytid");
+  if(id&&id!=="PENDING"){
+    document.getElementById("yt-inner").innerHTML="<iframe src="https://www.youtube-nocookie.com/embed/"+id+"?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe>";
+  }
+})();
+</script>
 </body>
 </html>
