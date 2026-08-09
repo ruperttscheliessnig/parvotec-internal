@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parvotec | Programme Proposal — EN</title>
+  <style>
+    :root {
+      --paper:#050505;--card:#090909;--ink:#f5f5f2;--soft:#a7abb0;
+      --line:#343434;--accent:#39bfff;--ms:#fbbf24;
+      --owp1:#39bfff;--owp2:#7dd3fc;--owp3:#a78bfa;--owp4:#f472b6;
+      --owp5:#94a3b8;--owp6:#34d399;--owp7:#fb923c;--owp8:#fbbf24;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:16px;}
+    header{background:var(--paper);padding:76px max(4vw,calc((100vw - 1240px)/2)) 54px;border-bottom:1px solid var(--line);}
+    header h1{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:400;letter-spacing:-0.06em;color:var(--ink);margin-bottom:8px;}
+    header p{font-size:.88rem;color:var(--soft);letter-spacing:.08em;margin-top:12px;}
+    .lang-toggle{display:inline-flex;gap:0;margin-top:20px;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+    .lang-toggle a{padding:6px 16px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-decoration:none;transition:background .2s;}
+    .lang-toggle .active-lang{background:var(--accent);color:#000;}
+    .lang-toggle .inactive-lang{background:var(--card);color:var(--soft);}
+    .lang-toggle .inactive-lang:hover{color:var(--ink);}
+    nav{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;flex-wrap:wrap;gap:24px;padding:0 max(4vw,calc((100vw - 1240px)/2));min-height:56px;}
+    nav a{color:var(--soft);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+    nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--accent);}
+    nav a.back{color:var(--accent);margin-left:auto;}
+    .content{width:min(1240px,94vw);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);}
+    section{padding:72px 48px;border-bottom:1px solid var(--line);scroll-margin-top:56px;}
+    section:last-child{border-bottom:none;}
+    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;letter-spacing:-.05em;color:var(--ink);margin-bottom:28px;line-height:1.1;}
+    h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin-top:36px;margin-bottom:14px;letter-spacing:-.01em;}
+    h4{margin-top:24px;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;font-weight:600;color:var(--accent);}
+    p{font-size:1rem;color:var(--ink);margin-bottom:18px;line-height:1.65;max-width:78ch;}
+    ul,ol{margin-left:28px;margin-bottom:18px;color:var(--ink);}
+    li{margin-bottom:10px;line-height:1.62;}
+    strong{color:var(--ink);font-weight:600;}
+    code{font-family:'Menlo','Monaco','Courier New',monospace;font-size:.85em;background:var(--card);border:1px solid var(--line);padding:2px 6px;color:var(--accent);}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{opacity:.8;}
+    .callout{border-left:2px solid var(--accent);padding:16px 20px;margin:20px 0;background:var(--card);}
+    .callout p{margin:0;font-size:.9rem;max-width:none;}
+    .callout.warn{border-left-color:#fb923c;}
+    .callout.warn p{color:#fb923c;}
+    .spec-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem;}
+    .spec-table th{background:var(--card);color:var(--accent);padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+    .spec-table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+    .spec-table tr:hover{background:var(--card);}
+    .wp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1px;margin-top:28px;}
+    .wp-card{background:var(--card);border:1px solid var(--line);padding:28px 32px;position:relative;overflow:hidden;}
+    .wp-tag{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;display:block;}
+    .wp-card h3{margin-top:0;font-size:1.05rem;}
+    .wp-meta{display:flex;gap:20px;margin-top:16px;font-size:.75rem;color:var(--soft);flex-wrap:wrap;}
+    .wp-meta span{display:flex;flex-direction:column;gap:2px;}
+    .wp-meta strong{color:var(--ink);font-size:.82rem;}
+    .wp-outputs{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--soft);}
+    .wp-outputs strong{color:var(--ink);}
+    .badge-optional{display:inline-block;padding:2px 8px;background:rgba(148,163,184,.15);border:1px solid #94a3b8;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#94a3b8;text-transform:uppercase;margin-left:8px;vertical-align:middle;}
+    .g-wrap{overflow-x:auto;margin-top:28px;}
+    .g-chart{min-width:700px;border:1px solid var(--line);}
+    .g-head{display:grid;grid-template-columns:180px 1fr;border-bottom:2px solid var(--line);}
+    .g-head-label{background:var(--card);border-right:1px solid var(--line);padding:8px 14px;font-size:.62rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:flex-end;}
+    .g-head-track{position:relative;background:var(--card);height:44px;}
+    .g-tick{position:absolute;top:0;bottom:0;border-left:1px solid #1e1e1e;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:6px;padding-left:4px;font-size:.6rem;color:#555;letter-spacing:.04em;}
+    .g-tick.q{border-left:1px solid var(--line);}
+    .g-tick.q span{color:var(--accent);font-weight:700;font-size:.68rem;}
+    .g-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--line);min-height:52px;}
+    .g-row:last-child{border-bottom:none;}
+    .g-rlabel{background:var(--card);border-right:1px solid var(--line);padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:2px;}
+    .g-rlabel strong{font-size:.8rem;color:var(--ink);font-weight:600;}
+    .g-rlabel span{font-size:.64rem;color:var(--soft);}
+    .g-track{position:relative;background:var(--paper);}
+    .g-track::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(8.333% - 1px),#1c1c1c calc(8.333% - 1px),#1c1c1c 8.333%);pointer-events:none;}
+    .g-bar{position:absolute;top:50%;transform:translateY(-50%);height:20px;display:flex;align-items:center;padding:0 8px;font-size:.6rem;font-weight:700;color:rgba(0,0,0,.75);letter-spacing:.05em;white-space:nowrap;overflow:hidden;}
+    .g-bar.dashed{opacity:.65;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.15) 0,rgba(0,0,0,.15) 4px,transparent 4px,transparent 8px);}
+    .g-ms{position:absolute;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:10px;height:10px;background:var(--ms);z-index:4;box-shadow:0 0 0 2px var(--paper);}
+    .g-ms-lbl{position:absolute;top:2px;transform:translateX(-50%);font-size:.58rem;color:var(--ms);white-space:nowrap;font-weight:700;letter-spacing:.04em;z-index:5;}
+    .g-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;font-size:.78rem;}
+    .g-leg{display:flex;align-items:center;gap:8px;}
+    .g-dot{width:20px;height:10px;border-radius:0;flex-shrink:0;}
+    .g-diamond{width:9px;height:9px;transform:rotate(45deg);background:var(--ms);flex-shrink:0;}
+    .o-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);margin:24px 0;}
+    .o-block{background:var(--card);padding:18px 16px;}
+    .o-num{font-size:.65rem;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;}
+    .o-block h4{font-size:.82rem;color:var(--ink);font-weight:600;margin:0 0 6px;text-transform:none;letter-spacing:0;}
+    .o-block p{font-size:.75rem;color:var(--soft);margin:0;max-width:none;}
+    .e-level{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;}
+    .ip-table td:first-child{font-family:'Menlo','Monaco','Courier New',monospace;font-size:.78rem;color:var(--accent);}
+    .phase-badge{display:inline-block;padding:4px 12px;border:1px solid var(--line);border-radius:3px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:20px;}
+    footer{color:var(--soft);padding:48px max(4vw,calc((100vw - 1240px)/2));font-size:.75rem;letter-spacing:.08em;border-top:1px solid var(--line);}
+    footer p{font-size:.75rem;margin:6px 0;color:var(--soft);}
+    @media(max-width:600px){section{padding:48px 20px;}.wp-grid{grid-template-columns:1fr;}.o-flow{grid-template-columns:1fr 1fr;}}
+  </style>
+  <script src="../../gate.js"></script>
+</head>
+<body>
+<header>
+  <div style="margin-bottom:14px;">
+    <span style="font-size:2em;font-weight:700;">calyr.aí</span>
+    <span style="font-size:.72em;color:#39bfff;font-weight:600;margin-left:8px;vertical-align:super;">RESEARCH</span>
+  </div>
+  <h1>Parvotec — Programme Proposal</h1>
+  <p>PARVOTEC–CALYRAI · Phase I + Main Project 12 Months · August 2026</p>
+  <p style="margin-top:6px;color:var(--soft);font-size:.82rem;">AAV Capsid Engineering × ML-guided Optimization · Fit4Function → Closed-Loop Multi-Objective Oracle</p>
+  <div class="lang-toggle" style="margin-top:20px;">
+    <a href="parvotec_proposal_de.html" class="inactive-lang">DE</a>
+    <span class="active-lang" style="padding:6px 16px;font-size:.75rem;font-weight:600;letter-spacing:.08em;">EN</span>
+  </div>
+</header>
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#ip">IP Boundary</a>
+  <a href="#evidence">Evidence</a>
+  <a href="#phase1">Phase I</a>
+  <a href="#oracle-arch">Oracle Architecture</a>
+  <a href="#main">Main Project</a>
+  <a href="#milestones">Milestones</a>
+  <a href="#nongoals">Non-Goals</a>
+  <a href="parvotec_proposal_de.html" class="back">← DE</a>
+</nav>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="phase-badge">PARVOTEC–CALYRAI Programme v1.0</div>
+  <h2>Programme Overview</h2>
+  <p><strong>Parvotec</strong> develops a multi-objective AAV capsid design system — from a reproducible Fit4Function baseline to a closed ML-guided optimisation loop for nociceptive DRG neuron therapy.</p>
+
+  <div class="callout">
+    <p><strong>Core Distinction:</strong> PARVOTEC is not a renamed Fit4Function. Fit4Function is the reproducible methodological starting point. The MVP closes one prospective assay–NGS loop. The target is a multi-oracle, multi-objective AAV design system.</p>
+  </div>
+
+  <table class="spec-table">
+    <thead><tr><th>Parameter</th><th>Phase I</th><th>Main Project</th></tr></thead>
+    <tbody>
+      <tr><td>Duration</td><td>6 weeks / 12 working days</td><td>12 months</td></tr>
+      <tr><td>Work Packages</td><td>WP1–WP7</td><td>OWP1–OWP8</td></tr>
+      <tr><td>Milestones</td><td>M1–M6</td><td>OM1–OM6</td></tr>
+      <tr><td>Entry Gate</td><td>Contract signing</td><td>Phase I handover accepted + experimental responsibilities confirmed</td></tr>
+      <tr><td>Core Goal</td><td>Reproduce Fit4Function, run MVP pipeline, hand over</td><td>Closed-loop multi-objective AAV Oracle</td></tr>
+      <tr><td>Source References</td><td colspan="2">doi:10.1038/s41467-024-50555-y · github.com/vector-engineering/fit4function · Zenodo 8388031 + 8401253</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- IP BOUNDARY -->
+<section id="ip">
+  <h2>IP Boundary</h2>
+  <p>The clear separation between CALYR background IP and PARVOTEC project results is mandatory and binding across all work packages.</p>
+  <div class="callout warn">
+    <p><strong>Rule:</strong> No PARVOTEC data or project result may enter reusable CALYR assets without explicit written approval.</p>
+  </div>
+  <table class="spec-table ip-table">
+    <thead><tr><th>Classification</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>calyrai_background</td><td>Generic CALYR/Pythia platform architecture · Reusable data, surrogate, uncertainty, and provenance contracts · Pre-existing utilities, templates, and abstract modelling methods</td></tr>
+      <tr><td>parvotec_project_result</td><td>Project-specific AAV data and derived artefacts · Project-specific model implementation, weights, features, and rankings · Project variants, candidates, validation results, and documentation</td></tr>
+      <tr><td>mixed_with_explicit_boundary</td><td>WPs containing both platform and project-result components — IP boundary must be explicitly documented</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- EVIDENCE POLICY -->
+<section id="evidence">
+  <h2>Evidence Policy</h2>
+  <p>Every model, metric, candidate ranking, and scientific claim must state its evidence level, dataset version, split policy, uncertainty status, and limitations.</p>
+  <table class="spec-table">
+    <thead><tr><th>Level</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><span class="e-level" style="background:#1a3a2a;color:#34d399;">E0</span> Concept</td><td>Concept or hypothesis; not experimentally established.</td></tr>
+      <tr><td><span class="e-level" style="background:#1a2e3a;color:#39bfff;">E1</span> Baseline</td><td>Reproduced external baseline with traceable source data and code.</td></tr>
+      <tr><td><span class="e-level" style="background:#2a1a3a;color:#a78bfa;">E2</span> Retrospective</td><td>Internally validated retrospective result with leakage-safe evaluation.</td></tr>
+      <tr><td><span class="e-level" style="background:#3a1a2a;color:#f472b6;">E3</span> Prospective</td><td>Prospective experimental validation against predefined controls.</td></tr>
+      <tr><td><span class="e-level" style="background:#3a2a1a;color:#fbbf24;">E4</span> Replicated</td><td>Repeated closed-loop validation across batches or contexts.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PHASE I -->
+<section id="phase1">
+  <h2>Phase I — Baseline to Reproducible AAV MVP</h2>
+  <p><strong>Contractual window:</strong> 6 weeks &nbsp;·&nbsp; <strong>Execution plan:</strong> 12 working days</p>
+
+  <div class="callout">
+    <p><strong>Scope boundary (excluded):</strong> Full production model training at scale · Production deployment and enterprise integrations · Expanded model development beyond the baseline · Main-project commercialisation deliverables</p>
+  </div>
+
+  <h3>Gantt Chart — 12 Working Days</h3>
+  <div class="g-legend">
+    <div class="g-leg"><div class="g-dot" style="background:#39bfff"></div>WP1 Governance</div>
+    <div class="g-leg"><div class="g-dot" style="background:#7dd3fc"></div>WP2 Environment</div>
+    <div class="g-leg"><div class="g-dot" style="background:#a78bfa"></div>WP3 Data</div>
+    <div class="g-leg"><div class="g-dot" style="background:#f472b6"></div>WP4 Database</div>
+    <div class="g-leg"><div class="g-dot" style="background:#34d399"></div>WP5 Baseline</div>
+    <div class="g-leg"><div class="g-dot" style="background:#fb923c"></div>WP6 MVP Pipeline</div>
+    <div class="g-leg"><div class="g-dot" style="background:#fbbf24"></div>WP7 QA & Handover</div>
+    <div class="g-leg"><div class="g-diamond"></div>Milestone</div>
+  </div>
+  <div class="g-wrap"><div class="g-chart">
+    <div class="g-head">
+      <div class="g-head-label">Work Package</div>
+      <div class="g-head-track">
+        <div class="g-tick q" style="left:0%"><span>D1</span></div>
+        <div class="g-tick" style="left:8.33%">D2</div>
+        <div class="g-tick q" style="left:16.67%"><span>D3</span></div>
+        <div class="g-tick" style="left:25%">D4</div>
+        <div class="g-tick q" style="left:33.33%"><span>D5</span></div>
+        <div class="g-tick" style="left:41.67%">D6</div>
+        <div class="g-tick q" style="left:50%"><span>D7</span></div>
+        <div class="g-tick" style="left:58.33%">D8</div>
+        <div class="g-tick q" style="left:66.67%"><span>D9</span></div>
+        <div class="g-tick" style="left:75%">D10</div>
+        <div class="g-tick q" style="left:83.33%"><span>D11</span></div>
+        <div class="g-tick" style="left:91.67%">D12</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP1</strong><span>Governance</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#39bfff;left:0%;width:100%">WP1 — Baseline Governance & Reproducibility</div>
+        <div class="g-ms" style="left:8.33%"></div><div class="g-ms-lbl" style="left:8.33%">M1</div>
+        <div class="g-ms" style="left:99.5%"></div><div class="g-ms-lbl" style="left:99.5%">M6</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP2</strong><span>Environment</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#7dd3fc;left:0%;width:25%">WP2 — Environment</div>
+        <div class="g-ms" style="left:25%"></div><div class="g-ms-lbl" style="left:25%">M2</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP3</strong><span>Data</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#a78bfa;left:16.67%;width:25%">WP3 — Data</div>
+        <div class="g-ms" style="left:41.67%"></div><div class="g-ms-lbl" style="left:41.67%">M3</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP4</strong><span>Database</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#f472b6;left:25%;width:33.33%">WP4 — AAV Database</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP5</strong><span>Baseline</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#34d399;left:41.67%;width:25%">WP5 — Fit4Function</div>
+        <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:66.67%">M4</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP6</strong><span>MVP Pipeline</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#fb923c;left:66.67%;width:16.66%">WP6 — MVP</div>
+        <div class="g-ms" style="left:83.33%"></div><div class="g-ms-lbl" style="left:83.33%">M5</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>WP7</strong><span>QA & Handover</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#fbbf24;left:83.33%;width:16.67%">WP7 — QA</div>
+      </div>
+    </div>
+  </div></div>
+
+  <h3>Phase I Milestones</h3>
+  <table class="spec-table">
+    <thead><tr><th>ID</th><th>Target</th><th>Title</th><th>Evidence Gate</th></tr></thead>
+    <tbody>
+      <tr><td><strong>M1</strong></td><td>D1</td><td>References and scope frozen</td><td>A_reproducibility_gate</td></tr>
+      <tr><td><strong>M2</strong></td><td>D3</td><td>Environment validated</td><td>A_reproducibility_gate</td></tr>
+      <tr><td><strong>M3</strong></td><td>D5</td><td>Data and catalogue validated</td><td>E_data_reuse_gate</td></tr>
+      <tr><td><strong>M4</strong></td><td>D8</td><td>Baseline reproduced</td><td>B_baseline_reproduction_gate</td></tr>
+      <tr><td><strong>M5</strong></td><td>D10</td><td>MVP end-to-end run passed</td><td>C_mvp_end_to_end_gate</td></tr>
+      <tr><td><strong>M6</strong></td><td>D12</td><td>Handover and Phase I acceptance completed</td><td>D_handover_gate</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Phase I Work Packages</h3>
+  <div class="wp-grid">
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#39bfff;"></div>
+      <span class="wp-tag" style="color:#39bfff">WP1 · D1–D12 · mixed_with_explicit_boundary</span>
+      <h3>Baseline Governance & Reproducibility</h3>
+      <h4>Tasks</h4>
+      <ul><li>Freeze source references, branches, commits, and dataset versions</li><li>Define acceptance metrics and evidence locations</li><li>Maintain scope and risk registers through handover</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Frozen source and revision manifest · Reproducibility policy and runbook · Scope, risk, and decision logs</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M1, M6</span><span><strong>Gate</strong>A_reproducibility_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#7dd3fc;"></div>
+      <span class="wp-tag" style="color:#7dd3fc">WP2 · D1–D3 · parvotec_project_result_using_calyrai_background</span>
+      <h3>Environment Rebuild</h3>
+      <h4>Tasks</h4>
+      <ul><li>Recreate the reference software environment</li><li>Lock direct and transitive dependencies</li><li>Verify imports and baseline notebook executability</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Isolated version-locked environment · Dependency and import validation report · Reproducible setup instructions</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M2</span><span><strong>Gate</strong>A_reproducibility_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#a78bfa;"></div>
+      <span class="wp-tag" style="color:#a78bfa">WP3 · D3–D5 · parvotec_project_result</span>
+      <h3>Data Rebuild & Integrity Validation</h3>
+      <h4>Tasks</h4>
+      <ul><li>Acquire source datasets into immutable raw storage</li><li>Record retrieval date, licence, checksum, and source reference</li><li>Validate expected files, schemas, dimensions, and identifiers</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Immutable raw dataset snapshots · Checksums and integrity report · Schema and completeness validation results</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M3</span><span><strong>Gate</strong>E_data_reuse_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#f472b6;"></div>
+      <span class="wp-tag" style="color:#f472b6">WP4 · D4–D7 · parvotec_project_result</span>
+      <h3>AAV Database & Reuse Standard</h3>
+      <h4>Tasks</h4>
+      <ul><li>Enforce canonical storage and naming conventions</li><li>Register owner, source, licence, version, checksum, and quality status</li><li>Demonstrate independent discovery and reuse of curated data</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Raw, staging, curated, feature, and registry layers · Searchable AAV data catalogue · Dataset cards, schema references, and reuse policy</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M3</span><span><strong>Gate</strong>E_data_reuse_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#34d399;"></div>
+      <span class="wp-tag" style="color:#34d399">WP5 · D6–D8 · parvotec_project_result</span>
+      <h3>Fit4Function Baseline Reproduction</h3>
+      <h4>Tasks</h4>
+      <ul><li>Execute the reference notebooks and model path</li><li>Compare metrics, figures, splits, and random-state assumptions</li><li>Explain or resolve deviations from expected outputs</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Notebook and model execution report · Reproduced metrics and figures · Explained delta analysis against the published baseline</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M4</span><span><strong>Gate</strong>B_baseline_reproduction_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#fb923c;"></div>
+      <span class="wp-tag" style="color:#fb923c">WP6 · D9–D10 · parvotec_project_result_using_calyrai_background</span>
+      <h3>Scripted MVP End-to-End Pipeline</h3>
+      <h4>Tasks</h4>
+      <ul><li>Convert the validated notebook path into a scripted workflow</li><li>Capture configuration, seeds, inputs, outputs, and runtime metadata</li><li>Execute and verify one documented end-to-end test case</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> One-command input-to-result pipeline · Config-driven baseline run profile · Versioned test-run artefacts and logs</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M5</span><span><strong>Gate</strong>C_mvp_end_to_end_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#fbbf24;"></div>
+      <span class="wp-tag" style="color:#fbbf24">WP7 · D11–D12 · mixed_with_explicit_boundary</span>
+      <h3>QA, Documentation, IP Record & Handover</h3>
+      <h4>Tasks</h4>
+      <ul><li>Perform an independent rerun from documentation only</li><li>Assemble source, data, model, licence, and IP manifests</li><li>Complete acceptance checklist and archive the Phase I release</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> QA and limitations report · Architecture, API, parameter, and setup documentation · Background-IP and project-result classification record · Handover package and signed acceptance evidence</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>M6</span><span><strong>Gate</strong>D_handover_gate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORACLE ARCHITECTURE -->
+<section id="oracle-arch">
+  <h2>Target AAV Oracle — System Architecture</h2>
+  <p>Learn an experimentally grounded map from AAV sequence and state to manufacturability, functional traits, structural plausibility, and ranked design decisions.</p>
+  <div class="callout">
+    <p><strong>Architecture Principle:</strong> PARVOTEC is not a renamed Fit4Function. Each stage builds on the previous and asserts only the truth claim warranted by its evidence level.</p>
+  </div>
+  <div class="o-flow">
+    <div class="o-block"><div class="o-num">O1</div><h4>Design Space & Constraints</h4><p>Define sequence region, controls, feasible variants, manufacturability constraints, and experimental budget.</p></div>
+    <div class="o-block"><div class="o-num">O2</div><h4>Library & Experiment Design</h4><p>Select diverse, informative candidates using constrained sampling and computational DoE.</p></div>
+    <div class="o-block"><div class="o-num">O3</div><h4>Multi-Modal Observations</h4><p>Register core assay, NGS, production, and functional observations; accept biophysical observations through optional extension contracts.</p></div>
+    <div class="o-block"><div class="o-num">O4</div><h4>Trait-Specific Surrogates</h4><p>Estimate production fitness and later functional, binding, stability, and structural traits with calibrated uncertainty.</p></div>
+    <div class="o-block"><div class="o-num">O5 opt.</div><h4>Biophysical Interpretation</h4><p>If commissioned and data available: test whether ranked candidates are compatible with solution structure, envelopes, and assembly constraints.</p></div>
+    <div class="o-block"><div class="o-num">O6</div><h4>Oracle Fusion & Decision</h4><p>Combine compatible trait predictions, uncertainty, constraints, diversity, and Pareto ranking without hiding conflicts.</p></div>
+    <div class="o-block"><div class="o-num">O7</div><h4>Experimental Validation</h4><p>Measure selected candidates against controls and record falsifiable success or failure evidence.</p></div>
+    <div class="o-block"><div class="o-num">O8</div><h4>Active-Learning Update</h4><p>Update datasets and models, compare acquisition policies, and select the next experimental batch.</p></div>
+  </div>
+</section>
+
+<!-- MAIN PROJECT -->
+<section id="main">
+  <h2>Main Project — 12-Month AAV Oracle</h2>
+  <p><strong>From production-fitness MVP to closed-loop multi-objective capsid design.</strong></p>
+  <p style="color:var(--soft);font-size:.9rem;">Entry gate: Phase I handover accepted and experimental responsibilities confirmed.</p>
+
+  <h3>Gantt Chart — 12 Months</h3>
+  <div class="g-legend">
+    <div class="g-leg"><div class="g-dot" style="background:#39bfff"></div>OWP1 Data Foundation</div>
+    <div class="g-leg"><div class="g-dot" style="background:#7dd3fc"></div>OWP2 Manufacturability MVP</div>
+    <div class="g-leg"><div class="g-dot" style="background:#a78bfa"></div>OWP3 Computational DoE</div>
+    <div class="g-leg"><div class="g-dot" style="background:#f472b6"></div>OWP4 Functional Traits</div>
+    <div class="g-leg"><div class="g-dot" style="background:#94a3b8;opacity:.65"></div>OWP5 Biophysics (opt.)</div>
+    <div class="g-leg"><div class="g-dot" style="background:#34d399"></div>OWP6 Multi-Obj. Fusion</div>
+    <div class="g-leg"><div class="g-dot" style="background:#fb923c"></div>OWP7 Closed-Loop</div>
+    <div class="g-leg"><div class="g-dot" style="background:#fbbf24"></div>OWP8 PYTHIA & Governance</div>
+    <div class="g-leg"><div class="g-diamond"></div>Oracle Milestone</div>
+  </div>
+  <div class="g-wrap"><div class="g-chart">
+    <div class="g-head">
+      <div class="g-head-label">Work Package</div>
+      <div class="g-head-track">
+        <div class="g-tick q" style="left:0%"><span>M1</span></div>
+        <div class="g-tick" style="left:8.33%">M2</div>
+        <div class="g-tick q" style="left:16.67%"><span>M3</span></div>
+        <div class="g-tick" style="left:25%">M4</div>
+        <div class="g-tick q" style="left:33.33%"><span>M5</span></div>
+        <div class="g-tick" style="left:41.67%">M6</div>
+        <div class="g-tick q" style="left:50%"><span>M7</span></div>
+        <div class="g-tick" style="left:58.33%">M8</div>
+        <div class="g-tick q" style="left:66.67%"><span>M9</span></div>
+        <div class="g-tick" style="left:75%">M10</div>
+        <div class="g-tick q" style="left:83.33%"><span>M11</span></div>
+        <div class="g-tick" style="left:91.67%">M12</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP1</strong><span>Data Foundation</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#39bfff;left:0%;width:100%">OWP1 — Data Foundation & Observation Contracts</div>
+        <div class="g-ms" style="left:25%"></div><div class="g-ms-lbl" style="left:25%">OM1</div>
+        <div class="g-ms" style="left:50%"></div><div class="g-ms-lbl" style="left:50%">OM3</div>
+        <div class="g-ms" style="left:99.5%"></div><div class="g-ms-lbl" style="left:99.5%">OM6</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP2</strong><span>Manufacturability MVP</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#7dd3fc;left:0%;width:33.33%">OWP2 — Manufacturability Oracle MVP</div>
+        <div class="g-ms" style="left:25%"></div><div class="g-ms-lbl" style="left:25%">OM1</div>
+        <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:33.33%">OM2</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP3</strong><span>Computational DoE</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#a78bfa;left:8.33%;width:91.67%">OWP3 — Computational DoE & Library Selection</div>
+        <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:33.33%">OM2</div>
+        <div class="g-ms" style="left:83.33%"></div><div class="g-ms-lbl" style="left:83.33%">OM5</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP4</strong><span>Functional Traits</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#f472b6;left:25%;width:50%">OWP4 — Functional Trait Oracles</div>
+        <div class="g-ms" style="left:50%"></div><div class="g-ms-lbl" style="left:50%">OM3</div>
+        <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:66.67%">OM4</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP5</strong><span>Biophysics (opt.)</span></div>
+      <div class="g-track">
+        <div class="g-bar dashed" style="background:#94a3b8;left:25%;width:58.33%">OWP5 — Biophysics (optional)</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP6</strong><span>Multi-Obj. Fusion</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#34d399;left:41.67%;width:50%">OWP6 — Multi-Objective Oracle Fusion</div>
+        <div class="g-ms" style="left:66.67%"></div><div class="g-ms-lbl" style="left:66.67%">OM4</div>
+        <div class="g-ms" style="left:83.33%"></div><div class="g-ms-lbl" style="left:83.33%">OM5</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP7</strong><span>Closed-Loop</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#fb923c;left:16.67%;width:75%">OWP7 — Closed-Loop Experimental Learning</div>
+        <div class="g-ms" style="left:33.33%"></div><div class="g-ms-lbl" style="left:33.33%">OM2</div>
+        <div class="g-ms" style="left:83.33%"></div><div class="g-ms-lbl" style="left:83.33%">OM5</div>
+      </div>
+    </div>
+    <div class="g-row">
+      <div class="g-rlabel"><strong>OWP8</strong><span>PYTHIA & Governance</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="background:#fbbf24;left:0%;width:100%">OWP8 — PYTHIA Integration, QA, Governance & Release</div>
+        <div class="g-ms" style="left:25%"></div><div class="g-ms-lbl" style="left:25%">OM1</div>
+        <div class="g-ms" style="left:50%"></div><div class="g-ms-lbl" style="left:50%">OM3</div>
+        <div class="g-ms" style="left:99.5%"></div><div class="g-ms-lbl" style="left:99.5%">OM6</div>
+      </div>
+    </div>
+  </div></div>
+
+  <h3>Oracle Work Packages</h3>
+  <div class="wp-grid">
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#39bfff;"></div>
+      <span class="wp-tag" style="color:#39bfff">OWP1 · M1–M12 · parvotec_project_result_using_calyrai_background</span>
+      <h3>Data Foundation & Observation Contracts</h3>
+      <h4>Tasks</h4>
+      <ul><li>Maintain immutable raw, staging, curated, feature, and registry layers</li><li>Define required typed contracts for sequence, production, and functional observations</li><li>Keep SAXS, cryo-EM, SPR, stability, and structure contracts as optional extensions</li><li>Enforce identifiers, versions, checksums, licences, lineage, quality state, and split-group metadata</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Versioned AAV knowledge base · Observation schemas · Dataset and feature registry · Leakage audit</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM1, OM3, OM6</span><span><strong>Gate</strong>data_contract_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#7dd3fc;"></div>
+      <span class="wp-tag" style="color:#7dd3fc">OWP2 · M1–M4 · parvotec_project_result</span>
+      <h3>Manufacturability Oracle MVP</h3>
+      <h4>Tasks</h4>
+      <ul><li>Establish one-hot and tree-based baselines before optional sequence embeddings</li><li>Use leakage-safe grouped splits, calibration, uncertainty reporting, and control comparisons</li><li>Rank a synthesis-ready candidate set and execute one prospective assay–NGS cycle</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Frozen production-fitness model · Calibrated ranking · Prospective MVP report · Model card</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM1, OM2</span><span><strong>Gate</strong>prospective_manufacturability_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#a78bfa;"></div>
+      <span class="wp-tag" style="color:#a78bfa">OWP3 · M2–M12 · parvotec_project_result_using_calyrai_background</span>
+      <h3>Computational DoE & Library Selection</h3>
+      <h4>Tasks</h4>
+      <ul><li>Compare random, diversity-guided, uncertainty-guided, and information-gain acquisition policies</li><li>Preserve controls and diversity while enforcing synthesis and production constraints</li><li>Version every candidate pool, acquisition decision, rejection reason, and selected batch</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Library-design policy · Acquisition benchmark · Batch manifests · Decision provenance</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM2, OM5, OM6</span><span><strong>Gate</strong>doe_decision_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#f472b6;"></div>
+      <span class="wp-tag" style="color:#f472b6">OWP4 · M4–M9 · parvotec_project_result</span>
+      <h3>Functional Trait Oracles</h3>
+      <h4>Tasks</h4>
+      <ul><li>Train separate trait models where labels and experimental contexts differ</li><li>Quantify domain shift, missingness, calibration, and cross-assay comparability</li><li>Expose trait predictions independently before any multi-objective fusion</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Trait-specific model cards · Calibrated predictions · Applicability domains · Failure analysis</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM3, OM4</span><span><strong>Gate</strong>trait_oracle_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#94a3b8;"></div>
+      <span class="wp-tag" style="color:#94a3b8">OWP5 · M4–M10 · mixed_with_explicit_boundary <span class="badge-optional">Optional</span></span>
+      <h3>Optional Biophysical Interpretation & Structural Validation</h3>
+      <div class="callout" style="margin:12px 0 16px;padding:10px 14px;">
+        <p style="font-size:.8rem;"><strong>Activation Rule:</strong> Activate only by explicit scientific decision, available suitable data, and separately accepted scope.</p>
+      </div>
+      <h4>Tasks</h4>
+      <ul><li>Connect SAXS solution-state parameterisation and fluctuation-aware models to candidate evaluation</li><li>Compare predicted structures with cryo-EM envelopes without treating AlphaFold confidence as experimental proof</li><li>Use SPR and stability evidence as independent interaction and developability constraints</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Structural compatibility reports · Biophysical feature set · Cross-modal consistency matrix · Limitations register</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>None (not required for release)</span><span><strong>Gate</strong>biophysical_validation_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#34d399;"></div>
+      <span class="wp-tag" style="color:#34d399">OWP6 · M6–M11 · parvotec_project_result_using_calyrai_background</span>
+      <h3>Multi-Objective Oracle Fusion</h3>
+      <h4>Tasks</h4>
+      <ul><li>Construct required Pareto views for manufacturability and functional traits</li><li>Add stability, binding, and structural compatibility only when the optional biophysical module is active</li><li>Keep weights, hard constraints, uncertainty penalties, and diversity rules explicit and versioned</li><li>Test fusion retrospectively before prospective candidate selection</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Multi-objective decision contract · Pareto-ranked candidates · Sensitivity analysis · Decision audit</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM4, OM5</span><span><strong>Gate</strong>oracle_fusion_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#fb923c;"></div>
+      <span class="wp-tag" style="color:#fb923c">OWP7 · M3–M11 · parvotec_project_result</span>
+      <h3>Closed-Loop Experimental Learning</h3>
+      <h4>Tasks</h4>
+      <ul><li>Execute prospective cycles with batch, protocol, and control traceability</li><li>Compare predicted and observed outcomes, including negative and null results</li><li>Update curated data and retrain only through versioned, reviewable releases</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> Prospective validation datasets · Prediction-versus-observation reports · Updated model releases · Stopping recommendation</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM2, OM5</span><span><strong>Gate</strong>closed_loop_gate</span></div>
+    </div>
+    <div class="wp-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#fbbf24;"></div>
+      <span class="wp-tag" style="color:#fbbf24">OWP8 · M1–M12 · mixed_with_explicit_boundary</span>
+      <h3>PYTHIA Integration, QA, Governance & Release</h3>
+      <h4>Tasks</h4>
+      <ul><li>Implement the PARVOTEC application as a PYTHIA molecular-assemblies pipeline with typed inputs, outputs, provenance, and uncertainty</li><li>Automate validation, model and data cards, release manifests, audit trails, and reproducible reports</li><li>Maintain CALYR background-IP versus PARVOTEC project-result separation and document external dependencies</li><li>Release only artefacts that pass their declared evidence gate</li></ul>
+      <div class="wp-outputs"><strong>Outputs:</strong> PYTHIA PARVOTEC application · Reproducible releases · Evidence dossier · Governance and handover package</div>
+      <div class="wp-meta"><span><strong>Milestones</strong>OM1, OM3, OM6</span><span><strong>Gate</strong>oracle_release_gate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section id="milestones">
+  <h2>Oracle Milestones</h2>
+  <table class="spec-table">
+    <thead><tr><th>ID</th><th>Target</th><th>Title</th><th>Dependent OWPs</th></tr></thead>
+    <tbody>
+      <tr><td><strong>OM1</strong></td><td>M3</td><td>Production oracle baseline frozen</td><td>OWP1, OWP2, OWP8</td></tr>
+      <tr><td><strong>OM2</strong></td><td>M4</td><td>First prospective closed loop completed</td><td>OWP2, OWP3, OWP7</td></tr>
+      <tr><td><strong>OM3</strong></td><td>M6</td><td>Functional observation contracts active</td><td>OWP1, OWP4, OWP8</td></tr>
+      <tr><td><strong>OM4</strong></td><td>M8</td><td>Multi-objective ranking validated retrospectively</td><td>OWP4, OWP6</td></tr>
+      <tr><td><strong>OM5</strong></td><td>M10</td><td>Second prospective multi-objective loop completed</td><td>OWP3, OWP6, OWP7</td></tr>
+      <tr><td><strong>OM6</strong></td><td>M12</td><td>AAV Oracle release and evidence dossier accepted</td><td>OWP1, OWP3, OWP8</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- NON-GOALS -->
+<section id="nongoals">
+  <h2>Non-Goals</h2>
+  <p>The following claims are explicitly excluded from this programme. Any attempt to cross these boundaries requires a new scoping decision.</p>
+  <div class="callout warn">
+    <p><strong>Claims inadmissible within this programme:</strong></p>
+  </div>
+  <ul>
+    <li>Claiming clinical efficacy from surrogate or in-vitro evidence</li>
+    <li>Treating structural compatibility as proof of biological function</li>
+    <li>Combining incompatible assays into a single opaque score</li>
+    <li>Promoting exploratory mathematical ideas to validated production logic without evidence</li>
+  </ul>
+</section>
+
+</div>
+<footer>
+  <p><strong>Parvotec — Programme Proposal (EN)</strong></p>
+  <p>Based on PARVOTEC_PROGRAMME.md · Created 2026-07-19 · Updated August 2026 · calyr.aí Research</p>
+  <p><a href="parvotec_proposal_de.html" style="color:var(--accent);">← Deutsche Version</a></p>
+</footer>
+<script>
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('nav a:not(.back)');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-70)cur=s.id;});
+    navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+cur)a.classList.add('active');});
+  },{passive:true});
+</script>
+</body>
+</html>
