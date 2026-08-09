@@ -1,0 +1,18 @@
+name = "parvotec-private"
+main = "src/index.js"
+compatibility_date = "2026-08-09"
+
+# R2 bucket binding — private by default, no public access
+[[r2_buckets]]
+binding  = "PRIVATE"
+bucket_name = "parvotec-private"
+
+# Route: protect everything under /private/*
+# Apply Cloudflare Access policy on this route in the Zero Trust dashboard
+# (Zero Trust → Access → Applications → Self-hosted → calyrai.ai/private/*)
+[[routes]]
+pattern = "calyrai.ai/private/*"
+zone_name = "calyrai.ai"
+
+# Alternatively, deploy as a Pages Function or on a workers.dev subdomain for testing:
+# workers_dev = true  ← uncomment to test at parvotec-private.<account>.workers.dev
