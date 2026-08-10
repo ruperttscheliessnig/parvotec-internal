@@ -13,7 +13,27 @@
 </style>
 </head>
 <body>
-  <header>
+  
+<!-- Key Ideas injected by extract_key_ideas.py -->
+<style>
+.key-ideas-section { margin: 3rem max(4vw,calc((100vw - 1240px)/2)); }
+.key-ideas-section .section-label { font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin-bottom:1rem; display:block; }
+.key-idea { display:grid; grid-template-columns:2rem 1fr; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--line); }
+.key-idea:last-child { border-bottom:none; }
+.ki-num { font-size:.6rem; color:#39bfff; font-weight:700; font-family:monospace; padding-top:.25rem; }
+.key-idea p { font-size:.88rem; color:var(--ink); line-height:1.65; margin:0; }
+</style>
+<div class="key-ideas-section">
+  <span class="section-label">Key Ideas — Lir Therapeutics — Corsair PLM for AAV</span>
+    <div class="key-idea"><span class="ki-num">01</span><p>The plot on the right here again shows the spearmint correlation when predicting relative transduction but this time for our multi task model compared to our single task models in green and pink respectively and we found that the current version of our multi task Corsair model outperforms our single task models on all tissues except for liver and spleen.</p></div>
+    <div class="key-idea"><span class="ki-num">02</span><p>The radial plot on the right here shows varying spearmint correlations when predicting relative transduction across one of our recent tissue libraries and this reflects our targeted library design where in this case we intended to probe the fitness landscape of a localized region on the capsid surface.</p></div>
+    <div class="key-idea"><span class="ki-num">03</span><p>Some of its core components include our virus-specific DNA models that we use for library generation our structural analysis suite that we use for rapid capsid assembly and large scale docking screens and our protein language models that I will talk about throughout the rest of this talk.</p></div>
+    <div class="key-idea"><span class="ki-num">04</span><p>We have benchmarked our specialist model that we are calling Corsair against the public protein gym viral data set and we have found that Corsair shown here in green outperforms ESM2 in pink across all the metrics that we've computed and for all the model sizes that we have tested.</p></div>
+    <div class="key-idea"><span class="ki-num">05</span><p>Our next speaker is Thomas Peacock, who's going to talk to us about navigating the avicapsid secret space using virus-specific protein language models.</p></div>
+    <div class="key-idea"><span class="ki-num">06</span><p>My name is Thomas Peacock, I am an AI research scientist at Lear Therapeutics and yes, today I will introduce some of the work we've been doing developing virus-specific protein language models for AAV capsid design.</p></div>
+</div>
+<!-- end key ideas -->
+<header>
     <h1>calyr.aí</h1>
     <p>Adaptive Research Modeling · 2026</p>
   </header>
