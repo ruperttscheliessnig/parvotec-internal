@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvotec — Knowledge Workflow</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>calyr.aí</h1>
+    <p>Adaptive Research Modeling · 2026</p>
+  </header>
+
+  <div style="max-width:min(1240px,94vw);margin:0 auto;padding:3rem max(4vw,calc((100vw - 1240px)/2));">
+
+    <div style="margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--line);">
+      <p style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#39bfff;margin-bottom:.75rem;">Parvotec — Information System</p>
+      <h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:400;letter-spacing:-.04em;line-height:1.05;margin-bottom:1rem;">How to track &amp; share information</h1>
+      <p style="font-size:.9rem;color:var(--soft);max-width:600px;line-height:1.7;">A reference for maintaining the parvotec knowledge base — adding new content, rebuilding views, and sharing access.</p>
+    </div>
+
+    <!-- STRUCTURE -->
+    <div style="margin-bottom:3rem;">
+      <p style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1.5rem;">01 — Information Structure</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line);">
+        <div style="padding:1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);">
+          <p style="font-size:.6rem;color:#39bfff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;">Talks</p>
+          <p style="font-size:.8rem;color:var(--soft);line-height:1.6;"><code style="color:var(--soft)">transcripts/talks/</code><br>ASGCT 2026 presenter views. Generated from VTT + video frames. Rebuild: <code style="color:#39bfff">python3 build_talk_viewers.py</code></p>
+        </div>
+        <div style="padding:1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);">
+          <p style="font-size:.6rem;color:#39bfff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;">Paper Slides</p>
+          <p style="font-size:.8rem;color:var(--soft);line-height:1.6;"><code style="color:var(--soft)">transcripts/slides/</code><br>PDF → PNG + OCR per slide. Rebuild: <code style="color:#39bfff">python3 extract_pptx_ocr.py</code></p>
+        </div>
+        <div style="padding:1.5rem;border-bottom:1px solid var(--line);">
+          <p style="font-size:.6rem;color:#39bfff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;">Proposals &amp; Reports</p>
+          <p style="font-size:.8rem;color:var(--soft);line-height:1.6;"><code style="color:var(--soft)">transcripts/*.html</code><br>Proposals (DE/EN), SAXS analysis, ASGCT recap. Edit YAML data → rebuild HTML.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD CONTENT -->
+    <div style="margin-bottom:3rem;">
+      <p style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1.5rem;">02 — Adding New Content</p>
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);">
+
+        <div style="display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--line);">
+          <span style="font-size:.58rem;font-family:monospace;color:#39bfff;padding-top:.2rem;">A</span>
+          <div>
+            <p style="font-size:.82rem;color:var(--ink);margin-bottom:.35rem;font-weight:500;">New talk video (MP4)</p>
+            <p style="font-size:.78rem;color:var(--soft);line-height:1.6;">1. Drop MP4 into <code>ASGCT2026/</code><br>2. Run <code style="color:#39bfff">python3 transcribe_all.py</code> → generates VTT<br>3. Run <code style="color:#39bfff">python3 build_talk_viewers.py</code> → generates presenter HTML<br>4. Add entry to TALKS dict in <code>build_talk_viewers.py</code></p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--line);">
+          <span style="font-size:.58rem;font-family:monospace;color:#39bfff;padding-top:.2rem;">B</span>
+          <div>
+            <p style="font-size:.82rem;color:var(--ink);margin-bottom:.35rem;font-weight:500;">New paper (PDF)</p>
+            <p style="font-size:.78rem;color:var(--soft);line-height:1.6;">1. Drop PDF into <code>Machine learning for Rupert/</code><br>2. Run <code style="color:#39bfff">python3 extract_pptx_ocr.py</code> → extracts slides to <code>transcripts/slides/</code><br>3. Link from parvotec page on calyrai-web</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--line);">
+          <span style="font-size:.58rem;font-family:monospace;color:#39bfff;padding-top:.2rem;">C</span>
+          <div>
+            <p style="font-size:.82rem;color:var(--ink);margin-bottom:.35rem;font-weight:500;">Update key ideas</p>
+            <p style="font-size:.78rem;color:var(--soft);line-height:1.6;">Run <code style="color:#39bfff">python3 extract_key_ideas.py</code> — re-scores all VTT transcripts and injects top passages into talk pages.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;padding:1.25rem 0;">
+          <span style="font-size:.58rem;font-family:monospace;color:#39bfff;padding-top:.2rem;">D</span>
+          <div>
+            <p style="font-size:.82rem;color:var(--ink);margin-bottom:.35rem;font-weight:500;">Push everything live</p>
+            <p style="font-size:.78rem;color:var(--soft);line-height:1.6;"><code style="color:#39bfff">git add -A && git commit -m "…" && git push origin main && git push origin main:gh-pages --force</code></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SHARING -->
+    <div style="margin-bottom:3rem;">
+      <p style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1.5rem;">03 — Sharing Access</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);">
+        <div style="padding:1.5rem;border-right:1px solid var(--line);">
+          <p style="font-size:.6rem;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem;">Now (GitHub Pages)</p>
+          <p style="font-size:.78rem;color:var(--soft);line-height:1.7;">URL: <a href="https://ruperttscheliessnig.github.io/parvotec-internal/" target="_blank" style="color:#39bfff">ruperttscheliessnig.github.io/parvotec-internal/</a><br><br>Gate: <code>parvotec2026</code> (PBKDF2, client-side)<br>Share: send the URL + password directly</p>
+        </div>
+        <div style="padding:1.5rem;">
+          <p style="font-size:.6rem;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem;">Future (Cloudflare Access)</p>
+          <p style="font-size:.78rem;color:var(--soft);line-height:1.7;">URL: <code>parvotec.calyrai.ai</code><br><br>Auth: Google / Microsoft login<br>Share: invite by e-mail in CF Zero Trust dashboard<br>Setup: add domain to CF → Pages → Access policy</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <div style="margin-bottom:3rem;">
+      <p style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1.5rem;">04 — All Scripts</p>
+      <table style="width:100%;border-collapse:collapse;font-size:.78rem;">
+        <tbody>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">transcribe_all.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">Whisper: MP4 → VTT transcript files</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">extract_pptx_ocr.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">PDF/PPTX → slide PNGs + OCR text → slide viewer HTML</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">build_talk_viewers.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">VTT + video frames → click-through presenter HTML</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">extract_key_ideas.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">VTT → scored key passages → inject into talk pages</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">migrate_to_calyr_design.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">Migrate any HTML page to calyr.aí CSS (run once per page)</td>
+          </tr>
+          <tr>
+            <td style="padding:.75rem 1rem .75rem 0;color:#39bfff;font-family:monospace;white-space:nowrap;">upload_to_youtube.py</td>
+            <td style="padding:.75rem 0;color:var(--soft);">OAuth2 upload 6 MP4s to YouTube (unlisted), injects IDs into HTML</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="border-top:1px solid var(--line);padding-top:1.5rem;">
+      <a href="index.html" style="font-size:.7rem;color:var(--soft);letter-spacing:.06em;">← Transcripts Index</a>
+      &nbsp;·&nbsp;
+      <a href="/" style="font-size:.7rem;color:var(--soft);letter-spacing:.06em;">← calyr.aí</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>calyr.aí Research · 2026</p>
+    <p><a href="https://github.com/ruperttscheliessnig/parvotec-internal">github.com/ruperttscheliessnig/parvotec-internal</a></p>
+  </footer>
+</body>
+</html>
