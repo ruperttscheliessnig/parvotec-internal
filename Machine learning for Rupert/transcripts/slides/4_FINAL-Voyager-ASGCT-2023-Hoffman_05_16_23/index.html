@@ -3,494 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parvotec | 4_FINAL-Voyager-ASGCT-2023-Hoffman_05.16.23</title>
-
-<script src="../../../../calyr-projects/assets/nav.js"></script>
+<title>calyr.aí — calyr.aí</title>
 <link rel="stylesheet" href="../../css/main.css" />
-
 <style>
-.slide-img-wrap { position:relative; overflow:hidden; cursor:grab; }
-.slide-img-wrap.dragging { cursor:grabbing; }
-.slide-img-wrap img { transform-origin:center center; user-select:none; pointer-events:none; will-change:transform; }
-.zoom-ctrl { position:absolute; bottom:.3rem; right:.3rem; display:flex; gap:.25rem; z-index:10; }
-.zoom-ctrl button { background:rgba(10,10,10,.85); border:1px solid #343434; color:#f5f5f2; font-size:.6rem; padding:.15rem .4rem; cursor:pointer; }
-.zoom-ctrl button:hover { background:#f5f5f2; color:#050505; }
+:root { --c: #39bfff; }
+body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
+.pres-nav {
+  padding:.75rem max(4vw,calc((100vw - 1240px)/2));
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:1.5rem; flex-shrink:0;
+}
+.pres-nav h1 { font-size:.8rem; font-weight:400; letter-spacing:.04em; color:var(--soft); flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.pres-counter { font-size:.65rem; font-family:monospace; color:var(--c); white-space:nowrap; }
+.pres-btn { background:none; border:1px solid var(--line); color:var(--ink); padding:.3rem .8rem; font-family:inherit; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.pres-btn:hover { background:var(--ink); color:var(--paper); }
+.pres-btn:disabled { opacity:.25; cursor:default; }
+.slide-view { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:0; overflow:hidden; }
+.slide-img-col {
+  border-right:1px solid var(--line); display:flex; align-items:center;
+  justify-content:center; padding:0; background:var(--card);
+  overflow:hidden; position:relative; cursor:grab;
+}
+.slide-img-col.dragging { cursor:grabbing; }
+.slide-img-col img { width:100%; max-height:100%; object-fit:contain; transform-origin:center center; user-select:none; pointer-events:none; will-change:transform; }
+.slide-img-col .no-img { font-size:.65rem; color:var(--soft); letter-spacing:.08em; text-transform:uppercase; }
+.zoom-bar { position:absolute; bottom:.5rem; right:.5rem; display:flex; gap:.3rem; z-index:10; }
+.zoom-btn { background:rgba(10,10,10,.85); border:1px solid var(--line); color:var(--ink); font-family:inherit; font-size:.65rem; letter-spacing:.06em; padding:.2rem .5rem; cursor:pointer; }
+.zoom-btn:hover { background:var(--ink); color:var(--paper); }
+.slide-text-col { display:flex; flex-direction:column; justify-content:center; padding:2.5rem 3rem; overflow:hidden; }
+.slide-num { font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }
+.slide-text {
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(.9rem,1.6vw,1.25rem);
+  line-height:1.65; color:var(--ink);
+  overflow-y:auto; max-height:80vh;
+}
+.progress-bar { height:2px; background:var(--line); flex-shrink:0; }
+.progress-fill { height:100%; background:var(--c); transition:width .25s; }
+.pres-footer { padding:.6rem max(4vw,calc((100vw - 1240px)/2)); border-top:1px solid var(--line); display:flex; gap:2rem; flex-shrink:0; }
+.pres-footer a { font-size:.65rem; color:var(--soft); letter-spacing:.06em; }
+.pres-footer a:hover { color:var(--ink); }
+@media(max-width:900px) { .slide-view { grid-template-columns:1fr; } .slide-img-col { border-right:none; border-bottom:1px solid var(--line); max-height:45vh; } }
 </style>
 </head>
 <body>
-  <header>
-    <h1>calyr.aí</h1>
-    <p>Adaptive Research Modeling · 2026</p>
-  </header>
-<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" src="" alt=""></div>
-<div class="wrap">
-<div class="meta">33 slides · 4_FINAL-Voyager-ASGCT-2023-Hoffman_05.16.23.pdf · 96 dpi</div>
-<h1>4_FINAL-Voyager-ASGCT-2023-Hoffman_05.16.23</h1>
-<div class="toc"><div class="toc-title">Jump to slide</div>
-<div class="toc-row"><a href="#s1">Slide 1</a><a href="#s2">Slide 2</a><a href="#s3">Slide 3</a><a href="#s4">Slide 4</a><a href="#s5">Slide 5</a><a href="#s6">Slide 6</a><a href="#s7">Slide 7</a><a href="#s8">Slide 8</a><a href="#s9">Slide 9</a><a href="#s10">Slide 10</a><a href="#s11">Slide 11</a><a href="#s12">Slide 12</a><a href="#s13">Slide 13</a><a href="#s14">Slide 14</a><a href="#s15">Slide 15</a><a href="#s16">Slide 16</a><a href="#s17">Slide 17</a><a href="#s18">Slide 18</a><a href="#s19">Slide 19</a><a href="#s20">Slide 20</a><a href="#s21">Slide 21</a><a href="#s22">Slide 22</a><a href="#s23">Slide 23</a><a href="#s24">Slide 24</a><a href="#s25">Slide 25</a><a href="#s26">Slide 26</a><a href="#s27">Slide 27</a><a href="#s28">Slide 28</a><a href="#s29">Slide 29</a><a href="#s30">Slide 30</a><a href="#s31">Slide 31</a><a href="#s32">Slide 32</a><a href="#s33">Slide 33</a></div></div>
 
-<div class="slide" id="s1">
-  <div class="slide-left">
-    <span class="slide-num">Slide 1 / 33</span>
-    <img class="slide-img" src="img/s1.png" alt="Slide 1"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5452 chars</div>
+<div class="pres-nav">
+  <h1>calyr.aí</h1>
+  <span class="pres-counter" id="counter">01 / 33</span>
+  <button class="pres-btn" id="prev" onclick="go(-1)" disabled>← Prev</button>
+  <button class="pres-btn" id="next" onclick="go(1)">Next →</button>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:3.0%"></div></div>
+
+<div class="slide-view">
+  <div class="slide-img-col" id="imgcol">
+    <img id="simg" src="" alt="" style="display:none;" />
+    <div class="no-img" id="noimg">—</div>
+    <div class="zoom-bar">
+      <button class="zoom-btn" onclick="zoom(1.25)">＋</button>
+      <button class="zoom-btn" onclick="zoom(0.8)">－</button>
+      <button class="zoom-btn" onclick="resetZoom()">↺</button>
+    </div>
   </div>
-  <div class="slide-right"><div class="slide-text"><p>Discovery and Characterization of Novel Cross-</p>
-<p class="h">Species BBB-Penetrant Capsids</p>
-<p>Brett Hoffman, Tatiana Knox, Tyler Moyer, Ishan Shah, Shanan Emmanuel,</p>
-<p class="h">Mathieu Nonnenmacher</p></div></div>
-</div>
-<div class="slide" id="s2">
-  <div class="slide-left">
-    <span class="slide-num">Slide 2 / 33</span>
-    <img class="slide-img" src="img/s2.png" alt="Slide 2"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
+  <div class="slide-text-col">
+    <div class="slide-num" id="snum"></div>
+    <div class="slide-text" id="stext"></div>
   </div>
-  <div class="slide-right"><div class="slide-text"><p>Disclosures</p>
-<p>• Full-time employee at Voyager Therapeutics</p>
-<p>© Voyager Therapeutics | 2 |</p></div></div>
 </div>
-<div class="slide" id="s3">
-  <div class="slide-left">
-    <span class="slide-num">Slide 3 / 33</span>
-    <img class="slide-img" src="img/s3.png" alt="Slide 3"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Delivery of Gene Therapies by Adeno-associated Virus (AAV)</p>
-<p>• First AAV-mediated gene therapy approved in 2012</p>
-<p>• Glybera® (AAV1) - lipoprotein lipase deficiency</p>
-<p>• Luxturna ® (AAV2) - Leber congenital amaurosis</p>
-<p>• Zolgensma ® (AAV9) - spinal muscular atrophy</p>
-<p>• Hemgenix ® (AAV5) - hemophilia B</p>
-<p>• Entry of systemically delivered AAV to the CNS is largely impeded by the blood–brain barrier (BBB).</p>
-<p>• AAV9 is the most efficient natural serotype at crossing</p>
-<p>the BBB and transducing the CNS</p>
-<p>• Requires a high viral load to achieve limited CNS transduction</p>
-<p>© Voyager Therapeutics | 3 |</p></div></div>
+
+<div class="pres-footer">
+  <a href="../../index.html">← Transcripts</a>
+  <a href="/">← calyr.aí</a>
 </div>
-<div class="slide" id="s4">
-  <div class="slide-left">
-    <span class="slide-num">Slide 4 / 33</span>
-    <img class="slide-img" src="img/s4.png" alt="Slide 4"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5476 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Directed Evolution of AAV for CNS Delivery - TRACER™</p>
-<p>TRACER™ - Tropism Redirection of AAV by Cell-type-specific Expression of RNA</p>
-<p>VR-VIII 7-mer Insert</p>
-<p>Nonnenmacher et al. Mol. Ther. Methods Clin. Dev. 2020 © Voyager Therapeutics | 4 |</p></div></div>
-</div>
-<div class="slide" id="s5">
-  <div class="slide-left">
-    <span class="slide-num">Slide 5 / 33</span>
-    <img class="slide-img" src="img/s5.png" alt="Slide 5"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">14509 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Directed Evolution of AAV for CNS Delivery - TRACER™</p>
-<p>TRACER™ - Tropism Redirection of AAV by Cell-type-specific Expression of RNA</p>
-<p>AAV9 9P801 2.0E13 2.0E13 9P801 CNS Transduction in Adult Macaques AAV9 Dentate 100 Nucleus 10</p>
-<p class="ref">1 Hippocampus 9P31 0.1</p>
-<p>0.01 Substantia 0.001 Nigra</p>
-<p>385-fold Increased 0.0001 x x x n s x x x x n s x EGFP Expression vs AAV9 e e e e u e e e e e u e IV dos a in n g ti- , G 4 F e P 1 1 s t V ai G ni , n s g cAAV, Fr o nt a e l n C s o o r r y t M C o o t o rt r C o P rt ut a T m e h b a e l a ll m ar C F o r r o t nt a e l n C s o o r r y t M C o o t o rt r C or P t ut a T m e h b a e l a ll m ar C ort Thalamus S er S er C C IV dosing, 2e13 VG/kg, ssAAV © Voyager Therapeutics | 5 | )PBT sv dloF( ANRm 9P801 TRACER AAV9 Derivative 1,000 – 10,000x Conventional AAV9 IHC detection of transgene protein</p></div></div>
-</div>
-<div class="slide" id="s6">
-  <div class="slide-left">
-    <span class="slide-num">Slide 6 / 33</span>
-    <img class="slide-img" src="img/s6.png" alt="Slide 6"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor/Ligand Paradigm in BBB-penetrant Capsid Engineering</p>
-<p>Examples:</p>
-<p>- PHP.B-Ly6A (Deverman, Wilson) - 9P39-Ly6C1 (Deverman) - 9P31-CA4 (Gradinaru)</p>
-<p>© Voyager Therapeutics | 6 |</p></div></div>
-</div>
-<div class="slide" id="s7">
-  <div class="slide-left">
-    <span class="slide-num">Slide 7 / 33</span>
-    <img class="slide-img" src="img/s7.png" alt="Slide 7"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Importance of Novel Capsid Receptor Identification</p>
-<p>• Receptor identification will provide confidence in the</p>
-<p>transferability of novel capsids to humans</p>
-<p>• Facilitate prediction of capsid behavior in humans based on receptor expression patterns</p>
-<p>• A mechanistic understanding of how novel capsids</p>
-<p>outperform WT AAV9 in crossing the BBB</p>
-<p>• Provide learnings which can be applied to future CNS</p>
-<p>targeting efforts</p>
-<p>© Voyager Therapeutics | 7 |</p></div></div>
-</div>
-<div class="slide" id="s8">
-  <div class="slide-left">
-    <span class="slide-num">Slide 8 / 33</span>
-    <img class="slide-img" src="img/s8.png" alt="Slide 8"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p class="h">AAV9 VR-IV TRACER™ Screen</p>
-<p>Brain Tropism AAV Capsid Library NHP/Mouse Translation</p>
-<p>IV dosing, 1E13 VF/kg, scAAV</p>
-<p>© Voyager Therapeutics | 8 |</p></div></div>
-</div>
-<div class="slide" id="s9">
-  <div class="slide-left">
-    <span class="slide-num">Slide 9 / 33</span>
-    <img class="slide-img" src="img/s9.png" alt="Slide 9"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5595 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p class="h">AAV9 VR-IV TRACER™ Screen</p>
-<p>Brain Tropism AAV Capsid Library NHP/Mouse Translation</p>
-<p>IV dosing, 1E13 VF/kg, scAAV</p>
-<p>*Oral Presentation: Tyler Moyer, Ph.D.</p>
-<p>Thursday, May 18, 2023, 2:15-2:30 PM.</p>
-<p>AAV Engineering for CNS Targeting Session © Voyager Therapeutics | 9 |</p></div></div>
-</div>
-<div class="slide" id="s10">
-  <div class="slide-left">
-    <span class="slide-num">Slide 10 / 33</span>
-    <img class="slide-img" src="img/s10.png" alt="Slide 10"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5463 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Cryo-EM structure of VCAP-102</p>
-<p>• Overlay of VCAP-102 map (grey) and AAV9 map (yellow)</p>
-<p>• A difference within a surface loop is highlighted</p>
-<p>• This region contains the VCAP-102 peptide insert 3.4 Å • This region is disordered at higher resolution indicating flexibility</p>
-<p>© Voyager Therapeutics | 10 |</p></div></div>
-</div>
-<div class="slide" id="s11">
-  <div class="slide-left">
-    <span class="slide-num">Slide 11 / 33</span>
-    <img class="slide-img" src="img/s11.png" alt="Slide 11"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5463 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p class="h">Receptor Identification – Orthogonal Approaches</p>
-<p>Receptor Binding Array Human ORFeome Transduction Screen</p>
-<p>• Both approaches converged on a surface membrane protein expressed on the blood brain barrier</p>
-<p>© Voyager Therapeutics | 11 |</p></div></div>
-</div>
-<div class="slide" id="s12">
-  <div class="slide-left">
-    <span class="slide-num">Slide 12 / 33</span>
-    <img class="slide-img" src="img/s12.png" alt="Slide 12"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor X is Highly Conserved - Protein Sequence Alignment</p>
-<p>Cell Binding Array Identified an Interaction Between “Receptor X” and VCAP-102</p>
-<p>Human / Cyno. Macaque Human / Mouse Cyno. Macaque / Mouse</p>
-<p>Identity &gt;95% Identity ~90% Identity &gt;90%</p>
-<p>Similarity &gt;95% Similarity &gt;90% Similarity &gt;95%</p>
-<p>© Voyager Therapeutics | 12|</p></div></div>
-</div>
-<div class="slide" id="s13">
-  <div class="slide-left">
-    <span class="slide-num">Slide 13 / 33</span>
-    <img class="slide-img" src="img/s13.png" alt="Slide 13"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor X is Highly Conserved and Expressed on Brain Endothelial Cells</p>
-<p>Cerebellum</p>
-<p class="h">Cerebral Cortex</p>
-<p>ReceptorX mRNA ISH Staining © Voyager Therapeutics | 13|</p></div></div>
-</div>
-<div class="slide" id="s14">
-  <div class="slide-left">
-    <span class="slide-num">Slide 14 / 33</span>
-    <img class="slide-img" src="img/s14.png" alt="Slide 14"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-101/102 Transduction Assay – Human Receptor X</p>
-<p>Effect of Receptor X Expression is Specific to VCAP-101/102 Capsid Family</p>
-<p class="h">Control Plasmid AAVR</p>
-<p>© Voyager Therapeutics | 14|</p></div></div>
-</div>
-<div class="slide" id="s15">
-  <div class="slide-left">
-    <span class="slide-num">Slide 15 / 33</span>
-    <img class="slide-img" src="img/s15.png" alt="Slide 15"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-101/102 Transduction Assay – Human Receptor X</p>
-<p>Effect of Receptor X Expression is Specific to VCAP-101/102 Capsid Family</p>
-<p class="h">Control Plasmid AAVR Receptor X</p>
-<p>© Voyager Therapeutics | 15|</p></div></div>
-</div>
-<div class="slide" id="s16">
-  <div class="slide-left">
-    <span class="slide-num">Slide 16 / 33</span>
-    <img class="slide-img" src="img/s16.png" alt="Slide 16"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">6792 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-101/102 Transduction Assay – Human Receptor X</p>
-<p class="h">AAV9 VCAP-101 VCAP-102</p>
-<p>128 44.5 64 34.3 32</p>
-<p class="ref">8 4.3 4.1 4 2.4 1.5 2 1.0 1.0 1.0 1 0.5 6 R X 6 R X 6 R X M V A V o r M V A V o r M V A V o r C A pt C A pt C A pt p e p e p e c c c e e e R R R</p>
-<p>© Voyager Therapeutics | 16| ytivitcA esareficuL )egnahC dloF( • Receptor X leads to a 35 and 45-fold increase in transduction by VCAP-101 and VCAP-102, respectively • This effect is specific to this novel capsid family as Wt AAV9 transduction is unaffected by receptor X expression</p></div></div>
-</div>
-<div class="slide" id="s17">
-  <div class="slide-left">
-    <span class="slide-num">Slide 17 / 33</span>
-    <img class="slide-img" src="img/s17.png" alt="Slide 17"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">6127 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Transduction Assay – Human Receptor X Stable Cell Line</p>
-<p class="h">AAV9 VCAP-102</p>
-<p>256 146.9 128</p>
-<p class="h">32 293T 16 8</p>
-<p>1.3 2 1.0 1.0 293T-Receptor X 1 0.5 293T 293T-Rx 293T 293T-Rx</p>
-<p>© Voyager Therapeutics | 17| ytivitcA esareficuL )egnahC dloF( AAV9 VCAP-102</p></div></div>
-</div>
-<div class="slide" id="s18">
-  <div class="slide-left">
-    <span class="slide-num">Slide 18 / 33</span>
-    <img class="slide-img" src="img/s18.png" alt="Slide 18"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">6260 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Transduction Assay – NHP and Mouse Receptor X are Functionally Equivalent</p>
-<p class="h">AAV9 VCAP-102</p>
-<p class="h">AAV9 VCAP-102</p>
-<p>pCMV6 100 81.5</p>
-<p class="ref">80 60.3 57.2 60</p>
-<p>Human 40 Receptor X</p>
-<p class="ref">20 Cyno 7.3 4.9 Receptor X 1.0 0.5 0.4 1.0 1.0 0 V 6 V R R x R x R x V 6 V R R x R x R x p C M A A u m a n C y n o M o u s e p C M A A u m a n C y n o M o u s e H H</p>
-<p>© Voyager Therapeutics | 18| ytivitcA esareficuL )egnahC dloF( AAVR Mouse Receptor X</p></div></div>
-</div>
-<div class="slide" id="s19">
-  <div class="slide-left">
-    <span class="slide-num">Slide 19 / 33</span>
-    <img class="slide-img" src="img/s19.png" alt="Slide 19"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5994 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Knockdown of Endogenous Receptor X Expression Inhibits VCAP-102 Transduction</p>
-<p>• VCAP-102 transduction of an alternative cell line is up</p>
-<p>to 10-fold higher than wt AAV9 10000</p>
-<p>8000 • ~5-fold elevated levels of Receptor X expression compared to HEK293T cell line 6000</p>
-<p>4000 • What effect on VCAP-102 transduction does siRNA 2000 mediated knockdown of Receptor X expression have?</p>
-<p class="ref">0 A A N N R R si si n. n. o o C C</p>
-<p>© Voyager Therapeutics | 19| ytivitcA esareficuL )ULR( AAV9 VCAP-102</p></div></div>
-</div>
-<div class="slide" id="s20">
-  <div class="slide-left">
-    <span class="slide-num">Slide 20 / 33</span>
-    <img class="slide-img" src="img/s20.png" alt="Slide 20"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">10117 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>• AAV transduction at 48hr post-siRNA transfection followed by luciferase assay 24hr post-transduction 10000</p>
-<p>8000 • siRNA mediated knockdown of Receptor X led to a</p>
-<p>~80% reduction in VCAP-102 transduction 6000</p>
-<p>4000 • No effect on transduction of AAV9 2000</p>
-<p class="ref">0 A 1 2 2 A 1 2 2</p>
-<p>C o n. si R N R x si R N A R x si R N x A s i R N A 1 + C o n. si R N R x si R N A R x si R N x A s i R N A 1 + R R © Voyager Therapeutics | 20| ytivitcA esareficuL )ULR( Knockdown of Endogenous Receptor X Expression Inhibits VCAP-102 Transduction AAV9 VCAP-102</p></div></div>
-</div>
-<div class="slide" id="s21">
-  <div class="slide-left">
-    <span class="slide-num">Slide 21 / 33</span>
-    <img class="slide-img" src="img/s21.png" alt="Slide 21"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">7058 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>α-Receptor X Antibody Inhibits VCAP-102 Transduction</p>
-<p class="ref">10 0.0 2.5 5.0 7.5 10.0 12.5 15.0 Ab Concentration (µg/mL)</p>
-<p>© Voyager Therapeutics | 21| )ULR( ytivitcA esareficuL AAV9 - α-Rx AAV9 - IgG con. VCAP-102 - α-Rx VCAP-102 - IgG con. 0 µg/mL 3.125 µg/mL 6.25 µg/mL 12.5µg/mL α-Receptor X VCAP-102 IgG Isotype Control</p></div></div>
-</div>
-<div class="slide" id="s22">
-  <div class="slide-left">
-    <span class="slide-num">Slide 22 / 33</span>
-    <img class="slide-img" src="img/s22.png" alt="Slide 22"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">7058 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>α-Receptor X Antibody Inhibits VCAP-102 Transduction</p>
-<p class="ref">10 0.0 2.5 5.0 7.5 10.0 12.5 15.0 Ab Concentration (µg/mL)</p>
-<p>© Voyager Therapeutics | 22| )ULR( ytivitcA esareficuL AAV9 - α-Rx AAV9 - IgG con. VCAP-102 - α-Rx VCAP-102 - IgG con. 0 µg/mL 3.125 µg/mL 6.25 µg/mL 12.5µg/mL α-Receptor X VCAP-102 IgG Isotype Control</p></div></div>
-</div>
-<div class="slide" id="s23">
-  <div class="slide-left">
-    <span class="slide-num">Slide 23 / 33</span>
-    <img class="slide-img" src="img/s23.png" alt="Slide 23"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-102 Directly and Specifically Binds to Receptor X</p>
-<p>• SPR measures molecular binding events in real-time and calculates binding affinity (KD)</p>
-<p>© Voyager Therapeutics | 23|</p></div></div>
-</div>
-<div class="slide" id="s24">
-  <div class="slide-left">
-    <span class="slide-num">Slide 24 / 33</span>
-    <img class="slide-img" src="img/s24.png" alt="Slide 24"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-102 Directly and Specifically Binds to Receptor X</p>
-<p>• SPR measures molecular binding events in real-time and calculates binding affinity (KD)</p>
-<p>KD = Mid-nanomolar (10-100 nM)</p>
-<p>© Voyager Therapeutics | 24|</p></div></div>
-</div>
-<div class="slide" id="s25">
-  <div class="slide-left">
-    <span class="slide-num">Slide 25 / 33</span>
-    <img class="slide-img" src="img/s25.png" alt="Slide 25"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5465 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor X – VCAP-102 pH Dependent Dissociation</p>
-<p class="h">Association Dissociation</p>
-<p>Receptor X Apical -Bloodstream Dissociation at pH 7.4</p>
-<p>Acidification (pH 5.5)</p>
-<p>Lessons from transferrin receptor:</p>
-<p>• Correlation between affinity and lysosomal degradation,</p>
-<p>high affinity results in poor transcytosis</p>
-<p>• Lower affinity at pH 5.5 promotes efficient transcytosis</p>
-<p>Basolateral -CNS</p>
-<p>© Voyager Therapeutics | 25|</p></div></div>
-</div>
-<div class="slide" id="s26">
-  <div class="slide-left">
-    <span class="slide-num">Slide 26 / 33</span>
-    <img class="slide-img" src="img/s26.png" alt="Slide 26"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5465 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor X – VCAP-102 pH Dependent Dissociation</p>
-<p class="h">Association Dissociation</p>
-<p>Receptor X Apical -Bloodstream Dissociation at pH 7.4</p>
-<p>Acidification (pH 5.5)</p>
-<p>Dissociation</p>
-<p>at pH 5.5</p>
-<p>Basolateral -CNS</p>
-<p>© Voyager Therapeutics | 26|</p></div></div>
-</div>
-<div class="slide" id="s27">
-  <div class="slide-left">
-    <span class="slide-num">Slide 27 / 33</span>
-    <img class="slide-img" src="img/s27.png" alt="Slide 27"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">8255 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>VCAP-102 Retains Galactose Binding – RX Binding is a Gain of Function</p>
-<p class="h">AAV9 VCAP-102 4000</p>
-<p class="ref">0 0 5 50 500 1000</p>
-<p>Neuraminidase (mU/mL)</p>
-<p>© Voyager Therapeutics | 27| )ULR( ytivitcA esareficuL 40000 11.1 10.4 30000 6.2 20000 2.7 10000 1 0 0 5 50 500 1000 Neuraminidase (mU/mL) )ULR( ytivitcA esareficuL 13.9 12.5 13.7 9.6 1</p></div></div>
-</div>
-<div class="slide" id="s28">
-  <div class="slide-left">
-    <span class="slide-num">Slide 28 / 33</span>
-    <img class="slide-img" src="img/s28.png" alt="Slide 28"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p class="h">Receptor-Guided Capsid Evolution</p>
-<p>• Can we utilize Receptor X to drive evolution of novel serotypes and alternative VR insert locations?</p>
-<p>© Voyager Therapeutics | 28|</p></div></div>
-</div>
-<div class="slide" id="s29">
-  <div class="slide-left">
-    <span class="slide-num">Slide 29 / 33</span>
-    <img class="slide-img" src="img/s29.png" alt="Slide 29"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">8000 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>AAV9.VR-IV P0 Library – In vitro Evolution – HEK vs HEK-Receptor X</p>
-<p>HEK-Ctrl Enrichment (RPM)</p>
-<p>© Voyager Therapeutics | 29 | )MPR( 2-peR XR )MPR( tnemhcirnE XR-KEH HEK-RX Rep-1 (RPM) HEK-Ctrl - Fc vs. Input tupnI .sv cF - XR-KEH Correlation Between Receptor X Specific vs. Fold Change vs. Input Receptor X Replicates Non-Specific Enrichment All Filtered Variants VCAP-101/102 motif R2 =0.85 Reference Capsid Variant enrichment = Avg RPM between Filtering criteria - WT FC &lt;15, RX CV &lt;1 replicates normalized to input library RPM</p></div></div>
-</div>
-<div class="slide" id="s30">
-  <div class="slide-left">
-    <span class="slide-num">Slide 30 / 33</span>
-    <img class="slide-img" src="img/s30.png" alt="Slide 30"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">9054 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Preliminary Identification of Two Additional Human Receptors for Novel Capsids</p>
-<p>41.3 50 40</p>
-<p class="ref">20 8.6 7.3 10 2.4 1.0 1.0 0 M V 6 A V R or 7 M V 6 A V R or 7 p C A ece pt p C A ece pt R R</p>
-<p>© Voyager Therapeutics )CF( ytivitcA esareficuL VCAP-088 Human Receptor Candidate Screen AAV9 VCAP-088 10 6.5 5.9 4.7 5 1.0 1.2 1.0 0 6 R 6 6 R 6 p C M V A A V e pt or 1 p C M V A A V e pt or 1 ec ec R R VCAP-088 AAV9 Novel CNS Capsid AAV9 )CF( ytivitcA esareficuL Novel CNS AAV9 Novel CNS Capsid AAV9 Capsid pCMV6 AAVR Receptor 16</p></div></div>
-</div>
-<div class="slide" id="s31">
-  <div class="slide-left">
-    <span class="slide-num">Slide 31 / 33</span>
-    <img class="slide-img" src="img/s31.png" alt="Slide 31"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5595 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Receptor X – Non-viral CNS Delivery</p>
-<p>Peptide-mediated Oligo / Antibody-mediated Oligo / Small Molecule Delivery Small Molecule Delivery</p>
-<p>Receptor X Targeted Bivalent Antibody Lipid Nanoparticle © Voyager Therapeutics | 31|</p></div></div>
-</div>
-<div class="slide" id="s32">
-  <div class="slide-left">
-    <span class="slide-num">Slide 32 / 33</span>
-    <img class="slide-img" src="img/s32.png" alt="Slide 32"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5462 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>Conclusions</p>
-<p>• The TRACER™ platform has resulted in the generation of multiple capsid</p>
-<p>families with enhanced CNS tropism</p>
-<p>TRACER™ • We have identified Receptor X as the likely cell surface receptor for our novel</p>
-<p>cross-species BBB-penetrant capsid VCAP-102</p>
-<p>Supports transferability of BBB-penetrant phenotype to humans</p>
-<p>• In vitro evolution is being used to develop new AAV serotypes and new insert</p>
-<p>locations that bind Receptor X</p>
-<p>• We continue efforts to identify receptors for our additional panel of novel</p>
-<p>capsids and have preliminary data supporting the identification of two additional</p>
-<p>receptors</p>
-<p>• Investigating use of identified receptors for non-viral CNS delivery</p>
-<p>© Voyager Therapeutics | 32|</p></div></div>
-</div>
-<div class="slide" id="s33">
-  <div class="slide-left">
-    <span class="slide-num">Slide 33 / 33</span>
-    <img class="slide-img" src="img/s33.png" alt="Slide 33"
-         loading="lazy" onclick="show(this)">
-    <div class="slide-chars">5452 chars</div>
-  </div>
-  <div class="slide-right"><div class="slide-text"><p>If you would like more information,</p>
-<p>Thank you! please contact:</p>
-<p>Brett Hoffman Questions? bhoffman@vygr.com</p></div></div>
-</div>
-</div>
+
 <script>
-function show(img) {
-  document.getElementById('lbi').src = img.src;
-  document.getElementById('lb').classList.add('on');
+const DATA = [{"n": 1, "img": "img/s1.png", "text": "Discovery and Characterization of Novel Cross- Species BBB-Penetrant Capsids Brett Hoffman, Tatiana Knox, Tyler Moyer, Ishan Shah, Shanan Emmanuel, Mathieu Nonnenmacher"}, {"n": 2, "img": "img/s2.png", "text": "Disclosures • Full-time employee at Voyager Therapeutics © Voyager Therapeutics | 2 |"}, {"n": 3, "img": "img/s3.png", "text": "Delivery of Gene Therapies by Adeno-associated Virus (AAV) • First AAV-mediated gene therapy approved in 2012 • Glybera® (AAV1) - lipoprotein lipase deficiency • Luxturna ® (AAV2) - Leber congenital amaurosis • Zolgensma ® (AAV9) - spinal muscular atrophy • Hemgenix ® (AAV5) - hemophilia B • Entry of systemically delivered AAV to the CNS is largely impeded by the blood–brain barrier (BBB). • AAV9 is the most efficient natural serotype at crossing the BBB and transducing the CNS • Requires a high viral load to achieve limited CNS transduction © Voyager Therapeutics | 3 |"}, {"n": 4, "img": "img/s4.png", "text": "Directed Evolution of AAV for CNS Delivery - TRACER™ TRACER™ - Tropism Redirection of AAV by Cell-type-specific Expression of RNA VR-VIII 7-mer Insert Nonnenmacher et al. Mol. Ther. Methods Clin. Dev. 2020 © Voyager Therapeutics | 4 |"}, {"n": 5, "img": "img/s5.png", "text": "Directed Evolution of AAV for CNS Delivery - TRACER™ TRACER™ - Tropism Redirection of AAV by Cell-type-specific Expression of RNA AAV9 9P801 2.0E13 2.0E13 9P801 CNS Transduction in Adult Macaques AAV9 Dentate 100 Nucleus 10 1 Hippocampus 9P31 0.1 0.01 Substantia 0.001 Nigra 385-fold Increased 0.0001 x x x n s x x x x n s x EGFP Expression vs AAV9 e e e e u e e e e e u e IV dos a in n g ti- , G 4 F e P 1 1 s t V ai G ni , n s g cAAV, Fr o nt a e l n C s o o r r y t M C o o t o rt r C o P rt ut a T m e h b a e l a ll m ar C F o r r o t nt a e l n C s o o r r y t M C o o t o rt r C or P t ut a T m e h b a e l a ll m ar C ort Thalamus S er S er C C IV dosing, 2e13 VG/kg, ssAAV © Voyager Therapeutics | 5 | )PBT sv dloF( ANRm 9P801 TRACER AAV9 Derivative 1,000 – 10,000x Conventional AAV9 IHC detection of transgene protein"}, {"n": 6, "img": "img/s6.png", "text": "Receptor/Ligand Paradigm in BBB-penetrant Capsid Engineering Examples: - PHP.B-Ly6A (Deverman, Wilson) - 9P39-Ly6C1 (Deverman) - 9P31-CA4 (Gradinaru) © Voyager Therapeutics | 6 |"}, {"n": 7, "img": "img/s7.png", "text": "Importance of Novel Capsid Receptor Identification • Receptor identification will provide confidence in the transferability of novel capsids to humans • Facilitate prediction of capsid behavior in humans based on receptor expression patterns • A mechanistic understanding of how novel capsids outperform WT AAV9 in crossing the BBB • Provide learnings which can be applied to future CNS targeting efforts © Voyager Therapeutics | 7 |"}, {"n": 8, "img": "img/s8.png", "text": "AAV9 VR-IV TRACER™ Screen Brain Tropism AAV Capsid Library NHP/Mouse Translation IV dosing, 1E13 VF/kg, scAAV © Voyager Therapeutics | 8 |"}, {"n": 9, "img": "img/s9.png", "text": "AAV9 VR-IV TRACER™ Screen Brain Tropism AAV Capsid Library NHP/Mouse Translation IV dosing, 1E13 VF/kg, scAAV *Oral Presentation: Tyler Moyer, Ph.D. Thursday, May 18, 2023, 2:15-2:30 PM. AAV Engineering for CNS Targeting Session © Voyager Therapeutics | 9 |"}, {"n": 10, "img": "img/s10.png", "text": "Cryo-EM structure of VCAP-102 • Overlay of VCAP-102 map (grey) and AAV9 map (yellow) • A difference within a surface loop is highlighted • This region contains the VCAP-102 peptide insert 3.4 Å • This region is disordered at higher resolution indicating flexibility © Voyager Therapeutics | 10 |"}, {"n": 11, "img": "img/s11.png", "text": "Receptor Identification – Orthogonal Approaches Receptor Binding Array Human ORFeome Transduction Screen • Both approaches converged on a surface membrane protein expressed on the blood brain barrier © Voyager Therapeutics | 11 |"}, {"n": 12, "img": "img/s12.png", "text": "Receptor X is Highly Conserved - Protein Sequence Alignment Cell Binding Array Identified an Interaction Between “Receptor X” and VCAP-102 Human / Cyno. Macaque Human / Mouse Cyno. Macaque / Mouse Identity &gt;95% Identity ~90% Identity &gt;90% Similarity &gt;95% Similarity &gt;90% Similarity &gt;95% © Voyager Therapeutics | 12|"}, {"n": 13, "img": "img/s13.png", "text": "Receptor X is Highly Conserved and Expressed on Brain Endothelial Cells Cerebellum Cerebral Cortex ReceptorX mRNA ISH Staining © Voyager Therapeutics | 13|"}, {"n": 14, "img": "img/s14.png", "text": "VCAP-101/102 Transduction Assay – Human Receptor X Effect of Receptor X Expression is Specific to VCAP-101/102 Capsid Family Control Plasmid AAVR © Voyager Therapeutics | 14|"}, {"n": 15, "img": "img/s15.png", "text": "VCAP-101/102 Transduction Assay – Human Receptor X Effect of Receptor X Expression is Specific to VCAP-101/102 Capsid Family Control Plasmid AAVR Receptor X © Voyager Therapeutics | 15|"}, {"n": 16, "img": "img/s16.png", "text": "VCAP-101/102 Transduction Assay – Human Receptor X AAV9 VCAP-101 VCAP-102 128 44.5 64 34.3 32 8 4.3 4.1 4 2.4 1.5 2 1.0 1.0 1.0 1 0.5 6 R X 6 R X 6 R X M V A V o r M V A V o r M V A V o r C A pt C A pt C A pt p e p e p e c c c e e e R R R © Voyager Therapeutics | 16| ytivitcA esareficuL )egnahC dloF( • Receptor X leads to a 35 and 45-fold increase in transduction by VCAP-101 and VCAP-102, respectively • This effect is specific to this novel capsid family as Wt AAV9 transduction is unaffected by receptor X expression"}, {"n": 17, "img": "img/s17.png", "text": "Transduction Assay – Human Receptor X Stable Cell Line AAV9 VCAP-102 256 146.9 128 32 293T 16 8 1.3 2 1.0 1.0 293T-Receptor X 1 0.5 293T 293T-Rx 293T 293T-Rx © Voyager Therapeutics | 17| ytivitcA esareficuL )egnahC dloF( AAV9 VCAP-102"}, {"n": 18, "img": "img/s18.png", "text": "Transduction Assay – NHP and Mouse Receptor X are Functionally Equivalent AAV9 VCAP-102 AAV9 VCAP-102 pCMV6 100 81.5 80 60.3 57.2 60 Human 40 Receptor X 20 Cyno 7.3 4.9 Receptor X 1.0 0.5 0.4 1.0 1.0 0 V 6 V R R x R x R x V 6 V R R x R x R x p C M A A u m a n C y n o M o u s e p C M A A u m a n C y n o M o u s e H H © Voyager Therapeutics | 18| ytivitcA esareficuL )egnahC dloF( AAVR Mouse Receptor X"}, {"n": 19, "img": "img/s19.png", "text": "Knockdown of Endogenous Receptor X Expression Inhibits VCAP-102 Transduction • VCAP-102 transduction of an alternative cell line is up to 10-fold higher than wt AAV9 10000 8000 • ~5-fold elevated levels of Receptor X expression compared to HEK293T cell line 6000 4000 • What effect on VCAP-102 transduction does siRNA 2000 mediated knockdown of Receptor X expression have? 0 A A N N R R si si n. n. o o C C © Voyager Therapeutics | 19| ytivitcA esareficuL )ULR( AAV9 VCAP-102"}, {"n": 20, "img": "img/s20.png", "text": "• AAV transduction at 48hr post-siRNA transfection followed by luciferase assay 24hr post-transduction 10000 8000 • siRNA mediated knockdown of Receptor X led to a ~80% reduction in VCAP-102 transduction 6000 4000 • No effect on transduction of AAV9 2000 0 A 1 2 2 A 1 2 2 C o n. si R N R x si R N A R x si R N x A s i R N A 1 + C o n. si R N R x si R N A R x si R N x A s i R N A 1 + R R © Voyager Therapeutics | 20| ytivitcA esareficuL )ULR( Knockdown of Endogenous Receptor X Expression Inhibits VCAP-102 Transduction AAV9 VCAP-102"}, {"n": 21, "img": "img/s21.png", "text": "α-Receptor X Antibody Inhibits VCAP-102 Transduction 10 0.0 2.5 5.0 7.5 10.0 12.5 15.0 Ab Concentration (µg/mL) © Voyager Therapeutics | 21| )ULR( ytivitcA esareficuL AAV9 - α-Rx AAV9 - IgG con. VCAP-102 - α-Rx VCAP-102 - IgG con. 0 µg/mL 3.125 µg/mL 6.25 µg/mL 12.5µg/mL α-Receptor X VCAP-102 IgG Isotype Control"}, {"n": 22, "img": "img/s22.png", "text": "α-Receptor X Antibody Inhibits VCAP-102 Transduction 10 0.0 2.5 5.0 7.5 10.0 12.5 15.0 Ab Concentration (µg/mL) © Voyager Therapeutics | 22| )ULR( ytivitcA esareficuL AAV9 - α-Rx AAV9 - IgG con. VCAP-102 - α-Rx VCAP-102 - IgG con. 0 µg/mL 3.125 µg/mL 6.25 µg/mL 12.5µg/mL α-Receptor X VCAP-102 IgG Isotype Control"}, {"n": 23, "img": "img/s23.png", "text": "VCAP-102 Directly and Specifically Binds to Receptor X • SPR measures molecular binding events in real-time and calculates binding affinity (KD) © Voyager Therapeutics | 23|"}, {"n": 24, "img": "img/s24.png", "text": "VCAP-102 Directly and Specifically Binds to Receptor X • SPR measures molecular binding events in real-time and calculates binding affinity (KD) KD = Mid-nanomolar (10-100 nM) © Voyager Therapeutics | 24|"}, {"n": 25, "img": "img/s25.png", "text": "Receptor X – VCAP-102 pH Dependent Dissociation Association Dissociation Receptor X Apical -Bloodstream Dissociation at pH 7.4 Acidification (pH 5.5) Lessons from transferrin receptor: • Correlation between affinity and lysosomal degradation, high affinity results in poor transcytosis • Lower affinity at pH 5.5 promotes efficient transcytosis Basolateral -CNS © Voyager Therapeutics | 25|"}, {"n": 26, "img": "img/s26.png", "text": "Receptor X – VCAP-102 pH Dependent Dissociation Association Dissociation Receptor X Apical -Bloodstream Dissociation at pH 7.4 Acidification (pH 5.5) Dissociation at pH 5.5 Basolateral -CNS © Voyager Therapeutics | 26|"}, {"n": 27, "img": "img/s27.png", "text": "VCAP-102 Retains Galactose Binding – RX Binding is a Gain of Function AAV9 VCAP-102 4000 0 0 5 50 500 1000 Neuraminidase (mU/mL) © Voyager Therapeutics | 27| )ULR( ytivitcA esareficuL 40000 11.1 10.4 30000 6.2 20000 2.7 10000 1 0 0 5 50 500 1000 Neuraminidase (mU/mL) )ULR( ytivitcA esareficuL 13.9 12.5 13.7 9.6 1"}, {"n": 28, "img": "img/s28.png", "text": "Receptor-Guided Capsid Evolution • Can we utilize Receptor X to drive evolution of novel serotypes and alternative VR insert locations? © Voyager Therapeutics | 28|"}, {"n": 29, "img": "img/s29.png", "text": "AAV9.VR-IV P0 Library – In vitro Evolution – HEK vs HEK-Receptor X HEK-Ctrl Enrichment (RPM) © Voyager Therapeutics | 29 | )MPR( 2-peR XR )MPR( tnemhcirnE XR-KEH HEK-RX Rep-1 (RPM) HEK-Ctrl - Fc vs. Input tupnI .sv cF - XR-KEH Correlation Between Receptor X Specific vs. Fold Change vs. Input Receptor X Replicates Non-Specific Enrichment All Filtered Variants VCAP-101/102 motif R2 =0.85 Reference Capsid Variant enrichment = Avg RPM between Filtering criteria - WT FC &lt;15, RX CV &lt;1 replicates normalized to input library RPM"}, {"n": 30, "img": "img/s30.png", "text": "Preliminary Identification of Two Additional Human Receptors for Novel Capsids 41.3 50 40 20 8.6 7.3 10 2.4 1.0 1.0 0 M V 6 A V R or 7 M V 6 A V R or 7 p C A ece pt p C A ece pt R R © Voyager Therapeutics )CF( ytivitcA esareficuL VCAP-088 Human Receptor Candidate Screen AAV9 VCAP-088 10 6.5 5.9 4.7 5 1.0 1.2 1.0 0 6 R 6 6 R 6 p C M V A A V e pt or 1 p C M V A A V e pt or 1 ec ec R R VCAP-088 AAV9 Novel CNS Capsid AAV9 )CF( ytivitcA esareficuL Novel CNS AAV9 Novel CNS Capsid AAV9 Capsid pCMV6 AAVR Receptor 16"}, {"n": 31, "img": "img/s31.png", "text": "Receptor X – Non-viral CNS Delivery Peptide-mediated Oligo / Antibody-mediated Oligo / Small Molecule Delivery Small Molecule Delivery Receptor X Targeted Bivalent Antibody Lipid Nanoparticle © Voyager Therapeutics | 31|"}, {"n": 32, "img": "img/s32.png", "text": "Conclusions • The TRACER™ platform has resulted in the generation of multiple capsid families with enhanced CNS tropism TRACER™ • We have identified Receptor X as the likely cell surface receptor for our novel cross-species BBB-penetrant capsid VCAP-102 Supports transferability of BBB-penetrant phenotype to humans • In vitro evolution is being used to develop new AAV serotypes and new insert locations that bind Receptor X • We continue efforts to identify receptors for our additional panel of novel capsids and have preliminary data supporting the identification of two additional receptors • Investigating use of identified receptors for non-viral CNS delivery © Voyager Therapeutics | 32|"}, {"n": 33, "img": "img/s33.png", "text": "If you would like more information, Thank you! please contact: Brett Hoffman Questions? bhoffman@vygr.com"}];
+let cur = 0;
+function render() {
+  const s = DATA[cur];
+  document.getElementById('snum').textContent = `Slide ${String(s.n).padStart(2,'0')} / 33`;
+  document.getElementById('stext').textContent = s.text || '—';
+  document.getElementById('counter').textContent = String(cur+1).padStart(2,'0') + ' / 33';
+  document.getElementById('prog').style.width = ((cur+1)/33*100).toFixed(1)+'%';
+  document.getElementById('prev').disabled = cur === 0;
+  document.getElementById('next').disabled = cur === DATA.length-1;
+  const img = document.getElementById('simg');
+  const noimg = document.getElementById('noimg');
+  if (s.img) { img.src = s.img; img.style.display='block'; noimg.style.display='none'; resetZoom(); }
+  else { img.style.display='none'; noimg.style.display='block'; }
 }
-</script>
-  <footer>
-    <p>calyr.aí Research · 2026 · <a href="../../index.html">← Transcripts</a></p>
-  </footer>
-
-<script>
-document.querySelectorAll('.slide-img-wrap').forEach(wrap => {
-  let sc=1, tx=0, ty=0, dragging=false, sx, sy, img=wrap.querySelector('img');
-  function applyT() { img.style.transform = `scale(${sc}) translate(${tx}px,${ty}px)`; }
-  function zoom(f) { sc=Math.min(8,Math.max(1,sc*f)); if(sc===1){tx=0;ty=0;} applyT(); }
-  wrap.querySelector('.zm-in').onclick  = () => zoom(1.25);
-  wrap.querySelector('.zm-out').onclick = () => zoom(0.8);
-  wrap.querySelector('.zm-rst').onclick = () => { sc=1;tx=0;ty=0;applyT(); };
-  wrap.addEventListener('wheel', e => { e.preventDefault(); zoom(e.deltaY<0?1.15:0.87); }, {passive:false});
-  wrap.addEventListener('mousedown', e => { if(sc<=1)return; dragging=true; sx=e.clientX-tx; sy=e.clientY-ty; wrap.classList.add('dragging'); });
-  window.addEventListener('mouseup', () => { dragging=false; wrap.classList.remove('dragging'); });
-  window.addEventListener('mousemove', e => { if(!dragging)return; tx=e.clientX-sx; ty=e.clientY-sy; applyT(); });
+function go(d) { cur=Math.max(0,Math.min(DATA.length-1,cur+d)); render(); }
+document.addEventListener('keydown', e => {
+  if (e.key==='ArrowRight'||e.key===' ') go(1);
+  if (e.key==='ArrowLeft') go(-1);
 });
+render();
+
+let sc=1,tx=0,ty=0,dragging=false,startX,startY;
+const col=document.getElementById('imgcol');
+function applyT(){ document.getElementById('simg').style.transform=`scale(${sc}) translate(${tx}px,${ty}px)`; }
+function zoom(f){ sc=Math.min(8,Math.max(1,sc*f)); if(sc===1){tx=0;ty=0;} applyT(); }
+function resetZoom(){ sc=1;tx=0;ty=0;applyT(); }
+col.addEventListener('wheel',e=>{ e.preventDefault(); zoom(e.deltaY<0?1.15:0.87); },{passive:false});
+col.addEventListener('mousedown',e=>{ if(sc<=1)return; dragging=true; startX=e.clientX-tx; startY=e.clientY-ty; col.classList.add('dragging'); });
+window.addEventListener('mouseup',()=>{ dragging=false; col.classList.remove('dragging'); });
+window.addEventListener('mousemove',e=>{ if(!dragging)return; tx=e.clientX-startX; ty=e.clientY-startY; applyT(); });
 </script>
-</body></html>
+</body>
+</html>
