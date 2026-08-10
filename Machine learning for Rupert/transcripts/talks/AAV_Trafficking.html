@@ -6,59 +6,103 @@
 <title>AAV Trafficking — calyr.aí</title>
 <link rel="stylesheet" href="../css/main.css" />
 <style>
-.talk-header { padding:52px max(4vw,calc((100vw - 1240px)/2)) 32px; border-bottom:1px solid var(--line); }
-.talk-header h1 { font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:400; letter-spacing:-.04em; line-height:1.1; }
-.talk-header .speaker { font-size:.68rem; color:var(--soft); letter-spacing:.1em; text-transform:uppercase; margin-top:10px; }
-.talk-meta { font-size:.7rem; color:var(--soft); margin-top:1.5rem; display:flex; gap:1.5rem; flex-wrap:wrap; }
-.talk-meta a { color:#39bfff; }
-.seg { display:grid; grid-template-columns:4rem 1fr; gap:0;
-        padding:2rem max(4vw,calc((100vw - 1240px)/2));
-        border-bottom:1px solid var(--line); }
-.seg:hover { background:var(--card); }
-.seg-num { font-size:.58rem; font-weight:700; font-family:monospace; letter-spacing:.08em;
-            line-height:1.4; padding-top:.2rem; }
-.seg-ts { font-size:.5rem; color:var(--soft); font-weight:400; }
-.seg-key { font-family:Georgia,'Times New Roman',serif; font-size:.95rem; color:var(--ink);
-            line-height:1.65; margin:0 0 .75rem; border-left:3px solid #39bfff;
-            padding-left:1rem; }
-.seg-full { font-size:.78rem; color:var(--soft); line-height:1.7; margin:0; }
+:root { --c: #39bfff; }
+body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
+.pres-nav {
+  padding:.75rem max(4vw,calc((100vw - 1240px)/2));
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:1.5rem;
+  flex-shrink:0;
+}
+.pres-nav h1 { font-size:.8rem; font-weight:400; letter-spacing:.04em; color:var(--soft); flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.pres-counter { font-size:.65rem; font-family:monospace; color:var(--c); white-space:nowrap; }
+.pres-btn {
+  background:none; border:1px solid var(--line); color:var(--ink);
+  padding:.3rem .8rem; font-family:inherit; font-size:.7rem;
+  letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+}
+.pres-btn:hover { background:var(--ink); color:var(--paper); }
+.pres-btn:disabled { opacity:.25; cursor:default; }
+
+.slide-view {
+  flex:1; display:flex; flex-direction:column;
+  justify-content:center;
+  padding:3rem max(4vw,calc((100vw - 1240px)/2));
+  overflow:hidden;
+}
+.slide-ts { font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }
+.slide-key {
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(1.1rem,2.5vw,1.7rem);
+  line-height:1.55; color:var(--ink);
+  border-left:4px solid var(--c); padding-left:1.5rem;
+  margin-bottom:2rem;
+  max-width:800px;
+}
+.slide-full {
+  font-size:.82rem; color:var(--soft); line-height:1.75;
+  max-width:720px; padding-left:calc(1.5rem + 4px);
+  overflow-y:auto; max-height:30vh;
+}
+
+.progress-bar {
+  height:2px; background:var(--line); flex-shrink:0;
+}
+.progress-fill {
+  height:100%; background:var(--c); transition:width .25s;
+}
+
+.pres-footer {
+  padding:.6rem max(4vw,calc((100vw - 1240px)/2));
+  border-top:1px solid var(--line);
+  display:flex; gap:2rem; flex-shrink:0;
+}
+.pres-footer a { font-size:.65rem; color:var(--soft); letter-spacing:.06em; }
+.pres-footer a:hover { color:var(--ink); }
 </style>
 </head>
 <body>
-  <header>
-    <h1>calyr.aí</h1>
-    <p>Adaptive Research Modeling · 2026</p>
-  </header>
-  <div class="talk-header">
-    <h1>AAV Trafficking</h1>
-    <p class="speaker">ASGCT 2026</p>
-    <div class="talk-meta">
-      <span>2 segments · 1:49 total</span>
-      <a href="../slides/Applying_machine_learning_to_predict_viral_assembly_for_aden/index.html">ML for AAV Assembly Prediction — Slides ↗</a>
-      <a href="../../index.html">← Transcripts</a>
-      <a href="/">← calyr.aí</a>
-    </div>
-  </div>
 
-<div class="seg" id="s1">
-  <div class="seg-num" style="color:#39bfff;">01<br><span class="seg-ts">0:00–1:36</span></div>
-  <div class="seg-body">
-    <p class="seg-key">"Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then"</p>
-    <p class="seg-full">Welcome everybody to the session new insights into AV trafficking we have in the session and just as a reminder do not use flash photography in the session probably distracting and I don't think I need to remind everybody anybody about the Wi-Fi anymore at this point so let's just go straight ahead to the first speaker which is Sloan Wan from UMass Chan Medical School good afternoon everyone my name is Sloan Wan I'm reporting our study on behalf of Dr. Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then</p>
-  </div>
+<div class="pres-nav">
+  <h1>AAV Trafficking</h1>
+  <span class="pres-counter" id="counter">01 / 02</span>
+  <button class="pres-btn" id="prev" onclick="go(-1)" disabled>← Prev</button>
+  <button class="pres-btn" id="next" onclick="go(1)">Next →</button>
 </div>
 
-<div class="seg" id="s2">
-  <div class="seg-num" style="color:#39bfff;">02<br><span class="seg-ts">1:36–1:49</span></div>
-  <div class="seg-body">
-    <p class="seg-key">"the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors"</p>
-    <p class="seg-full">the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors</p>
-  </div>
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:50.0%"></div></div>
+
+<div class="slide-view">
+  <div class="slide-ts"   id="ts"></div>
+  <div class="slide-key"  id="key"></div>
+  <div class="slide-full" id="full"></div>
 </div>
-  <footer>
-    <p>calyr.aí Research · 2026</p>
-    <p><a href="../slides/Applying_machine_learning_to_predict_viral_assembly_for_aden/index.html">ML for AAV Assembly Prediction — Slides</a></p>
-  </footer>
-  <script src="/js/main.js" defer></script>
+
+<div class="pres-footer">
+  <a href="../slides/Applying_machine_learning_to_predict_viral_assembly_for_aden/index.html">ML for AAV Assembly Prediction — Slides ↗</a>
+  <a href="../../index.html">← Transcripts</a>
+  <a href="/">← calyr.aí</a>
+</div>
+
+<script>
+const DATA = [{"n": 1, "ts": "0:00–1:36", "key": "Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then", "full": "Welcome everybody to the session new insights into AV trafficking we have in the session and just as a reminder do not use flash photography in the session probably distracting and I don't think I need to remind everybody anybody about the Wi-Fi anymore at this point so let's just go straight ahead to the first speaker which is Sloan Wan from UMass Chan Medical School good afternoon everyone my name is Sloan Wan I'm reporting our study on behalf of Dr. Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then"}, {"n": 2, "ts": "1:36–1:49", "key": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors", "full": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors"}];
+let cur = 0;
+function render() {
+  const s = DATA[cur];
+  document.getElementById('ts').textContent   = s.ts;
+  document.getElementById('key').textContent  = s.key || '—';
+  document.getElementById('full').textContent = s.full;
+  document.getElementById('counter').textContent = String(cur+1).padStart(2,'0') + ' / 02';
+  document.getElementById('prog').style.width = ((cur+1)/2*100).toFixed(1)+'%';
+  document.getElementById('prev').disabled = cur === 0;
+  document.getElementById('next').disabled = cur === DATA.length-1;
+}
+function go(d) { cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') go(1);
+  if (e.key === 'ArrowLeft')  go(-1);
+});
+render();
+</script>
 </body>
 </html>

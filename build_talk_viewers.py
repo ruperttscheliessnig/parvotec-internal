@@ -138,22 +138,20 @@ def fmt_time(s: float) -> str:
 
 def build_html(stem: str, meta: dict, segments: list[list[dict]]) -> str:
     color = meta["color"]
-    seg_blocks = []
+
+    # Build JSON data for JS presenter
+    import json
+    slides_data = []
     for i, seg in enumerate(segments, 1):
         t_start = fmt_time(seg[0]["s"])
         t_end   = fmt_time(seg[-1]["e"])
         full    = " ".join(e["t"] for e in seg)
         key     = key_sentence(seg)
-        seg_blocks.append(f"""
-<div class="seg" id="s{i}">
-  <div class="seg-num" style="color:{color};">{i:02d}<br><span class="seg-ts">{t_start}–{t_end}</span></div>
-  <div class="seg-body">
-    <p class="seg-key">"{key}"</p>
-    <p class="seg-full">{full}</p>
-  </div>
-</div>""")
+        slides_data.append({"n": i, "ts": f"{t_start}–{t_end}", "key": key, "full": full})
 
-    segs_html = "\n".join(seg_blocks)
+    slides_json = json.dumps(slides_data, ensure_ascii=False)
+    total = len(segments)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,45 +160,104 @@ def build_html(stem: str, meta: dict, segments: list[list[dict]]) -> str:
 <title>{meta["title"]} — calyr.aí</title>
 <link rel="stylesheet" href="{CSS_REL}" />
 <style>
-.talk-header {{ padding:52px max(4vw,calc((100vw - 1240px)/2)) 32px; border-bottom:1px solid var(--line); }}
-.talk-header h1 {{ font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:400; letter-spacing:-.04em; line-height:1.1; }}
-.talk-header .speaker {{ font-size:.68rem; color:var(--soft); letter-spacing:.1em; text-transform:uppercase; margin-top:10px; }}
-.talk-meta {{ font-size:.7rem; color:var(--soft); margin-top:1.5rem; display:flex; gap:1.5rem; flex-wrap:wrap; }}
-.talk-meta a {{ color:{color}; }}
-.seg {{ display:grid; grid-template-columns:4rem 1fr; gap:0;
-        padding:2rem max(4vw,calc((100vw - 1240px)/2));
-        border-bottom:1px solid var(--line); }}
-.seg:hover {{ background:var(--card); }}
-.seg-num {{ font-size:.58rem; font-weight:700; font-family:monospace; letter-spacing:.08em;
-            line-height:1.4; padding-top:.2rem; }}
-.seg-ts {{ font-size:.5rem; color:var(--soft); font-weight:400; }}
-.seg-key {{ font-family:Georgia,'Times New Roman',serif; font-size:.95rem; color:var(--ink);
-            line-height:1.65; margin:0 0 .75rem; border-left:3px solid {color};
-            padding-left:1rem; }}
-.seg-full {{ font-size:.78rem; color:var(--soft); line-height:1.7; margin:0; }}
+:root {{ --c: {color}; }}
+body {{ display:flex; flex-direction:column; height:100dvh; overflow:hidden; }}
+.pres-nav {{
+  padding:.75rem max(4vw,calc((100vw - 1240px)/2));
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:1.5rem;
+  flex-shrink:0;
+}}
+.pres-nav h1 {{ font-size:.8rem; font-weight:400; letter-spacing:.04em; color:var(--soft); flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+.pres-counter {{ font-size:.65rem; font-family:monospace; color:var(--c); white-space:nowrap; }}
+.pres-btn {{
+  background:none; border:1px solid var(--line); color:var(--ink);
+  padding:.3rem .8rem; font-family:inherit; font-size:.7rem;
+  letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+}}
+.pres-btn:hover {{ background:var(--ink); color:var(--paper); }}
+.pres-btn:disabled {{ opacity:.25; cursor:default; }}
+
+.slide-view {{
+  flex:1; display:flex; flex-direction:column;
+  justify-content:center;
+  padding:3rem max(4vw,calc((100vw - 1240px)/2));
+  overflow:hidden;
+}}
+.slide-ts {{ font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }}
+.slide-key {{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(1.1rem,2.5vw,1.7rem);
+  line-height:1.55; color:var(--ink);
+  border-left:4px solid var(--c); padding-left:1.5rem;
+  margin-bottom:2rem;
+  max-width:800px;
+}}
+.slide-full {{
+  font-size:.82rem; color:var(--soft); line-height:1.75;
+  max-width:720px; padding-left:calc(1.5rem + 4px);
+  overflow-y:auto; max-height:30vh;
+}}
+
+.progress-bar {{
+  height:2px; background:var(--line); flex-shrink:0;
+}}
+.progress-fill {{
+  height:100%; background:var(--c); transition:width .25s;
+}}
+
+.pres-footer {{
+  padding:.6rem max(4vw,calc((100vw - 1240px)/2));
+  border-top:1px solid var(--line);
+  display:flex; gap:2rem; flex-shrink:0;
+}}
+.pres-footer a {{ font-size:.65rem; color:var(--soft); letter-spacing:.06em; }}
+.pres-footer a:hover {{ color:var(--ink); }}
 </style>
 </head>
 <body>
-  <header>
-    <h1>calyr.aí</h1>
-    <p>Adaptive Research Modeling · 2026</p>
-  </header>
-  <div class="talk-header">
-    <h1>{meta["title"]}</h1>
-    <p class="speaker">{meta["speaker"]}</p>
-    <div class="talk-meta">
-      <span>{len(segments)} segments · {fmt_time(segments[-1][-1]["e"] if segments else 0)} total</span>
-      <a href="{meta["related_paper"]}">{meta["related_label"]} ↗</a>
-      <a href="../../index.html">← Transcripts</a>
-      <a href="/">← calyr.aí</a>
-    </div>
-  </div>
-{segs_html}
-  <footer>
-    <p>calyr.aí Research · 2026</p>
-    <p><a href="{meta["related_paper"]}">{meta["related_label"]}</a></p>
-  </footer>
-  <script src="/js/main.js" defer></script>
+
+<div class="pres-nav">
+  <h1>{meta["title"]}</h1>
+  <span class="pres-counter" id="counter">01 / {total:02d}</span>
+  <button class="pres-btn" id="prev" onclick="go(-1)" disabled>← Prev</button>
+  <button class="pres-btn" id="next" onclick="go(1)">Next →</button>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:{100/total:.1f}%"></div></div>
+
+<div class="slide-view">
+  <div class="slide-ts"   id="ts"></div>
+  <div class="slide-key"  id="key"></div>
+  <div class="slide-full" id="full"></div>
+</div>
+
+<div class="pres-footer">
+  <a href="{meta["related_paper"]}">{meta["related_label"]} ↗</a>
+  <a href="../../index.html">← Transcripts</a>
+  <a href="/">← calyr.aí</a>
+</div>
+
+<script>
+const DATA = {slides_json};
+let cur = 0;
+function render() {{
+  const s = DATA[cur];
+  document.getElementById('ts').textContent   = s.ts;
+  document.getElementById('key').textContent  = s.key || '—';
+  document.getElementById('full').textContent = s.full;
+  document.getElementById('counter').textContent = String(cur+1).padStart(2,'0') + ' / {total:02d}';
+  document.getElementById('prog').style.width = ((cur+1)/{total}*100).toFixed(1)+'%';
+  document.getElementById('prev').disabled = cur === 0;
+  document.getElementById('next').disabled = cur === DATA.length-1;
+}}
+function go(d) {{ cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }}
+document.addEventListener('keydown', e => {{
+  if (e.key === 'ArrowRight' || e.key === ' ') go(1);
+  if (e.key === 'ArrowLeft')  go(-1);
+}});
+render();
+</script>
 </body>
 </html>"""
 
