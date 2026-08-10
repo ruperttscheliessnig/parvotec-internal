@@ -191,13 +191,27 @@ body {{ display:flex; flex-direction:column; height:100dvh; overflow:hidden; }}
 .slide-img-col {{
   border-right:1px solid var(--line);
   display:flex; align-items:center; justify-content:center;
-  padding:2rem; background:var(--card);
-  overflow:hidden;
+  padding:0; background:var(--card);
+  overflow:hidden; position:relative; cursor:grab;
 }}
+.slide-img-col.dragging {{ cursor:grabbing; }}
 .slide-img-col img {{
   width:100%; max-height:100%; object-fit:contain;
   border:1px solid var(--line);
+  transform-origin:center center;
+  user-select:none; pointer-events:none;
+  will-change:transform;
 }}
+.zoom-bar {{
+  position:absolute; bottom:.5rem; right:.5rem;
+  display:flex; gap:.3rem; z-index:10;
+}}
+.zoom-btn {{
+  background:rgba(10,10,10,.85); border:1px solid var(--line);
+  color:var(--ink); font-family:inherit; font-size:.65rem;
+  letter-spacing:.06em; padding:.2rem .5rem; cursor:pointer;
+}}
+.zoom-btn:hover {{ background:var(--ink); color:var(--paper); }}
 .slide-img-col .no-img {{
   font-size:.65rem; color:var(--soft); letter-spacing:.08em;
   text-transform:uppercase; text-align:center;
@@ -254,9 +268,14 @@ body {{ display:flex; flex-direction:column; height:100dvh; overflow:hidden; }}
 <div class="progress-bar"><div class="progress-fill" id="prog" style="width:{100/total:.1f}%"></div></div>
 
 <div class="slide-view">
-  <div class="slide-img-col">
+  <div class="slide-img-col" id="imgcol">
     <img id="simg" src="" alt="slide" style="display:none;" />
     <div class="no-img" id="noimg">No frame available</div>
+    <div class="zoom-bar">
+      <button class="zoom-btn" onclick="zoom(1.25)">＋</button>
+      <button class="zoom-btn" onclick="zoom(0.8)">－</button>
+      <button class="zoom-btn" onclick="resetZoom()">↺</button>
+    </div>
   </div>
   <div class="slide-text-col">
     <div class="slide-ts"   id="ts"></div>
@@ -292,11 +311,38 @@ function render() {{
   }}
 }}
 function go(d) {{ cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }}
-document.addEventListener('keydown', e => {{
-  if (e.key === 'ArrowRight' || e.key === ' ') go(1);
-  if (e.key === 'ArrowLeft')  go(-1);
-}});
 render();
+
+// ── Zoom + Pan ──────────────────────────────────────────────
+let sc=1, tx=0, ty=0, dragging=false, startX, startY;
+const col = document.getElementById('imgcol');
+
+function applyT() {{
+  const img = document.getElementById('simg');
+  img.style.transform = `scale(${{sc}}) translate(${{tx}}px,${{ty}}px)`;
+}}
+function zoom(f) {{ sc = Math.min(8, Math.max(1, sc*f)); if(sc===1){{tx=0;ty=0;}} applyT(); }}
+function resetZoom() {{ sc=1; tx=0; ty=0; applyT(); }}
+
+col.addEventListener('wheel', e => {{
+  e.preventDefault(); zoom(e.deltaY < 0 ? 1.15 : 0.87);
+}}, {{passive:false}});
+col.addEventListener('mousedown', e => {{
+  if(sc<=1) return;
+  dragging=true; startX=e.clientX-tx; startY=e.clientY-ty;
+  col.classList.add('dragging');
+}});
+window.addEventListener('mouseup', () => {{ dragging=false; col.classList.remove('dragging'); }});
+window.addEventListener('mousemove', e => {{
+  if(!dragging) return; tx=e.clientX-startX; ty=e.clientY-startY; applyT();
+}});
+let lastDist=0;
+col.addEventListener('touchstart', e => {{ if(e.touches.length===2) lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); }});
+col.addEventListener('touchmove', e => {{
+  if(e.touches.length!==2) return; e.preventDefault();
+  const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+  zoom(d/lastDist); lastDist=d;
+}},{{passive:false}});
 </script>
 </body>
 </html>"""

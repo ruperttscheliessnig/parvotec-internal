@@ -7,6 +7,15 @@
 
 <script src="../../../../calyr-projects/assets/nav.js"></script>
 <link rel="stylesheet" href="../../css/main.css" />
+
+<style>
+.slide-img-wrap { position:relative; overflow:hidden; cursor:grab; }
+.slide-img-wrap.dragging { cursor:grabbing; }
+.slide-img-wrap img { transform-origin:center center; user-select:none; pointer-events:none; will-change:transform; }
+.zoom-ctrl { position:absolute; bottom:.3rem; right:.3rem; display:flex; gap:.25rem; z-index:10; }
+.zoom-ctrl button { background:rgba(10,10,10,.85); border:1px solid #343434; color:#f5f5f2; font-size:.6rem; padding:.15rem .4rem; cursor:pointer; }
+.zoom-ctrl button:hover { background:#f5f5f2; color:#050505; }
+</style>
 </head>
 <body>
   <header>
@@ -195,4 +204,19 @@ function show(img) {
   <footer>
     <p>calyr.aí Research · 2026 · <a href="../../index.html">← Transcripts</a></p>
   </footer>
+
+<script>
+document.querySelectorAll('.slide-img-wrap').forEach(wrap => {
+  let sc=1, tx=0, ty=0, dragging=false, sx, sy, img=wrap.querySelector('img');
+  function applyT() { img.style.transform = `scale(${sc}) translate(${tx}px,${ty}px)`; }
+  function zoom(f) { sc=Math.min(8,Math.max(1,sc*f)); if(sc===1){tx=0;ty=0;} applyT(); }
+  wrap.querySelector('.zm-in').onclick  = () => zoom(1.25);
+  wrap.querySelector('.zm-out').onclick = () => zoom(0.8);
+  wrap.querySelector('.zm-rst').onclick = () => { sc=1;tx=0;ty=0;applyT(); };
+  wrap.addEventListener('wheel', e => { e.preventDefault(); zoom(e.deltaY<0?1.15:0.87); }, {passive:false});
+  wrap.addEventListener('mousedown', e => { if(sc<=1)return; dragging=true; sx=e.clientX-tx; sy=e.clientY-ty; wrap.classList.add('dragging'); });
+  window.addEventListener('mouseup', () => { dragging=false; wrap.classList.remove('dragging'); });
+  window.addEventListener('mousemove', e => { if(!dragging)return; tx=e.clientX-sx; ty=e.clientY-sy; applyT(); });
+});
+</script>
 </body></html>
