@@ -4,110 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parvotec | Workstation — WP Compute Rationale</title>
+
+<script src="../../gate.js"></script><link rel="stylesheet" href="css/main.css" />
 <style>
-  :root {
-    --paper:#050505; --card:#090909; --ink:#f5f5f2; --soft:#a7abb0;
-    --line:#343434; --col:#39bfff; --amber:#f59e0b; --green:#34d399;
-    --red:#f87171; --purple:#a78bfa;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-    background:var(--paper); color:var(--ink); line-height:1.65; font-size:16px; }
-
-  header { padding:52px max(4vw,calc((100vw - 1200px)/2)) 44px;
-    border-bottom:1px solid var(--line); }
-  .bc { font-size:.6rem; color:var(--soft); letter-spacing:.18em;
-    text-transform:uppercase; margin-bottom:14px; }
-  .bc a { color:var(--col); text-decoration:none; }
-  h1 { font-size:clamp(1.6rem,4vw,3rem); font-weight:400; letter-spacing:-.04em;
-    color:var(--ink); margin-bottom:.4rem; }
-  .sub { font-size:.88rem; color:var(--soft); }
-
-  .wrap { max-width:1200px; margin:0 auto;
-    padding:3rem max(4vw,calc((100vw - 1200px)/2)) 6rem; }
-
-  /* TOC */
-  .toc { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:3rem; }
-  .toc a { font-size:.66rem; font-weight:700; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--soft); border:1px solid var(--line);
-    padding:.25rem .7rem; text-decoration:none; }
-  .toc a:hover { color:var(--col); border-color:var(--col); }
-
-  /* Section header */
-  h2 { font-size:1.05rem; font-weight:700; letter-spacing:-.01em;
-    color:var(--ink); margin:3.5rem 0 .5rem; border-bottom:1px solid var(--line);
-    padding-bottom:.5rem; }
-  h3 { font-size:.82rem; font-weight:700; letter-spacing:.04em;
-    text-transform:uppercase; color:var(--col); margin:2rem 0 .6rem; }
-  p { font-size:.88rem; color:var(--soft); line-height:1.75; margin-bottom:.9rem; }
-  strong { color:var(--ink); }
-
-  /* WP card */
-  .wp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
-    gap:1px; background:var(--line); margin:1.5rem 0; }
-  .wp-card { background:var(--card); padding:1.5rem 1.75rem; }
-  .wp-tag { font-size:.56rem; font-weight:700; letter-spacing:.18em;
-    text-transform:uppercase; display:inline-block; padding:.2rem .55rem;
-    margin-bottom:.75rem; }
-  .wp-card h4 { font-size:.9rem; font-weight:600; color:var(--ink);
-    margin-bottom:.5rem; }
-  .wp-card p { font-size:.82rem; margin-bottom:.5rem; }
-  .wp-card ul { list-style:none; padding:0; margin:.5rem 0; }
-  .wp-card ul li { font-size:.78rem; color:var(--soft); padding:.15rem 0;
-    padding-left:1rem; position:relative; }
-  .wp-card ul li::before { content:"—"; position:absolute; left:0;
-    color:var(--line); }
-  .compute-bar { margin-top:.85rem; }
-  .compute-row { display:flex; align-items:center; gap:.6rem; margin:.2rem 0; }
-  .compute-label { font-size:.6rem; font-weight:700; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--soft); width:90px; flex-shrink:0; }
-  .bar-bg { flex:1; height:5px; background:var(--line); border-radius:0; }
-  .bar-fill { height:100%; border-radius:0; }
-  .compute-val { font-size:.62rem; font-family:monospace; color:var(--soft);
-    width:60px; text-align:right; flex-shrink:0; }
-
-  /* Rationale block */
-  .rationale { border-left:3px solid var(--col); padding:1.25rem 1.5rem;
-    background:var(--card); margin:1.5rem 0; }
-  .rationale h3 { margin:0 0 .6rem; color:var(--col); }
-  .rationale p { margin-bottom:.5rem; }
-
-  /* Comparison table */
-  table { width:100%; border-collapse:collapse; margin:1.5rem 0;
-    font-size:.82rem; }
-  th { text-align:left; font-size:.58rem; font-weight:700; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--soft); border-bottom:1px solid var(--line);
-    padding:.5rem .75rem; }
-  td { padding:.55rem .75rem; border-bottom:1px solid #1a1a1a; color:var(--soft); }
-  td:first-child { color:var(--ink); font-weight:500; }
-  .good { color:var(--green); font-weight:700; }
-  .bad  { color:var(--red); }
-  .ok   { color:var(--amber); }
-
-  /* CTA */
-  .cta-strip { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
-  .cta { display:inline-block; font-size:.72rem; font-weight:700;
-    letter-spacing:.1em; text-transform:uppercase; padding:.55rem 1.2rem;
-    text-decoration:none; border:1px solid var(--col); color:var(--col); }
-  .cta:hover { background:var(--col); color:#000; }
-  .cta.sec { border-color:var(--line); color:var(--soft); }
-  .cta.sec:hover { border-color:var(--soft); color:var(--ink); }
-
-  /* Summary table at top */
-  .summary-grid { display:grid; grid-template-columns:repeat(5,1fr);
-    gap:1px; background:var(--line); margin-bottom:3rem; }
-  @media(max-width:760px){ .summary-grid { grid-template-columns:repeat(2,1fr); }
-    .wp-grid { grid-template-columns:1fr; } }
-  .sg-cell { background:var(--card); padding:1rem 1.25rem; }
-  .sg-wp { font-size:.56rem; font-weight:700; letter-spacing:.18em;
-    text-transform:uppercase; display:block; margin-bottom:.35rem; }
-  .sg-title { font-size:.78rem; font-weight:600; color:var(--ink);
-    display:block; margin-bottom:.2rem; }
-  .sg-gpu { font-size:.7rem; font-family:monospace; }
-  .sg-months { font-size:.6rem; color:var(--soft); margin-top:.15rem; }
+  /* calyr.ai compat: page-specific overrides using shared variables */
+  .wrap { max-width: min(1240px, 94vw); margin: 0 auto; padding: 3rem max(4vw, calc((100vw - 1240px)/2)); }
 </style>
-<script src="../../gate.js"></script></head>
+</head>
 <body>
 
 <header>
@@ -394,5 +297,9 @@
   </div>
 
 </div>
+  <footer>
+    <p>calyr.aí Research · 2026</p>
+    <p><a href="https://calyrai.ai">calyrai.ai</a></p>
+  </footer>
 </body>
 </html>
