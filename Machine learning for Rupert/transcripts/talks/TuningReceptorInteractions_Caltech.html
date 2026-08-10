@@ -3,187 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parvotec | Caltech — Tuning AAVR &amp; LRP6 for Neurotropism</title>
-
-<script src="../../../calyr-projects/assets/nav.js"></script>
+<title>Tuning Receptor Interactions (Caltech) — calyr.aí</title>
 <link rel="stylesheet" href="../css/main.css" />
 <style>
-  /* calyr.ai compat: page-specific overrides using shared variables */
-  .wrap { max-width: min(1240px, 94vw); margin: 0 auto; padding: 3rem max(4vw, calc((100vw - 1240px)/2)); }
+.talk-header { padding:52px max(4vw,calc((100vw - 1240px)/2)) 32px; border-bottom:1px solid var(--line); }
+.talk-header h1 { font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:400; letter-spacing:-.04em; line-height:1.1; }
+.talk-header .speaker { font-size:.68rem; color:var(--soft); letter-spacing:.1em; text-transform:uppercase; margin-top:10px; }
+.talk-meta { font-size:.7rem; color:var(--soft); margin-top:1.5rem; display:flex; gap:1.5rem; flex-wrap:wrap; }
+.talk-meta a { color:#a78bfa; }
+.seg { display:grid; grid-template-columns:4rem 1fr; gap:0;
+        padding:2rem max(4vw,calc((100vw - 1240px)/2));
+        border-bottom:1px solid var(--line); }
+.seg:hover { background:var(--card); }
+.seg-num { font-size:.58rem; font-weight:700; font-family:monospace; letter-spacing:.08em;
+            line-height:1.4; padding-top:.2rem; }
+.seg-ts { font-size:.5rem; color:var(--soft); font-weight:400; }
+.seg-key { font-family:Georgia,'Times New Roman',serif; font-size:.95rem; color:var(--ink);
+            line-height:1.65; margin:0 0 .75rem; border-left:3px solid #a78bfa;
+            padding-left:1rem; }
+.seg-full { font-size:.78rem; color:var(--soft); line-height:1.7; margin:0; }
 </style>
 </head>
 <body>
-  
-<!-- Key Ideas injected by extract_key_ideas.py -->
-<style>
-.key-ideas-section { margin: 3rem max(4vw,calc((100vw - 1240px)/2)); }
-.key-ideas-section .section-label { font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin-bottom:1rem; display:block; }
-.key-idea { display:grid; grid-template-columns:2rem 1fr; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--line); }
-.key-idea:last-child { border-bottom:none; }
-.ki-num { font-size:.6rem; color:#39bfff; font-weight:700; font-family:monospace; padding-top:.25rem; }
-.key-idea p { font-size:.88rem; color:var(--ink); line-height:1.65; margin:0; }
-</style>
-<div class="key-ideas-section">
-  <span class="section-label">Key Ideas — Tuning Receptor Interactions (Caltech)</span>
-    <div class="key-idea"><span class="ki-num">01</span><p>AAV9X1 was a previously engineered vector from our lab which targets AAVR and LRP6 for effective transduction of endothelial cells, specifically in the CNS of mouse when they're delivered systemically.</p></div>
-    <div class="key-idea"><span class="ki-num">02</span><p>And we're also looking at our engineered vector, AAV9X1, and how we can start engineering future variants of this vector in hopes that it can become more neurotropic.</p></div>
-    <div class="key-idea"><span class="ki-num">03</span><p>And when we delivered this vector, AAV9X1 beta, that we're calling, into mice systemically, we were able to see that this vector became a pretty specific vector in targeting neurons.</p></div>
-    <div class="key-idea"><span class="ki-num">04</span><p>And to see if, by weakening LRP6's interaction with AAV9X1, we could have a more increased potency when it comes to targeting neurons.</p></div>
-    <div class="key-idea"><span class="ki-num">05</span><p>And for that, we actually ended up using a more traditional method by having a scanning tumor library across a VR8 loop of AAV9X1 to create mutants that could have various binding affinities to LRP6.</p></div>
-    <div class="key-idea"><span class="ki-num">06</span><p>And when we delivered some of the vectors that were more similar in ranking to AAV9X1, such as UX5, into my systemically, we were able to see that its transaction profile is predominantly still endothelial.</p></div>
-</div>
-<!-- end key ideas -->
-<header>
+  <header>
     <h1>calyr.aí</h1>
     <p>Adaptive Research Modeling · 2026</p>
   </header>
-<div class="wrap">
-<div class="meta">1,987 words · ~15 min talk · ~9 min read</div>
-<!-- YOUTUBE_EMBED_START -->
-<div class="yt-wrap" id="yt-player" data-ytid="PENDING">
-  <div class="yt-inner" id="yt-inner">
-    <div class="yt-pending">
-      <span style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#555;">VIDEO</span><br>
-      <span style="color:#333;font-size:.85rem;margin-top:.4rem;display:block;">YouTube ID pending</span>
+  <div class="talk-header">
+    <h1>Tuning Receptor Interactions (Caltech)</h1>
+    <p class="speaker">ASGCT 2026</p>
+    <div class="talk-meta">
+      <span>9 segments · 12:56 total</span>
+      <a href="../slides/Generative_AAV_capsid_diversification_by_latent_interpolatio/index.html">Generative AAV Capsid (Latent Interpolation) — Slides ↗</a>
+      <a href="../../index.html">← Transcripts</a>
+      <a href="/">← calyr.aí</a>
     </div>
   </div>
-</div>
-<!-- YOUTUBE_EMBED_END -->
-<h1>Caltech — Tuning AAVR &amp; LRP6 for Neurotropism</h1>
-<div class="toc">
-  <div class="toc-title">Sections with estimated timestamps</div>
-  
-<div class="toc-item">
-  <span class="toc-ts">00:00</span>
-  <a class="toc-a" href="#sec-0">Introduction</a>
-</div>
-<div class="toc-item">
-  <span class="toc-ts">00:36</span>
-  <a class="toc-a" href="#sec-1">Part 1</a>
-</div>
-<div class="toc-item">
-  <span class="toc-ts">03:41</span>
-  <a class="toc-a" href="#sec-2">Part 2</a>
-</div>
-<div class="toc-item">
-  <span class="toc-ts">06:47</span>
-  <a class="toc-a" href="#sec-3">Part 3</a>
-</div>
-<div class="toc-item">
-  <span class="toc-ts">09:53</span>
-  <a class="toc-a" href="#sec-4">Part 4</a>
-</div>
-<div class="toc-item">
-  <span class="toc-ts">09:53</span>
-  <a class="toc-a" href="#sec-5">Q&A</a>
-</div>
+
+<div class="seg" id="s1">
+  <div class="seg-num" style="color:#a78bfa;">01<br><span class="seg-ts">0:00–1:31</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"As we're going into this landscape of thinking about future therapeutics, I believe that there is something that we should also consider, which is how binding affinity to these receptors might play an important factor when we're thinking about predicting tropism."</p>
+    <p class="seg-full">This is transduction. So basically, how to get into the blood-brain barrier. Thank you, Alex. Thank you so much for that warm welcome, and good morning, everyone. My name is Xin-Hong Alex Chung, and I'm from the Grotto Narrow Lab, and I'm excited to share with you my talk titled CUNY-AEV Interactions with AVR and LRP6 Toggle Specters Between Vascular and Neuron Selective Tropism. A lot of the recent efforts in the field have focused on identifying receptors that are being mediated by AVs for effective transportation across the BBB. There are receptors such as L6A for PHPB, LRP6 for AV9X1, and Car4 for 9P31, amongst others. And even more recently, a lot of focus has been garnered towards targeting these receptors for more effective engineering so that we have increased predictability when we're thinking about future therapeutics. As we're going into this landscape of thinking about future therapeutics, I believe that there is something that we should also consider, which is how binding affinity to these receptors might play an important factor when we're thinking about predicting tropism. Work that's done in the antibody and nanobody engineering field has shown that maybe there could be a Goldilocks zone for binding affinity to a receptor for effective transactosis across the BBB. In work done by Bien Nai et al, they show that some engineered antibodies that target transferrin receptors with too high of a binding affinity</p>
+  </div>
 </div>
 
-<div class="section" id="sec-0">
-  <div class="section-header">
-    <span class="ts">00:00</span>
-    <span class="section-name intro">Introduction</span>
-  </div>
-  <div class="section-body">
-    <p>transduction so basically how to get into the blood brain barrier thank you Alex thank you so much for that warm welcome and good morning everyone my name is Jin Hyeong Alex Chung and I&#x27;m from the Grotto Narrow Lab and I&#x27;m excited to share with you my talk titled tuning AAV interactions with AVR and LRP6 toggles vectors between vascular and neuron selective tropism. A lot of the recent efforts in the field have focused on identifying receptors that</p>
+<div class="seg" id="s2">
+  <div class="seg-num" style="color:#a78bfa;">02<br><span class="seg-ts">1:31–3:00</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"AAV9X1 was a previously engineered vector from our lab which targets AAVR and LRP6 for effective transduction of endothelial cells, specifically in the CNS of mouse when they're delivered systemically."</p>
+    <p class="seg-full">ends up getting stuck in these endothelial cells and don't actually make it across effectively through the BBB. Conversely, those binders that are too weak to bind to transferrin receptor actually never made it through the BBB because perhaps they were being outcompeted by endogenous ligands against the transferrin receptor. And thus, they found that this medium zone of moderate binding to the transferrin receptor was the optimal binding affinity to help for effective transactosis across the BBB. And we wondered if the same principle could apply to AAVs as it's trying to cross the blood-brain barrier as well. And for this, I'm focusing on predominantly two receptors, AAVR and LRP6. And we're also looking at our engineered vector, AAV9X1, and how we can start engineering future variants of this vector in hopes that it can become more neurotropic. AAV9X1 was a previously engineered vector from our lab which targets AAVR and LRP6 for effective transduction of endothelial cells, specifically in the CNS of mouse when they're delivered systemically. And we wondered if this targeting of endothelial cells is because of the fact that AAV9X1 is binding too tightly to AAVR and LRP6 and ended up getting stuck in these endothelial cells. And therefore, by weakening its interaction to AAVR and LRP6, could we see more effective transduction</p>
   </div>
 </div>
-<div class="section" id="sec-1">
-  <div class="section-header">
-    <span class="ts">00:36</span>
-    <span class="section-name body">Part 1</span>
-  </div>
-  <div class="section-body">
-    <p>are being mediated by AAVs for effective transportation across the BBB. There are receptors such as Ly6A for PHPB LRP6 for AB9X1 and 9P31 for CAR4 for 9P31 amongst others and even more recently a lot of focus have been garnered towards targeting these receptor for more effective engineering so that we have increased predictability when we&#x27;re thinking about future therapeutics. As we&#x27;re going into this landscape of thinking about future therapeutics I believe that there is something that we should also consider which is how binding affinity to these receptors might play an important factor when we&#x27;re thinking about predicting tropism. Work that&#x27;s done in the antibody and nanobody engineering field has shown that maybe there could be a Goldilocks zone for binding affinity to a receptor for effective transectosis across the BBB.</p>
-<p>In work done by Bianlei et al. they show that some engineered antibodies that target transferrin receptors with too high of a binding affinity ends up getting stuck in these endothelial cells and don&#x27;t actually make it across effectively through the BBB. Conversely those binders that are too weak to bind to transferrin receptor actually never made it through the BBB because perhaps they were being out competed by endogenous ligands against the transferrin receptor and thus they found that this medium zone of moderate binding to the transferrin receptor was the optimal binding affinity to help for effective transectosis across the BBB and we wondered if the same principle could apply to AAVs as it&#x27;s trying to cross the blood-brain barrier as well. And for this I&#x27;m focusing on predominantly two receptors AAVR and LRP6. And we&#x27;re also looking at our engineered vector AV9X1 and how we can start engineering future variants off this vector in hopes that it can become more neurotropic.</p>
-<p>AAV9X1 was a previously engineered vector from our lab which targets AAVR and LRP6 for effective transduction of the endothelial cells specifically in the CNS of mice when they&#x27;re delivered systemically. And we wondered if this targeting of endothelial cells is because of the fact that AAV9X1 is binding too tightly to AAVR and LRP6 and end up getting stuck in these endothelial cells. And therefore by weakening its interaction to AAVR and LRP6 could we see more effective transduction cytosis across the BBB. So first I wanted to go and independently weaken its interaction with AAVR in hopes to create a more neurotropic vector.</p>
-<p>And this stemmed from recent work that</p>
+
+<div class="seg" id="s3">
+  <div class="seg-num" style="color:#a78bfa;">03<br><span class="seg-ts">3:06–4:38</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"And this stem from recent work that was published in our lab would showcase that KAPI-10, which is a further evolved vector from HPEB, which modified the VR4 loop to have further detargeting from PKD2, the binding domain of AAVR."</p>
+    <p class="seg-full">of the cytosis across the BBB? So first, I wanted to go and independently weaken its interaction with AAVR in hopes to create a more neurotropic vector. And this stem from recent work that was published in our lab would showcase that KAPI-10, which is a further evolved vector from HPEB, which modified the VR4 loop to have further detargeting from PKD2, the binding domain of AAVR. This change actually was the reason why there was increased specificity in targeting neurons in the CNS of mice when this vector, KAPI-10, was delivered systemically. And we wondered if by introducing this KAPI-10 loop into AAV9X1, we could also have this drastic decrease in its binding affinity to AAVR. Unfortunately, by just simply substituting the same VR4 loop onto AAV9X1, did not dramatically decrease its binding affinity to AAVR. And therefore, we need to come up with novel ways to detarget from AAVR. And luckily, we were able to recently solve the cryo-EM structure of its interaction, AAV9X1's interaction with AAVR. And we were able to identify key residues that might be responsible for its binding to AAVR. And by targeting these locuses for effective rational engineering, we were able to create this beta mutation. And by introducing this beta mutation to AAV9X1, we were able to see a dramatic decrease in its binding affinity to AAVR. And when we delivered this vector, AAV9X1 beta,</p>
   </div>
 </div>
-<div class="section" id="sec-2">
-  <div class="section-header">
-    <span class="ts">03:41</span>
-    <span class="section-name body">Part 2</span>
-  </div>
-  <div class="section-body">
-    <p>was published in our lab which showcased that CAPB10 which is a further evolved vector from HPEB which modified the VR4 loop to have further detargeting from PKD2, the binding domain of AAVR. This change actually was the reason why there was increased specificity in targeting neurons in the CNS of mice when this vector CAPB10 was delivered systemically. And we wondered if by introducing this CAPB10 loop into AAV9X1 we could also have this dramatic decrease in its binding affinity to AAVR. Unfortunately by just simply substituting the same VR4 loop onto AAV9X1 did not dramatically decrease its binding affinity to AAVR and therefore we need to come up with novel ways to detarget from AAVR.</p>
-<p>And luckily we were able to recently solve the cryo-EM structure of its interaction AAV9X1&#x27;s interaction with AAVR and we were able to identify key residues that might be responsible for its binding to AAVR. And by targeting these locuses for effective rational engineering we were able to create this beta mutation and by introducing this beta mutation to AAV9X1 we were able to see a dramatic decrease in its binding affinity to AAVR. And when we delivered this vector AAV9X1 beta that we&#x27;re calling into mice systemically we were able to see that this vector became a pretty specific vector in targeting neurons. And I think many of you guys might be thinking that AAV9X1 beta is a pretty bad vector when it&#x27;s targeting neurons altogether because it&#x27;s not targeting that many cells right?</p>
-<p>And I thought the same thing when I saw these vectors. And so I wanted to play around with the second receptor LRP6 and to see if by weakening LRP6&#x27;s interaction with AAV9X1 we could have a more increased potency when it comes to targeting neurons. However unlike AAVR and AAV9X1 we don&#x27;t have a solved cryo-EM structure to identify the specific loci. And for that we actually ended up using a more traditional method by having a scanning tumor library across a VR8 loop of AAV9X1 to create mutants that could have various binding affinities to LRP6.</p>
-<p>We subjected this library into magnetic bead conjugated E1 E2 subdomains of LRP6 and pulled them down and we were able to analyze the enrichment values of the capsids that bound most tightly to LRP6 and those that did not. And as expected we were able to see that AAV9X1 is near the top of the ranking profile because we</p>
+
+<div class="seg" id="s4">
+  <div class="seg-num" style="color:#a78bfa;">04<br><span class="seg-ts">4:38–6:09</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"And to see if, by weakening LRP6's interaction with AAV9X1, we could have a more increased potency when it comes to targeting neurons."</p>
+    <p class="seg-full">that we're calling, into mice systemically, we were able to see that this vector became a pretty specific vector in targeting neurons. And I think many of you guys might be thinking that AAV9X1 beta is a pretty bad vector when it's targeting neurons altogether, because it's not targeting that many cells. And I thought the same thing when I saw these vectors. And so I wanted to play around with the second receptor, LRP6. And to see if, by weakening LRP6's interaction with AAV9X1, we could have a more increased potency when it comes to targeting neurons. However, unlike AAVR and AAV9X1, we don't have a solved cryoenium structure to identify the specific loci. And for that, we actually ended up using a more traditional method by having a scanning tumor library across a VR8 loop of AAV9X1 to create mutants that could have various binding affinities to LRP6. We subjected this library into a magnetic bead conjugated E1, E2 subdomains of LRP6, and pulled them down. And we were able to analyze the enrichment values of the capsits that bound most tightly to LRP6 and those that did not. And as expected, we were able to see that AAV9X1 is near the top of the ranking profile, because we know that AAV9X1 binds with LRP6. And conversely, AAV9 tends to be at the bottom of this ranking profile. And so you guys can think of this ranking profile as a proxy for binding affinities towards LRP6. And when we delivered some of the vectors</p>
   </div>
 </div>
-<div class="section" id="sec-3">
-  <div class="section-header">
-    <span class="ts">06:47</span>
-    <span class="section-name body">Part 3</span>
-  </div>
-  <div class="section-body">
-    <p>know that AAV9X1 binds with LRP6 and conversely AAV9 tends to be at the bottom of this ranking profile. And so you guys can think of this ranking profile as a proxy for binding affinity towards LRP6. And when we delivered some of the vectors that were more similar in ranking to AAV9X1 such as UX5 into mice brain, into mice systemically we were able to see that its transduction profile is predominantly still endothelial. Conversely, variants such as UX1 which are similar in ranking to AAV9 and very little transduction altogether.</p>
-<p>And when we looked at vectors with higher ranking than UX5 or AAV9X1 we saw that it is still pretty endothelial in its targeting. However, when we started to look at variants that were in between this AAV9X1 binding affinity and AAV9 we were able to see vectors that are starting to transcytose across the BBB and start targeting some of these astrocytes. And I also thought that this vector as many of you guys are thinking right now is a pretty messy vector. It is permeating through the BBB but it&#x27;s not at all specific in terms of the tropism that we would want to see.</p>
-<p>And so we wondered by combining these insights that we gained from understanding the interaction with AAVR and LRP6 we could see a highly potent neurotropic vector. And just to summarize, starting from AAV9X1 when we weaken independently just AAVR by introducing this beta mutation we saw a sparsely neuronal vector. And then when we created this vector with weakened interaction with LRP6 but not per se with AAVR we were able to get this more permeable vector that goes across the BBB. And so we wondered by introducing the same B10 mutation that we introduced to AAV9X1 could we see a strongly neuronal vector.</p>
-<p>And when we did introduce this beta mutation to UX13 we were able to see this increased potency when targeting neurons and it is predominantly transusing only neurons when quantified. Overall just to summarize my talk I was able to start playing around independently these two dials AAVR binding affinity and LRP6 binding affinity to get to looking at how these binding affinis are determining its tropism altogether. And I hope we can take this into consideration as we&#x27;re going into future therapeutics research and trying to have more predictable outcomes with our engineering efforts. Thank you so much and I open the floor up for</p>
+
+<div class="seg" id="s5">
+  <div class="seg-num" style="color:#a78bfa;">05<br><span class="seg-ts">6:09–7:39</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"Conversely, variants such as UX1, which are similar in ranking to AAV9, and very little transaction altogether."</p>
+    <p class="seg-full">that were more similar in ranking to AAV9X1, such as UX5, into my systemically, we were able to see that its transaction profile is predominantly still endothelial. Conversely, variants such as UX1, which are similar in ranking to AAV9, and very little transaction altogether. And when we looked at vectors with higher ranking than UX5 or AAV9X1, we saw that it is still pretty endothelial in its targeting. However, when we started to look at variants that were in between this AAV9X1's binding affinity and AAV9, we were able to see vectors that are starting to transcytose across the BBB and start targeting some of these aster sites. And I also thought that this vector, as many of you guys are thinking right now, is a pretty messy vector. It is permeating through the BBB, but it's not at all specific in terms of the tropism that we would want to see. And so we wondered by combining these insights that we gained from understanding the interaction with AAVR and LRP6, we could see a highly potent neurotropic vector. And just to summarize, starting from AAV9X1, when we weakened independently just AAVR by introducing this beta mutation, we saw a sparsely neuronal vector. And then when we created this vector with weakened interaction with LRP6, but not per se with AAVR, we were able to get this more permeable vector that goes across the BBB. And so we wondered by introducing the same B10 mutation that we introduced to AAV9X1, could we see a strongly neuronal vector?</p>
   </div>
 </div>
-<div class="section" id="sec-4">
-  <div class="section-header">
-    <span class="ts">09:53</span>
-    <span class="section-name body">Part 4</span>
-  </div>
-  <div class="section-body">
-    
-  </div>
-</div>
-<div class="section" id="sec-5">
-  <div class="section-header">
-    <span class="ts">09:53</span>
-    <span class="section-name qa">Q&A</span>
-  </div>
-  <div class="section-body">
-    <div class="qa-block">
-  <div class="speaker">
-    <div class="speaker-label a">Presenter</div>
-    <div class="speaker-text a">Questions from the audience?</div>
+
+<div class="seg" id="s6">
+  <div class="seg-num" style="color:#a78bfa;">06<br><span class="seg-ts">7:40–9:13</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"But an important point that you bring up is the peripheral organs, something unique that we saw with introducing this beta mutation into these AAV variants, was that we were starting to see increased transduction of the peripheral nervous system as well."</p>
+    <p class="seg-full">And when we did introduce this beta mutation to UX13, we were able to see this increased potency when targeting neurons, and it is predominantly transusing only neurons when quantified. Overall, just to summarize my talk, I was able to start playing around independently these two dials, AAVR binding affinity and LRP6 binding affinity to get to looking at how these binding affinities are determining its tropism altogether. And I hope we can take this into consideration as we're going into future therapeutics research and trying to have more predictable outcomes with our engineering efforts. Thank you so much, and I open the floor up for questions. Thank you. Thank you. Questions from the audience? Hi. Did you look at vector genomes in peripheral organs, especially at the early time points? We analyzed these animals after three to four weeks post-delivery, so we didn't really look at really early time points after delivery. But an important point that you bring up is the peripheral organs, something unique that we saw with introducing this beta mutation into these AAV variants, was that we were starting to see increased transduction of the peripheral nervous system as well. You guys can see pretty much in the spring sum as one representation of how it would perform</p>
   </div>
 </div>
-<div class="qa-block">
-  <div class="speaker">
-    <div class="speaker-label q">Audience</div>
-    <div class="speaker-text q">Hi, did you look at vector genomes in peripheral organs especially at early time points?</div>
+
+<div class="seg" id="s7">
+  <div class="seg-num" style="color:#a78bfa;">07<br><span class="seg-ts">9:13–10:45</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"As many of you guys know, knockouts of AVR might as completely diminishes systemic delivered AV transduction."</p>
+    <p class="seg-full">like the other peripheral vectors that were produced from our lab. And when we looked at organs such as the distal colon, we saw increased transduction profile there as well. Okay. That's true both on the transduction level as well as on the vector genome per dipole genome. We didn't do analysis about quantifying the number of genomes that were found. We currently are at the stage of just looking at the protein level of expression. Okay, thanks. Thank you, very interesting talk. I would like to know what your thoughts are on the actual role of AVR in like, why do you see this difference in cell targeting? Given that AVR should be expressed in every cell, and there's even some indication that it might be more a sorting signal than the actual entry receptor? I think that's a really important question to consider. Frankly, I don't quite understand what's happening here either, but I know there are a lot of really good talks that are happening around the role of AVR in transduction. I think AVR in general is very critical for transduction altogether. As many of you guys know, knockouts of AVR might as completely diminishes systemic delivered AV transduction. And I think these vectors are so definitely binding to AVR, but having this Goldilocks zone of binding maybe perhaps allows AVR to play more of a trafficking role rather than more of a sticky web for targeting off-target regions of other organs that we don't care about.</p>
   </div>
 </div>
-<div class="qa-block">
-  <div class="speaker">
-    <div class="speaker-label a">Presenter</div>
-    <div class="speaker-text a">We analyzed these animals after three to four weeks post delivery so we didn&#x27;t really look at really early time points after delivery. But an important point that you bring up is the peripheral organs. Something unique that we saw with introducing this beta mutation into these AAV variants was that we&#x27;re starting to see increased transduction of the peripheral nervous system as well. You guys can see pretty much in this brain cell as one representation of how it would perform like the other peripheral vectors that were produced from our lab. And when we looked at organs such as the distal colon we saw increased transduction profile there as well. Okay that&#x27;s true both on the transduction level as well as on the vector genome per deployed genome. We didn&#x27;t do an analysis about looking at quantifying the number of genomes that were found. We currently are at the stage of just looking at the protein level of expression. Thank you very interesting talk. I would like to know what your thoughts are on the actual role of AVR in like why do you see this difference in cell targeting given that AVR should be expressed in every cell and there&#x27;s even some indication that it might be more assorting signal than the actual entry receptor. I think that&#x27;s a really important question to consider. Frankly I don&#x27;t quite understand what&#x27;s happening here either but I know there are a lot of really good talks that are happening around the role of AVR in transduction. I think AVR in general is very critical for transduction altogether. As many of you guys know knockouts of AVR completely diminishes systemic delivered AVV transduction and I think these vectors are still definitely binding to AVR but having this goldie log zone of binding maybe perhaps allows AVR to play more of a trafficking rule rather than more of a sticky web for targeting off target regions of other organs that we don&#x27;t care about. Right so you think you still transduce what you enter astrocytes but they don&#x27;t express in them with your new vectors? We haven&#x27;t looked at the genomic level yet and I think we&#x27;re hoping to go with methods that were developed such as specter or zombie AV zombie to look into the genomic level as well to see where these vectors are actually ending up but at the current moment we don&#x27;t really know. Could I ask you a quick question?</div>
+
+<div class="seg" id="s8">
+  <div class="seg-num" style="color:#a78bfa;">08<br><span class="seg-ts">10:45–12:15</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"And also another thing, are you looking chanced into one species, I mean, one strain of mice, or have you looked into Balbsey as well, because we have a lot of precedents regarding C57 BL6, you know, having a very different tropism versus Balbsey, we're being very different."</p>
+    <p class="seg-full">Right, so you think you still transduce what you enter astrocytes, but they don't express them with your new vectors? We haven't looked at the genomic level yet, and I think we're hoping to go with methods that were developed such as Spectre or AV Zombie to look into the genomic level as well to see where these vectors are actually ending up. But at the current moment, we don't really know. Okay, thank you. Could I ask you a quick question? Oh, yes, of course. So if you're talking about modulating and thinking about the Goldilocks effect, analytically, how would you come to this Goldilocks composition, so... I think that's a really... And also another thing, are you looking chanced into one species, I mean, one strain of mice, or have you looked into Balbsey as well, because we have a lot of precedents regarding C57 BL6, you know, having a very different tropism versus Balbsey, we're being very different. Definitely, so regarding your first point about how are we defining the Goldilocks zone, we're actually hoping to take more of a molecular approach by determining the KD values of their binding interactions using species such as BLI. And by doing so, we can start to have this defined region of the preferred optimal rate of binding of virtual cytosis. As for the second question, I think it's really important</p>
   </div>
 </div>
-<div class="qa-block">
-  <div class="speaker">
-    <div class="speaker-label q">Audience</div>
-    <div class="speaker-text q">So if you&#x27;re talking about modulating and thinking about the Goldilocks effect, analytically how would you come to this Goldilocks composition? So I think that&#x27;s also another thing.</div>
+
+<div class="seg" id="s9">
+  <div class="seg-num" style="color:#a78bfa;">09<br><span class="seg-ts">12:15–12:56</span></div>
+  <div class="seg-body">
+    <p class="seg-key">"because I work in non-traditional organisms as well."</p>
+    <p class="seg-full">because I work in non-traditional organisms as well. Full disclosure, these animals are C57s that we tested them in. But interestingly, LRP6, if you guys don't know, is a highly conserved receptor with over 98% sequence similarity between mice and humans. And so, hopefully, the same patterns do hold true in other strains of mice as well, but we definitely do have to test them and be able to see if this is true. Yeah, and perhaps you're going up to NHBs as well, the next two. That'll be really exciting if we can. All right, thank you very much. Thank you so much. Thank you. Thank you. Thank you. Thank you. Thank you. So I'm...</p>
   </div>
 </div>
-<div class="qa-block">
-  <div class="speaker">
-    <div class="speaker-label a">Presenter</div>
-    <div class="speaker-text a">Are you looking just into one species and one strain of mice or have you looked into Vabc as well because we have a lot of precedents regarding C57 BL6 you know having a very different tropism versus Vabc being very different. Definitely so regarding your first point about how are we defining the Goldilocks zone we&#x27;re actually hoping to take more of a molecular approach by determining the KD values of their binding interactions using assay such as BLI and by doing so we can start to have this defined region of the prefer optimal rate of binding for transcytosis. As for the second question I think it&#x27;s really important because I work in non-traditional organisms as well. Full disclosure these animals are C57s that we tested them in but interestingly LRP6 if you guys don&#x27;t know is a highly conserved receptor with over 98% sequence similarity between mice and humans and so hopefully the same patterns do hold true in other strains of mice as well but we definitely do have to test them in vivo to see if this is true. Yeah and perhaps you&#x27;re going up to NHBs as well the next. That&#x27;ll be really exciting if we can. Thank you very much.</div>
-  </div>
-</div>
-  </div>
-</div>
-</div>
-<script>
-(function(){
-  var p=document.getElementById("yt-player");
-  var id=p&&p.getAttribute("data-ytid");
-  if(id&&id!=="PENDING"){
-    document.getElementById("yt-inner").innerHTML="<iframe src="https://www.youtube-nocookie.com/embed/"+id+"?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe>";
-  }
-})();
-</script>
   <footer>
     <p>calyr.aí Research · 2026</p>
-    <p><a href="https://calyrai.ai">calyrai.ai</a></p>
+    <p><a href="../slides/Generative_AAV_capsid_diversification_by_latent_interpolatio/index.html">Generative AAV Capsid (Latent Interpolation) — Slides</a></p>
   </footer>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
