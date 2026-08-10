@@ -25,24 +25,45 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 .pres-btn:disabled { opacity:.25; cursor:default; }
 
 .slide-view {
-  flex:1; display:flex; flex-direction:column;
+  flex:1; display:grid; grid-template-columns:1fr 1fr; gap:0;
+  overflow:hidden;
+}
+.slide-img-col {
+  border-right:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem; background:var(--card);
+  overflow:hidden;
+}
+.slide-img-col img {
+  width:100%; max-height:100%; object-fit:contain;
+  border:1px solid var(--line);
+}
+.slide-img-col .no-img {
+  font-size:.65rem; color:var(--soft); letter-spacing:.08em;
+  text-transform:uppercase; text-align:center;
+}
+.slide-text-col {
+  display:flex; flex-direction:column;
   justify-content:center;
-  padding:3rem max(4vw,calc((100vw - 1240px)/2));
+  padding:2.5rem 3rem;
   overflow:hidden;
 }
 .slide-ts { font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }
 .slide-key {
   font-family:Georgia,'Times New Roman',serif;
-  font-size:clamp(1.1rem,2.5vw,1.7rem);
-  line-height:1.55; color:var(--ink);
-  border-left:4px solid var(--c); padding-left:1.5rem;
-  margin-bottom:2rem;
-  max-width:800px;
+  font-size:clamp(1rem,2vw,1.5rem);
+  line-height:1.6; color:var(--ink);
+  border-left:4px solid var(--c); padding-left:1.25rem;
+  margin-bottom:1.75rem;
 }
 .slide-full {
-  font-size:.82rem; color:var(--soft); line-height:1.75;
-  max-width:720px; padding-left:calc(1.5rem + 4px);
-  overflow-y:auto; max-height:30vh;
+  font-size:.8rem; color:var(--soft); line-height:1.75;
+  overflow-y:auto; max-height:40vh;
+  padding-left:calc(1.25rem + 4px);
+}
+@media(max-width:900px) {
+  .slide-view { grid-template-columns:1fr; }
+  .slide-img-col { border-right:none; border-bottom:1px solid var(--line); max-height:40vh; }
 }
 
 .progress-bar {
@@ -73,9 +94,15 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 <div class="progress-bar"><div class="progress-fill" id="prog" style="width:20.0%"></div></div>
 
 <div class="slide-view">
-  <div class="slide-ts"   id="ts"></div>
-  <div class="slide-key"  id="key"></div>
-  <div class="slide-full" id="full"></div>
+  <div class="slide-img-col">
+    <img id="simg" src="" alt="slide" style="display:none;" />
+    <div class="no-img" id="noimg">No frame available</div>
+  </div>
+  <div class="slide-text-col">
+    <div class="slide-ts"   id="ts"></div>
+    <div class="slide-key"  id="key"></div>
+    <div class="slide-full" id="full"></div>
+  </div>
 </div>
 
 <div class="pres-footer">
@@ -85,7 +112,7 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 </div>
 
 <script>
-const DATA = [{"n": 1, "ts": "0:00–1:30", "key": "And then with a relatively moderate dose of 1E13 viral genomes per kilogram, the cinemologous macaque, we were able to use and deliver our RNA fix payload and achieve fairly significant on target editing", "full": "which recognizes the transfer interceptor of both humans and NHPs to cross the blood-brain barrier in vivo. Thank you, Andrew. Thank you. All right. My name is Andrew Dunn. I'm from Shape Therapeutics. Thank you for attending this talk. And let's get started. All right. There we go. Maybe. OK. Forward-looking statements and all that. OK. So at Shape Therapeutics, one of the main pillars of the company is on capsid development. So I've been working over the last few years to develop CNS targeting capsids following systemic administration. And our platform uses AAV5. And so we employ direct mutagenesis rather than loop insertion. And so we directly mutate capsids of loop 8. And these are around the residues that were previously identified by the McKinnigroup to interact with sialic acid. Under the theory that you could probably, if you mutate these regions, retarget from sialic acid to another receptor that hopefully is of interest and benefit to your program. So using this method, we previously reported on a capsid that we call DB1, or deep brain 1. And then with a relatively moderate dose of 1E13 viral genomes per kilogram, the cinemologous macaque, we were able to use and deliver our RNA fix payload and achieve fairly significant on target editing"}, {"n": 2, "ts": "1:30–3:02", "key": "And so to that end, it's important to know what the primary receptor is that is mediating your capsid.", "full": "of our target transcript for our Parkinson's disease program, specifically in deep brain structures of interest to us, like the substantia nigra. So now that you have a fairly interesting biologic that you want to take forward before deploying copious amounts of capital on clinical trials, it's probably helpful to ask the question whether or not it might work in humans. And so to that end, it's important to know what the primary receptor is that is mediating your capsid. So over the last year, I've been onboarding and optimizing an LCMS technique to try to identify the target of these novel capsids. And so again, these capsids, they were mutated randomly, so we did not start a priori with a particular target in mind. And so this is just a simple technique. You grind up your tissue, extract your protein, add your AAV, as bait, pull down your AAV, purify the protein, send it off for LCMS, and then try to identify the target from the soup that comes out. And LCMS is a very powerful technique. It's very sensitive, but it can also be very dirty. And so you achieve a lot of hits. Now, this is an interaction assay. It's not a functional assay, so you don't know if any of these hits are actually allowing for an enhanced functional transduction when expressed. So we identified hundreds of candidates, then filtered those down rationally based upon what might act as a receptor, to have a transmembrane domain as a GPI anchored."}, {"n": 3, "ts": "3:02–4:32", "key": "And over all of these hits, where we then delivered a luciferase transgene in vitro, we cloned all of these hits individually and expressed them across text and chose, and then delivered DB1, transduced to DB1, transduced with another shape capsid, CNS tropic shape capsid, as well as wild type 5.", "full": "And over all of these hits, where we then delivered a luciferase transgene in vitro, we cloned all of these hits individually and expressed them across text and chose, and then delivered DB1, transduced to DB1, transduced with another shape capsid, CNS tropic shape capsid, as well as wild type 5. And there was one receptor at the very last plate that we ran that provided significant enhancement of functional transduction in vitro that was specific and that was unique to DB1, and that was transferrin receptor. And so with that in mind, or with that in hand, you can start to ask the question, does it have really any chance to work in humans? If we think that transferrin receptor is the primary receptor that is mediating our method of action and crossing the blood-brain barrier, does it interact with the human orthologs? So from previous studies, that we know that DB1 works fairly well in Old World monkeys in African green and in Sinemologous macaques, but we also know that it doesn't work in mice. And so then we can ask the question pretty easily, will it work in humans? Do we think, does it have a chance of working in humans? And so we ran an ortholog screen, where you can just take all the different orthologs of transferrin receptor and then express them individually in cell lines and then see what the functional transduction is when you overexpress those receptors. And pretty obviously, unfortunately for DB1, that it did not appear to functionally interact with the human ortholog. We had excellent maintenance across the Old World monkeys, but we did not have a functional transduction boost when overexpressing the human ortholog."}, {"n": 4, "ts": "4:33–6:04", "key": "And so when you start to look at a structure of transferrin receptor, these divergent amino acids actually exist around the tops of loops, the loop that might be interacting with a capsidum interest.", "full": "So then we wanted to ask the question, where on what location of transferrin receptor might the DB1 be interacting with? And so we made this assumption or this hypothesis that it might be interacting with the apical domain of transferrin receptor. So if you run an alignment of Sinemologous transferrin receptor with human transferrin receptor, you can start to see in the apical domain a couple of locations of divergent amino acids. And so when you start to look at a structure of transferrin receptor, these divergent amino acids actually exist around the tops of loops, the loop that might be interacting with a capsidum interest. So we broke these up into blocks, one, two, three and four. Each block either contains one or a few divergent amino acids. Then you can start to create a chimera where you take the Sinemologous ortholog, that block from Sinnoh, graph that onto the human ortholog and start to see if that block might rescue functional transduction. So that's what we did. So we have the full human or the human apical domain and then grafting the full Sinnoh onto the human ortholog as well as each of the blocks individually where we take the block from the Sinemologous ortholog onto the human ortholog. And there was one block from all of these four blocks that rescued functional transduction of DB1 when overexpressing that human Sinocamera and that was block A. What's nice about block A is there is a single divergent amino acid when comparing Sinnohs to humans. And that is that position 208. It is a glycine in the Sinemologous macaques and it is an arginine in humans."}, {"n": 5, "ts": "6:04–6:48", "key": "That is one of the most divergent pairs of amino acids that you can get.", "full": "That is one of the most divergent pairs of amino acids that you can get. So the fun continues for us. So we wanted to try to jump the speciation barrier. To do that, we ran single and double site saturated mutagenesis of DB1 to see if we could cross over and hopefully bridge from Sinnohs into humans. See if we can get something that works on both. And panning in vitro where we express individually either the human transfer and receptor overexpressing human transfer and receptor overexpressing. Expressing the Sinemologous ortholog relative to the parental cell line, the unedited cell line. So we were able to identify a population that appeared to gain this function against."}];
+const DATA = [{"n": 1, "ts": "0:00–1:30", "key": "And then with a relatively moderate dose of 1E13 viral genomes per kilogram, the cinemologous macaque, we were able to use and deliver our RNA fix payload and achieve fairly significant on target editing", "full": "which recognizes the transfer interceptor of both humans and NHPs to cross the blood-brain barrier in vivo. Thank you, Andrew. Thank you. All right. My name is Andrew Dunn. I'm from Shape Therapeutics. Thank you for attending this talk. And let's get started. All right. There we go. Maybe. OK. Forward-looking statements and all that. OK. So at Shape Therapeutics, one of the main pillars of the company is on capsid development. So I've been working over the last few years to develop CNS targeting capsids following systemic administration. And our platform uses AAV5. And so we employ direct mutagenesis rather than loop insertion. And so we directly mutate capsids of loop 8. And these are around the residues that were previously identified by the McKinnigroup to interact with sialic acid. Under the theory that you could probably, if you mutate these regions, retarget from sialic acid to another receptor that hopefully is of interest and benefit to your program. So using this method, we previously reported on a capsid that we call DB1, or deep brain 1. And then with a relatively moderate dose of 1E13 viral genomes per kilogram, the cinemologous macaque, we were able to use and deliver our RNA fix payload and achieve fairly significant on target editing", "img": "frames/ShapeTX_AAV5engineering/f0001.jpg"}, {"n": 2, "ts": "1:30–3:02", "key": "And so to that end, it's important to know what the primary receptor is that is mediating your capsid.", "full": "of our target transcript for our Parkinson's disease program, specifically in deep brain structures of interest to us, like the substantia nigra. So now that you have a fairly interesting biologic that you want to take forward before deploying copious amounts of capital on clinical trials, it's probably helpful to ask the question whether or not it might work in humans. And so to that end, it's important to know what the primary receptor is that is mediating your capsid. So over the last year, I've been onboarding and optimizing an LCMS technique to try to identify the target of these novel capsids. And so again, these capsids, they were mutated randomly, so we did not start a priori with a particular target in mind. And so this is just a simple technique. You grind up your tissue, extract your protein, add your AAV, as bait, pull down your AAV, purify the protein, send it off for LCMS, and then try to identify the target from the soup that comes out. And LCMS is a very powerful technique. It's very sensitive, but it can also be very dirty. And so you achieve a lot of hits. Now, this is an interaction assay. It's not a functional assay, so you don't know if any of these hits are actually allowing for an enhanced functional transduction when expressed. So we identified hundreds of candidates, then filtered those down rationally based upon what might act as a receptor, to have a transmembrane domain as a GPI anchored.", "img": "frames/ShapeTX_AAV5engineering/f0002.jpg"}, {"n": 3, "ts": "3:02–4:32", "key": "And over all of these hits, where we then delivered a luciferase transgene in vitro, we cloned all of these hits individually and expressed them across text and chose, and then delivered DB1, transduced to DB1, transduced with another shape capsid, CNS tropic shape capsid, as well as wild type 5.", "full": "And over all of these hits, where we then delivered a luciferase transgene in vitro, we cloned all of these hits individually and expressed them across text and chose, and then delivered DB1, transduced to DB1, transduced with another shape capsid, CNS tropic shape capsid, as well as wild type 5. And there was one receptor at the very last plate that we ran that provided significant enhancement of functional transduction in vitro that was specific and that was unique to DB1, and that was transferrin receptor. And so with that in mind, or with that in hand, you can start to ask the question, does it have really any chance to work in humans? If we think that transferrin receptor is the primary receptor that is mediating our method of action and crossing the blood-brain barrier, does it interact with the human orthologs? So from previous studies, that we know that DB1 works fairly well in Old World monkeys in African green and in Sinemologous macaques, but we also know that it doesn't work in mice. And so then we can ask the question pretty easily, will it work in humans? Do we think, does it have a chance of working in humans? And so we ran an ortholog screen, where you can just take all the different orthologs of transferrin receptor and then express them individually in cell lines and then see what the functional transduction is when you overexpress those receptors. And pretty obviously, unfortunately for DB1, that it did not appear to functionally interact with the human ortholog. We had excellent maintenance across the Old World monkeys, but we did not have a functional transduction boost when overexpressing the human ortholog.", "img": "frames/ShapeTX_AAV5engineering/f0003.jpg"}, {"n": 4, "ts": "4:33–6:04", "key": "And so when you start to look at a structure of transferrin receptor, these divergent amino acids actually exist around the tops of loops, the loop that might be interacting with a capsidum interest.", "full": "So then we wanted to ask the question, where on what location of transferrin receptor might the DB1 be interacting with? And so we made this assumption or this hypothesis that it might be interacting with the apical domain of transferrin receptor. So if you run an alignment of Sinemologous transferrin receptor with human transferrin receptor, you can start to see in the apical domain a couple of locations of divergent amino acids. And so when you start to look at a structure of transferrin receptor, these divergent amino acids actually exist around the tops of loops, the loop that might be interacting with a capsidum interest. So we broke these up into blocks, one, two, three and four. Each block either contains one or a few divergent amino acids. Then you can start to create a chimera where you take the Sinemologous ortholog, that block from Sinnoh, graph that onto the human ortholog and start to see if that block might rescue functional transduction. So that's what we did. So we have the full human or the human apical domain and then grafting the full Sinnoh onto the human ortholog as well as each of the blocks individually where we take the block from the Sinemologous ortholog onto the human ortholog. And there was one block from all of these four blocks that rescued functional transduction of DB1 when overexpressing that human Sinocamera and that was block A. What's nice about block A is there is a single divergent amino acid when comparing Sinnohs to humans. And that is that position 208. It is a glycine in the Sinemologous macaques and it is an arginine in humans.", "img": "frames/ShapeTX_AAV5engineering/f0004.jpg"}, {"n": 5, "ts": "6:04–6:48", "key": "That is one of the most divergent pairs of amino acids that you can get.", "full": "That is one of the most divergent pairs of amino acids that you can get. So the fun continues for us. So we wanted to try to jump the speciation barrier. To do that, we ran single and double site saturated mutagenesis of DB1 to see if we could cross over and hopefully bridge from Sinnohs into humans. See if we can get something that works on both. And panning in vitro where we express individually either the human transfer and receptor overexpressing human transfer and receptor overexpressing. Expressing the Sinemologous ortholog relative to the parental cell line, the unedited cell line. So we were able to identify a population that appeared to gain this function against.", "img": "frames/ShapeTX_AAV5engineering/f0005.jpg"}];
 let cur = 0;
 function render() {
   const s = DATA[cur];
@@ -96,6 +123,13 @@ function render() {
   document.getElementById('prog').style.width = ((cur+1)/5*100).toFixed(1)+'%';
   document.getElementById('prev').disabled = cur === 0;
   document.getElementById('next').disabled = cur === DATA.length-1;
+  const img = document.getElementById('simg');
+  const noimg = document.getElementById('noimg');
+  if (s.img) {
+    img.src = s.img; img.style.display = 'block'; noimg.style.display = 'none';
+  } else {
+    img.style.display = 'none'; noimg.style.display = 'block';
+  }
 }
 function go(d) { cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }
 document.addEventListener('keydown', e => {

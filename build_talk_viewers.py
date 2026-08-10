@@ -139,15 +139,21 @@ def fmt_time(s: float) -> str:
 def build_html(stem: str, meta: dict, segments: list[list[dict]]) -> str:
     color = meta["color"]
 
-    # Build JSON data for JS presenter
+    # Build JSON data with frame paths
     import json
+    import os
+    frames_dir = Path.home() / f"workspace-active/parvotec/Machine learning for Rupert/transcripts/talks/frames/{stem}"
+    frame_files = sorted(frames_dir.glob("*.jpg")) if frames_dir.exists() else []
+
     slides_data = []
     for i, seg in enumerate(segments, 1):
         t_start = fmt_time(seg[0]["s"])
         t_end   = fmt_time(seg[-1]["e"])
         full    = " ".join(e["t"] for e in seg)
         key     = key_sentence(seg)
-        slides_data.append({"n": i, "ts": f"{t_start}–{t_end}", "key": key, "full": full})
+        # Match frame by index (frame i corresponds to segment i)
+        frame_path = f"frames/{stem}/f{i:04d}.jpg" if i <= len(frame_files) else ""
+        slides_data.append({"n": i, "ts": f"{t_start}–{t_end}", "key": key, "full": full, "img": frame_path})
 
     slides_json = json.dumps(slides_data, ensure_ascii=False)
     total = len(segments)
@@ -179,24 +185,45 @@ body {{ display:flex; flex-direction:column; height:100dvh; overflow:hidden; }}
 .pres-btn:disabled {{ opacity:.25; cursor:default; }}
 
 .slide-view {{
-  flex:1; display:flex; flex-direction:column;
+  flex:1; display:grid; grid-template-columns:1fr 1fr; gap:0;
+  overflow:hidden;
+}}
+.slide-img-col {{
+  border-right:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem; background:var(--card);
+  overflow:hidden;
+}}
+.slide-img-col img {{
+  width:100%; max-height:100%; object-fit:contain;
+  border:1px solid var(--line);
+}}
+.slide-img-col .no-img {{
+  font-size:.65rem; color:var(--soft); letter-spacing:.08em;
+  text-transform:uppercase; text-align:center;
+}}
+.slide-text-col {{
+  display:flex; flex-direction:column;
   justify-content:center;
-  padding:3rem max(4vw,calc((100vw - 1240px)/2));
+  padding:2.5rem 3rem;
   overflow:hidden;
 }}
 .slide-ts {{ font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }}
 .slide-key {{
   font-family:Georgia,'Times New Roman',serif;
-  font-size:clamp(1.1rem,2.5vw,1.7rem);
-  line-height:1.55; color:var(--ink);
-  border-left:4px solid var(--c); padding-left:1.5rem;
-  margin-bottom:2rem;
-  max-width:800px;
+  font-size:clamp(1rem,2vw,1.5rem);
+  line-height:1.6; color:var(--ink);
+  border-left:4px solid var(--c); padding-left:1.25rem;
+  margin-bottom:1.75rem;
 }}
 .slide-full {{
-  font-size:.82rem; color:var(--soft); line-height:1.75;
-  max-width:720px; padding-left:calc(1.5rem + 4px);
-  overflow-y:auto; max-height:30vh;
+  font-size:.8rem; color:var(--soft); line-height:1.75;
+  overflow-y:auto; max-height:40vh;
+  padding-left:calc(1.25rem + 4px);
+}}
+@media(max-width:900px) {{
+  .slide-view {{ grid-template-columns:1fr; }}
+  .slide-img-col {{ border-right:none; border-bottom:1px solid var(--line); max-height:40vh; }}
 }}
 
 .progress-bar {{
@@ -227,9 +254,15 @@ body {{ display:flex; flex-direction:column; height:100dvh; overflow:hidden; }}
 <div class="progress-bar"><div class="progress-fill" id="prog" style="width:{100/total:.1f}%"></div></div>
 
 <div class="slide-view">
-  <div class="slide-ts"   id="ts"></div>
-  <div class="slide-key"  id="key"></div>
-  <div class="slide-full" id="full"></div>
+  <div class="slide-img-col">
+    <img id="simg" src="" alt="slide" style="display:none;" />
+    <div class="no-img" id="noimg">No frame available</div>
+  </div>
+  <div class="slide-text-col">
+    <div class="slide-ts"   id="ts"></div>
+    <div class="slide-key"  id="key"></div>
+    <div class="slide-full" id="full"></div>
+  </div>
 </div>
 
 <div class="pres-footer">
@@ -250,6 +283,13 @@ function render() {{
   document.getElementById('prog').style.width = ((cur+1)/{total}*100).toFixed(1)+'%';
   document.getElementById('prev').disabled = cur === 0;
   document.getElementById('next').disabled = cur === DATA.length-1;
+  const img = document.getElementById('simg');
+  const noimg = document.getElementById('noimg');
+  if (s.img) {{
+    img.src = s.img; img.style.display = 'block'; noimg.style.display = 'none';
+  }} else {{
+    img.style.display = 'none'; noimg.style.display = 'block';
+  }}
 }}
 function go(d) {{ cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }}
 document.addEventListener('keydown', e => {{

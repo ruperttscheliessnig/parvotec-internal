@@ -25,24 +25,45 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 .pres-btn:disabled { opacity:.25; cursor:default; }
 
 .slide-view {
-  flex:1; display:flex; flex-direction:column;
+  flex:1; display:grid; grid-template-columns:1fr 1fr; gap:0;
+  overflow:hidden;
+}
+.slide-img-col {
+  border-right:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem; background:var(--card);
+  overflow:hidden;
+}
+.slide-img-col img {
+  width:100%; max-height:100%; object-fit:contain;
+  border:1px solid var(--line);
+}
+.slide-img-col .no-img {
+  font-size:.65rem; color:var(--soft); letter-spacing:.08em;
+  text-transform:uppercase; text-align:center;
+}
+.slide-text-col {
+  display:flex; flex-direction:column;
   justify-content:center;
-  padding:3rem max(4vw,calc((100vw - 1240px)/2));
+  padding:2.5rem 3rem;
   overflow:hidden;
 }
 .slide-ts { font-size:.6rem; font-family:monospace; color:var(--c); margin-bottom:1.5rem; letter-spacing:.1em; }
 .slide-key {
   font-family:Georgia,'Times New Roman',serif;
-  font-size:clamp(1.1rem,2.5vw,1.7rem);
-  line-height:1.55; color:var(--ink);
-  border-left:4px solid var(--c); padding-left:1.5rem;
-  margin-bottom:2rem;
-  max-width:800px;
+  font-size:clamp(1rem,2vw,1.5rem);
+  line-height:1.6; color:var(--ink);
+  border-left:4px solid var(--c); padding-left:1.25rem;
+  margin-bottom:1.75rem;
 }
 .slide-full {
-  font-size:.82rem; color:var(--soft); line-height:1.75;
-  max-width:720px; padding-left:calc(1.5rem + 4px);
-  overflow-y:auto; max-height:30vh;
+  font-size:.8rem; color:var(--soft); line-height:1.75;
+  overflow-y:auto; max-height:40vh;
+  padding-left:calc(1.25rem + 4px);
+}
+@media(max-width:900px) {
+  .slide-view { grid-template-columns:1fr; }
+  .slide-img-col { border-right:none; border-bottom:1px solid var(--line); max-height:40vh; }
 }
 
 .progress-bar {
@@ -73,9 +94,15 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 <div class="progress-bar"><div class="progress-fill" id="prog" style="width:50.0%"></div></div>
 
 <div class="slide-view">
-  <div class="slide-ts"   id="ts"></div>
-  <div class="slide-key"  id="key"></div>
-  <div class="slide-full" id="full"></div>
+  <div class="slide-img-col">
+    <img id="simg" src="" alt="slide" style="display:none;" />
+    <div class="no-img" id="noimg">No frame available</div>
+  </div>
+  <div class="slide-text-col">
+    <div class="slide-ts"   id="ts"></div>
+    <div class="slide-key"  id="key"></div>
+    <div class="slide-full" id="full"></div>
+  </div>
 </div>
 
 <div class="pres-footer">
@@ -85,7 +112,7 @@ body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
 </div>
 
 <script>
-const DATA = [{"n": 1, "ts": "0:00–1:36", "key": "Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then", "full": "Welcome everybody to the session new insights into AV trafficking we have in the session and just as a reminder do not use flash photography in the session probably distracting and I don't think I need to remind everybody anybody about the Wi-Fi anymore at this point so let's just go straight ahead to the first speaker which is Sloan Wan from UMass Chan Medical School good afternoon everyone my name is Sloan Wan I'm reporting our study on behalf of Dr. Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then"}, {"n": 2, "ts": "1:36–1:49", "key": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors", "full": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors"}];
+const DATA = [{"n": 1, "ts": "0:00–1:36", "key": "Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then", "full": "Welcome everybody to the session new insights into AV trafficking we have in the session and just as a reminder do not use flash photography in the session probably distracting and I don't think I need to remind everybody anybody about the Wi-Fi anymore at this point so let's just go straight ahead to the first speaker which is Sloan Wan from UMass Chan Medical School good afternoon everyone my name is Sloan Wan I'm reporting our study on behalf of Dr. Tsoit Mongtian Tsoi unfortunately she can't make to the meeting today so I presenting on behalf of her on our study advancing capsidic engineering and the transcriptional regulation towards decoding the role of a V1U so the ocular gene therapy is at the forefront of the gene therapy especially since the first AV gene therapy product like sterna get approval from FDA and then the majority of the ocular gene therapy is conducted through the separation injection but with a number of limitations such as limited therapeutic efficacy and then", "img": "frames/AAV_Trafficking/f0001.jpg"}, {"n": 2, "ts": "1:36–1:49", "key": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors", "full": "the complexity of the rational surgery as alternative intravitory injection theoretically can divert more of our vectors", "img": "frames/AAV_Trafficking/f0002.jpg"}];
 let cur = 0;
 function render() {
   const s = DATA[cur];
@@ -96,6 +123,13 @@ function render() {
   document.getElementById('prog').style.width = ((cur+1)/2*100).toFixed(1)+'%';
   document.getElementById('prev').disabled = cur === 0;
   document.getElementById('next').disabled = cur === DATA.length-1;
+  const img = document.getElementById('simg');
+  const noimg = document.getElementById('noimg');
+  if (s.img) {
+    img.src = s.img; img.style.display = 'block'; noimg.style.display = 'none';
+  } else {
+    img.style.display = 'none'; noimg.style.display = 'block';
+  }
 }
 function go(d) { cur = Math.max(0, Math.min(DATA.length-1, cur+d)); render(); }
 document.addEventListener('keydown', e => {
